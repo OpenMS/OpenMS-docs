@@ -22,15 +22,15 @@ For Users
 
 Getting Started with OpenMS
 ***************************
-The current stable version of OpenMS can be downloaded from the [OpenMS download site](http://open-ms.de/downloads/) or can be obtained via the [[OpenMS docker containers|OpenMS Docker Containers]].
+The current stable version of OpenMS can be downloaded from the `OpenMS download site <http://open-ms.de/downloads/>`_ or can be obtained via the `OpenMS docker containers <https://github.com/OpenMS/OpenMS/wiki/OpenMS-Docker-Containers>`_.
 
-As a general primer to OpenMS, we also recommend to read [Röst et al, OpenMS: a flexible open-source software platform for mass spectrometry data analysis. Nat Methods. 2016](https://www.ncbi.nlm.nih.gov/pubmed/27575624) as well as the [Getting Started](http://www.openms.de/getting-started/) page on openms.de.
+As a general primer to OpenMS, we also recommend to read `Röst et al, OpenMS: a flexible open-source software platform for mass spectrometry data analysis. Nat Methods. 2016 <https://www.ncbi.nlm.nih.gov/pubmed/27575624>`_ as well as the `Getting Started <http://www.openms.de/getting-started/>`_ page on openms.de.
 
-Novice users should start by reading the OpenMS documentation (especially for TOPP) available from the [OpenMS documentation site](http://www.openms.de/current_doxygen/) or in the folder doc/index.html of stable releases. Some example workflows with optimised parameter settings can be downloaded from the [repository](https://github.com/OpenMS/OpenMS/wiki/Workflow-Collection). To understand which tools are available, please read the [TOPP Tool documentation page](http://www.openms.de/current_doxygen/html/TOPP_documentation.html) as well as the [UTILS Tool documentation page](http://www.openms.de/current_doxygen/html/UTILS_documentation.html).
+Novice users should start by reading the OpenMS documentation (especially for TOPP) available from the `OpenMS documentation site <http://www.openms.de/current_doxygen/>`_ or in the folder doc/index.html of stable releases. Some example workflows with optimised parameter settings can be downloaded from the `repository <https://github.com/OpenMS/OpenMS/wiki/Workflow-Collection>`_. To understand which tools are available, please read the `TOPP Tool documentation page <http://www.openms.de/current_doxygen/html/TOPP_documentation.html>`_ as well as the `UTILS Tool documentation page <http://www.openms.de/current_doxygen/html/UTILS_documentation.html>`_.
 
 Getting in Contact
 ******************
-For general usage problems, bug reports and questions, please contact us directly on [Gitter](https://gitter.im/OpenMS/OpenMS) for real-time interaction with the developers or write to the mailing list [open-ms-general](https://lists.sourceforge.net/lists/listinfo/open-ms-general/).
+For general usage problems, bug reports and questions, please contact us directly on `Gitter <https://gitter.im/OpenMS/OpenMS>`_ for real-time interaction with the developers or write to the mailing list `open-ms-general <https://lists.sourceforge.net/lists/listinfo/open-ms-general/>`_.
 
 If you only want to be informed of new versions of OpenMS, please subscribe to the mailing list [open-ms-announcements](https://lists.sourceforge.net/lists/listinfo/open-ms-announcements).
 
@@ -56,39 +56,39 @@ Developing with OpenMS
 **********************
 If you would like to contribute to OpenMS, this is how to best get started:
 
-- Familiarize yourself with our [online documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
+- Familiarize yourself with our `online documentation` <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html>`_.
 
-- Learn how to [[build OpenMS|Building OpenMS]].
+- Learn how to `build OpenMS <https://github.com/OpenMS/OpenMS/wiki/Building-OpenMS>`_.
 
-- Start reading the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
+- Start reading the `OpenMS tutorial for developers <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html>`_.
 
 - Any questions can be directed at the mailing list.
 
 OpenMS tutorial for developers
 ******************************
-Please read the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html)
+Please read the `OpenMS tutorial for developers <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html>`_)
 which contains general information about the structure of OpenMS, the concepts
 behind it and example code.
 
 Technical Documentation
 ***********************
-See the documentation for the nightly snapshot of [develop](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html) ([doxygen log](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_nightly_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log)).
+See the documentation for the nightly snapshot of `develop <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>`_ (`doxygen log <https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_nightly_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log>`_).
 
-See the documentation for the latest [release](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html) ([doxygen log](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_release_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log)).
+See the documentation for the latest `release <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html>`_ (`doxygen log <https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_release_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log>`_).
 
 
 Development model
 *****************
-OpenMS follows the Gitflow development workflow which is excellently described [here](http://nvie.com/posts/a-successful-git-branching-model/). Additionally we encourage every developer (even if he is eligible to push directly to OpenMS) to create his own fork (e.g. @username). The GitHub people provide superb documentation on [forking](https://help.github.com/articles/fork-a-repo) and how to keep your fork [up-to-date](https://help.github.com/articles/syncing-a-fork). With your own fork you can follow the Gitflow development model directly, but instead of merging into "develop" in your own fork you can open a [pull request](https://help.github.com/articles/using-pull-requests). Before opening the pull request, please check the [checklist](Pull-Request-Checklist)
+OpenMS follows the Gitflow development workflow which is excellently described `here <http://nvie.com/posts/a-successful-git-branching-model/>`_. Additionally we encourage every developer (even if he is eligible to push directly to OpenMS) to create his own fork (e.g. @username). The GitHub people provide superb documentation on `forking <https://help.github.com/articles/fork-a-repo>`_ and how to keep your fork `up-to-date <https://help.github.com/articles/syncing-a-fork>`_. With your own fork you can follow the Gitflow development model directly, but instead of merging into "develop" in your own fork you can open a `pull request`<https://help.github.com/articles/using-pull-requests>`_. Before opening the pull request, please check the [checklist](Pull-Request-Checklist)
 
 Some more details and tips are collected [here](OpenMS-Git-Workflow).
 
 Coding Conventions
 ******************
-See the manual for proper coding style: [Coding conventions](Coding-conventions)
-also see: [C++ Guide](https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide)
+See the manual for proper coding style: `Coding conventions <https://github.com/OpenMS/OpenMS/wiki/Coding-conventions>`_
+also see: `C++ Guide <http://https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide>`_
 
-See the [manual](NewBuildUnit) for creating a new build unit (to be completed)
+See the `manual` <https://github.com/OpenMS/OpenMS/wiki/NewBuildUnit>`_ for creating a new build unit (to be completed)
 
 We automatically test for common coding convention violations using a modified version of cpplint.
 Style testing can be enabled using CMake options. We also provide a configuration file for Uncrustify for automated style corrections (see "tools/uncrustify.cfg").
@@ -97,13 +97,16 @@ Commit Messages
 ***************
 In order to ease the creation of a CHANGELOG we use a defined format for our commit messages.
 
-See the manual for proper commit messages: [How to write commit messages](https://github.com/OpenMS/OpenMS/wiki/HowTo---Write-Commit-Messages)
+See the manual for proper commit messages: `How to write commit messages <http://https://github.com/OpenMS/OpenMS/wiki/HowTo---Write-Commit-Messages>`_
+
 
 Automated Unit Tests
 ********************
 We perform nightly test runs on different platforms. Even if everything compiled well on your machine and all tests passed, please check if you broke another platform on the next day.
 
-Nightly tests: [CDASH](http://cdash.openms.de/index.php?project=OpenMS)
+Nightly tests: CDASH_(http://cdash.openms.de/index.php?project=OpenMS)
+
+.. _CDASH: http://cdash.openms.de/index.php?project=OpenMS
 
 
 Further developer resources
@@ -111,13 +114,17 @@ Further developer resources
 
 Guidelines for addition of new dependency libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-See [here](https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries).
+See here_(https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries).
+
+.. _here: https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries
 
 Experimental Installers
 ^^^^^^^^^^^^^^^^^^^^^^^
 We automatically build installers for different platforms. These usually contain unstable or partially untested code - so use them at your own risk.
 
-The nightly (unstable) installers are available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
+The nightly (unstable) installers are available here_(https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
+
+.. _here: https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/
 
 Developer FAQ (formerly Internal FAQ)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
