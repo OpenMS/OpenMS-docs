@@ -1,11 +1,11 @@
 =====
-About
+Home
 =====
 
 
 .. contents:: Contents
 
-Background
+About
 ##########
 OpenMS is an open-source C++ library for mass spectrometry (MS) data management and analysis. It offers an infrastructure for the rapid development of mass spectrometry-related software. OpenMS is free software available under the three-clause BSD license. It runs under Windows, Mac OS X and Linux.
 
@@ -121,4 +121,4 @@ The nightly (unstable) installers are available [here](https://abibuilder.inform
 
 Developer FAQ (formerly Internal FAQ)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The [FAQ](https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ) for developers is currently expanded and might contain answers to your questions.
+The `FAQ <http://github.com/OpenMS/OpenMS/wiki/Developer-FAQ>`_(https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ) for developers is currently expanded and might contain answers to your questions.
