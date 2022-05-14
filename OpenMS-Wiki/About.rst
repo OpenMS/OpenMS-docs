@@ -122,4 +122,5 @@ The nightly (unstable) installers are available [here](https://abibuilder.inform
 Developer FAQ (formerly Internal FAQ)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The FAQ_(https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ) for developers is currently expanded and might contain answers to your questions.
+
 .. _FAQ: https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ
