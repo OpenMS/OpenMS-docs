@@ -40,16 +40,14 @@ Some TOPP tools always crashes when executed. Other TOPP tools work properly.
 
 If a error message similar to
 
-.. code:: console
-
- OpenMS::File::find(...) of File.cpp error message: the file 'CHEMISTRY/unimod.xml' could not be found
+`OpenMS::File::find(...) of File.cpp error message: the file 'CHEMISTRY/unimod.xml' could not be found`
 
 is shown, you have probably moved your OpenMS installation manually?! Then the TOPP tools cannot find some required data files anymore, e.g. XML schema files or chemical isotope data.
 
 Either of the following actions should fix your problem:
 
 * Set the environment variable OPENMS_DATA_PATH to your <OpenMS>/share/OpenMS/ folder.
-* [developers only] Use the cmake option ``-D CMAKE_INSTALL_PREFIX=...`` to set the installation directory. Run 'make OpenMS TOPP UTILS' again.
+* [developers only] Use the cmake option `-D CMAKE_INSTALL_PREFIX=...` to set the installation directory. Run 'make OpenMS TOPP UTILS' again.
 * [developers only] Execute cmake in the new location and run 'make OpenMS TOPP UTILS' again.
 
 A TOPP tool crashes when loading a certain input file. Other files work properly.
@@ -58,12 +56,8 @@ If an XML input file is used, please check if the file is valid.
 
 For most XML data formats, this can be done using the FileInfo tool:
 
-.. code:: console
-
-  FileInfo -v -in <file>
+`FileInfo -v -in <file>`
 
 You can also check for corrupt data in peak files:
 
-.. code:: console
-
-  FileInfo -c -in <file>
+`FileInfo -c -in <file>`

@@ -40,10 +40,8 @@ Known issues on Windows
 
   Your error message might look like this:
 
-  .. code:: console
-
-   c:\dev\contrib_build\src\bzip2-1.0.5\bzlib.h(79) : fatal error C1083:
-   Cannot open include file: 'windows.h': No such file or directory
+   `c:\dev\contrib_build\src\bzip2-1.0.5\bzlib.h(79) : fatal error C1083:
+   Cannot open include file: 'windows.h': No such file or directory`
 
   This can happen if you are using the VS Express Edition or VS2008 on Win7 (other cases might be possible as well). The reason is that your INCLUDE environment path does not contain the system header windows.h, which is required by the contrib and OpenMS.
 
@@ -56,9 +54,7 @@ Known issues on Linux
 
   Your error message might look like:
 
-  .. code:: console
-
-   gzip: stdin: invalid compressed data--crc error
+   `gzip: stdin: invalid compressed data--crc error`
 
   This happens with a buggy version of gzip in Ubuntu 10.04.
 
