@@ -2,7 +2,7 @@
 TOPP Frequently Asked Questions
 ==========================
 
-.. contents:: Contents
+.. contents:: Some of our most frequently asked questions regarding TOPP are:
 
 I'm getting the error message "Unexpected internal error (unable to allocate enough memory (size = 0 bytes)".
 ############################################################################################################
