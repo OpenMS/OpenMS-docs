@@ -58,9 +58,9 @@ If an XML input file is used, please check if the file is valid.
 For most XML data formats, this can be done using the FileInfo tool:
 
 .. code:: console
- FileInfo -v -in <file>
+  FileInfo -v -in <file>
 
 You can also check for corrupt data in peak files:
 
 .. code:: console
- FileInfo -c -in <file>
+  FileInfo -c -in <file>
