@@ -25,6 +25,10 @@ Known issues on Windows
    'MSSimulator.exe': Loaded 'C:\Windows\winsxs\amd64_microsoft.vc90.debugcrt_1fc8b3b9a1e18e3b_9.0.21022.8_none_4ec74c6b3093419c\msvcp90d.dll', Symbols loaded.
    'MSSimulator.exe': Loaded 'C:\Windows\winsxs\amd64_microsoft.vc90.debugcrt_1fc8b3b9a1e18e3b_9.0.21022.8_none_4ec74c6b3093419c\msvcr90d.dll', Symbols loaded.
    'MSSimulator.exe': Loaded 'C:\dev\qt-everywhere-opensource-src-4.7.1\bin\QtSqld4.dll', Symbols loaded.
+
+  As this was a VS10 build, the vc90 DLL's have no place here, but got loaded from the Qt4 DLL's.
+
+  **Solution**: recompile Qt (in this case) using VS10 and link against the new Qt.
 *
 
 
