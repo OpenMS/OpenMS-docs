@@ -60,7 +60,7 @@ For most XML data formats, this can be done using the FileInfo tool:
 .. code:: console
  FileInfo -v -in <file>
 
-You can also check for corrupt data in peak files
+You can also check for corrupt data in peak files:
 
 .. code:: console
  FileInfo -c -in <file>
