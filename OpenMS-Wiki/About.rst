@@ -104,30 +104,23 @@ Automated Unit Tests
 ********************
 We perform nightly test runs on different platforms. Even if everything compiled well on your machine and all tests passed, please check if you broke another platform on the next day.
 
-Nightly tests: CDASH_(http://cdash.openms.de/index.php?project=OpenMS)
-
-.. _CDASH: http://cdash.openms.de/index.php?project=OpenMS
-
+Nightly tests: `CDASH <http://cdash.openms.de/index.php?project=OpenMS>'_
 
 Further developer resources
 ***************************
 
 Guidelines for addition of new dependency libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-See here_(https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries).
-
-.. _here: https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries
+See `here <https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries>`_.
 
 Experimental Installers
 ^^^^^^^^^^^^^^^^^^^^^^^
 We automatically build installers for different platforms. These usually contain unstable or partially untested code - so use them at your own risk.
 
-The nightly (unstable) installers are available here_(https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
-
-.. _here: https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/
+The nightly (unstable) installers are available `here <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/>`_.
 
 Developer FAQ (formerly Internal FAQ)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The FAQ_(https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ) for developers is currently expanded and might contain answers to your questions.
+The `FAQ <https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ>`_ for developers is currently expanded and might contain answers to your questions.
 
-.. _FAQ: https://github.com/OpenMS/OpenMS/wiki/Developer-FAQ
+
