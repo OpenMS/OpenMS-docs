@@ -20,7 +20,7 @@ Known issues on Windows
 
   The reason this happens is usually: you've mixed DLL's from multiple runtimes (e.g. compiled with VS10 and VS9). This can easily happen, if you use your Qt (build with VS9) to link against your OpenMS (build with VS10). The loader will load VS9 and VS10 runtimes and will NOT tell you that they conflict. Instead, very weird things are going to happen. You can identify if you are affected by looking at the DLL's that are loaded via daisy-chaining - see either DependencyWalker's output or the 'output' window in VS when running the app from inside VS. It might read:
 
-  .. code:: c++
+  .. code:: console
 
    'MSSimulator.exe': Loaded 'C:\Windows\winsxs\amd64_microsoft.vc90.debugcrt_1fc8b3b9a1e18e3b_9.0.21022.8_none_4ec74c6b3093419c\msvcp90d.dll', Symbols loaded.
    'MSSimulator.exe': Loaded 'C:\Windows\winsxs\amd64_microsoft.vc90.debugcrt_1fc8b3b9a1e18e3b_9.0.21022.8_none_4ec74c6b3093419c\msvcr90d.dll', Symbols loaded.
@@ -45,5 +45,21 @@ Known issues on Windows
    c:\dev\contrib_build\src\bzip2-1.0.5\bzlib.h(79) : fatal error C1083:
    Cannot open include file: 'windows.h': No such file or directory
 
+  This can happen if you are using the VS Express Edition or VS2008 on Win7 (other cases might be possible as well). The reason is that your INCLUDE environment path does not contain the system header windows.h, which is required by the contrib and OpenMS.
+
+  **Solution**: You need to download the Microsoft SDK for Windows 7 (or whatever your OS is). Make sure to select "Header Files" Section during install and make sure that the SDK's include path is in your INCLUDE environment.
+
 Known issues on Linux
 #######################
+
+* **Contrib fails to compile on Ubuntu 10.04**
+
+  Your error message might look like:
+
+  .. code:: console
+
+   gzip: stdin: invalid compressed data--crc error
+
+  This happens with a buggy version of gzip in Ubuntu 10.04.
+
+  **Solution**: To solve this issue update gzip using lucid-proposed (see https://wiki.ubuntu.com/Testing/EnableProposed).
