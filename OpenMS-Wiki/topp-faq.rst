@@ -55,7 +55,7 @@ A TOPP tool crashes when loading a certain input file. Other files work properly
 #################################################################################
 If an XML input file is used, please check if the file is valid.
 
-For most XML data formats, this can be done using the .. cpp:class:: FileInfo tool:
+For most XML data formats, this can be done using the FileInfo tool:
 
 .. code:: console
  FileInfo -v -in <file>
