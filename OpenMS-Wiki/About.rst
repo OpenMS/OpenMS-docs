@@ -79,16 +79,16 @@ See the documentation for the latest `release <https://abibuilder.informatik.uni
 
 Development model
 *****************
-OpenMS follows the Gitflow development workflow which is excellently described `here <http://nvie.com/posts/a-successful-git-branching-model/>`_. Additionally we encourage every developer (even if he is eligible to push directly to OpenMS) to create his own fork (e.g. @username). The GitHub people provide superb documentation on `forking <https://help.github.com/articles/fork-a-repo>`_ and how to keep your fork `up-to-date <https://help.github.com/articles/syncing-a-fork>`_. With your own fork you can follow the Gitflow development model directly, but instead of merging into "develop" in your own fork you can open a `pull request <https://help.github.com/articles/using-pull-requests>`_. Before opening the pull request, please check the [checklist](Pull-Request-Checklist)
+OpenMS follows the Gitflow development workflow which is excellently described `here <http://nvie.com/posts/a-successful-git-branching-model/>`_. Additionally we encourage every developer (even if he is eligible to push directly to OpenMS) to create his own fork (e.g. @username). The GitHub people provide superb documentation on `forking <https://help.github.com/articles/fork-a-repo>`_ and how to keep your fork `up-to-date <https://help.github.com/articles/syncing-a-fork>`_. With your own fork you can follow the Gitflow development model directly, but instead of merging into "develop" in your own fork you can open a `pull request <https://help.github.com/articles/using-pull-requests>`_. Before opening the pull request, please check the `checklist <https://github.com/OpenMS/OpenMS/wiki/Pull-Request-Checklist>`_
 
-Some more details and tips are collected [here](OpenMS-Git-Workflow).
+Some more details and tips are collected `here <https://github.com/OpenMS/OpenMS/wiki/OpenMS-Git-Workflow>`_.
 
 Coding Conventions
 ******************
 See the manual for proper coding style: `Coding conventions <https://github.com/OpenMS/OpenMS/wiki/Coding-conventions>`_
-also see: `C++ Guide <http://https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide>`_
+also see: `C++ Guide <http://https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide>`_.
 
-See the `manual <https://github.com/OpenMS/OpenMS/wiki/NewBuildUnit>`_ for creating a new build unit (to be completed)
+See the `manual <https://github.com/OpenMS/OpenMS/wiki/NewBuildUnit>`_ for creating a new build unit (to be completed).
 
 We automatically test for common coding convention violations using a modified version of cpplint.
 Style testing can be enabled using CMake options. We also provide a configuration file for Uncrustify for automated style corrections (see "tools/uncrustify.cfg").
@@ -97,7 +97,7 @@ Commit Messages
 ***************
 In order to ease the creation of a CHANGELOG we use a defined format for our commit messages.
 
-See the manual for proper commit messages: `How to write commit messages <http://https://github.com/OpenMS/OpenMS/wiki/HowTo---Write-Commit-Messages>`_
+See the manual for proper commit messages: `How to write commit messages <http://https://github.com/OpenMS/OpenMS/wiki/HowTo---Write-Commit-Messages>`_.
 
 
 Automated Unit Tests
