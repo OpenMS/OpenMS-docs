@@ -41,6 +41,7 @@ Some TOPP tools always crashes when executed. Other TOPP tools work properly.
 If a error message similar to
 
 .. code:: console
+
  OpenMS::File::find(...) of File.cpp error message: the file 'CHEMISTRY/unimod.xml' could not be found
 
 is shown, you have probably moved your OpenMS installation manually?! Then the TOPP tools cannot find some required data files anymore, e.g. XML schema files or chemical isotope data.
@@ -58,9 +59,11 @@ If an XML input file is used, please check if the file is valid.
 For most XML data formats, this can be done using the FileInfo tool:
 
 .. code:: console
+
   FileInfo -v -in <file>
 
 You can also check for corrupt data in peak files:
 
 .. code:: console
+
   FileInfo -c -in <file>
