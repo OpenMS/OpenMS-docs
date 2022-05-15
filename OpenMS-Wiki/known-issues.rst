@@ -29,8 +29,21 @@ Known issues on Windows
   As this was a VS10 build, the vc90 DLL's have no place here, but got loaded from the Qt4 DLL's.
 
   **Solution**: recompile Qt (in this case) using VS10 and link against the new Qt.
-*
 
+* **Starting a (GUI) TOPP executable (like TOPPView or FeatureFinderCentroided) gives "Entry point not found"**
+
+  This usually happens when your PATH contains multiple versions of DLL's on which TOPP/OpenMS depends. Candidates are all QT (QtGui4.dll, QtCore4.dll, ...) or Xerces-C (xerces-c_3_0) libraries. Usually other external programs (Miktex, Mendeley etc) put their own binary directory (which contains these incompatible DLL's) before the contrib directory in your PATH%.
+
+  **Solution**: put the contrib directory at the very beginning of your PATH%. The other tools should be unaffected as DLL's are first searched in the path of the executable (where their DLL's should be as well). We do that for OpenMS as well, but only in the binary installer packages, not for the developer version.
+
+* **Compiling the contrib or OpenMS, the windows.h header file seems to be missing!**
+
+  Your error message might look like this:
+
+  .. code:: console
+
+   c:\dev\contrib_build\src\bzip2-1.0.5\bzlib.h(79) : fatal error C1083:
+   Cannot open include file: 'windows.h': No such file or directory
 
 Known issues on Linux
 #######################
