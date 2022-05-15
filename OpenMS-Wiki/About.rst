@@ -32,13 +32,13 @@ Getting in Contact
 ******************
 For general usage problems, bug reports and questions, please contact us directly on `Gitter <https://gitter.im/OpenMS/OpenMS>`_ for real-time interaction with the developers or write to the mailing list `open-ms-general <https://lists.sourceforge.net/lists/listinfo/open-ms-general/>`_.
 
-If you only want to be informed of new versions of OpenMS, please subscribe to the mailing list [open-ms-announcements](https://lists.sourceforge.net/lists/listinfo/open-ms-announcements).
+If you only want to be informed of new versions of OpenMS, please subscribe to the mailing list `open-ms-announcements <https://lists.sourceforge.net/lists/listinfo/open-ms-announcements>`_.
 
 Reporting Bugs/Issues
 *********************
 A list of known issues in the current OpenMS release can be found here. Please check if your OpenMS version matches the current version and if the bug has already been reported.
 
-In order to report a new bug, please use either our [GitHub issues system](Writing-and-labelling-GitHub-issues) or contact us through the general OpenMS mailing list.
+In order to report a new bug, please use either our `GitHub issues system <https://github.com/OpenMS/OpenMS/wiki/Writing-and-labelling-GitHub-issues>`_ or contact us through the general OpenMS mailing list.
 
 Please include the following information into your bug report:
 * the command line (i.e. call) including the TOPP tool and the arguments you used, or the steps you followed in a GUI tool (e.g. TOPPView) - e.g. "FeatureFinderCentroided -in myfile.mzML -out myfile.featureXML"
@@ -56,7 +56,7 @@ Developing with OpenMS
 **********************
 If you would like to contribute to OpenMS, this is how to best get started:
 
-- Familiarize yourself with our `online documentation` <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html>`_.
+- Familiarize yourself with our `online documentation <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html>`_.
 
 - Learn how to `build OpenMS <https://github.com/OpenMS/OpenMS/wiki/Building-OpenMS>`_.
 
@@ -79,7 +79,7 @@ See the documentation for the latest `release <https://abibuilder.informatik.uni
 
 Development model
 *****************
-OpenMS follows the Gitflow development workflow which is excellently described `here <http://nvie.com/posts/a-successful-git-branching-model/>`_. Additionally we encourage every developer (even if he is eligible to push directly to OpenMS) to create his own fork (e.g. @username). The GitHub people provide superb documentation on `forking <https://help.github.com/articles/fork-a-repo>`_ and how to keep your fork `up-to-date <https://help.github.com/articles/syncing-a-fork>`_. With your own fork you can follow the Gitflow development model directly, but instead of merging into "develop" in your own fork you can open a `pull request`<https://help.github.com/articles/using-pull-requests>`_. Before opening the pull request, please check the [checklist](Pull-Request-Checklist)
+OpenMS follows the Gitflow development workflow which is excellently described `here <http://nvie.com/posts/a-successful-git-branching-model/>`_. Additionally we encourage every developer (even if he is eligible to push directly to OpenMS) to create his own fork (e.g. @username). The GitHub people provide superb documentation on `forking <https://help.github.com/articles/fork-a-repo>`_ and how to keep your fork `up-to-date <https://help.github.com/articles/syncing-a-fork>`_. With your own fork you can follow the Gitflow development model directly, but instead of merging into "develop" in your own fork you can open a `pull request <https://help.github.com/articles/using-pull-requests>`_. Before opening the pull request, please check the [checklist](Pull-Request-Checklist)
 
 Some more details and tips are collected [here](OpenMS-Git-Workflow).
 
@@ -88,7 +88,7 @@ Coding Conventions
 See the manual for proper coding style: `Coding conventions <https://github.com/OpenMS/OpenMS/wiki/Coding-conventions>`_
 also see: `C++ Guide <http://https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide>`_
 
-See the `manual` <https://github.com/OpenMS/OpenMS/wiki/NewBuildUnit>`_ for creating a new build unit (to be completed)
+See the `manual <https://github.com/OpenMS/OpenMS/wiki/NewBuildUnit>`_ for creating a new build unit (to be completed)
 
 We automatically test for common coding convention violations using a modified version of cpplint.
 Style testing can be enabled using CMake options. We also provide a configuration file for Uncrustify for automated style corrections (see "tools/uncrustify.cfg").
@@ -104,7 +104,7 @@ Automated Unit Tests
 ********************
 We perform nightly test runs on different platforms. Even if everything compiled well on your machine and all tests passed, please check if you broke another platform on the next day.
 
-Nightly tests: `CDASH <http://cdash.openms.de/index.php?project=OpenMS>'_
+Nightly tests: `CDASH <http://cdash.openms.de/index.php?project=OpenMS>`_
 
 Further developer resources
 ***************************
