@@ -240,7 +240,7 @@ On Windows, Visual Studio solution files are automatically build with the /MP fl
 Release
 *******
 
-see 'Preparation-of-a-new-OpenMS-release <https://github.com/OpenMS/OpenMS/wiki/Preparation-of-a-new-OpenMS-release>`_
+see `Preparation-of-a-new-OpenMS-release <https://github.com/OpenMS/OpenMS/wiki/Preparation-of-a-new-OpenMS-release>`_
 
 Continuous integration
 **********************
@@ -258,7 +258,9 @@ The first thing to try is to simply restart travis, it sometimes hangs and since
 
 Since we use extensive caching, the build may take much longer when many files are touched and may never complete in that case (running into the travis time limit). In that case we can rebuild the cache using the following approach:
 
-``$ git cherry-pick 89c5cd7f2d9d343b3d63fc6bab18e08dcd969c05
+..code:: console
+
+$ git cherry-pick 89c5cd7f2d9d343b3d63fc6bab18e08dcd969c05
 
 $ git push origin develop
 
