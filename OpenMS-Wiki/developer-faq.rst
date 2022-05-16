@@ -160,8 +160,8 @@ This happens whenever the Build-System calls `CMake` (which can be quite often, 
 How do I add a new class MyClass to the build system?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-# Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in src/<sub-project>/include/OpenMS and the cpp file in src/<sub-project>/source, e.g., src/openms/include/OpenMS/FORMAT/NewFileFormat.h and src/openms/source/FORMAT/NewFileFormat.cpp.
-# Add both to the respective sources.cmake file in the same directory (e.g., src/openms/source/FORMAT/ and src/openms/include/OpenMS/FORMAT/).
-# Add the corresponding class test to src/tests/class_tests/<sub-project>/ (e.g., src/tests/class_tests/openms/source/NewFileFormat_test.cpp).
-# Add the test to the executables.cmake file in the test folder (e.g., src/tests/class_tests/openms/executables.cmake).
-# Add them to git git add.
+#. Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in src/<sub-project>/include/OpenMS and the cpp file in src/<sub-project>/source, e.g., src/openms/include/OpenMS/FORMAT/NewFileFormat.h and src/openms/source/FORMAT/NewFileFormat.cpp.
+#. Add both to the respective sources.cmake file in the same directory (e.g., src/openms/source/FORMAT/ and src/openms/include/OpenMS/FORMAT/).
+#. Add the corresponding class test to src/tests/class_tests/<sub-project>/ (e.g., src/tests/class_tests/openms/source/NewFileFormat_test.cpp).
+#. Add the test to the executables.cmake file in the test folder (e.g., src/tests/class_tests/openms/executables.cmake).
+#. Add them to git git add.
