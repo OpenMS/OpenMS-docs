@@ -4,7 +4,7 @@ Developer FAQ
 
 This FAQ (formerly called Internal FAQ) is intended for developers. Note that some actions require special permissions like e.g. updating the website.
 
-..content:: What's on this page
+.. content:: What's on this page
 
 Troubleshooting
 ***************
@@ -30,7 +30,7 @@ I am new to OpenMS. What should I do first?
 What is the difference between an OpenMS tool and util?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A tool starts its lifecycle in UTILS and may exist without beeing thoroughly tested. Tools may be promoted from UTILS to TOOLS if they are stable enough, are fully tested, fully documented and a test workflow exists.
+A tool starts its lifecycle in UTILS and may exist without being thoroughly tested. Tools may be promoted from UTILS to TOOLS if they are stable enough, are fully tested, fully documented and a test workflow exists.
 
 I have written a class for OpenMS I want to contribute. What should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,7 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 * The class and all the members must be documented thoroughly.
 * You can check your code with the tool `tools/checker.php`. Call `php tools/checker.php` for detailed instructions.
 
-Please open a pull request and follow the `checklist <https://github.com/OpenMS/OpenMS/wiki/Pull-Request-Checklist>`_
+Please open a pull request and follow the `checklist <https://github.com/OpenMS/OpenMS/wiki/Pull-Request-Checklist>`_.
 
 How do I update the `openms.de <https://www.openms.de website>`_?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,5 +75,89 @@ What is cmake?
 ^^^^^^^^^^^^^^
 
 CMake builds BuildSystems for different platforms, e.g. VisualStudio Solutions on Windows, Makefiles on Linux etc.
-This allows us to define in one central location (namely CMakeLists.txt) how OpenMS is build and have the platform specific stuff handled by CMake. 
+This allows us to define in one central location (namely CMakeLists.txt) how OpenMS is build and have the platform specific stuff handled by CMake.
 See http://www.cmake.org for more information.
+
+How do I use cmake?
+^^^^^^^^^^^^^^^^^^^
+
+See Installation instructions for your platform.
+In general, you call `CMake(.exe)`` with some parameters to create the native build-system.
+Afterwards you can (but usually don't have to edit the current configuration using a GUI named `ccmake` (or `CMake-GUI` in Windows), which ships with CMake).
+Note: whenever `ccmake` is mentioned in this document, substitute this by `CMake-GUI` if your OS is Windows. You can also edit the `CMakeCache.txt` file directly.
+
+How do I generate a build-system for Eclipse, KDevelop, CodeBlocks etc?!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Type `cmake` into a console. This will list the available code generators available on your platform, which you can pass to `CMake` using the `-G` option.
+
+What are user definable cMake cache variables?!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+They allow the user to pass options to `CMake` which will influence the build system. The most important option which should be given when calling `CMake.exe` is:
+
+`CMAKE_FIND_ROOT_PATH`, which is where `CMake` will search for additional libraries if they are not found in the default system paths. By default we add `OpenMS/contrib`.
+
+If your have installed all libraries on your system already there is no need to change `CMAKE_FIND_ROOT_PATH`. If you need the `contrib` folder, you will need to set this variable.
+On Windows, you always need the `contrib` folder, as there are no system developer packages. To pass this variable to `CMake` use the `-D` switch e.g. `cmake -D CMAKE_FIND_ROOT_PATH:PATH="D:\\somepath\\contrib"`.
+Everything else can be edited using `ccmake` afterwards.
+
+The following options are of interest:
+
+* `CMAKE_BUILD_TYPE` Define if you want to build Debug or Release version of OpenMS. Release is the default.
+
+* `CMAKE_FIND_ROOT_PATH` The path to the `contrib` libraries. Note that you can also provide more then one value here (e.g., `-D CMAKE_FIND_ROOT_PATH="/path/to/contrib;/usr/"` will search in your `contrib` path and in `/usr` for the required libraries)
+
+* `STL_DEBUG` Enables STL debug mode.
+
+* `DB_TEST` (deprecated) Enables database testing.
+
+* `QT_DB_PLUGIN` (deprecated) Defines the db plugin used by Qt.
+
+* `MT_CUDA_BUILD_TYPE` ...
+
+Their description will be displayed when you call ccmake.
+
+Can I use another solver than GLPK?!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yes, but by default the build system only links against GLPK (this is how OpenMS binary packages must be build!).
+To use another solver try `cmake ... -D USE_COINOR=1 ....` and look at the documentation of the `LPWrapper` class.
+
+How do I switch to Debug/Release configuration?!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Makefile generators (typically on Linux) you can set the `CMAKE_BUILD_TYPE` variable to either Debug or Release by calling `ccmake`.
+For Visual Studio, this is not necessary as all configurations are generated and you can choose the one you like within the IDE itself.
+The 'Debug' configuration enabled debug information. The 'Release' configuration disables debug information and enables optimization.
+
+I changed the contrib path, but re-running CMake won't change the library paths?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once a library is found and its location is stored in a cache variable, it will only be searched again if the corresponding entry in the cache file is set to false.
+You can simply delete the `CMakeCache.txt`, but all other custom settings will be lost as well.
+
+What are the most useful (make) targets?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In Visual Studio you can see all targets on the left. For Makefiles type make help. However, this list is quite long.
+The most useful targets will be shown to you by calling the targets target, i.e. make targets.
+
+CMake can't seem to find a Qt library (usually QtCore)! What now?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`CMake` finds QT by looking for `qmake` in your PATH or for the Environment Variable `QTDIR`! Set these accordingly.
+If the problem still persists: do you have a second installation of Qt (especially the MinGW version?)? This might lead `CMake` to the wrong path (it's searching for the `Qt*.lib` files).
+You should only move/delete the offending Qt version if you know what you are doing!
+ A save workaround is to edit the `CMakeCache` file (e.g. via `ccmake`) and set all paths relating to QT (e.g. `QT_LIBRARY_DIR`) manually.
+
+(Windows) What version of Visual Studio should I use?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use the latest if you can. Get the latest `CMake`, as its generator needs to support your VS. If your VS is too new and there is no `CMake` for that yet, you're gonna be faced with a lot of conversion issues.
+This happens whenever the Build-System calls `CMake` (which can be quite often, e.g., after changes to `CMakeLists.txt`).
+
+How do I add a new class MyClass to the build system?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#
