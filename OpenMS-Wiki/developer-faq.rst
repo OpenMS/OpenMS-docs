@@ -4,7 +4,7 @@ Developer FAQ
 
 This FAQ (formerly called Internal FAQ) is intended for developers. Note that some actions require special permissions like e.g. updating the website.
 
-.. content:: What's on this page
+.. contents:: What's on this page
 
 Troubleshooting
 ***************
