@@ -284,4 +284,263 @@ All source files added to an IDE are associated with their targets. You can find
 How can I easily update a lot of test files (e.g., after a small format change in result files)?
 _________________________________________________________________________________________________
 
-Using grep one can simply extract the lines starting with diff FILENAME1 FILENAME2 and replace the diff by copy.
+Using ``grep`` one can simply extract the lines starting with ``diff FILENAME1 FILENAME2`` and replace the ``diff`` by ``copy``.
+
+Visual Studio:
+^^^^^^^^^^^^^^
+
+I'm getting the error "Error C2471: cannot update program database".
+_____________________________________________________________________
+
+This is a bug in Visual Studio and there is a bugfix: http://code.msdn.microsoft.com/KB946040 Only apply it if you encounter the error. The bugfix might have unwanted side effects!
+
+
+Visual Studio can't read the clang-format file.
+_______________________________________________
+
+Depending on the Visual Studio version you're using you might get an error like "Error while formating with ClangFormat!". This is because Visual Studio is using an outdated version of clang-format. Unfortunately there is no easy way to update this using Visual Studio itself.
+There is a plugin provided by LLVM designed to fix this exact problem, but the plugin doesn't work with every Visual Studio version. However, you can update clang-format by hand using the pre-build clang-format binary. Both the binary and a link to the plugin can be found here: https://llvm.org/builds/.
+To update clang-format by hand just download the binary and exchange it with the clang-format binary in your Visual Studio folder.
+For Visual Studio 17 and 19 it should be located at: ``C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\Llvm\bin``.
+
+Eclipse CDT:
+^^^^^^^^^^^^
+
+The indexer gets stuck at some file which ``#includes seqan``
+_____________________________________________________________
+
+It seems that SeqAn code is just too confusing for older eclipse C++ indexers. You should upgrade to eclipse galileo (CDT 6.0.x). Also, increase the available memory limit in eclipse.ini, e.g. -Xmx1024m for one gig.
+
+
+The parser is confused after OPENMS_DLLAPI and does not recognize standard C++ headers
+______________________________________________________________________________________
+
+Go to ``Project -> Properties -> C/C++ Include Paths and Preprocessor Symbols -> Add Preprocessor symbol -> "OPENMS_DLLAPI="``. This tells eclipse that the macro is defined empty. In the same dialog you can also add an external include path to e.g. ``/usr/include/c++/4.3.3/``, etc. The issue with C++ headers was fixed in the latest galileo release.
+
+Hints to resolve the OPENMS_DLLAPI issue using the ``cmake`` generator are welcome!
+
+Debugging
+*********
+
+How do I run a single test?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can can execute an OpenMS class test using the CTest regular expressions:
+
+.. code:: bash
+
+ > ctest -V -R "^<class>_test"
+
+ # To build a class test, you simply call the respective make target in ./source/TEST:
+
+ > make <class>_test
+
+To run a TOPP test, you can use:
+
+.. code:: bash
+
+ > ctest -V -R "TOPP_<tool>"
+
+To build the tool, use:
+
+.. code:: bash
+ > make <tool>
+
+How do I debug uncaught exceptions?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There is a mechanism to have a core dumped if an uncaught exception occurs.
+
+To enable it, the environment variable ``OPENMS_DUMP_CORE`` has to be set.
+
+Each time an uncaught exception occurs, the ``OPENMS_DUMP_CORE`` variable is checked and a segmentation fault is caused, if it is set.
+
+(Linux) Why is no core dumped, although a fatal error occured?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Try the ``ulimit -c`` unlimited command. It sets the maximum size of a core to unlimited.
+
+Note: We observed that, on some systems, no core is dumped even if the size of the core file is set to unlimited. We are not sure what causes this problem
+
+(Linux) How can I set breakpoints in gdb to debug OpenMS?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Imagine you want to debug the TOPPView application and you want it to stop at line 341 of
+
+.. code:: bash
+ SpectrumMDIWindow.C.
+ Run gdb:
+ shell> gdb TOPPView
+
+Start the application (and close it):
+
+.. code:: bash
+ gdb> run [arguments]
+
+Set the breakpoint:
+
+.. code:: bash
+ gdb> break SpectrumMDIWindow.C:341
+
+Start the application again (with the same arguments):
+
+.. code:: bash
+ gdb> run
+
+How can I find out which shared libraries are used by an application?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Linux: ``ldd``
+
+Windows (Visual studio console): Try "Dependency Walker" (http://www.dependencywalker.com/) (use x86 for 32bit builds and the x64 version for 64bit builds. Using the wrong version of depends.exe will give wrong results!) or ``dumpbin /DEPENDENTS OpenMS.dll``.
+
+How can I get a list of the symbols defined in a (shared) library or object file?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Linux: ``nm <library>``
+
+Use ``nm -C`` to switch on demangling of low-level symbols into their C++-equivalent names. ``nm`` also accepts .a and .o files.
+
+Windows (Visual studio console): ``dumpbin /ALL <library>``
+
+You can use dumpbin on object files (.o) or (shared) library files (.lib) or the DLL itself e.g. ``dumpbin /EXPORTS OpenMS.dll``.
+
+Cross-platform thoughts
+***********************
+
+OpenMS runs on three major platforms, each one having its own ways of doing things. Here are the most prominent causes of "it runs on Platform A, but not on B. What now?"
+
+Reading/Writing binary files causes different behaviour ... Usually Linux does not make a difference between text-mode and binary-mode when reading files. This is quite different on Windows as some bytes are interpreted as EOF, which lead might to a premature end of the reading process.
+
+Thus, if reading binary files make sure that you explicitly state that the file is binary when opening it!
+
+During writing in text-mode on windows a line-break (\n) is expanded to (\r\n). Keep this in mind or use the eol-style property of subversion to ensure that line endings are correctly checked out on non-Windows systems.
+
+``unsigned int`` vs ``size_t`` (UInt and Size) UInt and Size are the same on Linux GCC (i.e. both have the same size, 32bit on 32bit systems, 64bit on 64 bit systems), however on Windows this only holds for 32bit. On a 64bit Windows the UInt type is still 32bit, Size is (obviously) 64bit. This might lead to warnings (at best) or overflows and other nasty stuff.
+So make sure you do not rely on UInt being equal to Size - because they're not.
+
+Paths and system functions...
+
+This is trivial but hardcoding something like ``String tmp_dir = "/tmp";`` is a big no-no! This must fail on Windows! Use Qt's QDir to get a path to the systems temporary directory if required.
+
+Also calling things like uname which are only available on Linux: don't!
+
+When working with files or directories, it is usually safe to use "/" on all platforms. Even Windows understands that. Take care of spaces in directory names though. You should always quote paths if they are used in a system call to ensure that the subsequent interpreter takes the spaced path as a single entity.
+
+
+PyOpenMS - Trouble shooting
+***************************
+
+How can I wrap my new method with PyOpenMS?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You will have to add an entry to ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` with the signature of your new method(s).
+
+How can I wrap my new class with PyOpenMS?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You will have to create a new file ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` which is explained `here <https://github.com/OpenMS/OpenMS/wiki/pyOpenMS#--wrapping-classes>`_.
+
+My method has multiple outputs. Can I use output parameters? I have trouble wrapping them for pyOpenMS.
+*******************************************************************************************************
+
+Python does not support passing primitive types (int, double etc) by reference, there fore void calculate(double &) will not work.
+
+Doxygen documentation
+*********************
+
+Where can I find the definition of the main page?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``OpenMS/doc/doxygen/public/Main.doxygen``
+
+Where can I add a new module?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``OpenMS/doc/doxygen/public/Modules.doxygen``
+
+How is the parameter documentation for classes derived from DefaultParamHandler created?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You have to add your class to the program ``OpenMS/doc/doxygen/parameters/DefaultParamHandlerDocumenter.cpp``. This program generates a html table with the parameters. This table can then be included in the class documentation using the following ``doxygen`` command:
+
+
+``@htmlinclude OpenMS_<class name>.parameters``
+
+
+Note that parameter documentation is automatically generated for ``TOPP/UTILS`` included in the static ``ToolHandler.cpp`` tools list. To include TOPP/UTILS parameter documentation use following ``doxygen`` command:
+
+
+``@htmlinclude TOPP_<tool name>.parameters``
+
+or
+
+``@htmlinclude UTILS_<tool name>.parameters``
+
+You can test if everything worked by calling make doc_param_internal. The parameters documentation is written to ``OpenMS/doc/doxygen/parameters/output/``.
+
+
+How is the command line documentation for TOPP/UTILS tools created?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The program ``OpenMS/doc/doxygen/parameters/TOPPDocumenter.cpp`` creates the command line documentation for all classes that are included in the static ``ToolHandler.cpp`` tools list. It can be included in the documentation using the following ``doxygen`` command:
+
+``@verbinclude TOPP_<tool name>.cli``
+
+You can test if everything worked by calling ``make doc_param_internal``. The command line documentation is written to ``OpenMS/doc/doxygen/parameters/output/``.
+
+What are the important files for adding a new tutorial section?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OpenMS tutorial:
+
+* ``OpenMS/doc/OpenMS_tutorial/refman_overwrite.tex.in`` (for PDF tutorials)
+* ``OpenMS/doc/doxygen/public/OpenMS_Tutorial_html.doxygen~`` (for html tutorials)
+
+TOPP and TOPPView tutorial:
+
+* ``OpenMS/doc/TOPP_tutorial/refman_overwrite.tex.in`` (for PDF tutorials)
+* ``OpenMS/doc/doxygen/public/TOPP_Tutorial_html.doxygen`` (for html tutorials)
+
+Bug fixes
+*********
+
+How to contribute a bugfix?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Submit the bug as a GitHub issue.
+#. Create a feature branch (e.g. ``feature/fix_missing_filename_issue_615``) from your (up-to-date) develop branch in your fork of OpenMS.
+#. Fix the bug and add a test.
+#. Create a pull request for your branch.
+#. After approval and merge make sure the issue is closed.
+
+How can I profile my code?
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Try IBM's profiler, available for all platforms (and free for academic use): Purify(Plus) and/or Quantify.
+
+Windows: this is directly supported by Visual Studio (Depending on the edition: Team and above). Follow their documentation.
+
+Linux:
+
+* Build OpenMS in debug mode (set CMAKE_BUILD_TYPE to 'Debug').
+* Call the executable with valgrind: 'valgrind –tool=callgrind ' Note: other processes running on the same machine can influence the profiling. Make sure your application gets enough resources (memory, CPU time).
+* You can start and stop the profiling while the executable is running e.g. to skip initialization steps:
+* Start valgrind with the option –instr-atstart=no.
+* Call 'callgrind -i [on|off]' to start/stop the profiling.
+* The output can be viewed with 'kcachegrind callgrind.out.'
+
+(Linux) How do I check my code for memory leaks?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Build OpenMS in debug mode (set ``CMAKE_BUILD_TYPE`` to ``Debug``).
+* Call the executable with ``valgrind: valgrind --suppressions=OpenMS/tools/valgrind/openms_external.supp –leak-check=full <executable> <parameters>``.
+
+Common errors are:
+
+* ``'Invalid write/read ...'`` - Violation of container boundaries.
+* ``'... depends on uninitialized variable'`` - Uninitialized variables:
+* ``'... definitely lost'`` - Memory leak that has to be fixed
+* ``'... possibly lost'`` - Possible wemory leak, so have a look at the code
+
+For more information see the valgrind documentation at http://valgrind.org/docs/manual/.
