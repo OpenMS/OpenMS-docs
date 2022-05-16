@@ -260,15 +260,15 @@ Since we use extensive caching, the build may take much longer when many files a
 
 .. code:: console
 
-$ git cherry-pick 89c5cd7f2d9d343b3d63fc6bab18e08dcd969c05
+ $ git cherry-pick 89c5cd7f2d9d343b3d63fc6bab18e08dcd969c05
 
-$ git push origin develop
+ $ git push origin develop
 
-# Now wait for the build to complete
+ # Now wait for the build to complete
 
-$ git revert 89c5cd7f2d9d343b3d63fc6bab18e08dcd969c05
+ $ git revert 89c5cd7f2d9d343b3d63fc6bab18e08dcd969c05
 
-$ git push origin develop``
+ $ git push origin develop
 
 Working in IDE's
 ****************
