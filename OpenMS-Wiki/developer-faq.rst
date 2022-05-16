@@ -44,7 +44,7 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 
 Please open a pull request and follow the `checklist <https://github.com/OpenMS/OpenMS/wiki/Pull-Request-Checklist>`_.
 
-How do I update the `openms.de <https://www.openms.de website>`_?
+How do I update the `openms.de <https://www.openms.de website>`_ website?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Login to the wordpress admin area at www.openms.de/wp-admin with your username and password assigned by the current Homepage maintainers.
@@ -149,7 +149,7 @@ CMake can't seem to find a Qt library (usually QtCore)! What now?
 `CMake` finds QT by looking for `qmake` in your PATH or for the Environment Variable `QTDIR`! Set these accordingly.
 If the problem still persists: do you have a second installation of Qt (especially the MinGW version?)? This might lead `CMake` to the wrong path (it's searching for the `Qt*.lib` files).
 You should only move/delete the offending Qt version if you know what you are doing!
- A save workaround is to edit the `CMakeCache` file (e.g. via `ccmake`) and set all paths relating to QT (e.g. `QT_LIBRARY_DIR`) manually.
+A save workaround is to edit the `CMakeCache` file (e.g. via `ccmake`) and set all paths relating to QT (e.g. `QT_LIBRARY_DIR`) manually.
 
 (Windows) What version of Visual Studio should I use?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,4 +160,8 @@ This happens whenever the Build-System calls `CMake` (which can be quite often, 
 How do I add a new class MyClass to the build system?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#
+# Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in src/<sub-project>/include/OpenMS and the cpp file in src/<sub-project>/source, e.g., src/openms/include/OpenMS/FORMAT/NewFileFormat.h and src/openms/source/FORMAT/NewFileFormat.cpp.
+# Add both to the respective sources.cmake file in the same directory (e.g., src/openms/source/FORMAT/ and src/openms/include/OpenMS/FORMAT/).
+# Add the corresponding class test to src/tests/class_tests/<sub-project>/ (e.g., src/tests/class_tests/openms/source/NewFileFormat_test.cpp).
+# Add the test to the executables.cmake file in the test folder (e.g., src/tests/class_tests/openms/executables.cmake).
+# Add them to git git add.

@@ -16,7 +16,7 @@ If you would like to contribute to OpenMS, this is how to best get started:
 
 OpenMS tutorial for developers
 ******************************
-Please read the `OpenMS tutorial for developers <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html>`_)
+Please read the `OpenMS tutorial for developers <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html>`_
 which contains general information about the structure of OpenMS, the concepts
 behind it and example code.
 
