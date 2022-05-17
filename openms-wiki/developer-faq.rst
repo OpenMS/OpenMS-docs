@@ -440,7 +440,7 @@ You will have to add an entry to ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` with the s
 How can I wrap my new class with PyOpenMS?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You will have to create a new file ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` which is explained `here <pyopenms-wrapping-classes.md>`_.
+You will have to create a new file ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` which is explained `here <https://pyopenms.readthedocs.io/en/latest/wrap_classes.html?highlight=Wrapping%20classes#wrapping-workflow-and-wrapping-new-classes>`_.
 
 My method has multiple outputs. Can I use output parameters? I have trouble wrapping them for pyOpenMS.
 *******************************************************************************************************
