@@ -42,7 +42,7 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 * The class and all the members must be documented thoroughly.
 * You can check your code with the tool  ``tools/checker.php``. Call ``php tools/checker.php`` for detailed instructions.
 
-Please open a pull request and follow the `checklist <https://github.com/OpenMS/OpenMS/wiki/Pull-Request-Checklist>`_.
+Please open a pull request and follow the `checklist <pull-request-checklist.md>`_.
 
 How do I update the `openms.de <https://www.openms.de website>`_ website?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,7 +160,7 @@ This happens whenever the Build-System calls ``CMake`` (which can be quite often
 How do I add a new class MyClass to the build system?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in ``src/<sub-project>/include/OpenMS`` and the cpp file in ``src/<sub-project>/source``, e.g., src/openms/include/OpenMS/FORMAT/NewFileFormat.h and src/openms/source/FORMAT/NewFileFormat.cpp.
+#. Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in ``src/<sub-project>/include/OpenMS`` and the cpp file in ``src/<sub-project>/source``, e.g., ``src/openms/include/OpenMS/FORMAT/NewFileFormat.h`` and ``src/openms/source/FORMAT/NewFileFormat.cpp``.
 #. Add both to the respective sources.cmake file in the same directory (e.g., ``src/openms/source/FORMAT/`` and ``src/openms/include/OpenMS/FORMAT/``).
 #. Add the corresponding class test to src/tests/class_tests/<sub-project>/ (e.g., ``src/tests/class_tests/openms/source/NewFileFormat_test.cpp``).
 #. Add the test to the ``executables.cmake`` file in the test folder (e.g., ``src/tests/class_tests/openms/executables.cmake``).
@@ -241,7 +241,7 @@ On Windows, Visual Studio solution files are automatically build with the /MP fl
 Release
 *******
 
-see `Preparation-of-a-new-OpenMS-release <https://github.com/OpenMS/OpenMS/wiki/Preparation-of-a-new-OpenMS-release>`_
+see `Preparation-of-a-new-OpenMS-release <preparation-of-a-new-openms-release.md>`_
 
 Continuous integration
 **********************
@@ -440,7 +440,7 @@ You will have to add an entry to ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` with the s
 How can I wrap my new class with PyOpenMS?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You will have to create a new file ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` which is explained `here <https://github.com/OpenMS/OpenMS/wiki/pyOpenMS#--wrapping-classes>`_.
+You will have to create a new file ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` which is explained `here <pyopenms-wrapping-classes.md>`_.
 
 My method has multiple outputs. Can I use output parameters? I have trouble wrapping them for pyOpenMS.
 *******************************************************************************************************
@@ -524,12 +524,12 @@ Windows: this is directly supported by Visual Studio (Depending on the edition: 
 
 Linux:
 
-* Build OpenMS in debug mode (set CMAKE_BUILD_TYPE to 'Debug').
-* Call the executable with valgrind: 'valgrind –tool=callgrind ' Note: other processes running on the same machine can influence the profiling. Make sure your application gets enough resources (memory, CPU time).
+* Build OpenMS in debug mode (set ``CMAKE_BUILD_TYPE`` to ``Debug``).
+* Call the executable with valgrind: ``valgrind –tool=callgrind``. Note: other processes running on the same machine can influence the profiling. Make sure your application gets enough resources (memory, CPU time).
 * You can start and stop the profiling while the executable is running e.g. to skip initialization steps:
-* Start valgrind with the option –instr-atstart=no.
-* Call 'callgrind -i [on|off]' to start/stop the profiling.
-* The output can be viewed with 'kcachegrind callgrind.out.'
+* Start valgrind with the option ``–instr-atstart=no``.
+* Call ``callgrind -i [on|off]`` to start/stop the profiling.
+* The output can be viewed with ``kcachegrind callgrind.out``.
 
 (Linux) How do I check my code for memory leaks?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
