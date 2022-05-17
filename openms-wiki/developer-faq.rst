@@ -20,7 +20,7 @@ General information
 I am new to OpenMS. What should I do first?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Check out the developement version of OpenMS (see website).
+* Check out the development version of OpenMS (see website).
 * Try and build OpenMS according to the installation instructions.
 * Read the OpenMS Coding Convention.
 * Read the OpenMS Tutorial.
