@@ -6,7 +6,7 @@ To contribute to OpenMS, you should:
 
 * Familiarize yourself with our [online documentation] (https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
 
-* Learn how to [build OpenMS] (https://github.com/OpenMS/OpenMS/wiki/Building-OpenMS).
+* Learn how to [build OpenMS] (building-openms.md).
 
 * Start reading the [OpenMS tutorial for developers] (https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
@@ -24,7 +24,7 @@ See the documentation for the nightly snapshot of [develop] (https://abibuilder.
 
 See the documentation for the latest [release] (https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html) ([doxygen log] (https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_release_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log)).
 
-## Development model
+## Development Model
 
 OpenMS follows the Gitflow development workflow that [this post] (http://nvie.com/posts/a-successful-git-branching-model) excellently describes. We encourage every developer (even if they are eligible to push directly to OpenMS) to create their fork (e.g. @username). The GitHub people provide excellent documentation on [forking] (https://help.github.com/articles/fork-a-repo) and how to keep your [fork up-to-date] (https://help.github.com/articles/syncing-a-fork). With your fork, follow the Gitflow development model directly, but instead of merging into "develop" in your fork, open a [pull request ](https://help.github.com/articles/using-pull-requests). Before opening the pull request, please check the [checklist](https://github.com/OpenMS/OpenMS/wiki/Pull-Request-Checklist).
 
@@ -52,9 +52,9 @@ We perform nightly test runs on different platforms. Even if everything compiled
 
 Nightly tests: [CDASH] (http://cdash.openms.de/index.php?project=OpenMS)
 
-## Further developer resources
+## Further Developer Resources
 
-### Guidelines for the addition of new dependency libraries
+### Guidelines for the Addition of New Dependency Libraries
 
 See [here] (https://github.com/OpenMS/OpenMS/wiki/Developer-Guidelines-for-adding-new-dependent-libraries).
 
@@ -64,7 +64,7 @@ We automatically build installers for different platforms. These usually contain
 
 The nightly (unstable) installers are available [here] (https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
 
-### Developer FAQ (formerly Internal FAQ)
+### Developer FAQ (Formerly Internal FAQ)
 
 The [FAQ] (requires link) for developers is currently expanded and might contain answers to your questions.
 
