@@ -1,4 +1,4 @@
-# Building OpenMS
+# Build OpenMS
 
 To build OpenMS, please follow the build instructions:
 
