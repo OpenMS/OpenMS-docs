@@ -4,3 +4,4 @@ furo
 sphinx-copybutton
 myst-parser
 sphinx-notfound-page
+sphinxcontrib-images
