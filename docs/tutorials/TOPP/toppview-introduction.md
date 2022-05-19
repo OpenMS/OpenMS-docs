@@ -10,4 +10,4 @@ datasets as well as displaying input data and output data of an algorithm togeth
 TOPPView is intended for visual inspection of the data by experimentalists as well as for analysis software by
 developers.
 
-![](OpenMS-docs/assets/images/tutorials/topp/TOPPView_parts.png)
+![](../../images/tutorials/topp/TOPPView_parts.png)

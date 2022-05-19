@@ -23,4 +23,4 @@ good values, consider changing the advanced parameter `fwhm_lower_bound_factor` 
 The following image shows a part of the spectrum with the picked peaks shown in green,  the estimated peak width in the
 log window and the measured peak width.
 
-![](../images/tutorials/topp/TOPPView_tools_pp_picked.png)
+![](../../images/tutorials/topp/TOPPView_tools_pp_picked.png)

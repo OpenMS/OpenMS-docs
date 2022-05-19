@@ -28,4 +28,4 @@ traces, a tolerated mass deviation between isotopic peaks has to be set (`isotop
 The image shows the centroided peak data and the found peptide features. The used parameters can be found in the TOPP
 tools dialog.
 
-![](../images/tutorials/topp/TOPPView_tools_ff_centroided.png)
+![](../../images/tutorials/topp/TOPPView_tools_ff_centroided.png)

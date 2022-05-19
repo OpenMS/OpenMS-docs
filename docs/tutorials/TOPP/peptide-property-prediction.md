@@ -63,5 +63,3 @@ In this example the proteins are digested in silico and the non proteotypic pept
 proteotypic peptides from the set of all possible peptides. Then, train PTModel:
 
 `PTModel -in_positive PT.idXML -in_negative NonPT.idXML -out PT.model -ini PT.ini`
-
-

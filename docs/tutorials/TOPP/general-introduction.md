@@ -73,7 +73,7 @@ command line flag `-help`. Some TOPP tools also have subsections of parameters t
 algorithm. The documentation of these subsections is not displayed with `–help`. It is however displayed in
 **INIFileEditor**.
 
-![](../images/tutorials/topp/INIFileEditor.png)
+![](../../images/tutorials/topp/INIFileEditor.png)
 
 In the [INIFileEditor](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_INIFileEditor.html), click on the respective parameter, the documentation of the parameters is displayed in the window at the bottom.
 

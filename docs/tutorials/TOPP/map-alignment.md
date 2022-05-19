@@ -9,7 +9,7 @@ corrects for shifted and scaled retention times, which may result from changes o
 The different **MapAligner** tools take `n` input maps, de-warp them and store the `n` de-warped maps. The following
 image shows the general procedure:
 
-![](../images/tutorials/topp/TOPP_alignment.png)
+![](../../images/tutorials/topp/TOPP_alignment.png)
 
 There are different map alignment tools available. The following table gives a rough overview of them:
 

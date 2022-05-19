@@ -51,7 +51,7 @@ annotations and text labels have been added by right-clicking peaks and selectin
 clicking anywhere and selecting `Add Label`, respectively. Multiple annotations can be selected by holding down the
 `CTRL` key while clicking them. They can be moved around by dragging the mouse and deleted by pressing `DEL`.
 
-![](../images/tutorials/topp/TOPPView_1D.png)
+![](../../images/tutorials/topp/TOPPView_1D.png)
 
 Throught the **context menu**: of the 1D view you can:
 
@@ -70,7 +70,7 @@ layer individually.
 
 The following example image shows a small section of a peak map and the detected features in a second layer.
 
-![](../images/tutorials/topp/Plot2DWidget.png)
+![](../../images/tutorials/topp/Plot2DWidget.png)
 
 In addition to the normal top-down view, the 2D view can display the projections of the data to the `m/z` and `RT` axis.
 This feature is mainly used to assess the quality of a feature without opening the data region in 3D view.
@@ -93,7 +93,7 @@ layer individually.
 
 The following example image shows a small region of a peak map:
 
-![](../images/tutorials/topp/Plot3DWidget.png)
+![](../../images/tutorials/topp/Plot3DWidget.png)
 
 Through the **context menu**: of the 3D view you can:
 

@@ -7,8 +7,8 @@ adapted (blue rectangle). For the `Savitzky-Golay` set the frame length and the 
 For the Gaussian filter the gaussian width and the ppm tolerance for a flexible gaussian width depending on the `m/z`
 value can be adapted. Press `Ok` to run the selected `NoiseFilter`.
 
-![](../images/tutorials/topp/TOPPView_tools_noisefilter.png)
+![](../../images/tutorials/topp/TOPPView_tools_noisefilter.png)
 
 The following image shows a part of the spectrum after smoothing as red line with the un-smoothed data in green.
 
-![](../images/tutorials/topp/TOPPView_tools_noisefilter_filtered.png)
+![](../../images/tutorials/topp/TOPPView_tools_noisefilter_filtered.png)

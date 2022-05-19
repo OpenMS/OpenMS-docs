@@ -4,7 +4,7 @@ Display Modes and View Options in TOPPView
 All of the views support several display modes and view options.
 Display modes determine how intensities are displayed. View options configure the view.
 
-![](OpenMS-docs/assets/images/tutorials/topp/TOPPView_icons.png)
+![](../../images/tutorials/topp/TOPPView_icons.png)
 
 # Display Modes
 

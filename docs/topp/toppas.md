@@ -11,9 +11,9 @@ up and saved, a workflow can also be run without the GUI using the `ExecutePipel
 
 The following figure shows a simple example pipeline that has just been created and executed successfully:
 
-![](../images/topp/TOPPAS_simple_example.png)
+![](../../images/topp/TOPPAS_simple_example.png)
 
-More information about TOPPAS can be found in the [TOPPAS tutorial](../tutorials/TOPP/TOPPAS-tutorial.md).
+More information about TOPPAS can be found in the [TOPPAS tutorial](../../tutorials/TOPP/TOPPAS-tutorial.md).
 
 The command line parameters of this tool are:
 

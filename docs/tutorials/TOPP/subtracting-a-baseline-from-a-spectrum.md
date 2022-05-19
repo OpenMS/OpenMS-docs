@@ -8,9 +8,9 @@ between different types of filters (green rectangle), the one mainly used is Top
 the length of the structuring element (blue rectangle). The default value is `3` Thomson. Press `OK` to start the baseline
 subtraction.
 
-![](../images/tutorials/topp/TOPPView_tools_baseline.png)
+![](../../images/tutorials/topp/TOPPView_tools_baseline.png)
 
 The following image shows a part of the spectrum after baseline filtering as green line, the original raw data is shown
 by the blue line.
 
-![](../images/tutorials/topp/TOPPView_tools_baseline_filtered.png)
+![](../../images/tutorials/topp/TOPPView_tools_baseline_filtered.png)

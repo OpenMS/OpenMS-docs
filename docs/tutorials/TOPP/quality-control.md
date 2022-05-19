@@ -10,7 +10,7 @@ then be processed using custom scripts or via the R package (see [github:cbielow
 
 ## Workflow
 
-![](../images/tutorials/topp/TOPP_qualitycontrol.png)
+![](../../images/tutorials/topp/TOPP_qualitycontrol.png)
 
 An example workflow can be found in `OpenMS/share/OpenMS/examples/TOPPAS/QualityControl.toppas`.
 
