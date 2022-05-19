@@ -6,14 +6,14 @@ information, consult [OpenMS documentation]().
 
 ## What is OpenMS
 
-[OpenMS](https://www.openms.de/) is a free, open-source C++ library with Python bindings. It is commonly used for liquid
+[OpenMS.org](https://www.openms.de/) is a free, open-source C++ library with Python bindings. It is commonly used for liquid
 chromatography-mass spectrometry (LC-MS) data management and analyses. OpenMS provides an infrastructure for the rapid
 development of mass spectrometry related software as well as a rich toolset built on top of it. OpenMS is available
 under the three clause BSD licence and runs under Windows, macOS, and Linux operating systems.
 
 ## Background
 
-Before using [OpenMS](https://www.openms.de/), you need to be familiar with the following terms:
+Before using [OpenMS.org](https://www.openms.de/), you need to be familiar with the following terms:
 
 | Tool and Utilities | Description |
 |--------------------|-------------|
@@ -42,9 +42,9 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 2. **Command line**: Very basic parameters can be set on the command line, e.g. `FileFilter -rt 1000:2000 .....`
 3. Doing 2 for all parameters would create a very long list, thus, use so-called ".ini" files to provide full parameter
    sets to TOPP tools. If no INI file is given, default parameters are used. To get a default `.ini` use
-   
+
    `<tool> -write_ini <file>`
-   
+
    e.g. `FileFilter -write_ini filefilter.ini`
 
    Now, edit the INI file (which is a XML file) using the [INIFileEditor](), which is another GUI tool shipped with
@@ -54,9 +54,9 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 
 1. **TOPPAS**: Once you changed the parameters of a node and clicked "Ok", the parameters are in effect. Because
    they are part of the TOPPAS workflow, they are saved together with the workflow.
-2. **Command line** : Simply supply the INI file via the `-ini` flag,  
+2. **Command line** : Simply supply the INI file via the `-ini` flag,
    `<tool> -ini <file>`
-   
+
    e.g. `FileFilter -ini filefilter.ini`
 
 ### What parameters require to be changed and to what value?
@@ -64,8 +64,3 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 This is tricky and its not possible to give a general answer. In general, read the tool description, change the
 parameters and compare the results using TOPPView if possible. If that does not help, drop us an email on the
 [OpenMS mailing list]() and ask. Please include all the necessary details we need in order to help you.
-
-
-
-
-
