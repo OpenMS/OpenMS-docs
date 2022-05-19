@@ -36,6 +36,7 @@ extensions = [
   'sphinx.ext.autosummary',
   'myst_parser',
   'notfound.extension',
+  'sphinxcontrib.images',
 ]
 
 autosummary_generate = True
@@ -69,6 +70,8 @@ release = '2.8.0'
 # a list of builtin themes.
 #
 html_theme = 'furo'
+html_logo = 'assets/OpenMS_transparent_background.png'
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
