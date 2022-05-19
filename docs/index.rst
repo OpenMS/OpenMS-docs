@@ -42,27 +42,35 @@ Contents
    installations/installation-on-gnu-linux
    installations/installation-on-windows
    installations/installation-on-macos
-   
+
 .. toctree::
    :maxdepth: 2
    :navigation_depth: 4
    :caption: Quick Start Guides
 
    guides/user-quickstart-guide
-   
+
 .. toctree::
    :maxdepth: 3
    :caption: Tutorials
 
    tutorials/TOPP/TOPP-tutorial
+   tutorials/TOPPAS/TOPPAS-tutorial
+
+.. toctree::
+   :maxdepth: 3
+   :caption: OpenMS TOPP Tools
+
+   topp/topp.md
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contact Us
 
    contact-us
-   
-   
+
+
 Indices and tables
 ==================
 
