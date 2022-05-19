@@ -48,7 +48,7 @@ Contents
    :navigation_depth: 4
    :caption: Quick Start Guides
 
-   guides/user-quickstart-guide
+   guides/user-guides/user-quickstart-guide
 
 .. toctree::
    :maxdepth: 3
