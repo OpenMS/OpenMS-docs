@@ -15,13 +15,14 @@ Any questions can be directed at the mailing list.
 Untested installers, containers, etc., known as the nightly snapshot, are released every night. They generally pass automated continuous integration tests but no manual tests.  
 View the documentation for the nightly snapshot of [OpenMS develop branch](https://github.com/OpenMS/OpenMS/tree/develop) at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
 
-View the doxygen log from [here](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_nightly_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log).
+View the [doxygen log](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_nightly_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log).
 
-See the documentation for the [latest release] (https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html) ([doxygen log](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_release_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log)).
+See the documentation for the [latest release](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
+View the ([doxygen log](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_release_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log)).
 
 ## Development Model
 
-OpenMS follows the Gitflow development workflow that is described [here] (http://nvie.com/posts/a-successful-git-branching-model/).
+OpenMS follows the Gitflow development workflow that is described [here](http://nvie.com/posts/a-successful-git-branching-model/).
 
 We encourage every developer (even if they are eligible to push directly to OpenMS) to create their own fork (e.g. @username). The GitHub people provide documentation on [forking](https://help.github.com/articles/fork-a-repo) and how to [keep your fork up-to-date](https://help.github.com/articles/syncing-a-fork). With your own fork you can follow the Gitflow development model, but instead of merging into `develop` in your own fork you can open a [pull request] (https://help.github.com/articles/using-pull-requests). Before opening the pull request, please check the [checklist](pull-request-checklist.md).
 
