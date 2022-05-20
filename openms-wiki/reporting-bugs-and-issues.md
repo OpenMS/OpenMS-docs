@@ -1,4 +1,5 @@
-# Reporting Bugs and Issues
+Reporting Bugs and Issues
+=========================
 
 A list of known issues in the current OpenMS release can be found here. Please check if your OpenMS version matches the current version and if the bug has already been reported.
 
@@ -11,5 +12,4 @@ Include the following information in your bug report:
 * OpenMS version (e.g. "OpenMS 1.11.1", "Revision 63082 from the SVN repository")
 * OpenMS architecture ("32 bit" or "64 bit")
 
-Please provide files that we need to reproduce the bug (e.g. TOPP INI files, data files — usually mzML) via a download link, via the mailing list or by directly contacting one of the developers.
-
+Please provide files that we need to reproduce the bug (e.g. `TOPP INI` files, data files — usually mzML) via a download link, via the mailing list or by directly contacting one of the developers.

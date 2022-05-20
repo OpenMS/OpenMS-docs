@@ -11,13 +11,15 @@ If you would like to contribute to OpenMS:
 
 Any questions can be directed at the mailing list.
 
-# Technical Documentation
+## Technical Documentation
 Untested installers, containers, etc., known as the nightly snapshot, are released every night. They generally pass automated continuous integration tests but no manual tests.  
-Access the documentation for the nightly snapshot of [OpenMS develop branch](https://github.com/OpenMS/OpenMS/tree/develop) [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Access the doxygen log from [here](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_nightly_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log).
+View the documentation for the nightly snapshot of [OpenMS develop branch](https://github.com/OpenMS/OpenMS/tree/develop) at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
+
+View the doxygen log from [here](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_nightly_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log).
 
 See the documentation for the [latest release] (https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html) ([doxygen log](https://abibuilder.informatik.uni-tuebingen.de/jenkins/job/openms_release_packaging/lastBuild/compiler=appleclang-7.3.0,os_label=elcapitan/artifact/build/doc/doxygen/doxygen-error.log)).
 
-# Development Model
+## Development Model
 
 OpenMS follows the Gitflow development workflow that is described [here] (http://nvie.com/posts/a-successful-git-branching-model/).
 
@@ -25,7 +27,7 @@ We encourage every developer (even if they are eligible to push directly to Open
 
 Some more details and tips are collected [here]().
 
-# Coding Conventions
+## Coding Conventions
 
 See the manual for coding style recommended by OpenMS: [Coding conventions]().
 also see: [C++ Guide]().
@@ -35,28 +37,27 @@ View the [manual]() for creating a new build unit (to be completed).
 We automatically test for common coding convention violations using a modified version of `cpplint`.
 Style testing can be enabled using `cmake` options. We also provide a configuration file for `Uncrustify` for automated style corrections (see `tools/uncrustify.cfg`).
 
-# Commit Messages
+## Commit Messages
 
 View the guidelines for commit messages: [How to write commit messages] (alinkstob).
 
-# Automated Unit Tests
+## Automated Unit Tests
 
 We perform nightly test runs on different platforms. Try to test on as many platforms as possible. This will save you time and surprises during continuous integration tests.
 
 Nightly tests: [CDASH](http://cdash.openms.de/index.php?project=OpenMS)
 
-# Further Developer Resources
+## Further Developer Resources
 
-## Guidelines for adding new dependency libraries
+You may want to consider the following resources:
+* **Guidelines for adding new dependency libraries**
 
-View the guidelines for [adding new dependency libraries](alinkstob).
+  View the guidelines for [adding new dependency libraries]().
+* **Experimental installers**
 
-## Experimental installers
+  We automatically build installers for different platforms. These usually contain unstable or partially untested code. Use them at your own risk.
 
-We automatically build installers for different platforms. These usually contain unstable or partially untested code. Use them at your own risk.
+  The nightly (unstable) installers are available at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
+* **Developer FAQ**
 
-The nightly (unstable) installers are available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
-
-## Developer FAQ
-
-Visit the [Developer FAQ](developer-faq.rst) page to get answers to frequently asked questions.
+  Visit the [Developer FAQ](developer-faq.md) to get answers to frequently asked questions.
