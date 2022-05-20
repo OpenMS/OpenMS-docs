@@ -33,10 +33,6 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 
 Please open a pull request and follow the [checklist](pull-request-checklist.md).
 
-### How do I update the [openms.de](https://www.openms.de)?
-
-Login to the [wordpress admin area](www.openms.de/wp-admin) with your username and password assigned by the current Homepage maintainers.
-
 ## Troubleshooting
 
 The following section provides information about how to troubleshoot common OpenMS issues.
@@ -67,54 +63,17 @@ Afterwards you can (but usually don't have to edit the current configuration usi
 
 Type `cmake` into a console. This will list the available code generators available on your platform, which you can pass to `CMake` using the `-G` option.
 
-### What are user definable CMake cache variables?
-
-They allow the user to pass options to `CMake` which will influence the build system. The most important option which should be given when calling `CMake.exe` is:
-
-`CMAKE_FIND_ROOT_PATH`, which is where `CMake` will search for additional libraries if they are not found in the default system paths. By default we add `OpenMS/contrib`.
-
-If your have installed all libraries on your system already there is no need to change `CMAKE_FIND_ROOT_PATH`. If you need the `contrib` libraries, you will need to set this variable.
-On Windows, you always need the `contrib` folder, as there are no system developer packages. To pass this variable to `CMake` use the `-D` switch e.g. `cmake -D CMAKE_FIND_ROOT_PATH:PATH="D:\\somepath\\contrib"`.
-Everything else can be edited using `ccmake` afterwards.
-
-The following options are of interest:
-
-* `CMAKE_BUILD_TYPE` Define if you want to build Debug or Release version of OpenMS. Release is the default.
-
-* `CMAKE_FIND_ROOT_PATH` The path to the `contrib` libraries.
-  > **_NOTE:_**  that you can also provide more then one value here (e.g., `-D CMAKE_FIND_ROOT_PATH="/path/to/contrib;/usr/"` will search in your `contrib` path and in `/usr` for the required libraries)
-
-* `STL_DEBUG` Enables STL debug mode.
-
-* `DB_TEST` (deprecated) Enables database testing.
-
-* `QT_DB_PLUGIN` (deprecated) Defines the db plugin used by Qt.
-
-* `MT_CUDA_BUILD_TYPE` ...
-
-View the description for each option by calling `ccmake`.
-
 ### How do I switch to debug or release configuration?
 
 For Makefile generators (typically on Linux), you can set the `CMAKE_BUILD_TYPE` variable to either Debug or Release by calling `ccmake`.
 For Visual Studio, this is not necessary as all configurations are generated and you can choose the one you like within the IDE itself.
 The 'Debug' configuration enabled debug information. The 'Release' configuration disables debug information and enables optimisation.
 
-### I changed the `contrib` path, but re-running `CMake` won't change the library paths?
-
-Once a library is found and its location is stored in a cache variable, it will only be searched again if the corresponding entry in the cache file is set to false.
-You can delete the `CMakeCache.txt`, but all other custom settings will be lost.
-
-### What are the most useful `make` targets?
-
-In Visual Studio you can see all targets on the left. For Makefiles type make help. However, this list is quite long.
-The most useful targets will be shown to you by calling the targets target, i.e. make targets.
-
-### `CMake` can't seem to find a `Qt` library (usually `QtCore`). What now?
+### `CMake` can't seem to find a `Qt` library (usually `QtCore`).
 
 `CMake` finds `QT` by looking for `qmake` in your PATH or for the Environment Variable `QTDIR`. Set these accordingly.
 If the problem still persists: do you have a second installation of Qt (especially the MinGW version)? This might lead ``CMake`` to the wrong path (it's searching for the ``Qt*.lib`` files).
-You should only move or delete the offending `Qt` version if you know what you are doing!
+Take care when you move or delete the offending `Qt` version.
 A save workaround is to edit the `CMakeCache` file (e.g. via `ccmake`) and set all paths relating to `QT` (e.g. `QT_LIBRARY_DIR`) manually.
 
 ### (Windows) What version of Visual Studio should I use?
@@ -126,7 +85,7 @@ This happens whenever the Build-System calls `CMake` (which can be quite often, 
 
 1. Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in `src/<sub-project>/include/OpenMS` and the cpp file in `src/<sub-project>/source`, e.g., `src/openms/include/OpenMS/FORMAT/NewFileFormat.h` and `src/openms/source/FORMAT/NewFileFormat.cpp`.
 2. Add both to the respective sources.cmake file in the same directory (e.g., `src/openms/source/FORMAT/` and `src/openms/include/OpenMS/FORMAT/`).
-3. Add the corresponding class test to src/tests/class_tests/<sub-project>/ (e.g., `src/tests/class_tests/openms/source/NewFileFormat_test.cpp`).
+3. Add the corresponding class test to `src/tests/class_tests/<sub-project>/` (e.g., `src/tests/class_tests/openms/source/NewFileFormat_test.cpp`).
 4. Add the test to the `executables.cmake` file in the test folder (e.g., `src/tests/class_tests/openms/executables.cmake`).
 5. Add them to git by using the command `git add`.
 
@@ -139,7 +98,7 @@ This happens whenever the Build-System calls `CMake` (which can be quite often, 
 5. Look at the very bottom and augment `TEST_executables`.
 6. Add a new group target to `src/tests/class_tests/openms/CMakeLists.txt`.
 
-### Class/Unit tests and TOPP/Tool tests
+### What are class/unit tests and TOPP/Tool tests
 
 Class or unit tests are built as standalone, additional executables that include the class to be tested and the testing utility classes to test outcomes of single functions of the class in question.
 
@@ -177,24 +136,6 @@ To generate a test template for your class:
 ```bash
 php tools/create_test.php /BUILD_DIRECTORY/ /    PATH_TO_HEADER/MyClass.h \ "FIRSTNAME LASTNAME" > ./src/tests/class_tests/openms/source/MyClass_test.cpp
 ```
-
-### How do I add a new GUI test (for QT Gui classes) for the class `MyClass`?
-To add a new GUI test:
-
-1. Create the `MyClass_test.cpp` in `src/tests/class_tests/openms_gui/source`.
-2. Add it to `src/tests/class_tests/openms_gui/CMakeLists.txt` in the GUI section.
-3. Have a look at existing GUI tests, as they use the `QT TestLib` framework and not the OpenMS macros.
-
-### (Linux) All tests fail when you execute `make test`
-
-Check the `LD_LIBRARY_PATH` environment variable:
-
-You can print the `LD_LIBRARY_PATH` with `echo $LD_LIBRARY_PATH`. If your `/lib/` folder is included, check that `libOpenMS.so` is present.
-With the `ldd` command, you can show the libraries used by an executable, e.g. `ldd /bin/ClassTest_test`.
-
-## Release
-
-View [Preparation of a new OpenMS release](https://github.com/OpenMS/OpenMS/wiki/Preparation-of-a-new-OpenMS-release#release_developer) to learn more about contributing to releases.
 
 ## Debugging
 
@@ -262,22 +203,6 @@ Imagine you want to debug the TOPPView application and you want it to stop at li
  gdb> run
  ```
 
-### How can I find out which shared libraries are used by an application?
-
-Linux: Use `ldd`.
-
-Windows (Visual studio console): Try [Dependency Walker](http://www.dependencywalker.com/) (use x86 for 32bit builds and the x64 version for 64bit builds. Using the wrong version of depends.exe will give the wrong results) or ``dumpbin /DEPENDENTS OpenMS.dll``.
-
-### How can I get a list of the symbols defined in a (shared) library or object file?
-
-Linux: Use `nm <library>`.
-
-Use `nm -C` to switch on demangling of low-level symbols into their C++-equivalent names. `nm` also accepts .a and .o files.
-
-Windows (Visual studio console): Use ``dumpbin /ALL <library>``.
-
-You can use dumpbin on object files (.o) or (shared) library files (.lib) or the DLL itself e.g. `dumpbin /EXPORTS OpenMS.dll`.
-
 ## Cross-platform thoughts
 
 OpenMS runs on three major platforms. Here are the most prominent causes of "it runs on Platform A, but not on B. What now?"
@@ -334,7 +259,7 @@ For TOPP and TOPPView tutorials, view:
 
 ## Bug Fixes
 
-### How to contribute a bug fix?
+### How do I contribute a bug fix?
 
 To contribute to a bug fix:
 1. Submit the bug as a GitHub issue.
@@ -342,34 +267,3 @@ To contribute to a bug fix:
 3. Fix the bug and add a test.
 4. Create a pull request for your branch.
 5. After approval and merge make sure the issue is closed.
-
-### How can I profile my code?
-
-Try IBM's profiler, available for all platforms (and free for academic use): Purify(Plus) and/or Quantify.
-
-Windows: this is directly supported by Visual Studio (Depending on the edition: Team and above). Follow their documentation.
-
-Linux:
-
-1. Build OpenMS in debug mode (set `CMAKE_BUILD_TYPE` to `Debug`).
-2. Call the executable with valgrind: `valgrind –tool=callgrind`.
-  > **_NOTE:_**  other processes running on the same machine can influence the profiling. Make sure your application gets enough resources (memory, CPU time).
-
-3. You can start and stop the profiling while the executable is running e.g. to skip initialization steps:
-4. Start valgrind with the option `–instr-atstart=no`.
-5. Call `callgrind -i [on|off]` to start/stop the profiling.
-6. The output can be viewed with `kcachegrind callgrind.out`.
-
-### (Linux) How do I check my code for memory leaks?
-
-* Build OpenMS in debug mode (set ``CMAKE_BUILD_TYPE`` to ``Debug``).
-* Call the executable with ``valgrind: valgrind --suppressions=OpenMS/tools/valgrind/openms_external.supp –leak-check=full <executable> <parameters>``.
-
-Common errors are:
-
-* ``'Invalid write/read ...'`` - Violation of container boundaries.
-* ``'... depends on uninitialized variable'`` - Uninitialized variables:
-* ``'... definitely lost'`` - Memory leak that has to be fixed
-* ``'... possibly lost'`` - Possible memory leak, so have a look at the code
-
-For more information see the [`valgrind` documentation](http://valgrind.org/docs/manual/) .
