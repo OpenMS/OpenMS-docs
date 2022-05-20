@@ -3,7 +3,7 @@ Reporting Bugs and Issues
 
 A list of known issues in the current OpenMS release can be found here. Please check if your OpenMS version matches the current version and if the bug has already been reported.
 
-In order to report a new bug, please use either our [GitHub issues system](https://github.com/OpenMS/OpenMS/wiki/Writing-and-labelling-GitHub-issues) or contact us through the general OpenMS mailing list.
+In order to report a new bug, please use either our [GitHub issues system](write-and-label-github-issues.md) or contact us through the general OpenMS mailing list.
 
 Include the following information in your bug report:
 * the command line (i.e. call) including the TOPP tool and the arguments you used, or the steps you followed in a GUI tool (e.g. TOPPView) - e.g. `FeatureFinderCentroided -in myfile.mzML -out myfile.featureXML`

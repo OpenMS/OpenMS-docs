@@ -5,7 +5,7 @@ If you would like to contribute to OpenMS:
 
 * Familiarise yourself with our [online documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
 
-* Learn how to [build OpenMS](https://github.com/OpenMS/OpenMS/wiki/Building-OpenMS).
+* Learn how to [build OpenMS](build-openms-from-source.md).
 
 * Check out the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
@@ -23,13 +23,13 @@ See the documentation for the [latest release] (https://abibuilder.informatik.un
 
 OpenMS follows the Gitflow development workflow that is described [here] (http://nvie.com/posts/a-successful-git-branching-model/).
 
-We encourage every developer (even if they are eligible to push directly to OpenMS) to create their own fork (e.g. @username). The GitHub people provide documentation on [forking](https://help.github.com/articles/fork-a-repo) and how to [keep your fork up-to-date](https://help.github.com/articles/syncing-a-fork). With your own fork you can follow the Gitflow development model, but instead of merging into `develop` in your own fork you can open a [pull request] (https://help.github.com/articles/using-pull-requests). Before opening the pull request, please check the [checklist](alinkstob).
+We encourage every developer (even if they are eligible to push directly to OpenMS) to create their own fork (e.g. @username). The GitHub people provide documentation on [forking](https://help.github.com/articles/fork-a-repo) and how to [keep your fork up-to-date](https://help.github.com/articles/syncing-a-fork). With your own fork you can follow the Gitflow development model, but instead of merging into `develop` in your own fork you can open a [pull request] (https://help.github.com/articles/using-pull-requests). Before opening the pull request, please check the [checklist](pull-request-checklist.md).
 
 Some more details and tips are collected [here]().
 
 ## Coding Conventions
 
-See the manual for coding style recommended by OpenMS: [Coding conventions]().
+See the manual for coding style recommended by OpenMS: [Coding conventions](coding-conventions.md).
 also see: [C++ Guide]().
 
 View the [manual]() for creating a new build unit (to be completed).

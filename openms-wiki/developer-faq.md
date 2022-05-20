@@ -211,7 +211,7 @@ Check the `LD_LIBRARY_PATH` environment variable:
 You can print the `LD_LIBRARY_PATH` with `echo $LD_LIBRARY_PATH`. If your `/lib/` folder is included, check that `libOpenMS.so` is present.
 With the `ldd` command, you can show the libraries used by an executable, e.g. `ldd /bin/ClassTest_test`.
 
-## How can I speed up the compile process of OpenMS?
+### How can I speed up the compile process of OpenMS?
 
 To speed up the compile process of OpenMS, use several threads. If you have several processors/cores, you can build OpenMS classes/tests and `TOPP` tools in several threads. On Linux, use the `make option -j: make -j8 OpenMS TOPP test_build`.
 
@@ -219,7 +219,7 @@ On Windows, Visual Studio solution files are automatically build with the `/MP` 
 
 ## Release
 
-see `Preparation-of-a-new-OpenMS-release <preparation-of-a-new-openms-release.md>`_
+View [Preparation of a new OpenMS release](https://github.com/OpenMS/OpenMS/wiki/Preparation-of-a-new-OpenMS-release#release_developer) to learn more about contributing to releases.
 
 ## Continuous integration
 
@@ -262,7 +262,7 @@ This is a bug in Visual Studio and there is a [bug fix] (http://code.msdn.micros
 ### Visual Studio can't read the clang-format file.
 
 Depending on the Visual Studio version you're using you might get an error like `Error while formating with ClangFormat`. This is because Visual Studio is using an outdated version of clang-format. Unfortunately there is no easy way to update this using Visual Studio itself.
-There is a plugin provided by LLVM designed to fix this problem, but the plugin doesn't work with every Visual Studio version. However, you can update clang-format by hand using the pre-build clang-format binary. Both the binary and a link to the plugin can be found here: https://llvm.org/builds/.
+There is a plugin provided by LLVM designed to fix this problem, but the plugin doesn't work with every Visual Studio version. However, you can update clang-format by hand using the pre-build clang-format binary. Both the binary and a link to the plugin can be found [here](https://llvm.org/builds/).
 To update clang-format by hand just download the binary and exchange it with the clang-format binary in your Visual Studio folder.
 For Visual Studio 17 and 19 it should be located at: `C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\Llvm\bin`.
 
@@ -286,23 +286,23 @@ You can can execute an OpenMS class test using the CTest regular expressions:
 
 ```bash
 
- > ctest -V -R "^<class>_test"
+ctest -V -R "^<class>_test"
 
- # To build a class test, you simply call the respective make target in ./source/TEST:
+# To build a class test, you simply call the respective make target in ./source/TEST:
 
- > make <class>_test
+make <class>_test
 ```
 To run a TOPP test, you can use:
 
 ```bash
 
- > ctest -V -R "TOPP_<tool>"
+ctest -V -R "TOPP_<tool>"
 ```
 
 To build the tool, use:
 
 ```bash
- > make <tool>
+make <tool>
 ```
 ### How do I debug uncaught exceptions?
 
@@ -316,156 +316,147 @@ Try the `ulimit -c` unlimited command. It sets the maximum size of a core to unl
 
 Note: We observed that, on some systems, no core is dumped even if the size of the core file is set to unlimited. We are not sure what causes this problem
 
-(Linux) How can I set breakpoints in gdb to debug OpenMS?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### (Linux) How can I set breakpoints in gdb to debug OpenMS?
 
-Imagine you want to debug the TOPPView application and you want it to stop at line 341 of
+Imagine you want to debug the TOPPView application and you want it to stop at line 341 of SpectrumMDIWindow.C.
 
-.. code:: bash
- SpectrumMDIWindow.C.
- Run gdb:
+1. Enter the following in your terminal:
+
+  ```bash
+  Run gdb:
  shell> gdb TOPPView
+```
 
-Start the application (and close it):
+2. Start the application (and close it):
 
-.. code:: bash
+  ```bash
  gdb> run [arguments]
-
-Set the breakpoint:
-
-.. code:: bash
+```
+3. Set the breakpoint:
+  ```bash
  gdb> break SpectrumMDIWindow.C:341
+```
+4. Start the application again (with the same arguments):
 
-Start the application again (with the same arguments):
-
-.. code:: bash
+  ```bash
  gdb> run
+ ```
 
-How can I find out which shared libraries are used by an application?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### How can I find out which shared libraries are used by an application?
 
-Linux: ``ldd``
+Linux: Use `ldd`.
 
-Windows (Visual studio console): Try "Dependency Walker" (http://www.dependencywalker.com/) (use x86 for 32bit builds and the x64 version for 64bit builds. Using the wrong version of depends.exe will give wrong results!) or ``dumpbin /DEPENDENTS OpenMS.dll``.
+Windows (Visual studio console): Try [Dependency Walker](http://www.dependencywalker.com/) (use x86 for 32bit builds and the x64 version for 64bit builds. Using the wrong version of depends.exe will give the wrong results) or ``dumpbin /DEPENDENTS OpenMS.dll``.
 
-How can I get a list of the symbols defined in a (shared) library or object file?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### How can I get a list of the symbols defined in a (shared) library or object file?
 
-Linux: ``nm <library>``
+Linux: Use `nm <library>`.
 
-Use ``nm -C`` to switch on demangling of low-level symbols into their C++-equivalent names. ``nm`` also accepts .a and .o files.
+Use `nm -C` to switch on demangling of low-level symbols into their C++-equivalent names. `nm` also accepts .a and .o files.
 
-Windows (Visual studio console): ``dumpbin /ALL <library>``
+Windows (Visual studio console): Use ``dumpbin /ALL <library>``.
 
-You can use dumpbin on object files (.o) or (shared) library files (.lib) or the DLL itself e.g. ``dumpbin /EXPORTS OpenMS.dll``.
+You can use dumpbin on object files (.o) or (shared) library files (.lib) or the DLL itself e.g. `dumpbin /EXPORTS OpenMS.dll`.
 
-Cross-platform thoughts
-***********************
+## Cross-platform thoughts
 
-OpenMS runs on three major platforms, each one having its own ways of doing things. Here are the most prominent causes of "it runs on Platform A, but not on B. What now?"
+OpenMS runs on three major platforms.. Here are the most prominent causes of "it runs on Platform A, but not on B. What now?"
 
-Reading/Writing binary files causes different behaviour ... Usually Linux does not make a difference between text-mode and binary-mode when reading files. This is quite different on Windows as some bytes are interpreted as EOF, which lead might to a premature end of the reading process.
+### Reading or writing binary files
+Reading or writing binary files causes different behaviour. Usually Linux does not make a difference between text-mode and binary-mode when reading files. This is quite different on Windows as some bytes are interpreted as `EOF`, which lead might to a premature end of the reading process.
 
-Thus, if reading binary files make sure that you explicitly state that the file is binary when opening it!
+If reading binary files, make sure that you explicitly state that the file is binary when opening it.
 
-During writing in text-mode on windows a line-break (\n) is expanded to (\r\n). Keep this in mind or use the eol-style property of subversion to ensure that line endings are correctly checked out on non-Windows systems.
+During writing in text-mode on Windows a line-break (`\n`) is expanded to (`\r\n`). Keep this in mind or use the `eol-style` property of subversion to ensure that line endings are correctly checked out on non-Windows systems.
 
-``unsigned int`` vs ``size_t`` (UInt and Size) UInt and Size are the same on Linux GCC (i.e. both have the same size, 32bit on 32bit systems, 64bit on 64 bit systems), however on Windows this only holds for 32bit. On a 64bit Windows the UInt type is still 32bit, Size is (obviously) 64bit. This might lead to warnings (at best) or overflows and other nasty stuff.
-So make sure you do not rely on UInt being equal to Size - because they're not.
+### `UInt` vs `Size`
+Both `unsigned int` vs `size_t` `UInt` and `Size` have the same size on Linux GCC (32bit on 32bit systems, 64bit on 64 bit systems), however on Windows this only holds for 32bit. On a 64bit Windows, the `UInt` type is still 32bit, while the `Size` type is 64bit. This might lead to warnings (at best) or overflows and other drawbacks.
+Therefore, do not assume that `UInt` is equal to `Size`.
 
-Paths and system functions...
+### Paths and system functions
 
-This is trivial but hardcoding something like ``String tmp_dir = "/tmp";`` is a big no-no! This must fail on Windows! Use Qt's QDir to get a path to the systems temporary directory if required.
+Avoid hardcoding e.g.`String tmp_dir = "/tmp";`. This will fail on Windows. Use Qt's `QDir` to get a path to the systems temporary directory if required.
 
-Also calling things like uname which are only available on Linux: don't!
+Avoid names like uname which are only available on Linux.
 
-When working with files or directories, it is usually safe to use "/" on all platforms. Even Windows understands that. Take care of spaces in directory names though. You should always quote paths if they are used in a system call to ensure that the subsequent interpreter takes the spaced path as a single entity.
-
-
-PyOpenMS - Trouble shooting
-***************************
-
-How can I wrap my new method with PyOpenMS?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You will have to add an entry to ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` with the signature of your new method(s).
-
-How can I wrap my new class with PyOpenMS?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You will have to create a new file ``src/pyOpenMS/pxds/CLASS_NAME.pxd`` which is explained `here <https://pyopenms.readthedocs.io/en/latest/wrap_classes.html?highlight=Wrapping%20classes#wrapping-workflow-and-wrapping-new-classes>`_.
-
-My method has multiple outputs. Can I use output parameters? I have trouble wrapping them for pyOpenMS.
-*******************************************************************************************************
-
-Python does not support passing primitive types (int, double etc) by reference, there fore void calculate(double &) will not work.
-
-Doxygen documentation
-*********************
-
-Where can I find the definition of the main page?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``OpenMS/doc/doxygen/public/Main.doxygen``
-
-Where can I add a new module?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``OpenMS/doc/doxygen/public/Modules.doxygen``
-
-How is the parameter documentation for classes derived from DefaultParamHandler created?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You have to add your class to the program ``OpenMS/doc/doxygen/parameters/DefaultParamHandlerDocumenter.cpp``. This program generates a html table with the parameters. This table can then be included in the class documentation using the following ``doxygen`` command:
+When working with files or directories, it is usually safe to use "/" on all platforms. Take care of spaces in directory names though. You should always quote paths if they are used in a system call to ensure that the subsequent interpreter takes the spaced path as a single entity.
 
 
-``@htmlinclude OpenMS_<class name>.parameters``
+## PyOpenMS - Troubleshooting
+
+The following section contains answers to common issues experienced in pyOpenMS.
+
+### How can I wrap my new method with PyOpenMS?
+
+You will have to add an entry to `src/pyOpenMS/pxds/CLASS_NAME.pxd` with the signature of your new method(s).
+
+### How can I wrap my new class with PyOpenMS?
+
+You will have to create a new file `src/pyOpenMS/pxds/CLASS_NAME.pxd` that is explained in the [pyOpenMS documentation](https://pyopenms.readthedocs.io/en/latest/wrap_classes.html?highlight=Wrapping%20classes#wrapping-workflow-and-wrapping-new-classes).
+
+### Can I use output parameters for methods with multiple outputs?
+
+Python does not support passing primitive types (`int`, `double`, etc.) by reference. Therefore, `void calculate(double &)` will not work.
+
+## Doxygen Documentation
+
+### Where can I find the definition of the main page?
+
+You can find a definition of the main page at ``OpenMS/doc/doxygen/public/Main.doxygen``
+
+### Where can I add a new module?
+
+You can add a new module at `OpenMS/doc/doxygen/public/Modules.doxygen`
+
+### How is the parameter documentation for classes derived from DefaultParamHandler created?
+
+You have to add your class to the program ``OpenMS/doc/doxygen/parameters/DefaultParamHandlerDocumenter.cpp``. This program generates a html table with the parameters. This table can then be included in the class documentation using the following `doxygen` command:`@htmlinclude OpenMS_<class name>.parameters`.
+
+> **_NOTE:_** parameter documentation is automatically generated for `TOPP/UTILS` included in the static `ToolHandler.cpp` tools list.
+
+To include TOPP/UTILS parameter documentation use following `doxygen` command:
 
 
-Note that parameter documentation is automatically generated for ``TOPP/UTILS`` included in the static ``ToolHandler.cpp`` tools list. To include TOPP/UTILS parameter documentation use following ``doxygen`` command:
-
-
-``@htmlinclude TOPP_<tool name>.parameters``
+`@htmlinclude TOPP_<tool name>.parameters`
 
 or
 
-``@htmlinclude UTILS_<tool name>.parameters``
+`@htmlinclude UTILS_<tool name>.parameters`
 
-You can test if everything worked by calling make doc_param_internal. The parameters documentation is written to ``OpenMS/doc/doxygen/parameters/output/``.
+You can test if everything worked by calling `make doc_param_internal`. The parameters documentation is written to `OpenMS/doc/doxygen/parameters/output/`.
 
+### How is the command line documentation for TOPP/UTILS tools created?
 
-How is the command line documentation for TOPP/UTILS tools created?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The program `OpenMS/doc/doxygen/parameters/TOPPDocumenter.cpp` creates the command line documentation for all classes that are included in the static `ToolHandler.cpp` tools list. It can be included in the documentation using the following `doxygen` command:
 
-The program ``OpenMS/doc/doxygen/parameters/TOPPDocumenter.cpp`` creates the command line documentation for all classes that are included in the static ``ToolHandler.cpp`` tools list. It can be included in the documentation using the following ``doxygen`` command:
+`@verbinclude TOPP_<tool name>.cli`
 
-``@verbinclude TOPP_<tool name>.cli``
+You can test if everything worked by calling `make doc_param_internal`. The command line documentation is written to `OpenMS/doc/doxygen/parameters/output/`.
 
-You can test if everything worked by calling ``make doc_param_internal``. The command line documentation is written to ``OpenMS/doc/doxygen/parameters/output/``.
+### What are the important files for adding a new tutorial section?
 
-## What are the important files for adding a new tutorial section?
+View the following OpenMS tutorials:
 
-OpenMS tutorial:
+* `OpenMS/doc/OpenMS_tutorial/refman_overwrite.tex.in` (for PDF tutorials)
+* `OpenMS/doc/doxygen/public/OpenMS_Tutorial_html.doxygen~` (for html tutorials)
 
-* ``OpenMS/doc/OpenMS_tutorial/refman_overwrite.tex.in`` (for PDF tutorials)
-* ``OpenMS/doc/doxygen/public/OpenMS_Tutorial_html.doxygen~`` (for html tutorials)
+For TOPP and TOPPView tutorials, view:
 
-TOPP and TOPPView tutorial:
+* `OpenMS/doc/TOPP_tutorial/refman_overwrite.tex.in` (for PDF tutorials)
+* `OpenMS/doc/doxygen/public/TOPP_Tutorial_html.doxygen` (for html tutorials)
 
-* ``OpenMS/doc/TOPP_tutorial/refman_overwrite.tex.in`` (for PDF tutorials)
-* ``OpenMS/doc/doxygen/public/TOPP_Tutorial_html.doxygen`` (for html tutorials)
+## Bug Fixes
 
-# Bug fixes
+### How to contribute a bug fix?
 
-## How to contribute a bugfix?
-
+To contribute to a bug fix:
 1. Submit the bug as a GitHub issue.
-2. Create a feature branch (e.g. ``feature/fix_missing_filename_issue_615``) from your (up-to-date) develop branch in your fork of OpenMS.
+2. Create a feature branch (e.g. `feature/fix_missing_filename_issue_615`) from your (up-to-date) develop branch in your fork of OpenMS.
 3. Fix the bug and add a test.
 4. Create a pull request for your branch.
 5. After approval and merge make sure the issue is closed.
 
-## How can I profile my code?
+### How can I profile my code?
 
 Try IBM's profiler, available for all platforms (and free for academic use): Purify(Plus) and/or Quantify.
 
@@ -473,14 +464,14 @@ Windows: this is directly supported by Visual Studio (Depending on the edition: 
 
 Linux:
 
-* Build OpenMS in debug mode (set ``CMAKE_BUILD_TYPE`` to ``Debug``).
-* Call the executable with valgrind: ``valgrind –tool=callgrind``. Note: other processes running on the same machine can influence the profiling. Make sure your application gets enough resources (memory, CPU time).
-* You can start and stop the profiling while the executable is running e.g. to skip initialization steps:
-* Start valgrind with the option ``–instr-atstart=no``.
-* Call ``callgrind -i [on|off]`` to start/stop the profiling.
-* The output can be viewed with ``kcachegrind callgrind.out``.
+1. Build OpenMS in debug mode (set `CMAKE_BUILD_TYPE` to `Debug`).
+2. Call the executable with valgrind: `valgrind –tool=callgrind`. Note: other processes running on the same machine can influence the profiling. Make sure your application gets enough resources (memory, CPU time).
+3. You can start and stop the profiling while the executable is running e.g. to skip initialization steps:
+4. Start valgrind with the option `–instr-atstart=no`.
+5. Call `callgrind -i [on|off]` to start/stop the profiling.
+6. The output can be viewed with `kcachegrind callgrind.out`.
 
-## (Linux) How do I check my code for memory leaks?
+### (Linux) How do I check my code for memory leaks?
 
 * Build OpenMS in debug mode (set ``CMAKE_BUILD_TYPE`` to ``Debug``).
 * Call the executable with ``valgrind: valgrind --suppressions=OpenMS/tools/valgrind/openms_external.supp –leak-check=full <executable> <parameters>``.
@@ -492,4 +483,4 @@ Common errors are:
 * ``'... definitely lost'`` - Memory leak that has to be fixed
 * ``'... possibly lost'`` - Possible memory leak, so have a look at the code
 
-For more information see the `valgrind` documentation at http://valgrind.org/docs/manual/.
+For more information see the [`valgrind` documentation](http://valgrind.org/docs/manual/) .
