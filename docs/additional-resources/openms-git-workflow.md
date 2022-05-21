@@ -51,18 +51,18 @@ Verify that upstream was added correctly by calling:
 
 ```bash
 $ git remote -v
-origin	https://github.com/_YOURUSERNAME_/OpenMS.git (fetch)
-origin	https://github.com/_YOURUSERNAME_/OpenMS.git (push)
-upstream	https://github.com/OpenMS/OpenMS.git (fetch)
-upstream	https://github.com/OpenMS/OpenMS.git (push)
+  origin https://github.com/_YOURUSERNAME_/OpenMS.git (fetch)
+  origin https://github.com/_YOURUSERNAME_/OpenMS.git (push)
+  upstream https://github.com/OpenMS/OpenMS.git (fetch)
+  upstream https://github.com/OpenMS/OpenMS.git (push)
 
 ```
 
 Fetch changes and new branches from your fork (`origin`) as well as from the central, upstream OpenMS repository by executing:
 
 ```bash
-$ git fetch upstream
-$ git fetch origin
+  $ git fetch upstream
+  $ git fetch origin
 ```
 or
 
