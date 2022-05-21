@@ -1,7 +1,7 @@
 Write and Label GitHub Issues
 =============================
 
-## Create an issue
+## Create an Issue
 
 To create an issue:
 
@@ -9,12 +9,12 @@ To create an issue:
 2. Click **Issues** in the menu at the top of the screen.
 3. Click **New issue**.
 4. Provide a title and a description to the issue.
-5. [Label](write-and-label-github-issues.md) the issue.
+5. Label the issue.
 6. Click **Submit new issue**.
 
 The issue will be listed under **Issues**.
 
-## Label an issue
+## Label an Issue
 
 To label an issue:
 1. On the right of the screen, select the cog icon under **Labels**.

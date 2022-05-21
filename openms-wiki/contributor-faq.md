@@ -1,9 +1,7 @@
 Contributor FAQ
 ===============
 
-The following contains answers to typical questions from developers about OpenMS.
-
-> **_NOTE:_**  Some actions require special permissions like e.g. updating the website.
+The following contains answers to typical questions from contributors about OpenMS.
 
 ## General
 
@@ -13,10 +11,11 @@ The following section provides general information to new contributors.
 
 * Check out the development version of OpenMS (see website).
 * Try and build OpenMS according to the installation instructions.
-* Read the OpenMS Coding Convention.
+* Read the [OpenMS Coding Conventions](https://github.com/OpenMS/OpenMS/wiki/Coding-conventions).
 * Read the OpenMS Tutorial.
-* Create a GitHub account
-* Register to the open-ms-general and open-ms-developers mailing list. (You can see the developers list only if you are logged in to Sourceforge and if you are a OpenMS developer).
+* Create a GitHub account.
+* Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) and [open-ms-developers]() mailing lists.
+  > ***_NOTE:_*** You can see the developers list only if you are logged in to Sourceforge and if you are a OpenMS developer.
 
 ### What is the difference between an OpenMS tool and util?
 
@@ -37,9 +36,9 @@ Please open a pull request and follow the [checklist](pull-request-checklist.md)
 
 The following section provides information about how to troubleshoot common OpenMS issues.
 
-### OpenMS complains about boost not being found but I'm sure its there!
+### OpenMS complains about boost not being found
 
-`CMake` got confused. Set up a new build directory and try again. If you build in-source (not recommended), deleting the `CMakeCache.txt` and `cmake` directory might help.
+`CMake` got confused. Set up a new build directory and try again. If you build from source, deleting the `CMakeCache.txt` and `cmake` directory might help.
 
 ## Build System
 
@@ -69,18 +68,6 @@ For Makefile generators (typically on Linux), you can set the `CMAKE_BUILD_TYPE`
 For Visual Studio, this is not necessary as all configurations are generated and you can choose the one you like within the IDE itself.
 The 'Debug' configuration enabled debug information. The 'Release' configuration disables debug information and enables optimisation.
 
-### `CMake` can't seem to find a `Qt` library (usually `QtCore`).
-
-`CMake` finds `QT` by looking for `qmake` in your PATH or for the Environment Variable `QTDIR`. Set these accordingly.
-If the problem still persists: do you have a second installation of Qt (especially the MinGW version)? This might lead ``CMake`` to the wrong path (it's searching for the ``Qt*.lib`` files).
-Take care when you move or delete the offending `Qt` version.
-A save workaround is to edit the `CMakeCache` file (e.g. via `ccmake`) and set all paths relating to `QT` (e.g. `QT_LIBRARY_DIR`) manually.
-
-### (Windows) What version of Visual Studio should I use?
-
-Use the latest if possible. Get the latest `CMake`, as its generator needs to support your VS. If your VS is too new and there is no `CMake` for that yet, you're gonna be faced with a lot of conversion issues.
-This happens whenever the Build-System calls `CMake` (which can be quite often, e.g., after changes to `CMakeLists.txt`).
-
 ### How do I add a new class to the build system?
 
 1. Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in `src/<sub-project>/include/OpenMS` and the cpp file in `src/<sub-project>/source`, e.g., `src/openms/include/OpenMS/FORMAT/NewFileFormat.h` and `src/openms/source/FORMAT/NewFileFormat.cpp`.
@@ -97,45 +84,6 @@ This happens whenever the Build-System calls `CMake` (which can be quite often, 
 4. Add a new section that makes the unit testing system aware of the new (upcoming) tests.
 5. Look at the very bottom and augment `TEST_executables`.
 6. Add a new group target to `src/tests/class_tests/openms/CMakeLists.txt`.
-
-### What are class/unit tests and TOPP/Tool tests
-
-Class or unit tests are built as standalone, additional executables that include the class to be tested and the testing utility classes to test outcomes of single functions of the class in question.
-
-Only add tests for functions added outside of your additional mode.
-
-Tool tests are using the tool executable that the user would also receive. We use those executables to run the full algorithm on a small test dataset, to ensure that from version to version the results stay the same and are meaningful.
-
-Each tool test consists of:
-
-* An executable call on a test dataset (by using either fixed command line parameters or an ini file).
-
-* A `FuzzyDiff` call that compares the temporary output file of the last call and a reference test output that you have to provide.
-
-* A line to add a dependency of the FuzzyDiff call on the actual executable call (so they get executed after each other).
-
-Use e.g., `ctest -V -R IDMapper` to only test tests that include the regex `IDMapper` (-V is just verbose). Make sure to build the `IDMapper` and `IDMapper_test` (if edited) executable first everytime.
-`ctest` does not have any automatic dependency on the timestamps of the executables.
-
-### How do I add a test for a new class?
-
-You should always add a test alongside every new class added to OpenMS.
-
-To add a new class test:
-
-1. Add the class test to `src/tests/class_tests/<sub-project>/` (e.g., `src/tests/class_tests/openms/source/NewFileFormat_test.cpp`).
-2. Add the test to the `executables.cmake` file in the test folder.
-3. Add them to git using the `git add` command.
-
-A test template for your specific class can be generated by the `create_test.php` script found in `tools/`.
-
-To generate a test template for your class:
-
-1. Make sure your generated XML files containing the class information make doc_xml.
-2. Call:
-```bash
-php tools/create_test.php /BUILD_DIRECTORY/ /    PATH_TO_HEADER/MyClass.h \ "FIRSTNAME LASTNAME" > ./src/tests/class_tests/openms/source/MyClass_test.cpp
-```
 
 ## Debugging
 
@@ -252,14 +200,14 @@ View the following OpenMS tutorials:
 * `OpenMS/doc/OpenMS_tutorial/refman_overwrite.tex.in` (for PDF tutorials)
 * `OpenMS/doc/doxygen/public/OpenMS_Tutorial_html.doxygen~` (for html tutorials)
 
-For TOPP and TOPPView tutorials, view:
+View the following TOPP and TOPPView tutorials:
 
 * `OpenMS/doc/TOPP_tutorial/refman_overwrite.tex.in` (for PDF tutorials)
 * `OpenMS/doc/doxygen/public/TOPP_Tutorial_html.doxygen` (for html tutorials)
 
 ## Bug Fixes
 
-### How do I contribute a bug fix?
+### How do I contribute to a bug fix?
 
 To contribute to a bug fix:
 1. Submit the bug as a GitHub issue.
