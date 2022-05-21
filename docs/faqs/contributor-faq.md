@@ -215,3 +215,4 @@ To contribute to a bug fix:
 3. Fix the bug and add a test.
 4. Create a pull request for your branch.
 5. After approval and merge make sure the issue is closed.
+
