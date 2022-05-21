@@ -39,8 +39,8 @@ After cloning your fork, your local repository should be named origin. Validate 
 
 ```bash
 $ git remote -v
-origin https://github.com/_YOURUSERNAME_/OpenMS.git (fetch)
-origin https://github.com/_YOURUSERNAME_/OpenMS.git (push)
+  origin https://github.com/_YOURUSERNAME_/OpenMS.git (fetch)
+  origin https://github.com/_YOURUSERNAME_/OpenMS.git (push)
 ```
 
 Sync data between your local copy, your fork (`origin`) and the remote original OpenMS/OpenMS repository (`upstream`) by using the following command:
@@ -61,8 +61,8 @@ $ git remote -v
 Fetch changes and new branches from your fork (`origin`) as well as from the central, upstream OpenMS repository by executing:
 
 ```bash
-  $ git fetch upstream
-  $ git fetch origin
+$ git fetch upstream
+$ git fetch origin
 ```
 or
 
@@ -118,7 +118,7 @@ Follow these rules:
 * When updating your fork, consider using `git fetch upstream` followed by `git merge --ff-only upstream/develop` to avoid creating merge commits in `develop`.
   If you never commit to `develop` this should always succeed and (if a commit accidentally went to develop) warn you instead of creating a merge commit.
 
-## Create a New Feature
+## Create New Feature
 
 All features start from `develop`.
 
