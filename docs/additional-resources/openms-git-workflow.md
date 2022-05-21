@@ -3,9 +3,7 @@ OpenMS Git Workflow
 
 Before you get started, make sure you have a recent version of git installed to avoid problems like Github https authenitcation errors (see [Troubleshooting cloning errors](https://docs.github.com/en/repositories/creating-and-managing-repositories/troubleshooting-cloning-errors) and a solution using [ssh](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories)).
 
-OpenMS follows the [git flow workflow](https://nvie.com/posts/a-successful-git-branching-model/).The difference is that merge commits are managed via pull requests instead of creating merge commits locally.
-
-The following page aims to provide a basic workflow.
+OpenMS follows the [git flow workflow](https://nvie.com/posts/a-successful-git-branching-model/). The difference is that merge commits are managed via pull requests instead of creating merge commits locally.
 
 ## Naming Conventions
 
