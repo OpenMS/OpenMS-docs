@@ -42,10 +42,12 @@ Packaged versions of **OpenMS** are provided for Fedora, OpenSUSE, Debian, and U
 library, installation should be done via building from the source code.
 
 :::{note}
+
 Please note that these packages are not directly maintained by OpenMS and they  can not be guaranteed the
 same behaviour as when building it on from source code. Also, their availability and version is subject to change and
 support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
 Debian package.
+
 :::
 
 ## Installation via Building From Source Code
