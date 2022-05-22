@@ -2,7 +2,7 @@ TOPP and OpenMS
 ==============
 
 TOPP, the OpenMS Proteomics Pipeline provides a set of computational tools that can be easily combined into analysis
-pipelines even by non-experts and then be used in proteomics workflows. These applications range from useful utilties
+pipelines even by non-experts and then be used in proteomics workflows. These applications range from useful utilities
 file format conversion, peak picking over wrapper applications for known applications (e.g. Mascot) to completely new
 algorithmic techniques for data reduction and data analysis. TOPP is based on the OpenMS library and as more
 functionality is added to new OpenMS releases, TOPP will naturally contain new or updated tools.

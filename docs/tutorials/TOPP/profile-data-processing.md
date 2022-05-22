@@ -59,7 +59,7 @@ Finding the right parameters is not trivial. The default parameters will not wor
 good parameters, following this procedure:
 
 1. Load the data in TOPPView.
-2. Extract a single scan from the middle of the HPLC gradient (Right click on scan).
+2. Extract a single scan from the middle of the HPLC gradient (Right click on **scan**).
 3. Experiment with the parameters until you have found the proper settings
 
 You can find the **NoiseFilters**, the **BaselineFilter**, and the **PeakPickers** in **TOPPView** in the menu **Layer** > **Apply TOPP tool**.

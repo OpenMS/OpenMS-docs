@@ -53,13 +53,13 @@ clicking anywhere and selecting **Add Label**, respectively. Multiple annotation
 
 ![](../../images/tutorials/topp/TOPPView_1D.png)
 
-Throught the **context menu**: of the 1D view you can:
+Through the **context menu**: of the 1D view you can:
 
-1. View/edit meta data
-2. Save the current layer data
-3. Change display settings
-4. Add peak annotations or arbitrary text labels
-5. Reset a performed alignment
+1. View/edit meta data.
+2. Save the current layer data.
+3. Change display settings.
+4. Add peak annotations or arbitrary text labels.
+5. Reset a performed alignment.
 
 ## 2D View
 
@@ -97,6 +97,6 @@ The following example image shows a small region of a peak map:
 
 Through the **context menu**: of the 3D view you can:
 
-1. View/edit meta data
-2. Save the current layer data
-3. Change display setting
+1. View/edit meta data.
+2. Save the current layer data.
+3. Change display setting.
