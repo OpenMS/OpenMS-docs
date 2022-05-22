@@ -23,7 +23,7 @@ To Install the binary package of OpenMS & TOPP:
 
    This is a known issue with a Microsoft package, we cannot do anything about it.
    The error message will give the location where the redistributable package was extracted to. Go to this folder and
-   run the executable (usually named `vcredistXXXX.exe`) as an administrator (right-click -> Run-As). You will likely
+   run the executable (usually named `vcredistXXXX.exe`) as an administrator (right-click and then select **Run-As**). You will likely
    receive an error message (this is also the reason why the OpenMS setup complained about it). You might have to find
    the solution to fix the problem in your local machine. If you're lucky the error message is instructive and the
    problem is easy to fix.

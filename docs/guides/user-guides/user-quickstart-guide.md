@@ -24,7 +24,7 @@ Before using [OpenMS.org](https://www.openms.de/), you need to be familiar with 
 
 ## How to run a Tool
 
-It is recommended to use TOPPAS. A good start are the example pipelines (see "File" –> "Open example file" within TOPPAS).
+It is recommended to use TOPPAS. A good start are the example pipelines (select **File** > **Open example file** within TOPPAS).
 In parallel read the documentation of the tools (see [TOPP tutorial](), [TOPP documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html)) and the one of TOPPAS ([TOPPAS tutorial](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html)).
 
 Alternatively, you can use the command line and call tools directly. In this case you'll probably want to use some type of shell

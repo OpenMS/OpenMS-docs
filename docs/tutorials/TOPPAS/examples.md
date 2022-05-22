@@ -1,8 +1,8 @@
 Examples
 ========
 
-The following sections explain the example pipelines TOPPAS comes with. Open them by selecting `File` > `Open example file`.
-All input files and parameters are already specified, so you can just hit `Pipeline` > `Run` (or press `F5`) and see what
+The following sections explain the example pipelines TOPPAS comes with. Open them by selecting **File** > **Open example file**.
+All input files and parameters are already specified, so you can just hit **Pipeline** > **Run** (or press `F5`) and see what
 happens.
 
 ## Profile data processing
@@ -25,7 +25,7 @@ Use the search engine OMSSA (Geer et al., 2004) for peptide identification. Ther
 path to the OMSSA executable (omssacl) must be set in the parameters of the OMSSAAdapter node.
 
 - Node #1 accepts mzML files containing MS2 spectra.
-- Node #2 provides the database and is set to `recycling mode` to allow the database to be reused when there is more
+- Node #2 provides the database and is set to **recycling mode** to allow the database to be reused when there is more
   than one input file in node #1.
 - OMSSAAdapter calls OMSSA which performs the actual search.
 - PeptideIndexer annotates for each search result whether it is a target or a decoy hit.
@@ -78,6 +78,6 @@ connections into one single list. It then calls the next tool with this list of 
 once during the entire pipeline run.
 
 In order to track what is happening, open the example file and run it. When the pipeline execution has finished, have a
-look at all input and output files (e.g., select `Open in TOPPView`in the context menu of the input/output nodes). The
+look at all input and output files (e.g., select **Open in TOPPView** in the context menu of the input/output nodes). The
 input files are named `rt_1.mzML`, `rt_2.mzML`, ... and each contains a single spectrum with RT as indicated by the filename,
 which helps to understand which files have been merged together.

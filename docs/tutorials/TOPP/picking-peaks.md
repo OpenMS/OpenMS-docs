@@ -6,7 +6,7 @@ the baseline ([Subtracting a baseline from a spectrum](subtracting-a-baseline-fr
 
 There are two types of PeakPickers, the PeakPickerWavelet and one especially suited for high resolution data
 (PeakPickerHiRes). This tutorial explains the PeakPickerWavelet. Use the file `peakpicker_tutorial_2.mzML` from the
-examples data (`File` \> `Open example data`).
+examples data (select **File** > **Open example data**).
 
 The main parameters are the peak width and the minimal signal to noise ratio for a peak to be picked. If you don't know
 the approximate `fwhm` of peaks, use the estimation included in the PeakPickerWavelet, set the flag `estimate\_peak\_width`
