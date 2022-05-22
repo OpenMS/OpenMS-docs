@@ -42,7 +42,7 @@ database file, i.e. use it for every run of the MascotAdapter node. The input li
 of times, but the recycling has to be `complete`, i.e. the number of rounds of the downstream node have to be a multiple
 of the number of input files. Recycling mode can be activated by right-clicking the input node and selecting the according
 entry from the context menu. Finally, if you have input and output nodes at every end of your pipeline and all
-connections are green, select `Pipeline` > `Run` in the menu bar or just press `F5`.
+connections are green, select **Pipeline** > **Run** in the menu bar or just press `F5`.
 
 ![](../../images/tutorials/TOPPAS_run_options.png)
 
