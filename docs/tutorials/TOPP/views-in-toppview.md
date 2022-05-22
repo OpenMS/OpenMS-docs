@@ -42,13 +42,13 @@ annotations and simple text labels are provided.
 
 The following example image shows a 1D view in mirror mode. A theoretical spectrum (lower half) has been generated using
 the theoretical spectrum generator (**Tools** > **Generate theoretical spectrum**). The mirror mode has been activated by
-right-clicking the layer containing the theoretical spectrum and selecting `Flip downward` from the layer context menu.
+right-clicking the layer containing the theoretical spectrum and selecting **Flip downward** from the layer context menu.
 A spectrum alignment between the two spectra has been performed (**Tools** > **Align spectra**). It is visualized by the red
 lines connecting aligned peaks and can be reset through the context menu. Moreover, in the example, several distances
 between abundant peaks have been measured and subsequently replaced by their corresponding amino acid residue code.
-This is done by right-clicking a distance annotation and selecting `Edit` from the context menu. Additionally, peak
-annotations and text labels have been added by right-clicking peaks and selecting `Add peak` annotation or by right
-clicking anywhere and selecting `Add Label`, respectively. Multiple annotations can be selected by holding down the
+This is done by right-clicking a distance annotation and selecting **Edit** from the context menu. Additionally, peak
+annotations and text labels have been added by right-clicking peaks and selecting **Add peak** annotation or by right
+clicking anywhere and selecting **Add Label**, respectively. Multiple annotations can be selected by holding down the
 `CTRL` key while clicking them. They can be moved around by dragging the mouse and deleted by pressing `DEL`.
 
 ![](../../images/tutorials/topp/TOPPView_1D.png)

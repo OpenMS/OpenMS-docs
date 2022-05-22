@@ -2,7 +2,7 @@ Data Analysis in TOPPView
 =========================
 
 TOPPView also offers limited data analysis capabilities for single layers, which will be illustrated in the following
-sections. The functionality presented here can be found in the `Tools` menu:
+sections. The functionality presented here can be found in the **Tools** menu:
 
 ![](../../images/tutorials/topp/TOPPView_tools_menu.png)
 

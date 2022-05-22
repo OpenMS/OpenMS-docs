@@ -22,19 +22,19 @@ files have been specified.
 ![](../../images/tutorials/TOPPAS_edges.png)
 
 The input/output mapping of connections can be changed at any time during the editing process by double-clicking an
-connections or by selecting `Edit I/O mapping` from the context menu which appears when a connection is right-clicked.
+connections or by selecting **Edit I/O mapping** from the context menu which appears when a connection is right-clicked.
 All visible items (i.e. connections and the different kinds of nodes) have such a context menu. For a detailed list of
 the different menus and their entries, see [Menus](user-interface.md#menus).
 
 The following figure shows a possible next step: the user has double-clicked one of the tool nodes in order to configure
 its parameters. By default, the standard parameters are used for each tool. Again, this can also be done by selecting
-`Edit parameters` from the context menu of the tool.
+**Edit parameters** from the context menu of the tool.
 
 ![](../../images/tutorials/TOPPAS_parameters.png)
 
 Once the pipeline has been set up, the input files have to be specified before the pipeline can be executed. This is
 done by double-clicking an input node and selecting the desired files in the dialog that appears. Input nodes have a
-special mode named `recycling mode`, i.e., if the input node has fewer files than the following node has rounds
+special mode named **recycling mode**, i.e., if the input node has fewer files than the following node has rounds
 (as it might have two incoming connections) then the files are recycled until all rounds are satisfied. This might be
 useful if one input node specifies a single database file (for a Search-Adapter like Mascot) and another input node has
 the actual MS2 experiments (which is usually more than one). Then the database input node would be set to `recycle` the
@@ -68,7 +68,7 @@ Both folders contain further sub-directories which are named after the number in
 belong to (plus the name of the tool for temporary files). During pipeline execution, the status lights in the top-right
 corner of every tool show how many files have already been processed and the overall number of files to be processed by
 this tool. When the execution has finished, check the generated output files of every node quickly by selecting
-`@a Open @a files @a in @a TOPPView` or `@a Open @a containing @a folder` from the context menu (right click on the node).
+**Open files in TOPPView** or **Open containing folder** from the context menu (right click on the node).
 
 ## Mouse and keyboard
 
@@ -105,33 +105,33 @@ Using the mouse` + `keyboard:
 
 ### Menu bar
 
-In the `File` menu:
+In the **File** menu:
 
-- create a new, empty workflow (`New`)
-- open an existing one (`Open`)
-- open an example file (`Open example file`)
-- include an existing workflow to the current workflow (`Include`)
-- visit the online workflow repository (`Online repository)`
-- save a workflow (`Save`/`Save as`)
-- export the workflow as image (`Export as image`)
-- refresh the parameter definitions of all tools contained in the workflow (`Refresh parameters`)
-- close the current window (`Close`)
-- load and save TOPPAS resource files (`.trf`) (`Load`/`Save OPPAS resource file`)
+- create a new, empty workflow (**New**)
+- open an existing one (**Open**)
+- open an example file (**Open example file**)
+- include an existing workflow to the current workflow (**Include**)
+- visit the online workflow repository (**Online repository**)
+- save a workflow (**Save**/**Save as**)
+- export the workflow as image (**Export as image**)
+- refresh the parameter definitions of all tools contained in the workflow (**Refresh parameters**)
+- close the current window (**Close**)
+- load and save TOPPAS resource files (`.trf`) (**Load**/**Save OPPAS resource file**)
 
-In the `Pipeline` menu:
+In the **Pipeline** menu:
 
-- run a pipeline (`Run`)
-- abort a currently running pipeline (`Abort`)
+- run a pipeline (**Run**)
+- abort a currently running pipeline (**Abort**)
 
-In the `Windows` menu:
+In the **Windows** menu:
 
 - make the TOPP tool list window on the left, the description window on the right, and the log message at the bottom
   (in)visible.
 
-In the `Help` menu:
+In the **Help** menu:
 
-- go to the OpenMS website (`OpenMS website`)
-- open this tutorial (`TOPPAS tutorial`)
+- go to the OpenMS website (**OpenMS website**)
+- open this tutorial (**TOPPAS tutorial**)
 
 ### Context menus
 
@@ -140,7 +140,7 @@ In the context menu of an `input node`:
 - specify the input files
 - open the specified files in TOPPView
 - open the input files' folder in the window manager (explorer)
-- toggle the `recycling` mode
+- toggle the **recycling** mode
 - copy, cut, and remove the node
 
 In the context menu of a `tool`:
@@ -149,16 +149,16 @@ In the context menu of a `tool`:
 - resume the pipeline at this node
 - open its temporary output files in TOPPView
 - open the temporary output folder in the file manager (explorer)
-- toggle the `recycling` mode
+- toggle the **recycling** mode
 - copy, cut, and remove the node
 
 In the context menu of a `Merger` or `Collector`:
 
-- toggle the `recycling` mode
+- toggle the **recycling** mode
 - copy, cut, and remove the node
 
 In the context menu of an `output node`:
 
 - open the output files in TOPPView
-- open the output files' folder in the window manager (explorer)
+- open the output files folder in the window manager (explorer)
 - copy, cut, and remove the node
