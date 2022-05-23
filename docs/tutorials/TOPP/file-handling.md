@@ -42,16 +42,16 @@ Sequest DTA files can be extracted from a mzML file using the **DTAExtractor**:
 The retention time of a scan, the precursor mass-to-charge ratio (for MS/MS scans) and the file extension are appended
 to the output file name.
 
-To combine several files (e.g. DTA files) to an mzML file use the **FileMerger**:
+To combine several files (e.g. DTA files) to an `mzML` file use the **FileMerger**:
 
 `FileMerger -in infile_list.txt -out outfile.mzML`
 
-The retention times of the scans can be generated, taken from the *infile_list.txt* or can be extracted from the DTA
+The retention times of the scans can be generated, taken from the `infile_list.txt` or can be extracted from the DTA
 file names. See the FileMerger documentation for details.
 
 ## Extracting part of the data from a file
 
-To extract part of the data from an mzML file, use the **FileFilter** tool. It allows filtering for RT, `m/z` and
+To extract part of the data from an `mzML` file, use the **FileFilter** tool. It allows filtering for RT, `m/z` and
 intensity range or for MS level. To extract the MS/MS scans between retention time 100 and 1500, use the following
 command:
 

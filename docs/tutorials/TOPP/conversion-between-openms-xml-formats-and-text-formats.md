@@ -41,7 +41,7 @@ Example invocation:
 
 `TextImporter -in infile.txt -out outfile.featureXML`
 
-The tool also supports data from msInspect,SpecArray and Kroenik(Hardkloer sibling), just specify the -mode option
+The tool also supports data from msInspect,SpecArray and Kroenik(Hardkloer sibling), just specify the `-mode` option
 accordingly.
 
 ## Import of protein/peptide identification data to OpenMS

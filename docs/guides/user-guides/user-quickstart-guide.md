@@ -40,7 +40,7 @@ The default parameters of each tool can usually be tweaked to fit the data and i
                show up once it is selected. All parameters which would be available on the command line and in the INI
 	       file are shown here as well.
 2. **Command line**: Very basic parameters can be set on the command line, e.g. `FileFilter -rt 1000:2000 .....`
-3. Doing 2 for all parameters would create a very long list, thus, use so-called ".ini" files to provide full parameter
+3. Doing 2 for all parameters would create a very long list, thus, use so-called `.ini` files to provide full parameter
    sets to TOPP tools. If no INI file is given, default parameters are used. To get a default `.ini` use
 
    `<tool> -write_ini <file>`
@@ -52,7 +52,7 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 
 ### How do I feed the INI file to a Tool?
 
-1. **TOPPAS**: Once you changed the parameters of a node and clicked "Ok", the parameters are in effect. Because
+1. **TOPPAS**: Once you changed the parameters of a node and clicked **Ok**, the parameters are in effect. Because
    they are part of the TOPPAS workflow, they are saved together with the workflow.
 2. **Command line** : Simply supply the INI file via the `-ini` flag,
    `<tool> -ini <file>`

@@ -32,7 +32,7 @@ The algorithm is described in detail in Lange et al. (2006) Proc. PSB-06.
 - **Application**: This algorithm was designed for low and medium resolution data. It can also be applied to
   high-resolution data, but can be slow on large datasets.
 
-See the PeakPickerCWT class documentation for a parameter list.
+See the `PeakPickerCWT` class documentation for a parameter list.
 
 ### PeakPickerHiRes
 
