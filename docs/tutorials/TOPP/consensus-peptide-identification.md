@@ -11,11 +11,12 @@ In order to improve the identification accuracy, several identification engines 
 identification can be calculated from the results. The image below shows an example where Mascot and OMSSA results are
 fed to the **ConsensusID** tool (ConsensusID is currently usable for Mascot, OMSSA and XTandem).
 
-![](../../images/tutorials/topp/TOPP_consensus_id.png)
+![TOPP Consensus ID](../../images/tutorials/topp/TOPP_consensus_id.png)
 
 
 To combine quantitation and identification results:
 
 Protein/peptide identifications can be annotated to quantitation results (featureXML, consensusXML) by the **IDMapper**
 tool. The combined results can then be exported by the **TextExporter** tool:
+
 [Conversion between OpenMS XML formats and text formats](conversion-between-openms-xml-formats-and-text-formats.md).

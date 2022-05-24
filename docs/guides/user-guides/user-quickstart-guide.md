@@ -13,7 +13,7 @@ under the three clause BSD licence and runs under Windows, macOS, and Linux oper
 
 ## Background
 
-Before using [OpenMS.org](https://www.openms.de/), you need to be familiar with the following terms:
+Before using OpenMS, become familiar with the following terms:
 
 | Tool and Utilities | Description |
 |--------------------|-------------|
@@ -24,17 +24,18 @@ Before using [OpenMS.org](https://www.openms.de/), you need to be familiar with 
 
 ## How to run a Tool
 
-It is recommended to use TOPPAS. A good start are the example pipelines (select **File** > **Open example file** within TOPPAS).
-In parallel read the documentation of the tools (see [TOPP tutorial](), [TOPP documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html)) and the one of TOPPAS ([TOPPAS tutorial](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html)).
+A good start are the example pipelines (select **File** > **Open example file** within TOPPAS).
 
-Alternatively, you can use the command line and call tools directly. In this case you'll probably want to use some type of shell
+Read the documentation of the tools (see [TOPP tutorial](), [TOPP documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html)) and the one of TOPPAS ([TOPPAS tutorial](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html)).
+
+Alternatively, use the command line and call tools directly. In this case, you'll probably want to use some type of shell
 script for automation.
 
-## Adapting your Pipeline Parameters
+## Adapting your pipeline parameters
 
 The default parameters of each tool can usually be tweaked to fit the data and improve results.
 
-### Where do you change them?
+### Where do you change pipeline parameters?
 
 1. **TOPPAS**: Double-click the node of which you want to change the parameters of. A short docu for each parameter will
                show up once it is selected. All parameters which would be available on the command line and in the INI
@@ -54,13 +55,12 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 
 1. **TOPPAS**: Once you changed the parameters of a node and clicked **Ok**, the parameters are in effect. Because
    they are part of the TOPPAS workflow, they are saved together with the workflow.
-2. **Command line** : Simply supply the INI file via the `-ini` flag,
+2. **Command line** : Supply the INI file via the `-ini` flag,
    `<tool> -ini <file>`
 
    e.g. `FileFilter -ini filefilter.ini`
 
-### What parameters require to be changed and to what value?
+### What parameters to set and to what value?
 
-This is tricky and its not possible to give a general answer. In general, read the tool description, change the
-parameters and compare the results using TOPPView if possible. If that does not help, drop us an email on the
-[OpenMS mailing list]() and ask. Please include all the necessary details we need in order to help you.
+The answer is complex, in general, read the tool description, change the parameters and compare the results using
+TOPPView if possible. If that does not help, [contact us](../../contact-us.md). Please include all the necessary details we need in order to help you.
