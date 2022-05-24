@@ -13,14 +13,14 @@ It converts the the following OpenMS XML formats to text files:
 - idXML
 - consensusXML
 
-The use of the **TextExporter** is is very simple:
+The use of the `TextExporter` is is very simple:
 
 `TextExporter -in infile.idXML -out outfile.txt`
 
 ## Import of feature data to OpenMS
 
 OpenMS offers a lot of visualization and analysis functionality for feature data.
-Feature data in text format, e.g. from other analysis tools, can be imported using the **TextImporter**. The default
+Feature data in text format, e.g. from other analysis tools, can be imported using the `TextImporter`. The default
 mode accepts comma separated values containing the following columns: RT, m/z, intensity. Additionally meta data
 columns may follow. If meta data is used, meta data column names have to be specified in a header line. Without headers:
 

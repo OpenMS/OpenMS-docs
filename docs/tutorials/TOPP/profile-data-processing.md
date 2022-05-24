@@ -23,7 +23,7 @@ available, PeakPickerWavelet and PeakPickerHiRes.
 ### PeakPickerWavelet
 
 This peak picking algorithm uses the continuous wavelet transform of a raw data signal to detect mass peaks. Afterwards
-a given asymmetric peak function is fitted to the raw data and important peak parameters (e.g. fwhm) are extracted. In
+a given asymmetric peak function is fitted to the raw data and important peak parameters (e.g. `fwhm`) are extracted. In
 an optional step these parameters can be optimized using a non-linear optimization method.
 
 The algorithm is described in detail in Lange et al. (2006) Proc. PSB-06.
@@ -49,7 +49,7 @@ Please notice that this method is still **experimental** since it has not been t
   These properties facilitate a fast computation of picked peaks so that even large data sets can be processed very
   quickly.
 
-  See the PeakPickerHiRes class documentation for a parameter list.
+  See the `PeakPickerHiRes` class documentation for a parameter list.
 
 ## Finding the right parameters for the
 

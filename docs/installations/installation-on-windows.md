@@ -30,7 +30,7 @@ To Install the binary package of OpenMS & TOPP:
 3. Error: "Error opening installation log file"
 
    To fix, check the system environment variables. Make sure they are apt. There should a `TMP` and a `TEMP` variable,
-   and both should contain ONE(!) directory only, which exists and is writable. Fix accordingly (search the internet on
+   and both should contain one directory only, which exists and is writable. Fix accordingly (search the internet on
    how to change environment variables on Windows).
 4. For Win8 or later, Windows will report an error while installing `.net4` as it's mostly included. But it might occur
    that `.net3.5` does not get properly installed during the process.

@@ -35,21 +35,18 @@ path to the OMSSA executable (omssacl) must be set in the parameters of the OMSS
 ![](../../images/tutorials/toppas/TOPPAS_Ecoli_Identification.png)
 
 Extensions to this pipeline would be to do the annotation of the spectra with multiple search engines and combine the
-results afterwards, using the ConsensusID TOPP tool.
+results afterwards, using the **ConsensusID** TOPP tool.
 
-The results may be exported using the TextExporter tool, for further analysis with different tools.
+The results may be exported using the **TextExporter** tool, for further analysis with different tools.
 
 ## Quantitation of BSA runs
 
 The simple pipeline described in this section (`BSA_Quantitation.toppas`) can be used to quantify peptides that occur
-on different runs. The example dataset contains three different bovine serum albumin (BSA) runs. First, FeatureFinderCentroided
-is called since the dataset is centroided. The results of the feature finding are then annotated with (existing)
-identification results. For convenience, we provide these search results from OMSSA with peptides with an FDR of 5% in
-the BSA directory.
+on different runs. The example dataset contains three different bovine serum albumin (BSA) runs. First, **FeatureFinderCentroided** is called since the dataset is centroided. The results of the feature finding are then annotated with (existing) identification results. For convenience, we provide these search results from OMSSA with peptides with an FDR of 5% in the BSA directory.
 
 ![](../../images/tutorials/toppas/TOPPAS_BSA_Quantitation.png)
 
-Identifications are mapped to features by the IDMapper. The last step is performed by FeatureLinkerUnlabeled which links
+Identifications are mapped to features by the **IDMapper**. The last step is performed by **FeatureLinkerUnlabeled** which links
 corresponding features. The results can be used to calculate ratios, for example. The data could also be exported to a
 text based format using the TextExporter for further processing (e.g., in Microsoft Excel).
 
