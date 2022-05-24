@@ -54,7 +54,7 @@ Debian package.
 
 The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU/Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/install_linux.html) instructions on how to build OpenMS from source.
 
-> **_NOTE:_** Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
+> :memo: **_NOTE:_** Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
 
 ## Run via a (Bio)Docker Image
 
