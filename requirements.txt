@@ -6,3 +6,4 @@ myst-parser
 sphinx-notfound-page
 sphinxcontrib-images
 linkify-it-py
+sphinx-inline-tabs
