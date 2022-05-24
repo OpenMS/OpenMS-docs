@@ -25,3 +25,17 @@ to enable rapid algorithm development. OpenMS supports the Proteomics Standard
 Initiative (PSI) formats for MS data. The main contributors of OpenMS are
 currently the Eberhard-Karls-Universität in Tübingen, the Freie Universität
 Berlin, and the ETH Zürich.
+
+Get started with installing OpenMS on different operating systems!
+
+```{tab} Installation on GNU/Linux
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
+```
+
+```{tab} Installation on Windows
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
+```
+
+```{tab} Installation on macOS
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
+```
