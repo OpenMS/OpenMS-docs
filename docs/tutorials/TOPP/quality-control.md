@@ -4,7 +4,7 @@ Quality Control
 To check the quality of the data (supports label-free workflows and [TOPP Documentation:IsobaricAnalyzer](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_IsobaricAnalyzer.html) output):
 
 The [TOPP Documentation:QualityControl](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_QualityControl.html) TOPP tool computes and collects data which allows to compute QC metrics to check the quality of
-LC-MS data. Depending on the given input data, this tool collects data for metrics (see section **Metrics** below). New
+LC-MS data. Depending on the given input data, this tool collects data for metrics (see section [Metrics](quality-control.md#Metrics)). New
 metavalues will be added to existing data and the information will be written out in mzTab format. This mzTab file can
 then be processed using custom scripts or via the R package (see [github:cbielow:PTXQC](https://github.com/cbielow/PTXQC/).
 
