@@ -50,8 +50,7 @@ templates_path = ['_templates']
 #
 source_suffix = ['.rst', '.md']
 
-myst_enable_extensions = ["html_admonition", "colon_fence"
-]
+myst_enable_extensions = ["html_admonition", "colon_fence", "linkify"]
 
 
 # List of patterns, relative to source directory, that match files and
