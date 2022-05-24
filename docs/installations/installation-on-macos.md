@@ -38,6 +38,7 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
 ## Known Issues
 
 1. OpenMS software landing in quarantine since macOS Catalina after installation of the `.dmg`.
+
    Since macOS Catalina (maybe also Mojave) notarized apps and executables are mandatory.
 
    > **_NOTE:_** Although there is a lot of effort in signing and notarizing everything, it seems like openms software
@@ -52,8 +53,9 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
    cd /Applications/OpenMS-<version>
    sudo xattr -r -d com.apple.quarantine *
    ```
-2. Bug with running Java based thirdparty tools like MSGFPlusAdapter and LuciphorAdapter from within TOPPAS.app
-   If you face issues while running Java based thirdparty tools from within `TOPPAS.app`, run the TOPPAS.app from within
-   the Terminal.app (e.g. with the `open` command) to get access to the `path` where Java is located.
-   Java is usually present in the `PATH` of the terminal. Adavanced users can set this path in the `Info.plist` of/inside
-   the `TOPPAS.app`.
+2. Bug with running Java based thirdparty tools like MSGFPlusAdapter and LuciphorAdapter from within **TOPPAS.app**
+
+   If you face issues while running Java based thirdparty tools from within TOPPAS.app, run the TOPPAS.app from within
+   the Terminal.app (e.g. with the `open` command) to get access to the path where Java is located.
+   Java is usually present in the `PATH` of the terminal. Advanced users can set this path in the `Info.plist` of/inside
+   the TOPPAS.app.
