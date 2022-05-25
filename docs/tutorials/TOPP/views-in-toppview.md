@@ -13,19 +13,19 @@ and one for measuring:
   - It is activated by default
   - Move the mouse while holding the mouse button down to translate the current view
   - Arrow keys can be used to translate the view without entering translate mode (in 1D-View you can additionally
-    use `Shift`-key to jump to the next peak)
+    use <kbd>Shift</kbd> to jump to the next peak)
 - Zoom mode
-  - All previous zoom levels are stored in a zoom history. The zoom history can be traversed using `CTRL+`/`CTRL-` or the
+  - All previous zoom levels are stored in a zoom history. The zoom history can be traversed using <kbd>CTRL</kbd> + <kbd>+</kbd>/<kbd>CTRL</kbd> + <kbd>-</kbd> or the
     mouse wheel (scroll up and down)
   - Zooming into the data:
-    - Mark an area in the current view with your mouse, while holding the left mouse button plus the `CTRL` key to zoom
+    - Mark an area in the current view with your mouse, while holding the left mouse button plus the <kbd>CTRL</kbd> key to zoom
 	  to this area.
 	- You can also use your mouse wheel to traverse the zoom history.
-	- If you have reached the end of the history, keep on pressing `CTRL+` or scroll up, the current area will be
+	- If you have reached the end of the history, keep on pressing <kbd>CTRL</kbd> + <kbd>+</kbd> or scroll up, the current area will be
 	  enlarged by a factor of `1.25`.
-  - Pressing the `Backspace` key resets the zoom and zoom history.
+  - Pressing <kbd>Backspace</kbd> resets the zoom and zoom history.
 - Measure mode
-  - It is activated using the `SHIFT` key
+  - It is activated using <kbd>SHIFT</kbd>.
   - Press the left mouse button down while a peak is selected and drag the mouse to another peak to measure the
     distance between peaks.
   - This mode is implemented in the 1D and 2D mode.
@@ -49,7 +49,7 @@ between abundant peaks have been measured and subsequently replaced by their cor
 This is done by right-clicking a distance annotation and selecting **Edit** from the context menu. Additionally, peak
 annotations and text labels have been added by right-clicking peaks and selecting **Add peak** annotation or by right
 clicking anywhere and selecting **Add Label**, respectively. Multiple annotations can be selected by holding down the
-`CTRL` key while clicking them. They can be moved around by dragging the mouse and deleted by pressing `DEL`.
+<kbd>CTRL</kbd> key while clicking them. They can be moved around by dragging the mouse and deleted by pressing <kbd>DEL</kbd>.
 
 ![TOPPView 1D](../../images/tutorials/topp/TOPPView_1D.png)
 
