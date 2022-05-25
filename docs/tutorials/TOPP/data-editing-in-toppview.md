@@ -8,4 +8,4 @@ After enabling the feature editing mode in the context menu of the feature layer
 - Features can be dragged with the mouse in order to change the m/z and RT position.
 - The position, intensity and charge of a feature can be edited by double-clicking a feature.
 - Features can be created by double-clicking the layer background.
-- Features can be removed by selecting them and pressing the DEL key.
+- Features can be removed by selecting them and pressing the <kbd>DEL</kbd> key.

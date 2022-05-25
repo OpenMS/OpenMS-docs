@@ -2,8 +2,7 @@ Examples
 ========
 
 The following sections explain the example pipelines TOPPAS comes with. Open them by selecting **File** > **Open example file**.
-All input files and parameters are already specified, so you can just hit **Pipeline** > **Run** (or press `F5`) and see what
-happens.
+All input files and parameters are already specified, so you can just hit **Pipeline** > **Run** (or press <kbd>F5</kbd>) and see what happens.
 
 ## Profile data processing
 

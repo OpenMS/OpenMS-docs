@@ -182,7 +182,7 @@ raw mzML file
 
 ### TopNoverRT
 
-The TopNoverRT metric calculates the ScanEventNumber (number of the MS2 scans after the MS1 scan) and adds them as the
+The **TopNoverRT** metric calculates the ScanEventNumber (number of the MS2 scans after the MS1 scan) and adds them as the
 new metavalue `ScanEventNumber` to the PeptideIdentifications. It finds all unidentified MS2-Spectra and adds corresponding
 `empty` PeptideIdentifications without sequence as placeholders to the unassigned PeptideIdentification list.
 Furthermore, it adds the metavalue `identified` to the PeptideIdentification.

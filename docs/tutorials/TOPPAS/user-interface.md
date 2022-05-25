@@ -42,7 +42,7 @@ database file, i.e. use it for every run of the MascotAdapter node. The input li
 of times, but the recycling has to be `complete`, i.e. the number of rounds of the downstream node have to be a multiple
 of the number of input files. Recycling mode can be activated by right-clicking the input node and selecting the according
 entry from the context menu. Finally, if you have input and output nodes at every end of your pipeline and all
-connections are green, select **Pipeline** > **Run** in the menu bar or just press `F5`.
+connections are green, select **Pipeline** > **Run** in the menu bar or just press <kbd>F5</kbd>.
 
 ![](../../images/tutorials/TOPPAS_run_options.png)
 
@@ -76,8 +76,8 @@ Using the mouse:
 
 - drag and drop tools from the TOPP tool list onto the workflow window (you can also double-click them instead)
 - select items (by clicking)
-- select multiple items (by holding down `CTRL` while clicking)
-- select multiple items (by holding down `CTRL` and dragging the mouse in order to "catch" items with a selection
+- select multiple items (by holding down <kbd>CTRL</kbd> while clicking)
+- select multiple items (by holding down <kbd>CTRL</kbd> and dragging the mouse in order to "catch" items with a selection
   rectangle)
 - move all selected items (by dragging one of them)
 - draw a new connection from one node to another (by dragging; source must be deselected first)
@@ -90,15 +90,15 @@ Using the mouse:
 
 Using the keyboard:
 
-- delete all selected items (`DEL` or `BACKSPACE`)
-- zoom in and out (`+`/`-`)
-- run the pipeline (`F5`)
-- open this tutorial (`F1`)
+- delete all selected items (<kbd>DEL</kbd> or <kbd>BACKSPACE</kbd>)
+- zoom in and out (<kbd>+</kbd>/<kbd>-</kbd>)
+- run the pipeline (<kbd>F5</kbd>)
+- open this tutorial (<kbd>F1</kbd>)
 
-Using the mouse` + `keyboard:
+Using the mouse + keyboard:
 
 - copy a node's parameters to another node (only parameters with identical names will be copied, e.g.,
-  `fixed_modifications`) (`CTRL` while creating an edge) The edge will be colored as dark magenta to indicate parameter
+  `fixed_modifications`) (<kbd>CTRL</kbd> while creating an edge) The edge will be colored as dark magenta to indicate parameter
   copying.
 
 ## Menus
