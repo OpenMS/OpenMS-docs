@@ -27,8 +27,10 @@ and sample description.
 
 ![Meta Data Browser](../../images/tutorials/topp/MetaDataBrowser.png)
 
-> **_NOTE:_** Identification data, e.g. from a Mascot run, can be annotated to the spectra or features, too. After
+```{tip}
+Identification data, e.g. from a Mascot run, can be annotated to the spectra or features, too. After
 annotation, this data is listed in the metadata.
+```
 
 ## Statistics
 

@@ -54,6 +54,7 @@ selected, TOPPAS will parallelize the pipeline execution in the following scenar
 - The pipeline contains multiple branches that are independent of each other. In this case, multiple tools can run in
   parallel.
 
+```{caution}
 Be careful with this setting, however, as some of the TOPP tools require large amounts of RAM (depending on the size of
 the dataset). Running too many parallel jobs on a machine with not enough memory will cause problems. Also, do not
 confuse this setting with the `threads` parameter of the individual TOPP tools: every TOPP tool has this parameter
@@ -61,6 +62,7 @@ specifying the maximum number of threads the tool is allowed to use (although on
 of this parameter, since there are tasks that cannot be computed in parallel). Be especially careful with combinations
 of both parameters! For a pipeline containing the `FeatureFinderCentroided`, as an example, and set its `threads`
 parameter to 8, and additionally set the number of parallel jobs in **TOPPAS** to 8, then you end up using 64 threads.
+```
 
 In addition to `TOPPAS_out`, a `TOPPAS_tmp` directory will be created in the OpenMS temp path (call the `OpenMSInfo`
 tool to see where exactly). It will contain all temporary files that are passed from tool to tool within the pipeline.

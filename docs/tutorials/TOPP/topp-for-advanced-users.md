@@ -12,14 +12,18 @@ specify one or more directories where FASTA files (or related, e.g., `.psq` file
 directories specified in `id_db_dir` will be searched. This allows to build scripts and/or TOPPAS pipelines which are
 portable across several computers, just adapt the OpenMS.ini once on each machine.
 
-> **_NOTE:_** When using TOPPAS: Use an "input file" node to specify the FASTA file for several engines simultaneously.
+```{tip}
+When using TOPPAS: Use an "input file" node to specify the FASTA file for several engines simultaneously.
 However, when selecting the file, TOPPAS will use the absolute pathname and the dialog will not allow to name a
 non-existing file. After selecting the file you can however edit the filename and remove the path (this will issue a
 warning which can be ignored).
+```
 
-> **_NOTE:_** This approach does not work for OpenMS MascotAdapters, as each Mascot instance has its own database
+```{note}
+This approach does not work for OpenMS MascotAdapters, as each Mascot instance has its own database
 managed internally. Make sure that the database is present on all mascot servers you're going to use, thus making the
 INI settings portable.
+```
 
 ## Using external tools in workflows
 
