@@ -91,7 +91,7 @@ Using the mouse:
 Using the keyboard:
 
 - delete all selected items (<kbd>DEL</kbd> or <kbd>BACKSPACE</kbd>)
-- zoom in and out (<kbd>+</kbd>/<kbd>-</kbd>)
+- zoom in and out (<kbd>+</kbd> / <kbd>-</kbd>)
 - run the pipeline (<kbd>F5</kbd>)
 - open this tutorial (<kbd>F1</kbd>)
 

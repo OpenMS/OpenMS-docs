@@ -15,13 +15,13 @@ and one for measuring:
   - Arrow keys can be used to translate the view without entering translate mode (in 1D-View you can additionally
     use <kbd>Shift</kbd> to jump to the next peak)
 - Zoom mode
-  - All previous zoom levels are stored in a zoom history. The zoom history can be traversed using <kbd>CTRL</kbd>+<kbd>+</kbd>/<kbd>CTRL</kbd>+<kbd>-</kbd> or the
+  - All previous zoom levels are stored in a zoom history. The zoom history can be traversed using <kbd>CTRL</kbd> + <kbd>+</kbd>/<kbd>CTRL</kbd> + <kbd>-</kbd> or the
     mouse wheel (scroll up and down)
   - Zooming into the data:
     - Mark an area in the current view with your mouse, while holding the left mouse button plus the <kbd>CTRL</kbd> key to zoom
 	  to this area.
 	- You can also use your mouse wheel to traverse the zoom history.
-	- If you have reached the end of the history, keep on pressing <kbd>CTRL</kbd>+<kbd>+</kbd> or scroll up, the current area will be
+	- If you have reached the end of the history, keep on pressing <kbd>CTRL</kbd> + <kbd>+</kbd> or scroll up, the current area will be
 	  enlarged by a factor of `1.25`.
   - Pressing <kbd>Backspace</kbd> resets the zoom and zoom history.
 - Measure mode
