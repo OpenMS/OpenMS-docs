@@ -52,7 +52,7 @@ text based format using the TextExporter for further processing (e.g., in Micros
 The results can be opened in TOPPView. The next figures show the results in 2D and 3D view, together with the feature
 intermediate results.
 
-```{note}
+```{tip}
 The intensities and retention times are slightly different between the runs. To correct for retention
 times shift, a map alignment could be done, either on the spectral data or on the feature data.
 ```

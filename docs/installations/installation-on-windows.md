@@ -7,7 +7,7 @@ To Install the binary package of OpenMS & TOPP:
 2. Run the installer under the user account that later runs OpenMS. It is not advised to use admin account for
    installation. When asked for an admin authentication, please enter the credentials.
 
-```{note}
+```{tip}
 The windows binary version works with most versions of windows from Win7 to Win10 (older versions might
   still work but are untested).
 ```

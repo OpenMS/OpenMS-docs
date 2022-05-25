@@ -14,7 +14,7 @@ wavelet**, which has been tailored to the detection of isotopic patterns followi
 information about the theory behind this technique, please refer to Hussong et al.: "Efficient Analysis of Mass
 Spectrometry Data Using the Isotope Wavelet" (2007).
 
-```{note}
+```{attention}
 This algorithm features no "modelling stage", since the structure of the isotopic pattern is explicitly
 coded by the wavelet itself. The algorithm also works for 2D maps (in combination with the so-called *sweep-line*
 technique (Schulz-Trieglaff et al.: "A Fast and Accurate Algorithm for the Quantification of Peptides from Mass

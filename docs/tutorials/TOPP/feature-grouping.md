@@ -29,7 +29,7 @@ To differentially quantify the features of two or more label-free HPLC-MS map.
 
 ![TOPP labelfree quant](../../images/tutorials/topp/TOPP_labelfree_quant.png)
 
-```{note}
+```{tip}
 This algorithm assumes that the retention time axes of all input maps are very similar. To correct for
 retention time distortions, please have a look at [Map alignment](map-alignment.md).
 ```
