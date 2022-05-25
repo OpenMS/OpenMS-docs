@@ -4,7 +4,7 @@ Installation on GNU/Linux
 ## Install via Debian Package
 
 For Debian-based Linux users, it is suggested to  use the [deb-package](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) provided. It is most easily installed with **[gdebi](https://launchpad.net/gdebi)**
-which automatically resolves the dependencies available in the PPA Respositories.
+which automatically resolves the dependencies available in the PPA Repositories.
 
 ```bash
 sudo apt-get install gdebi
