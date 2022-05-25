@@ -41,7 +41,9 @@ TOPPView Hotkeys
 | <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>+</kbd>     | 2D draw mode: increase maximum point size (for raw peak scaling)                |
 | <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>-</kbd>     | 2D draw mode: decrease maximum point size (for raw peak scaling)                |
 
-> **_NOTE:_**  <kbd>Home</kbd> on macOS keyboards is also <kbd>Fn</kbd> + <kbd>ArrowLeft</kbd>. <kbd>End</kbd> on macOSX keyboards is also <kbd>Fn</kbd> + <kbd>ArrowRight</kbd>.
+```{tip}
+kbd>Home</kbd> on macOS keyboards is also <kbd>Fn</kbd> + <kbd>ArrowLeft</kbd>. <kbd>End</kbd> on macOSX keyboards is also <kbd>Fn</kbd> + <kbd>ArrowRight</kbd>.
+```
 
 ## Annotations in 1D view
 

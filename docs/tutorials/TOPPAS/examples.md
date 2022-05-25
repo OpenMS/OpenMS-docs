@@ -52,8 +52,10 @@ text based format using the TextExporter for further processing (e.g., in Micros
 The results can be opened in TOPPView. The next figures show the results in 2D and 3D view, together with the feature
 intermediate results.
 
-> **_NOTE:_** The intensities and retention times are slightly different between the runs. To correct for retention
+```{tip}
+The intensities and retention times are slightly different between the runs. To correct for retention
 times shift, a map alignment could be done, either on the spectral data or on the feature data.
+```
 
 ![TOPPAS BSA Results 2D](../../images/tutorials/toppas/TOPPAS_BSA_results_2d.png)
 

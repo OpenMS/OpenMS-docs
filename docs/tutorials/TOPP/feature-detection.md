@@ -14,7 +14,8 @@ wavelet**, which has been tailored to the detection of isotopic patterns followi
 information about the theory behind this technique, please refer to Hussong et al.: "Efficient Analysis of Mass
 Spectrometry Data Using the Isotope Wavelet" (2007).
 
-Please note that this algorithm features no "modelling stage", since the structure of the isotopic pattern is explicitly
+```{attention}
+This algorithm features no "modelling stage", since the structure of the isotopic pattern is explicitly
 coded by the wavelet itself. The algorithm also works for 2D maps (in combination with the so-called *sweep-line*
 technique (Schulz-Trieglaff et al.: "A Fast and Accurate Algorithm for the Quantification of Peptides from Mass
 Spectrometry Data" (2007))). The algorithm could originally be executed on (several) high-speed CUDA graphics cards.
@@ -22,6 +23,7 @@ Tests on real-world data sets revealed potential speedups beyond factors of 200 
 Support for CUDA was removed in [OpenMS]() due to maintenance overhead. Please refer to Hussong et al.: "Highly
 accelerated feature detection in proteomics data sets using modern graphics processing units" (2009) for more details on
 the implementation.
+```
 
 ### Seeding
 

@@ -41,9 +41,11 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
 
    Since macOS Catalina (maybe also Mojave) notarized apps and executables are mandatory.
 
-   > **_NOTE:_** Although there is a lot of effort in signing and notarizing everything, it seems like openms software
+   ```{important}
+   Although there is a lot of effort in signing and notarizing everything, it seems like openms software
    still lands in quarantine on the above mentioned systems, after installation of the DMG (when downloading it from a
    browser).
+   ```
 
    To have a streamlined experience without blocking popups, it is recommended to remove the quarantine flag manually,
    using the following steps:

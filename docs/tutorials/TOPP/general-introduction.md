@@ -61,10 +61,11 @@ can contain the configuration of one or several TOPP tools.
 The following examples will give an overview of how TOPP tools can be chained in order to create analysis pipelines. INI
 files are the recommended way to store all settings of such a pipeline in a single place.
 
-Note that the issue of finding suitable parameters for the tools is not addressed here. For problems during the
+```{attention}
+The issue of finding suitable parameters for the tools is not addressed here. For problems during the
 execution of the example pipelines on the data, adapt the parameters. Have a look at the documentation of the
 corresponding TOPP tool in that case.
-
+```
 
 ### Parameter documentation
 
