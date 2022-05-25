@@ -46,6 +46,13 @@ same behaviour as when building it on from source code. Also, their availability
 support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
 Debian package.
 
+```{note}
+These packages are not directly maintained by OpenMS and they  can not be guaranteed the
+same behaviour as when building it on from source code. Also, their availability and version is subject to change and
+support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
+Debian package.
+```
+
 ## Installation via Building From Source Code
 
 The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU/Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/install_linux.html) instructions on how to build OpenMS from source.
