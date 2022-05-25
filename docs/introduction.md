@@ -7,14 +7,14 @@ analyses. It offers an infrastructure for rapid development of mass
 spectrometry related software. OpenMS is free software available under the
 three clause BSD license and runs under Windows, macOS, and Linux.
 
-It comes with a vast variety of pre-built and ready-to-use tools for proteomics
+OpenMS has a vast variety of pre-built and ready-to-use tools for proteomics
 and metabolomics data analysis (TOPPTools) as well as powerful 1D, 2D and 3D
 visualization (TOPPView).
 
 OpenMS offers analyses for various quantitation protocols, including label-free
 quantitation, SILAC, iTRAQ, TMT, SRM, SWATH, etc.
 
-It provides built-in algorithms for de-novo identification and database search,
+OpenMS provides built-in algorithms for de-novo identification and database search,
 as well as adapters to other state-of-the art tools like X!Tandem, Mascot,
 OMSSA, etc. It supports easy integration of OpenMS built tools into workflow
 engines like KNIME, Galaxy, WS-Pgrade, and TOPPAS via the TOPPtools concept and

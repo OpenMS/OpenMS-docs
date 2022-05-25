@@ -19,7 +19,7 @@ workflow, or if it just would not make sense, e.g. if its target is an input fil
 file node (#1) and the OMSSAAdapter (#5) tool is painted yellow which indicates it is not ready yet, because no input
 files have been specified.
 
-![](../../images/tutorials/TOPPAS_edges.png)
+![TOPPAS Edges](../../images/tutorials/TOPPAS_edges.png)
 
 The input/output mapping of connections can be changed at any time during the editing process by double-clicking an
 connections or by selecting **Edit I/O mapping** from the context menu which appears when a connection is right-clicked.
@@ -30,24 +30,24 @@ The following figure shows a possible next step: the user has double-clicked one
 its parameters. By default, the standard parameters are used for each tool. Again, this can also be done by selecting
 **Edit parameters** from the context menu of the tool.
 
-![](../../images/tutorials/TOPPAS_parameters.png)
+![TOPPAS Parameters](../../images/tutorials/TOPPAS_parameters.png)
 
-Once the pipeline has been set up, the input files have to be specified before the pipeline can be executed. This is
-done by double-clicking an input node and selecting the desired files in the dialog that appears. Input nodes have a
-special mode named **recycling mode**, i.e., if the input node has fewer files than the following node has rounds
-(as it might have two incoming connections) then the files are recycled until all rounds are satisfied. This might be
-useful if one input node specifies a single database file (for a Search-Adapter like Mascot) and another input node has
-the actual MS2 experiments (which is usually more than one). Then the database input node would be set to `recycle` the
-database file, i.e. use it for every run of the MascotAdapter node. The input list can be recycled an arbitrary number
-of times, but the recycling has to be `complete`, i.e. the number of rounds of the downstream node have to be a multiple
-of the number of input files. Recycling mode can be activated by right-clicking the input node and selecting the according
-entry from the context menu. Finally, if you have input and output nodes at every end of your pipeline and all
-connections are green, select **Pipeline** > **Run** in the menu bar or just press `F5`.
+Once the pipeline has been set up, specify the input files  before executing the pipeline. This is done by double-clicking
+an input node and selecting the desired files in the dialog that appears. Input nodes have a special mode named
+**recycling mode**, i.e., if the input node has fewer files than the following node has rounds (as it might have two
+incoming connections) then the files are recycled until all rounds are satisfied. This might be useful if one input node
+specifies a single database file (for a Search-Adapter like Mascot) and another input node has the actual MS2 experiments
+(which is usually more than one). Then the database input node would be set to `recycle` the database file, i.e. use it for
+every run of the MascotAdapter node. The input list can be recycled an arbitrary number of times, but the recycling has to be
+`complete`, i.e. the number of rounds of the downstream node have to be a multiple of the number of input files. Recycling mode
+can be activated by right-clicking the input node and selecting the according entry from the context menu. Finally, if you have
+input and output nodes at every end of your pipeline and all connections are green, select **Pipeline** > **Run** in the menu
+bar or just press `F5`.
 
-![](../../images/tutorials/TOPPAS_run_options.png)
+![TOPPAS Run Options](../../images/tutorials/TOPPAS_run_options.png)
 
-When asked for an output file directory where a sub-directory, `TOPPAS_out`, will be created. This directory will
-contain the output files. Specify the number of jobs TOPPAS is allowed to run in parallel, if a number greater than 1 is
+When asked for an output file directory `TOPPAS_out` as sub-directory, will be created. This directory will
+contain the output files. Specify the number of jobs TOPPAS is allowed to run in parallel. If a number greater than 1 is
 selected, TOPPAS will parallelize the pipeline execution in the following scenarios:
 
 - A tool has to process more than one file. In this case, multiple files can be processed in parallel.

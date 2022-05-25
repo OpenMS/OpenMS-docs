@@ -16,9 +16,9 @@ both the intermediate files from OpenSWATH (e.g. the XIC data in `.sqMass` forma
 
 This is how the wizard looks like:
 
-![](../../images/topp/SwathWizard.png)
+![SwathWizard](../images/topp/SwathWizard.png)
 
-Schematic of the internal data flow (all tools are called by SwathWizard in the background) can be found in the
+A schematic of the internal data flow (all tools are called by SwathWizard in the background) can be found in the
 [TOPP Documentation: SwathWizard](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_SwathWizard.html).
 
 A recommended test data for the Wizard is the [PASS00779](https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/PASS_View?identifier=PASS00779) dataset.
