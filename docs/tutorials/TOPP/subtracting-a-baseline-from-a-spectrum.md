@@ -11,7 +11,7 @@ subtraction.
 ![TOPPView Tools Baseline](../../images/tutorials/topp/TOPPView_tools_baseline.png)
 
 The following image shows:
-- A part of the spectrum after baseline filtering as a green line
+- A part of the spectrum after baseline filtering as a green line.
 - The original raw data as a blue line.
 
 ![TOPPView Tools Baseline Filtered](../../images/tutorials/topp/TOPPView_tools_baseline_filtered.png)
