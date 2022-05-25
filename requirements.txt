@@ -1,0 +1,7 @@
+sphinx
+readthedocs-sphinx-search
+furo
+sphinx-copybutton
+myst-parser
+sphinx-notfound-page
+sphinxcontrib-images
