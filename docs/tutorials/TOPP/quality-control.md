@@ -12,7 +12,7 @@ then be processed using custom scripts or via the R package (see [github:cbielow
 
 ![](../../images/tutorials/topp/TOPP_qualitycontrol.png)
 
-An example workflow can be found in `OpenMS/share/OpenMS/examples/TOPPAS/QualityControl.toppas`.
+Find an example workflow in `OpenMS/share/OpenMS/examples/TOPPAS/QualityControl.toppas`.
 
 For data from [TOPP Documentation:IsobaricAnalyzer](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_IsobaricAnalyzer.html), just provide the consensusXML as input to
 [TOPP Documentation:QualityControl](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_QualityControl.html). No FeatureXMLs or TrafoXMLs are required. The mzML raw file can be added as input though.

@@ -9,7 +9,7 @@ invalid workflows. Once set up and saved, a workflow can also be run without the
 
 The following figure shows a simple example pipeline that has just been created and executed successfully:
 
-![](../../images/tutorials/toppas/TOPPAS_simple_example.png)
+![TOPPAS Simple Example](../../images/tutorials/toppas/TOPPAS_simple_example.png)
 
 To create a new TOPPAS file, do any of the following:
 
