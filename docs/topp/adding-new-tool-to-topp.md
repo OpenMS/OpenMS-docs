@@ -41,29 +41,6 @@ flag active. The flag ensures that UniqueId's,  dates etc are equal no matter wh
 - Add it to the UTILS docu page (in `doc/doxygen/public/UTILS.doxygen`)
 - Write a test (this is optional for UTILS). See TOPP tools above and add the test to the bottom of `src/tests/topp/CMakeLists.txt`.
 
-## How do I add a new TOPP test?
-
-The tests for a TOPP tool are simple commands which can be found in `src/tests/topp/CMakeLists.txt`. To add a new test
-simply  follow the examples given in that file. If a test needs supplementary input files, put these files in the same
-folder. The name of supplementary files has to begin with the name of the tested tool. All extensions but `.tmp` are
-possible.
-
-Add commands to `src/tests/topp/CMakeLists.txt` (where it fits alphabetically). Add a new (named) test with the `add_test()`
-command and set dependencies with the `set_test_properites` command if several files are needed but get created by
-different commands.
-
-Each test may rely on a number of files. These files should be named `src/tests/topp/<toolname>_<nummer>_<name>`. `<extension>`,
-where
-
-```
-<toolname> has the form [A-Z][a-zA-Z]*; this is the name of the TOPP tool
-<number> has the form [0-9]+; this is the running number of the test
-<name> has the form [-_a-zA-Z0-9]+; this should be a descriptive name (characters _ and - are ok here, since <toolname> and <number> must not contain them)
-<extension>; this is the extension expressing the type of the data.
-```
-
-For test execution see [here]().
-
 ## I want to implement a new file adapter. What is to be done?
 
 First, add a file adapter class to the `include/OpenMS/FORMAT/` and `source/FORMAT/` folders. The file adapter should

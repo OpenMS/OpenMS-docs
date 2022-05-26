@@ -82,6 +82,7 @@ Contents
    :maxdepth: 2
    :caption: Additional Resources
 
+   additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
    additional-resources/external-code-using-openms.md
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
