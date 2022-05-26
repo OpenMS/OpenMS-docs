@@ -17,8 +17,8 @@ subsections of this documentation.
 
 Proteomics and metabolomics are interdisciplinary research fields that study structure, function, and interaction of
 proteins and metabolites. They employ large-scale experimental techniques that allow acquiring data at the level of
-cellular systems to whole organisms. One of the main analytical method to identify, characterize or quantify proteins
-and metabolites is mass spectrometry (MS) combined with chromatographic separation.
+cellular systems to whole organisms. Mass spectrometry combined with chromatographic separation is commonly used to
+identify, characterize or quantify the amount of proteins and metabolites.
 
 In mass spectrometry-based proteomics and metabolomics, biological samples are extracted, prepared, and separated to
 reduce sample complexity. The separated analytes are ionized and measured in the mass spectrometer. Mass and abundance
@@ -26,7 +26,7 @@ of ions are stored in mass spectra and used to identify and quantify the analyte
 methods. The quantity and identity of analytes can then be used, for instance, in biomarker discovery, medical diagnostics,
 or basic research.
 
-# Liquid Chromatography
+# Liquid Chromatography(LC)
 
 LC aims to reduce the complexity of the measured sample by separating analytes based on their physicochemical properties.
 Separating analytes in time ensures that a manageable amount of analytes elute at the same time. In mass
@@ -34,7 +34,7 @@ spectrometry-based proteomics, (high-pressure) liquid chromatographic separation
 to achieve a high degree of separation. In HPLC, peptides are separated on a column. Solved in a pressurized liquid
 (mobile phase) they are pumped through a solid adsorbent material (stationary phase) packet into a capillary column.
 Physicochemical properties of each peptide determine how strongly it interacts with the stationary phase. The most
-commonly HPLC technique in proteomics and metabolomics uses reversed-phase chromatography (RPC) columns. RPC employs a
+common HPLC technique in proteomics and metabolomics uses reversed-phase chromatography (RPC) columns. RPC employs a
 hydrophobic stationary phase like octadecyl (C18), a nonpolar carbon chain bonded to a silica base, and a polar mobile
 phase. Polar molecules interact weakly with the stationary phase and elute earlier, while non-polar molecules are retained.
 Interaction can be further modulated by changing the gradient of solvent concentration in the mobile phase over time.
@@ -73,13 +73,13 @@ In a typical mass spectrometer, three principal components can be identified:
   passed through the mass analyzer. Ion intensities (a value that relates to its abundance) and the mass-to-charge ratio
   are recorded in a mass spectrum.
 
-A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra. 
+A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
 The measurement of one sample is called an MS run and the set of spectra called an MS or peakmap.
 
 ![](images/introduction/spectrum_peakmap.png)
 
-Left image displays spectrum with peaks (m/z and intensity values) and right image shows spectra stacked in retention
-time yield a peak map.
+The left image displays spectrum with peaks (m/z and intensity values) and the right image shows spectra stacked in
+retention time yield a peak map.
 
 In proteomics and metabolomics, the MS1 intensity is often used for the quantification of an analyte. Identification
 based on the MS1 mass-to-charge and the isotope pattern is highly ambiguous. To improve identification, tandem mass
