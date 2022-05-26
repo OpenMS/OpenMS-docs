@@ -8,7 +8,7 @@ spectrometry related software. OpenMS is free software available under the
 three clause BSD license and runs under Windows, macOS, and Linux.
 
 ```{note}
-Note: This introduction is aimed at users new to the field of LC-MS data analysis and will introduce some basics terms
+This introduction is aimed at users new to the field of LC-MS data analysis and will introduce some basics terms
 and concepts. How to handle the data analysis, available data structures, algorithms and more are covered in the various
 subsections of this documentation.
 ```
