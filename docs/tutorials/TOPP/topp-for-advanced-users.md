@@ -30,6 +30,7 @@ INI settings portable.
 OpenMS supports the wrapping of external tools (like msconvert from ProteoWizard), thus allowing to build scripts and/or
 TOPPAS pipelines containing external tools.
 
-**See also**
 
+```{seealso}
      `share/OpenMS/TOOLS/EXTERNAL/ReadMe.txt` in your local installation for details.
+```

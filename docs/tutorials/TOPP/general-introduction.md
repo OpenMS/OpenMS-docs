@@ -86,7 +86,7 @@ INI and/or TOPPAS files. See the INIUpdater tool description for details. This w
 new parameters (if available) while retaining values for unchanged parameters. As an alternative to the INIUpdater, use
 the command line by calling the TOPP tool from which the ini originated and combining `-write_ini` and `-ini`, e.g.,
 
-```
+```bash
 FileInfo -ini old_fi.ini -write_ini fi.ini
 ```
 
@@ -117,7 +117,7 @@ specified in this section, thus the `common` **FileFilter** section is checked f
 When looking up the `debug` parameter, the tool would search the instance section and tool-specific common section
 without finding a value. Finally, the *general common section* would be checked, where the debug level is specified.
 
-```
+```xml
 <PARAMETERS>
 
   <NODE name="FileFilter">

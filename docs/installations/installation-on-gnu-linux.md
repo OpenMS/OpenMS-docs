@@ -16,7 +16,8 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    It might be because your Debian is too old to have a recent enough version in its official repositories. It is
    suggested to use the same packages that are used while building (make sure to adapt the Qt version and your
    Debian/Ubuntu version, here Xenial):
-   ```
+   
+   ```bash
    sudo add-apt-repository ppa:beineri/opt-qt59-xenial
    sudo apt-get update
    ```

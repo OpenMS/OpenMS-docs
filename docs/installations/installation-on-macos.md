@@ -28,7 +28,7 @@ To install OpenMS on macOS, run the following steps:
 
 To use TOPP as regular app in the shell, add the following lines to the `~/.profile` file.
 
-```
+```bash
 export OPENMS_TOPP_PATH=<OpenMS-PATH>
 source ${OPENMS_TOPP_PATH}/.TOPP_bash_profile
 ```
@@ -51,7 +51,8 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
    using the following steps:
 
    Open the Terminal.app and type the following (replace the first line with the actual installation directory):
-   ```
+
+   ```bash
    cd /Applications/OpenMS-<version>
    sudo xattr -r -d com.apple.quarantine *
    ```
