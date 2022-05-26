@@ -1,6 +1,30 @@
 Installation on GNU/Linux
 =========================
 
+## Install via Conda
+
+Use conda or bioconda to install OpenMS.
+
+1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html).
+2. Install OpenMS using conda:
+   `conda install -c openms openms`
+3. Other OpenMS packages can be installed using:
+   ```
+   conda install -c openms pyopenms
+   conda install -c openms openms-thirdparty
+   conda install -c openms libopenms
+   ```
+
+To install using bioconda:
+
+```
+conda install -c bioconda openms
+conda install -c bioconda/label/cf201901 openms
+conda install -c bioconda openms-tools
+conda install -c bioconda libopenms
+conda install -c bioconda openms-thirdparty
+```
+
 ## Install via Debian Package
 
 For Debian-based Linux users, it is suggested to  use the [deb-package](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) provided. It is most easily installed with **[gdebi](https://launchpad.net/gdebi)**
@@ -49,7 +73,7 @@ Debian package.
 
 ```
 
-## Installation via Building From Source Code
+## Installation via building from source code
 
 The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU/Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/install_linux.html) instructions on how to build OpenMS from source.
 
