@@ -11,6 +11,7 @@ TOPPView Hotkeys
 | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>       | Save visible data of current layer                  |
 
 
+
 ## Navigation in the data
 
 | Hotkey               | Function                                            |

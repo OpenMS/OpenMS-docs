@@ -37,6 +37,7 @@ extensions = [
   'myst_parser',
   'notfound.extension',
   'sphinxcontrib.images',
+  'sphinx_inline_tabs',
 ]
 
 autosummary_generate = True
@@ -49,6 +50,9 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 source_suffix = ['.rst', '.md']
+
+myst_enable_extensions = ["html_admonition", "colon_fence", "linkify"]
+
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
