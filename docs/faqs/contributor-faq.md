@@ -107,23 +107,23 @@ Execute an OpenMS class test using the CTest regular expressions:
 
 ```bash
 
-ctest -V -R "^<class>_test"
+$ ctest -V -R "^<class>_test"
 
 # To build a class test, call the respective make target in ./source/TEST:
 
-make <class>_test
+$ make <class>_test
 ```
 To run a TOPP test, use:
 
 ```bash
 
-ctest -V -R "TOPP_<tool>"
+$ ctest -V -R "TOPP_<tool>"
 ```
 
 To build the tool, use:
 
 ```bash
-make <tool>
+$ make <tool>
 ```
 ### How do I debug uncaught exceptions?
 

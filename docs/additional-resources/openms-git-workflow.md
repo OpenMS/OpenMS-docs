@@ -1,7 +1,7 @@
 OpenMS Git Workflow
 ===================
 
-Before getting started, install latest version of git to avoid problems like Github https authentication errors
+Before getting started, install latest version of git to avoid problems like GitHub https authentication errors
 (see [Troubleshooting cloning errors](https://docs.github.com/en/repositories/creating-and-managing-repositories/troubleshooting-cloning-errors) and a solution using [ssh](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories)).
 
 OpenMS follows the [git flow workflow](https://nvie.com/posts/a-successful-git-branching-model/). The difference is that
@@ -12,7 +12,7 @@ merge commits are managed via pull requests instead of creating merge commits lo
 Naming conventions for the following apply:
 
 * A **local repository** is the repository that lies on your hard drive after cloning.
-* A **remote repository** is a repository on a Git server such as Github.
+* A **remote repository** is a repository on a git server such as GitHub.
 * A **fork** is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 * **Origin** refers to a remote repository that you have forked. Call this repository https://github.com/_YOURUSERNAME_/OpenMS.
 * **Upstream** refers to the original remote OpenMS repository. Call this repository https://github.com/OpenMS/OpenMS.
@@ -101,7 +101,7 @@ $ git branch -va
 
 ## Keep your fork in sync
 
-Keep your fork (`origin`) in sync with the OpenMS repository (`upstream`) by following the [Github instructions](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
+Keep your fork (`origin`) in sync with the OpenMS repository (`upstream`) by following the [GitHub instructions](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
 In summary, to keep your fork in sync:
 1. Fetch changes from upstream and update your local branch.
 2. Push your updated local branch to your fork (`origin`).
@@ -185,13 +185,13 @@ Start in your local `OpenMS/OpenMS` repository (on your feature/pull request bra
 The following example uses a submodule called `THIRDPARTY`.
 
 ```bash
-git submodule update --init THIRDPARTY
-cd THIRDPARTY
+$ git submodule update --init THIRDPARTY
+$ cd THIRDPARTY
 # yes, in the submodules the default remote is origin
 # usually you want to pull the changes from master (e.g. after your pull request to OpenMS/THIRDPARTY has been merged)
-git pull origin master
-cd ..
-git status
+$ git pull origin master
+$ cd ..
+$ git status
 # Make sure that you see "modified:   THIRDPARTY (new commits)"
-git commit -am "updated submodule"
+$ git commit -am "updated submodule"
 ```
