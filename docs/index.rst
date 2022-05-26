@@ -62,6 +62,11 @@ Contents
 
    topp/topp.md
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Downloads
+
+   downloads.md
 
 .. toctree::
    :maxdepth: 2
