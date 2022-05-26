@@ -19,8 +19,8 @@ Before using OpenMS, become familiar with the following terms:
 |--------------------|-------------|
 |**TOPPView**        |A design tool that is used to view and explore LC-MS data, alignments, groups, peptide identifications, and more.|
 |**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all TOPP tools (and UTILS).|
-|**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The TOPP tools are accessible from a command prompt/shell or via TOPPAS. <br> ```{seealso} See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp/topp.md)```|
-|**UTILS**           |Similar to TOPP tools, but with more supporting character, which are rarely used in a productive pipeline, but rather during pipeline construction or parameter optimization. See also: [UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
+|**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The TOPP tools are accessible from a command prompt/shell or via TOPPAS. <br>See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp/topp.md).|
+|**UTILS**           |Similar to TOPP tools, but with more supporting character, which are rarely used in a productive pipeline, but rather during pipeline construction or parameter optimization. <br>See also: [UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
 
 ## How to run a Tool
 
