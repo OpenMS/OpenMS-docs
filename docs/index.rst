@@ -48,6 +48,7 @@ Contents
    :caption: Quick Start Guides
 
    guides/user-guides/user-quickstart-guide
+   guides/contributors-quickstart-guide.md
 
 .. toctree::
    :maxdepth: 2
@@ -61,6 +62,22 @@ Contents
    :caption: OpenMS TOPP Tools
 
    topp/topp.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Frequently Asked Questions
+
+   developer-faq.md
+   contributor-faq.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Additional Resources
+
+   additional-resources/openms-git-workflow.md
+   additional-resources/reporting-bugs-and-issues.md
+   additional-resources/write-and-label-github-issues.md
+   additional-resources/pull-request-checklist.md
 
 .. toctree::
    :maxdepth: 2
