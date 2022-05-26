@@ -78,7 +78,7 @@ The measurement of one sample is called an MS run and the set of spectra called 
 
 ![](images/introduction/spectrum_peakmap.png)
 
-The left image displays spectrum with peaks (m/z and intensity values) and the right image shows a spectrum stacked in
+The left image displays spectrum with peaks (m/z and intensity values) and the right image shows spectra stacked in
 retention time yield a peak map.
 
 In proteomics and metabolomics, the MS1 intensity is often used for the quantification of an analyte. Identification
