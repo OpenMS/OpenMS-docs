@@ -76,6 +76,8 @@ Contents
    :caption: Advanced Resources
 
    advanced-resources/custom-compilation.md
+   advanced-resources/build-custom-openms-knime-package.md
+
 .. toctree::
    :maxdepth: 2
    :caption: Additional Resources
