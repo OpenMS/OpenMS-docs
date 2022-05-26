@@ -75,6 +75,7 @@ Contents
    :maxdepth: 2
    :caption: Additional Resources
 
+   additional-resources/external-code-using-openms.md
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
    additional-resources/write-and-label-github-issues.md
