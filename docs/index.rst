@@ -73,6 +73,11 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Advanced Resources
+
+   advanced-resources/custom-compilation.md
+.. toctree::
+   :maxdepth: 2
    :caption: Additional Resources
 
    additional-resources/external-code-using-openms.md
