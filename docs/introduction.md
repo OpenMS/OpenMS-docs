@@ -74,7 +74,7 @@ In a typical mass spectrometer, three principal components can be identified:
   are recorded in a mass spectrum.
 
 A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
-The measurement of one sample is called an MS run and the set of spectra called an MS or peakmap.
+The measurement of one sample is called an MS run and the set of spectra called an MS(1) map or peak map.
 
 ![](images/introduction/spectrum_peakmap.png)
 
