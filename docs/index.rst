@@ -62,6 +62,7 @@ Contents
    :caption: OpenMS TOPP Tools
 
    topp/topp.md
+   topp/adding-new-tool-to-topp.md
 
 .. toctree::
    :maxdepth: 2
