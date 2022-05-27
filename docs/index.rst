@@ -42,6 +42,7 @@ Contents
    installations/installation-on-gnu-linux
    installations/installation-on-windows
    installations/installation-on-macos
+   installations/build-openms-from-source
 
 .. toctree::
    :maxdepth: 2
