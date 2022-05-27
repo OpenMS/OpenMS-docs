@@ -6,11 +6,11 @@ compared to OpenMS. Later, we will move to the handling of TOPPView which is our
 TOPPView can also be used to analyze it using selected TOPP tools; how-to is explained in the third part of the tutorial.
 Finally, the tutorial lists the command line interfaces for all TOPP tools contained in the release.
 
-## Concepts
+# Concepts
 
 Let's understand the intent of [TOPP and OpenMS](topp-and-openms-introduction.md) in this part.
 
-## TOPPView Main Interface
+# TOPPView Main Interface
 
 In this part of the tutorial, we will learn about the main features of TOPPView and its basic uses.
 
@@ -21,7 +21,7 @@ In this part of the tutorial, we will learn about the main features of TOPPView 
 - [Data editing](data-editing-in-toppview.md)
 - [Hotkeys](hotkeys-table.md)
 
-## Calling TOPP tools from TOPPView
+# Calling TOPP tools from TOPPView
 
 This part of the tutorial illustrates how to interactively analyse proteomics data using TOPP tools from within TOPPView.
 
@@ -30,12 +30,12 @@ This part of the tutorial illustrates how to interactively analyse proteomics da
 - [Picking peaks](picking-peaks.md)
 - [Feature detection on centroided data](feature-detection-on-centroided-data.md)
 
-## Advanced Users: Tips & Tricks
+# Advanced Users: Tips & Tricks
 
 Read [TOPP for Advanced Users](topp-for-advanced-users.md) to know more about how to use advanced functionalities,
 increasing productivity.
 
-## Scripting with TOPP
+# Scripting with TOPP
 
 This part of the tutorial gives a detailed overview of the most important TOPP tools. First, some basics needed for
 every TOPP tool are explained, then several example pipelines are shown.
