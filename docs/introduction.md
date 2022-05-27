@@ -87,3 +87,19 @@ spectrometry (MS/MS) can be applied to assess the analyte substructure. To this 
 kinetically fragmented using an inert gas (e.g., Argon). Fragments produced by collision-induced fragmentation (CID) are
 stored in an MS2 (or MS/MS) spectrum and provide information that helps to resolve the ambiguities in identification.
 Alternatively, MS/MS spectra can be used for quantification.
+
+Get started with installing OpenMS using the installers available for different operating systems!
+
+## Installation on different platforms
+
+```{tab} GNU/Linux
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
+```
+
+```{tab} Windows
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
+```
+
+```{tab} MacOS
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
+```

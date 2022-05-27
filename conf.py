@@ -37,6 +37,7 @@ extensions = [
   'myst_parser',
   'notfound.extension',
   'sphinxcontrib.images',
+  'sphinx_inline_tabs',
 ]
 
 autosummary_generate = True
