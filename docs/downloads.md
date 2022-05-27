@@ -1,9 +1,4 @@
-Downloads
-========
-
-Download OpenMS installers, workflows, and other resources.
-
-# OpenMS installers
+# OpenMS Installers
 
 | Platform | Name | SHA256 Hash |
 |----------|------|-------------|
