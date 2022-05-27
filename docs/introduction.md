@@ -26,7 +26,7 @@ of ions are stored in mass spectra and used to identify and quantify the analyte
 methods. The quantity and identity of analytes can then be used, for instance, in biomarker discovery, medical diagnostics,
 or basic research.
 
-# Liquid Chromatography(LC)
+## Liquid Chromatography(LC)
 
 LC aims to reduce the complexity of the measured sample by separating analytes based on their physicochemical properties.
 Separating analytes in time ensures that a manageable amount of analytes elute at the same time. In mass
@@ -45,7 +45,7 @@ spectrometer.
 
 ![](images/introduction/introduction_LC.png)
 
-# Mass Spectrometry
+## Mass Spectrometry
 
 MS is an analytical technique used to determine the mass of molecules. In order to achieve highly accurate and sensitive
 mass measurements at the atomic scale, mass spectrometers manipulate charged particles using magnetic and electrostatic
