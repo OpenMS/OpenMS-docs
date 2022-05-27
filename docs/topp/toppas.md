@@ -17,7 +17,7 @@ More information about TOPPAS can be found in the [TOPPAS tutorial](../tutorials
 
 **The command line parameters of this tool are**:
 
-```
+```bash
 TOPPAS -- An assistant for GUI-driven TOPP workflow design.
 
 Usage:

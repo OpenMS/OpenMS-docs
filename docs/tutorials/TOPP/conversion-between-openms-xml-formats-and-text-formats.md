@@ -24,14 +24,14 @@ Feature data in text format, e.g. from other analysis tools, can be imported usi
 mode accepts comma separated values containing the following columns: RT, m/z, intensity. Additionally meta data
 columns may follow. If meta data is used, meta data column names have to be specified in a header line. Without headers:
 
-```
+```bash
 1201	503.123	1435000
 1201	1006.246	1235200
 ```
 
 Or with headers:
 
-```
+```bash
 RT	m/z	Int	isHeavy	myMeta
 1201	503.123	1435000	true	2
 1201	1006.246	1235200	maybe	1
