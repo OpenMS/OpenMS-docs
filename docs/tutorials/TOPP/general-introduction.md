@@ -117,7 +117,7 @@ specified in this section, thus the `common` **FileFilter** section is checked f
 When looking up the `debug` parameter, the tool would search the instance section and tool-specific common section
 without finding a value. Finally, the *general common section* would be checked, where the debug level is specified.
 
-```
+```xml
 <PARAMETERS>
 
   <NODE name="FileFilter">

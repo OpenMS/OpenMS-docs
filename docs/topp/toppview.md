@@ -11,7 +11,7 @@ More information about TOPPView can be found in the [TOPP tutorial](../tutorials
 
 **The command line parameters of this tool are**:
 
-```
+```bash
 TOPPView -- A viewer for mass spectrometry data.
 
 Usage:

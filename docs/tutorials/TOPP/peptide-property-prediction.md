@@ -22,7 +22,7 @@ identification runs:
 
 A typical sequence of TOPP tools would look like this:
 
-```
+```bash
 MapAligner -in Run1.mzML,...,Run4.mzML -out Run1_aligned.mzML,...,Run4_aligned.mzML
 MascotAdapter -in Run1_aligned.mzML -out Run1_aligned.idXML -ini Mascot.ini
 MascotAdapter -in Run2_aligned.mzML -out Run2_aligned.idXML -ini Mascot.ini
@@ -42,7 +42,7 @@ For a file with certainly identified peptides used to train a model for RT predi
 has to have one peptide sequence together with the RT per line (separated by one tab or space). This can then be loaded
 by `RTModel` using the `-textfile_input` flag:
 
-```
+```bash
 RTModel -in IDs_with_RTs.txt -out IDs_with_RTs.model -ini RT.ini -textfile_input
 ```
 
@@ -53,7 +53,7 @@ a fasta file containing the amino acid sequences of these proteins called `mixtu
 negative peptides (peptides, which are not proteotypic) are required. Therefore, one can use the Digestor, which is
 located in the `APPLICATIONS/UTILS/` folder together with the `IDFilter`:
 
-```
+```bash
 Digestor -in mixture.fasta -out all.idXML
 IDFilter -in all.idXML -out NonPT.idXML -exclusion_peptides_file PT.idXML
 

@@ -15,7 +15,7 @@ using a linear function.
 
 In a typical setting one would first pick the TOF-data, then perform the TOFCalibration and then the InternalCalibration:
 
-```
+```bash
 PeakPickerWavelet -in raw_tof.mzML -out picked_tof.mzML -ini pp.ini
 TOFCalibration -in picked_tof.mzML -out picked.mzML -ext_calibrants ext_cal.mzML
                -ref_masses ext_cal_masses
