@@ -1,6 +1,8 @@
 Installation on macOS
 ====================
 
+## Install via macOS installer
+
 To install OpenMS on macOS, run the following steps:
 
 1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
@@ -34,6 +36,10 @@ source ${OPENMS_TOPP_PATH}/.TOPP_bash_profile
 ```
 
 Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally (e.g., `/Applications/OpenMS-<version>`)
+
+## Install via Conda or Bioconda
+
+Follow [these](installation-on-gnu-linux.md#install-via-conda) instructions.
 
 ## Known Issues
 
