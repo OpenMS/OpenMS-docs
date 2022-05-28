@@ -54,6 +54,7 @@ Contents
    :maxdepth: 3
    :caption: Tutorials
 
+   tutorials/user-tutorial.md
    tutorials/TOPP/TOPP-tutorial
    tutorials/TOPPAS/TOPPAS-tutorial
 
