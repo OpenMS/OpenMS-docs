@@ -97,6 +97,12 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Glossary
+
+   glossary.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Contact Us
 
    contact-us

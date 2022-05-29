@@ -2,7 +2,7 @@ Introduction
 ============
 
 [OpenMS](http://www.openms.org/)
-is an open-source software C++ library for LC-MS data management and
+is an open-source software C++ library for {term}`LC-MS` data management and
 analyses. It offers an infrastructure for rapid development of mass
 spectrometry related software. OpenMS is free software available under the
 three clause BSD license and runs under Windows, macOS, and Linux.
@@ -31,23 +31,23 @@ or basic research.
 LC aims to reduce the complexity of the measured sample by separating analytes based on their physicochemical properties.
 Separating analytes in time ensures that a manageable amount of analytes elute at the same time. In mass
 spectrometry-based proteomics, (high-pressure) liquid chromatographic separation techniques (HPLC) are methods of choice
-to achieve a high degree of separation. In HPLC, peptides are separated on a column. Solved in a pressurized liquid
+to achieve a high degree of separation. In HPLC, {term}`peptides` are separated on a column. Solved in a pressurized liquid
 (mobile phase) they are pumped through a solid adsorbent material (stationary phase) packet into a capillary column.
 Physicochemical properties of each peptide determine how strongly it interacts with the stationary phase. The most
 common HPLC technique in proteomics and metabolomics uses reversed-phase chromatography (RPC) columns. RPC employs a
-hydrophobic stationary phase like octadecyl (C18), a nonpolar carbon chain bonded to a silica base, and a polar mobile
+hydrophobic stationary phase like {term}`octadecyl (C18)`, a nonpolar carbon chain bonded to a silica base, and a polar mobile
 phase. Polar molecules interact weakly with the stationary phase and elute earlier, while non-polar molecules are retained.
 Interaction can be further modulated by changing the gradient of solvent concentration in the mobile phase over time.
 Elution times in LC are inherently prone to variation, for example, due to fluctuations in the flow rate of the mobile
 phase or change of column. Retention time shifts between runs may be compensated using computational chromatographic
-retention time alignment methods. In the LC-MS setup, the column is directly coupled to the ion source of the mass
+retention time alignment methods. In the {term}`LC-MS` setup, the column is directly coupled to the ion source of the mass
 spectrometer.
 
 ![](images/introduction/introduction_LC.png)
 
 # Mass Spectrometry
 
-MS is an analytical technique used to determine the mass of molecules. In order to achieve highly accurate and sensitive
+MS is an analytical technique used to determine the {term}`mass` of molecules. In order to achieve highly accurate and sensitive
 mass measurements at the atomic scale, mass spectrometers manipulate charged particles using magnetic and electrostatic
 fields.
 
@@ -55,35 +55,36 @@ fields.
 
 In a typical mass spectrometer, three principal components can be identified:
 
-- **Ion Source**: A mass spectrometer only handles ions. Thus, charge needs first be transferred to uncharged particles.
-  The component responsible for the ionization is the ion source. Different types of ion sources and ionization
-  techniques exist with electrospray ionization (ESI) being currently the most widely used ionization technique for mass
-  spectrometry-based proteomics.
+- **Ion Source**: A mass spectrometer only handles {term}`ions`. Thus, charge needs first be transferred to uncharged
+  particles. The component responsible for the ionization is the ion source. Different types of ion sources and ionization
+  techniques exist with {term}`electrospray ionization (ESI)` being currently the most widely used ionization technique
+  for mass spectrometry-based proteomics.
 
-- **Mass Analyzer**: Most commonly used mass analyzer in proteomics are time-of-flight (TOF) mass analyzers, quadrupole mass
-  filters, and orbitrap analyzers. In TOF mass analyzers, the ions are accelerated in an electric field. The flight time
-  of an ion allows calculating the velocity which in turn is used to calculate the mass-to-charge ratio (m/z). Varying
-  the electric field allows filtering certain mass-to-charge ratios before they enter the detector. In quadrupole mass
-  filters, ions pass through an oscillating electric field created by four parallel rods. For a particular voltage, only
-  ions in a certain mass-to-charge range will reach the detector. The orbitrap is an ion trap mass analyzer (and detector)
-  that traps ions in orbital motion between a barrel-like outer electrode and a spindle-like central electrode allowing
-  for prolonged mass measurement. As a result of the prolonged mass measurements, a high mass resolution can be achieved.
+- **Mass Analyzer**: Most commonly used mass analyzer in proteomics are {term}`time-of-flight (TOF)` mass analyzers,
+  {term}`quadrupole mass filters`, and {term}`orbitrap analyzers`. In TOF mass analyzers, the ions are accelerated in an electric field.
+  The flight time of an ion allows calculating the velocity which in turn is used to calculate the mass-to-charge ratio
+  (m/z). Varying the electric field allows filtering certain mass-to-charge ratios before they enter the detector. In
+  quadrupole mass filters, ions pass through an oscillating electric field created by four parallel rods. For a
+  particular voltage, only ions in a certain mass-to-charge range will reach the detector. The orbitrap is an ion trap
+  mass analyzer (and detector) that traps ions in orbital motion between a barrel-like outer electrode and a spindle-like
+  central electrode allowing for prolonged mass measurement. As a result of the prolonged mass measurements, a high mass
+  resolution can be achieved.
 
 - **Detector**: The last component of the mass spectrometer is the detector. It determines the abundance of ions that
   passed through the mass analyzer. Ion intensities (a value that relates to its abundance) and the mass-to-charge ratio
   are recorded in a mass spectrum.
 
 A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
-The measurement of one sample is called an MS run and the set of spectra called an MS(1) map or peak map.
+The measurement of one sample is called an MS run and the set of spectra called an {term}`MS(1)` map or peak map.
 
 ![](images/introduction/spectrum_peakmap.png)
 
 The left image displays spectrum with peaks (m/z and intensity values) and the right image shows spectra stacked in
 retention time yielding a peak map.
 
-In proteomics and metabolomics, the MS1 intensity is often used for the quantification of an analyte. Identification
-based on the MS1 mass-to-charge and the isotope pattern is highly ambiguous. To improve identification, tandem mass
+In proteomics and metabolomics, the MS(1) intensity is often used for the quantification of an analyte. Identification
+based on the MS(1) mass-to-charge and the isotope pattern is highly ambiguous. To improve identification, tandem mass
 spectrometry (MS/MS) can be applied to assess the analyte substructure. To this end, the precursor ion is isolated and
-kinetically fragmented using an inert gas (e.g., Argon). Fragments produced by collision-induced fragmentation (CID) are
-stored in an MS2 (or MS/MS) spectrum and provide information that helps to resolve the ambiguities in identification.
+kinetically fragmented using an inert gas (e.g., Argon). Fragments produced by {term}`collision-induced dissociation (CID)`
+are stored in an MS^2^ (or MS/MS) spectrum and provide information that helps to resolve the ambiguities in identification.
 Alternatively, MS/MS spectra can be used for quantification.
