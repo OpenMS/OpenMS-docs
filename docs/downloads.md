@@ -30,9 +30,9 @@
 
 | Release                                                |  Installers |
 |--------------------------------------------------------|-------------|
-| Stable release    | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/) |
-| RC release        | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/RC/) |
-| Nightly release   | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/) |
+| Stable release     | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/) |
+| Release candidates | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/RC/) |
+| Nightly release    | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/) |
 
 # Other Resources
 
