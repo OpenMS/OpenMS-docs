@@ -3,7 +3,7 @@ Installation on Windows
 
 ## Install via Windows installer
 
-To Install the binary package of OpenMS & TOPP:
+To Install the binary package of OpenMS & {term}`TOPP`:
 
 1. Download and execute the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) and follow its instructions.
 2. Run the installer under the user account that later runs OpenMS. It is not advised to use admin account for
