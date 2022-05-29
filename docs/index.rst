@@ -62,6 +62,7 @@ Contents
    :caption: OpenMS TOPP Tools
 
    topp/topp.md
+   topp/adding-new-tool-to-topp.md
 
 .. toctree::
    :maxdepth: 2
@@ -72,8 +73,17 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Advanced Resources
+
+   advanced-resources/custom-compilation.md
+   advanced-resources/build-custom-openms-knime-package.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Additional Resources
 
+   additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
+   additional-resources/external-code-using-openms.md
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
    additional-resources/write-and-label-github-issues.md
