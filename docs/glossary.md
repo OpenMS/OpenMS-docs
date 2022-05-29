@@ -143,5 +143,8 @@ PepNovo
 De novo peptide sequencing
   A peptide’s amino acid sequence is inferred directly from the precursor peptide mass and tandem mass spectrum
   ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
+
+TOPPAS
+  An assistant for GUI-driven TOPP workflow design.
 ```
 
