@@ -1,8 +1,8 @@
 Views in TOPPView
 =================
 
-TOPPView offers three types of views – a 1D view for spectra, a 2D view for peak maps and feature maps, and a 3D view
-for peak maps. All three views can be freely configured to suit the individual needs of the user.
+{term}`TOPPView` offers three types of views – a 1D view for {term}`spectra`, a 2D view for peak maps and feature maps,
+and a 3D view for peak maps. All three views can be freely configured to suit the individual needs of the user.
 
 ## Action Modes and Their Uses
 

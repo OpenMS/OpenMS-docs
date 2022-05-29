@@ -27,7 +27,22 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 2. Restrict the line length to 120 characters, including space(s).
 3. Title and H1 heading should be in `Title Case`. Follow `Sentence case`, until otherwise stated.
 4. Write as OpenMS is writing for itself as an object and subject.
-5. Be nice, polite, and respectful.
+5. Use American English.
+6. Use `backtick`(s) for formatting code, library name, files, and path.
+7. Use **bold** for product name, object name, an independent entity.
+8. Use **bold** for menu title in an application.
+9. Link to glossary terms using {term}`this is a glossary term`.
+10. OpenMS documentation uses following Admonitions
+    - Hint
+	- Important
+	- Note
+	- Warning
+	- Tip
+	- See Also
+	Example of these are present in documentation, please follow them.
+11. Always specify lexers for code blocks.
+12. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`.
+13. Be nice, polite, and respectful.
 
 ### Naming files
 

@@ -8,7 +8,7 @@ The parameters of all involved tools can be edited within TOPPAS and are also sa
 ```{toctree}
 :maxdepth: 1
 
- general-introduction
- user-interface
- examples
- ```
+general-introduction
+user-interface
+examples
+```

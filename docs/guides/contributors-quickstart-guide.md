@@ -7,12 +7,12 @@ To contribute to OpenMS:
 - Learn how to [build OpenMS](../installations/build-openms-from-source.md).
 - Check out the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
-For any questions, please [contact us](../contact-us.md) at [open-ms-general]((https://sourceforge.net/projects/open-ms/lists/open-ms-general) mailing list.
+For any questions, please [contact us](../contact-us.md) at [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) mailing list.
 
 ## Technical documentation
 
 ```{note}
-Untested installers and containers are known as the nightly snapshot, are released every night. They generally pass
+Untested installers and containers are known as the {term}`nightly snapshot`, are released every night. They generally pass
 automated continuous integration tests but no manual tests.
 ```
 

@@ -69,8 +69,8 @@ Contents
    :maxdepth: 2
    :caption: Frequently Asked Questions
 
-   developer-faq.md
-   contributor-faq.md
+   faqs/developer-faq.md
+   faqs/contributor-faq.md
 
 .. toctree::
    :maxdepth: 2

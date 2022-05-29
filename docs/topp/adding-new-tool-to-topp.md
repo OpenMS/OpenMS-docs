@@ -1,7 +1,5 @@
-Adding your own tool to the TOPP suite
+Adding New Tool to The TOPP suite
 =====================================
-
-# What is TOPP/UTILS?
 
 ## The OpenMS pipeline (TOPP)
 
