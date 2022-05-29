@@ -1,7 +1,7 @@
 Installation on Windows
 =======================
 
-## Install via Windows Installer
+## Install via Windows installer
 
 To Install the binary package of OpenMS & TOPP:
 
@@ -14,7 +14,7 @@ The windows binary version works with most versions of windows from Win7 to Win1
   still work but are untested).
 ```
 
-## Known Issues
+## Known issues
 
 1. During installation, an error message pops up, saying "The installation of the Microsoft .NET 3.5 SP1' package failed!
 

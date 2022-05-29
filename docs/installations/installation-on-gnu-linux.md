@@ -25,7 +25,7 @@ conda install -c bioconda libopenms
 conda install -c bioconda openms-thirdparty
 ```
 
-## Install via Debian Package
+## Install via Debian package
 
 For Debian-based Linux users, it is suggested to  use the [deb-package](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) provided. It is most easily installed with **[gdebi](https://launchpad.net/gdebi)**
 which automatically resolves the dependencies available in the PPA Repositories.
@@ -59,7 +59,7 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    `/usr/share/OpenMS/THIRDPARTY`
 5. Add the folders in your `PATH` for a convenient use of the adapters.
 
-## Install via Package Managers
+## Install via package managers
 
 Packaged versions of **OpenMS** are provided for Fedora, OpenSUSE, Debian, and Ubuntu. You can find them to download
 [here](https://pkgs.org/download/openms). For other GNU/Linux distributions or to obtain the most recent version of the
@@ -81,7 +81,7 @@ The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU
 Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
 ```
 
-## Run via a (Bio)Docker Image
+## Run via a (Bio)Docker image
 
 Make sure you have [Docker installed](https://docs.docker.com/engine/install/).
 
