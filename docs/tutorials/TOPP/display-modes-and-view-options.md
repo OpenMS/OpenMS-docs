@@ -4,7 +4,7 @@ Display Modes and View Options in TOPPView
 All of the views support several display modes and view options.
 Display modes determine how intensities are displayed. View options configure the view.
 
-![](../../images/tutorials/topp/TOPPView_icons.png)
+![TOPPView Icons](../../images/tutorials/topp/TOPPView_icons.png)
 
 # Display Modes
 
@@ -35,7 +35,7 @@ Switching between raw data and peak mode.
 ### 2D (Peaks)
 
 `MS/MS` precursor peaks can be highlighted.
-Projections to `m/z` and `RT` axis can be shown.
+Projections to **m/z** and **RT** axis can be shown.
 
 ### 2D (Features)
 

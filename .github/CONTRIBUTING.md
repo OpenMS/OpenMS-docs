@@ -5,14 +5,14 @@ Hi there!
 
 Thank you for thinking about enhancing OpenMS Documentation further.
 
-Please feel free:
+Please feel free to:
 
-1. Creating a bug report or feature request in OpenMS Documentation, [here](https://github.com/OpenMS/OpenMS-docs/issues).
-2. Creating a pull request in [OpenMS Documentation](https://github.com/OpenMS/OpenMS-docs) with the change you're proposing.
+1. Create a bug report or feature request in OpenMS Documentation, [here](https://github.com/OpenMS/OpenMS-docs/issues).
+2. Create a pull request in [OpenMS Documentation](https://github.com/OpenMS/OpenMS-docs) with the change you're proposing.
 
-If you need help while doing any of these, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/OpenMS).
+For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/OpenMS).
 
-## Creating a Pull Request
+## Create a Pull Request(PR)
 
 1. Fork this repository.
 2. Add the change in your fork.
@@ -27,7 +27,22 @@ If you need help while doing any of these, drop us a ping in [OpenMS Gitter](htt
 2. Restrict the line length to 120 characters, including space(s).
 3. Title and H1 heading should be in `Title Case`. Follow `Sentence case`, until otherwise stated.
 4. Write as OpenMS is writing for itself as an object and subject.
-5. Be nice, polite, and respectful.
+5. Use American English.
+6. Use `backtick`(s) for formatting code, library name, files, and path.
+7. Use **bold** for product name, object name, an independent entity.
+8. Use **bold** for menu title in an application.
+9. Link to glossary terms using {term}`this is a glossary term`.
+10. OpenMS documentation uses following Admonitions
+    - Hint
+	- Important
+	- Note
+	- Warning
+	- Tip
+	- See Also
+	Example of these are present in documentation, please follow them.
+11. Always specify lexers for code blocks.
+12. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`.
+13. Be nice, polite, and respectful.
 
 ### Naming files
 
@@ -36,13 +51,13 @@ If you need help while doing any of these, drop us a ping in [OpenMS Gitter](htt
 
 ### Images and figures
 
-For images and figures, follow:
+For images and figures:
 
-1. Add screenshot of the window.
+1. Add a screenshot of the window.
 2. In tutorial, align images in center. Other instructions, should have alighment to left.
 3. Please set the size to `500px` of images added in step-by-step guides or instructions.
 
-## OpenMS Documentation Contributors
+## OpenMS documentation contributors
 
 Thank you for your contribution!
 

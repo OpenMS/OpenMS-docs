@@ -1,7 +1,7 @@
 General Introduction
 ====================
 
-This tutorial will gives a brief overview of the most important TOPP tools. First, some basics that are required for
+This tutorial will gives a brief overview of the most important **TOPP** tools. First, some basics that are required for
 every TOPP tool, then there are several example pipelines explained.
 
 ## File formats
@@ -61,10 +61,11 @@ can contain the configuration of one or several TOPP tools.
 The following examples will give an overview of how TOPP tools can be chained in order to create analysis pipelines. INI
 files are the recommended way to store all settings of such a pipeline in a single place.
 
-Note that the issue of finding suitable parameters for the tools is not addressed here. For problems during the
+```{attention}
+The issue of finding suitable parameters for the tools is not addressed here. For problems during the
 execution of the example pipelines on the data, adapt the parameters. Have a look at the documentation of the
 corresponding TOPP tool in that case.
-
+```
 
 ### Parameter documentation
 
@@ -73,7 +74,7 @@ command line flag `-help`. Some TOPP tools also have subsections of parameters t
 algorithm. The documentation of these subsections is not displayed with `–help`. It is however displayed in
 **INIFileEditor**.
 
-![](../../images/tutorials/topp/INIFileEditor.png)
+![INIFileEditor](../../images/tutorials/topp/INIFileEditor.png)
 
 In the [INIFileEditor](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_INIFileEditor.html), click on the respective parameter, the documentation of the parameters is displayed in the window at the bottom.
 
@@ -83,7 +84,7 @@ For an old INI file which does not work for a newer [OpenMS]() version (due to r
 can rescue parameters whose name did not change into the new version by using [INIUpdater](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_INIUpdater.html) tool by calling it with (a list of) outdated
 INI and/or TOPPAS files. See the INIUpdater tool description for details. This will remove invalid parameters and add
 new parameters (if available) while retaining values for unchanged parameters. As an alternative to the INIUpdater, use
-the commandline by calling the TOPP tool from which the ini originated and combining `-write_ini` and `-ini`, e.g.,
+the command line by calling the TOPP tool from which the ini originated and combining `-write_ini` and `-ini`, e.g.,
 
 ```
 FileInfo -ini old_fi.ini -write_ini fi.ini
@@ -94,7 +95,7 @@ This will transfer all values of parameters from `old_fi.ini` which are still va
 ### General structure of an INI file
 
 An INI file is always enclosed by the `<PARAMETERS>` tag. Inside this tag, a tree-like hierarchy is created with `<NODE>`
-tags that represent sections and `<ITEM>` tags, each of which stores one of the parameters. The first two level of the
+tags that represent *sections* and `<ITEM>` tags, each of which stores one of the parameters. The first two level of the
 hierarchy have a special meaning.
 
 **Example**: Below is the content of an INI file for **FileFilter**.
@@ -110,10 +111,10 @@ contain nested subsections in order to group related parameters.
 - If a parameter is not found in the instance section, the *tool-specific common section* is considered.
 - Finally, we look if the *general common section* contains a value for the parameter.
 
-As an example, let's call the **FileFilter** tool with the INI file given below and instance number `2`. The FileFilter
+As an example, let's call the `FileFilter` tool with the INI file given below and instance number `2`. The `FileFilter`
 parameters `rt` and `mz` are looked up by the tool. *mz* can be found in section **FileFilter** - `2`. `rt` is not
 specified in this section, thus the `common` **FileFilter** section is checked first, where it is found in our example.
-When looking up the *debug* parameter, the tool would search the instance section and tool-specific common section
+When looking up the `debug` parameter, the tool would search the instance section and tool-specific common section
 without finding a value. Finally, the *general common section* would be checked, where the debug level is specified.
 
 ```xml

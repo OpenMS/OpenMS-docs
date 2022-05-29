@@ -1,16 +1,20 @@
 Installation on Windows
 =======================
 
-To Install the binary package of OpenMS & TOPP:
+## Install via Windows installer
+
+To Install the binary package of OpenMS & {term}`TOPP`:
 
 1. Download and execute the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) and follow its instructions.
 2. Run the installer under the user account that later runs OpenMS. It is not advised to use admin account for
    installation. When asked for an admin authentication, please enter the credentials.
 
-> **_NOTE:_** The windows binary version works with most versions of windows from Win7 to Win10 (older versions might
+```{tip}
+The windows binary version works with most versions of windows from Win7 to Win10 (older versions might
   still work but are untested).
+```
 
- ## Known Issues
+## Known issues
 
 1. During installation, an error message pops up, saying "The installation of the Microsoft .NET 3.5 SP1' package failed!
 
@@ -30,7 +34,7 @@ To Install the binary package of OpenMS & TOPP:
 3. Error: "Error opening installation log file"
 
    To fix, check the system environment variables. Make sure they are apt. There should a `TMP` and a `TEMP` variable,
-   and both should contain ONE(!) directory only, which exists and is writable. Fix accordingly (search the internet on
+   and both should contain one directory only, which exists and is writable. Fix accordingly (search the internet on
    how to change environment variables on Windows).
 4. For Win8 or later, Windows will report an error while installing `.net4` as it's mostly included. But it might occur
    that `.net3.5` does not get properly installed during the process.

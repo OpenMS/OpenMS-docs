@@ -9,7 +9,7 @@ To find all peaks in the profile data:
 2. The now smoothed profile data can be further processed by subtracting the baseline with the **BaselineFilter**.
 3. Then use one of the **PeakPickers** to find all peaks in the baseline-reduced profile data.
 
-![](../../images/tutorials/topp/TOPP_raw_data.png)
+![TOPP raw data](../../images/tutorials/topp/TOPP_raw_data.png)
 
 There are two different smoothing filters: NoiseFilterGaussian and NoiseFilterSGolay. To use the Savitzky Golay filter,
 or the **BaselineFilter** with non equally spaced profile data, e.g. TOF data, you have to generate equally spaced data
@@ -23,7 +23,7 @@ available, PeakPickerWavelet and PeakPickerHiRes.
 ### PeakPickerWavelet
 
 This peak picking algorithm uses the continuous wavelet transform of a raw data signal to detect mass peaks. Afterwards
-a given asymmetric peak function is fitted to the raw data and important peak parameters (e.g. fwhm) are extracted. In
+a given asymmetric peak function is fitted to the raw data and important peak parameters (e.g. `fwhm`) are extracted. In
 an optional step these parameters can be optimized using a non-linear optimization method.
 
 The algorithm is described in detail in Lange et al. (2006) Proc. PSB-06.
@@ -32,7 +32,7 @@ The algorithm is described in detail in Lange et al. (2006) Proc. PSB-06.
 - **Application**: This algorithm was designed for low and medium resolution data. It can also be applied to
   high-resolution data, but can be slow on large datasets.
 
-See the PeakPickerCWT class documentation for a parameter list.
+See the `PeakPickerCWT` class documentation for a parameter list.
 
 ### PeakPickerHiRes
 
@@ -49,7 +49,7 @@ Please notice that this method is still **experimental** since it has not been t
   These properties facilitate a fast computation of picked peaks so that even large data sets can be processed very
   quickly.
 
-  See the PeakPickerHiRes class documentation for a parameter list.
+  See the `PeakPickerHiRes` class documentation for a parameter list.
 
 ## Finding the right parameters for the
 
@@ -62,4 +62,4 @@ good parameters, following this procedure:
 2. Extract a single scan from the middle of the HPLC gradient (Right click on **scan**).
 3. Experiment with the parameters until you have found the proper settings
 
-You can find the **NoiseFilters**, the **BaselineFilter**, and the **PeakPickers** in **TOPPView** in the menu **Layer** > **Apply TOPP tool**.
+Find the **NoiseFilters**, the **BaselineFilter**, and the **PeakPickers** in **TOPPView** in the menu **Layer** > **Apply TOPP tool**.

@@ -36,33 +36,71 @@ Contents
    introduction
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Getting Started
 
    installations/installation-on-gnu-linux
    installations/installation-on-windows
    installations/installation-on-macos
+   installations/build-openms-from-source
 
 .. toctree::
    :maxdepth: 2
-   :navigation_depth: 4
    :caption: Quick Start Guides
 
    guides/user-guides/user-quickstart-guide
+   guides/contributors-quickstart-guide.md
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Tutorials
 
    tutorials/TOPP/TOPP-tutorial
    tutorials/TOPPAS/TOPPAS-tutorial
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: OpenMS TOPP Tools
 
    topp/topp.md
+   topp/adding-new-tool-to-topp.md
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Frequently Asked Questions
+
+   faqs/developer-faq.md
+   faqs/contributor-faq.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Advanced Resources
+
+   advanced-resources/custom-compilation.md
+   advanced-resources/build-custom-openms-knime-package.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Additional Resources
+
+   additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
+   additional-resources/external-code-using-openms.md
+   additional-resources/openms-git-workflow.md
+   additional-resources/reporting-bugs-and-issues.md
+   additional-resources/write-and-label-github-issues.md
+   additional-resources/pull-request-checklist.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Downloads
+
+   downloads.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Glossary
+
+   glossary.md
 
 .. toctree::
    :maxdepth: 2

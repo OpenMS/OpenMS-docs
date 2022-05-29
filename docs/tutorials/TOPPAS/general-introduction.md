@@ -9,12 +9,12 @@ invalid workflows. Once set up and saved, a workflow can also be run without the
 
 The following figure shows a simple example pipeline that has just been created and executed successfully:
 
-![](../../images/tutorials/toppas/TOPPAS_simple_example.png)
+![TOPPAS Simple Example](../../images/tutorials/toppas/TOPPAS_simple_example.png)
 
 To create a new TOPPAS file, do any of the following:
 
-- open TOPPAS without providing any existing workflow - an empty workflow will be opened automatically.
-- in a running TOPPAS program choose: **File** > **New**
-- create an empty file in your file browser (explorer) with the suffix `.toppas` and double-click it (on Windows systems
+- Open TOPPAS without providing any existing workflow - an empty workflow will be opened automatically.
+- In a running TOPPAS program, choose: **File** > **New**.
+- Create an empty file in your file browser (explorer) with the suffix `.toppas` and double-click it (on Windows systems
   all `.toppas` files are associated with TOPPAS automatically during installation of OpenMS, on Linux, and macOS you
   might need to manually associate the extension).

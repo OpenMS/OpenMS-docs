@@ -10,7 +10,13 @@ experiments and OpenSWATH, peptide property prediction, cross-linking, quality-c
 
 Few of the graphical tools are explained below:
 
-- [TOPPView](toppview.md): A viewer for mass spectrometry data.
-- [TOPPAS](toppas.md): An assistant for GUI-driven TOPP workflow design.
-- [INIFileEditor](ini-file-editor.md): An editor for OpenMS configuration files.
-- [SwathWizard](swathwizard.md): A user-friendly step-by-step wizard for SWATH data analysis.
+```{toctree}
+:maxdepth: 1
+
+<toppview>: A viewer for mass spectrometry data.
+<toppas>: An assistant for GUI-driven TOPP workflow design.
+<ini-file-editor>: An editor for OpenMS configuration files.
+<swathwizard>: A user-friendly step-by-step wizard for SWATH data analysis.
+```
+
+For advanced documentation on every TOPP tool, see the [OpenMS TOPP API Reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).

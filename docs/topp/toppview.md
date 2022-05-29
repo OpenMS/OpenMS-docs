@@ -1,17 +1,17 @@
 TOPPView
 =======
 
-TOPPView is a viewer for MS and HPLC-MS data. It can be used to inspect files in mzML, mzData, mzXML and several other
+**TOPPView** is a viewer for MS and HPLC-MS data. It can be used to inspect files in mzML, mzData, mzXML and several other
 file formats. It also supports viewing data from an OpenMS database. The following figure shows two instances of TOPPView
 displaying a HPLC-MS map and a MS raw spectrum:
 
-![](../../images/topp/TOPPView.png)
+![TOPPView](../images/topp/TOPPView.png)
 
-More information about TOPPView can be found in the [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md).
+More information about TOPPView can be found in the [TOPP tutorial](../tutorials/TOPP/TOPP-tutorial.md).
 
 **The command line parameters of this tool are**:
 
-```
+```bash
 TOPPView -- A viewer for mass spectrometry data.
 
 Usage:
