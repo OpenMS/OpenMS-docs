@@ -27,7 +27,7 @@ INI settings portable.
 
 ## Using external tools in workflows
 
-OpenMS supports the wrapping of external tools (like msconvert from ProteoWizard), thus allowing to build scripts and/or
+OpenMS supports the wrapping of external tools (like msconvert from {term}`ProteoWizard`), thus allowing to build scripts and/or
 TOPPAS pipelines containing external tools.
 
 ```{seealso}

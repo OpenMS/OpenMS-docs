@@ -88,4 +88,60 @@ TOPPView
 
 [Nightly Snapshot](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html)
   Untested installers and containers are known as the nightly snapshot.
+
+Proteomics
+  Proteomics is the large-scale study of proteins.
+
+Proteins
+  Proteins are vital parts of living organisms, with many functions, for example composing the structural fibers of
+  muscle to the enzymes that catalyze the digestion of food to synthesizing and replicating DNA.
+
+Mascot
+  Identifies peptides in MS/MS spectra via Mascot. Please find more information in the {term}`TOPP` [Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MascotAdapter.html).
+
+HPLC-MS
+  Data produced by High performance liquid chromatography (HPLC) separates components of a mixture, whereas mass
+  spectrometry (MS) offers the detection tools to identify them.
+
+mzML
+  The mzML format is an open, XML-based format for mass spectrometer output files, developed with the full participation
+  of vendors and researchers in order to create a single open format that would be supported by all software.
+
+mzData
+  mzData was the first attempt by the Proteomics Standards Initiative (PSI) from the Human Proteome Organization (HUPO)
+  to create a standardized format for Mass Spectrometry data.[7] This format is now deprecated, and replaced by mzML.
+
+mzXML
+  mzXML is an open data format for storage and exchange of mass spectroscopy data, developed at the SPC/Institute for
+  Systems Biology.
+
+Spectra
+  Singluar of spectrum.
+
+Spectrum
+  A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used
+  to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to
+  elucidate the chemical identity or structure of molecules and other chemical compounds.
+
+m/z
+  mass to charge ratio.
+
+RT
+  Retention time (RT).
+
+ProteoWizard
+  ProteoWizard is a set of open-source, cross-platform tools and libraries for proteomics data analyses. It provides a
+  framework for unified mass spectrometry data file access and performs standard chemistry and LCMS dataset computations.
+
+OMSSA
+  The Open Mass Spectrometry Search Algorithm (OMSSA) is an efficient search engine for identifying {term}`MS/MS`
+  {term}`peptide` {term}`spectra` by searching libraries of known protein sequences.
+
+PepNovo
+  PepNovo is a de novo sequencing algorithm for {term}`MS/MS` {term}`spectra`.
+
+De novo peptide sequencing
+  A peptide’s amino acid sequence is inferred directly from the precursor peptide mass and tandem mass spectrum
+  ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
 ```
+
