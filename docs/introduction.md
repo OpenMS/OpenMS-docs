@@ -26,7 +26,7 @@ of ions are stored in mass spectra and used to identify and quantify the analyte
 methods. The quantity and identity of analytes can then be used, for instance, in biomarker discovery, medical diagnostics,
 or basic research.
 
-# Liquid Chromatography(LC)
+## Liquid Chromatography(LC)
 
 LC aims to reduce the complexity of the measured sample by separating analytes based on their physicochemical properties.
 Separating analytes in time ensures that a manageable amount of analytes elute at the same time. In mass
@@ -45,7 +45,7 @@ spectrometer.
 
 ![](images/introduction/introduction_LC.png)
 
-# Mass Spectrometry
+## Mass Spectrometry
 
 MS is an analytical technique used to determine the {term}`mass` of molecules. In order to achieve highly accurate and sensitive
 mass measurements at the atomic scale, mass spectrometers manipulate charged particles using magnetic and electrostatic
@@ -88,3 +88,19 @@ spectrometry (MS/MS) can be applied to assess the analyte substructure. To this 
 kinetically fragmented using an inert gas (e.g., Argon). Fragments produced by {term}`collision-induced dissociation (CID)`
 are stored in an MS^2^ (or MS/MS) spectrum and provide information that helps to resolve the ambiguities in identification.
 Alternatively, MS/MS spectra can be used for quantification.
+
+Get started with installing OpenMS using the installers available for different operating systems!
+
+## Installation on different platforms
+
+```{tab} GNU/Linux
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
+```
+
+```{tab} Windows
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
+```
+
+```{tab} MacOS
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
+```

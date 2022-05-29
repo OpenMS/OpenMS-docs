@@ -3,7 +3,7 @@ Calibration
 
 OpenMS offer two calibration methods: an internal and an external calibration. Both can handle peak data as well as
 profile data. To calibrate profile data, a peak picking step is necessary, the important parameters can be set via the
-ini-file. If you have already picked data, don't forget the `-peak\_data` flag.
+ini-file. If you have already picked data, don't forget the `-peak_data` flag.
 
 The external calibration (**TOFCalibration**) is used to convert flight times into m/z values with the help of external
 calibrant spectra containing e.g. a polymer like polylysine. For the calibrant spectra, the calibration constants the

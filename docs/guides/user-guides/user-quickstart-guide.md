@@ -2,14 +2,14 @@ User Quickstart Guide
 ====================
 
 Read the User Quickstart guide to gain a brief understanding of key concepts and how to use the tools. For more in-depth
-information, consult [OpenMS documentation]().
+information, consult [OpenMS API Reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
 
 ## What is OpenMS
 
-[OpenMS.org](https://www.openms.de/) is a free, open-source C++ library with Python bindings. It is commonly used for liquid
+[OpenMS](https://www.openms.de/) is a free, open-source C++ library with Python bindings. It is commonly used for liquid
 chromatography-mass spectrometry (LC-MS) data management and analyses. OpenMS provides an infrastructure for the rapid
 development of mass spectrometry related software as well as a rich toolset built on top of it. OpenMS is available
-under the three clause BSD licence and runs under Windows, macOS, and Linux operating systems.
+under the [three clause BSD licence](https://github.com/OpenMS/OpenMS/blob/develop/LICENSE) and runs under Windows, macOS, and Linux operating systems.
 
 ## Background
 

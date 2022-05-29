@@ -6,7 +6,7 @@ This tutorials has some advanced concepts of TOPP, which will increase productiv
 ## Global database for search engine adapters
 
 In your `$HOME` directory find an `OpenMS.ini` in the `.OpenMS` subfolder. This INI file contains global parameters
-which are used by many/all TOPP tools, depending on what the parameters refer to. The `id\_db\_dir` parameter allows to
+which are used by many/all TOPP tools, depending on what the parameters refer to. The `id_db_dir` parameter allows to
 specify one or more directories where FASTA files (or related, e.g., `.psq` files) are placed. Specified filename
 (without path) in an ID engine adapter, will be looked up in the current working directory. If its not found, the
 directories specified in `id_db_dir` will be searched. This allows to build scripts and/or TOPPAS pipelines which are
@@ -30,6 +30,6 @@ INI settings portable.
 OpenMS supports the wrapping of external tools (like msconvert from ProteoWizard), thus allowing to build scripts and/or
 TOPPAS pipelines containing external tools.
 
-**See also**
-
-     `share/OpenMS/TOOLS/EXTERNAL/ReadMe.txt` in your local installation for details.
+```{seealso}
+`share/OpenMS/TOOLS/EXTERNAL/ReadMe.txt` in your local installation for details.
+```
