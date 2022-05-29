@@ -45,6 +45,7 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    sudo apt-get update
    ```
    Run the installation again.
+
 2. ICU with its `libicu` is missing.
    You can find the missing version on [pkgs.org](https://pkgs.org) and install it with `gdebi`, too. You can have
    multiple versions of ICU installed.
@@ -70,7 +71,6 @@ These packages are not directly maintained by OpenMS and they  can not be guaran
 same behaviour as when building it on from source code. Also, their availability and version is subject to change and
 support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
 Debian package.
-
 ```
 
 ## Installation via building from source code

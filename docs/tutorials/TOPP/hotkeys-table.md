@@ -3,12 +3,13 @@ TOPPView Hotkeys
 
 ## File handling
 
-| Hotkey                                                  | Function                                            |
-|---------------------------------------------------------|-----------------------------------------------------|
-| <kbd>CTRL</kbd> + <kbd>O</kbd>                          | Open file                                           |
-| <kbd>CTRL</kbd> + <kbd>W</kbd>                          | Close current window                                |
-| <kbd>CTRL</kbd> + <kbd>S</kbd>                          | Save current layer                                  |
-| <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>       | Save visible data of current layer                  |
+
+| Hotkey                                                                  | Function                                            |
+|-------------------------------------------------------------------------|-----------------------------------------------------|
+| <kbd>CTRL</kbd> + <kbd>O</kbd>                                          | Open file                                           |
+| <kbd>CTRL</kbd> + <kbd>W</kbd>                                          | Close current window                                |
+| <kbd>CTRL</kbd> + <kbd>S</kbd>                                          | Save current layer                                  |
+| <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd>                       | Save visible data of current layer                  |
 
 
 ## Navigation in the data
