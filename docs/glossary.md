@@ -81,7 +81,7 @@ TOPP Tools
 
 UTILS
   Besides TOPP, OpenMS offers a range of other tools. They are not included in TOPP as they are not part of typical
-  analysis pipelines. More information is present in [OpenMS UTILS Documentation)(https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
+  analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
 
 TOPPView
   TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](topp/toppview.md).
@@ -147,4 +147,3 @@ De novo peptide sequencing
 TOPPAS
   An assistant for GUI-driven TOPP workflow design.
 ```
-

@@ -23,7 +23,7 @@ to `TOOLS` if they are stable enough, are fully tested, fully documented, and a 
 
 ### I have written a class for OpenMS. What should I do?
 
-Follow the [OpenMS coding conventions]().
+Follow the [OpenMS coding conventions](https://github.com/OpenMS/OpenMS/wiki/Coding-conventions).
 
 Coding style (brackets, variable names, etc.) must conform to the conventions.
 
@@ -247,4 +247,3 @@ To contribute to a bug fix:
 3. Fix the bug and add a test.
 4. Create a pull request for your branch.
 5. After approval and merge make sure the issue is closed.
-

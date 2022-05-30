@@ -68,7 +68,7 @@ Nightly tests: [CDASH](http://cdash.openms.de/index.php?project=OpenMS).
 
 Consider the following resources for further information:
 
-- **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries]().
+- **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries](../additional-resources/developer-guidelines-for-adding-new-dependencies).
 -  **Experimental installers**: We automatically build installers for different platforms. These usually contain
    unstable or partially untested code.
    The nightly (unstable) installers are available at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
