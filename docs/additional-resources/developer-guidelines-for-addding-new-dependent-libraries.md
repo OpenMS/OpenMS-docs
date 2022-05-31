@@ -1,7 +1,7 @@
 Developer Guidelines For Adding New Dependent Libraries
 ======================================================
 
-# Our dependency library philosophy
+## Our dependency library philosophy
 
 In short, requirements for adding a new library are:
 - indispensable functionality
