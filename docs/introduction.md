@@ -101,6 +101,6 @@ wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstall
 wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
 ```
 
-```{tab} MacOS
+```{tab} macOS
 wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
 ```

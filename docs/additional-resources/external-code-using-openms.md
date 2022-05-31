@@ -11,7 +11,7 @@ ways to do this:
 Once you've finished your new tool, and it only needs to run on the development machine. To ship it to a new client machine,
 see, read further in this document.
 
-# Compiling external code
+## Compiling external code
 
 It is very easy to set up an environment to write your own programs using OpenMS. Make sure to downloaded and installed
 the source package of OpenMS/TOPP properly.
@@ -93,7 +93,7 @@ For more information visit the website of cmake at cmake.org and consult the doc
 Have fun coding with OpenMS!
 ```
 
-# Shipping external code to a new machine
+## Shipping external code to a new machine
 
 If you've modified OpenMS itself and not used an external project use our installer scripts, to build your own OpenMS
 installer for your platform (see our internal FAQ which is built using "make doc_internal") and ship that to a client
