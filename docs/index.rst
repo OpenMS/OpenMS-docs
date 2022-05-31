@@ -2,25 +2,25 @@ About OpenMS
 ============
 
 `OpenMS <http://www.openms.org/>`_
-is an open-source software C++ library for {term}`LC-MS` data management and
+is an open-source software C++ library for :term:`LC-MS` data management and
 analyses. It offers an infrastructure for rapid development of mass
 spectrometry related software. OpenMS is free software available under the
 three clause BSD license and runs under Windows, macOS, and Linux.
 
 It comes with a vast variety of pre-built and ready-to-use tools for proteomics
-and metabolomics data analysis ({term}`TOPP Tools`) as well as powerful 1D, 2D and 3D
-visualization ({term}`TOPPView`).
+and metabolomics data analysis (:term:`TOPP Tools`) as well as powerful 1D, 2D and 3D
+visualization (:term:`TOPPView`).
 
 OpenMS offers analyses for various quantitation protocols, including label-free
-quantitation, {term}`SILAC`, {term}`iTRAQ`, {term}`TMT`, {term}`SRM`, {term}`SWATH`, etc.
+quantitation, :term:`SILAC`, :term:`iTRAQ`, :term:`TMT`, :term:`SRM`, :term:`SWATH`, etc.
 
 It provides built-in algorithms for de-novo identification and database search,
-as well as adapters to other state-of-the art tools like X!Tandem, {term}`Mascot`,
+as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`,
 OMSSA, etc. It supports easy integration of OpenMS built tools into workflow
-engines like {term}`KNIME`, Galaxy, WS-Pgrade, and {term}`TOPPAS` via the TOPPtools concept and
+engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the TOPPtools concept and
 a unified parameter handling via a 'common tool description' (CTD) scheme.
 
-With {term}`pyOpenMS`, OpenMS offers Python bindings to a large part of the {term}`OpenMS API`
+With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`
 to enable rapid algorithm development. OpenMS supports the Proteomics Standard
 Initiative (PSI) formats for MS data. The main contributors of OpenMS are
 currently the Eberhard-Karls-Universität in Tübingen, the Freie Universität
