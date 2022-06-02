@@ -38,6 +38,7 @@ extensions = [
   'notfound.extension',
   'sphinxcontrib.images',
   'sphinx_inline_tabs',
+  'hoverxref.extension',
 ]
 
 autosummary_generate = True
@@ -53,6 +54,9 @@ source_suffix = ['.rst', '.md']
 
 myst_enable_extensions = ["html_admonition", "colon_fence", "linkify"]
 
+hoverxref_roles = [
+    'term',
+]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
