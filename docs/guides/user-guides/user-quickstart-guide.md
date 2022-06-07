@@ -31,7 +31,7 @@ Read the documentation of the tools see [TOPP tutorial](../../tutorials/TOPP/TOP
 Alternatively, use the command line and call tools directly. In this case, you'll probably want to use some type of shell
 script for automation.
 
-## Adapte pipeline parameters
+## Adapt pipeline parameters
 
 The default parameters of each tool can usually be tweaked to fit the data and improve results.
 

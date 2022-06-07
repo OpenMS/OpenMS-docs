@@ -103,7 +103,7 @@ If you've used an external project and have a new executable (+ an optional new 
 well, and manually copy the new executable to the `TOPP/UTILS` binary directory (e.g. on Windows this could be
 `c:/program files/OpenMS/bin`, on Linux it could be `/bin`.
 
-If you do NOT use the installer, copy all required files manually, plus a few extra steps, see below. What needs to be
+If you do not use the installer, copy all required files manually, plus a few extra steps, see below. What needs to be
 done is a little platform dependent, thus very cumbersome to explain. Look at the cmake installer scripts, to see whats
 required (for Mac and Linux see `OpenMS/cmake/package*.cmake`).
 
