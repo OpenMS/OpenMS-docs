@@ -41,7 +41,7 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 	- See Also
 	Example of these are present in documentation, please follow them.
 11. Always specify lexers for code blocks.
-12. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`.
+12. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`, as an example, please see [this](../docs/tutorials/TOPP/hotkeys-table.md) file.
 13. Be nice, polite, and respectful.
 
 ### Naming files

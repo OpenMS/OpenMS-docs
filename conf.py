@@ -21,10 +21,6 @@ project = 'OpenMS'
 copyright = '2022, OpenMS Team'
 author = 'OpenMS Team'
 
-# The full version, including alpha/beta/rc tags
-release = '2.8.0'
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
