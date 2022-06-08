@@ -105,14 +105,14 @@ well, and manually copy the new executable to the `TOPP/UTILS` binary directory 
 
 If you do NOT use the installer, copy all required files manually, plus a few extra steps, see below. What needs to be
 done is a little platform dependent, thus very cumbersome to explain. Look at the cmake installer scripts, to see whats
-required (for Mac and Linux see `OpenMS/cmake/package*.cmake`).
+required (for macOS and Linux see `OpenMS/cmake/package*.cmake`).
 
 In short:
 
 - copy the `OpenMS/share/OpenMS` directory to the client machine (e.g `<client/my_dir>/share`) and set the environment
   variable `OPENMS_DATA_PATH` to this directory
-- copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/Mac) to `<client/my_dir>/bin`.
-- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/Mac make sure you have installed the Qt4 package
+- copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
+- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 package
 - [Windows only] copy Xerces dll (see `contrib/lib`) to `<client/my_dir>/bin`
 - [Windows only] install the VS redistributable package (see Microsoft Homepage) on the client machine which corresponds
   to the VS version that was used to compile your code (use the correct redistributable package!, i.e., architecture
