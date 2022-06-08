@@ -32,12 +32,14 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Introduction
+   :titlesonly:
 
    introduction
 
 .. toctree::
    :maxdepth: 2
    :caption: Getting Started
+   :titlesonly:
 
    installations/installation-on-gnu-linux
    installations/installation-on-windows
@@ -47,6 +49,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Quick Start Guides
+   :titlesonly:
 
    guides/user-guides/user-quickstart-guide
    guides/contributors-quickstart-guide.md
@@ -54,6 +57,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials
+   :titlesonly:
 
    tutorials/TOPP/TOPP-tutorial
    tutorials/TOPPAS/TOPPAS-tutorial
@@ -61,6 +65,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS TOPP Tools
+   :titlesonly:
 
    topp/topp.md
    topp/adding-new-tool-to-topp.md
@@ -68,6 +73,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Developer Resources
+   :titlesonly:
 
    additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
    additional-resources/external-code-using-openms.md
@@ -77,6 +83,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS GitHub Workflow
+   :titlesonly:
 
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
@@ -86,6 +93,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Frequently Asked Questions
+   :titlesonly:
 
    faqs/developer-faq.md
    faqs/contributor-faq.md
