@@ -17,7 +17,7 @@ quantitation, :term:`SILAC`, :term:`iTRAQ`, :term:`TMT`, :term:`SRM`, :term:`SWA
 It provides built-in algorithms for de-novo identification and database search,
 as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`,
 OMSSA, etc. It supports easy integration of OpenMS built tools into workflow
-engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the TOPPtools concept and
+engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the :term:`TOPP tools` concept and
 a unified parameter handling via a 'common tool description' (CTD) scheme.
 
 With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`

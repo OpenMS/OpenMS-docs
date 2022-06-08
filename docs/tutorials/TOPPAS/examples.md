@@ -17,8 +17,8 @@ TOPPView tutorial: [Smoothing raw data](../TOPP/smoothing-raw-data.md), [Subtrac
 ## Identification of E. coli peptides
 
 This section describes an example identification pipeline contained in the example directory, `Ecoli_Identification.toppas`.
-It is shipped together with a reduced example mzML file containing 139 MS2 spectra from an E. coli run on an Orbitrap
-instrument as well as an E. coli target-decoy database.
+The pipeline is shipped together with a reduced example mzML file containing 139 MS2 spectra from an E. coli run on an
+Orbitrap instrument as well as an E. coli target-decoy database.
 
 Use the search engine OMSSA (Geer et al., 2004) for peptide identification. Therefore, OMSSA must be installed and the
 path to the OMSSA executable (omssacl) must be set in the parameters of the OMSSAAdapter node.
