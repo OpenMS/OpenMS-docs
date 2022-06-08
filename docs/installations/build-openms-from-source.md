@@ -1,4 +1,4 @@
-Build OpenMS From Source
+Build OpenMS from Source
 ========================
 
 To build OpenMS, please follow the build instructions for:

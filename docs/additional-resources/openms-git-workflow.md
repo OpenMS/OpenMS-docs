@@ -35,6 +35,9 @@ $ git clone https://github.com/_YOURUSERNAME_/OpenMS.git
 
 This will clone your fork (correctly labelled `origin` by default) into a local copy on your computer.
 
+```{note}
+To use `git clone git@github.com:_YOURUSERNAME_/OpenMS.git`, make sure you have [SSH key added to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+```
 ## Link remote branches to your local working repository
 
 After cloning your fork, your local repository should be named origin. Validate this by executing:
