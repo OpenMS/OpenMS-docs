@@ -31,7 +31,7 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 6. Use `backtick`(s) for formatting code, library name, files, and path.
 7. Use **bold** for product name, object name, an independent entity.
 8. Use **bold** for menu title in an application.
-9. Link to glossary terms using {term}`this is a glossary term`.
+9. Link to glossary terms using {term}\`this is a glossary term\`.
 10. OpenMS documentation uses following Admonitions
     - Hint
 	- Important
@@ -39,6 +39,7 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 	- Warning
 	- Tip
 	- See Also
+
 	Example of these are present in documentation, please follow them.
 11. Always specify lexers for code blocks.
 12. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`, as an example, please see [this](../docs/tutorials/TOPP/hotkeys-table.md) file.
