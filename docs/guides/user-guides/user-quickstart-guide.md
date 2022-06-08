@@ -22,6 +22,12 @@ Before using OpenMS, become familiar with the following terms:
 |**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp/topp.md)|
 |**UTILS**           |Similar to {term}`TOPP tools`, but with more supporting character, which are rarely used in a productive pipeline, but rather during pipeline construction or parameter optimization. See also: [UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
 
+```{important}
+Users can now use {term}`KNIME` in place of {term}`TOPPAS`; the later will deprecated with no support in near future.
+Please find more information about using {term}`KNIME` in [KNIME tutorial](../../tutorials/KNIME/KNIME-tutorial.md).
+```
+
+
 ## How to run a Tool
 
 A good start are the example pipelines (select **File** > **Open example file** within {term}`TOPPAS`).
