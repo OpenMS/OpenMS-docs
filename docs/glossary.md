@@ -185,6 +185,6 @@ De novo peptide sequencing
   ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
 
 TOPPAS
-  An assistant for GUI-driven TOPP workflow design.
+  An assistant for GUI-driven TOPP workflow design. It is recommended to use OpenMS through the KNIME plugins.
 ```
 

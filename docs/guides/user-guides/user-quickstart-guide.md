@@ -17,7 +17,7 @@ Before using OpenMS, become familiar with the following terms:
 
 | Tool and Utilities | Description |
 |--------------------|-------------|
-|**TOPPView**        |A design tool that is used to view and explore {term}`LC-MS` data, alignments, groups, peptide identifications, and more.|
+|**TOPPView**        |A tool that is used to view and explore {term}`LC-MS` data, alignments, groups, peptide identifications, and more.|
 |**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools` (and {term}`UTILS`).|
 |**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp/topp.md)|
 |**UTILS**           |Similar to {term}`TOPP tools`, but with more supporting character, which are rarely used in a productive pipeline, but rather during pipeline construction or parameter optimization. See also: [UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
@@ -31,7 +31,7 @@ Read the documentation of the tools see [TOPP tutorial](../../tutorials/TOPP/TOP
 Alternatively, use the command line and call tools directly. In this case, you'll probably want to use some type of shell
 script for automation.
 
-## Adapte pipeline parameters
+## Adapt pipeline parameters
 
 The default parameters of each tool can usually be tweaked to fit the data and improve results.
 

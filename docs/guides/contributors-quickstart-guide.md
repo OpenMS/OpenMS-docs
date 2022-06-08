@@ -7,7 +7,7 @@ To contribute to OpenMS:
 - Learn how to [build OpenMS](../installations/build-openms-from-source.md).
 - Check out the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
-For any questions, please [contact us](../contact-us.md) at [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) mailing list.
+For any questions, please [contact us](../contact-us.md).
 
 ## Technical documentation
 
@@ -47,8 +47,7 @@ See the manual for coding style recommended by OpenMS: [Coding conventions](http
 ```
 
 OpenMS automatically tests for common coding convention violations using a modified version of `cpplint`.
-Style testing can be enabled using `cmake` options. We also provide a configuration file for `Uncrustify` for automated
-style corrections (see `tools/uncrustify.cfg`).
+Style testing can be enabled using `cmake` options. [clang-format](https://github.com/OpenMS/OpenMS/blob/develop/.clang-format) is used for formatting the cpp code.
 
 ### Commit messages
 
@@ -68,7 +67,7 @@ Nightly tests: [CDASH](http://cdash.openms.de/index.php?project=OpenMS).
 
 Consider the following resources for further information:
 
-- **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries]().
+- **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries](../additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md).
 -  **Experimental installers**: We automatically build installers for different platforms. These usually contain
    unstable or partially untested code.
    The nightly (unstable) installers are available at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).

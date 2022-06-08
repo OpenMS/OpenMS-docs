@@ -5,7 +5,7 @@ Installation on GNU/Linux
 
 Use conda or bioconda to install OpenMS.
 
-1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html).
+1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
 2. Install OpenMS using conda:
    `conda install -c openms openms`
 3. Other OpenMS packages can be installed using:
@@ -15,12 +15,27 @@ Use conda or bioconda to install OpenMS.
    conda install -c openms libopenms
    ```
 
+```{tab} openms
+openms contains OpenMS C++ Tools.
+```
+
+```{tab} libopenms
+libopenms is the C++ library required for the OpenMS C++ Tools to work.
+```
+
+```{tab} pyopenms
+pyopenms is the python package that allows to use algorithms from libopenms in Python.
+```
+
+```{tab} openms-thirdparty
+openms-thirdparty are external tools that are wrapped in OpenMS with adapters. This is required to use the adapters in
+the openms package.
+```
+
 To install using bioconda:
 
 ```
 conda install -c bioconda openms
-conda install -c bioconda/label/cf201901 openms
-conda install -c bioconda openms-tools
 conda install -c bioconda libopenms
 conda install -c bioconda openms-thirdparty
 ```
@@ -66,8 +81,8 @@ Packaged versions of **OpenMS** are provided for Fedora, OpenSUSE, Debian, and U
 library, installation should be done via building from the source code.
 
 ```{important}
-These packages are not directly maintained by OpenMS and they  can not be guaranteed the
-same behaviour as when building it on from source code. Also, their availability and version is subject to change and
+These packages are not directly maintained by the OpenMS team and they can not be guaranteed to have the
+same behaviour as when building it from source code. Also, their availability and version is subject to change and
 support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
 Debian package.
 
@@ -85,8 +100,12 @@ Some thirdparty software used via adapter tools in OpenMS might also require an 
 
 Make sure you have [Docker installed](https://docs.docker.com/engine/install/).
 
-Our Docker support is constantly updated. Images can be obtained via [OpenMS Dockerhub](https://hub.docker.com/u/openms)
-and [BioContainers Registeries](https://biocontainers.pro/registry).
+Our Docker support is constantly updated. Images can be obtained via [ghcr.io](https://ghcr.io).
+
+1. [openms-executables](https://ghcr.io/openms/openms-executables:latest)
+2. [openms-library](https://ghcr.io/openms/openms-library:latest)
+
+Or via [BioContainers Registeries](https://biocontainers.pro/registry).
 
 1. [BioContainers libopenms](https://biocontainers.pro/tools/libopenms)
 2. [BioContainers openms](https://biocontainers.pro/tools/openms)
