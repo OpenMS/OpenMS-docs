@@ -38,6 +38,7 @@ extensions = [
   'notfound.extension',
   'sphinxcontrib.images',
   'sphinx_inline_tabs',
+  'hoverxref.extension'
 ]
 
 autosummary_generate = True
@@ -84,3 +85,10 @@ pygments_dark_style = 'rrt'
 html_static_path = ['_static']
 
 root_doc = 'docs/index'
+
+
+# Configure tooltips
+
+hoverxref_roles = ['term']
+
+hoverxref_role_types = {'term':'tooltip'}
