@@ -4,7 +4,7 @@ OpenMS Glossary
 A glossary of common terms used throughout OpenMS documentation.
 
 ```{glossary}
-    {sorted}
+    ```{sorted}
 
 LC-MS
   [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
@@ -148,4 +148,5 @@ de novo peptide sequencing
 
 TOPPAS
   An assistant for GUI-driven TOPP workflow design.
+  ```
 ```
