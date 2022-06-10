@@ -1,10 +1,10 @@
 OpenMS Glossary
-==============
+===============
 
 A glossary of common terms used throughout OpenMS documentation.
 
-```{glossary}
-    {sorted}
+.. glossary::
+    :sorted:
 
 LC-MS
   [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).

@@ -89,7 +89,7 @@ Contents
    :caption: Quick Reference
 
    faqs/contributor-faq.md
-   glossary.md
+   glossary.rst
    contact-us.md
 
 
