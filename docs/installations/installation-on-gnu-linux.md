@@ -3,41 +3,68 @@ Installation on GNU/Linux
 
 ## Install via Conda
 
-Use conda or bioconda to install OpenMS.
+You can use conda to install the OpenMS library and tools without user interface. Depending on the conda channel, you can
+obtain release versions (`bioconda` channel) and nightly versions (`openms` channel).
 
 1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
-2. Install OpenMS using conda:
-   `conda install -c openms openms`
-3. Other OpenMS packages can be installed using:
+2. Add channels for dependencies:
    ```
-   conda install -c openms pyopenms
-   conda install -c openms openms-thirdparty
-   conda install -c openms libopenms
-   ```
+    conda config --add channels defaults
+    conda config --add channels bioconda
+    conda config --add channels conda-forge
+4. Install any of the following packages related to OpenMS
 
-```{tab} openms
+```{group-tab} openms
 openms contains OpenMS C++ Tools.
 ```
 
-```{tab} libopenms
+```{group-tab} libopenms
 libopenms is the C++ library required for the OpenMS C++ Tools to work.
 ```
 
-```{tab} pyopenms
+```{group-tab} pyopenms
 pyopenms is the python package that allows to use algorithms from libopenms in Python.
 ```
 
-```{tab} openms-thirdparty
+```{group-tab} openms-thirdparty
 openms-thirdparty are external tools that are wrapped in OpenMS with adapters. This is required to use the adapters in
 the openms package.
 ```
 
-To install using bioconda:
+via `bioconda` for release versions
 
+```{code-tab} bash openms
+conda install openms
 ```
-conda install -c bioconda openms
-conda install -c bioconda libopenms
-conda install -c bioconda openms-thirdparty
+
+```{code-tab} bash libopenms
+conda install libopenms
+```
+
+```{code-tab} bash pyopenms
+conda install pyopenms
+```
+
+```{code-tab} bash openms-thirdparty
+conda install openms-thirdparty
+```
+
+or our own `openms` channel for nightly snapshots (which are build based on the same bioconda dependencies)
+
+```{code-tab} bash openms
+conda install -c openms openms
+```
+
+```{code-tab} bash libopenms
+conda install -c openms libopenms
+```
+
+```{code-tab} bash pyopenms
+conda install -c openms pyopenms
+```
+
+```{code-tab} bash openms-thirdparty
+conda install -c openms openms-thirdparty
 ```
 
 ## Install via Debian package
@@ -96,30 +123,50 @@ The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU
 Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
 ```
 
-## Run via a (Bio)Docker image
+## Run via a (Bio)Container
 
-Make sure you have [Docker installed](https://docs.docker.com/engine/install/).
+Install a containerization software (e.g., [Docker](https://docs.docker.com/engine/install/) or [Singularity](https://sylabs.io/guides/3.0/user-guide/quick_start.html#quick-installation-steps))
 
-Our Docker support is constantly updated. Images can be obtained via [ghcr.io](https://ghcr.io).
+Our container support is constantly updated. Docker images provided by us,
+can be obtained via [ghcr.io](https://ghcr.io).
 
-1. [openms-executables](https://ghcr.io/openms/openms-executables:latest)
-2. [openms-library](https://ghcr.io/openms/openms-library:latest)
+1. [openms-executables](https://ghcr.io/openms/openms-executables)
+2. [openms-library](https://ghcr.io/openms/openms-library)
 
-Or via [BioContainers Registeries](https://biocontainers.pro/registry).
+Otherwise, the [BioContainers Registries](https://biocontainers.pro/registry) and the associated Galaxy
+project provide native containers from our bioconda packages for both Docker and Singularity.
 
 1. [BioContainers libopenms](https://biocontainers.pro/tools/libopenms)
 2. [BioContainers openms](https://biocontainers.pro/tools/openms)
 3. [BioContainers openms-thirdparty](https://biocontainers.pro/tools/openms-thirdparty)
 4. [BioContainers pyOpenMS](https://biocontainers.pro/tools/pyopenms)
 
-Docker images can be pulled via or one of the following commands:
+Images of the containers can be pulled via or one of the following commands:
+
+```{code-tab} bash Docker
+docker pull quay.io/biocontainers/libopenms
+docker pull quay.io/biocontainers/openms
+docker pull quay.io/biocontainers/pyopenms
+docker pull quay.io/biocontainers/openms-thirdparty
+```
+
+```{code-tab} bash Singularity
+docker pull https://depot.galaxyproject.org/singularity/libopenms
+docker pull https://depot.galaxyproject.org/singularity/openms
+docker pull https://depot.galaxyproject.org/singularity/pyopenms
+docker pull https://depot.galaxyproject.org/singularity/openms-thirdparty
+```
+If Singularity images fail to download or run, try to use the Docker images as Singularity will automatically convert them.
+
+Docker images from our own continuous integration can be installed via the following commands:
 
 ```
-docker pull biocontainers/openms
-docker pull openms/library
-docker pull openms/executables
-docker pull openms/pyopenms
+docker pull ghcr.io/openms/openms-library
+docker pull ghcr.io/openms/openms-executables
 ```
 
-Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) can be found on
-GitHub in [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository.
+per default this results in the download of the latest nightly snapshot. Specify a release version to
+receive a stable version.
+
+Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) yourself can be found on
+GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository.
