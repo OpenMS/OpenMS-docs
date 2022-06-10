@@ -63,7 +63,6 @@ Contents
    :maxdepth: 2
    :caption: Additional Resources
 
-   additional-resources/adding-new-tool-to-topp.md
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
    additional-resources/write-and-label-github-issues.md
@@ -73,8 +72,9 @@ Contents
    :maxdepth: 2
    :caption: Advanced Resources
 
-   additional-resources/developer-guidelines-for-adding-new-dependent-libraries.md
-   additional-resources/external-code-using-openms.md
+   advanced-resources/adding-new-tool-to-topp.md
+   advanced-resources/developer-guidelines-for-adding-new-dependent-libraries.md
+   advanced-resources/external-code-using-openms.md
    advanced-resources/custom-compilation.md
    advanced-resources/build-custom-openms-knime-package.md
 
@@ -91,9 +91,6 @@ Contents
    faqs/contributor-faq.md
    glossary.md
    contact-us.md
-
-
-
 
 
 
