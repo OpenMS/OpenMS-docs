@@ -46,7 +46,7 @@ The following command-line TOPP tools have been documented:
 - [Calibration](topp-command-line-tools/calibration.md)
 - [Consensus peptide identification](topp-command-line-tools/consensus-peptide-identification.md)
 - [Conversion between OpenMS XML formats and text formats](topp-command-line-tools/conversion-between-openms-xml-formats-and-text-formats.md)
-- [Feature detection on centroided data](topp-command-line-tools/eature-detection-on-centroided-data.md)
+- [Feature detection on centroided data](topp-command-line-tools/feature-detection-on-centroided-data.md)
 - [Feature detection](topp-command-line-tools/feature-detection.md)
 - [Feature-grouping](topp-command-line-tools/feature-grouping.md)
 - [File handling](topp-command-line-tools/file-handling.md)
