@@ -55,6 +55,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: How to Apply TOPP tools
+
    apply-topp-tools-using-command-line-interface.md
    apply-topp-tools-using-graphical-applications.md
 
@@ -69,13 +70,13 @@ Contents
    additional-resources/pull-request-checklist.md
 
 .. toctree::
-  :maxdepth: 2
-  :caption: Advanced Resources
+   :maxdepth: 2
+   :caption: Advanced Resources
 
-  additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
-  additional-resources/external-code-using-openms.md
-  advanced-resources/custom-compilation.md
-  advanced-resources/build-custom-openms-knime-package.md
+   additional-resources/developer-guidelines-for-adding-new-dependent-libraries.md
+   additional-resources/external-code-using-openms.md
+   advanced-resources/custom-compilation.md
+   advanced-resources/build-custom-openms-knime-package.md
 
 .. toctree::
    :maxdepth: 2
