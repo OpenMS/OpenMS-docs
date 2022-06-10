@@ -36,6 +36,16 @@ extensions = [
   'sphinx_inline_tabs',
 ]
 
+myst_enable_extensions = [
+  "tasklist",
+  "dollarmath",
+  "amsmath",
+  "colon_fence",
+  "linkify",
+  "replacements",
+  "linkify_fuzzy_links",
+]
+
 autosummary_generate = True
 autosummary_imported_members = True
 

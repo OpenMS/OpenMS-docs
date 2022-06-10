@@ -1,7 +1,7 @@
 Peptide Property Prediction
 ===========================
 
-You can train a model for retention time prediction as well as for the prediction of proteotypic peptides.
+Train a model for retention time prediction as well as for the prediction of proteotypic peptides.
 
 Two applications has been described in the following publications: Nico Pfeifer, Andreas Leinenbach, Christian G. Huber
 and Oliver Kohlbacher Statistical learning of peptide retention behavior in chromatographic separations: A new

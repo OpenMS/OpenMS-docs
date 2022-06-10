@@ -51,9 +51,7 @@ Please notice that this method is still **experimental** since it has not been t
 
   See the `PeakPickerHiRes` class documentation for a parameter list.
 
-## Finding the right parameters for the
-
-NoiseFilters, the BaselineFilter and the PeakPickers
+## Finding the right parameters for the NoiseFilters, the BaselineFilter and the PeakPickers
 
 Finding the right parameters is not trivial. The default parameters will not work on most datasets. In order to find
 good parameters, following this procedure:
