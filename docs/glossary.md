@@ -4,10 +4,11 @@ OpenMS Glossary
 A glossary of common terms used throughout OpenMS documentation.
 
 ```{glossary}
+   {sorted}
 LC-MS
   [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
 
-Peptides
+peptides
   A short chain of amino acids.
 
 Octadecyl(C18)
@@ -17,28 +18,28 @@ Mass
   Mass is a measure of the amount of matter that an object contains. In comparison to often used term weight, which is
   a measure of the force of gravity on that object.
 
-Ion
+ion
   Any {term}`atom` or group of atoms that bears one or more positive or negative electrical charges. Positively charged are
   cations, negavtively charged anions.
 
-Atom
+atom
   An atom is the smallest unit of ordinary matter that forms a chemical element.
 
-Electrospray ionization
+electrospray ionization
   A technique used in mass spectrometry to produce ions using an electrospray in which a high voltage is applied to a
   liquid to create an {term}`aerosol`.
 
-Aerosol
+aerosol
   An aerosol is a suspension of fine solid particles or liquid droplets in air or another gas.
 
-Time-of-flight (TOF)
+time-of-flight (TOF)
   A measurement of the time taken by an object, particle of wave (be it acoustic, electromagnetic, e.t.c) to travel a
   distance through a medium.
 
-Quadrupole mass filters
+quadrupole mass filters
   A mass filter allowing one mass channel at a time to reach the detector as the mass range is scanned.
 
-Orbitrap analyzers
+orbitrap analyzers
   In mass spectrometry, an ion trap mass analyzer consisting of an outer barrel-like electrode and a coaxial inner
   spindle-like electrode that traps ions in an orbital motion around the spindle.
   A high resoltion mass spectrometry analyzer.
@@ -55,7 +56,7 @@ MS/MS
   Tandem mass spectrometry, MS^2^, a technique where two or more mass analyzers are coupled together using an additional
   reaction step to increase their abilities to analyse chemical samples.
 
-Collision-induced dissociation (CID)
+collision-induced dissociation (CID)
   A mass spectrometry technique to induce fragmentation of selected ions in the gas phase. Also known as Collision
   induced dissociation.
 
@@ -89,10 +90,10 @@ TOPPView
 [Nightly Snapshot](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html)
   Untested installers and containers are known as the nightly snapshot.
 
-Proteomics
+proteomics
   Proteomics is the large-scale study of proteins.
 
-Proteins
+proteins
   Proteins are vital parts of living organisms, with many functions, for example composing the structural fibers of
   muscle to the enzymes that catalyze the digestion of food to synthesizing and replicating DNA.
 
@@ -115,10 +116,10 @@ mzXML
   mzXML is an open data format for storage and exchange of mass spectroscopy data, developed at the SPC/Institute for
   Systems Biology.
 
-Spectra
+spectra
   Singluar of spectrum.
 
-Spectrum
+spectrum
   A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used
   to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to
   elucidate the chemical identity or structure of molecules and other chemical compounds.
@@ -140,11 +141,10 @@ OMSSA
 PepNovo
   PepNovo is a de novo sequencing algorithm for {term}`MS/MS` {term}`spectra`.
 
-De novo peptide sequencing
+de novo peptide sequencing
   A peptide’s amino acid sequence is inferred directly from the precursor peptide mass and tandem mass spectrum
   ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
 
 TOPPAS
   An assistant for GUI-driven TOPP workflow design.
 ```
-
