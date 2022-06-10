@@ -102,9 +102,6 @@ Collision-induced dissociation (CID)
 TOPP
   The OpenMS Proteomics Pipeline.
 
-TOPPAS.app
-  TOPPAS allows to create, edit, open, save, and run TOPP workflows.
-
 MSGFPlusAdapter
   Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
 

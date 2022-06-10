@@ -5,16 +5,6 @@ Installation on GNU/Linux
 
 Use conda or bioconda to install OpenMS.
 
-1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
-2. Install OpenMS using conda:
-   `conda install -c openms openms`
-3. Other OpenMS packages can be installed using:
-   ```
-   conda install -c openms pyopenms
-   conda install -c openms openms-thirdparty
-   conda install -c openms libopenms
-   ```
-
 ```{tab} openms
 openms contains OpenMS C++ Tools.
 ```
@@ -31,6 +21,16 @@ pyopenms is the python package that allows to use algorithms from libopenms in P
 openms-thirdparty are external tools that are wrapped in OpenMS with adapters. This is required to use the adapters in
 the openms package.
 ```
+
+1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
+2. Install OpenMS using conda:
+   `conda install -c openms openms`
+3. Other OpenMS packages can be installed using:
+   ```
+   conda install -c openms pyopenms
+   conda install -c openms openms-thirdparty
+   conda install -c openms libopenms
+   ```
 
 To install using bioconda:
 
@@ -85,12 +85,7 @@ These packages are not directly maintained by the OpenMS team and they can not b
 same behaviour as when building it from source code. Also, their availability and version is subject to change and
 support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
 Debian package.
-
 ```
-
-## Installation via building from source code
-
-The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU/Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/install_linux.html) instructions on how to build OpenMS from source.
 
 ```{note}
 Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
@@ -102,8 +97,17 @@ Make sure you have [Docker installed](https://docs.docker.com/engine/install/).
 
 Our Docker support is constantly updated. Images can be obtained via [ghcr.io](https://ghcr.io).
 
-1. [openms-executables](https://ghcr.io/openms/openms-executables:latest)
-2. [openms-library](https://ghcr.io/openms/openms-library:latest)
+```{tab}
+
+[openms-executables](https://ghcr.io/openms/openms-executables:latest)
+
+```
+
+```{tab}
+
+[openms-library](https://ghcr.io/openms/openms-library:latest)
+
+```
 
 Or via [BioContainers Registeries](https://biocontainers.pro/registry).
 
@@ -116,9 +120,9 @@ Docker images can be pulled via or one of the following commands:
 
 ```
 docker pull biocontainers/openms
-docker pull openms/library
-docker pull openms/executables
-docker pull openms/pyopenms
+docker pull biocontainers/libopenms
+docker pull biocontainers/openms-thirdparty
+docker pull biocontainers/pyopenms
 ```
 
 Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) can be found on

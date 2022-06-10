@@ -1,7 +1,7 @@
 Contact Us
 =========
 
-Join us on [Discord](https://discord.com/invite/swkxs72CHB)!
+Join us on [Discord](https://discord.gg/WxynEEsf5X)!
 
 You can also contact us:
 
