@@ -54,8 +54,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: TOPP tools
-   what-are-topp-tools.md
+   :caption: How to Apply TOPP tools
    apply-topp-tools-using-command-line-interface.md
    apply-topp-tools-using-graphical-applications.md
 
@@ -64,8 +63,6 @@ Contents
    :caption: Additional Resources
 
    additional-resources/adding-new-tool-to-topp.md
-   additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
-   additional-resources/external-code-using-openms.md
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
    additional-resources/write-and-label-github-issues.md
@@ -75,6 +72,8 @@ Contents
   :maxdepth: 2
   :caption: Advanced Resources
 
+  additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
+  additional-resources/external-code-using-openms.md
   advanced-resources/custom-compilation.md
   advanced-resources/build-custom-openms-knime-package.md
 
