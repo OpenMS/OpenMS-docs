@@ -8,19 +8,25 @@ TOPP tools are designed to be called from the command line. OpenMS provides a Co
 Command line calls will depend on the TOPP tools used, as each TOPP tool has its own set of parameters. However, the following arguments are typically used:
 
 - `-in`
+
   Specify an input file in the command line using the `-in` argument. The input file should have an mzML format. If not, use the file converter to convert the file to one using an mzML format. For more information, view the file handling documentation.
 - `-out`
+
   Specify an output file in the command line using the `-out` argument. The output file should have an mzML format, the same format as the input file.
 - `-ini`
+
   Specify an INI file in the command line using the `-ini` argument. TOPP uses INI files to set parameters specific to the command line tool being called.
 - `-write_ini`
+
   Create an INI file using the `-write_ini` file argument.
   Create an INI file with this call:
   `<insert TOPP tool> -write_ini <insert output INI File>`
   If you want a visual tool to assist setting parameters, use [INIFileEditor](graphical-topp-tools/ini-file-editor.md), an application provided when you download OpenMS.  Otherwise, you can set the parameters from the command line.
 - `-help`
+
   Get information about basic options related to the tool using the -help parameter. For more advanced options (algorithmic parameters), use `--help`.
 - `--help`
+
   Get detailed information about algorithmic parameters using the `--help` parameter.
 
 Many (but not all) command line calls will have the following structure:
