@@ -21,11 +21,11 @@ engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the :term:
 a unified parameter handling via a 'common tool description' (CTD) scheme.
 
 .. important::
-As part of the **Center for Integrative Bioinformatics** (CiBi) in the **German Network for Bioinformatics**
-`deNBI <https://www.denbi.de/>`_,
-OpenMS is currently focusing the development efforts on the integration of OpenMS into KNIME. KNIME is a well-established
-data analysis framework that supports the generation of workflows for data analysis. Using a Common Tool Description
-(CTD) file which is writeable by every TOPP tool and a node generator program (`Generic KNIME Nodes <https://github.com/genericworkflownodes/GenericKnimeNodes>`_), all :term:`TOPP tools` can be made available to run in KNIME.
+  As part of the **Center for Integrative Bioinformatics** (CiBi) in the **German Network for Bioinformatics**
+  `deNBI <https://www.denbi.de/>`_,
+  OpenMS is currently focusing the development efforts on the integration of OpenMS into KNIME. KNIME is a well-established
+  data analysis framework that supports the generation of workflows for data analysis. Using a Common Tool Description
+  (CTD) file which is writeable by every TOPP tool and a node generator program (`Generic KNIME Nodes <https://github.com/genericworkflownodes/GenericKnimeNodes>`_), all   :term:`TOPP tools` can be made available to run in KNIME.
 
 
 With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`
@@ -40,12 +40,14 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Introduction
+   :titlesonly:
 
    introduction
 
 .. toctree::
    :maxdepth: 2
    :caption: Getting Started
+   :titlesonly:
 
    installations/installation-on-gnu-linux
    installations/installation-on-windows
@@ -55,6 +57,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Quick Start Guides
+   :titlesonly:
 
    guides/user-guides/user-quickstart-guide
    guides/contributors-quickstart-guide.md
@@ -62,6 +65,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials
+   :titlesonly:
 
    tutorials/TOPP/TOPP-tutorial
    tutorials/TOPPAS/TOPPAS-tutorial
@@ -70,13 +74,15 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS TOPP Tools
+   :titlesonly:
 
-   topp/topp.md
-   topp/adding-new-tool-to-topp.md
+   topp-and-utils/topp-and-utils.md
+   topp-and-utils/adding-new-tool-to-topp.md
 
 .. toctree::
    :maxdepth: 2
    :caption: Developer Resources
+   :titlesonly:
 
    additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
    additional-resources/external-code-using-openms.md
@@ -86,6 +92,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS GitHub Workflow
+   :titlesonly:
 
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
@@ -95,6 +102,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Frequently Asked Questions
+   :titlesonly:
 
    faqs/developer-faq.md
    faqs/contributor-faq.md

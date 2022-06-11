@@ -113,12 +113,7 @@ These packages are not directly maintained by the OpenMS team and they can not b
 same behaviour as when building it from source code. Also, their availability and version is subject to change and
 support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
 Debian package.
-
 ```
-
-## Installation via building from source code
-
-The source code of OpenMS is available on GitHub. Follow [Building OpenMS on GNU/Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/install_linux.html) instructions on how to build OpenMS from source.
 
 ```{note}
 Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
@@ -171,3 +166,8 @@ receive a stable version.
 
 Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) yourself can be found on
 GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository.
+
+## Build OpenMS from source
+
+To build OpenMS from source, follow the build instructions for [Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_linux.html).
+

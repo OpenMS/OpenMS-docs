@@ -19,14 +19,25 @@ Before using OpenMS, become familiar with the following terms:
 |--------------------|-------------|
 |**TOPPView**        |A tool that is used to view and explore {term}`LC-MS` data, alignments, groups, peptide identifications, and more.|
 |**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools` (and {term}`UTILS`).|
-|**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp/topp.md)|
-|**UTILS**           |Similar to {term}`TOPP tools`, but with more supporting character, which are rarely used in a productive pipeline, but rather during pipeline construction or parameter optimization. See also: [UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
+|**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp-and-utils/topp-and-utils.md)|
+|**UTILS**           |Besides {term}`TOPP`, OpenMS offers range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. A set of command line utilities, similar to {term}`TOPP tools`, mostly used during pipeline construction or parameter optimization. |
+
+```{seealso}
+
+[UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
+```
+
+```{important}
+Users can now use {term}`KNIME` in place of {term}`TOPPAS`; the later will deprecated with no support in near future.
+Please find more information about using {term}`KNIME` in [KNIME tutorial](../../tutorials/KNIME/KNIME-tutorial.md).
+```
+
 
 ## How to run a Tool
 
 A good start are the example pipelines (select **File** > **Open example file** within {term}`TOPPAS`).
 
-Read the documentation of the tools see [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md), [TOPP documentation](../../topp/topp.md) and the one of ([TOPPAS tutorial](../../tutorials/TOPPAS/TOPPAS-tutorial.md)).
+Read the documentation of the tools see [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md), [TOPP documentation](../../topp-and-utils/topp-and-utils.md) and the one of ([TOPPAS tutorial](../../tutorials/TOPPAS/TOPPAS-tutorial.md)).
 
 Alternatively, use the command line and call tools directly. In this case, you'll probably want to use some type of shell
 script for automation.
@@ -48,7 +59,7 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 
    e.g. `FileFilter -write_ini filefilter.ini`
 
-   Now, edit the INI file (which is a XML file) using the [INIFileEditor](../../topp/ini-file-editor.md), which is another GUI tool shipped with
+   Now, edit the INI file (which is a XML file) using the [INIFileEditor](../../topp-and-utils/ini-file-editor.md), which is another GUI tool shipped with
    OpenMS and similar to the one build into {term}`TOPPAS`.
 
 ### How do I feed the INI file to a Tool?

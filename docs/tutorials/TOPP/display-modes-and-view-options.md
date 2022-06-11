@@ -6,7 +6,7 @@ Display modes determine how intensities are displayed. View options configure th
 
 ![TOPPView Icons](../../images/tutorials/topp/TOPPView_icons.png)
 
-# Display Modes
+## Display Modes
 
 Intensity display modes determine the way peak intensities are displayed.
 
@@ -24,7 +24,7 @@ opened it corresponds to the normal mode.
 
 In this mode the maximum currently displayed intensity is treated as if it was the maximum overall intensity.
 
-# View Options
+## View Options
 
 View options configure the view of the current layer.
 
