@@ -164,7 +164,7 @@ docker pull quay.io/biocontainers/openms-thirdparty
 ```
 ````
 
-````{tab}Singularity
+````{tab} Singularity
 ```bash
 docker pull https://depot.galaxyproject.org/singularity/libopenms
 docker pull https://depot.galaxyproject.org/singularity/openms
