@@ -30,6 +30,7 @@ extensions = [
   'sphinx_copybutton',
   'sphinx.ext.autodoc',
   'sphinx.ext.autosummary',
+  'sphinx.ext.autosectionlabel',
   'myst_parser',
   'notfound.extension',
   'sphinxcontrib.images',
