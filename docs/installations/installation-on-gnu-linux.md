@@ -8,11 +8,12 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
 
 1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
 2. Add channels for dependencies:
-   ```
+   ```bash
     conda config --add channels defaults
     conda config --add channels bioconda
     conda config --add channels conda-forge
-4. Install any of the following packages related to OpenMS
+   ```
+3. Install any of the following packages related to OpenMS
 
 ```{group-tab} openms
 openms contains OpenMS C++ Tools.
@@ -160,7 +161,7 @@ If Singularity images fail to download or run, try to use the Docker images as S
 
 Docker images from our own continuous integration can be installed via the following commands:
 
-```
+```bash
 docker pull ghcr.io/openms/openms-library
 docker pull ghcr.io/openms/openms-executables
 ```
