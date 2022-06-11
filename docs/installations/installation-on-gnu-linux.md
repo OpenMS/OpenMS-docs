@@ -15,58 +15,74 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
    ```
 3. Install any of the following packages related to OpenMS
 
-```{group-tab} openms
+```{tab} openms
 openms contains OpenMS C++ Tools.
 ```
 
-```{group-tab} libopenms
+```{tab} libopenms
 libopenms is the C++ library required for the OpenMS C++ Tools to work.
 ```
 
-```{group-tab} pyopenms
+```{tab} pyopenms
 pyopenms is the python package that allows to use algorithms from libopenms in Python.
 ```
 
-```{group-tab} openms-thirdparty
+```{tab} openms-thirdparty
 openms-thirdparty are external tools that are wrapped in OpenMS with adapters. This is required to use the adapters in
 the openms package.
 ```
 
 via `bioconda` for release versions
 
-```{code-tab} bash openms
+````{tab} openms
+```bash
 conda install openms
 ```
+````
 
-```{code-tab} bash libopenms
+````{tab} libopenms
+```bash
 conda install libopenms
 ```
+````
 
-```{code-tab} bash pyopenms
+````{tab} pyopenms
+```bash
 conda install pyopenms
 ```
+````
 
-```{code-tab} bash openms-thirdparty
+````{tab} openms-thirdparty
+```bash
 conda install openms-thirdparty
 ```
+````
 
 or our own `openms` channel for nightly snapshots (which are build based on the same bioconda dependencies)
 
-```{code-tab} bash openms
+````{tab} openms
+```bash
 conda install -c openms openms
 ```
+````
 
-```{code-tab} bash libopenms
+````{tab} libopenms
+```bash
 conda install -c openms libopenms
 ```
+````
 
-```{code-tab} bash pyopenms
+````{tab} pyopenms
+```bash
 conda install -c openms pyopenms
 ```
+````
 
-```{code-tab} bash openms-thirdparty
+````{tab} openms-thirdparty
+```bash
 conda install -c openms openms-thirdparty
 ```
+````
 
 ## Install via Debian package
 
@@ -139,19 +155,24 @@ project provide native containers from our bioconda packages for both Docker and
 
 Images of the containers can be pulled via or one of the following commands:
 
-```{code-tab} bash Docker
+````{tab} Docker
+```bash
 docker pull quay.io/biocontainers/libopenms
 docker pull quay.io/biocontainers/openms
 docker pull quay.io/biocontainers/pyopenms
 docker pull quay.io/biocontainers/openms-thirdparty
 ```
+````
 
-```{code-tab} bash Singularity
+````{tab}Singularity
+```bash
 docker pull https://depot.galaxyproject.org/singularity/libopenms
 docker pull https://depot.galaxyproject.org/singularity/openms
 docker pull https://depot.galaxyproject.org/singularity/pyopenms
 docker pull https://depot.galaxyproject.org/singularity/openms-thirdparty
 ```
+````
+
 If Singularity images fail to download or run, try to use the Docker images as Singularity will automatically convert them.
 
 Docker images from our own continuous integration can be installed via the following commands:
