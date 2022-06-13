@@ -46,9 +46,6 @@ myst_enable_extensions = [
   "linkify_fuzzy_links",
 ]
 
-# Generate header anchors for cross-linking in markdown until depth n
-myst_heading_anchors = 3
-
 autosummary_generate = True
 autosummary_imported_members = True
 
