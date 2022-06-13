@@ -37,9 +37,32 @@ source ${OPENMS_TOPP_PATH}/.TOPP_bash_profile
 
 Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally (e.g., `/Applications/OpenMS-<version>`)
 
-## Install via Conda or Bioconda
+## Install via Conda with the Bioconda channel
 
-Follow [these](installation-on-gnu-linux.md#install-via-conda) instructions.
+Follow the instructions for {ref}`GNU/Linux <./installation-on-gnu-linux.md#install-via-conda>`. Use the Terminal.app or any
+terminal of your choice to run the commands.
+
+```{note}
+Due to unavailability of an exact copy of the macOS build machines used in bioconda, we currently cannot offer nightly
+builds for macOS on our own conda channel `openms`.
+```
+
+## Run via (Bio)Container
+
+Follow the instructions for{ref}`GNU/Linux <./installation-on-gnu-linux.md#run-via-a-bio-container>`. Make sure to
+follow specific installation instructions for macOS during the installation of the containerization software.
+Use the Terminal.app or any terminal of your choice to run the commands.
+
+```{note}
+Running OpenMS containers (currently built for Linux) on macOS involves
+running virtual machines (sometimes hidden from the user, e.g., with Docker).
+This comes with disadvantages in runtime and memory consumption.
+```
+
+
+## Build OpenMS from source
+
+To build OpenMS from source, follow the build instructions for [macOS](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_mac.html).
 
 ## Known Issues
 
