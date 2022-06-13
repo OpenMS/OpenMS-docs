@@ -30,7 +30,6 @@ extensions = [
   'sphinx_copybutton',
   'sphinx.ext.autodoc',
   'sphinx.ext.autosummary',
-  'sphinx.ext.autosectionlabel',
   'myst_parser',
   'notfound.extension',
   'sphinxcontrib.images',
@@ -46,9 +45,6 @@ myst_enable_extensions = [
   "replacements",
   "linkify_fuzzy_links",
 ]
-
-# Generate header anchors for cross-linking in markdown until depth n
-myst_heading_anchors = 3
 
 autosummary_generate = True
 autosummary_imported_members = True
