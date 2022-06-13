@@ -30,7 +30,7 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 * The class and all the members should be properly documented.
 * Check your code with the tool  `tools/checker.php`. Call `php tools/checker.php` for detailed instructions.
 
-Please open a pull request and follow the [pull request guidelines](pull-request-checklist.md).
+Please open a pull request and follow the [pull request guidelines](../additional-resources/pull-request-checklist.md).
 
 ### Can I use QT designer to create GUI widgets?
 
