@@ -11,7 +11,7 @@ The following section provides general information to new contributors.
 
 * Check out the development version of OpenMS (see website).
 * Build OpenMS by following the [installation instructions]() or [from source](../installations/build-openms-from-source.md).
-* Read the [OpenMS Coding Conventions]()
+* Read the [OpenMS Coding Conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html)
 * Read the [OpenMS Tutorial](../tutorials/user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) or [contact-us](../contact-us.md).
@@ -23,7 +23,7 @@ to `TOOLS` if they are stable enough, are fully tested, fully documented, and a 
 
 ### I have written a class for OpenMS. What should I do?
 
-Follow the [OpenMS coding conventions]().
+Follow the [OpenMS coding conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
 
 Coding style (brackets, variable names, etc.) must conform to the conventions.
 
