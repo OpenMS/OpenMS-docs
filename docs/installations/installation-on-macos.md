@@ -39,7 +39,7 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
 
 ## Install via Conda with the Bioconda channel
 
-Follow the instructions for {ref}`GNU/Linux <./installation-on-gnu-linux.md#install-via-conda>`. Use the Terminal.app or any
+Follow the instructions for [GNU/Linux](./installation-on-gnu-linux.md#install-via-conda). Use the Terminal.app or any
 terminal of your choice to run the commands.
 
 ```{note}
@@ -49,7 +49,7 @@ builds for macOS on our own conda channel `openms`.
 
 ## Run via (Bio)Container
 
-Follow the instructions for{ref}`GNU/Linux <./installation-on-gnu-linux.md#run-via-a-bio-container>`. Make sure to
+Follow the instructions for [GNU/Linux](./installation-on-gnu-linux.md#run-via-a-bio-container). Make sure to
 follow specific installation instructions for macOS during the installation of the containerization software.
 Use the Terminal.app or any terminal of your choice to run the commands.
 
