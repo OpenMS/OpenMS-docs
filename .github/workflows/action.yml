@@ -14,3 +14,4 @@ jobs:
       with:
         max-depth: -1
         check-modified-files-only: 'yes'
+        config-file: 'config.json'
