@@ -1,9 +1,10 @@
 name: Check Markdown links
 
-on: [pull_request]
-  schedule:
-  # Run everyday at 9:00 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
-  - cron: "0 9 * * *"
+on:
+  pull_request:
+    schedule:
+      # Run everyday at 9:00 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
+      - cron: "0 9 * * *"
 
 jobs:
   markdown-link-check:
