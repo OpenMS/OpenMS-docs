@@ -13,7 +13,7 @@ the approximate `fwhm` of peaks, use the estimation included in the PeakPickerWa
 to `true`. After applying the PeakPickerWavelet, observe which peak width was estimated and used for peak picking in the
 log window.
 
-To estimate the peak width, use the measuring tool ([Action Modes and Their Uses](views-in-toppview.md##action-modes-and-their-uses)) to determine
+To estimate the peak width, use the measuring tool ([Action Modes and Their Uses](views-in-toppview.md#action-modes-and-their-uses)) to determine
 the fwhm of one or several representative peaks.
 
 If the peak picker delivers only a few peaks even though the `peak_with` and `signal_to_noise` parameters are set to

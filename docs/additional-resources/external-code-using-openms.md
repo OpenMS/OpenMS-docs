@@ -11,7 +11,7 @@ ways to do this:
 Once you've finished your new tool, and it only needs to run on the development machine. To ship it to a new client machine,
 see, read further in this document.
 
-# Compiling external code
+## Compiling external code
 
 It is very easy to set up an environment to write your own programs using OpenMS. Make sure to downloaded and installed
 the source package of OpenMS/TOPP properly.
@@ -93,7 +93,7 @@ For more information visit the website of cmake at cmake.org and consult the doc
 Have fun coding with OpenMS!
 ```
 
-# Shipping external code to a new machine
+## Shipping external code to a new machine
 
 If you've modified OpenMS itself and not used an external project use our installer scripts, to build your own OpenMS
 installer for your platform (see our internal FAQ which is built using "make doc_internal") and ship that to a client
@@ -103,16 +103,16 @@ If you've used an external project and have a new executable (+ an optional new 
 well, and manually copy the new executable to the `TOPP/UTILS` binary directory (e.g. on Windows this could be
 `c:/program files/OpenMS/bin`, on Linux it could be `/bin`.
 
-If you do NOT use the installer, copy all required files manually, plus a few extra steps, see below. What needs to be
+If you do not use the installer, copy all required files manually, plus a few extra steps, see below. What needs to be
 done is a little platform dependent, thus very cumbersome to explain. Look at the cmake installer scripts, to see whats
-required (for Mac and Linux see `OpenMS/cmake/package*.cmake`).
+required (for macOS and Linux see `OpenMS/cmake/package*.cmake`).
 
 In short:
 
 - copy the `OpenMS/share/OpenMS` directory to the client machine (e.g `<client/my_dir>/share`) and set the environment
   variable `OPENMS_DATA_PATH` to this directory
-- copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/Mac) to `<client/my_dir>/bin`.
-- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/Mac make sure you have installed the Qt4 package
+- copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
+- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 package
 - [Windows only] copy Xerces dll (see `contrib/lib`) to `<client/my_dir>/bin`
 - [Windows only] install the VS redistributable package (see Microsoft Homepage) on the client machine which corresponds
   to the VS version that was used to compile your code (use the correct redistributable package!, i.e., architecture

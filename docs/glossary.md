@@ -4,6 +4,46 @@ OpenMS Glossary
 A glossary of common terms used throughout OpenMS documentation.
 
 ```{glossary}
+
+OpenMS API
+  [OpenMS API Reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
+  The object-oriented OpenMS core library contains over 1,300 classes and is built on modern C++ infrastructure
+  with native compiler support on Windows, Linux and macOS. The classes are representing core concepts in mass
+  spectrometry as well as the corresponding ontologies defined by the Human Proteome Organization Proteomics
+  Standard Initiative (HUPO-PSI).
+
+Workflow
+  A set of over 185 different tools for common mass spectrometric tasks can be accessed by routine users through
+  the KNIME, and Galaxy workflow systems.
+
+SILAC
+  **S**table **I**sotope **L**abeling by/with **A**mino acids in **C**ell culture is a technique based on mass
+  spectrometry that detects differences in protein abundance among samples using non-radioactive isotopic labeling.
+
+iTRAQ
+  **I**sobaric **T**ags for **R**elative and **A**bsolute **A**uantitation (iTRAQ) is an isobaric labeling method
+  used in quantitative proteomics by tandem mass spectrometry to determine the amount of proteins from different
+  sources in a single experiment.
+
+TMT
+  A **T**andem **M**ass **T**ag (TMT) is a chemical label that facilitates sample multiplexing in mass spectrometry
+  ({term}`MS`)-based quantification and identification of biological macromolecules such as proteins, {term}`peptides`
+  and nucleic acids.
+
+SRM
+  **S**elected **R**eaction **M**onitoring (SRM), also called Multiple reaction monitoring, (MRM), is a method used
+  in tandem mass spectrometry in which an ion of a particular mass is selected in the first stage of a tandem mass
+  spectrometer and an ion product of a fragmentation reaction of the precursor ions is selected in the second mass
+  spectrometer stage for detection.
+
+SWATH
+  SWATH-mass spectrometry consists of data-independent acquisition and a targeted data analysis strategy that aims
+  to maintain the favorable quantitative characteristics (accuracy, sensitivity, and selectivity) of targeted
+  proteomics at large scale.
+
+KNIME
+  **K**onstanz **I**nformation **M**iner, is a free and open-source data analytics, reporting and integration platform.
+
 LC-MS
   [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
 
@@ -61,9 +101,6 @@ Collision-induced dissociation (CID)
 
 TOPP
   The OpenMS Proteomics Pipeline.
-
-TOPPAS.app
-  TOPPAS allows to create, edit, open, save, and run TOPP workflows.
 
 MSGFPlusAdapter
   Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
@@ -145,6 +182,6 @@ De novo peptide sequencing
   ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
 
 TOPPAS
-  An assistant for GUI-driven TOPP workflow design.
+  An assistant for GUI-driven TOPP workflow design. It is recommended to use OpenMS through the KNIME plugins.
 ```
 

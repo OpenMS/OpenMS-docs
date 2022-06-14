@@ -68,13 +68,6 @@ the `CMakeCache.txt` file directly.
 Type `cmake` into a console. This will list the available code generators available on your platform, pass them to `CMake`
 using the `-G` option.
 
-### How do I switch to debug or release configuration?
-
-For Makefile generators (typically on Linux), set the `CMAKE_BUILD_TYPE` variable to either Debug or Release by calling
-`ccmake`. For Visual Studio, this is not necessary as all configurations are generated and choose the one you like within
-the IDE itself. The 'Debug' configuration enabled debug information. The 'Release' configuration disables debug
-information and enables optimisation.
-
 ### How do I add a new class to the build system?
 
 1. Create the new class in the corresponding sub-folder of the sub-project. The header has to be created in
@@ -132,15 +125,6 @@ Dump a core if an uncaught exception occurs, by setting the environment variable
 Each time an uncaught exception occurs, the `OPENMS_DUMP_CORE` variable is checked and a segmentation fault is caused,
 if it is set.
 
-### (Linux) Why is no core dumped, although a fatal error occured?
-
-The `ulimit -c` unlimited command. It sets the maximum size of a core to unlimited.
-
-```{attention}
-We observed that, on some systems, no core is dumped even if the size of the core file is set to unlimited. We are not
-sure what causes this problem
-```
-
 ### (Linux) How can I set breakpoints in gdb to debug OpenMS?
 
 Debug the TOPPView application to stop at line 341 of SpectrumMDIWindow.C.
@@ -168,40 +152,6 @@ Debug the TOPPView application to stop at line 341 of SpectrumMDIWindow.C.
   ```bash
  gdb> run
  ```
-
-## Cross-platform thoughts
-
-OpenMS runs on three major platforms. Here are the most prominent causes of "it runs on Platform A, but not on B. What now?"
-
-### Reading or writing binary files
-
-Reading or writing binary files causes different behaviour. Usually Linux does not make a difference between text-mode
-and binary-mode when reading files. This is quite different on Windows as some bytes are interpreted as `EOF`, which
-lead might to a premature end of the reading process.
-
-If reading binary files, make sure to explicitly state that the file is binary when opening it.
-
-During writing in text-mode on Windows a line-break (`\n`) is expanded to (`\r\n`). Keep this in mind or use the
-`eol-style` property of subversion to ensure that line endings are correctly checked out on non-Windows systems.
-
-### `UInt` vs `Size`
-
-Both `unsigned int` vs `size_t` `UInt` and `Size` have the same size on Linux GCC (32 bit on 32 bit systems, 64 bit on
-64 bit systems), however on Windows this only holds for 32 bit. On a 64 bit Windows, the `UInt` type is still 32 bit,
-while the `Size` type is 64bit. This might lead to warnings (at best) or overflows and other drawbacks.
-
-Therefore, do not assume that `UInt` is equal to `Size`.
-
-### Paths and system functions
-
-Avoid hardcoding e.g.`String tmp_dir = "/tmp";`. This will fail on Windows. Use Qt's `QDir` to get a path to the systems
-temporary directory if required.
-
-Avoid names like uname which are only available on Linux.
-
-When working with files or directories, it is usually safe to use "/" on all platforms. Take care of spaces in directory
-names though. Always quote paths if they are used in a system call to ensure that the subsequent interpreter
-takes the spaced path as a single entity.
 
 ## Doxygen Documentation
 
