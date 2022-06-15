@@ -63,8 +63,8 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-
    :caption: OpenMS graphical applications
+   
    graphical-topp-tools/ini-file-editor.md
    graphical-topp-tools/toppview.md
    graphical-topp-tools/swathwizard.md
