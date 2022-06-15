@@ -54,14 +54,24 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: How to Apply TOPP tools
+   :caption: TOPP tools
 
+   what-are-topp-tools.md
    apply-topp-tools-using-command-line-interface.md
    apply-topp-tools-using-graphical-applications.md
+   tutorials/TOPP/topp-for-advanced-users.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Additional Resources
+
+   :caption: OpenMS graphical applications
+   graphical-topp-tools/ini-file-editor.md
+   graphical-topp-tools/toppview.md
+   graphical-topp-tools/swathwizard.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: GitHub Workflow
 
    additional-resources/openms-git-workflow.md
    additional-resources/reporting-bugs-and-issues.md
@@ -70,7 +80,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Advanced Resources
+   :caption: Developer Resources
 
    advanced-resources/adding-new-tool-to-topp.md
    advanced-resources/developer-guidelines-for-adding-new-dependent-libraries.md
