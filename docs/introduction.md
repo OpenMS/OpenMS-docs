@@ -97,8 +97,7 @@ Get started with installing OpenMS using the installers available for different 
 ```{tab} GNU/Linux
 
 ```bash
-wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-
-Linux-x86_64.deb
+wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
 
 ```
 
