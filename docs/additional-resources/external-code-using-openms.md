@@ -2,14 +2,14 @@ External Code using OpenMS
 ==========================
 
 If OpenMS' TOPP and UTILS tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
-feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are multiple
-ways to do this:
+feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are 
+multiple ways to do this:
 
 - Modify the developer version of OpenMS by changing existing tools or adding new ones.
 - Use an **External Project** to write a new tool, while not touching OpenMS itself (see below on how to do that).
 
-Once you've finished your new tool, and it only needs to run on the development machine. To ship it to a new client machine,
-see, read further in this document.
+Once you've finished your new tool, and it only needs to run on the development machine. To ship it to a new client 
+machine, see, read further in this document.
 
 ## Compiling external code
 
@@ -17,8 +17,8 @@ It is very easy to set up an environment to write your own programs using OpenMS
 the source package of OpenMS/TOPP properly.
 
 ```{note}
-You cannot use the `install` target when working with the development version of OpenMS, it must be built and used within
-the build tree.
+You cannot use the `install` target when working with the development version of OpenMS, it must be built and used 
+within the build tree.
 ```
 
 All important compiler settings and preprocessor definitions along with the OpenMS library are available. The most
