@@ -74,10 +74,10 @@ endif(OpenMS_FOUND)
 ```
 
 The command `project` defines the name of the project, the name is only of interest of you're working in an IDE or want
-to export this project's targets. To compile the program, append it to the `my_executables` list. If you use object files
-(classes which do not contain a main program), append them to the `my_sources` list. In the next step CMake creates a
-statically linked library of the object files, listed in `my_sources`. This simple CMakeLists.txt example can be
-extended to also build shared libraries, include other external libraries and so on.
+to export this project's targets. To compile the program, append it to the `my_executables` list. If you use object 
+files (classes which do not contain a main program), append them to the `my_sources` list. In the next step CMake 
+creates a statically linked library of the object files, listed in `my_sources`. This simple CMakeLists.txt example can 
+be extended to also build shared libraries, include other external libraries and so on.
 
 An example external project can be found in `OpenMS/share/OpenMS/examples/external_code`. Copy these files to a separate
 directory and use CMake to configure it (here as an in-source build).
@@ -112,7 +112,8 @@ In short:
 - copy the `OpenMS/share/OpenMS` directory to the client machine (e.g `<client/my_dir>/share`) and set the environment
   variable `OPENMS_DATA_PATH` to this directory
 - copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
-- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 package
+- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 
+package
 - [Windows only] copy Xerces dll (see `contrib/lib`) to `<client/my_dir>/bin`
 - [Windows only] install the VS redistributable package (see Microsoft Homepage) on the client machine which corresponds
   to the VS version that was used to compile your code (use the correct redistributable package!, i.e., architecture
