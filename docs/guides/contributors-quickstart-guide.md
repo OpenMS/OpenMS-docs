@@ -1,5 +1,5 @@
-Contribute to OpenMS
-====================
+Contributor's Quick Start Guide
+===============================
 
 To contribute to OpenMS:
 
