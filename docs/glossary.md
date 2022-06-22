@@ -62,10 +62,7 @@ collision-induced dissociation (CID)
   induced dissociation.
 
 TOPP
-  The OpenMS Proteomics Pipeline.
-
-TOPPAS.app
-  TOPPAS allows to create, edit, open, save, and run TOPP workflows.
+  The OpenMS Pipeline.
 
 MSGFPlusAdapter
   Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
@@ -148,7 +145,8 @@ de novo peptide sequencing
 
 TOPPAS
   An assistant for GUI-driven TOPP workflow design.
-  ```
-```
+
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
+
+```

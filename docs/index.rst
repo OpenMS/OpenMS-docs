@@ -71,22 +71,28 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: GitHub Workflow
+   :caption: Develop with OpenMS
 
-   additional-resources/openms-git-workflow.md
-   additional-resources/reporting-bugs-and-issues.md
-   additional-resources/write-and-label-github-issues.md
-   additional-resources/pull-request-checklist.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Developer Resources
-
-   advanced-resources/adding-new-tool-to-topp.md
-   advanced-resources/developer-guidelines-for-adding-new-dependent-libraries.md
    advanced-resources/external-code-using-openms.md
    advanced-resources/custom-compilation.md
+
+.. toctree:: 2
+   :maxdepth: 2
+   :caption: Contribute to OpenMS
+
+   additional-resources/openms-git-workflow.md
+   additional-resources/write-and-label-github-issues.md
+   advanced-resources/adding-new-tool-to-topp.md
+   additional-resources/pull-request-checklist.md
+   advanced-resources/developer-guidelines-for-adding-new-dependent-libraries.md
    advanced-resources/build-custom-openms-knime-package.md
+
+.. toctree:: 2
+   :maxdepth: 2
+   :caption: Feedback and Contact
+   
+   additional-resources/reporting-bugs-and-issues.md
+   contact-us.md
 
 .. toctree::
    :maxdepth: 2
@@ -101,9 +107,6 @@ Contents
    faqs/contributor-faq.md
    faqs/developer-faq.md
    glossary.md
-   contact-us.md
-
-
 
 Indices and tables
 ==================

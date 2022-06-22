@@ -38,22 +38,3 @@ Many (but not all) command line calls will have the following structure:
 The following command line call uses the FileFilter tool to extract data from an mzML file. Note, that this call directly specifies the tool-specific parameters and doesn’t rely on an INI file:
 
 ![break down of example command line call](images/topp/command-line-call.png)
-
-## List of command line TOPP tools
-
-The following command-line TOPP tools have been documented:
-
-- [Calibration](topp-command-line-tools/calibration.md)
-- [Consensus peptide identification](topp-command-line-tools/consensus-peptide-identification.md)
-- [Conversion between OpenMS XML formats and text formats](topp-command-line-tools/conversion-between-openms-xml-formats-and-text-formats.md)
-- [Feature detection on centroided data](topp-command-line-tools/feature-detection-on-centroided-data.md)
-- [Feature detection](topp-command-line-tools/feature-detection.md)
-- [Feature-grouping](topp-command-line-tools/feature-grouping.md)
-- [File handling](topp-command-line-tools/file-handling.md)
-- [Map alignment](topp-command-line-tools/map-alignment.md)
-- [Peptide property prediction](topp-command-line-tools/peptide-property-prediction.md)
-- [Picking peaks](topp-command-line-tools/picking-peaks.md)
-- [Profile data processing](topp-command-line-tools/profile-data-processing.md)
-- [Quality control](topp-command-line-tools/quality-control.md)
-- [Smoothing raw data](topp-command-line-tools/smoothing-raw-data)
-- [Subtracting a baseline from a spectrum](topp-command-line-tools/subtracting-a-baseline-from-a-spectrum.md)
