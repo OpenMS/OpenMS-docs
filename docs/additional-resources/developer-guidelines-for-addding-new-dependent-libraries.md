@@ -11,9 +11,8 @@ In short, requirements for adding a new library are:
 ## Indispensable functionality
 
 In general, adding a new dependency library (of which we currently have more than a handful, e.g. Xerces-C or ZLib)
-imposes a significant integration and maintenance effort. Thus, the new library should add 
-**indispensable functionality**. If the added value does not compensate for the overhead, alternative solutions 
-encompass:
+imposes a significant integration and maintenance effort. Thus, the new library should add **indispensable functionality**. 
+If the added value does not compensate for the overhead, alternative solutions encompass:
 
 - write it yourself and add to the OpenMS library (i.e. its repository) directly
 - write a TOPPAdapter which calls an external executable (placing the burden on the user to supply the executable)
