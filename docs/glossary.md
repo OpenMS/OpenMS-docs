@@ -5,7 +5,6 @@ A glossary of common terms used throughout OpenMS documentation.
 
 :::{glossary}
     :::{sorted}
-
 LC-MS
   [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
 
@@ -151,5 +150,5 @@ TOPPAS
 
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
-
+  :::
 :::
