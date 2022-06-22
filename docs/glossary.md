@@ -120,7 +120,7 @@ mzXML
 spectra
   Singular of spectrum.
 
-spectrum
+mass spectrum
   A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used
   to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to
   elucidate the chemical identity or structure of molecules and other chemical compounds.
@@ -128,8 +128,8 @@ spectrum
 m/z
   mass to charge ratio.
 
-RT
-  Retention time (RT).
+retention time
+  retention time (RT) in liquid chromatography, is the time it takes for a separated analyte to move through the stationary phase.
 
 ProteoWizard
   ProteoWizard is a set of open-source, cross-platform tools and libraries for proteomics data analyses. It provides a
@@ -150,3 +150,5 @@ TOPPAS
   An assistant for GUI-driven TOPP workflow design.
   ```
 ```
+chromatogram
+  A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.

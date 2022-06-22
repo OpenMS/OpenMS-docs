@@ -1,92 +1,29 @@
 Background
 ==========
 
-Proteomics and metabolomics are interdisciplinary research fields that study structure, function, and interaction of
-proteins and metabolites. They employ large-scale experimental techniques that allow acquiring data at the level of
-cellular systems to whole organisms. Mass spectrometry combined with chromatographic separation is commonly used to
-identify, characterize or quantify the amount of proteins and metabolites.
+OpenMS was primarily designed to process, analyze and visualize liquid chromatography - mass spectrometry (LC-MS) data.
 
-In mass spectrometry-based proteomics and metabolomics, biological samples are extracted, prepared, and separated to
-reduce sample complexity. The separated analytes are ionized and measured in the mass spectrometer. Mass and abundance
-of ions are stored in mass spectra and used to identify and quantify the analytes in the sample using computational
-methods. The quantity and identity of analytes can then be used, for instance, in biomarker discovery, medical diagnostics,
-or basic research.
+:::{note}
+OpenMS in recent times has been expanded to include other mass spectrometry methods. To design your experimental analysis solution, [contact the OpenMS team](contact-us.md) today.
+:::
 
-## Liquid Chromatography(LC)
+To understand how to use OpenMS, one must have a basic understanding of an LC-MS setup.
 
-LC aims to reduce the complexity of the measured sample by separating analytes based on their physicochemical properties.
-Separating analytes in time ensures that a manageable amount of analytes elute at the same time. In mass
-spectrometry-based proteomics, (high-pressure) liquid chromatographic separation techniques (HPLC) are methods of choice
-to achieve a high degree of separation. In HPLC, {term}`peptides` are separated on a column. Solved in a pressurized liquid
-(mobile phase) they are pumped through a solid adsorbent material (stationary phase) packet into a capillary column.
-Physicochemical properties of each peptide determine how strongly it interacts with the stationary phase. The most
-common HPLC technique in proteomics and metabolomics uses reversed-phase chromatography (RPC) columns. RPC employs a
-hydrophobic stationary phase like {term}`octadecyl (C18)`, a nonpolar carbon chain bonded to a silica base, and a polar mobile
-phase. Polar molecules interact weakly with the stationary phase and elute earlier, while non-polar molecules are retained.
-Interaction can be further modulated by changing the gradient of solvent concentration in the mobile phase over time.
-Elution times in LC are inherently prone to variation, for example, due to fluctuations in the flow rate of the mobile
-phase or change of column. Retention time shifts between runs may be compensated using computational chromatographic
-retention time alignment methods. In the {term}`LC-MS` setup, the column is directly coupled to the ion source of the mass
-spectrometer.
+
+## Liquid Chromatography (LC)
+
+Liquid chromatography is an analytical technique used to separate analytes according to their physicochemical properties. A sample is transported via a liquid (known as the mobile phase) through a stationary phase which is packed into a capillary column. The time it takes for a separated analyte to move through the stationary phase (or how long it takes to elute) is known as its {term}`retention time`. Each analyte will have a different retention time, depending on how strongly the analyte interacts with the stationary phase.  The total amount of analyte eluting from the column at every (retention) time point can be plotted as a {term}`chromatogram`. In LC-MS, the measured ion intensities are used as a proxy for the total amount.
 
 ![](images/introduction/introduction_LC.png)
 
 ## Mass Spectrometry
 
-MS is an analytical technique used to determine the {term}`mass` of molecules. In order to achieve highly accurate and sensitive
-mass measurements at the atomic scale, mass spectrometers manipulate charged particles using magnetic and electrostatic
-fields.
+Mass spectrometry is an analytical technique used to determine the abundance of molecules in a sample. There are three major components in a mass spectrometer:
+- An **ion source**, which generates ions from the incoming sample.
+- A **mass analyzer**, which separates the ions according to their mass-to-charge ratio. There are several types of mass analyzers. Depending on the mass analyzer used in the experiment, OpenMS offers calibration tools, so that highly accurate results can be achieved.
+- A **detector**, which records the mass-to-charge ratio of each ion against their relative abundance in a plot known as a {term}`mass spectrum`.
 
 ![](images/introduction/introduction_MS.png)
 
-In a typical mass spectrometer, three principal components can be identified:
-
-- **Ion Source**: A mass spectrometer only handles {term}`ions`. Thus, charge needs first be transferred to uncharged
-  particles. The component responsible for the ionization is the ion source. Different types of ion sources and ionization
-  techniques exist with {term}`electrospray ionization (ESI)` being currently the most widely used ionization technique
-  for mass spectrometry-based proteomics.
-
-- **Mass Analyzer**: Most commonly used mass analyzer in proteomics are {term}`time-of-flight (TOF)` mass analyzers,
-  {term}`quadrupole mass filters`, and {term}`orbitrap analyzers`. In TOF mass analyzers, the ions are accelerated in an electric field.
-  The flight time of an ion allows calculating the velocity which in turn is used to calculate the mass-to-charge ratio
-  (m/z). Varying the electric field allows filtering certain mass-to-charge ratios before they enter the detector. In
-  quadrupole mass filters, ions pass through an oscillating electric field created by four parallel rods. For a
-  particular voltage, only ions in a certain mass-to-charge range will reach the detector. The orbitrap is an ion trap
-  mass analyzer (and detector) that traps ions in orbital motion between a barrel-like outer electrode and a spindle-like
-  central electrode allowing for prolonged mass measurement. As a result of the prolonged mass measurements, a high mass
-  resolution can be achieved.
-
-- **Detector**: The last component of the mass spectrometer is the detector. It determines the abundance of ions that
-  passed through the mass analyzer. Ion intensities (a value that relates to its abundance) and the mass-to-charge ratio
-  are recorded in a mass spectrum.
-
-A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
-The measurement of one sample is called an MS run and the set of spectra called an {term}`MS(1)` map or peak map.
-
-![](images/introduction/spectrum_peakmap.png)
-
-The left image displays spectrum with peaks (m/z and intensity values) and the right image shows spectra stacked in
-retention time yielding a peak map.
-
-In proteomics and metabolomics, the {term}`MS(1)` intensity is often used for the quantification of an analyte. Identification
-based on the {term}`MS(1)` mass-to-charge and the isotope pattern is highly ambiguous. To improve identification, tandem mass
-spectrometry {term}`(MS/MS)` can be applied to assess the analyte substructure. To this end, the precursor ion is isolated and
-kinetically fragmented using an inert gas (e.g., Argon). Fragments produced by {term}`collision-induced dissociation (CID)`
-are stored in an {term}`MS^2` (or {term}`MS/MS`) spectrum and provide information that helps to resolve the ambiguities in identification.
-Alternatively, {term}`MS/MS` spectra can be used for quantification.
-
-Get started with installing OpenMS using the installers available for different operating systems!
-
-## Installation on different platforms
-
-```{tab} GNU/Linux
-wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
-```
-
-```{tab} Windows
-wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
-```
-
-```{tab} MacOS
-wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
-```
+## Liquid Chromatography - Mass Spectrometry
+Liquid chromatography is often coupled with mass spectrometry in order to reduce complexity in the mass spectra. The separated analytes from the liquid chromatography setup are directly injected into the ion source from the mass spectrometry setup. Multiple analytes that elute at the same time are separated by mass using the mass spectrometer.

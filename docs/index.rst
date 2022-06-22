@@ -2,7 +2,7 @@ About OpenMS
 ============
 
 `OpenMS <http://www.openms.org/>`_
-is an open-source software C++ library for LC-MS data management and
+is an open-source software C++ platform for LC-MS data management and
 analyses. It offers an infrastructure for rapid development of mass
 spectrometry related software. OpenMS is free software available under the
 three clause BSD license and runs under Windows, macOS, and Linux.
@@ -12,7 +12,7 @@ and metabolomics data analysis tools as well as powerful 1D, 2D and 3D
 visualization tools.
 
 OpenMS offers analyses for various quantitation protocols, including label-free
-quantitation, SILAC, iTRAQ, TMT, SRM, SWATH, etc.
+quantitation.
 
 OpenMS provides built-in algorithms for de-novo identification and database search,
 as well as adapters to other state-of-the art tools like X!Tandem, Mascot,
@@ -35,6 +35,7 @@ Contents
 
    what-is-open-ms.md
    background.md
+   ways-to-use-openms.md
 
 .. toctree::
    :maxdepth: 2
@@ -49,7 +50,6 @@ Contents
    :maxdepth: 2
    :caption: Quick Start Guides
 
-   guides/user-guides/user-quickstart-guide
    guides/contributors-quickstart-guide.md
 
 .. toctree::
@@ -64,7 +64,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS graphical applications
-   
+
    graphical-topp-tools/ini-file-editor.md
    graphical-topp-tools/toppview.md
    graphical-topp-tools/swathwizard.md
@@ -99,6 +99,7 @@ Contents
    :caption: Quick Reference
 
    faqs/contributor-faq.md
+   faqs/developer-faq.md
    glossary.md
    contact-us.md
 

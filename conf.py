@@ -40,6 +40,8 @@ extensions = [
   'sphinx_inline_tabs',
 ]
 
+myst_enable_extensions = ['colon_fence']
+
 autosummary_generate = True
 autosummary_imported_members = True
 
