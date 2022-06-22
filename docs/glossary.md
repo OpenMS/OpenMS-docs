@@ -3,14 +3,17 @@ OpenMS Glossary
 
 A glossary of common terms used throughout OpenMS documentation.
 
-```{glossary}
-    ```{sorted}
+:::{glossary}
+    :::{sorted}
 
 LC-MS
   [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
 
 peptides
   A short chain of amino acids.
+
+FASTA format
+  A text-based format for representing nucleotide or amino acid sequences.
 
 Octadecyl(C18)
   An alkyl radical C(18)H(37) derived from an octadecane by removal of one hydrogen atom.
@@ -149,4 +152,4 @@ TOPPAS
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
 
-```
+:::
