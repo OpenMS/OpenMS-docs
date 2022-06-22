@@ -3,7 +3,7 @@ OpenMS Glossary
 
 A glossary of common terms used throughout OpenMS documentation.
 
-:::{glossary}
+::::{glossary}
 :::{sorted}
 
 LC-MS
@@ -151,6 +151,6 @@ TOPPAS
 
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
-  
+
 :::
-:::
+::::
