@@ -20,5 +20,6 @@ To label an issue:
    - **enhancement**: An enhancement refers to a feature idea to enhance the current OpenMS code. This is a medium
      priority issue.
    - **task**: A task refers to a single piece of work that a developer can undertake. This is a medium priority issue.
-   - **refactoring**: A refactoring issue refers to a suggestion to streamline the code without changing how the code function.
+   - **refactoring**: A refactoring issue refers to a suggestion to streamline the code without changing how the code 
+   function.
    - **question**: A question could trigger to a discussion about tools, parameters and scientific tasks.
