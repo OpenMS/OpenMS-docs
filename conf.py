@@ -21,10 +21,6 @@ project = 'OpenMS'
 copyright = '2022, OpenMS Team'
 author = 'OpenMS Team'
 
-# The full version, including alpha/beta/rc tags
-release = '2.8.0'
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -40,7 +36,15 @@ extensions = [
   'sphinx_inline_tabs',
 ]
 
-myst_enable_extensions = ['colon_fence']
+myst_enable_extensions = [
+  "tasklist",
+  "dollarmath",
+  "amsmath",
+  "colon_fence",
+  "linkify",
+  "replacements",
+  "linkify_fuzzy_links",
+]
 
 autosummary_generate = True
 autosummary_imported_members = True
@@ -73,19 +77,26 @@ release = '2.8.0'
 # a list of builtin themes.
 #
 html_theme = 'furo'
-html_logo = 'assets/OpenMS_transparent_background.png'
-
+html_logo = 'assets/logo/OpenMS_transparent_background.png'
+html_theme_options = {
+    "navigation_with_keys": True,
+    "light_css_variables": {
+        "font-stack--monospace": "Consolas, monospace",
+        "font-size--small": "90%",
+        "toc-font-size": "87.5%"
+    },
+}
 pygments_style = 'sas'
 
 pygments_dark_style = 'rrt'
-
-myst_enable_extensions = [
-  "colon_fence",
-]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = [
+    'css/custom.css',
+]
 
 root_doc = 'docs/index'

@@ -147,7 +147,7 @@ de novo peptide sequencing
   ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
 
 TOPPAS
-  An assistant for GUI-driven TOPP workflow design.
+  An assistant for GUI-driven TOPP workflow design. It is recommended to use OpenMS through the KNIME plugins.
 
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
