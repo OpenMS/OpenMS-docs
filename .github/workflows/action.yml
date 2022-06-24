@@ -25,4 +25,4 @@ jobs:
         max-depth: -1
         check-modified-files-only: 'yes'
         config-file: 'config.json'
-        file-extension: '.md', '.rst'
+        file-extension: '.md'
