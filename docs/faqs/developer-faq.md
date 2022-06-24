@@ -11,7 +11,7 @@ The following section provides general information to new contributors.
 
 * Check out the development version of OpenMS (see website).
 * Build OpenMS by following the [installation instructions]() or [from source](../installations/build-openms-from-source.md).
-* Read the [OpenMS Coding Conventions]()
+* Read the [OpenMS Coding Conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html)
 * Read the [OpenMS Tutorial](../tutorials/user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) or [contact-us](../contact-us.md).
@@ -23,14 +23,14 @@ to `TOOLS` if they are stable enough, are fully tested, fully documented, and a 
 
 ### I have written a class for OpenMS. What should I do?
 
-Follow the [OpenMS coding conventions]().
+Follow the [OpenMS coding conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
 
 Coding style (brackets, variable names, etc.) must conform to the conventions.
 
 * The class and all the members should be properly documented.
 * Check your code with the tool  `tools/checker.php`. Call `php tools/checker.php` for detailed instructions.
 
-Please open a pull request and follow the [pull request guidelines](pull-request-checklist.md).
+Please open a pull request and follow the [pull request guidelines](../additional-resources/pull-request-checklist.md).
 
 ### Can I use QT designer to create GUI widgets?
 
