@@ -1,10 +1,18 @@
-name: Check Markdown links
+name: Documentation URLs Check
 
 on:
   pull_request:
+    push:
+      branches:
+        - 'release-*'
+        - 'develop'
+        - 'staging'
+        - main
+      tags:
+        - 'v*'
     schedule:
       # Run everyday at 9:00 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
-      - cron: "0 9 * * *"
+      - cron: "1 2 * * *"
 
 jobs:
   markdown-link-check:
@@ -16,3 +24,4 @@ jobs:
         max-depth: -1
         check-modified-files-only: 'yes'
         config-file: 'config.json'
+        file-extension: '.md', '.rst'
