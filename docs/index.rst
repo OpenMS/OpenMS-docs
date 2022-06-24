@@ -53,6 +53,7 @@ Contents
    what-are-topp-tools.md
    apply-topp-tools-using-command-line-interface.md
    apply-topp-tools-using-graphical-applications.md
+   list-of-topp-tools.md
    tutorials/TOPP/topp-for-advanced-users.md
 
 .. toctree::
@@ -70,7 +71,7 @@ Contents
    advanced-resources/external-code-using-openms.md
    advanced-resources/custom-compilation.md
 
-.. toctree:: 2
+.. toctree::
    :maxdepth: 2
    :caption: Contribute to OpenMS
 
