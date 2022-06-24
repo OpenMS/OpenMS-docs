@@ -8,6 +8,7 @@ on:
         - 'develop'
         - 'staging'
         - 'main'
+        - 'add_broken_dead_links_check_v2'
       tags:
         - 'v*'
     schedule:
