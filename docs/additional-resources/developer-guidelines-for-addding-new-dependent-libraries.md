@@ -15,6 +15,7 @@ imposes a significant integration and maintenance effort. Thus, the new library 
 **indispensable functionality**. If the added value does not compensate for the overhead, alternative solutions 
 encompass:
 
+
 - write it yourself and add to the OpenMS library (i.e. its repository) directly
 - write a TOPPAdapter which calls an external executable (placing the burden on the user to supply the executable)
 
@@ -39,15 +40,17 @@ these platforms.
   - The library actually compiles and is linked to the **dynamic** VS-C++ runtime lib (since this is what the OpenMS lib
   will link to as well - combining static and dynamic links will lead to linker errors or segfaults).
 
+
 - on **macOS** it should be ensured that the library can be build on recent macOS versions (> 10.10) compiled using the
   mac specific _libc++_. Ideally the package should be available via **HomeBrew** or **MacPorts** so we can directly use
   those libraries instead of shipping them via the contrib. Additionally, the MacPorts and HomeBrew formulas for 
   building the libraries can serve as blueprints on how to compile the library in a generic setting inside the contrib 
   which should also be present.
 
-- on **Linux** since we (among other distributions) feature an OpenMS Debian package which requires that all 
+- on **Linux** since we (among other distributions) feature an OpenMS Debian package which requires that all
 dependencies of OpenMS are available as Debian package as well, the new library must be available (or made available) as 
 Debian package or linked statically during the OpenMS packaging build.
+
 
 ## How to add it to the contrib build
 
