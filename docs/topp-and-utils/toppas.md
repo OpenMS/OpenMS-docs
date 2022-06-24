@@ -13,7 +13,7 @@ The following figure shows a simple example pipeline that has just been created 
 
 ![TOPPAS simple example](../images/topp/TOPPAS_simple_example.png)
 
-More information about TOPPAS can be found in the [TOPPAS tutorial](../tutorials/TOPP/TOPPAS-tutorial.md).
+More information about TOPPAS can be found in the [TOPPAS tutorial](../tutorials/TOPPAS/TOPPAS-tutorial.md).
 
 **The command line parameters of this tool are**:
 

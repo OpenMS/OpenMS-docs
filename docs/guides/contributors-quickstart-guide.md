@@ -40,10 +40,10 @@ To create a fork:
 
 ### Coding conventions
 
-See the manual for coding style recommended by OpenMS: [Coding conventions](https://github.com/OpenMS/OpenMS/wiki/Coding-conventions).
+See the manual for coding style recommended by OpenMS: [Coding conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
 
 ```{seealso}
-[C++ Guide](https://github.com/OpenMS/OpenMS/wiki/Cpp-Guide).
+[C++ Guide](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/developer_faq.html).
 ```
 
 OpenMS automatically tests for common coding convention violations using a modified version of `cpplint`.
