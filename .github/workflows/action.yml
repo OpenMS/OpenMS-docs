@@ -8,7 +8,6 @@ on:
       - 'develop'
       - 'staging'
       - 'main'
-      - 'documentation_urls_check'
 
     tags:
       - 'v*'
@@ -25,5 +24,5 @@ jobs:
       with:
         max-depth: -1
         check-modified-files-only: 'yes'
-        config-file: 'config.json'
+        config-file: '.github/workflows/config.json'
         file-extension: '.md'
