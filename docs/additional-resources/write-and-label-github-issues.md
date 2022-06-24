@@ -21,5 +21,5 @@ To label an issue:
      priority issue.
    - **task**: A task refers to a single piece of work that a developer can undertake. This is a medium priority issue.
    - **refactoring**: A refactoring issue refers to a suggestion to streamline the code without changing how the code 
-   function.
+      function.
    - **question**: A question could trigger to a discussion about tools, parameters and scientific tasks.

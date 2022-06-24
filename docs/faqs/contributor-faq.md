@@ -88,7 +88,7 @@ pass them to `CMake` using the `-G` option.
    `src/<sub-project>/source/MYDIR`), using existing `sources.cmake` files as template.
 2. Add the new `sources.cmake` files to `src/<sub-project>/includes.cmake`
 3. If you created a new directory directly under `src/openms/source`, then have a look 
-at `src/tests/class_tests/openms/executables.cmake`.
+   at `src/tests/class_tests/openms/executables.cmake`.
 4. Add a new section that makes the unit testing system aware of the new (upcoming) tests.
 5. Look at the very bottom and augment `TEST_executables`.
 6. Add a new group target to `src/tests/class_tests/openms/CMakeLists.txt`.
@@ -198,7 +198,7 @@ To contribute to a bug fix:
 
 1. Submit the bug as a GitHub issue.
 2. Create a feature branch (e.g. `feature/fix_missing_filename_issue_615`) from your (up-to-date) 
-develop branch in your fork of OpenMS.
+   develop branch in your fork of OpenMS.
 3. Fix the bug and add a test.
 4. Create a pull request for your branch.
 5. After approval and merge make sure the issue is closed.
