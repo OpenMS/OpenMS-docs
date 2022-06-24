@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
-        base-branch: 'develop'
+        base-branch: 'staging'
         max-depth: -1
         check-modified-files-only: 'yes'
         config-file: '.github/workflows/config.json'
