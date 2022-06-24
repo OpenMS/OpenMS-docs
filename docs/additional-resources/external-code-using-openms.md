@@ -113,7 +113,7 @@ In short:
   variable `OPENMS_DATA_PATH` to this directory
 - copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
 - copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 
-  package
+  package.
 - [Windows only] copy Xerces dll (see `contrib/lib`) to `<client/my_dir>/bin`
 - [Windows only] install the VS redistributable package (see Microsoft Homepage) on the client machine which corresponds
   to the VS version that was used to compile your code (use the correct redistributable package!, i.e., architecture
