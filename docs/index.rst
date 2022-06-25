@@ -42,14 +42,14 @@ Contents
    :caption: Introduction
    :titlesonly:
 
-   introduction/*
+   introduction
 
 .. toctree::
    :maxdepth: 2
    :caption: How OpenMS Works
    :titlesonly:
 
-   installations/*
+   installations
 
 .. toctree::
    :maxdepth: 2
