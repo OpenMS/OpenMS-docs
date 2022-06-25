@@ -6,7 +6,8 @@ The following sections introduce TOPP, some general concepts and more specific i
 ```{toctree}
 :maxdepth: 1
 
-introduction-to-topp-tools.md
-key-concepts.md
-types-of-topp-tools.md
+topp-tools/introduction-to-topp-tools.md
+topp-tools/key-concepts.md
+topp-tools/types-of-topp-tools.md
+
 ```
