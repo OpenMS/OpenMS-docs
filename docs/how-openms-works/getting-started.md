@@ -3,7 +3,7 @@ Getting Started
 
 The following section is designed to get you up and running using OpenMS.
 
-## Installation Guides
+# Installation Guides
 
 ```{toctree}
 :maxdepth: 1
@@ -13,7 +13,7 @@ installations/installation-on-macos.md
 installations/installation-on-windows.md
 ```
 
-## OpenMS Applications and Tools
+# OpenMS Applications and Tools
 
 ```{toctree}
 :maxdepth: 1
