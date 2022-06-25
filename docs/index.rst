@@ -62,7 +62,7 @@ Contents
    openms-applications-and-tools/topp-tools.md
    openms-applications-and-tools/utils-tools.md
    openms-applications-and-tools/command-line-interface.md
-   openms-applicatons-and-tools/visualize-with-openms.md
+   openms-applications-and-tools/visualize-with-openms.md
 
 .. toctree::
    :maxdepth: 2
@@ -70,7 +70,7 @@ Contents
 
    run-workflows-with-openms-tools/openms-in-knime.md
    run-workflows-with-openms-tools/openms-in-nextflow.md
-   run-workflows-with-openms-tools/openms-galaxy.md
+   run-workflows-with-openms-tools/openms-on-galaxy.md
 
 .. toctree::
    :maxdepth: 2
@@ -94,13 +94,11 @@ Contents
    :maxdepth: 2
    :caption: Contribute to OpenMS
 
-   additional-resources/openms-git-workflow.md
-   additional-resources/write-and-label-github-issues.md
-   advanced-resources/adding-new-tool-to-topp.md
-   additional-resources/pull-request-checklist.md
-   advanced-resources/developer-guidelines-for-adding-new-dependent-libraries.md
-   advanced-resources/build-custom-openms-knime-package.md
-
+   contribute-to-openms/openms-git-workflow.md
+   contribute-to-openms/write-and-label-github-issues.md
+   contribute-to-openms/adding-new-tool-to-topp.md
+   contribute-to-openms/pull-request-checklist.md
+   contribute-to-openms/advanced.md
 
 .. toctree::
    :maxdepth: 2
