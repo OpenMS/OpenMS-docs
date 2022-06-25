@@ -9,7 +9,7 @@ The following tools are offered:
 types-of-topp-tools/graphical-tools.md
 types-of-topp-tools/file-handling.md
 types-of-topp-tools/signal-processing-and-preprocessing.md
-types-of-topp-tools/quanitation.md
+types-of-topp-tools/quantitation.md
 types-of-topp-tools/map-alignment.md
 types-of-topp-tools/protein-and-peptide-identification.md
 

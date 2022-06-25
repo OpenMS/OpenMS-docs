@@ -75,8 +75,8 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials and Quick Start Guides
-   tutorials-and-quick-start-guides/tutorials.md
-   tutorials-and-quick-start-guides/quick-start-guides.md
+   tutorials-and-quickstart-guides/tutorials.md
+   tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
    :maxdepth: 2
