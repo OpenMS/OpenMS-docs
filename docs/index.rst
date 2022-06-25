@@ -42,33 +42,18 @@ Contents
    :caption: Introduction
    :titlesonly:
 
-   what-is-open-ms.md
-   background.md
-   ways-to-use-openms.md
+   introduction/*
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: How OpenMS Works
    :titlesonly:
 
-   installations/installation-on-gnu-linux
-   installations/installation-on-windows
-   installations/installation-on-macos
-   installations/build-openms-from-source
+   installations/*
 
 .. toctree::
    :maxdepth: 2
-   :caption: TOPP tools
-
-   what-are-topp-tools.md
-   apply-topp-tools-using-command-line-interface.md
-   apply-topp-tools-using-graphical-applications.md
-   list-of-topp-tools.md
-   tutorials/TOPP/topp-for-advanced-users.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: OpenMS graphical applications
+   :caption: OpenMS Applications and Tools
 
    graphical-topp-tools/ini-file-editor.md
    graphical-topp-tools/toppview.md

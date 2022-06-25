@@ -1,4 +1,4 @@
-Ways to use OpenMS
+Using OpenMS
 ==================
 
 OpenMS has been structured so that users from a wide range of fields can access what they need to solve their particular problem, depending on their skillset.
@@ -21,4 +21,4 @@ The following entry points for OpenMS and its TOPP tools are available for users
 
 - **Use a supported workflow editor**
 
-  Suppose you want to run the same sequence of TOPP tools on a number of data sets. You can use applications such as KNIME and Galaxy (where TOPP tools are available as a plugin), to apply predefined workflows or custom workflows you have designed on your data. KNIME and Galaxy are recommended over TOPPAS, which can also be used to create workflows however is no longer supported. 
+  Suppose you want to run the same sequence of TOPP tools on a number of data sets. You can use applications such as KNIME and Galaxy (where TOPP tools are available as a plugin), to apply predefined workflows or custom workflows you have designed on your data. KNIME and Galaxy are recommended over TOPPAS, which can also be used to create workflows however is no longer supported.
