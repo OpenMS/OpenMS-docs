@@ -42,14 +42,15 @@ Contents
    :caption: Introduction
    :titlesonly:
 
-   introduction
+   introduction/about-open-ms.md
+   introduction/background.md
+   introduction/using-openms.md
 
 .. toctree::
    :maxdepth: 2
    :caption: How OpenMS Works
-   :titlesonly:
 
-   installations
+   how-openms-works/getting-started
 
 .. toctree::
    :maxdepth: 2
