@@ -1,9 +1,8 @@
 Utils Tools
 ===========
 
-
 ```{toctree}
-:maxdepth: 1
+   :maxdepth: 2
 
 openms-applications-and-tools/utils-tools/introduction-to-utils.md
 openms-applications-and-tools/utils-tools/key-concepts-utils.md
