@@ -16,7 +16,7 @@ The following sections explain how to read a file and store the information in a
 
 As explained in the command-line quick start guide, TOPP shell is available for those who are comfortable with executing command line tools and writing scripts.
 
-To read the information of a file, you can just type the following in the command line and press <kbd>Enter</kbd>.
+To read the information of a file, just type the following in the command line and press <kbd>Enter</kbd>.
 
 ```bash
 FileInfo -in <insert input file> -out <insert output file>
@@ -120,13 +120,13 @@ KNIME is available for those who want a graphical application to create and use 
 
 1. Install OpenMS plugin.
    <ol type="a">
-    <li>Go to **File** > **Install KNIME Extensions**.</li>
-    <li>Search for **OpenMS**.</li>
-    <li>Select the checkbox next to **OpenMS** and click **Next**.</li>
-    <li>Click **Next**.</li>
+    <li>Go to <b>File</b> > <b>Install KNIME Extensions</b>.</li>
+    <li>Search for <b>OpenMS</b>.</li>
+    <li>Select the checkbox next to <b>OpenMS</b> and click <b>Next</b>.</li>
+    <li>Click <b>Next</b>.</li>
     <li>Accept the terms of conditions.</li>
     <li>Restart KNIME</li>
    </ol>
-2. Open a new file by going to **File** > **New file**.
+2. Open a new file by going to <b>File</b> > <b>New file</b>.
 
 ![drag-and-drop-node](../images/tutorials/knime/add-node-to-workspace.gif)
