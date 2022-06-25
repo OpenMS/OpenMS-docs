@@ -13,6 +13,4 @@ openms-applications-and-tools/types-of-topp-tools/quanitation.md
 openms-applications-and-tools/types-of-topp-tools/map-alignment.md
 openms-applications-and-tools/types-of-topp-tools/protein-and-peptide-identification.md
 
-
-
 ```
