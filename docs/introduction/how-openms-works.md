@@ -1,5 +1,5 @@
-Using OpenMS
-============
+How OpenMS Works
+================
 
 OpenMS has been structured so that users from a wide range of fields can access what they need to solve their particular problem, depending on their skillset.
 

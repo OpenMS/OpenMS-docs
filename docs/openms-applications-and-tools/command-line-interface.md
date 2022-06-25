@@ -1,9 +1,7 @@
-Apply TOPP tools using the Command Line Interface
-==================================================
+Command Line Interface
+======================
 
 TOPP tools are designed to be called from the command line. OpenMS provides a Command Line Interface (CLI) called TOPP shell to easily execute TOPP tools on mass spectrometry data. However, you can configure the CLI of your choice to run TOPP tools.
-
-## Command line call construction
 
 Command line calls will depend on the TOPP tools used, as each TOPP tool has its own set of parameters. However, the following arguments are typically used:
 
@@ -37,4 +35,4 @@ Many (but not all) command line calls will have the following structure:
 
 The following command line call uses the FileFilter tool to extract data from an mzML file. Note, that this call directly specifies the tool-specific parameters and doesn’t rely on an INI file:
 
-![break down of example command line call](images/topp/command-line-call.png)
+![break down of example command line call](../images/topp/command-line-call.png)

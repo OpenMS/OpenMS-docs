@@ -1,5 +1,5 @@
-Apply TOPP tools using Graphical Applications
-=============================================
+Graphical Tools
+===============
 
 OpenMS provides a suite of graphical applications, designed for users who want easy access to TOPP tools. These applications include:
 - [INIFileEditor](graphical-topp-tools/ini-file-editor.md)

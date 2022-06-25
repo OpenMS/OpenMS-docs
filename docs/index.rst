@@ -44,55 +44,62 @@ Contents
 
    introduction/about-open-ms.md
    introduction/background.md
-   introduction/using-openms.md
+   introduction/how-openms-works.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: How OpenMS Works
+   :caption: Getting Started
 
-   how-openms-works/getting-started
+   installations/installation-on-gnu-linux.md
+   installations/installation-on-macos.md
+   installations/installation-on-windows.md
 
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS Applications and Tools
 
-   graphical-topp-tools/ini-file-editor.md
-   graphical-topp-tools/toppview.md
-   graphical-topp-tools/swathwizard.md
+   openms-applications-and-tools/openms-applications.md
+   openms-applications-and-tools/topp-tools.md
+   openms-applications-and-tools/utils-tools.md
+   openms-applications-and-tools/command-line-interface.md
+   openms-applicatons-and-tools/visualize-with-openms.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Run Workflows with OpenMS Tools
+
+   run-workflows-with-openms-tools/openms-in-knime.md
+   run-workflows-with-openms-tools/openms-in-nextflow.md
+   run-workflows-with-openms-tools/openms-galaxy.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials and Quick Start Guides
+   tutorials-and-quick-start-guides/tutorials.md
+   tutorials-and-quick-start-guides/quick-start-guides.md
 
 .. toctree::
    :maxdepth: 2
    :caption: Develop with OpenMS
 
-   advanced-resources/external-code-using-openms.md
-   advanced-resources/custom-compilation.md
+   develop-with-openms/cplusplus.md
+   develop-with-openms/python.md
+   develop-with-openms/openms-core-library.md
+   develop-with-openms/build-openms-from-source.md
+   develop-with-openms/link-external-code-to-openms.md
+   develop-with-openms/developer-tutorial.md
+   develop-with-openms/api-reference.md
 
 .. toctree::
    :maxdepth: 2
    :caption: Contribute to OpenMS
 
-   guides/contributors-quickstart-guide.md
    additional-resources/openms-git-workflow.md
    additional-resources/write-and-label-github-issues.md
    advanced-resources/adding-new-tool-to-topp.md
    additional-resources/pull-request-checklist.md
    advanced-resources/developer-guidelines-for-adding-new-dependent-libraries.md
    advanced-resources/build-custom-openms-knime-package.md
-
-.. toctree:: 2
-   :maxdepth: 2
-   :caption: Feedback and Contact
-
-   additional-resources/reporting-bugs-and-issues.md
-   contact-us.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Frequently Asked Questions
-   :titlesonly:
-
-   faqs/developer-faq.md
-   faqs/contributor-faq.md
 
 
 .. toctree::
@@ -105,9 +112,10 @@ Contents
    :maxdepth: 2
    :caption: Quick Reference
 
-   faqs/contributor-faq.md
-   faqs/developer-faq.md
-   glossary.md
+   quick-reference/contributor-faq.md
+   quick-reference/developer-faq.md
+   quick-reference/contact-us.md
+   quick-reference/glossary.md
 
 Indices and tables
 ==================
