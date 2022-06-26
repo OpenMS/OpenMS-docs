@@ -78,6 +78,8 @@ release = '2.8.0'
 #
 html_theme = 'furo'
 html_logo = 'assets/logo/OpenMS_transparent_background.png'
+html_favicon = 'assets/logo/OpenMS_transparent_background.png'
+
 html_theme_options = {
     "navigation_with_keys": True,
     "light_css_variables": {
