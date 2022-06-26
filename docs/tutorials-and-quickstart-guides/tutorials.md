@@ -129,7 +129,8 @@ KNIME is available for those who want a graphical application to create and use 
     <li>Accept the terms of conditions.</li>
     <li>Restart KNIME</li>
    </ol>
-**2. Open a new file** by going to <b>File</b> > <b>New file</b>.
+
+**2. Open a new file** by going to **File** > **New file**.
 
 **3. Construct workflow by adding nodes.**
    <ol type="a">
@@ -142,6 +143,7 @@ KNIME is available for those who want a graphical application to create and use 
    <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/connected-nodes-not-configured.png" alt="connected nodes"></img>
    Once you configure your nodes in the next step, the warnings should disappear.
    </ol>
+
 **4. Configure the nodes in workflow.**
    <ol type="a">
    <li>Right-click the <b>Input File</b> node and select <b>Configure</b>.</li>
@@ -153,6 +155,7 @@ KNIME is available for those who want a graphical application to create and use 
    <li>Your workflow should be cleared of warnings and look like this:</li>
    <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/connected-nodes-configured.png" alt="connected-nodes-no-warnings"></img>
    </ol>
+   
 **5. Play the workflow.**
    <ol type="a">
    <li>Click the Execute all executable nodes <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/play-button.png" width="20"></img> button in the toolbar at the top of the screen.</li>
