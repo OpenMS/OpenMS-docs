@@ -120,7 +120,7 @@ If you want a graphical interface to interact with, then use TOPPView. Follow th
 
 KNIME is available for those who want a graphical application to create and use workflows. Here is an example of how to report file information on an input file to an output file using KNIME.
 
-1. **Install OpenMS plugin.**
+1. **Install OpenMS plugin.
    <ol type="a">
     <li>Go to <b>File</b> > <b>Install KNIME Extensions</b>.</li>
     <li>Search for <b>OpenMS</b>.</li>
@@ -156,5 +156,5 @@ KNIME is available for those who want a graphical application to create and use 
    <ol type="a">
    <li>Click the Execute all executable nodes <img src="../images/tutorials/knime/play-button.png" width="20"></img> button in the toolbar at the top of the screen.</li>
    <li>You should produce an output file at the specified location. Here is an example of what can be produced:</li>
-   <img src="../images/tutorials/knime/output-file.png"></img>
+   ![output-file](../images/tutorials/knime/output-file.png)
    </ol>
