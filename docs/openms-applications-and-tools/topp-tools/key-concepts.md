@@ -4,7 +4,7 @@ Key Concepts
 Before using TOPP tools, there are a number of concepts to understand. These include:
 - **TOPP INI files**
 
-  TOPP INI files are XML-based files with an `.ini extension`. OpenMS uses TOPP INI files to set parameters for one or more TOPP tools. Alternatively, the command line can be used to set TOPP tool parameters.
+  TOPP INI files are XML-based files with an `.ini` extension. OpenMS uses TOPP INI files to set parameters for one or more TOPP tools. Alternatively, the command line can be used to set TOPP tool parameters.
   Here is an example of a TOPP INI file:
 
   ```xml
@@ -28,7 +28,7 @@ Before using TOPP tools, there are a number of concepts to understand. These inc
   </NODE>
 
   </PARAMETERS>
-```
+  ```
 - **Features, feature maps and featureXML files**
 
   An LC-MS feature is a construct in OpenMS that is used to describe a 2D peak caused by an analyte interacting with the stationary phase. Each feature contains the following metadata: an id, retention time, mass-to-charge ratio, intensity, overall quality and one or more convex hulls.   
