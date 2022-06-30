@@ -27,7 +27,6 @@ a unified parameter handling via a 'common tool description' (CTD) scheme.
   data analysis framework that supports the generation of workflows for data analysis. Using a Common Tool Description
   (CTD) file which is writeable by every TOPP tool and a node generator program (`Generic KNIME Nodes <https://github.com/genericworkflownodes/GenericKnimeNodes>`_), all   :term:`TOPP tools` can be made available to run in KNIME.
 
-
 With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`
 to enable rapid algorithm development. OpenMS supports the Proteomics Standard
 Initiative (PSI) formats for MS data. The main contributors of OpenMS are
@@ -42,71 +41,63 @@ Contents
    :caption: Introduction
    :titlesonly:
 
-   introduction
+   introduction/about-open-ms.md
+   introduction/background.md
+   introduction/how-openms-works.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
-   :titlesonly:
+   :caption: Installation Guides
 
-   installations/installation-on-gnu-linux
-   installations/installation-on-windows
-   installations/installation-on-macos
-   installations/build-openms-from-source
+   installations/installation-on-gnu-linux.md
+   installations/installation-on-macos.md
+   installations/installation-on-windows.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Quick Start Guides
-   :titlesonly:
+   :caption: OpenMS Applications and Tools
 
-   guides/user-guides/user-quickstart-guide
-   guides/contributors-quickstart-guide.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Tutorials
-   :titlesonly:
-
-   tutorials/TOPP/TOPP-tutorial
-   tutorials/TOPPAS/TOPPAS-tutorial
-   tutorials/KNIME/KNIME-tutorial
+   openms-applications-and-tools/openms-applications.md
+   openms-applications-and-tools/topp-tools.md
+   openms-applications-and-tools/utils-tools.md
+   openms-applications-and-tools/command-line-interface.md
+   openms-applications-and-tools/visualize-with-openms.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: OpenMS TOPP Tools
-   :titlesonly:
+   :caption: Run Workflows with OpenMS Tools
 
-   topp-and-utils/topp-and-utils.md
-   topp-and-utils/adding-new-tool-to-topp.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Developer Resources
-   :titlesonly:
-
-   additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
-   additional-resources/external-code-using-openms.md
-   advanced-resources/custom-compilation.md
-   advanced-resources/build-custom-openms-knime-package.md
+   run-workflows-with-openms-tools/openms-in-knime.md
+   run-workflows-with-openms-tools/openms-in-nextflow.md
+   run-workflows-with-openms-tools/openms-on-galaxy.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: OpenMS GitHub Workflow
-   :titlesonly:
+   :caption: Tutorials and Quick Start Guides
 
-   additional-resources/openms-git-workflow.md
-   additional-resources/reporting-bugs-and-issues.md
-   additional-resources/write-and-label-github-issues.md
-   additional-resources/pull-request-checklist.md
+   tutorials-and-quickstart-guides/tutorials.md
+   tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Frequently Asked Questions
-   :titlesonly:
+   :caption: Develop with OpenMS
 
-   faqs/developer-faq.md
-   faqs/contributor-faq.md
+   develop-with-openms/openms-core-library.md
+   develop-with-openms/pyopenms.md   
+   develop-with-openms/build-openms-from-source.md
+   develop-with-openms/link-external-code-to-openms.md
+   develop-with-openms/developer-tutorial.md
+   develop-with-openms/api-reference.md
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contribute to OpenMS
+
+   contribute-to-openms/openms-git-workflow.md
+   contribute-to-openms/write-and-label-github-issues.md
+   contribute-to-openms/adding-new-tool-to-topp.md
+   contribute-to-openms/pull-request-checklist.md
+   contribute-to-openms/advanced.md
 
 .. toctree::
    :maxdepth: 2
@@ -116,16 +107,12 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Glossary
+   :caption: Quick Reference
 
-   glossary.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contact Us
-
-   contact-us
-
+   quick-reference/contributor-faq.md
+   quick-reference/developer-faq.md
+   quick-reference/contact-us.md
+   quick-reference/glossary.md
 
 Indices and tables
 ==================

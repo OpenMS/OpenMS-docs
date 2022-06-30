@@ -1,4 +1,4 @@
-Installation on GNU/Linux
+GNU/Linux
 =========================
 
 ## Install via Conda

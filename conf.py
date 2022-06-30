@@ -78,6 +78,8 @@ release = '2.8.0'
 #
 html_theme = 'furo'
 html_logo = 'assets/logo/OpenMS_transparent_background.png'
+html_favicon = 'assets/logo/OpenMS_transparent_background.png'
+
 html_theme_options = {
     "navigation_with_keys": True,
     "light_css_variables": {
@@ -89,7 +91,6 @@ html_theme_options = {
 pygments_style = 'sas'
 
 pygments_dark_style = 'rrt'
-
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

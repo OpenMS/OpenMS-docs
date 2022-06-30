@@ -1,4 +1,4 @@
-Installation on macOS
+macOS
 ====================
 
 ## Install via macOS installer
@@ -39,7 +39,7 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
 
 ## Install via Conda or Bioconda
 
-Follow [these](installation-on-gnu-linux.md#install-via-conda) instructions.
+Follow the [instructions](installation-on-gnu-linux.md#install-via-conda) .
 
 
 ## Build OpenMS from source

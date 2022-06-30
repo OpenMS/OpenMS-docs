@@ -1,4 +1,4 @@
-Installation on Windows
+Windows
 =======================
 
 ## Install via Windows installer
