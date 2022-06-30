@@ -27,7 +27,6 @@ a unified parameter handling via a 'common tool description' (CTD) scheme.
   data analysis framework that supports the generation of workflows for data analysis. Using a Common Tool Description
   (CTD) file which is writeable by every TOPP tool and a node generator program (`Generic KNIME Nodes <https://github.com/genericworkflownodes/GenericKnimeNodes>`_), all   :term:`TOPP tools` can be made available to run in KNIME.
 
-
 With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`
 to enable rapid algorithm development. OpenMS supports the Proteomics Standard
 Initiative (PSI) formats for MS data. The main contributors of OpenMS are
@@ -48,7 +47,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: Installation Guides
 
    installations/installation-on-gnu-linux.md
    installations/installation-on-macos.md
@@ -75,7 +74,7 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials and Quick Start Guides
-   
+
    tutorials-and-quickstart-guides/tutorials.md
    tutorials-and-quickstart-guides/quickstart-guides.md
 
@@ -83,9 +82,8 @@ Contents
    :maxdepth: 2
    :caption: Develop with OpenMS
 
-   develop-with-openms/cplusplus.md
-   develop-with-openms/python.md
    develop-with-openms/openms-core-library.md
+   develop-with-openms/pyopenms.md   
    develop-with-openms/build-openms-from-source.md
    develop-with-openms/link-external-code-to-openms.md
    develop-with-openms/developer-tutorial.md

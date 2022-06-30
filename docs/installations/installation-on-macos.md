@@ -1,4 +1,4 @@
-Installation on macOS
+macOS
 ====================
 
 ## Install via macOS installer

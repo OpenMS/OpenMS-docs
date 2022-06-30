@@ -1,2 +1,2 @@
-OpenMS Core Library
-===================
+OpenMS C++ Core Library
+=======================
