@@ -41,7 +41,7 @@ To import data into TOPPView:
 
   ![file import options](../images/tutorials/toppview/file-import-options.png)
 
-  You can choose to open the new dataset as a **new window** or **new layer**. Choosing **new window** will open a new tab. If you are planning on comparing multiple datasets and want to view them all at once, choose **new layer**. We recommend you read our [Manipulating layers](visualize-with-openms.md#manipulating-layers) section.
+  You can choose to open the new dataset as a **new window** or **new layer**. Choosing **new window** will open a new tab. If you are planning on comparing multiple datasets and want to view them all at once, choose **new layer**.
 
   TOPPView automatically selects the **Map view** depending on the data you have imported.
 
@@ -81,7 +81,7 @@ To apply a TOPP tool to your dataset:
 
   ![layer loaded in Viewer](../images/tutorials/toppview/layer-loaded-in-viewer.png)
 
-6. (Optional) If you did choose to import the data as a new layer, give the new layer a name. To do this, right-click the layer in the **Layers window** and select **Rename**. Enter a name and click OK.  
+6. (Optional) If you did choose to import the data as a new layer, give the new layer a name. To do this, right-click the layer in the **Layers window** and select **Rename**. Enter a name and click OK.
 
 ### Filter data
 
@@ -89,14 +89,30 @@ You may only want to see some data from your dataset and hide the rest. OpenMS a
 
 To filter your data:
 
-1. Open the **Data filters window** by clicking the tab at the bottom of the screen.
+1. Select a layer from the **Layers window**.
+
+  ![display selected layer](../images/tutorials/toppview/layers-window.png)  
+
+2. Open the **Data filters window** by clicking the tab at the bottom of the screen.
 
   ![select data filters window](../images/tutorials/toppview/select-data-filters-window.png)
 
-2. Add a filter to the **Data filters window** by right-clicking the window and then selecting **Add filter** from the context menu.
+3. Add a filter to the **Data filters window** by right-clicking the window and then selecting **Add filter** from the context menu.
 
-3. Select a field, select an operation and enter a value. For example, to exclude all peaks with an intensity of less than 6999, set **field** to **Intensity**, **operation** to **=>** and set the value to 7000. Click **Ok** on the panel to apply the changes.
+4. Select a field, select an operation and enter a value. For example, to exclude all peaks with an intensity of less than 6999, set **field** to **Intensity**, **operation** to **=>** and set the value to 7000. Click **Ok** on the panel to apply the changes.
 
-  ![filtering options](../images/tutorials/toppview/filtering-options.png) 
+  ![filtering options](../images/tutorials/toppview/filtering-options.png)
 
-4. You should see only see data that satisfies the specified criteria.
+5. You should see only see data that satisfies the specified criteria.
+
+
+### Additional topics
+
+You might want to check out the following topics:
+
+```{toctree}
+:maxdepth: 1
+
+visualize-with-openms/views-in-toppview.md
+visualize-with-openms/hotkeys.md
+```
