@@ -105,7 +105,6 @@ To filter your data:
 
 5. You should see only see data that satisfies the specified criteria.
 
-
 ### Additional topics
 
 You might want to check out the following topics:

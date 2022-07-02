@@ -1,7 +1,7 @@
 INIFileEditor
 ============
 
-Can be used to visually edit INI files of TOPP tools.
+The INIFileEditor is an application used to visually edit INI files of TOPP tools.
 
 The values can be edited by double-clicking or pressing <kbd>F2</kbd>.
 

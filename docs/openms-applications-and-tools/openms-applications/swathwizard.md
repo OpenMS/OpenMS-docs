@@ -1,7 +1,7 @@
 SwathWizard
-==========
+============
 
-An assistant for Swath analysis.
+SwathWizard is an assistant for Swath analysis.
 
 The Wizard takes the user through the whole analysis pipeline for SWATH proteomics data analysis, i.e. the
 [TOPP Documentation: OpenSwathWorkflow](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_OpenSwathWorkflow.html) tool, including downstream tools such as [GitHub:PyProphet/pyProphet](https://github.com/PyProphet/pyprophet) and the [GitHub:msproteomicstools/TRIC alignment](https://github.com/msproteomicstools/msproteomicstools) tool.
