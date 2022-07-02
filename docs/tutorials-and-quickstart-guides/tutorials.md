@@ -137,10 +137,10 @@ KNIME is available for those who want a graphical application to create and use 
    <li>Go to the <b>Node repository</b></li>
    <li>In the search field, type <b>Input File</b>. You should see an <b>Input File</b> node in the filtered list.</li>
    <li>Drag and drop the <b>Input File</b> node from the Node repository into the workspace.</li>
-   <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/add-node-to-workspace.gif" alt="add node to workspace"></img>
+   <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/tutorials/knime/add-node-to-workspace.gif" alt="add node to workspace"></img>
    <li>Repeat steps b and c for the <b>FileInfo</b> node and the <b>Output File</b> node.</li>
    <li>Connect the <b>Input File</b> node to the <b>FileInfo</b> node. Connect the <b>FileInfo</b> node to the <b>Output File</b> node. Your workflow should look like this:</li>
-   <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/connected-nodes-not-configured.png" alt="connected nodes"></img>
+   <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/tutorials/knime/connected-nodes-not-configured.png" alt="connected nodes"></img>
    Once you configure your nodes in the next step, the warnings should disappear.
    </ol>
 
@@ -153,12 +153,12 @@ KNIME is available for those who want a graphical application to create and use 
    <li>Either choose an existing file or enter the file name of the new file. If you choose an existing file, select the <b>Overwrite file(s) if it/they exist</b> checkbox.</li>
    <li>Click <b>OK</b>.</li>
    <li>Your workflow should be cleared of warnings and look like this:</li>
-   <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/connected-nodes-configured.png" alt="connected-nodes-no-warnings"></img>
+   <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/tutorials/knime/connected-nodes-configured.png" alt="connected-nodes-no-warnings"></img>
    </ol>
-   
+
 **5. Play the workflow.**
    <ol type="a">
-   <li>Click the Execute all executable nodes <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/play-button.png" width="20"></img> button in the toolbar at the top of the screen.</li>
+   <li>Click the Execute all executable nodes <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/tutorials/knime/play-button.png" width="20"></img> button in the toolbar at the top of the screen.</li>
    <li>You should produce an output file at the specified location. Here is an example of what can be produced:</li>
-   <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/restructuring-test/docs/images/tutorials/knime/output-file.png"></img>
+   <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/tutorials/knime/output-file.png"></img>
    </ol>

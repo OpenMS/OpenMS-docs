@@ -68,9 +68,9 @@ To apply a TOPP tool to your dataset:
 4. Specify the TOPP tool parameters by either:
    <ol type="a">
     <li>Loading an INI file by clicking <b>Load</b> and selecting an INI File from the file importer.</li>
-    <img src="/docs/images/tutorials/toppview/topp-tool-arguments-and-description.png" alt="choose TOPP tool arguments"></img>
+    <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/add-toppview-tutorial/docs/images/tutorials/toppview/topp-tool-arguments-and-description.png" alt="choose TOPP tool arguments"></img>
     <li>Editing the parameters shown in the table and then saving the INI file. To edit a parameter, double click a row in the table and enter a value or choose from the options available. The modified value will be highlighted yellow. To save the parameters, click <b>Store</b> and enter a file name for the INI file.</li>
-    <img src="/docs/images/tutorials/toppview/topp-tool-parameters.png" alt="edit parameters and save INI file or load pre-existing INI file"></img>
+    <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/add-toppview-tutorial/docs/images/tutorials/toppview/topp-tool-parameters.png" alt="edit parameters and save INI file or load pre-existing INI file"></img>
    </ol>
 
 4. Click **Ok**. You will be prompted to load the new     dataset as a **new window** or a **new layer**. Choose an option and click **Ok**.
