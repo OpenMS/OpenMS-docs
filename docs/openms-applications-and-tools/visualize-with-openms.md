@@ -113,5 +113,5 @@ You might want to check out the following topics:
 :maxdepth: 1
 
 visualize-with-openms/views-in-toppview.md
-visualize-with-openms/hotkeys.md
+visualize-with-openms/hotkeys-table.md
 ```
