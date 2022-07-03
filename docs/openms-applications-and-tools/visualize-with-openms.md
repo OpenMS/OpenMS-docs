@@ -63,25 +63,25 @@ To apply a TOPP tool to your dataset:
 
 3. Select a **TOPP tool** from the dropdown menu. A description of the TOPP tool will be displayed on the right. You may have to also specify the **input argument** as well though TOPPView might automatically select this option for you. To save the output to a file, specify the **output argument**.
 
-  ![display selected layer](../images/tutorials/toppview/apply-topp-tool-to-layer.png)
+  ![display selected layer](../images/tutorials/toppview/topp-tool-arguments-and-description.png)
 
 4. Specify the TOPP tool parameters by either:
    <ol type="a">
     <li>Loading an INI file by clicking <b>Load</b> and selecting an INI File from the file importer.</li>
-    <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/add-toppview-tutorial/docs/images/tutorials/toppview/topp-tool-arguments-and-description.png" alt="choose TOPP tool arguments"></img>
+
     <li>Editing the parameters shown in the table and then saving the INI file. To edit a parameter, double click a row in the table and enter a value or choose from the options available. The modified value will be highlighted yellow. To save the parameters, click <b>Store</b> and enter a file name for the INI file.</li>
-    <img src="https://raw.githubusercontent.com/greengypsy/OpenMS-docs/add-toppview-tutorial/docs/images/tutorials/toppview/topp-tool-parameters.png" alt="edit parameters and save INI file or load pre-existing INI file"></img>
    </ol>
 
-4. Click **Ok**. You will be prompted to load the new     dataset as a **new window** or a **new layer**. Choose an option and click **Ok**.
+   ![topp tool parameters](../images/tutorials/toppview/topp-tool-parameters.png)
+5. Click **Ok**. You will be prompted to load the new     dataset as a **new window** or a **new layer**. Choose an option and click **Ok**.
 
   ![data import options](../images/tutorials/toppview/data-import-options.png)
 
-5. If you chose to load the data in a new window, a new tab will appear. To view that data, select the tab. If you chose to load the data as a new layer, the data will be visualized in the **Viewer**. You can also see the new layer wihout a name in the **Layers window**.
+6. If you chose to load the data in a new window, a new tab will appear. To view that data, select the tab. If you chose to load the data as a new layer, the data will be visualized in the **Viewer**. You can also see the new layer wihout a name in the **Layers window**.
 
   ![layer loaded in Viewer](../images/tutorials/toppview/layer-loaded-in-viewer.png)
 
-6. (Optional) If you did choose to import the data as a new layer, give the new layer a name. To do this, right-click the layer in the **Layers window** and select **Rename**. Enter a name and click OK.
+7. (Optional) If you did choose to import the data as a new layer, give the new layer a name. To do this, right-click the layer in the **Layers window** and select **Rename**. Enter a name and click OK.
 
 ### Filter data
 
