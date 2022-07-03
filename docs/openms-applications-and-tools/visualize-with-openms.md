@@ -31,6 +31,8 @@ Components include:
 
 ## Getting Started
 
+The following section details how to perform basic tasks in TOPPView.
+
 ### Import a file
 
 To import data into TOPPView:
