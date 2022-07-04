@@ -7,7 +7,6 @@ The following sections introduce TOPP, some general concepts and more specific i
 :maxdepth: 1
 
 topp-tools/introduction-to-topp.md
-topp-tools/key-concepts.md
 topp-tools/types-of-topp-tools.md
 
 ```
