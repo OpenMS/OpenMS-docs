@@ -82,8 +82,8 @@ Contents
    :maxdepth: 2
    :caption: Develop with OpenMS
 
-   develop-with-openms/openms-core-library.md <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
-   develop-with-openms/pyopenms.md <https://pyopenms.readthedocs.io/en/latest/>
+   OpenMS C++ Core Library <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
+   pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
    develop-with-openms/build-openms-from-source.md
    develop-with-openms/link-external-code-to-openms.md
    develop-with-openms/developer-tutorial.md
