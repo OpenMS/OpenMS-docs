@@ -39,9 +39,9 @@ The following tools are offered:
 - **Protein/Peptide processing**
 - **Targeted experiments and OpenSWATH**
 - **Peptide property prediction**
-
-  A number of deep learning tools are available that can train a model using a number of data sets. These can be used to predict peptide properties such as…..
 - **Cross-linking**
+
+  Cross-linking is a technique where substances are chemically treated to create covalent bonds between different molecules. The strength of the covalent bonds can be quantified to indicate the proximity of certain molecules within a 3D structure.
 - **Quality control**
 
 For the full list of TOPP tools, visit the [API website](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/2.8.0/html/TOPP_documentation.html).
