@@ -57,7 +57,7 @@ Contents
    :maxdepth: 2
    :caption: OpenMS Applications and Tools
 
-   openms-applications-and-tools/openms-applications.md
+   openms-applications-and-tools/openms-graphical-user-interfaces.md
    openms-applications-and-tools/topp-tools.md
    openms-applications-and-tools/utils-tools.md
    openms-applications-and-tools/command-line-interface.md

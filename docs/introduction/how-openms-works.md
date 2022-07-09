@@ -4,20 +4,24 @@ How OpenMS Works
 OpenMS has been structured so that users from a wide range of fields can access what they need to solve their particular problem, depending on their skillset.
 
 The following entry points for OpenMS and its TOPP tools are available for users:
-- **Download the OpenMS C++ core library**
+- **Build the OpenMS C++ core library from source**
 
-  As shown in the image below, TOPP tools have been created using the OpenMS core library and some external libraries, which are written in C++. Using the OpenMS core library directly provides faster access to tools and shorter run-times. Additional TOPP tools can also be developed, customized or extended based on the user’s needs. View the instructions to download the OpenMS core library here.
+  As shown in the image below, TOPP tools have been created using the OpenMS core library and some external libraries, which are written in C++. Using the OpenMS core library directly provides faster access to tools and shorter run-times. Additional TOPP tools can also be developed, customized or extended based on the user’s needs. [View the instructions to build the OpenMS core library from source here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
 - **Install the pyOpenMs python library**
 
-  Classes and methods originally written in C++ have been exposed to a Python interface (pyOpenMS) using python bindings. pyOpenMS was created for users with Python knowledge who want to quickly prototype new methods. View the instructions to install pyOpenMS here.
+  Classes and methods originally written in C++ have been exposed to a Python interface (pyOpenMS) using python bindings. pyOpenMS was created for users with Python knowledge who want to quickly prototype new methods. [View the instructions to install pyOpenMS here](https://pyopenms.readthedocs.io/en/latest/installation.html).
 
 - **Use command-line tools**
 
-  All TOPP tools can be executed from a Command Line Interface (CLI) directly or using a shell script. By using a CLI, users can easily automate tasks and create workflows that can be saved, stored and used on multiple datasets. Command line interfaces include, but are not limited to PowerShell in Windows or Terminal in Linux or macOS. View the command-line usage quick start guide here.
+  All TOPP tools can be executed from a Command Line Interface (CLI) directly or using a shell script. By using a CLI, users can easily automate tasks and create workflows that can be saved, stored and used on multiple datasets. Command line interfaces include, but are not limited to PowerShell in Windows or Terminal in Linux or macOS. [View the command-line usage quick start guide here](../openms-applications-and-tools/command-line-interface.md).
 
 - **Use OpenMS graphical applications**
 
-  When OpenMS is installed, a number of graphical user interfaces are available. Life science experts that want to quickly process their mass spectrometry data with the TOPP tools available can use this option. View the instructions to install OpenMS here.
+  When OpenMS is installed, a number of graphical user interfaces are available. Life science experts that want to quickly process their mass spectrometry data with the TOPP tools available can use this option. View the instructions to install OpenMS:
+
+  - [For GNU Linux](../installations/installation-on-gnu-linux.md)
+  - [For macOS](../installations/installation-on-macos.md)
+  - [For Windows](../installations/installation-on-windows.md)
 
 - **Use a supported workflow editor**
 

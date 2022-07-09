@@ -20,7 +20,8 @@ To build OpenMS from source, follow the build instructions for [Windows](https:/
 
 ## Known issues
 
-1. During installation, an error message pops up, saying "The installation of the Microsoft .NET 3.5 SP1' package failed!
+1. During installation, an error message pops up, saying:
+   >"The installation of the Microsoft .NET 3.5 SP1' package failed!
 
    You must download and install it manually in order for Proteowizard to work.
    This should only happen if installion is done by selecting the "Third Party - Proteowizard" components. The reason is
@@ -35,7 +36,8 @@ To build OpenMS from source, follow the build instructions for [Windows](https:/
    receive an error message (this is also the reason why the OpenMS setup complained about it). You might have to find
    the solution to fix the problem in your local machine. If you're lucky the error message is instructive and the
    problem is easy to fix.
-3. Error: "Error opening installation log file"
+3. During installation, an error message pops up saying:
+   >"Error opening installation log file"
 
    To fix, check the system environment variables. Make sure they are apt. There should a `TMP` and a `TEMP` variable,
    and both should contain one directory only, which exists and is writable. Fix accordingly (search the internet on
@@ -43,4 +45,4 @@ To build OpenMS from source, follow the build instructions for [Windows](https:/
 4. For Win8 or later, Windows will report an error while installing `.net4` as it's mostly included. But it might occur
    that `.net3.5` does not get properly installed during the process.
 
-   Fix is to enable the .NET Framework 3.5 yourself through Control Panel. See this [Microsoft help page](https://msdn.microsoft.com/de-de/library/hh506443(v=vs.110).aspx#ControlPanel) for detailed information. Even if this step fails, this does not affect the functionality of OpenMS, except for the executability of included thirdparty tools (ProteoWizard).
+   Fix is to enable the .NET Framework 3.5 yourself through Control Panel. See this [Microsoft help page](https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows).aspx#ControlPanel) for detailed information. Even if this step fails, this does not affect the functionality of OpenMS, except for the executability of included third party tools (ProteoWizard).

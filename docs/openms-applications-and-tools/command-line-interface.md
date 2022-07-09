@@ -7,10 +7,10 @@ Command line calls will depend on the TOPP tools used, as each TOPP tool has its
 
 - `-in`
 
-  Specify an input file in the command line using the `-in` argument. The input file should have an mzML format. If not, use the file converter to convert the file to one using an mzML format. For more information, view the file handling documentation.
+  Specify an input file in the command line using the `-in` argument. The input file should be in a supported format. If not, use the file converter to convert the file to one of the supported formats. For more information, view the file handling documentation.
 - `-out`
 
-  Specify an output file in the command line using the `-out` argument. The output file should have an mzML format, the same format as the input file.
+  Specify an output file in the command line using the `-out` argument. 
 - `-ini`
 
   Specify an INI file in the command line using the `-ini` argument. TOPP uses INI files to set parameters specific to the command line tool being called.
