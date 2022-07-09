@@ -20,7 +20,7 @@ OpenMS only accepts files in certain formats, including but not limited to:
 
 Documented schemas of the OpenMS formats can be found [here](https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS/SCHEMAS).
 
-If your data is not in the above formats, you may need to use one of a file conversion TOPP tool.
+If your data is not in the above formats, you may need to use a file conversion TOPP tool.
 
 ## TOPP INI files
 

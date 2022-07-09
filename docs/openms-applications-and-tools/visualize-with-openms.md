@@ -115,5 +115,8 @@ You might want to check out the following topics:
 :maxdepth: 1
 
 visualize-with-openms/views-in-toppview.md
+visualize-with-openms/display-modes-and-view-options.md
+visualize-with-openms/data-analysis-in-toppview.md
+visualize-with-openms/data-editing-in-toppview.md
 visualize-with-openms/hotkeys-table.md
 ```

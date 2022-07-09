@@ -1,2 +1,0 @@
-Signal Processing and Preprocessing
-===================================
