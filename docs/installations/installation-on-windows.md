@@ -14,10 +14,6 @@ The windows binary version works with most versions of windows from Win7 to Win1
   still work but are untested).
 ```
 
-## Build OpenMS from source
-
-To build OpenMS from source, follow the build instructions for [Windows](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_win.html).
-
 ## Known issues
 
 1. During installation, an error message pops up, saying:

@@ -29,11 +29,7 @@ Components include:
 - **Log window** to view textual output of applying TOPP tools to data.
 - **Views windows** that show tabulated information about the dataset.
 
-## Getting Started
-
-The following section details how to perform basic tasks in TOPPView.
-
-### Import a file
+## Import a file
 
 To import data into TOPPView:
 
@@ -50,6 +46,10 @@ To import data into TOPPView:
   <TODO: explain display options>
 
 You should be able to see your data in the **Viewer**.
+
+## Process data in TOPPView
+
+The following section details how to apply TOPP tools and filter data in TOPPView.
 
 ### Apply TOPP tool
 

@@ -1,9 +1,6 @@
 File Handling
 =============
 
-File Handling
-============
-
 ## General information about peak and feature maps
 
 For general information about a peak or feature map, use the **FileInfo** tool.
