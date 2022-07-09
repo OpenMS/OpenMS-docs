@@ -8,7 +8,7 @@ There are four ways to use OpenMS to complete a task. For example, say you want 
 - **Using TOPP shell** to run a shell script or execute a command directly.
 - **Using pyOpenMS** and creating and running a python script.
 - **Using TOPPView**, a graphical user interface provided by OpenMS.
-- **Constructing a workflow in KNIME**, which can be saved and executed on multiple input files
+- **Constructing a workflow in KNIME**, which can be saved and executed on multiple input files.
 
 The following sections explain how to read a file and store the information in an output file using these four different methods.
 
