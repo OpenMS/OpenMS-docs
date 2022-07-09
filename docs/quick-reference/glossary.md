@@ -135,10 +135,6 @@ ProteoWizard
   ProteoWizard is a set of open-source, cross-platform tools and libraries for proteomics data analyses. It provides a
   framework for unified mass spectrometry data file access and performs standard chemistry and LCMS dataset computations.
 
-OMSSA
-  The Open Mass Spectrometry Search Algorithm (OMSSA) is an efficient search engine for identifying {term}`MS/MS`
-  {term}`peptide` {term}`spectra` by searching libraries of known protein sequences.
-
 PepNovo
   PepNovo is a de novo sequencing algorithm for {term}`MS/MS` {term}`spectra`.
 
