@@ -1,7 +1,6 @@
 ProteomicsLFQ
 =============
 
-
 ProteomicsLFQ performs label-free quantification of peptides and proteins.
 
 ## Input

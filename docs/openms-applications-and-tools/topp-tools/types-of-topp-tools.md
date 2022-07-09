@@ -5,11 +5,7 @@ The following tools are offered:
 
 - **File conversion**
 
-  TOPP file conversion tools can be used to convert files into a supported format. Supported formats include:
-  - mzML
-  - featureXML
-  - consensusXML
-  - idXML
+  TOPP file conversion tools can be used to convert files into a supported format.
 
 - **File handling**
 
@@ -41,7 +37,7 @@ The following tools are offered:
 - **Quantitation**
 
   A number of tools are available that allow for the identification and quantification of features. The tools you use will depend on the type of mass spectrometry experiment you have set up, and the type of molecules you wish to identify. For more information, view the [Feature detection](types-of-topp-tools/feature-detection.md) and [Feature detection on centroided data](types-of-topp-tools/feature-detection-on-centroided-data.md) sections.
-  
+
 - **Protein/Peptide identification**
 - **Protein/Peptide processing**
 - **Targeted experiments and OpenSWATH**
@@ -55,4 +51,4 @@ The following tools are offered:
 
   OpenMS provides tools to measure the quality of LC-MS data. For more information, view the [Quality control](types-of-topp-tools/quality-control.md) section.
 
-For the full list of TOPP tools, visit the [API website](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/2.8.0/html/TOPP_documentation.html).
+For the full list of TOPP tools, visit the [API reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html) website.
