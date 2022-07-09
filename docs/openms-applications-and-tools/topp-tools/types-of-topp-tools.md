@@ -26,6 +26,9 @@ The following tools are offered:
 
   To ensure that your data is sound, OpenMS have provided a number of mass correction and calibration tools. The types of tools used will depend on the type of equipment you have employed.
 - **Spectrum clustering**
+
+  Spectrum clustering is the grouping of spectra that have many peaks in common. OpenMS provides tools for spectrum clustering to identify molecules in large datasets more efficiently.
+
 - **Map alignment**
 
   When looking to identify molecules, it is common to run multiple experiments, where each experiment produces a set of data. In OpenMS, every set of data is represented by a feature map. Before combining feature maps to create a consensus map, it is advised to use OpenMS’s map alignment tools so that all your datasets are comparable and based on a common retention time axis.
