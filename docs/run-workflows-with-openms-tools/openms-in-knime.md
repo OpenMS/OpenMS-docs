@@ -24,4 +24,4 @@ To start using OpenMS in KNIME:
 
   ![OpenMS tools loaded in node repository](../images/run-workflows-with-openms-tools/knime/node-repository.png)
 
-For a more specific example of how to use KNIME, [view our tutorial](../tutorials-and-quickstart-guides/tutorials.md#constructing-a-workflow-in-knime).
+For information about, [view our tutorial](../tutorials/KNIME/KNIME-tutorial.md).
