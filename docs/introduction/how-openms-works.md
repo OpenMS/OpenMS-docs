@@ -3,6 +3,8 @@ How OpenMS Works
 
 OpenMS has been structured so that users from a wide range of fields can access what they need to solve their particular problem, depending on their skillset.
 
+![openms architecture](../images/introduction/openms-architecture.png)
+
 The following entry points for OpenMS and its TOPP tools are available for users:
 - **Build the OpenMS C++ core library from source**
 
