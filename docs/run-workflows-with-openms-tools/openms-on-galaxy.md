@@ -7,7 +7,7 @@ TOPP tools have been integrated into Galaxy to facilitate the creation and execu
 
 To use TOPP tools on Galaxy:
 
-1. Go to the [website](usegalaxy.org.au).
+1. Go to the [website](https://usegalaxy.eu/).
 2. Create an account.
 3. Go to **Tools** on the far left and scroll down.
 4. Search for "OpenMS".
