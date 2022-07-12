@@ -9,7 +9,7 @@ There are four ways to use OpenMS to complete a task. For example, say you want 
 - **Using pyOpenMS** and creating and running a python script.
 - **Using TOPPView**, a graphical user interface provided by OpenMS.
 - **Constructing a workflow in KNIME**, which can be saved and executed on multiple input files.
-- **Running a Nextflow script**
+- **Running a script** using Nextflow, a language based on the Groovy programming language.
 
 The following sections explain how to read a file and store the information in an output file using these five different methods.
 
