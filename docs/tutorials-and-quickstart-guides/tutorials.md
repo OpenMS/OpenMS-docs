@@ -170,7 +170,7 @@ Nextflow is a scripting language based on the Groovy programming language.
 
 The following is a Nextflow script that executes the `FileInfo` TOPP tool on an input file.
 
-```java
+```groovy
 params.input_file = 'path/to/input_file'
 
 process runFileInfo {
