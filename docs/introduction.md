@@ -72,7 +72,7 @@ central electrode allowing for prolonged {term}`mass` measurement. As a result o
 
 - **Detector**: The last component of the mass spectrometer is the detector. It determines the abundance of ions that
   passed through the {term}`mass`analyzer. Ion intensities (a value that relates to its abundance) and the mass-to-charge ratio
-  are recorded in a {term}`mass`spectrum.
+are recorded in a {term}`mass` spectrum.
 
 A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
 The measurement of one sample is called an MS run and the set of spectra called an {term}`MS(1)` map or peak map.
