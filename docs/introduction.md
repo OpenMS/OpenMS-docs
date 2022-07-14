@@ -40,7 +40,7 @@ phase. Polar molecules interact weakly with the stationary phase and elute earli
 Interaction can be further modulated by changing the gradient of solvent concentration in the mobile phase over time.
 Elution times in LC are inherently prone to variation, for example, due to fluctuations in the flow rate of the mobile
 phase or change of column. Retention time shifts between runs may be compensated using computational chromatographic
-retention time alignment methods. In the {term}`LC-MS` setup, the column is directly coupled to the ion source of the{term}`mass`
+retention time alignment methods. In the {term}`LC-MS` setup, the column is directly coupled to the ion source of the {term}`mass`
 spectrometer.
 
 ![](images/introduction/introduction_LC.png)
