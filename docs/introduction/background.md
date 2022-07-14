@@ -26,6 +26,6 @@ Mass spectrometry is an analytical technique used to determine the abundance of 
 ![mass spectrometry](../images/introduction/introduction_MS.png)
 
 ## Liquid Chromatography - Mass Spectrometry
-Liquid chromatography is often coupled with mass spectrometry in order to reduce complexity in the mass spectra. The separated analytes from the liquid chromatography setup are directly injected into the ion source from the mass spectrometry setup. Multiple analytes that elute at the same time are separated by mass using the mass spectrometer.
+Liquid chromatography is often coupled with mass spectrometry to reduce complexity in the mass spectra. The separated analytes from the liquid chromatography setup are directly injected into the ion source from the mass spectrometry setup. Multiple analytes that elute at the same time are separated by mass using the mass spectrometer.
 
 ![lc-ms setup](../images/introduction/hplc-mass-spectrometry-setup.png)

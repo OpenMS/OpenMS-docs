@@ -1,2 +1,0 @@
-Protein and Peptide Identification
-==================================

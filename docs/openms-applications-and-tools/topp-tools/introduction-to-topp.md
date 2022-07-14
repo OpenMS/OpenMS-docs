@@ -11,7 +11,7 @@ Before you choose one of the above options, there are few concepts that need to 
 
 ## File formats
 
-OpenMS only accepts files in the following formats:
+OpenMS only accepts files in certain formats, including but not limited to:
 
 - **mzML**: The HUPO-PSI standard format for mass spectrometry data.
 - **featureXML**: The OpenMS format for quantitation results.
@@ -20,7 +20,7 @@ OpenMS only accepts files in the following formats:
 
 Documented schemas of the OpenMS formats can be found [here](https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS/SCHEMAS).
 
-If your data is not in the above formats, you may need to use one of a file conversion TOPP tool.
+If your data is not in the above formats, you may need to use a file conversion TOPP tool.
 
 ## TOPP INI files
 
@@ -64,3 +64,5 @@ FeatureXML files can be created from mzML files using OpenMS’s feature detecti
 A consensus feature is a special type of LC-MS feature that is quantified across multiple experiments. A consensus feature is formed by linking or grouping features with similar mass-to-charge ratios and intensities from various experiment runs. Each consensus feature references the features used to form the consensus feature.
 
 Similar to a feature map, a consensus map is a container for consensus features. One consensus map can contain many consensus features.
+
+ConsensusXML files can be created from featureXML files using OpenMS's feature grouping algorithms.

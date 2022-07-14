@@ -15,8 +15,7 @@ OpenMS offers analyses for various quantitation protocols, including label-free
 quantitation, :term:`SILAC`, :term:`iTRAQ`, :term:`TMT`, :term:`SRM`, :term:`SWATH`, etc.
 
 It provides built-in algorithms for de-novo identification and database search,
-as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`,
-OMSSA, etc. It supports easy integration of OpenMS built tools into workflow
+as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`, etc. It supports easy integration of OpenMS built tools into workflow
 engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the :term:`TOPP tools` concept and
 a unified parameter handling via a 'common tool description' (CTD) scheme.
 
@@ -57,7 +56,7 @@ Contents
    :maxdepth: 2
    :caption: OpenMS Applications and Tools
 
-   openms-applications-and-tools/openms-applications.md
+   openms-applications-and-tools/openms-graphical-user-interfaces.md
    openms-applications-and-tools/topp-tools.md
    openms-applications-and-tools/utils-tools.md
    openms-applications-and-tools/command-line-interface.md
@@ -82,12 +81,12 @@ Contents
    :maxdepth: 2
    :caption: Develop with OpenMS
 
-   develop-with-openms/openms-core-library.md
-   develop-with-openms/pyopenms.md   
+   develop-with-openms/openms-core-cplusplus-library.md
+   OpenMS API Reference <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
+   pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
    develop-with-openms/build-openms-from-source.md
    develop-with-openms/link-external-code-to-openms.md
    develop-with-openms/developer-tutorial.md
-   develop-with-openms/api-reference.md
 
 .. toctree::
    :maxdepth: 2

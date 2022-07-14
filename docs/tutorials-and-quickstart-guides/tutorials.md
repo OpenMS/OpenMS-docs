@@ -8,9 +8,10 @@ There are four ways to use OpenMS to complete a task. For example, say you want 
 - **Using TOPP shell** to run a shell script or execute a command directly.
 - **Using pyOpenMS** and creating and running a python script.
 - **Using TOPPView**, a graphical user interface provided by OpenMS.
-- **Constructing a workflow in KNIME**, which can be saved and executed on multiple input files
+- **Constructing a workflow in KNIME**, which can be saved and executed on multiple input files.
+- **Running a script** using Nextflow, a language based on the Groovy programming language.
 
-The following sections explain how to read a file and store the information in an output file using these four different methods.
+The following sections explain how to read a file and store the information in an output file using these five different methods.
 
 ## Using TOPP shell
 
@@ -105,7 +106,7 @@ You can replicate the functionality of the `FileInfo` TOPP tool in pyOpenMS, usi
 
 ## Using TOPPView
 
-If you want a graphical interface to interact with, then use TOPPView. Follow these steps to read the file information using TOPPView:
+If you want a graphical user interface to interact with, then use TOPPView. Follow these steps to read the file information using TOPPView:
 
 1. Go to **File** > **Open file** and open a file by following the prompts.
 2. Go to **Tools** > **Apply TOPP tool (whole layer)**.
@@ -118,7 +119,7 @@ If you want a graphical interface to interact with, then use TOPPView. Follow th
 
 ## Constructing a workflow in KNIME
 
-KNIME is available for those who want a graphical application to create and use workflows. Here is an example of how to report file information on an input file to an output file using KNIME.
+KNIME is available for those who want a graphical user interface to create and use workflows. Here is an example of how to report file information on an input file to an output file using KNIME.
 
 **1. Install OpenMS plugin**.
    <ol type="a">
@@ -162,3 +163,38 @@ KNIME is available for those who want a graphical application to create and use 
    <li>You should produce an output file at the specified location. Here is an example of what can be produced:</li>
    <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/tutorials/knime/output-file.png"></img>
    </ol>
+
+## Running a Nextflow script
+
+Nextflow is a scripting language based on the Groovy programming language.
+
+The following is a Nextflow script that executes the `FileInfo` TOPP tool on an input file.
+
+```groovy
+params.input_file = 'path/to/input_file'
+
+process runFileInfo {
+  output:
+    stdout
+
+  """
+  FileInfo -in ${params.input_file}
+  """
+}
+
+workflow {
+  runFileInfo | view { it }
+}
+```
+
+The above script can be executed from the command line by entering:
+
+```bash
+nextflow run file_info.nf
+```
+
+You can also specify a file path from the command line by using:
+
+```bash
+nextflow run file_info.nf --input_file path/to/file
+```

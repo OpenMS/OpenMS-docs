@@ -13,7 +13,7 @@ The predicted retention time can be used in `IDFilter` to filter out false ident
 identification runs:
 
 1. Align the data using MapAligner.
-2. Use the various identification wrappers like `MascotAdapter`, `OMSSAAdapter`, ... to get the identifications.
+2. Use the various identification wrappers like `MascotAdapter` to get the identifications.
 3. To train a model using `RTModel` use `IDFilter` for one of the runs to get the high scoring identifications (40 to 200
    distinct peptides should be enough).
 4. Use `RTModel` as described in the documentation to train a model for these spectra. With this model, use `RTPredict`
