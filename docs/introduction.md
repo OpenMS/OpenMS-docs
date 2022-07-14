@@ -67,7 +67,7 @@ In a typical {term}`mass` spectrometer, three principal components can be identi
   quadrupole mass filters, ions pass through an oscillating electric field created by four parallel rods. For a
   particular voltage, only ions in a certain mass-to-charge range will reach the detector. The orbitrap is an ion trap
   mass analyzer (and detector) that traps ions in orbital motion between a barrel-like outer electrode and a spindle-like
-  central electrode allowing for prolonged {term}`mass` measurement. As a result of the prolonged {term}`mass` measurements, a high {term}``
+central electrode allowing for prolonged {term}`mass` measurement. As a result of the prolonged {term}`mass` measurements, a high {term}`mass`
   resolution can be achieved.
 
 - **Detector**: The last component of the mass spectrometer is the detector. It determines the abundance of ions that
