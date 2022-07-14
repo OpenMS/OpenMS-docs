@@ -71,7 +71,7 @@ central electrode allowing for prolonged {term}`mass` measurement. As a result o
   resolution can be achieved.
 
 - **Detector**: The last component of the mass spectrometer is the detector. It determines the abundance of ions that
-  passed through the {term}`mass`analyzer. Ion intensities (a value that relates to its abundance) and the mass-to-charge ratio
+passed through the {term}`mass` analyzer. Ion intensities (a value that relates to its abundance) and the mass-to-charge ratio
 are recorded in a {term}`mass` spectrum.
 
 A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
