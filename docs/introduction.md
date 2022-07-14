@@ -48,7 +48,7 @@ spectrometer.
 ## Mass Spectrometry
 
 MS is an analytical technique used to determine the {term}`mass` of molecules. In order to achieve highly accurate and sensitive
-{term}`` measurements at the atomic scale, {term}`mass` spectrometers manipulate charged particles using magnetic and electrostatic
+{term}`mass` measurements at the atomic scale, {term}`mass` spectrometers manipulate charged particles using magnetic and electrostatic
 fields.
 
 ![](images/introduction/introduction_MS.png)
