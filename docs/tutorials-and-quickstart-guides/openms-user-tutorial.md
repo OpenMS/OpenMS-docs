@@ -151,14 +151,46 @@ mzML files contain technical replicates of this experiment. First, we want to
 obtain a global view on the whole LC-MS map - the default option Map view 2D
 is the correct one and we can click the <kbd>Ok</kbd> button.
 
-[^1]: only a selected RT and m/z range was extracted using the TOPP tool `FileFilter`
-
 - Play around.
 
 - Three basic modes allow you to interact with the displayed data: scrolling, zooming and measuring:
-  - **Scroll mode** is activated by default (though each loaded spectra file is displayed
+  - **Scroll mode**
+    - Is activated by default (though each loaded spectra file is displayed
 zoomed out first, so you do not need to scroll).
+    - Allows you to browse your data by moving around in RT and m/z range.
+    - When zoomed in, you can scroll through the spectra. Click-drag on the current view.
+    - Arrow keys can be used to scroll the view as well.
+  - **Zoom mode**
+    - Zooming into the data; either mark an area in the current view with
+your mouse while holding the left mouse button plus the <kbd>Ctrl</kbd> key to
+zoom to this area or use your mouse wheel to zoom in and out.
+    - All previous zoom levels are stored in a zoom history. The zoom history
+can be traversed using <kbd>Ctrl</kbd> + <kbd>+</kbd> or <kbd>Ctrl</kbd> + <kbd>-</kbd> or the mouse wheel (scroll up and down).
+    - Pressing backspace <kbd>←</kbd> zooms out to show the full LC-MS map (and
+also resets the zoom history).
+  - **Measure mode**
+    - It is activated using the <kbd>⇧</kbd>(shift) key.
+    - Press the left mouse button down while a peak is selected and drag
+the mouse to another peak to measure the distance between peaks.
+    - This mode is implemented in the 1D and 2D mode only.
+- Right click on your 2D map and select **Switch to 3D mode** and examine your data in 3D mode (see Fig. 4).
+- Go back to the 2D view. In 2D mode, visualize your data in different intensity normalization modes, use linear , percentage, snap and log-view (icons on
+the upper left tool bar). You can hover over the icons for additional information.
 
+  ```{note}
+  On macOS, due to a bug in one of the external libraries used by
+  OpenMS, you will see a small window of the 3D mode when switching
+  to 2D. Close the 3D tab in order to get rid of it.
+  ```
+- In TOPPView you can also execute TOPP tools. Go to **Tools** > **Apply tool (whole layer)**
+and choose a TOPP tool (e.g., `FileInfo`) and inspect the results.
+
+Dependent on your data MS/MS spectra can be visualized as well (see Fig.5) . You can
+do so, by double-click on the MS/MS spectrum shown in scan view
+
+|![ms2 spectrum](../images/openms-user-tutorial/introduction/ms2_introduction.png)|
+|:--:|
+|Figure 5: MS/MS spectrum|
 
 ### Introduction to KNIME/OpenMS
 
@@ -361,3 +393,7 @@ zoomed out first, so you do not need to scroll).
 ### Sources of support
 
 ## References
+
+## Footnotes
+
+[^1]: only a selected RT and m/z range was extracted using the TOPP tool `FileFilter`
