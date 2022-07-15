@@ -1,5 +1,5 @@
-Tutorials
-=========
+Tutorials: How to Read File Information
+=======================================
 
 The following tutorials provide the opportunity to complete a real-world example while also seeing the different methods OpenMS makes available to complete the same task.
 
