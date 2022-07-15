@@ -42,18 +42,123 @@ Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
 open, you might need to move them from **Applications** > **OpenMS-2.7.0** to e.g. your Desktop and back.
 ```
+On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under www.openms.de/documentation.
 
+```{note}
+If you have installed OpenMS on Linux or macOS via your package
+manager (for instance by installing the `OpenMS-2.7.0-Linux.deb` package),
+then you need to set the `OPENMS_DATA_PATH` variable to the directory containing the shared data (normally `/usr/share/OpenMS`). This must be done prior to running any TOPP tool.
+```
 #### Installation from the internet
+
+If you are working through this tutorial at home, you can get the installers under the following links:
+
+- OpenMS: https://www.openms.de/download/openms-binaries
+- KNIME: https://www.knime.org/downloads/overview
+- OpenMS prerequisites (Windows-only): After installation, before your first use
+of the OpenMS plugin in KNIME you will be asked to download it automatically
+if certain requirements are not found in your Windows registry. Alternatively,
+you can get a bundled version here.
+
+Choose the installers for the platform you are working on.
 
 ### Data conversion
 
+Each MS instrument vendor has one or more formats for storing the acquired data.
+Converting these data into an open format (preferably mzML) is the very first step
+when you want to work with open-source mass spectrometry software. A freely available conversion tool is MSConvert, which is part of a `ProteoWizard` installation. All files
+used in this tutorial have already been converted to mzML by us, so you do not need
+to perform the data conversion yourself. However, we provide a small raw file so you
+can try the important step of raw data conversion for yourself.
+
+```{note}
+The OpenMS installation package for Windows automatically installs
+ProteoWizard, so you do not need to download and install it separately. Due
+to restrictions from the instrument vendors, file format conversion for most
+formats is only possible on Windows systems. In practice, performing the
+conversion to mzML on the acquisition PC connected to the instrument is
+usually the most convenient option.
+```
+To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI (a
+graphical user interface) or `msconvert` (a simple command line tool).
+
+|![msconvertgui](../images/openms-user-tutorial/introduction/proteowizard.png)|
+|:--:|
+|Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see Fig. 2)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
+
+Both tools are
+available in: `C: / Program Files / OpenMS-2.7.0 / share / OpenMS / THIRDPARTY / pwiz-bin`.
+
+You can find a small RAW file on the USB stick `C: / Example_Data Introduction
+datasets/raw`.
+
 #### MSConvertGUI
+
+`MSConvertGUI` (see Fig. 1) exposes the main parameters for data conversion in a convenient graphical user interface.
 
 #### msconvert
 
+The `msconvert` command line tool has no user interface but offers more options than the application `MSConvertGUI`. Additionally, since it can be used within a batch script, it allows converting large numbers of files and can be much more easily automatized.
+To convert and pick the file `raw_data_file.RAW` you may write:
+
+```bash
+msconvert raw_data_file.RAW --filter ”peakPicking true 1-”
+```
+
+in your command line.
+
+|![profile centroided](../images/openms-user-tutorial/introduction/profilecentroided.png)|
+|:--:|
+|Figure 2: The amount of data in a spectra is reduced by peak picking. Here a profile spectrum (blue) is converted to centroided data (green). Most algorithms from this point on will work with centroided data.|
+
+To convert all RAW files in a folder may write:
+
+```bash
+msconvert *.RAW -o my_output_dir
+```
+
+```{note}
+To display all options you may type `msconvert --help` . Additional information is available on the `ProteoWizard` web page.
+```
+
 #### ThermoRawFileParser
 
+Recently the open-source platform independent ThermoRawFileParser tool has been developed. While Proteowizard and MSConvert are only available for Windows systems this new tool allows to also convert raw data on Mac or Linux.
+
+```{note}
+To learn more about the ThermoRawFileParser and how to use it in
+KNIME see Section 2.4.7
+```
 ### Data visualization using TOPPView
+
+Visualizing the data is the first step in quality control, an essential tool in understanding the data, and of course an essential step in pipeline development. OpenMS provides a convenient viewer for some of the data: TOPPView. We will guide you through some of the basic features of TOPPView. Please familiarize yourself with the key controls and visualization methods. We will make use of these later throughout the tutorial. Let’s start with a first look at one of the files of
+our tutorial data set. Note that conceptually, there are no differences in visualizing metabolomic or proteomic data. Here, we inspect a simple proteomic measurement:
+
+|![TOPPView](../images/openms-user-tutorial/introduction/TOPPView.png)|
+|:--:|
+|Figure 3: TOPPView, the graphical application for viewing mass spectra and analysis results. Top window shows a small region of a peak map. In this 2D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities. The lower window displays an extracted spectrum (=scan) from the peak map. On the right side, the list of spectra can be browsed.|
+
+|![TOPPView](../images/openms-user-tutorial/introduction/3dview.png)|
+|:--:|
+|Figure 4: 3D representation of the measured spectra, signals of eluting peptides arecolored according to the raw peak intensities.|
+
+- Start TOPPView (see Windows' Start-Menu or **Applications** > **OpenMS-2.7.0** on macOS)
+
+- Go to **File** > **Open File**, navigate to the directory where you copied the contents
+of the USB stick to, and select **Example_Data** > **Introduction** > **datasets** > **small** > **velos005614.mzML**. This file contains only a reduced LC-MS map [^1] of a label-free
+proteomic platelet measurement recorded on an Orbitrap velos. The other two
+mzML files contain technical replicates of this experiment. First, we want to
+obtain a global view on the whole LC-MS map - the default option Map view 2D
+is the correct one and we can click the <kbd>Ok</kbd> button.
+
+[^1]: only a selected RT and m/z range was extracted using the TOPP tool `FileFilter`
+
+- Play around.
+
+- Three basic modes allow you to interact with the displayed data: scrolling, zooming and measuring:
+  - **Scroll mode** is activated by default (though each loaded spectra file is displayed
+zoomed out first, so you do not need to scroll).
+
 
 ### Introduction to KNIME/OpenMS
 
