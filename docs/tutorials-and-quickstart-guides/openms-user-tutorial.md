@@ -528,12 +528,12 @@ and KNIME.
 Perform the following steps to build the workflow shown in the above figure. You will use this workflow to visualize a
 list of SMILES strings and filter them by predefined substructures:
 
-- Add the node File Reader, open the node configuration dialog and select the file **smiles.csv**. This file has been
+- Add the node File Reader, open the node configuration dialog and select the file `smiles.csv`. This file has been
   exported from the Human Metabolome Database (HMDB) and contains the portion of the human metabolome that has been
   detected and quantified. The file preview on the bottom of the dialog shows that each compound is given by its HMDB
-  accession, compound name, and SMILES string. Click on the column header ’SMILES’ to change its properties. Change the
-  column type from ’string’ to ’smiles’ and close the dialog with **Ok**. Afterwards the SMILES column will be
-  visualized as chemical structures instead of text directly within all KNIME tables.
+  accession, compound name, and SMILES string. Click on the column header **SMILES** to change its properties. Change the
+  column type from **string** to **smiles** and close the dialog with **Ok**. Afterwards the **SMILES** column will be
+  visualized as chemical structures instead of text directly within all **KNIME** tables.
 - Add the node `RDKit From Molecule` and connect it to the `File Reader`. This node will use the provided `SMILES`
   strings to add an additional column that is required by RDKit.
 - Add the node `RDKit Functional Group Filter` and open the node configuration dialog. You can use this dialog to filter
@@ -558,8 +558,8 @@ improve handling and clarity of large workflows:
 **Metanodes** allow to bundle several nodes into a single **Metanode**.
 
 ```{task}
-Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw
-a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
+Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
+```
 ```{tip}
 There is a **Select Loop** option when you right-click a node in a loop, that does exactly that for you. Then, open the
 context menu (right-click on a node in the selection) and select **Create Metanode**. Enter a caption for the **Metanode**.
