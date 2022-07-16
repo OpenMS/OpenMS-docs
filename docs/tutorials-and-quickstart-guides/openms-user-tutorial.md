@@ -570,30 +570,221 @@ the contained nodes in a new tab window.
 </div>
 
 <div class="admonition task" name="html-admonition">
-<p class="title"><b>Task</b></p>
-Create the Metanode to let it behave like an encapsulated single node. First select the **Metanode**, open the context
-menu (right-click) and select **Metanode** > **Wrap**. The differences between Metanodes and their wrapped counterparts
+<p class="admonition-title"><b>Task</b></p>
+Create the Metanode to let it behave like an encapsulated single node. First select the <b>Metanode</b>, open the context
+menu (right-click) and select <b>Metanode</b> > <b>Wrap</b>. The differences between Metanodes and their wrapped counterparts
 are marginal (and only apply when exposing user inputs and workflow variables). Therefore we suggest to use standard
 Metanodes to clean up your workflow and cluster common subparts until you actually notice their limits.
 </div>
 
 <div class="admonition task" name="html-admonition">
-<p class="title"><b>Task</b></p>
-Undo the packaging. First select the (**Wrapped**) **Metanode**, open the context menu (right-click) and select
-**(Wrapped) Metanode** > **Expand**.
+<p class="admonition-title"><b>Task</b></p>
+Undo the packaging. First select the (<b>Wrapped</b>) <b>Metanode</b>, open the context menu (right-click) and select <b>(Wrapped) Metanode</b> > <b>Expand</b>.
 </div>
 
 #### Advanced topic: R integration
+
+KNIME provides a large number of nodes for a wide range of statistical analysis, machine learning, data processing, and
+visualization. Still, more recent statistical analysis methods, specialized visualizations or cutting edge algorithms
+may not be covered in KNIME. In order to expand its capabilities beyond the readily available nodes, external scripting
+languages can be integrated. In this tutorial, we primarily use scripts of the powerful statistical computing language R.
+Note that this part is considered advanced and might be difficult to follow if you are not familiar with R. In this case
+you might skip this part.
+
+**R View (Table)** allows to seamlessly include R scripts into KNIME. We will demonstrate on a minimal. We will
+demonstrate on a minimal example how such a script is integrated.
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+First we need some example data in KNIME, which we will generate using the <b>Data Generator</b> node. You can keep the
+default settings and execute the node. The table contains four columns, each containing random coordinates and one column
+containing a cluster number (Cluster_0 to Cluster_3). Now place a <b>R View (Table)</b> node into the workflow and connect
+the upper output port of the <b>Data Generator</b> node to the input of the <b>R View (Table)</b> node. Right-click and
+configure the node. If you get an error message like ”Execute failed: R_HOME does not contain a folder with name ’bin’.”
+or ”Execution failed: R Home is invalid.”: please change the R settings in the preferences. To do so open <b>File</b> >
+<b>Preferences</b> > <b>KNIME</b> > <b>R</b> and enter the path to your R installation (the folder that contains the bin
+directory. (e.g., <b>C:</b> > <b>Program Files</b> > <b>R</b> > <b>R-3.4.3</b>).
+
+If you get an error message like: ”Execute failed: Could not find Rserve package. Please install it in your R
+installation by running ”install.packages(’Rserve’)”.” You may need to run your R binary as administrator (In windows
+explorer: right-click ”Run as administrator”) and enter install.packages(’Rserve’) to install the package.
+
+If R is correctly recognized we can start writing an R script. Consider that we are interested in plotting the first and
+second coordinates and color them according to their cluster number. In R this can be done in a single line. In the
+<b>R view (Table)</b> text editor, enter the following code:
+
+<code>plot(x=knime.in$Universe_0_0, y=knime.in$Universe_0_1, main="Plotting column Universe_0_0 vs. Universe_0_1", col=knime.in$"Cluster Membership")</code>
+
+**Explanation:** The table provided as input to the **R View (Table)** node is available as R **data.frame** with name
+<code>knime.in</code>. Columns (also listed on the left side of the R View window) can be accessed in the usual R way by first
+specifying the <code>data.frame</code> name and then the column name (e.g <code>knime.in$Universe_0_0</code>). <code>plot</code> is the plotting function
+we use to generate the image. We tell it to use the data in column <b>Universe_0_0</b> of the dataframe object <b>knime.in</b>
+(denoted as <code>knime.in$Universe_0_0</code>) as x-coordinate and the other column <code>knime.in$Universe_0_1</code> as y-coordinate in the
+plot. <code>main</code> is simply the main title of the plot and <code>col</code> the column that is used to determine the color (in this case
+it is the <code>Cluster Membership</code> column).
+
+Now press the <b>Eval script</b> and <b>Show plot</b> buttons.
+</div>
+
+```{note}
+Note that we needed to put some extra quotes around `Cluster Membership`. If we omit those, R would interpret the column
+name only up to the first space `(knime.in$Cluster)` which is not present in the table and leads to an error. Quotes are
+regularly needed if column names contain spaces, tabs or other special characters like $ itself.
+```
 
 ## Label-free quantification of peptides
 
 ### Introduction
 
+In the following chapter, we will build a workflow with OpenMS / KNIME to quantify a label-free experiment. Label-free
+quantification is a method aiming to compare the relative amounts of proteins or peptides in two or more samples. We will
+start from the minimal workflow of the last chapter and, step-by-step, build a label-free quantification workflow.
+
 ### Peptide identification
+
+As a start, we will extend the minimal workflow so that it performs a peptide identification using the OMSSA[^9] search
+engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to  download and
+install it yourself.
+
+Let’s start by replacing the input files in our **Input Files** node by the three mzML files in
+**Example Data** > **Labelfree** > **datasets** > **lfqxspikeinxdilutionx1-3.mzML**. This is a reduced toy dataset where
+each of the three runs contains a constant background of S. `pyogenes` peptides as well as human spike-in peptides in
+different concentrations. [^10]
+
+- Instead of FileInfo, we want to perform OMSSA identification, so we simply replace the `FileInfo` node with the
+  `OMSSAAdapter` node **Community Nodes** > **OpenMS** > **Identification**, and we are almost done. Just make sure you
+  have connected the `ZipLoopStart` node with the `in` port of the `OMSSAAdapter` node.
+- OMSSA, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
+  databases. Thus, we need to introduce a search database input. As we want to use the same search database for all of
+  our input files, we can just add a single `Input File` node to the workflow and connect it directly with the
+  `OMSSAAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
+  started. In order to specify the database,
+  **Example_Data** > **Labelfree** > **databases** > select **s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta**,
+  and we have a very basic peptide identification workflow.
+
+  ```{note}
+  You might also want to save your new identification workflow under a different name. Have a look at [duplicating workflows](#duplicating-workflows)
+  for information on how to create copies of workflows.
+  ```
+- The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
+  will be stored in an idXML file. Now we can run the pipeline and after execution is finished, we can have a first look
+  at the the results: just open the input files folder with a file browser and from there open an mzML file in **TOPPView**.
+- Here, annotate this spectrum data file with the peptide identification results. Choose **Tools** > **Annonate with identification**
+  from the menu and select the idXML file that **OMSSAAdapter** generated (it is located within the output directory that
+  you specified when starting the pipeline).
+- On the right, select the tab **Identification view**. All identified peptides can be seen using this view. User can also
+  browse the corresponding MS2 spectra.
+
+  ```{note}
+  Opening the output file of `OMSSAAdapter` (the idXML file) directly is also possible, but the direct visusalisation of
+  an idXML files is less useful.
+  ```
+- The search results stored in the idXML file can also be read back into a KNIME table for inspection and subsequent
+  analyses: Add a `TextExporter` node from **Community Nodes** > **OpenMS** > **File Handling** to your workflow and
+  connect the output port of your `OMSSAAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
+  tool will convert the idXML file to a more human-readable text file which can also be read into a KNIME table using
+  the `IDTextReader` node. Add an `IDTextReader` node(**Community Nodes** > **OpenMS** > **Conversion**) after
+  **TextExporter** and execute it. Now you can right click `IDTextReader` and select **ID Table** to browse your peptide
+  identifications.
+- From here, you can use all the tools KNIME offers for analyzing the data in this table. As a simple example, add a
+  `Histogram (local)` node (from category **Views - Local (Swing)**) node after `IDTextReader`, double-click it, select
+  `peptide_charge` as Histogram column, hit **OK**, and execute it. Right-clicking and selecting
+  **Interactive View: Histogram view** will open a plot showing the charge state distribution of your identifications.
+
+In the next step, we will tweak the parameters of OMSSA to better reflect the instrument’s accuracy. Also, we will
+extend our pipeline with a false discovery rate (FDR) filter to retain only those identifications that will yeild an
+FDR of < 1 %.
+
+- Open the configuration dialog of `OMSSAAdapter`. The dataset was recorded using an LTQ Orbitrap XL mass spectrometer,
+  set the precursor mass tolerance to a smaller value, say 5 ppm. Set `precursor_mass_tolerance` to 5 and
+  `precursor_error_units` to `ppm`.
+
+  ```{note}
+  Whenever you change the configuration of a node, the node as well as all its successors will be reset to the Configured
+  state (all node results are discarded and need to be recalculated by executing the nodes again).
+  ```
+
+- Set `max_precursor_charge` to 5, in order to also search for peptides with charges up to 5.
+- Add `Carbamidomethyl (C)` as fixed modification and `Oxidation(M)` as variable modification.
+
+  ```{note}
+  To add a modification click on the empty value field in the configuration dialog to open the list editor dialog. In the
+  new dialog click **Add**. Then select the newly added modification to open the drop down list where you can select the
+  the correct modification.
+  ```
+- A common step in analysis is to search not only against a regular protein database, but to also search against a decoy
+  database for FDR estimation. The fasta file we used before already contains such a decoy database. For OpenMS to know
+  which OMSSA PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
+  extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **ID Processing**. This node needs
+  the idXML as input as well as the database file (see below figure).
+
+  ```{tip}
+  You can direct the files of an `Input File` node to more than just one destination port.
+  ```
+- The decoys in the database are prefixed with “DECOY_”, so we have to set `decoy_string` to `DECOY_` and `decoy_string_position`
+  to `prefix` in the configuration dialog of `PeptideIndexer`.
+- Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
+  **Community Nodes** > **OpenMS** > **ID Processing**).
+- In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
+  Configuring its parameter score `→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
+  the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
+- Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
+  identify at this FDR threshold?
+
+  ```{note}
+  The finished identification workflow is now sufficiently complex that we might want to encapsulate it in a Metanode.
+  For this, select all nodes inside the ZipLoop (including the **Input File** node) and right-click to select
+  **Collapse into Metanode** and name it ID. Metanodes are useful when you construct even larger workflows and want to
+  keep an overview.
+
+  ```
+
+  The below images shows OMSSA ID pipeline including FDR filtering.
+
+  |![OMSSA ID pipeline including FDR filtering](../images/openms-user-tutorial/labelfree/PepIDFDR.png)|
+  |:--:|
+  |Figure 12: OMSSA ID pipeline including FDR filtering|
+
 
 #### Bonus task: Identification using several search engines
 
+```{note}
+If you are ahead of the tutorial or later on, you can further improve your FDR identification workflow by a so-called
+consensus identification using several search engines. Otherwise, just continue with [quantification](#quantification).
+```
+
+It has become widely accepted that the parallel usage of different search engines can increase peptide identification
+rates in shotgun proteomics experiments. The ConsensusID algorithm is based on the calculation of posterior error
+probabilities (PEP) and a combination of the normalized scores by considering missing peptide sequences.
+
+- Next to the `OMSSAAdapter` and a `XTandemAdapter` **Community Nodes** > **OpenMS** > **Identification** node and set
+  its parameters and ports analogously to the `OMSSAAdapter`. In XTandem, to get more evenly distributed scores, we
+  decrease the number of candidates a bit by setting the precursor mass tolerance to 5 ppm and the fragment mass
+  tolerance to 0.1 Da.
+- To calculate the PEP, introduce each a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **ID Processing**
+  node to the output of each ID engine adapter node. This will calculate the PEP to each hit and output an updated idXML.
+- To create a consensus, we must first merge these two files with a `FileMerger` node **Community Nodes** >
+  **GenericKnimeNode** > **Flow** so we can then merge the corresponding IDs with a `IDMerger` **Community Nodes** >
+  **OpenMS** > **File Handling**.
+- Now we can create a consensus identification with the `ConsensusID` **Community Nodes** > **OpenMS** > **ID Processing**
+  node. We can connect this to the `PeptideIndexer` and go along with our existing FDR filtering.
+
+  ```{note}
+  By default, X!Tandem takes additional enzyme cutting rules into consideration (besides the specified tryptic digest).
+  Thus for the tutorial files, you have to set PeptideIndexer’s `enzyme` →specificity parameter to `none` to accept
+  X!Tandems non-tryptic identifications as well.
+  ```
+
+In the end, the ID processing part of the workflow can be collapsed into a Metanode to keep the structure clean (see below figure which shows complete consensus identification workflow).
+
+|![Complete consensus identification workflow](../images/openms-user-tutorial/labelfree/PepConsensusId.png)|
+|:--:|
+|Figure 13: Complete consensus identification workflow|
+
 ### Quantification
+
+Now that we have successfully constructed a peptide identification pipeline, we can
+add quantification capabilities to our workflow.
 
 ### Combining quantitative information across several label-free experiments
 
@@ -765,7 +956,7 @@ Undo the packaging. First select the (**Wrapped**) **Metanode**, open the contex
 
 ## References
 
-[^1]: OpenMS, OpenMS home page [online].
+[^1]: OpenMS, [OpenMS home page]((http://www.openms.de/)) [online].
 
 [^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
 O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, OpenMS - an opensource software framework for mass spectrometry., BMC bioinformatics 9(1)
