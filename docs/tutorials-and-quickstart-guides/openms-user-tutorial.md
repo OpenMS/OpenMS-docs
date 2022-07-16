@@ -5,7 +5,7 @@ OpenMS User Tutorial
 
 - This handout will guide you through an introductory tutorial for the OpenMS/TOPP software package[^1].
 
-- OpenMS[^2],[^3] is a versatile open-source library for mass spectrometry data analysis. Based on this library, we offer a collection of command-line tools ready to be used by end users. These so-called TOPP tools (short for ”The OpenMS Pipeline”) [^4] can be understood as small building blocks of arbitrarily complex data analysis workflows.
+- OpenMS[^2]^,^[^3] is a versatile open-source library for mass spectrometry data analysis. Based on this library, we offer a collection of command-line tools ready to be used by end users. These so-called TOPP tools (short for ”The OpenMS Pipeline”) [^4] can be understood as small building blocks of arbitrarily complex data analysis workflows.
 
 - In order to facilitate workflow construction, OpenMS was integrated into KNIME[^5], the Konstanz Information Miner, an open-source integration platform providing a powerful and flexible workflow system combined with advanced data analytics, visualization, and report capabilities. Raw MS data as well as the results of data processing using TOPP can be visualized using TOPPView[^6].
 
@@ -515,7 +515,7 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 #### Digression: Working with chemical structures
 
 Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[7]
-or CDK[8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
+or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
 In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
 Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification),
 a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine
