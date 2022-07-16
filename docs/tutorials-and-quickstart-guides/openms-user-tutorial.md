@@ -3,11 +3,11 @@ OpenMS User Tutorial
 
 ## General Remarks
 
-- This handout will guide you through an introductory tutorial for the OpenMS/TOPP software package [1].
+- This handout will guide you through an introductory tutorial for the OpenMS/TOPP software package [^1].
 
-- OpenMS [2, 3] is a versatile open-source library for mass spectrometry data analysis. Based on this library, we offer a collection of command-line tools ready to be used by end users. These so-called TOPP tools (short for ”The OpenMS Pipeline”) [4] can be understood as small building blocks of arbitrarily complex data analysis workflows.
+- OpenMS [^2, ^3] is a versatile open-source library for mass spectrometry data analysis. Based on this library, we offer a collection of command-line tools ready to be used by end users. These so-called TOPP tools (short for ”The OpenMS Pipeline”) [^4] can be understood as small building blocks of arbitrarily complex data analysis workflows.
 
-- In order to facilitate workflow construction, OpenMS was integrated into KNIME [5], the Konstanz Information Miner, an open-source integration platform providing a powerful and flexible workflow system combined with advanced data analytics, visualization, and report capabilities. Raw MS data as well as the results of data processing using TOPP can be visualized using TOPPView [6].
+- In order to facilitate workflow construction, OpenMS was integrated into KNIME [^5], the Konstanz Information Miner, an open-source integration platform providing a powerful and flexible workflow system combined with advanced data analytics, visualization, and report capabilities. Raw MS data as well as the results of data processing using TOPP can be visualized using TOPPView [^6].
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
@@ -145,9 +145,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 - Start TOPPView (see Windows' Start-Menu or **Applications** > **OpenMS-2.7.0** on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
-of the USB stick to, and select **Example_Data** > **Introduction** > **datasets** > **small** > **velos005614.mzML**. This file contains only a reduced LC-MS map [^1] of a label-free
-proteomic platelet measurement recorded on an Orbitrap velos. The other two
-mzML files contain technical replicates of this experiment. First, we want to
+of the USB stick to, and select **Example_Data** > **Introduction** > **datasets** > **small** > **velos005614.mzML**. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
 obtain a global view on the whole LC-MS map - the default option Map view 2D
 is the correct one and we can click the <kbd>Ok</kbd> button.
 
@@ -248,20 +246,282 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install()
 BiocManager::install(c("MSstats"))
 ```
+In KNIME, click on **KNIME** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
+your installation path. You can use the following settings, if you installed R as described above:
+
+- Windows: `C: \Program Files \R \R-3.6.X (where X is the version you used to install the above libraries)`
+- macOS: `/Library/Frameworks/R.framework/Versions/3.6/Resources`
+
+You are now ready to install the OpenMS nodes.
+- Open KNIME.
+- Click on **Help** > **Install New Software**
+
+We included a custom KNIME update site to install the OpenMS KNIME plugins from the USB stick. If you do not have a stick
+available, please see below.
+
+- In the now open dialog choose **Add** (in the upper right corner of the dialog) to define a new update site. In the
+  opening dialog enter the following details.
+
+  Name: OpenMS 2.7 UpdateSite
+  Location: `file:/KNIMEUpdateSite/2.7.0/`
+- After pressing **OK** KNIME will show you all the contents of the added Update Site.
+
+```{note}
+From now on, you can use this repository for plugins in the **Work with**: drop-down list.
+```
+
+- Select the OpenMS nodes in the ”Uncategorized” category and click **Next**.
+- Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
+  “Community Nodes”.
+
+Alternatively, you can try these steps that will install the OpenMS KNIME plugins from the internet. Note that download
+can be slow.
+
+- In the now open dialog, choose **Add** (in the upper right corner of the dialog) to define a new update site. In the
+  opening dialog enter the following details.
+
+  Name: OpenMS 2.5 UpdateSite
+  Location: https://abibuilder.informatik.uni- tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
+- After pressing **OK** KNIME will show you all the contents of the added Update Site.
+
+```{note}
+From now on, you can use this repository for plugins in the **Work with:** drop-drown list.
+```
+- Select the OpenMS nodes in the ”Uncategorized” category and click **Next**.
+- Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
+  "Community Nodes".
 
 #### KNIME concepts
 
+A workflow is a sequence of computational steps applied to a single or multiple input data to process and analyze the
+data. In KNIME such workflows are implemented graphically by connecting so-called nodes. A node represents a single
+analysis step in a workflow. Nodes have input and output ports where the data enters the node or the results are provided
+for other nodes after processing, respectively. KNIME distinguishes between different port types, representing different
+types of data. The most common representation of data in KNIME are tables (similar to an excel sheet). Ports that accept
+tables are marked with a small triangle. For OpenMS nodes, we use a different port type, so called file ports, representing
+complete files. Those ports are marked by a small blue box. Filled blue boxes represent mandatory inputs and empty blue
+boxes optional inputs. The same holds for output ports, despite you can deactivate them in the configuration dialog
+(double-click on node) under the **OutputTypes** tab. After execution, deactivated ports will be marked with a red cross and
+downstream nodes will be inactive (not configurable).
+
+A typical OpenMS workflow in KNIME can be divided in two conceptually different parts:
+
+- Nodes for signal and data processing, filtering and data reduction. Here, files are passed between nodes. Execution
+  times of the individual steps are typically longer for these types of nodes as they perform the main computations.
+- Downstream statistical analysis and visualization. Here, tables are passed between nodes and mostly internal KNIME
+  nodes or nodes from third-party statistics plugins are used. The transfer from files (produced by OpenMS) and tables
+  usually happens with our provided Exporter and Reader nodes (e.g. MzTabExporter followed by MzTabReader).
+
+Nodes can have three different states, indicated by the small traffic light below the node.
+- Inactive, failed, and not yet fully configured nodes are marked red.
+- Configured but not yet executed nodes are marked yellow.
+- Successfully executed nodes are marked green.
+
+If the node execution fails, the node will switch to the red state. Other anomalies and warnings like missing information
+or empty results will be presented with a yellow exclamation mark above the traffic light. Most nodes will be configured
+as soon as all input ports are connected. Some nodes need to know about the output of the predecessor and may stay red
+until the predecessor was executed. If nodes still remain in a red state, probably additional parameters have to be
+provided in the configuration dialog that can neither be guessed from the data nor filled with sensible defaults. In
+this case, or if you want to customize the default configuration in general, you can open the configuration dialog of a
+node with a double-click on the node. For all OpenMS nodes you will see a configuration dialog like the one shown in
+below figure.
+
+|![Node configuration dialog of an OpenMS node](../images/openms-user-tutorial/knime-setup/knime_configure_dialog.png)|
+|:--:|
+|Figure 6: Node configuration dialog of an OpenMS node|
+
+```{tip}
+OpenMS distinguishes between normal parameters and advanced parameters. Advanced parameters are by default hidden from
+the users since they should only rarely be customized. In case you want to have a look at the parameters or need to
+customize them in one of the tutorials you can show them by clicking on the checkbox **Show advanced parameter**
+in the lower part of the dialog. Afterwards the parameters are shown in a light gray color.
+```
+
+The dialog shows the individual parameters, their current value and type, and, in the lower part of the dialog, the
+documentation for the currently selected parameter. Please also note the tabs on the top of the configuration dialog.
+In the case of OpenMS nodes, there will be another tab called OutputTypes. It contains dropdown menus for every output
+port that let you select the output filetype that you want the node to return (if the tool supports it). For optional
+output ports you can select Inactive such that the port is crossed out after execution and the associated generation of
+the file and possible additional computations are not performed. Note that this will deactivate potential downstream
+nodes connected to this port.
+
 #### Overview of the graphical user interface
+
+|![The KNIME workbench](../images/openms-user-tutorial/knime-setup/knime_workbench_marked.png)|
+|:--:|
+|Figure 7: The KNIME workbench|
+
+The graphical user interface (GUI) of KNIME consists of different components or so-called panels that are shown in
+above image. We will briefly introduce the individual panels and their purposes below.
+
+##### Workflow Editor
+
+The workflow editor is the central part of the KNIME GUI. Here you assemble the workflow by adding nodes from the Node
+Repository via ”drag & drop”. For quick creation of a workflow, note that double-clicking on a node in the repository
+automatically connects it to the selected node in the workbench (connecting all the inputs with as many fitting outputs
+of the last node). Manually, nodes can be connected by clicking on the output port of one node and dragging the edge
+until releasing the mouse at the desired input port of the next node. Deletions are possible by selecting nodes and/or
+edges and pressing <kbd>DEL</kbd> or <kbd>Fn</kbd> + <kbd>Backspace</kbd> depending on your OS and settings. Multiselection
+happens via dragging rectangles with the mouse or adding elements to the selection by clicking them while holding down
+<kbd>Ctrl</kbd>.
+
+##### KNIME Explorer
+
+Shows a list of available workflows (also called workflow projects). You can open a workflow by double-clicking it. A
+new workflow can be created with a right-click in the Workflow Explorer followed by choosing **New KNIME Workflow**
+from the appearing context menu. Remember to save your workflow often with the <kbd>Ctrl</kbd> + <kbd>S</kbd> shortcut.
+
+##### Workflow Coach (since KNIME 3.2.1)
+
+Shows a list of suggested following nodes, based on the last added/clicked nodes. When you are not sure which node to
+choose next, you have a reasonable suggestion based on other users behavior there. Connect them to the last node with a
+double-click.
+
+##### Node Repository
+
+Shows all nodes that are available in your KNIME installation. Every plugin you install will provide new nodes that can
+be found here. The OpenMS nodes can be found in **Community Node** > **OpenMS** Nodes for managing files (e.g., Input
+Files or Output Folders) can be found in **Community Nodes** > **GenericKnimeNode**. You can search the node repository
+by typing the node name into the small text box in the upper part of the node repository.
+
+##### Outline
+
+The Outline panel contains a small overview of the complete workflow. While of limited use when working on a small
+workflow, this feature is very helpful as soon as the workflows get bigger. You can adjust the zoom level of the explorer
+by adjusting the percentage in the toolbar at the top of KNIME.
+
+##### Console
+
+In the console panel, warning and error messages are shown. This panel will provide helpful information if one of the
+nodes failed or shows a warning sign.
+
+##### Node Description
+
+As soon as a node is selected, the Node Description window will show the documentation of the node including
+documentation for all its parameters and especially their in- and outputs, such that you know what types of data nodes
+may produce or expect. For OpenMS nodes you will also find a link to the tool page of the online documentation.
 
 #### Creating workflows
 
+Workflows can easily be created by a right click in the Workflow Explorer followed by clicking on **New KNIME workflow**.
+
 #### Sharing workflows
+
+To be able to share a workflow with others, KNIME supports the import and export of complete workflows. To export a
+workflow, select it in the Workflow Explorer and select **File** > **Export KNIME Workflow**. KNIME will export
+workflows as a _knwf_ file containing all the information on nodes, their connections, and their parameter configuration.
+
+Those *knwf* files can again be imported by selecting:
+
+**File** > **Import KNIME Workflow**
+
+```{note}
+For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
+ Additionally, the workflow files can be found on [workflow downloads](../downloads.md#workflows). If you want to check
+ your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding
+ *knwf* file and after that double-click it in your KNIME Workflow repository to open it.
+```
 
 #### Duplicating workflows
 
+In this tutorial, a lot of the workflows will be created based on the workflow from a previous task. To keep the
+intermediate workflows, we suggest you create copies of your workflows so you can see the progress. To create a copy of
+your workflow, save it, close it and follow the next steps.
+
+- Right click on the workflow you want to create a copy of in the Workflow Explorer and select **Copy**.
+- Right click again somewhere on the workflow explorer and select **Paste**.
+- This will create a workflow with same name as the one you copied with a (2) appended.
+- To distinguish them later on you can easily rename the workflows in the Workflow Explorer by right clicking on the
+  workflow and selecting **Rename**.
+
+```{note}
+To rename a workflow it has to be closed, too.
+```
+
 #### A minimal workflow
 
+Let us now start with the creation of a simple workflow. As a first step, we will gather some basic
+information about the data set before starting the actual development of a data analysis workflow. This minimal workflow
+can also be used to check if all requirements are met and that your system is compatible.
+
+- Create a new workflow.
+- Add an Input File node and an Output Folder node (to be found in **Community Nodes** > **GenericKnimeNodes** > **IO**
+  and a FileInfo node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
+- Connect the Input File node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
+  node.
+
+```{tip}
+In case you are unsure about which node port to use, hovering the cursor over the port in question will display the port
+name and what kind of input it expects.
+```
+The complete workflow is shown in below image. `FileInfo` can produce two different kinds of output files.
+
+|![A minimal workflow calling FileInfo on a single file.](../images/openms-user-tutorial/knime-setup/minimal_FileInfo.svg)|
+|:--:|
+|Figure 8: A minimal workflow calling `FileInfo` on a single file.|
+
+- All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
+  **Browse**. In the file system browser select **Example_Data** > **Introduction** > **datasets** > **tiny** > **velos005614.mzML**
+  and click **Open**. Afterwards close the dialog by clicking **Ok**.
+
+```{note}
+Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
+```
+- The **Input File** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
+  Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
+- Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
+  button with multiple green triangles in the KNIME Toolbar) to execute the complete workflow. You can also right click
+  on any node of your workflow and select <kbd>Execute</kbd> from the context menu.
+- The traffic lights tell you about the current status of all nodes in your workflow. Currently running tools show either
+  a progress in percent or a moving blue bar, nodes waiting for data show the small word “queued”, and successfully
+  executed ones become green. If something goes wrong (e.g., a tool crashes), the light will become red.
+- In order to inspect the results, you can just right-click the Output Folder node and select **View: Open the output folder**
+  You can then open the text file and inspect its contents.  You will find some basic information of the data contained
+  in the mzML file, e.g., the total number of spectra and peaks, the RT and m/z range, and how many MS1 and MS2 spectra
+  the file contains.
+
+Workflows are typically constructed to process a large number of files automatically. As a simple example, consider you
+would like to convert multiple Thermo Raw files into the mzML format. We will now modify the workflow to compute the
+same information on three different files and then write the output files to a folder.
+
+- We start from the previous workflow.
+- First we need to replace our single input file with multiple files. Therefore we add the Input Files node from the
+  category **Community Nodes** > **GenericKnimeNodes** > **IO**.
+- To select the files we double-click on the Input Files node and click on **Add**. In the filesystem browser we select
+  all three files from the directory **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
+  with **Ok**.
+- We now add two more nodes: the **ZipLoopStart** and the **ZipLoopEnd** node from the category
+  **Community Nodes** > **GenericKnimeNodFlow** > **Flow**.
+- Afterwards we connect the **Input Files** node to the first port of the **ZipLoopStart** node, the first port of the **ZipLoopStart**
+  node to the **FileConverter** node, the first output port of the **FileConverter** node to the first input port of the
+  **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node (NOT to the Output File).
+
+The complete workflow is shown in below figure.
+
+|![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](../images/openms-user-tutorial/knime-setup/minimal_RawFileConverter_Loop.svg)|
+|:--:|
+|Figure 9: A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop|
+
+Execute the workflow and inspect the output as before.
+
+In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** do, here is a brief explanation:
+
+- The **Input Files** node passes a list of files to the ZipLoopStart node.
+- The ZipLoopStart node takes the files as input, but passes the single files sequentially (that is: one after the other)
+  to the next node.
+- The ZipLoopEnd collects the single files that arrive at its input port. After all files have been processed, the collected
+  files are passed again as file list to the next node that follows.
+
 #### Digression: Working with chemical structures
+
+Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[7]
+or CDK[8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
+In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
+Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification),
+a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine
+can be written as the SMILES string C[C@H](N)C(O)=O. As we will discuss later, all OpenMS tools that perform metabolite
+identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
+and KNIME.
 
 #### Advanced topic: Metanodes
 
@@ -447,6 +707,17 @@ BiocManager::install(c("MSstats"))
 
 ## References
 
-## Footnotes
+[^1]: OpenMS, OpenMS home page [online].
 
-[^1]: only a selected RT and m/z range was extracted using the TOPP tool `FileFilter`
+[^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
+O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, OpenMS - an opensource software framework for mass spectrometry., BMC bioinformatics 9(1)
+(2008), doi:10.1186/1471-2105-9-163. 7, 83
+
+[^3]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti,
+H.-C. Ehrlich, P. Gutenbrunner, E. Kenar, et al., OpenMS: a flexible open-source
+software platform for mass spectrometry data analysis, Nature Methods 13(9),
+741–748 (2016). 7
+
+[^4]: O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
+M. Sturm, TOPP–the OpenMS proteomics pipeline., Bioinformatics 23(2) (Jan.
+2007). 7, 83
