@@ -557,9 +557,11 @@ improve handling and clarity of large workflows:
 
 **Metanodes** allow to bundle several nodes into a single **Metanode**.
 
-```{task}
+<div class="admonition task" name="html-admonition">
+<p class="title">Task</p>
 Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
-```
+</div>
+
 ```{tip}
 There is a **Select Loop** option when you right-click a node in a loop, that does exactly that for you. Then, open the
 context menu (right-click on a node in the selection) and select **Create Metanode**. Enter a caption for the **Metanode**.
