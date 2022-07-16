@@ -498,7 +498,7 @@ same information on three different files and then write the output files to a f
 
 The complete workflow is shown in below figure.
 
-|![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](../images/openms-user-tutorial/knime-setup/minimal_RawFileConverter_Loop.svg)|
+|![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](../images/openms-user-tutorial/knime-setup/Minimal_RawFileConverter_Loop.png)|
 |:--:|
 |Figure 9: A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop|
 
