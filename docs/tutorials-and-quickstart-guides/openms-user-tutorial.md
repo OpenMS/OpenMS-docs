@@ -42,7 +42,7 @@ Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
 open, you might need to move them from **Applications** > **OpenMS-2.7.0** to e.g. your Desktop and back.
 ```
-On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under www.openms.de/documentation.
+On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](www.openms.de/documentation) website.
 
 ```{note}
 If you have installed OpenMS on Linux or macOS via your package
@@ -53,8 +53,8 @@ then you need to set the `OPENMS_DATA_PATH` variable to the directory containing
 
 If you are working through this tutorial at home, you can get the installers under the following links:
 
-- OpenMS: https://www.openms.de/download/openms-binaries
-- KNIME: https://www.knime.org/downloads/overview
+- [OpenMS](https://www.openms.de/download/openms-binaries)
+- [KNIME](https://www.knime.org/downloads/overview)
 - OpenMS prerequisites (Windows-only): After installation, before your first use
 of the OpenMS plugin in KNIME you will be asked to download it automatically
 if certain requirements are not found in your Windows registry. Alternatively,
@@ -194,7 +194,60 @@ do so, by double-click on the MS/MS spectrum shown in scan view
 
 ### Introduction to KNIME/OpenMS
 
+Using OpenMS in combination with KNIME, you can create, edit, open, save, and run workflows that combine TOPP tools with
+the powerful data analysis capabilities of KNIME. Workflows can be created conveniently in a graphical user interface.
+The parameters of all involved tools can be edited within the application and are also saved as part of the workflow.
+Furthermore, KNIME interactively performs validity checks during the workflow editing process, to make it more
+difficult to create an invalid workflow. Throughout most parts of this tutorial, you will use KNIME to create and execute
+workflows. The first step is to become familiar with KNIME. Additional information on the basic usage of KNIME can be
+found on the KNIME [Getting Started page](https://www.knime.com/getting-started-guide). However, the most important
+concepts will also be reviewed in this tutorial.
+
 #### Plugin and dependency installation
+
+Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the
+program automatically detects missing plugins when you open a workflow but to make sure that the right source for the
+OpenMS plugin is chosen, please follow the instructions here. First, we install some additional extensions that are
+required by our OpenMS nodes or used in the Tutorials e.g. for visualization and file handling.
+
+1. Click on **Help** > **Install New Software**.
+2. From the **Work with**: drop-down list select http://update.knime.com/analytics- platform/4.4.
+3. Now select the following plugins from the KNIME & Extensions category
+   - KNIME Base Chemistry Types & Nodes
+   - KNIME Chemistry Add-Ons
+   - KNIME File Handling Nodes (required for OpenMS nodes in general)
+   - KNIME Interactive R Statistics Integration
+   - KNIME Report Designer
+   - KNIME SVG Support
+4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
+5. Click again on **Help** > **Install New Software**
+6. From the **Work with**: drop-down list select http://update.knime.com/community -contributions/trusted/4.4
+7. Now select the following plugin from the ”KNIME Community Contributions - Cheminformatics” category
+   - RDKit KNIME integration
+8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
+
+In addition, we need to install R for the statistical downstream analysis. Choose the directory that matches your
+operating system, double-click the R installer and follow the instructions. We recommend to use the default settings
+whenever possible. On macOS you also need to install XQuartz from the same directory.
+
+Afterwards open your R installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
+macOS, you will find R in your Applications folder. In R type the following lines (you might also copy them from the file
+**R** > **install_R_packages.R** folder on the USB stick):
+
+```RConsole
+install.packages('Rserve',,"http://rforge.net/",type="source")
+install.packages("Cairo")
+
+install.packages("devtools")
+install.packages("ggplot2")
+install.packages("ggfortify")
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install()
+BiocManager::install(c("MSstats"))
+```
 
 #### KNIME concepts
 
