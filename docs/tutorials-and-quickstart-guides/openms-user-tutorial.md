@@ -558,28 +558,30 @@ improve handling and clarity of large workflows:
 **Metanodes** allow to bundle several nodes into a single **Metanode**.
 
 <div class="admonition task" name="html-admonition">
-<p class="title">Task</p>
+<p class="title"><b>Task</b></p>
 Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
-</div>
-
-```{tip}
+<div class="admonition tip" name="html-admonition">
+<p class="title"><b></b></p>
 There is a **Select Loop** option when you right-click a node in a loop, that does exactly that for you. Then, open the
 context menu (right-click on a node in the selection) and select **Create Metanode**. Enter a caption for the **Metanode**.
 The previously selected nodes are now contained in the **Metanode**. Double-clicking on the **Metanode** will display
 the contained nodes in a new tab window.
-```
+</div>
+</div>
 
-```{task}
+<div class="admonition task" name="html-admonition">
+<p class="title"><b>Task</b></p>
 Create the Metanode to let it behave like an encapsulated single node. First select the **Metanode**, open the context
 menu (right-click) and select **Metanode** > **Wrap**. The differences between Metanodes and their wrapped counterparts
 are marginal (and only apply when exposing user inputs and workflow variables). Therefore we suggest to use standard
 Metanodes to clean up your workflow and cluster common subparts until you actually notice their limits.
-```
+</div>
 
-```{task}
+<div class="admonition task" name="html-admonition">
+<p class="title"><b>Task</b></p>
 Undo the packaging. First select the (**Wrapped**) **Metanode**, open the context menu (right-click) and select
 **(Wrapped) Metanode** > **Expand**.
-```
+</div>
 
 #### Advanced topic: R integration
 
