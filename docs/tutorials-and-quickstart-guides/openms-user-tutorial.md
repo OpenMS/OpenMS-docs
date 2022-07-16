@@ -5,7 +5,7 @@ OpenMS User Tutorial
 
 - This handout will guide you through an introductory tutorial for the OpenMS/TOPP software package[^1].
 
-- OpenMS[^2][^3] is a versatile open-source library for mass spectrometry data analysis. Based on this library, we offer a collection of command-line tools ready to be used by end users. These so-called TOPP tools (short for ”The OpenMS Pipeline”) [^4] can be understood as small building blocks of arbitrarily complex data analysis workflows.
+- OpenMS[^2],[^3] is a versatile open-source library for mass spectrometry data analysis. Based on this library, we offer a collection of command-line tools ready to be used by end users. These so-called TOPP tools (short for ”The OpenMS Pipeline”) [^4] can be understood as small building blocks of arbitrarily complex data analysis workflows.
 
 - In order to facilitate workflow construction, OpenMS was integrated into KNIME[^5], the Konstanz Information Miner, an open-source integration platform providing a powerful and flexible workflow system combined with advanced data analytics, visualization, and report capabilities. Raw MS data as well as the results of data processing using TOPP can be visualized using TOPPView[^6].
 
