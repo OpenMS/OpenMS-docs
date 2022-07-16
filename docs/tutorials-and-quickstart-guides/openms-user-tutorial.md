@@ -234,7 +234,7 @@ Afterwards open your R installation. If you use Windows, you will find an ”R x
 macOS, you will find R in your Applications folder. In R type the following lines (you might also copy them from the file
 **R** > **install_R_packages.R** folder on the USB stick):
 
-```RConsole
+```rconsole
 install.packages('Rserve',,"http://rforge.net/",type="source")
 install.packages("Cairo")
 
