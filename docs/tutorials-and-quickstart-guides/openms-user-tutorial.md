@@ -741,7 +741,7 @@ FDR of < 1 %.
 
   The below images shows OMSSA ID pipeline including FDR filtering.
 
-  |![OMSSA ID pipeline including FDR filtering](../images/openms-user-tutorial/labelfree/PepIDFDR.png)|
+  |![OMSSA ID pipeline including FDR filtering](../images/openms-user-tutorial/labelfree/PepIdFDR.png)|
   |:--:|
   |Figure 12: OMSSA ID pipeline including FDR filtering|
 
@@ -904,8 +904,8 @@ database (see Table 1).
 
 <a id="x1-32001r1"></a>
 <a id="x1-32002"></a>
-<figcaption class="caption"><span class="id">Table&nbsp;1: </span><span class="content">Samples (background: 200 ng <i>S.&nbsp;cerevisiae</i>) with spiked-in proteins in different
-quantities [fmols].                                                                     </span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
+<figcaption class="caption"><span class="id">Table&nbsp;1: Samples (background: 200 ng <i>S.&nbsp;cerevisiae</i>) with spiked-in proteins in different
+quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 <div class="tabular">
  <table class="tabular" id="TBL-1"><colgroup id="TBL-1-1g"><col id="TBL-1-1"><col id="TBL-1-2"><col id="TBL-1-3"><col id="TBL-1-4"><col id="TBL-1-5"><col id="TBL-1-6"><col id="TBL-1-7"><col id="TBL-1-8"></colgroup><tbody><tr id="TBL-1-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-1">   </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-2">                      </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-3">                   </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-4">                 </td><td class="td11" style="white-space:nowrap; text-align:right;" colspan="4" id="TBL-1-1-5">         <div class="multicolumn" style="white-space:nowrap; text-align:center;"><span class="rm-lmr-10x-x-109">Samples</span></div>
 </td></tr><tr id="TBL-1-2-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-2-1">    </td><td class="td11" style="white-space:nowrap; text-align:center;" id="TBL-1-2-2">        <div class="multicolumn" style="white-space:nowrap; text-align:center;"><span class="rm-lmr-10x-x-109">Name</span></div>         </td><td class="td11" style="white-space:nowrap; text-align:center;" id="TBL-1-2-3">       <div class="multicolumn" style="white-space:nowrap; text-align:center;"><span class="rm-lmr-10x-x-109">Origin</span></div>       </td><td class="td11" style="white-space:nowrap; text-align:center;" id="TBL-1-2-4"> <div class="multicolumn" style="white-space:nowrap; text-align:center;"><span class="rm-lmr-10x-x-109">Molecular Weight</span></div> </td><td class="td11" style="white-space:nowrap; text-align:center;" id="TBL-1-2-5">  <div class="multicolumn" style="white-space:nowrap; text-align:center;"><span class="rm-lmr-10x-x-109">1</span></div>  </td><td class="td11" style="white-space:nowrap; text-align:right;" id="TBL-1-2-6">   <span class="rm-lmr-10x-x-109">2  </span></td><td class="td11" style="white-space:nowrap; text-align:right;" id="TBL-1-2-7">  <span class="rm-lmr-10x-x-109">3  </span></td><td class="td11" style="white-space:nowrap; text-align:right;" id="TBL-1-2-8">   <span class="rm-lmr-10x-x-109">4  </span></td>
