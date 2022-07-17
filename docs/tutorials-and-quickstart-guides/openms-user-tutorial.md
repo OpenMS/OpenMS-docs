@@ -1078,13 +1078,140 @@ This matrix has the following properties:
 
 - The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
 - The entries of each row consist of exactly one 1 and one -1, the others must be 0.
-- The condition with the entry 1 constitutes the enumerator of the log2 fold-change. The one with entry -1 denotes the denominator. Hence, the first row states that we want calculate:
+- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
 ```{math}
  \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
  ```
+We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
+```rconsole
+comparison1<-matrix(c(-1,1,0,0),nrow=1)   
+comparison2<-matrix(c(-1,0,1,0),nrow=1)
+
+comparison3<-matrix(c(-1,0,0,1),nrow=1)  
+comparison4<-matrix(c(0,-1,1,0),nrow=1)
+
+comparison5<-matrix(c(0,-1,0,1),nrow=1)  
+comparison6<-matrix(c(0,0,-1,1),nrow=1)
+
+comparison <- rbind(comparison1, comparison2, comparison3, comparison4, comparison5, comparison6)
+row.names(comparison)<-c("C2-C1","C3-C1","C4-C1","C3-C2","C4-C2","C4-C3")
+```
+
+Here, we assemble each row in turn, concatenate them at the end, and provide row names for labeling the rows with the respective condition.
+In MSstats, the group comparison is then performed with the following line:
+
+```rconsole
+test.MSstats <- groupComparison(contrast.matrix=comparison, data=processed.quant)
+```
+No more parameters need to be set for performing the comparison.
+
+##### Result processing
+
+In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in Figure 20:
+
+```rconsole
+  test.MSstats.cr <- test.MSstats$ComparisonResult   
+
+
+  # Rename spiked ins to A,B,C....  
+  pnames <- c("A", "B", "C", "D", "E", "F")
+
+  names(pnames) <- c(  
+  "sp|P44015|VAC2_YEAST",  
+  "sp|P55752|ISCB_YEAST",
+
+  "sp|P44374|SFG2_YEAST",  
+  "sp|P44983|UTR6_YEAST",  
+  "sp|P44683|PGA4_YEAST",
+
+  "sp|P55249|ZRT4_YEAST"  
+  )  
+
+  test.MSstats.cr.spikedins <- bind_rows(
+
+  test.MSstats.cr[grep("P44015", test.MSstats.cr$Protein),],
+
+  test.MSstats.cr[grep("P55752", test.MSstats.cr$Protein),],
+
+  test.MSstats.cr[grep("P44374", test.MSstats.cr$Protein),],
+
+  test.MSstats.cr[grep("P44683", test.MSstats.cr$Protein),],
+
+  test.MSstats.cr[grep("P44983", test.MSstats.cr$Protein),],
+
+  test.MSstats.cr[grep("P55249", test.MSstats.cr$Protein),]  
+  )  
+  # Rename Proteins
+
+  test.MSstats.cr.spikedins$Protein <- sapply(test.MSstats.cr.spikedins$Protein, function(x) {pnames[as.character(x)]})
+
+
+
+  test.MSstats.cr$Protein <- sapply(test.MSstats.cr$Protein, function(x) {
+
+
+    x <- as.character(x)  
+
+    if (x %in% names(pnames)) {
+
+
+      return(pnames[as.character(x)])  
+      } else {  
+      return("")
+
+    }
+  })
+
+```
+
+##### Export
+
+The last four nodes, each connected and making use of the same workspace from the last node, will export the results to a textual representation and volcano plots for further inspection. Firstly, quality control can be performed with the following snippet:
+
+```rconsole
+qcplot <- dataProcessPlots(processed.quant, type="QCplot",   
+        ylimDown=0,
+
+which.Protein = 'allonly',
+width=7, height=7, address=F)
+```
+
+The code for this snippet is embedded in the first output node of the workflow. The resulting boxplots show the log2 intensity distribution across the MS runs.
+The second node is an **R View (Workspace)** node that returns a Volcano plot which displays differentially expressed proteins between conditions C2 vs. C1. The plot is described in more detail in the following Result section. This is how you generate it:
+
+```rconsole
+groupComparisonPlots(data=test.MSstats.cr, type="VolcanoPlot",
+
+                    width=12, height=12,dot.size = 2,ylimUp = 7,
+
+                    which.Comparison = "C2-C1",
+                    address=F)
+```
+The last two nodes export the `MSstats` results as a KNIME table for potential further analysis or for writing it to a (e.g. csv) file. Note that you could also write output inside the Rscript if you are familiar with it. Use the following for an **R to Table** node exporting all results:
+
+```rconsole
+knime.out <- test.MSstats.cr
+```
+And this for an **R to Table** node exporting only results for the spike-ins:
+
+```rconsole
+knime.out <- test.MSstats.cr.spikedins
+```
 
 #### Result
+
+An excerpt of the main result of the group comparison can be seen in Figure 20.
+
+|![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png)|
+|:--:|
+|![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png)|
+|Figure 20: Volcano plots produced by the Group Comparison in MSstats The dotted line indicates an adjusted p-value threshold|
+
+The Volcano plots show differently expressed spiked-in proteins. In the left plot, which shows the fold-change C2-C1, we can see the proteins D and F (`sp|P44983|UTR6_YEAST` and `sp|P55249|ZRT4_YEAST`) are significantly over-expressed in C2, while the proteins B,C, and E (`sp|P55752|ISCB_YEAST`, `sp|P55752|ISCB_YEAST`, and `sp|P44683|PGA4_YEAST`) are under-expressed. In the right plot, which shows the fold-change ratio of C3 vs. C2, we can see the proteins E and C (`sp|P44683|PGA4_YEAST` and `sp|P44374|SFG2_YEAST`) over-expressed and the proteins A and F (`sp|P44015|VAC2_YEAST` and `sp|P55249|ZRT4_YEAST`) under-expressed. The plots also show further differentially-expressed proteins, which do not belong to the spiked-in proteins.
+
+The full analysis workflow can be found under:
+`Workflows` ► `MSstatsxstatPostProcessingxiPRG2015.knwf`
 
 ## Protein inference
 
