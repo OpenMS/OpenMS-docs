@@ -898,9 +898,7 @@ database (see Table 1).
 
 <div class="table">
 
-
 <!-- l. 1198 --><p class="indent">   </p><figure class="float">
-
 
 <a id="x1-32001r1"></a>
 <a id="x1-32002"></a>
@@ -950,7 +948,7 @@ As mentioned before, the downstream analysis can be performed using `MSstats`. I
 
 <a id="x1-34001r2"></a>
 <a id="x1-34002"></a>
-<figcaption class="caption"><span class="id">Table&nbsp;2: </span><span class="content">OpenMS Experimental design for the iPRG2015 dataset.                      </span></figcaption><!-- tex4ht:label?: x1-34001r3  -->
+<figcaption class="caption"><span class="id">Table&nbsp;2: OpenMS Experimental design for the iPRG2015 dataset.</span></figcaption><!-- tex4ht:label?: x1-34001r3  -->
 <div class="tabular"> <table class="tabular" id="TBL-2"><colgroup id="TBL-2-1g"><col id="TBL-2-1"><col id="TBL-2-2"><col id="TBL-2-3"><col id="TBL-2-4"><col id="TBL-2-5"></colgroup><tbody><tr id="TBL-2-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"> <span class="rm-lmr-10x-x-109">Fraction_Group  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"> <span class="rm-lmr-10x-x-109">Fraction                </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-3"> <span class="rm-lmr-10x-x-109">Spectra_Filepath        </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-4"> <span class="rm-lmr-10x-x-109">Label  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-5"> <span class="rm-lmr-10x-x-109">Sample  </span></td>
 </tr><tr id="TBL-2-2-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"> <span class="rm-lmr-10x-x-109">1                      </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"> <span class="rm-lmr-10x-x-109">1                         </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"> <span class="rm-lmr-10x-x-109">Sample1-A                </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-4"> <span class="rm-lmr-10x-x-109">1       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-5"> <span class="rm-lmr-10x-x-109">1          </span></td>
 </tr><tr id="TBL-2-3-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"> <span class="rm-lmr-10x-x-109">2                      </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"> <span class="rm-lmr-10x-x-109">1                         </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-3-3"> <span class="rm-lmr-10x-x-109">Sample1-B                </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-3-4"> <span class="rm-lmr-10x-x-109">1       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-3-5"> <span class="rm-lmr-10x-x-109">2          </span></td>
@@ -994,7 +992,7 @@ An explanation of the variables can be found in Table 3.
 
 <a id="x1-34003r3"></a>
 <a id="x1-34004"></a>
-<figcaption class="caption"><span class="id">Table&nbsp;3: </span><span class="content">Explanation of the column of the experimental design table                   </span></figcaption><!-- tex4ht:label?: x1-34003r3  -->
+<figcaption class="caption"><span class="id">Table&nbsp;3: Explanation of the column of the experimental design table</span></figcaption><!-- tex4ht:label?: x1-34003r3  -->
 
  <table class="tabular" id="TBL-5"><colgroup id="TBL-5-1g"><col id="TBL-5-1"><col id="TBL-5-2"></colgroup><tbody><tr id="TBL-5-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-5-1-1"> <strong>variables</strong>        </td><td class="td11" style="white-space:normal; text-align:left;" id="TBL-5-1-2"> <!-- l. 1293 --><p class="noindent"><strong>value</strong>                                                                         </p></td>
 </tr><tr id="TBL-5-2-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-5-2-1"> <i>Fraction_Group</i>  </td><td class="td11" style="white-space:normal; text-align:left;" id="TBL-5-2-2"> <!-- l. 1293 --><p class="noindent"><span class="rm-lmr-10x-x-109">Index used to group fractions and source files.</span>                                </p></td>
