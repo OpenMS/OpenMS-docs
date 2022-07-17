@@ -1078,7 +1078,7 @@ This matrix has the following properties:
 
 - The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
 - The entries of each row consist of exactly one 1 and one -1, the others must be 0.
-- The condition with the entry 1 constitutes the enumerator of the log2 fold-change. The one with entry -1 denotes the denominator. Hence, the first row states that we want calculate log {math} `\sigma_{1}`
+- The condition with the entry 1 constitutes the enumerator of the log2 fold-change. The one with entry -1 denotes the denominator. Hence, the first row states that we want calculate log \\(C2 \over C1\\)
 
 
 #### Result
