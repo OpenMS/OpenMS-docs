@@ -1072,6 +1072,13 @@ In this example, we just state that missing intensity values are represented by 
 
 The goal of the analysis is the determination of differentially-expressed proteins among the different conditions C1-C4. We can specify the comparisons that we want to make in a *comparison* matrix. For this, let’s consider the following example:
 
+![comparison matrix](../images/openms-user-tutorial/labelfree/handout-clean129x.svg)
+
+This matrix has the following properties:
+
+- The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
+- The entries of each row consist of exactly one 1 and one -1, the others must be 0.
+- The condition with the entry 1 constitutes the enumerator of the log2 fold-change. The one with entry -1 denotes the denominator. Hence, the first row states that we want calculate log {math} `\sigma_{1}`
 
 
 #### Result
