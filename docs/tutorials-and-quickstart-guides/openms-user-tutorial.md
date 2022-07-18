@@ -1239,13 +1239,52 @@ set its parameter `prob_correct` to `true`, so it computes posterior probabiliti
 
 ### Statistical validation of protein inference results
 
+In the following section, we will explain the subworkflow contained in the **Protein inference with FidoAdapter** meta node.
+
 #### Data preparation
+
+For downstream analysis on the protein ID level in KNIME, it is again necessary to convert the idXML-file-format result generated from **FidoAdapter** into a KNIME table.
+
+- We use the **MzTabExporter** to convert the inference results from **FidoAdapter** to a human readable, tab-separated mzTab file. mzTab contains multiple sections,
+that are all exported by default, if applicable. This file, with its different sections can again be read by the **MzTabReader** that produces one output in KNIME table
+format (triangle ports) for each section. Some ports might be empty if a section did not exist. Of course, we continue by connecting the downstream nodes with the protein section output (second port).
+- Since the protein section contains single proteins as well as protein groups, we filter them for single proteins with the standard **Row Filter**.
 
 #### ROC curve of protein ID
 
+ROC Curves (Receiver Operating Characteristic curves) are graphical plots that visualize sensitivity (true-positive rate) against fall-out (false positive rate). They are often used to judge the quality of a discrimination method like e.g., peptide or protein identification engines. ROC Curve already provides the functionality of drawing ROC curves for binary classification problems. When configuring this node, select the `opt_global_target_decoy` column as the class (i.e. target outcome) column. We want to find out, how good our inferred protein probability discriminates between them,
+therefore add `best_search_engine_score[1]` (the inference engine score is treated like a peptide search engine score) to the list of *”Columns containing positive class probabilities”*. View the plot by right-clicking and selecting **View: ROC Curves**. A perfect classifier has
+an area under the curve (AUC) of 1.0 and its curve touches the upper left of the plot. However, in protein or peptide identification, the ground-truth (i.e., which target
+identifications are true, which are false) is usually not known. Instead, so called pseudoROC Curves are regularly used to plot the number of target proteins against the false
+discovery rate (FDR) or its protein-centric counterpart, the q-value. The FDR is approximated by using the target-decoy estimate in order to distinguish true IDs from
+false IDs by separating target IDs from decoy IDs.
+
 #### Posterior probability and FDR of protein IDs
 
+ROC curves illustrate the discriminative capability of the scores of IDs. In the case of protein identifications, Fido produces the posterior probability of each protein as
+the output score. However, a perfect score should not only be highly discriminative (distinguishing true from false IDs), it should also be “calibrated” (for probability indicating that all IDs with reported posterior probability scores of 95% should roughly have a 5% probability of being false. This implies that the estimated number of false
+positives can be computed as the sum of posterior error probabilities ( = 1 - posterior probability) in a set, divided by the number of proteins in the set. Thereby a
+posterior-probability-estimated FDR is computed which can be compared to the actual target-decoy FDR. We can plot calibration curves to help us visualize the quality of
+the score (when the score is interpreted as a probability as Fido does), by comparing how similar the target-decoy estimated FDR and the posterior probability estimated
+FDR are. Good results should show a close correspondence between these two measurements, although a non-correspondence does not necessarily indicate wrong results.
+
+The calculation is done by using a simple R script in R snippet. First, the target decoy protein FDR is computed as the proportion of decoy proteins among all significant protein IDs. Then posterior probabilistic-driven FDR is estimated by the average of the posterior error probability of all significant protein IDs. Since FDR is the property for a group of protein IDs, we can also calculate a local property for each protein: the q-value of a certain protein ID is the minimum FDR of any groups of protein IDs
+that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see {ref}`Fig. 22`).
+
+|![The workflow of statistical analysis of protein inference results](../images/openms-user-tutorial/protein-inference/inference_metanode.png)|
+|:--:|
+|Figure 21: The workflow of statistical analysis of protein inference results|
+
+```{Fig. 22}
+```
+|![The pseudo-ROC Curve of protein IDs](../images/openms-user-tutorial/protein-inference/proteinFDR.png)|
+|:--:|
+|Figure 22: The pseudo-ROC Curve of protein IDs. The accumulated number of protein IDs is plotted on two kinds of scales: target-decoy protein FDR and Fido posterior probability estimated FDR. The largest value of posterior probability estimated FDR is already smaller than 0.04, this is because the posterior probability output from Fido is generally very high|
+
 ## Isobaric analysis
+
+In the last chapters, we identified and quantified peptides in a label-free experiment.
+In this section, we would like to introduce a possible workflow for the analysis of isobaric data.
 
 ### Isobaric analysis workflow
 
