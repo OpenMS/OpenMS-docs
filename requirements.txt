@@ -7,3 +7,4 @@ sphinx-notfound-page
 sphinxcontrib-images
 sphinx-inline-tabs
 pygments
+sphinx-hoverxref

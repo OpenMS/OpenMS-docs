@@ -34,6 +34,7 @@ extensions = [
   'notfound.extension',
   'sphinxcontrib.images',
   'sphinx_inline_tabs',
+  'hoverxref.extension'
 ]
 
 myst_enable_extensions = [
@@ -102,3 +103,10 @@ html_css_files = [
 ]
 
 root_doc = 'docs/index'
+
+
+# Configure tooltips
+
+hoverxref_roles = ['term']
+
+hoverxref_role_types = {'term':'tooltip'}
