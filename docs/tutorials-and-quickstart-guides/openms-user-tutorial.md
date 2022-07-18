@@ -232,7 +232,7 @@ Afterwards open your R installation. If you use Windows, you will find an ”R x
 macOS, you will find R in your Applications folder. In R type the following lines (you might also copy them from the file
 **R** > **install_R_packages.R** folder on the USB stick):
 
-```rconsole
+```r
 install.packages('Rserve',,"http://rforge.net/",type="source")
 install.packages("Cairo")
 
@@ -853,7 +853,7 @@ For downstream analysis of the quantification results within the KNIME environme
 - Now, since we only want to plot intensities, we can add a **Column Filter** node by going to **Data Manipulation** > **Column Filter**. Connect its input port to the **Filtered output** port of the **Row Filter** node, and open its configuration dialog. We could either manually select the columns we want to keep, or, more elegantly, select **Wildcard/Regex Selection** and enter `intensity_?` as the pattern. KNIME will interactively show you which columns your pattern applies to while you’re typing.
 - Since we want to plot log intensities, we will now compute the log of all intensity values in our table. The easiest way to do this in KNIME is a small piece of R code. Add an **R Snippet** node `R` after **Column Filter** and double-click to configure. In the R Script text editor, enter the following code:
 
-  ```rconsole
+  ```r
   x <- knime.in       # store copy of input table in x
 
   x[x == 0] <- NA     # replace all zeros by NA (= missing value)
@@ -1046,7 +1046,7 @@ We load the file resulting from **MSStatsConverter** either by saving it with an
 
 The first node (**Table to R**) loads `MSstats` as well as the data from the previous KNIME node and performs a preprocessing step on the input data. The following inline R script ( needs to be pasted into the config dialog of the node):
 
-```rconsole
+```r
 library(MSstats)
 data <- knime.in
 quant <- OpenMStoMSstatsFormat(data, removeProtein_with1Feature = FALSE)
@@ -1055,7 +1055,7 @@ quant <- OpenMStoMSstatsFormat(data, removeProtein_with1Feature = FALSE)
 The inline R script allows further preparation of the data produced by **MSstatsConverter** before the actual analysis is performed. In this example, the lines with proteins, which were identified with only one feature, were retained. Alternatively they could be removed.
 In the same node, most importantly, the following line transforms the data into a format that is understood by `MSstats`:
 
-```rconsole
+```r
 processed.quant <- dataProcess(quant, censoredInt = 'NA')
 ```
 Here, `dataProcess` is one of the most important functions that the R package provides. The function performs the following steps:
@@ -1084,7 +1084,7 @@ This matrix has the following properties:
  ```
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
-```rconsole
+```r
 comparison1<-matrix(c(-1,1,0,0),nrow=1)   
 comparison2<-matrix(c(-1,0,1,0),nrow=1)
 
@@ -1101,7 +1101,7 @@ row.names(comparison)<-c("C2-C1","C3-C1","C4-C1","C3-C2","C4-C2","C4-C3")
 Here, we assemble each row in turn, concatenate them at the end, and provide row names for labeling the rows with the respective condition.
 In MSstats, the group comparison is then performed with the following line:
 
-```rconsole
+```r
 test.MSstats <- groupComparison(contrast.matrix=comparison, data=processed.quant)
 ```
 No more parameters need to be set for performing the comparison.
@@ -1110,7 +1110,7 @@ No more parameters need to be set for performing the comparison.
 
 In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in Figure 20:
 
-```rconsole
+```r
   test.MSstats.cr <- test.MSstats$ComparisonResult   
 
 
@@ -1169,7 +1169,7 @@ In a next R to R node, the results are being processed. The following code snipp
 
 The last four nodes, each connected and making use of the same workspace from the last node, will export the results to a textual representation and volcano plots for further inspection. Firstly, quality control can be performed with the following snippet:
 
-```rconsole
+```r
 qcplot <- dataProcessPlots(processed.quant, type="QCplot",   
         ylimDown=0,
 
@@ -1180,7 +1180,7 @@ width=7, height=7, address=F)
 The code for this snippet is embedded in the first output node of the workflow. The resulting boxplots show the log2 intensity distribution across the MS runs.
 The second node is an **R View (Workspace)** node that returns a Volcano plot which displays differentially expressed proteins between conditions C2 vs. C1. The plot is described in more detail in the following Result section. This is how you generate it:
 
-```rconsole
+```r
 groupComparisonPlots(data=test.MSstats.cr, type="VolcanoPlot",
 
                     width=12, height=12,dot.size = 2,ylimUp = 7,
@@ -1190,12 +1190,12 @@ groupComparisonPlots(data=test.MSstats.cr, type="VolcanoPlot",
 ```
 The last two nodes export the `MSstats` results as a KNIME table for potential further analysis or for writing it to a (e.g. csv) file. Note that you could also write output inside the Rscript if you are familiar with it. Use the following for an **R to Table** node exporting all results:
 
-```rconsole
+```r
 knime.out <- test.MSstats.cr
 ```
 And this for an **R to Table** node exporting only results for the spike-ins:
 
-```rconsole
+```r
 knime.out <- test.MSstats.cr.spikedins
 ```
 

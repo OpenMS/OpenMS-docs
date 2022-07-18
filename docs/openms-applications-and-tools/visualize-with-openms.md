@@ -43,8 +43,6 @@ To import data into TOPPView:
 
   TOPPView automatically selects the **Map view** depending on the data you have imported.
 
-  <TODO: explain display options>
-
 You should be able to see your data in the **Viewer**.
 
 ## Process data in TOPPView
