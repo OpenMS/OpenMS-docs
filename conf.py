@@ -34,10 +34,9 @@ extensions = [
   'notfound.extension',
   'sphinxcontrib.images',
   'sphinx_inline_tabs',
-  'sphinx.ext.autosectionlabel',
 ]
 
-autosectionlabel_prefix_document = True
+numfig = True
 
 myst_enable_extensions = [
   "tasklist",

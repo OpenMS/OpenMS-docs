@@ -71,6 +71,8 @@ used in this tutorial have already been converted to mzML by us, so you do not n
 to perform the data conversion yourself. However, we provide a small raw file so you
 can try the important step of raw data conversion for yourself.
 
+{numref}`target_to_image`
+
 ```{note}
 The OpenMS installation package for Windows automatically installs
 ProteoWizard, so you do not need to download and install it separately. Due
@@ -81,6 +83,13 @@ usually the most convenient option.
 ```
 To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI (a
 graphical user interface) or `msconvert` (a simple command line tool).
+
+(target_to_image) =
+```{figure} ../images/openms-user-tutorial/introduction/proteowizard.png
+:alt: Logo
+:align: center
+:width: 240px
+```
 
 |![msconvertgui](../images/openms-user-tutorial/introduction/proteowizard.png)|
 |:--:|
@@ -1269,14 +1278,11 @@ the score (when the score is interpreted as a probability as Fido does), by comp
 FDR are. Good results should show a close correspondence between these two measurements, although a non-correspondence does not necessarily indicate wrong results.
 
 The calculation is done by using a simple R script in R snippet. First, the target decoy protein FDR is computed as the proportion of decoy proteins among all significant protein IDs. Then posterior probabilistic-driven FDR is estimated by the average of the posterior error probability of all significant protein IDs. Since FDR is the property for a group of protein IDs, we can also calculate a local property for each protein: the q-value of a certain protein ID is the minimum FDR of any groups of protein IDs
-that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see {ref}`Fig. 22`).
+that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see Fig. 22).
 
 |![The workflow of statistical analysis of protein inference results](../images/openms-user-tutorial/protein-inference/inference_metanode.png)|
 |:--:|
 |Figure 21: The workflow of statistical analysis of protein inference results|
-
-```{Fig. 22}
-```
 |![The pseudo-ROC Curve of protein IDs](../images/openms-user-tutorial/protein-inference/proteinFDR.png)|
 |:--:|
 |Figure 22: The pseudo-ROC Curve of protein IDs. The accumulated number of protein IDs is plotted on two kinds of scales: target-decoy protein FDR and Fido posterior probability estimated FDR. The largest value of posterior probability estimated FDR is already smaller than 0.04, this is because the posterior probability output from Fido is generally very high|
@@ -1284,6 +1290,7 @@ that contain this protein ID. We plot the protein ID results versus two differen
 ## Isobaric analysis
 
 In the last chapters, we identified and quantified peptides in a label-free experiment.
+
 In this section, we would like to introduce a possible workflow for the analysis of isobaric data.
 
 ### Isobaric analysis workflow
