@@ -71,7 +71,7 @@ used in this tutorial have already been converted to mzML by us, so you do not n
 to perform the data conversion yourself. However, we provide a small raw file so you
 can try the important step of raw data conversion for yourself.
 
-{numref}`target` blah blah.
+{ref}`Figure_1`
 
 ```{note}
 The OpenMS installation package for Windows automatically installs
@@ -84,15 +84,10 @@ usually the most convenient option.
 To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI (a
 graphical user interface) or `msconvert` (a simple command line tool).
 
-
-
-```{target}
-
+(Figure_1)=
 |![msconvertgui](../images/openms-user-tutorial/introduction/proteowizard.png)|
 |:--:|
 |Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see Fig. 2)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
-
-```
 
 Both tools are
 available in: `C: / Program Files / OpenMS-2.7.0 / share / OpenMS / THIRDPARTY / pwiz-bin`.
