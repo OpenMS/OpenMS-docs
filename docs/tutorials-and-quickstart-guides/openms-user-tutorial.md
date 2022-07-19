@@ -71,7 +71,7 @@ used in this tutorial have already been converted to mzML by us, so you do not n
 to perform the data conversion yourself. However, we provide a small raw file so you
 can try the important step of raw data conversion for yourself.
 
-{numref}`target_to_image`
+{numref}`target to image`
 
 ```{note}
 The OpenMS installation package for Windows automatically installs
@@ -85,6 +85,7 @@ To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI
 graphical user interface) or `msconvert` (a simple command line tool).
 
 (target_to_image) =
+
 ```{figure} ../images/openms-user-tutorial/introduction/proteowizard.png
 :alt: Logo
 :align: center
