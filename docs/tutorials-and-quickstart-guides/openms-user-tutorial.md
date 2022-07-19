@@ -71,7 +71,7 @@ used in this tutorial have already been converted to mzML by us, so you do not n
 to perform the data conversion yourself. However, we provide a small raw file so you
 can try the important step of raw data conversion for yourself.
 
-{ref}`Figure_1`
+Go to <a href="Figure_1">Figure 1</a>
 
 ```{note}
 The OpenMS installation package for Windows automatically installs
