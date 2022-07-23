@@ -1781,7 +1781,7 @@ At the current state we found several metabolites in the individual maps but so 
 
 ## References
 
-[^1]: OpenMS, <a href="http://www.openms.de/">OpenMS home page</a>[online].
+[^1]: OpenMS, <a href="http://www.openms.de/">OpenMS home page</a> [online].
 
 [^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
 O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, OpenMS - an opensource software framework for mass spectrometry., BMC bioinformatics 9(1)
@@ -1797,3 +1797,111 @@ M. Sturm, TOPP–the OpenMS proteomics pipeline., Bioinformatics 23(2) (Jan.
 2007). 7, 83
 
 [^5]: M. R. Berthold, N. Cebron, F. Dill, T. R. Gabriel, T. Kötter, T. Meinl, P. Ohl, C. Sieb, K. Thiel, and B. Wiswedel, KNIME: The Konstanz Information Miner, in Studies in Classification, Data Analysis, and Knowledge Organization (GfKL 2007), Springer, 2007.
+
+[^6]: M. Sturm and O. Kohlbacher, TOPPView: An Open-Source Viewer for Mass Spectrometry Data, Journal of proteome research 8(7), 3760–3763 (July 2009), doi:10.1021/pr900171m. 7
+
+[^7]: RDKit: Open-source cheminformatics, http://www.rdkit.org, [Online; accessed
+31-August-2018]. 25
+
+[^8]: C. Steinbeck, Y. Han, S. Kuhn, O. Horlacher, E. Luttmann, and E. Willighagen, The
+Chemistry Development Kit (CDK): An Open-Source Java Library for Chemo- and
+Bioinformatics, Journal of Chemical Information and Computer Sciences 43(2),
+493–500 (2003), PMID: 12653513, doi:10.1021/ci025584y. 25
+
+[^9]: L. Y. Geer, S. P. Markey, J. A. Kowalak, L. Wagner, M. Xu, D. M. Maynard, X. Yang,
+W. Shi, and S. H. Bryant, Open mass spectrometry search algorithm, Journal of
+Proteome Research 3(5), 958–964 (2004). 30
+
+[^10]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
+arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
+
+[^11]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
+arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
+
+[^12]: M. Choi, Z. F. Eren-Dogu, C. Colangelo, J. Cottrell, M. R. Hoopmann, E. A. Kapp,
+S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub,
+B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
+2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), doi:
+10.1021/acs.jproteome.6b00881. 40
+
+[^13]: T. Huang, M. Choi, S. Hao, and O. Vitek, MSstatsTMT: Protein Significance Analysis in shotgun mass spectrometry-based proteomic experiments with tandem
+mass tag (TMT) labeling., (2020), doi:10.18129/B9.bioc.MSstatsTMT. 55
+
+[^14]: D. S. Wishart, D. Tzur, C. Knox, et al., HMDB: the Human Metabolome Database,
+Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), doi:10.1093/nar/gkl923. 69
+
+[^15]: D. S. Wishart, C. Knox, A. C. Guo, et al., HMDB: a knowledgebase for the human
+metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), doi: 10.1093/nar/gkn810. 69
+
+[^16]: D. S. Wishart, T. Jewison, A. C. Guo, M. Wilson, C. Knox, et al., HMDB 3.0–The
+Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), doi:10.1093/nar/gks1065. 69
+
+[^17]: J. Griss, A. R. Jones, T. Sachsenberg, M. Walzer, L. Gatto, J. Hartler, G. G.
+Thallinger, R. M. Salek, C. Steinbeck, N. Neuhauser, J. Cox, S. Neumann, J. Fan,
+F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), doi:
+10.1074/mcp.O113.036681. 69
+
+[^18]: S. Böcker, M. C. Letzel, Z. Lipták, and A. Pervukhin, SIRIUS: Decomposing isotope
+patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), doi:10.1093/bioinformatics/btn603. 75
+
+[^19]: S. Böcker and K. Dührkop, Fragmentation trees reloaded, J. Cheminform. 8(1),
+1–26 (2016), doi:10.1186/s13321-016-0116-8. 75
+
+[^20]: K. Dührkop, H. Shen, M. Meusel, J. Rousu, and S. Böcker, Searching molecular
+structure databases with tandem mass spectra using CSI:FingerID, Proc. Natl.
+Acad. Sci. 112(41), 12580–12585 (oct 2015), doi:10.1073/pnas.1509788112. 75
+
+[^21]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinovic, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmstrom, L. Malmström, and R. Aebersold,
+OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data, Nature Biotechnology 32(3), 219–223 (Mar. 2014). 83, 87
+
+[^22]: L. C. Gillet, P. Navarro, S. Tate, H. Röst, N. Selevsek, L. Reiter, R. Bonner, and
+R. Aebersold, Targeted Data Extraction of the MS/MS Spectra Generated by
+Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis., Molecular & Cellular Proteomics 11(6) (June 2012), doi:
+10.1074/mcp.O111.016717. 83
+
+[^23]: A. Bertsch, C. Gröpl, K. Reinert, and O. Kohlbacher, OpenMS and TOPP: open
+source software for LC-MS data analysis., Methods in molecular biology (Clifton,
+N.J.) 696, 353–367 (2011), doi:10.1007/978-1-60761-987-1_23. 83
+
+[^24]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti, H.-c. Ehrlich, P. Gutenbrunner, E. Kenar, X. Liang, S. Nahnsen, L. Nilse,
+J. Pfeuffer, G. Rosenberger, M. Rurik, U. Schmitt, J. Veit, M. Walzer, D. Wojnar,
+W. E. Wolski, O. Schilling, J. S. Choudhary, L. Malmström, R. Aebersold, K. Reinert, and O. Kohlbacher, OpenMS: a flexible open-source software platform
+for mass spectrometry data analysis, Nat. Methods 13(9), 741–748 (sep 2016),doi:10.1038/nmeth.3959. 83
+
+[^25]: J. Pfeuffer, T. Sachsenberg, O. Alka, M. Walzer, A. Fillbrunn, L. Nilse, O. Schilling,
+K. Reinert, and O. Kohlbacher, OpenMS - A platform for reproducible analysis
+of mass spectrometry data, J. Biotechnol. 261(February), 142–148 (2017), doi:
+10.1016/j.jbiotec.2017.05.016. 83
+
+[^26]: L. Reiter, O. Rinner, P. Picotti, R. Huttenhain, M. Beck, M.-Y. Brusniak, M. O. Hengartner, and R. Aebersold, mProphet: automated data processing and statistical
+validation for large-scale SRM experiments, Nature Methods 8(5), 430–435 (May
+2011), doi:10.1038/nmeth.1584. 83
+
+[^27]: E. W. Deutsch, M. Chambers, S. Neumann, F. Levander, P.-A. Binz, J. Shofstahl,
+D. S. Campbell, L. Mendoza, D. Ovelleiro, K. Helsens, L. Martens, R. Aebersold,
+R. L. Moritz, and M.-Y. Brusniak, TraML—A Standard Format for Exchange of
+Selected Reaction Monitoring Transition Lists, Molecular & Cellular Proteomics
+11(4) (Apr. 2012), doi:10.1074/mcp.R111.015040. 84
+
+[^28]: C. Escher, L. Reiter, B. MacLean, R. Ossola, F. Herzog, J. Chilton, M. J. MacCoss, and O. Rinner, Using iRT, a normalized retention time for more targeted measurement of peptides., Proteomics 12(8), 1111–1121 (Apr. 2012),
+doi:10.1002/pmic.201100463. 84
+
+[^29]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinović, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmström, L. Malmström, and R. Aebersold,
+OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data., Nat. Biotechnol. 32(3), 219–23 (2014), doi:10.1038/nbt.2841.
+89, 90
+
+[^30]: J. Teleman, H. L. Röst, G. Rosenberger, U. Schmitt, L. Malmström, J. Malmström, and F. Levander, DIANA-algorithmic improvements for analysis of dataindependent acquisition MS data, Bioinformatics 31(4), 555–562 (2015), arXiv:
+9808008, doi:10.1093/bioinformatics/btu686. 89, 90
+
+[^31]: K. Dührkop, M. Fleischauer, M. Ludwig, A. A. Aksenov, A. V. Melnik, M. Meusel,
+P. C. Dorrestein, J. Rousu, and S. Böcker, SIRIUS 4: a rapid tool for turning tandem
+mass spectra into metabolite structure information, Nat. Methods 16(4), 299–
+302 (apr 2019), doi:10.1038/s41592-019-0344-8. 89
+
+[^32]: J. E. Elias and S. P. Gygi, Target-decoy search strategy for increased confidence
+in large-scale protein identifications by mass spectrometry, Nat. Methods 4(3),
+207–214 (Mar. 2007). 89
+
+[^33]: K. Scheubert, F. Hufsky, D. Petras, M. Wang, L. F. Nothias, K. Dührkop, N. Bandeira, P. C. Dorrestein, and S. Böcker, Significance estimation for large scale
+metabolomics annotations by spectral matching, Nat. Commun. 8(1) (2017),
+doi:10.1038/s41467-017-01318-5. 89
