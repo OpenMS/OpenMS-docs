@@ -942,9 +942,9 @@ Afterwards, the results are scored using the **FalseDiscoveryRate** node and fil
 
 #### Experimental design
 
-As mentioned before, the downstream analysis can be performed using `MSstats`. In this case, an experimental design has to be specified for the OpenMS workflow. The structure of the experimental design used in OpenMS in case of the iPRG dataset is specified in Table 2.
+As mentioned before, the downstream analysis can be performed using `MSstats`. In this case, an experimental design has to be specified for the OpenMS workflow. The structure of the experimental design used in OpenMS in case of the iPRG dataset is specified in <a href="#table-2">Table 2</a>.
 
-<div class="table">
+<div class="table" id="table-2">
 
 
 <!-- l. 1238 --><p class="indent">   </p><figure class="float">
@@ -986,7 +986,7 @@ As mentioned before, the downstream analysis can be performed using `MSstats`. I
    </figure>
    </div>
 
-An explanation of the variables can be found in Table 3.
+An explanation of the variables can be found in <a href="#table-3">Table 3</a>.
 
 <div class="table">
 
@@ -1317,7 +1317,7 @@ There is also an [online lecture](https://youtu.be/3CDnrQxGLbA) and tutorial for
 
 ### Dataset and experimental design
 
-We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. Figure 24 shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
+We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. <a href="#figure-24">Figure 24</a> shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
 
 (Figure_24)=
 |![Experimental Design](../images/openms-user-tutorial/isobaric/isobaric_experimental_design.jpeg)|
@@ -1367,10 +1367,9 @@ The experimental design in table format allows for `MSstatsTMT` compatible expor
 </tr><tr id="TBL-7-29-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-29-1">  <span class="rm-lmr-6">161117_SILAC_HeLa_UPS1_TMT10_SPS_MS3_Mixture1_03.mzML  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-29-2">  <span class="rm-lmr-6">1            </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-29-3">  <span class="rm-lmr-6">8        </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-29-4">  <span class="rm-lmr-6">3                     </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-29-5">  <span class="rm-lmr-6">28         </span></td>
 </tr><tr id="TBL-7-30-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-30-1">  <span class="rm-lmr-6">161117_SILAC_HeLa_UPS1_TMT10_SPS_MS3_Mixture1_03.mzML  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-30-2">  <span class="rm-lmr-6">1            </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-30-3">  <span class="rm-lmr-6">9        </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-30-4">  <span class="rm-lmr-6">3                     </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-30-5">  <span class="rm-lmr-6">29         </span></td>
 </tr><tr id="TBL-7-31-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-31-1">  <span class="rm-lmr-6">161117_SILAC_HeLa_UPS1_TMT10_SPS_MS3_Mixture1_03.mzML  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-31-2">  <span class="rm-lmr-6">1            </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-31-3">  <span class="rm-lmr-6">10       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-31-4">  <span class="rm-lmr-6">3                     </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-31-5">  <span class="rm-lmr-6">30         </span></td></tr></tbody></table>
+  </figure>
+  </div>
 
-
-   </figure>
-   </div>
 
    <div class="table" id="table-5">
 
@@ -1380,8 +1379,7 @@ The experimental design in table format allows for `MSstatsTMT` compatible expor
 
    <a id="x1-50005r5"></a>
    <a id="x1-50006"></a>
-   <figcaption class="caption"><span class="id">Table&nbsp;5: </span><span class="content">Experimental Design 2
-   </span></figcaption><!-- tex4ht:label?: x1-50005r5  -->
+   <figcaption class="caption"><span class="id">Table&nbsp;5: Experimental Design 2 </span></figcaption><!-- tex4ht:label?: x1-50005r5  -->
     <table class="tabular" id="TBL-8"><colgroup id="TBL-8-1g"><col id="TBL-8-1"><col id="TBL-8-2"><col id="TBL-8-3"><col id="TBL-8-4"><col id="TBL-8-5"></colgroup><tbody><tr id="TBL-8-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-1">  <span class="rm-lmr-6">Sample  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-2">  <span class="rm-lmr-6">MSstats_Condition  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-3">  <span class="rm-lmr-6">MSstats_BioReplicate  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-4">  <span class="rm-lmr-6">MSstats_Mixture  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-5">  <span class="rm-lmr-6">LabelName  </span></td>
    </tr><tr id="TBL-8-2-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-1">  <span class="rm-lmr-6">1           </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-2">  <span class="rm-lmr-6">Norm                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-3">  <span class="rm-lmr-6">Norm                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-4">  <span class="rm-lmr-6">1                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-5">  <span class="rm-lmr-6">126            </span></td>
    </tr><tr id="TBL-8-3-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-3-1">  <span class="rm-lmr-6">2           </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-3-2">  <span class="rm-lmr-6">0.667                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-3-3">  <span class="rm-lmr-6">0.667                        </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-3-4">  <span class="rm-lmr-6">1                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-3-5">  <span class="rm-lmr-6">127N          </span></td>
@@ -1413,10 +1411,8 @@ The experimental design in table format allows for `MSstatsTMT` compatible expor
    </tr><tr id="TBL-8-29-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-29-1">  <span class="rm-lmr-6">28          </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-29-2">  <span class="rm-lmr-6">1                          </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-29-3">  <span class="rm-lmr-6">1                             </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-29-4">  <span class="rm-lmr-6">1                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-29-5">  <span class="rm-lmr-6">130N          </span></td>
    </tr><tr id="TBL-8-30-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-30-1">  <span class="rm-lmr-6">29          </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-30-2">  <span class="rm-lmr-6">0.667                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-30-3">  <span class="rm-lmr-6">0.667                        </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-30-4">  <span class="rm-lmr-6">1                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-30-5">  <span class="rm-lmr-6">130C          </span></td>
    </tr><tr id="TBL-8-31-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-31-1">  <span class="rm-lmr-6">30          </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-31-2">  <span class="rm-lmr-6">Norm                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-31-3">  <span class="rm-lmr-6">Norm                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-31-4">  <span class="rm-lmr-6">1                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-31-5">  <span class="rm-lmr-6">131            </span></td></tr></tbody></table>
-
-
-      </figure>
-      </div>
+  </figure>
+  </div>
 
 After running the worklfow, the **MSstatsConverter** will convert the OpenMS output in addition with the experimental design to a file (.csv) which can be processed by using `MSstatsTMT`.
 
@@ -1785,7 +1781,7 @@ At the current state we found several metabolites in the individual maps but so 
 
 ## References
 
-[^1]: OpenMS, [OpenMS home page]((http://www.openms.de/)) [online].
+[^1]: OpenMS, <a href="http://www.openms.de/">OpenMS home page</a>[online].
 
 [^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
 O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, OpenMS - an opensource software framework for mass spectrometry., BMC bioinformatics 9(1)
@@ -1799,3 +1795,5 @@ software platform for mass spectrometry data analysis, Nature Methods 13(9),
 [^4]: O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
 M. Sturm, TOPP–the OpenMS proteomics pipeline., Bioinformatics 23(2) (Jan.
 2007). 7, 83
+
+[^5]: M. R. Berthold, N. Cebron, F. Dill, T. R. Gabriel, T. Kötter, T. Meinl, P. Ohl, C. Sieb, K. Thiel, and B. Wiswedel, KNIME: The Konstanz Information Miner, in Studies in Classification, Data Analysis, and Knowledge Organization (GfKL 2007), Springer, 2007.
