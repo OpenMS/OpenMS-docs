@@ -1571,12 +1571,99 @@ mass traces with a pre-defined mass accuracy. If this parameter is set to ’out
 
 The output file .featureXML can be visualized with TOPPView on top of the used `.mzML` file - in a so called layer - to look at the identified features.
 
-First start TOPPView and open the example `.mzML` file (see <a href="#figure-28">Fig. 28</a>). Afterwards open the `.featureXML` output as new layer (see <a href="#figure-29">Fig. 29</a>). The overlay is depicted in <a href="#figure-30">Figure 30</a>.
+First start TOPPView and open the example `.mzML` file (see <a href="#figure-28">Fig. 28</a>). Afterwards open the `.featureXML` output as new layer (see <a href="#figure-29">Fig. 29</a>). The overlay is depicted in <a href="#figure-30">Figure 30</a>. The zoom of the `.mzML` - `.featureXML` overlay shows the individual mass traces and the assembly of those in a feature (see <a href="#figure-31">Fig. 31</a>).
 
+(Figure_28)=
+|![Opened .mzML in TOPPView](../images/openms-user-tutorial/metabo/ToppView_1.png)|
+|:--:|
+|Figure 28: Opened .mzML in TOPPView|
 
+(Figure_29)=
+|![Add new layer in TOPPView](../images/openms-user-tutorial/metabo/ToppView_2.png)|
+|:--:|
+|Figure 29: Add new layer in TOPPView|
 
+(Figure_30)=
+|![Overlay of the .mzML layer with the .featureXML layer](../images/openms-user-tutorial/metabo/ToppView_3.png)|
+|:--:|
+|Figure 30: Overlay of the .mzML layer with the .featureXML layer|
+
+(Figure_31)=
+|![Zoom of the overlay of the .mzML with the .featureXML layer](../images/openms-user-tutorial/metabo/ToppView_4.png)|
+|:--:|
+|Figure 31: Zoom of the overlay of the .mzML with the .featureXML layer. Here the individual isotope traces (blue lines) are assembled into a feature here shown as convex hull (rectangular box).|
+
+The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **Input File** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
+
+To facilitate the collection of features corresponding to the same compound ion across different samples, an alignment of the samples’ feature maps along retention time is often helpful. In addition to local, small-scale elution differences, one can often see constant retention time shifts across large sections between samples. We can use linear transformations to correct for these large scale retention differences. This brings the majority of corresponding compound ions close to each other. Finding the correct corresponding ions is then faster and easier, as we don’t have to search as far around individual features.
+
+(Figure_32)=
+|![map alignment example](../images/openms-user-tutorial/metabo/align.png)|
+|:--:|
+|Figure 32: The first feature map is used as a reference to which other maps are aligned. The calculated transformation brings corresponding features into close retention time proximity. Linking of these features form a so-called consensus features of a consensus map.|
+
+- After the **ZipLoopEnd** node, add a **MapAlignerPoseClustering** node (**Community Nodes**>**OpenMS**>**Map Alignment**), set its Output Type to featureXML, and adjust the following settings:
+
+|**parameter**|	**value**|
+|:------------|:---------|
+|*algorithm* → *max_num_peaks_considered*|	−1|
+|*algorithm* → *superimposer* → *mz_pair_max_distance*|	0.005|
+|*algorithm* → *superimposer* → *num_used_points*|	10000|
+|*algorithm* → *pairfinder* → *distance_RT* → *max_difference*|	20.0|
+|*algorithm* → *pairfinder* → *distance_MZ* → *max_difference*|	20.0|
+|*algorithm* → *pairfinder* → *distance_MZ* → *unit*|	ppm|
+
+`MapAlignerPoseClustering` provides an algorithm to align the retention time scales of multiple input files, correcting shifts and distortions between them. Retention time adjustment may be necessary to correct for chromatography differences e.g. before data from multiple LC-MS runs can be combined (feature linking). The alignment algorithm implemented here is the pose clustering algorithm.
+
+The parameters change the behavior of `MapAlignerPoseClustering` as follows:
+- **max_num_peaks_considered**: The maximal number of peaks/features to be considered per map. To use all, set this parameter to -1.
+- **mz_pair_max_distance**: Maximum of m/z deviation of corresponding elements in different maps. This condition applies to the pairs considered in hashing.
+- **num_used_points**: Maximum number of elements considered in each map (selected by intensity). Use a smaller number to reduce the running time and to disregard weak signals during alignment.
+- **distance_RT → max_difference**: Features that have a larger RT difference will never be paired.
+- **distance_MZ →max_difference**: Features that have a larger m/z difference will never be paired.
+- **distance_MZ →unit**: Unit used for the parameter distance_MZ max_difference, either Da or ppm.
+
+The next step after retention time correction is the grouping of corresponding features in multiple samples. In contrast to the previous alignment, we assume no linear relations of features across samples. The used method is tolerant against local swaps in elution order.
+
+(Figure_33)=
+|![feature linking example](../images/openms-user-tutorial/metabo/link.png)|
+|:--:|
+|Figure 33: Features A and B correspond to the same analyte. The linking of features between runs (indicated by an arrow) allows comparing feature intensities.|
+
+- After the **MapAlignerPoseClustering** node, add a **FeatureLinkerUnlabeledQT** node (**Community Nodes** > **OpenMS**>**Map Alignment**) and adjust the following settings:
+    
+    |**parameter**|**value**|
+    |:------------|:--------|
+    |*algorithm* → *distance_RT* → *max_difference*|40|
+    |*algorithm* → *distance_MZ* → *max_difference*|20|
+    |*algorithm* → *distance_MZ* → *unit*|ppm|
+    
+    The parameters change the behavior of **FeatureLinkerUnlabeledQT** as follows (similar to the parameters we adjusted for **MapAlignerPoseClustering**):
+    
+    - **distance_RT → max_difference**: Features that have a larger RT difference will never be paired.
+    - **distance_MZ → max_difference**: Features that have a larger m/z difference will never be paired.
+    - **distance_MZ → unit**: Unit used for the parameter distance_MZ max_difference, either Da or ppm.
+    
+- After the **FeatureLinkerUnlabeledQT** node, add a **TextExporter** node (**Community Nodes** > **OpenMS** > **File Handling**).
+- Add an **Output Folder** node and configure it with an output directory where you want to store the resulting files.
+- Run the pipeline and inspect the output.
+
+(Figure_34)=
+|![Label-free quantification workflow for metabolites](../images/openms-user-tutorial/metabo/metabo_part1_with_labels.png)|
+|:--:|
+|Figure 34: Label-free quantification workflow for metabolites.|
+
+You should find a single, tab-separated file containing the information on where metabolites were found and with which intensities. You can also add **Output Folder** nodes at different stages of the workflow and inspect the intermediate results (e.g., identified metabolite features for each input map). The complete workflow can be seen in <a href="#figure-34">Figure 34</a>. In the following section we will try to identify those metabolites.
+
+The **FeatureLinkerUnlabeledQT** output can be visualized in TOPPView on top of the input and output of the **FeatureFinderMetabo** (see <a href-"#figure-35">Fig 35</a>).
+
+(Figure_35)=
+|![Label-free quantification workflow for metabolites](../images/openms-user-tutorial/metabo/ToppView_5.png)|
+|:--:|
+|Figure 35: Visualization of .consensusXML output over the .mzML and .featureXML ’layer’.|
 
 ### Basic metabolite identification
+At the current state we found several metabolites in the individual maps but so far don’t know what they are. To identify metabolites, OpenMS provides multiple tools, including search by mass: the AccurateMassSearch node searches observed masses against the Human Metabolome Database (HMDB)[^14]<sup>,</sup> [^15]<sup>,</sup> [^16]. We start with the workflow from the previous section (see <a href="#figure-34">Figure 34</a>).
 
 #### Convert your data into a KNIME table
 
