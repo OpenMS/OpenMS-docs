@@ -876,10 +876,10 @@ You have now constructed an entire identification and label-free quantification 
 
 ### Identification and quantification of the iPRG2015 data with subsequent MSstats analysis
 
-Advanced downstream data analysis of quantitative mass spectrometry-based proteomics data can be performed using MSstats [^11]. This tool can be combined with
+Advanced downstream data analysis of quantitative mass spectrometry-based proteomics data can be performed using MSstats[^11]. This tool can be combined with
 an OpenMS preprocessing pipeline (e.g. in KNIME). The OpenMS experimental design is used to present the data in an MSstats-conformant way for the analysis. Here,
 we give an example how to utilize these resources when working with quantitative label-free data. We describe how to use OpenMS and MSstats for the analysis of the
-ABRF iPRG2015 dataset [^12].
+ABRF iPRG2015 dataset[^12].
 
 ```{note}
 Reanalysing the full dataset from scratch would take too long. In the following tutorial, we will focus on just the conversion process and the downstream analysis.
@@ -898,9 +898,9 @@ described in [^12], aims at evaluating the effect of statistical analysis softwa
 accuracy of results on a proteomics label-free quantification experiment. The data is
 based on four artificial samples with known composition (background: 200 ng *S. cerevisiae*). These were spiked with different quantities of individual digested proteins,
 whose identifiers were masked for the competition as yeast proteins in the provided
-database (see Table 1).
+database (see <a href="#table-1">Table 1</a>).
 
-<div class="table">
+<div class="table" id="table-1">
 
 <!-- l. 1198 --><p class="indent">   </p><figure class="float">
 
@@ -920,9 +920,8 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 
 </tr></tbody></table></div>
 
-
-  </figure>
-   </div>
+</figure>
+</div>
 
 #### Identification and quantification
 
@@ -1651,7 +1650,7 @@ The next step after retention time correction is the grouping of corresponding f
 
 You should find a single, tab-separated file containing the information on where metabolites were found and with which intensities. You can also add **Output Folder** nodes at different stages of the workflow and inspect the intermediate results (e.g., identified metabolite features for each input map). The complete workflow can be seen in <a href="#figure-34">Figure 34</a>. In the following section we will try to identify those metabolites.
 
-The **FeatureLinkerUnlabeledQT** output can be visualized in TOPPView on top of the input and output of the **FeatureFinderMetabo** (see <a href-"#figure-35">Fig 35</a>).
+The **FeatureLinkerUnlabeledQT** output can be visualized in TOPPView on top of the input and output of the **FeatureFinderMetabo** (see <a href="#figure-35">Fig 35</a>).
 
 (Figure_35)=
 |![Label-free quantification workflow for metabolites](../images/openms-user-tutorial/metabo/ToppView_5.png)|
@@ -1815,14 +1814,11 @@ Proteome Research 3(5), 958–964 (2004). 30
 [^10]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
 arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
 
-[^11]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
-arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
+[^11]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311, arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
 
 [^12]: M. Choi, Z. F. Eren-Dogu, C. Colangelo, J. Cottrell, M. R. Hoopmann, E. A. Kapp,
-S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub,
-B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
-2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), doi:
-10.1021/acs.jproteome.6b00881. 40
+S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub, B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
+2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), doi: 10.1021/acs.jproteome.6b00881. 40
 
 [^13]: T. Huang, M. Choi, S. Hao, and O. Vitek, MSstatsTMT: Protein Significance Analysis in shotgun mass spectrometry-based proteomic experiments with tandem
 mass tag (TMT) labeling., (2020), doi:10.18129/B9.bioc.MSstatsTMT. 55
