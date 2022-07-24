@@ -9,7 +9,11 @@ div.highlight {
   
 }
 
+.question-title {
+  background-color: #30362a17 !important;
+}
+
 .question-title::before {
-  -webkit-mask-image: var(--icon-question);
-  mask-image: var(--icon-question);
+  -webkit-mask-image: var(--icon-question) !important;
+  mask-image: var(--icon-question) !important;
 }
