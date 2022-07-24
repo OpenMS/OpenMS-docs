@@ -16,5 +16,5 @@ p.question-title {
 .question-title::before {
   -webkit-mask-image: var(--icon-question) !important;
   mask-image: var(--icon-question) !important;
-  background-color:#48983f;
+  background-color:#48983f !important;
 }
