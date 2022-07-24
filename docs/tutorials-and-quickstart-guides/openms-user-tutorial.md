@@ -465,7 +465,7 @@ The complete workflow is shown in below image. `FileInfo` can produce two differ
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
 - All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
-  **Browse**. In the file system browser select **Example_Data** > **Introduction** > **datasets** > **tiny** > **velos005614.mzML**
+  **Browse**. In the file system browser select `Example_Data` ► `Introduction` ► `datasets` ► `tiny` ► `velos005614.mzML`
   and click **Open**. Afterwards close the dialog by clicking **Ok**.
 
 ```{note}
@@ -1660,11 +1660,83 @@ The **FeatureLinkerUnlabeledQT** output can be visualized in TOPPView on top of 
 ### Basic metabolite identification
 At the current state we found several metabolites in the individual maps but so far don’t know what they are. To identify metabolites, OpenMS provides multiple tools, including search by mass: the AccurateMassSearch node searches observed masses against the Human Metabolome Database (HMDB)[^14]<sup>,</sup> [^15]<sup>,</sup> [^16]. We start with the workflow from the previous section (see <a href="#figure-34">Figure 34</a>).
 
+- Add a **FileConverter** node (**Community Nodes** > **OpenMS** > **File Handling**) and connect the output of the FeatureLinkerUnlabeledQT to the incoming port.
+- Open the Configure dialog of the **FileConverter** node and select the tab **OutputTypes**. In the drop down list for FileConverter.1.out select **featureXML**.
+- Add an **AccurateMassSearch** node (**Community Nodes** > **OpenMS** > **Utilities**) and connect the output of the **FileConverter** node to the first port of the **AccurateMassSearch** node.
+- Add four **Input File** nodes and configure them with the following files:
+  - `Example_Data` ► `Metabolomics` ► `databases` ► `PositiveAdducts.tsv`
+    This file specifies the list of adducts that are considered in the positive mode. Each line contains the formula and charge of an adduct separated by a semicolon (e.g. M+H;1+). The mass of the adduct is calculated automatically.
+  - `Example_Data` ► `Metabolomics` ► `databases` ► `NegativeAdducts.tsv`
+    This file specifies the list of adducts that are considered in the negative mode analogous to the positive mode.
+  - `Example_Data` ► `Metabolomics` ► `databases` ► `HMDBMappingFile.tsv`
+    This file contains information from a metabolite database in this case from HMDB. It has three (or more) tab-separated columns: mass, formula, and identifier(s). This allows for an efficient search by mass.
+  - `Example_Data` ► `Metabolomics` ► `databases` ► `HMDB2StructMapping.tsv`
+    This file contains additional information about the identifiers in the mapping file. It has four tab-separated columns that contain the identifier, name, SMILES, and INCHI. These will be included in the result file. The identifiers in this file must match the identifiers in the `HMDBMappingFile.tsv`.
+- In the same order as they are given above connect them to the remaining input ports of the **AccurateMassSearch** node.
+- Add an **Output Folder** node and connect the first output port of the
+**AccurateMassSearch** node to the **Output Folder** node.
+
+The result of the **AccurateMassSearch** node is in the mzTab format[^17] so you can easily open it in a text editor or import it into Excel or KNIME, which we will do in the next section. The complete workflow from this section is shown in <a href="#figure-36">Figure 36</a>.
+
+(Figure_36)=
+|![Label-free quantification and identification workflow for metabolites](../images/openms-user-tutorial/metabo/metabo_part2.png)|
+|:--:|
+|Figure 36: Label-free quantification and identification workflow for metabolites.|
+
 #### Convert your data into a KNIME table
+
+The result from the TextExporter node as well as the result from the **AccurateMassSearch** node are files while standard KNIME nodes display and process only KNIME tables. To convert these files into KNIME tables we need two different nodes. For the **AccurateMassSearch** results, we use the **MzTabReader** node (**Community Nodes** > **OpenMS** > **Conversion** > **mzTab**) and its **Small Molecule Section** port. For the result of the **TextExporter**, we use the **ConsensusTextReader** (**Community Nodes** > **OpenMS** > **Conversion**).
+When executed, both nodes will import the OpenMS files and provide access to the data as KNIME tables. The retention time values are exported as a list using the **MzTabReader** based on the current PSI-Standard. This has to be parsed using the **SplitCollectionColumn**, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the **ColumnRename**. You can now combine both tables using the **Joiner** node (**Manipulation** > **Column** > **Split & Combine**) and configure it to match the m/z and retention time values of the respective tables. The full workflow is shown in <a href="#figure-37">Figure 37</a>.
+
+(Figure_37)=
+|![Label-free quantification and identification workflow for metabolites that loads the results into KNIME and joins the tables](../images/openms-user-tutorial/metabo/metabo_part3.png)|
+|:--:|
+|Figure 37: Label-free quantification and identification workflow for metabolites that loads the results into KNIME and joins the tables.|
 
 #### Adduct grouping
 
+Metabolites commonly co-elute as ions with different adducts (e.g., glutathione+H, glutathione+Na) or with charge-neutral modifications (e.g., water loss). Grouping such related ions allows to leverage information across features. For example, a low intensity, single trace feature could still be assigned a charge and adduct due to a matching high-quality feature. Several OpenMS tools, such as **AccurateMassSearch**, can use this information to, for example, narrow down candidates for identification.
+
+For this grouping task, we provide the **MetaboliteAdductDecharger** node. Its method explores the combinatorial space of all adduct combinations in a charge range for optimal explanations. Using defined adduct probabilities, it assigns co-eluting features having suitable mass shifts and charges those adduct combinations which maximize overall ion probabilities.
+
+The tool works natively with featureXML data, allowing the use of reported convex hulls. On such a single-sample level, co-elution settings can be chosen more stringently, as ionization-based adducts should not influence the elution time: Instead, elution differences of related ions should be due to slightly differently estimated times for their feature centroids.
+
+Alternatively, consensusXML data from feature linking can be converted for use, though with less chromatographic information. Here, the elution time averaging for features linked across samples, motivates wider co-elution tolerances.
+
+The two main tool outputs are a consensusXML file with compound groups of related input ions, and a featureXML containing the input file but annotated with inferred adduct information and charges.
+
+Options to respect or replace ion charges or adducts allow for example:
+- Heuristic but faster, iterative adduct grouping(**MetaboliteAdductDecharger → MetaboliteFeatureDeconvolution → q_try** set to “feature”) by chaining multiple **MetaboliteAdductDecharger** nodes with growing adduct sets, charge ranges or otherwise relaxed tolerances.
+- More specific feature linking (**FeatureLinkerUnlabeledQT → algorithm → ignore_adduct** set to “false”)
+
+  (Figure_38)=
+|![Metabolite Adduct Decharger adduct grouping workflow](../images/openms-user-tutorial/metabo/mad.png)|
+|:--:|
+|Figure 38: Metabolite Adduct Decharger adduct grouping workflow. |
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in <code>Workflows</code> ► <code>MetabolitexAdductxGrouping.knwf</code>. Run the workflow, inspect tool outputs and compare <b>AccurateMassSearch</b> results with and without adduct grouping.
+</div>
+
 #### Visualizing data
+
+Now that you have your data in KNIME you should try to get a feeling for the capabilities of KNIME.
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+Check out the <b>Molecule Type Cast</b> node (<b>Chemistry<b> > <b>Translators</b>) together with subsequent cheminformatics nodes (e.g. <b>RDKit From Molecule</b>(<b>Community Nodes</b> > <b>RDKit</b> > <b>Converters</b>)) to render the structural formula contained in the result table.
+</div>
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+Have a look at the <b>Column Filter</b> node to reduce the table to the interesting columns, e.g., only the Ids, chemical formula, and intensities.
+</div>
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+Try to compute and visualize the m/z and retention time error of the different feature elements (from the input maps) of each consensus feature. Hint: A nicely configured <b>Math Formula (Multi Column)</b> node should suffice.
+</div>
 
 #### Spectral library search
 
