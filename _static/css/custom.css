@@ -3,3 +3,13 @@
 div.highlight {
   background-color: #f6f8fa;
 }
+
+.question {
+  border-left: .2rem solid #48983f;
+  
+}
+
+.question-title::before {
+  -webkit-mask-image: var(--icon-question);
+  mask-image: var(--icon-question);
+}

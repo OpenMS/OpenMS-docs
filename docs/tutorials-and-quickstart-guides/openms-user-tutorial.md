@@ -1905,7 +1905,7 @@ Following the identification, quantification and statistical analysis our data i
 |Figure 43:  Data preparation for reporting|
 
 <div class="admonition question" name="html-admonition">
-<p class="admonition-title"><b>Question</b></p>
+<p class="admonition-title question-title"><b>Question</b></p>
 What happens if we use a <i>Left Outer Join</i>, <i>Right Outer Join</i> or <i>Full Outer Join</i> instead of the <i>Inner Join</i>?
 </div>
 
