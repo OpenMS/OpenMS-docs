@@ -2091,58 +2091,622 @@ The sample dataset used in this tutorial is part of the larger SWATH MS Gold Sta
 
 ## OpenSWATH for Metabolomics
 
-
 ### Introduction
+
+We would like to present an automated DIA/SWATH analysis workflow for metabolomics, which takes advantage of experiment specific target-decoy assay library generation. This allows for targeted extraction, scoring and statistical validation of metabolomics DIA data[^29]<sup>,</sup> [^30].
 
 ### Workflow
 
+The workflow follows multiple steps (see <a href="#figure-45">Fig. 45</a>).
+
+(Figure_45)=
+|![DIAMetAlyzer - pipeline for assay library generation and targeted analysis with statistical validation](../images/openms-user-tutorial/openswath/pipeline_overview.png)|
+|:--:|
+|Figure 45: DIAMetAlyzer - pipeline for assay library generation and targeted analysis with statistical validation. DDA data is used for candidate identification containing feature detection, adduct grouping and accurate mass search. Library construction uses fragment annotation via compositional fragmentation trees and decoy generation using a fragmentation tree re-rooting method to create a target-decoy assay library. This library is used in a second step to analyse metabolomics DIA data performing targeted extraction, scoring and statistical validation (FDR estimation).|
+
+(Figure_46)=
+|![Assay library generation](../images/openms-user-tutorial/openswath/assay_library_generation.png)|
+|:--:|
+|Figure 46: Assay library generation. The results of the compound identification (feature, molecular formula, adduct), with the corresponding fragment spectra for the feature, are used to perform fragment annotation via SIRIUS, using the compositional fragmentation trees. Then, the n highest intensity transitions are extracted and stored in the assay library.|
+
+(Figure_47)=
+|![Decoy generation](../images/openms-user-tutorial/openswath/decoy_generation.png)|
+|:--:|
+|Figure 47: Decoy generation. The compositional fragmentations trees from the step above are used to run the fragmentation tree re-rooting method from Passatutto, generating a compound specific decoy MS2 spectrum. Here, the n highest intensity decoy transitions are extracted and stored in the target-decoy assay library.|
+
+- **Candidate identification**
+   Feature detection, adduct grouping and accurate mass search are applied on DDA data.
+- **Library construction**
+  The knowledge determined from the DDA data, about compound identification, its potential adduct and the corresponding fragment spectra are used to perform fragment annotation via compositional fragmentation trees sugin SIRIUS 4[^31]. Afterwards transitions, which are the reference of a precursor to its fragment ions are stored in a so-called assay library (<a href="#figure-46">Fig. 46</a>). Assay libraries usually contain additional metadata (i.e. retention time, peak intensities). FDR estimation is based on the target-decoy approach[^32]. For the generation of the MS2 decoys, the fragmentation tree-based rerooting method by Passatutto ensure the consistency of decoy spectra (<a href="#figure-47">Fig.47</a>)[^33]. The target-decoy assay library is then used to analyse the SWATH data.
+- **Targeted extraction**
+  Chromatogram extraction and peak-group scoring. This step is performed using an algorithm based on OpenSWATH[^29] for metabolomics data.
+- **Statistical validation**
+  FDR estimation uses the PyProphet algorithm[^30]. To prevent overfitting we chose the simpler linear model (LDA) for target-decoy discrimination in PyProphet, using MS1 and MS2 scoring with low correlated scores.
+
 ### Prerequisites
+Apart from the usual KNIME nodes, the workflow uses python scripting nodes. One basic requirement for the installation of python packages, in particular pyOpenMS, is a package manager for python. Using conda as an environment manger allows to specify a specific environment in the KNIME settings (**File**>**Preferences**>**KNIME**>**Python**).
 
 #### Windows
 
+We suggest do use a virtual environment for the Python 3 installation on windows. Here you can install miniconda and follow the further instructions.
+
+1. Create new `conda` python environment.
+    ```bash
+    conda create -n py39 python=3.9
+    ```
+2. Activate `py39` environment.
+    ```bash
+    conda activate py39
+    ```    
+3. Install pip (see above).
+4. On the command line:
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy  
+    python -m pip install -U pandas
+ 
+    python -m pip install -U pyprophet 
+    python -m pip install -U pyopenms
+    ```
+
 #### macOS
+
+We suggest do use a virtual environment for the Python 3 installation on Mac. Here you can install miniconda and follow the further instructions.
+
+1. Create new `conda` python environment.
+    ```bash
+    conda create -n py39 python=3.9
+    ```
+2. Activate py39 environment.
+    ```bash
+    conda activate py39
+    ```
+3. On the Terminal:
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy  
+    python -m pip install -U pandas
+ 
+    python -m pip install -U pyprophet 
+    python -m pip install -U pyopenms
+    ```
 
 #### Linux
 
+Use your package manager apt-get or yum, where possible.
+
+1. Install Pytohn 3.9 (Debian: python-dev, RedHat: python-devel)
+2. Install NumPy (Debian/RedHat: python-numpy).
+3. Install setuptools (Debian/RedHat: python-setuptools).
+4. On the Terminal:
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy  
+    python -m pip install -U pandas
+ 
+    python -m pip install -U pyprophet 
+    python -m pip install -U pyopenms 
+    ```
+
 ### Benchmark data
+
+For the assay library construction pesticide mixes (Agilent Technologies, Waldbronn, Germany) were measured individually in solvent (DDA). Benchmark DIA samples were prepared by spiking different commercially available pesticide mixes into human plasma metabolite extracts in a 1:4 dilution series, which covers 5 orders of magnitude.
+
+The example data can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/DIAMetAlyzer/).
 
 ### Example workflow
 
+Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME (see <a href="#figure-48">Fig. 48</a>). Inputs are the SWATH-MS data in profile mode (.mzML), a path for saving the new target-decoy assay library, the SIRIUS 4.9.0 executable, the DDA data (.mzML), custom libraries and adducts for **AccurateMassSearch**, the min/max fragment mass-to-charge to be able to restrict the mass of the transitions and the path to the PyProphet executable. The DDA is used for feature detection, adduct grouping, accurate mass search and forwarded to the **AssayGeneratorMetabo**. Here, feature mapping is performed to collect MS2 spectra that belong to a feature. All information collected before (feautre, adduct, putative identification, MS2 spectra) are then internally forwarded to SIRIUS. SIRIUS is used for fragment annotation and decoy generation based on the fragmentation tree re-rooting approach. This information is then used to filter spectra/decoys based on their explained intensity (min. 85%). Afterwards internal feature linking is performed which is most important for untargeted experiments using a lot of DDA data to construct the library. The constructed target-decoy assay library is processed with the SWATH-MS data in OpenSWATH. The results are used by PyProphet for scoring and output a list of metabolites with their respective q-value and quantitative information.
+
+(Figure_48)=
+|![Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME](../images/openms-user-tutorial/openswath/oswm_example_wf.png)|
+|:--:|
+|Figure 48: Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME.|
+
 ### Run the workflow
 
+These steps need to be followed to run the workflow successfully:
+- Add DDA Input Files (.mzML).
+- Specify SIRIUS 4.9.0 executable.
+- Specify library files (mapping, struct) for **AccurateMassSearch**.
+- Add positive/negative adducts lists for **AccurateMassSearch**. 
+- Supply an output path for the SIRIUS workspace in the **AssayGeneratorMetabo**.
+- Specify additional paths and variables, such as an output path for the target-decoy assay library and a path to the pyprophet installation as well as decoy fragment mz filter (min/max).
+- Input DIA/SWATH files (.mzML).
+- Specify output path in the output folders.
+
+You can now run the workflow.
+
 ### Important parameters
+
+Please have a look at the most important parameters, which should be tweaked to fit your data. In general, OpenMS has a lot of room for parameter optimization to best fit your chromatography and instrumental settings.
+
+#### FeatureFinderMetabo
+
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*noise_threshold_int*|Intensity threshold below which peaks are regarded as noise.|
+|*chrom_fwhm*|Expected chromatographic peak width (in seconds).|
+|*mass_error_ppm*|Allowed mass deviation (in ppm).|
+
+#### MetaboliteAdductDecharger
+
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*mass_max_diff*|Maximum allowed mass tolerance per feature..|
+|*potential_adducts*|Adducts used to explain mass differences - These should fit to the adduct list specified for AccurateMassSearch.|
+
+#### AccurateMassSearch
+
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*mass_error_value*|Tolerance allowed for accurate mass search.|
+|*ionization_mode*|Positive or negative ionization mode.|
+
+#### AssayGeneratorMetabo
+
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*min_transitions*|Minimal number of transitions (3).|
+|*max_transitions*|Maximal number of transitions (3).|
+|**min_fragment_mz**|Minimal m/z of a fragment ion choosen as a transition|
+|**max_fragment_mz**|Maximal m/z of a fragment ion choosen as a transition|
+|*transitions_threshold*|Further transitions need at least x% of the maximum intensity.|
+|**fragment_annotation_score_threshold**|Filters annotations based on the explained intensity of the peaks in a spectrum (0.8).|
+|SIRIUS (internal):|
+|*out_workspace_directory*|Output directory for SIRIUS workspace (Fragmentation Trees).|
+|*filter_by_num_masstraces*|Features have to have at least x MassTraces. To use this parameter feature_only is neccessary.|
+|*precursor_mass_tolerance*|Tolerance window for precursor selection (Feature selection in regard to the precursor).|
+|*precursor_rt_tolerance*|Tolerance allowed for matching MS2 spectra depending on the feature size (should be around the FWHM of the chromatograms).|
+|*profile*|Specify the used analysis profile (e.g. qtof).|
+|*elements*|Allowed elements for assessing the putative sumformula (e.g. CHNOP[5]S[8]Cl[1]). Elements found in the isotopic pattern are added automatically, but can be specified nonetheless.|
+|Feature linking (internal):|
+|**ambiguity_resolution mz_tolerance**|M/z tolerance for the resolution of identification ambiguity over multiple files - Feature linking m/z tolerance.|
+|**ambiguity_resolution rt_tolerance**|RT tolerance in seconds for the resolution of identification ambiguity over multiple files - Feature linking m/z tolerance.|
+|**total_occurrence_filter**|Filter compound based on total occurrence in analysed samples.|
+
+In case of the **total_occurrence_filter** the value to chose depends on the analysis strategy used. In the instance you are using only identified compounds (**use_known_unknowns**= false) - it will filter based on identified features. This means that even if the feature
+was detected in e.g. 50% of all samples it might be only identified correctly by accurate mass search in 20% of all samples. Using a **total_occurrence_filter** this specific feature would still be filtered out due to less identifications.
+
+#### OpenSWATH
+
+|**parameter**|**explanation**|
+|*rt_extraction_window*|Extract x seconds around this value.|
+|*rt_normalization_factor*|Please use the range of your gradient e.g. 950 seconds.|
+
+If you are analysing a lot of big DIA mzML files ≈ 3-20GB per File, it makes sense to change how OpenSWATH processes the spectra.
+
+|**parameter**|**explanation**|
+|*readOptions*|Set cacheWorkingInMemory - will cache the files to disk
+and read SWATH-by-SWATH into memory|
+|*tempDirectory*|Set a directory, where cached mzMLs are stored (be
+aware that his directory can be quite huge depending on the data).|
+
+In the workflow pyprophet is called after OpenSWATH, it merges the result files, which allows to get enough data for the model training.
+
+```bash
+pyprophet merge --template path_to_target-decoy_assay_library.pqp --out merged.osw,→ ./*.osw
+```
+Afterwards, the results are scored using the MS1 and MS2 levels and filter for metabolomics scores, which have a low correlation.
+
+```bash
+pyprophet score --in merged.osw --out scored.osw --level ms1ms2 --ss_main_score,→ ”var_isotope_correlation_score” --ss_score_filter metabolomics
+```
+Export the non filtered results:
+
+```bash
+pyprophet export-compound --in scored.osw --out scored + ”_pyprophet_nofilter_ms1ms2.tsv” --max_rs_peakgroup_qvalue 1000.0
+```
+
+Please see the workflow for actual parameter values used for the benchmarking dataset.
+
+The workflow can be used without any identification (remove AccurateMassSearch).
+Here, all features (**known_unknowns**) are processed. The assay library is constructed based on the chemical composition elucidated via the fragment annotation (SIRIUS 4).
+It is also possible to use identified and in addition unknown (non-identified) features, by using **AccurateMassSearch** in combination with the use_known_unknowns in the **AssayGeneratorMetabo**.
 
 ## An introduction to pyOpenMS
 
 ### Introduction
 
+pyOpenMS provides Python bindings for a large part of the OpenMS library for mass spectrometry based proteomics and metabolomics. It thus provides access to a featurerich, open-source algorithm library for mass-spectrometry based LC-MS analysis. These Python bindings allow raw access to the data-structures and algorithms implemented
+in OpenMS, specifically those for file access (mzXML, mzML, TraML, mzIdentML among others), basic signal processing (smoothing, filtering, de-isotoping and peak-picking) and complex data analysis (including label-free, SILAC, iTRAQ and SWATH analysis tools). pyOpenMS is integrated into OpenMS starting from version 1.11. This tutorial is addressed to people already familiar with Python. If you are new to Python, we suggest
+to start with a [Python tutorial](https://en.wikibooks.org/wiki/Non-Programmer%27s_Tutorial_for_Python_3).
+
 ### Installation
+
+One basic requirement for the installation of python packages, in particular pyOpenMS, is a package manager for python. We provide a package for [pip](https://pypi.python.org/pypi/pip).
 
 #### Windows
 
+1. Install [Python 3.9](http://www.python.org/download/).
+2. Install [NumPy](http:///www.lfd.uci.edu/~gohlke/pythonlibs/#numpy).
+3. Install pip (see above). 
+4. On the command line:
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy 
+    python -m pip install pyopenms
+    ```
+
 #### macOS
+
+We suggest do use a virtual environment for the Python 3 installation on Mac. Here you can install miniconda and follow the further instructions.
+
+1. Create new `conda` python environment.
+    ```bash
+    conda create -n py37 python=3.9 anaconda
+    ```
+2. Activate `py37` environment.
+    ```bash
+    source activate py37
+    ```
+3. On the Terminal:
+    ```bash
+    pip install -U pip   
+    pip install -U numpy 
+    pip install pyopenms
+    ```
 
 #### Linux
 
+Use your package manager apt-get or yum, where possible.
+
+1. Install Python 3.9 (Debian: python-dev, RedHat: python-devel). 
+2. Install NumPy (Debian / RedHat: python-numpy).
+3. Install setuptools (Debian / RedHat: python-setuptools). 
+4. On the Terminal:
+    ```bash
+     pip install pyopenms
+    ```
+
 #### IDE with Anaconda integration
+
+If you do not have python installed or do not want to modify your native installation, another possibility is to use an IDE (integrated development environment) with Anaconda integration. Here, we recommend [`spyder`](https://www.spyder-ide.org/). It comes with Anaconda, which is a package and environment manager. Thus the IDE should be able to run a specific environment independent of your systems python installation.
+Please execute the installer for your respective platform located in the respective directory for your platform and follow the installation instructions.
+After installation, the ANACONDA Navigator (Anaconda 3) should be available. Please start the application. To install pyopenms please choose the button ”Environments” and click the play symbol of the base environment and ”Open Terminal”.
+Update `pip` and install `pyopenms` (MacOS, Linux):
+
+```bash
+pip install -U pip   
+pip install -U numpy 
+pip install -U pyopenms
+```
+
+Update `pip` and install `pyopenms`:
+
+```bash
+python -m pip install -U pip   
+python -m pip install -U numpy 
+python -m pip install -U pyopenms
+```
+
+Install a local available package:
+
+```bash
+pip install numpy-1.20.0-cp37*.whl   
+pip install pyopenms-2.7.0-cp37*.whl  
+or (in case of windows)
+ 
+python -m pip install -U numpy-1.20.0-cp37*.whl 
+python -m pip install -U pyopenms-2.7.0-cp37*.whl
+```
+The local available packages can be found in the directory corresponding to your operating system. Please use the absolute path to the packages for the installation.
+
+Now launch ”Spyder” (python IDE) in the home menu.
 
 ### Build instructions
 
+Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/release_2.7.0/build_from_source.html).
+
 ### Scripting with pyOpenMS
+
+A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
+
+Calculation of teh monisotopic and average mass of a peptide sequence:
+
+```python
+from pyopenms import *   
+  
+seq = AASequence.fromString("DFPIANGER")
+ 
+  
+mono_mass = seq.getMonoWeight(Residue.ResidueType.Full, 0)
+ 
+average_mass = seq.getAverageWeight(Residue.ResidueType.Full, 0)  
+
+ 
+print("The masses of the peptide sequence " + seq.toString().decode('utf-8') + " are:")
+ 
+print("mono: " + str(mono_mass)) 
+print("average: "+ str(average_mass))
+```
+
+Enzymatic digest of a peptide/protein sequence:
+
+```python
+enzyme = "Trypsin"   
+to_digest = AASequence.fromString("MKWVTFISLLLLFSSAYSRGVFRRDTHKSEIAHRFKDLGE")
+ 
+after_digest = []  
+  
+EnzymaticDigest = EnzymaticDigestionLogModel()
+ 
+EnzymaticDigest.setEnzyme(enzyme)  
+EnzymaticDigest.digest(to_digest, after_digest)  
+
+ 
+print("The peptide " + to_digest.toString().decode('utf-8') + " was digested using " + str(EnzymaticDigest.getEnzymeName().decode('utf-8')) + " to:")
+ 
+  
+for element in after_digest: 
+    print(element.toString().decode('utf-8'))
+```
+
+Use empirical formula to calculate the isotope distribution:
+
+```python
+from pyopenms import *   
+  
+methanol = EmpiricalFormula("CH3OH")  
+water = EmpiricalFormula("H2O")
+ 
+wm = EmpiricalFormula(water.toString().decode('utf-8') + methanol.toString().decode('utf-8'))
+ 
+print(wm.toString().decode('utf-8'))  
+print(wm.getElementalComposition())  
+
+ 
+isotopes = wm.getIsotopeDistribution( CoarseIsotopePatternGenerator(3) )
+ 
+for iso in isotopes.getContainer(): 
+    print (iso.getMZ(), ":", iso.getIntensity())
+```
+
+For further examples and the pyOpenMS datastructure please see the following [link](https://pyopenms.readthedocs.io/en/release_2.7.0/datastructures.html).
 
 ### Tool development with pyOpenMS
 
-#### Basics
+Scripting is one side of pyOpenMS, the other is the ability to create Tools using the C++ OpenMS library in the background. In the following section we will create a ”ProteinDigestor” pyOpenMS Tool. It should be able to read in a fasta file. Digest the proteins with a specific enzyme (e.g. Trypsin) and export an idXML output file. Please see `ExamplexData` ► `pyopenms` for code snippets.
 
+```bash
+usage: ProteinDigestor.py [-h] [-in INFILE] [-out OUTFILE] [-enzyme ENZYME]
+ 
+                          [-min_length MIN_LENGTH] [-max_length MAX_LENGTH]
+ 
+                          [-missed_cleavages MISSED_CLEAVAGES]  
+  
+ProteinDigestor −− In silico digestion of proteins.
+ 
+  
+optional arguments:  
+  -h, --help            show this help message and exit
+ 
+  -in INFILE            An input file containing amino acid sequences [fasta]
+ 
+  -out OUTFILE          Output digested sequences in idXML format [idXML]
+ 
+  -enzyme ENZYME        Enzyme used for digestion  
+  -min_length MIN_LENGTH                Minimum length of peptide
+ 
+  -max_length MAX_LENGTH                Maximum length of peptide 
+  -missed_cleavages MISSED_CLEAVAGES                        The number of allowed missed cleavages
+```
+
+#### Basics
+First, your tool needs to be able to read parameters from the command line and provide a main routine. Here standard Python can be used (no pyOpenMS is required so far).
+
+```python
+#!/usr/bin/env python   
+import sys  
+  
+def main(options):  
+  
+    # test parameter handling
+ 
+    print(options.infile, options.outfile, options.enzyme, options.min_length, options.max_length, options.missed_cleavages)
+ 
+  
+def handle_args():  
+    import argparse  
+  
+    usage = ""
+ 
+    usage += "\nProteinDigestor −− In silico digestion of proteins."
+ 
+  
+    parser = argparse.ArgumentParser(description = usage)
+ 
+    parser.add_argument('-in', dest='infile', help='An input file containing amino acid sequences [fasta]')
+ 
+    parser.add_argument('-out', dest='outfile', help='Output digested sequences in idXML format [idXML]')
+ 
+    parser.add_argument('-enzyme', dest='enzyme', help='Enzyme used for digestion')
+ 
+    parser.add_argument('-min_length', type=int, dest='min_length', help ='Minimum length of peptide')
+ 
+    parser.add_argument('-max_length', type=int, dest='max_length', help='Maximum length of peptide')
+ 
+    parser.add_argument('-missed_cleavages', type=int, dest='missed_cleavages', help='The number of allowed missed cleavages')
+ 
+  
+    args = parser.parse_args(sys.argv[1:])  
+    return args  
+  
+if __name__ == '__main__':
+ 
+    options = handle_args() 
+    main(options)
+```
+Open the Anaconda Terminal and change into the `ExamplexData` ► `pyopenmss` directory. Execute the example script.
+
+```bash
+python ProteinDigestor_argparse.py -h
+python ProteinDigestor_argparse.py -in mini_example.fasta -out mini_example_out.idXML -enzyme Trypsin -min_length 6 -max_length 40 -missed_cleavages 1
+```
+
+The parameters are being read from the command line by the function `handle_args()` and given to the `main(`) function of the script, which prints the different variables.
+
+OpenMS has a `ProteaseDB` class containing a list of enzymes which can be used for digestion of proteins. You can add this to the `argparse` code to be able to see the usable enzymes. From this point onward, pyOpenMS is required.
+
+```python
+# from here pyopenms is needed   
+    # get available enzymes from ProteaseDB
+ 
+    all_enzymes = []  
+    p_db=ProteaseDB().getAllNames(all_enzymes)  
+
+ 
+    # concatenate them to the enzyme argument. 
+    parser.add_argument('-enzyme', dest='enzyme', help='Enzymes which can be used for digestion: '+ ', '.join(map(bytes.decode, all_enzymes)))
+```
 #### Loading data structures with pyOpenMS
 
+We already scripted enzymatic digestion with the `AASequence` and `EnzymaticDigest` (see above). To make this even easier, we can use an existing class in OpenMS, called `ProteaseDigestion`.
+
+```python
+# Use the ProteaseDigestion class
+# set the enzyme used for digestion and the number of missed cleavages
+digestor = ProteaseDigestion()
+digestor.setEnzyme(options.enzyme)
+digestor.setMissedCleavages(options.missed_cleavages)
+# call the ProteaseDigestion::digest function
+# which will return the number of discarded digestions products
+# and fill the current_digest list with digestes peptide sequences
+digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, → options.max_length)
+```
+
+The next step is to use FASTAFile class to read the fasta input:
+
+```python
+     # construct a FASTAFile Object and read the input file   
+    ff = FASTAFile()
+ 
+    ff.readStart(options.infile)  
+  
+    # construct and FASTAEntry Object  
+    fe = FASTAEntry()
+ 
+  
+    # loop over the entry in the fasta while using while 
+    while(ff.readNext(fe)):
+```
+
+The output idXML needs the information about protein and peptide level, which can be saved in the `ProteinIdentification` and `PeptideIdentification` classes.
+
+```python
+idxml = IdXMLFile()  
+idxml.store(options.outfile, protein_identifications, peptide_identifications)
+```
+
+This is the part of the program which unifies the snippets provided above. Please have a closer look how the protein and peptide datastructure is incorporated in the program.
+
+```python
+def main(options):   
+    # read fasta file  
+    ff = FASTAFile()  
+    ff.readStart(options.infile)
+ 
+    fe = FASTAEntry()  
+  
+    # use ProteaseDigestion class  
+    digestor = ProteaseDigestion()
+ 
+    digestor.setEnzyme(options.enzyme)  
+    digestor.setMissedCleavages(options.missed_cleavages)  
+
+ 
+    # protein and peptide datastructure  
+    protein_identifications = []
+ 
+    peptide_identifications = []  
+    protein_identification = ProteinIdentification()
+ 
+    protein_identifications.append(protein_identification)  
+    temp_pe = PeptideEvidence()  
+
+ 
+    # number of dropped peptides due to length restriction  
+    dropped_by_length = 0  
+  
+    while(ff.readNext(fe)):
+ 
+        # construct ProteinHit and fill it with sequence information  
+        temp_protein_hit = ProteinHit()
+ 
+        temp_protein_hit.setSequence(fe.sequence)  
+        temp_protein_hit.setAccession(fe.identifier)
+ 
+  
+        # save the ProteinHit in a ProteinIdentification Object
+ 
+        protein_identification.insertHit(temp_protein_hit)  
+
+ 
+        # construct a PeptideHit and save the ProteinEvidence (Mapping) for the specific  
+        # current protein
+ 
+        temp_peptide_hit = PeptideHit()  
+        temp_pe.setProteinAccession(fe.identifier);
+ 
+        temp_peptide_hit.setPeptideEvidences([temp_pe])  
+  
+        # digestion
+ 
+        current_digest = []  
+        aaseq = AASequence()  
+        if (options.enzyme == "none"):
+ 
+            current_digest.append(aaseq.fromString(fe.sequence))  
+        else:
+ 
+            dropped_by_length += digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, options.max_length)
+ 
+  
+        for seq in current_digest:  
+            # fill the PeptideHit and PeptideIdentification datastructure
+ 
+            peptide_identification = PeptideIdentification()  
+            temp_peptide_hit.setSequence(seq)
+ 
+            peptide_identification.insertHit(temp_peptide_hit)
+ 
+            peptide_identifications.append(peptide_identification)  
+
+ 
+    print(str(dropped_by_length) + " peptides have been dropped due to the length restriction.")
+ 
+    idxml = IdXMLFile() 
+    idxml.store(options.outfile, protein_identifications, peptide_identifications)
+```
 #### Putting things together
 
+The paramter input and the functions can be used to construct the program we are looking for. If you are struggling please have a look in the example data section `ProteinDigestor.py`.
+
+Now you can run your tool in the Anaconda Terminal `ExamplexData` ► `pyopenms`.
+
+```bash
+python ProteinDigestor.py -in mini_example.fasta -out mini_example_out.idXML -enzyme Trypsin -min_length 6 -max_length 40 -missed_cleavages 1
+```
+
 #### Bonus task
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+Implement all other 184 TOPP tools using pyOpenMS.
+</div>
 
 ## Quality control
 
 ### Introduction
+
+In this chapter, we will build on an existing workflow with OpenMS / KNIME to add some quality control (QC). We will utilize the qcML tools in OpenMS to create a file with which we can collect different measures of quality to the mass spectrometry runs themselves and the applied analysis. The file also serves the means of visually reporting on the collected quality measures and later storage along the other analysis result files. We will, step-by-step, extend the label-free quantitation workflow from <a href="#label-free-quantification-of-peptides">section 3</a> with QC functions and thereby enrich each time the report given by the qcML file. But first, to make sure you get the most of this tutorial section, a little primer on how we handle QC on the technical level.
+
+#### QC metrics and qcML
+
+To assert the quality of a measurement or analysis we use quality metrics. Metrics are describing a certain aspect of the measurement or analysis and can be anything from a single value, over a range of values to an image plot or other summary. Thus, qcML metric representation is divided into QC parameters (QP) and QC attachments (QA) to be able to represent all sorts of metrics on a technical level.
+A QP may (or may not) have a value which would equal a metric describable with a single value. If the metric is more complex and needs more than just a single value, the QP does not require the single value but rather depends on an attachment of values (QA) for full meaning. Such a QA holds the plot or the range of values in a table-like form. Like this, we can describe any metric by a QP and an optional QA.
+To assure a consensual meaning of the quality parameters and attachments, we created a controlled vocabulary (CV). Each entry in the CV describes a metric or part/extension thereof. We embed each parameter or attachment with one of these and by doing so, connect a meaning to the QP/QA. Like this, we later know exactly what we collected and the programs can find and connect the right dots for rendering the report or calculating new metrics automatically. You can find the constantly growing controlled vocabulary [here](https://github.com/qcML/qcML-development/blob/master/cv/qc-cv.obo).
+Finally, in a qcml file, we split the metrics on a per mass-spectrometry-run base or a set of mass-spectrometry-runs respectively. Each run or set will contain its QP/QA we calculate for it, describing their quality.
 
 ### Building a qcML file per run
 
