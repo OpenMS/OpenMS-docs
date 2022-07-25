@@ -2710,30 +2710,201 @@ Finally, in a qcml file, we split the metrics on a per mass-spectrometry-run bas
 
 ### Building a qcML file per run
 
+As a start, we will build a basic qcML file for each mzML file in the label-free analysis. We are already creating the two necessary analysis files to build a basic qcML file upon each mzML file, a feature file and an identification file. We use the **QCCalculator** node from **Community** > **OpenMS** > **Utilities** where also all other QC* nodes will be found. The **QCCalculator** will create a very basic qcML file in which it will store collected and calculated quality data.
+
+- Copy your label-fee quantitation workflow into a new lfq-qc workflow and open it.
+- Place the **QCCalculator** node after the **IDMapper** node. Being inside the **ZipLoop**, it will execute for each of the three mzML files the **Input** node.
+- Connect the first **QCCalculator** port to the first **ZipLoopStart** outlet port, which will carry the individual mzML files.
+- Connect the last’s ID outlet port (**IDFilter** or the ID metanode) to the second **QCCalculator** port for the identification file.
+- Finally, connect the **IDMapper** outlet to the third **QCCalculator** port for the feature file.
+
+The created qcML files will not have much to show for, basic as they are. So we will extend them with some basic plots.
+
+- First, we will add an 2D overview image of the given mass spectrometry run as you may know it from TOPPView. Add the **ImageCreator** node from **Community Nodes** > **OpenMS** > **Utilities**. Change the width and heigth parameters to 640x640 as we don’t want it to be too big. Connect it to the first **ZipLoopStart** outlet port, so it will create an image file of the mzML’s contained run.
+- Now we have to embed this file into the qcML file, and attach it to the right **QualityParameter**. For this, place a **QCEmbedder** node behind the **ImageCreator** and connect that to its third inlet port. Connect its first inlet port to the outlet of the **QCCalculator** node to pass on the qcML file. Now change the parameter cv_acc to QC:0000055 which designates the attached image to be of type QC:0000055 - MS experiment heatmap. Finally, change the parameter qp_att_acc to QC:0000004, to attach the image to the QualityParameter QC:0000004 - MS acquisition result details.
+- For a reference of which CVs are already defined for qcML, have a look at the following [link](https://github.com/qcML/qcML-development/blob/master/cv/qc-cv.obo).
+
+There are two other basic plots which we almost always might want to look at before judging the quality of a mass spectrometry run and its identifications: the **total ion current** (TIC) and the **PSM mass error** (Mass accuracy), which we have available as pre-packaged QC metanodes.
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+Import the workflow from <code>Workflows</code> ► <code>Quality Control</code> ► <code>QC Metanodes.zip</code> by navigating to <b>File</b> > <b>Import KNIME Workflow...</b>
+</div>
+
+- Copy the **Mass accuracy** metanode into the workflow behind the **QCEmbedder** node and connect it. The qcML will be passed on and the Mass accuracy plots added. The information needed was already collected by the **QCCalculator**.
+- Do the same with the **TIC** metanode so that your qcML file will get passed on and enriched on each step.
+
+R Dependencies: This section requires that the R packages `ggplot2` and scales are both installed. This is the same procedure as in this [section](#advanced-visualization). In case that you use an R installation where one or both of them are not yet installed, open the **R Snippet** nodes inside the metanodes you just used (double-click). Edit the script in the *R Script* text editor from:
+
+```r
+#install.packages("ggplot2")  
+#install.packages("scales")
+```
+to
+```r
+install.packages("ggplot2")  
+install.packages("scales")
+```
+Press **Eval script** to execulte the script.
+
+(Figure_49)=
+|![Basic QC setup within a LFQ workflow.](../images/openms-user-tutorial/quality-control/qc_basic.png)|
+|:--:|
+|Figure 49: Basic QC setup within a LFQ workflow.|
+
+```{note}
+To have a peek into what our qcML now looks like for one of the **ZipLoop** iterations, we can add an **Output Folder** node from **Community Nodes** > **GenericKnimeNodes** > **IO** and set its destination parameter to somewhere we want to find our intermediate qcML files in, for example **tmp** > **qcxlfq**. If we now connect the last metanode with the Output Folder and restart the workflow, we can start inspecting the qcML files.
+```
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+Find your first created qcML file and open it with the browser (not IE), and the contained QC parameters will be rendered for you.
+</div>
+
 ### Adding brand new QC metrics
+
+We can also add brand new QC metrics to our qcML files. Remember the **Histogram** you added inside the **ZipLoop** during the label-free quantitation section? Let’s imagine for a moment this was a brand new and utterly important metric and plot for the assessment of your analyses quality. There is an easy way to integrate such new metrics into your qcMLs. Though the **Histogram** node cannot pass its plot to an image, we can do so with a **R View (table)**.
+
+- Add an **R View (table)** next to the **IDTextReader** node and connect them.
+- Edit the **R View (table)** by adding the *R Script* according to this:
+
+```r
+ #install.packages("ggplot2")   
+library("ggplot2")  
+ggplot(knime.in, aes(x=peptide_charge)) +
+ 
+ geom_histogram(binwidth=1, origin =-0.5) +  
+ scale_x_discrete() +
+ 
+ ggtitle("Identified peptides charge histogram") + 
+ ylab("Count")
+```
+
+- This will create a plot like the **Histogram** node on *peptide_charge* and pass it on as an *image*.
+- Now add and connect a **Image2FilePort** node from **Community Nodes** > **GenericKnimeNodes** > **Flow** to the **R View (table)**.
+- We can now use a **QCEmbetter** node like before to add our new metric plot into the qcML.
+- After looking for an appropriate target from the following [link](https://github.com/qcML/qcML-development/blob/master/cv/qc-cv.obo), we found that we can attach our plot to the MS *identification result details* by setting the parameter `qp_att_acc` to `QC:0000025`, as we are plotting the charge histogram of our identified peptides.
+- To have the plot later displayed properly, we assign it the parameter `cv_acc` of `QC:0000051`, a generic plot. Also we made sure in the *R Script*, that our plot carries a caption so that we know which is which, if we had more than one new plot.
+- Now we redirect the **QCEmbedders** output to the **Output Folder** from before and can have a look at how our qcML is coming along after restarting the workflow.
+
+(Figure_50)=
+|![QC with new metric](../images/openms-user-tutorial/quality-control/qc_extra.png)|
+|:--:|
+|Figure 50: QC with new metric.|
 
 ### Set QC metrics
 
+Besides monitoring the quality of each individual mass spectrometry run analysis, another capability of QC with OpenMS and qcML is to monitor the complete set. The easiest control is to compare mass spectrometry runs which should be similar, e.g. technical replicates, to spot any aberrations in the set.
+For this, we will first collect all created qcML files, merge them together and use the qcML onboard set QC properties to detect any outliers.
+
+- Connect the **QCEmbedders** output from last section to the **ZipLoopEnds** second input port.
+- The corresponding output port will collect all qcML files from each **ZipLoop** iteration and pass them on as a list of files.
+- Now we add a **QCMerger** node after the **ZipLoopEnd** and feed it that list of qcML files. In addition, we set its parameter `setname` to give our newly created set a name - say `spikein_replicates`.
+- To inspect all the QCs next to each other in that created qcML file, we have to add a new **Output Folder** to which we can connect the **QCMerger** output.
+
+When inspecting the set-qcML file in a browser, we will be presented another overview. After the set content listing, the basic QC parameters (like number of identifications) are each displayed in a graph. Each set member (or run) has its own section on the x-axis and each run is connected with that graph via a link in the mouseover on one of the QC parameter values.
+
+(Figure_51)=
+|![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
+|:--:|
+|Figure 51: QC set creation from ZipLoop.|
+
+<div class="admonition task" name="html-admonition">
+<p class="admonition-title"><b>Task</b></p>
+For ideas on new QC metrics and parameters -as you add them in your qcML files as generic parameters, feel free to contact us, so we can include them in the CV.
+</div>
+
 ## Troubleshooting guide
+
+This section will show you where you can turn to when you encounter any problems with this tutorial or with our nodes in general. Please see the FAQ first. If your problem is not listed or the proposed solution does not work, feel free to leave us a message at the means of support that you see most fit. If that is the case, please provide us with as much information as you can. In an ideal case, that would be:
+
+- Your operating system and its version (e.g. Windows 8, Ubuntu 14.04).
+- Your KNIME version (e.g. KNIME 3.1.2 full, KNIME 3.1.1 core). 
+- If not full: Which update site did you use for the OpenMS plugin? Trunk (nightly-builds) or Stable?
+- Your OpenMS plugin version found under **Help** > **Install New Software** > **What is already installed?**
+- Other installations of OpenMS on your computer (e.g. from the independent OpenMS installer, another KNIME instance etc.)
+- The log of the error in KNIME and the standard output of the tool (see FAQ: How to debug).
+- Your description of what you tried to do and experienced instead.
 
 ### FAQ
 
 #### How to debug KNIME and/or the OpenMS nodes?
 
+- **KNIME**: Start with the normal log on the bottom right of KNIME. In general all warnings and errors will be listed there. If the output is not helpful enough, try to set the logging verbosity to the highest (DEBUG) under **Preferences** > **KNIME** > **Log file log level**. 
+- **OpenMS nodes**: The first step should also be the log of KNIME. Additionally, you can view the output and the errors of our tools by right-clicking on the node and selecting **View: NODENAME Std Output?error**. This shows you the output of the OpenMS executable that was called by that node. For advanced users, you can try to execute the underlying executable in your `KNIME/plugins/de.openms.platform.arch.version/payload/bin` folder, to see if the error is reproducible outside of KNIME.
+You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the Input File node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
+
 #### General
+
+**Q:**Can I add my own modifications to the Unimod.xml?
+**A:** Unfortunately not very easy. This is an open issue since the selections are hard-coded during creation of the tools. We included 10 places for dummy modifications that can be entered in our Unimod.xml and selected in KNIME.
+
+**Q:** I have problem XYZ but it also occurs with other nodes or generally in the KNIME environment/GUI, what should I do?
+**A:** This sounds like a general KNIME bug and we advise to search help directly at the KNIME developers. They also provide a [FAQ](https://tech.knime.org/) and a [forum](https://tech.knime.org/forum).
+
+**Q:** After exporting and reading in results into a KNIME table (e.g. with a MzTabExporter and MzTabReader combination) numeric values get rounded (e.g. from scientific notation 4.5e-10 to zero) or are in a different representation than in the underlying exported file!
+**A:** Please try a different table column renderer in KNIME. Open the table in question, right-click on the header of an affected column and select another Available Renderer by hovering and finally left-clicking.
+
+**Q:** I have checked all the configurations but KNIME complains that it can not find certain output Files (FileStoreObjects).
+**A:** Sometimes KNIME/GKN has hiccups with multiple nodes with a same name, executed at the same time in the same loop. We have seen that a simple save and restart of KNIME usually solves the problem.
 
 #### Platform-specific problems
 
+##### Linux
+
+**Q:** Whenever I try to execute an OpenMS node I get an error similar to these:
+
+```bash
+/usr/lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
+```
+**A:** We currently build the binaries shipped in the OpenMS KNIME plugin with gcc 4.8. We will try to extend our support for older compilers. Until then you either need to upgrade your gcc compiler or at least the library that the tool complained about or you need to build the binaries yourself (see OpenMS documentation) and replace them in your KNIME binary folder (`YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/bin`)
+
+**Q:** Why is my configuration dialog closing right away when I double-click or try to configure it? Or why is my GUI responding so slow?
+
+**A:** If you have any problems with the KNIME GUI or the opening of dialogues under Linux you might be affected by a GTK bug. See the KNIME forum (e.g. [here](https://tech.knime.org/forum/knime-general/ubuntu-1604-slow-performance) or [here](https://tech.knime.org/forum/knime-users/knime-300-crashes-after-splash-screen)) for a discussion and a possible solution. In short: set environment variable by calling `export SWT_GTK3=0` or edit `knime.ini` to make Eclipse use GTK2 by adding the following two lines:
+```xml
+–launcher.GTK_version
+2
+```
+##### macOS
+
+**Q:** I have problems installing RServe in my local R installation for the R KNIME Extension.
+**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory. See [StackOverflow question 21370363](http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl).
+
+**Q:** Although <kbd>Ctrl</kbd> + <kbd>Left-click</kbd> TOPPAS.app or TOPPView.app and accept the risk of a downloaded application, the icon only shortly blinks and nothing happens.
+**A:** It seems like your OS is not able to remove the quarantine flag. If you trust us, please remove it yourself by typing the following command in your Terminal.app:
+
+```bash
+xattr -r -d com.apple.quarantine /Applications/OpenMS-2.7.0
+```
+
+##### Windows
+
+**Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
+**A:** Get the prerequisites installer [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/OpenMS-2.7-prerequisites-installer.exe) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
+
 #### Nodes
 
+**Q:** Why is my XTandemAdapter printing empty or VERY few results, although I did not use an e-value cutoff?
+**A:** Due to a bug in OpenMS 2.0.1 the XTandemAdapter requires a default parameter file. Give it the default configuration in `YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/share/CHEMISTRY/XTandemxdefaultxinput.xml` as a third input file. This should be resolved in newer versions though, such that it automatically uses this file if the optional inputs is empty. This should be solved in newer versions.
+
+**Q:** Do MSGFPlusAdapter, LuciphorAdapter or SiriusAdapter generally behave different/unexpected?
+**A:** These are Java processes that are started underneath. For example they can not be killed during cancellation of the node. This should not affect its performance, however. Make sure you set the Java memory parameter in these nodes to a reasonable value. Also MSGFPlus is creating several auxiliary files and accesses them during execution. Some users therefore experienced problems when executing several instances at the same time.
+
 ### Sources of support
+
+If your questions could not be answered by the FAQ, please feel free to turn to our developers via one of the following means:
+
+- File an issue on [GitHub](https://github.com/OpenMS/OpenMS/issues)
+- Write to the [Mailing List](open-ms-developers@lists.sourceforge.net)
+- Open a thread on the KNIME Community Contributions [forum](https://forum.knime.com/) for OpenMS
 
 ## References
 
 [^1]: OpenMS, <a href="http://www.openms.de/">OpenMS home page</a> [online].
 
 [^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
-O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, OpenMS - an opensource software framework for mass spectrometry., BMC bioinformatics 9(1)
+O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="http://dx.doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
 (2008), doi:10.1186/1471-2105-9-163. 7, 83
 
 [^3]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti,
@@ -2742,12 +2913,12 @@ software platform for mass spectrometry data analysis, Nature Methods 13(9),
 741–748 (2016). 7
 
 [^4]: O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
-M. Sturm, TOPP–the OpenMS proteomics pipeline., Bioinformatics 23(2) (Jan.
+M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
 2007). 7, 83
 
 [^5]: M. R. Berthold, N. Cebron, F. Dill, T. R. Gabriel, T. Kötter, T. Meinl, P. Ohl, C. Sieb, K. Thiel, and B. Wiswedel, KNIME: The Konstanz Information Miner, in Studies in Classification, Data Analysis, and Knowledge Organization (GfKL 2007), Springer, 2007.
 
-[^6]: M. Sturm and O. Kohlbacher, TOPPView: An Open-Source Viewer for Mass Spectrometry Data, Journal of proteome research 8(7), 3760–3763 (July 2009), doi:10.1021/pr900171m. 7
+[^6]: M. Sturm and O. Kohlbacher, <a href="http://dx.doi.org/10.1021/pr900171m">TOPPView: An Open-Source Viewer for Mass Spectrometry Data</a>, Journal of proteome research 8(7), 3760–3763 (July 2009), doi:10.1021/pr900171m. 7
 
 [^7]: RDKit: Open-source cheminformatics, http://www.rdkit.org, [Online; accessed
 31-August-2018]. 25
@@ -2758,10 +2929,10 @@ Bioinformatics, Journal of Chemical Information and Computer Sciences 43(2),
 493–500 (2003), PMID: 12653513, doi:10.1021/ci025584y. 25
 
 [^9]: L. Y. Geer, S. P. Markey, J. A. Kowalak, L. Wagner, M. Xu, D. M. Maynard, X. Yang,
-W. Shi, and S. H. Bryant, Open mass spectrometry search algorithm, Journal of
+W. Shi, and S. H. Bryant, <a href="http://pubs.acs.org/doi/abs/10.1021/pr0499491">Open mass spectrometry search algorithm</a>, Journal of
 Proteome Research 3(5), 958–964 (2004). 30
 
-[^10]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
+[^10]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, <a href="http://dx.doi.org/10.1021/pr500665j">Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis</a>, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
 arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
 
 [^11]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311, arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
