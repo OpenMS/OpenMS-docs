@@ -71,8 +71,6 @@ used in this tutorial have already been converted to mzML by us, so you do not n
 to perform the data conversion yourself. However, we provide a small raw file so you
 can try the important step of raw data conversion for yourself.
 
-Go to <a href="#figure-1">Figure 1</a>
-
 ```{note}
 The OpenMS installation package for Windows automatically installs
 ProteoWizard, so you do not need to download and install it separately. Due
@@ -146,10 +144,10 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 |:--:|
 |Figure 4: 3D representation of the measured spectra, signals of eluting peptides arecolored according to the raw peak intensities.|
 
-- Start TOPPView (see Windows' Start-Menu or **Applications** > **OpenMS-2.7.0** on macOS)
+- Start TOPPView (see Windows' Start-Menu or `Applications` ► `OpenMS-2.7.0` on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
-of the USB stick to, and select **Example_Data** > **Introduction** > **datasets** > **small** > **velos005614.mzML**. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
+of the USB stick to, and select `Example_Data` ► `Introduction` ► `datasets` ► `small` ► `velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
 obtain a global view on the whole LC-MS map - the default option Map view 2D
 is the correct one and we can click the <kbd>Ok</kbd> button.
 
@@ -518,7 +516,7 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 
 #### Digression: Working with chemical structures
 
-Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[7]
+Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
 or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
 In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
 Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string C[C@H](N)C(O)=O. As we will discuss later, all OpenMS tools that perform metabolite
@@ -2835,7 +2833,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 #### General
 
-**Q:**Can I add my own modifications to the Unimod.xml?
+**Q:** Can I add my own modifications to the Unimod.xml?
 **A:** Unfortunately not very easy. This is an open issue since the selections are hard-coded during creation of the tools. We included 10 places for dummy modifications that can be entered in our Unimod.xml and selected in KNIME.
 
 **Q:** I have problem XYZ but it also occurs with other nodes or generally in the KNIME environment/GUI, what should I do?
@@ -2905,7 +2903,7 @@ If your questions could not be answered by the FAQ, please feel free to turn to 
 
 [^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
 O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="http://dx.doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
-(2008), doi:10.1186/1471-2105-9-163. 7, 83
+(2008), <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-163">doi:10.1186/1471-2105-9-163</a>. 7, 83
 
 [^3]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti,
 H.-C. Ehrlich, P. Gutenbrunner, E. Kenar, et al., OpenMS: a flexible open-source
@@ -2918,7 +2916,7 @@ M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the Open
 
 [^5]: M. R. Berthold, N. Cebron, F. Dill, T. R. Gabriel, T. Kötter, T. Meinl, P. Ohl, C. Sieb, K. Thiel, and B. Wiswedel, KNIME: The Konstanz Information Miner, in Studies in Classification, Data Analysis, and Knowledge Organization (GfKL 2007), Springer, 2007.
 
-[^6]: M. Sturm and O. Kohlbacher, <a href="http://dx.doi.org/10.1021/pr900171m">TOPPView: An Open-Source Viewer for Mass Spectrometry Data</a>, Journal of proteome research 8(7), 3760–3763 (July 2009), doi:10.1021/pr900171m. 7
+[^6]: M. Sturm and O. Kohlbacher, <a href="http://dx.doi.org/10.1021/pr900171m">TOPPView: An Open-Source Viewer for Mass Spectrometry Data</a>, Journal of proteome research 8(7), 3760–3763 (July 2009), <a href="https://pubs.acs.org/doi/10.1021/pr900171m?cookieSet=1">doi:10.1021/pr900171m</a>. 7
 
 [^7]: RDKit: Open-source cheminformatics, http://www.rdkit.org, [Online; accessed
 31-August-2018]. 25
@@ -2926,7 +2924,7 @@ M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the Open
 [^8]: C. Steinbeck, Y. Han, S. Kuhn, O. Horlacher, E. Luttmann, and E. Willighagen, The
 Chemistry Development Kit (CDK): An Open-Source Java Library for Chemo- and
 Bioinformatics, Journal of Chemical Information and Computer Sciences 43(2),
-493–500 (2003), PMID: 12653513, doi:10.1021/ci025584y. 25
+493–500 (2003), PMID: 12653513, <a href="https://pubs.acs.org/doi/10.1021/ci025584y">doi:10.1021/ci025584y</a>. 25
 
 [^9]: L. Y. Geer, S. P. Markey, J. A. Kowalak, L. Wagner, M. Xu, D. M. Maynard, X. Yang,
 W. Shi, and S. H. Bryant, <a href="http://pubs.acs.org/doi/abs/10.1021/pr0499491">Open mass spectrometry search algorithm</a>, Journal of
@@ -2939,86 +2937,78 @@ arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
 
 [^12]: M. Choi, Z. F. Eren-Dogu, C. Colangelo, J. Cottrell, M. R. Hoopmann, E. A. Kapp,
 S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub, B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
-2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), doi: 10.1021/acs.jproteome.6b00881. 40
+2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), <a href="https://pubs.acs.org/doi/10.1021/acs.jproteome.6b00881">doi: 10.1021/acs.jproteome.6b00881</a>. 40
 
 [^13]: T. Huang, M. Choi, S. Hao, and O. Vitek, MSstatsTMT: Protein Significance Analysis in shotgun mass spectrometry-based proteomic experiments with tandem
-mass tag (TMT) labeling., (2020), doi:10.18129/B9.bioc.MSstatsTMT. 55
+mass tag (TMT) labeling., (2020), <a href="https://bioconductor.org/packages/release/bioc/html/MSstatsTMT.html">doi:10.18129/B9.bioc.MSstatsTMT</a>. 55
 
 [^14]: D. S. Wishart, D. Tzur, C. Knox, et al., HMDB: the Human Metabolome Database,
-Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), doi:10.1093/nar/gkl923. 69
+Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), <a href="https://academic.oup.com/nar/article/35/suppl_1/D521/1109186">doi:10.1093/nar/gkl923</a>. 69
 
 [^15]: D. S. Wishart, C. Knox, A. C. Guo, et al., HMDB: a knowledgebase for the human
-metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), doi: 10.1093/nar/gkn810. 69
+metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), <a href="https://academic.oup.com/nar/article/37/suppl_1/D603/1011821">doi: 10.1093/nar/gkn810</a>. 69
 
 [^16]: D. S. Wishart, T. Jewison, A. C. Guo, M. Wilson, C. Knox, et al., HMDB 3.0–The
-Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), doi:10.1093/nar/gks1065. 69
+Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), <a href="https://academic.oup.com/nar/article/41/D1/D801/1055560">doi:10.1093/nar/gks1065</a>. 69
 
 [^17]: J. Griss, A. R. Jones, T. Sachsenberg, M. Walzer, L. Gatto, J. Hartler, G. G.
 Thallinger, R. M. Salek, C. Steinbeck, N. Neuhauser, J. Cox, S. Neumann, J. Fan,
-F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), doi:
-10.1074/mcp.O113.036681. 69
+F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), <a href="https://www.mcponline.org/article/S1535-9476(20)32821-8/fulltext">doi:10.1074/mcp.O113.036681</a>. 69
 
 [^18]: S. Böcker, M. C. Letzel, Z. Lipták, and A. Pervukhin, SIRIUS: Decomposing isotope
-patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), doi:10.1093/bioinformatics/btn603. 75
+patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), <a href="https://academic.oup.com/bioinformatics/article/25/2/218/218950">doi:10.1093/bioinformatics/btn603</a>. 75
 
 [^19]: S. Böcker and K. Dührkop, Fragmentation trees reloaded, J. Cheminform. 8(1),
-1–26 (2016), doi:10.1186/s13321-016-0116-8. 75
+1–26 (2016), <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-016-0116-8">doi:10.1186/s13321-016-0116-8</a>. 75
 
-[^20]: K. Dührkop, H. Shen, M. Meusel, J. Rousu, and S. Böcker, Searching molecular
-structure databases with tandem mass spectra using CSI:FingerID, Proc. Natl.
-Acad. Sci. 112(41), 12580–12585 (oct 2015), doi:10.1073/pnas.1509788112. 75
+[^20]: K. Dührkop, H. Shen, M. Meusel, J. Rousu, and S. Böcker, <a href="https://www.pnas.org/doi/abs/10.1073/pnas.1509788112">Searching molecular structure databases with tandem mass spectra using CSI:FingerID</a>, Proc. Natl.
+Acad. Sci. 112(41), 12580–12585 (oct 2015), <a href="https://www.pnas.org/doi/full/10.1073/pnas.1509788112">doi:10.1073/pnas.1509788112</a>. 75
 
 [^21]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinovic, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmstrom, L. Malmström, and R. Aebersold,
 OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data, Nature Biotechnology 32(3), 219–223 (Mar. 2014). 83, 87
 
 [^22]: L. C. Gillet, P. Navarro, S. Tate, H. Röst, N. Selevsek, L. Reiter, R. Bonner, and
-R. Aebersold, Targeted Data Extraction of the MS/MS Spectra Generated by
-Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis., Molecular & Cellular Proteomics 11(6) (June 2012), doi:
-10.1074/mcp.O111.016717. 83
+R. Aebersold, <a href="https://www.mcponline.org/article/S1535-9476(20)30442-4/fulltext">Targeted Data Extraction of the MS/MS Spectra Generated by Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis.</a>, Molecular & Cellular Proteomics 11(6) (June 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30442-4/fulltext">doi:10.1074/mcp.O111.016717</a>. 83
 
-[^23]: A. Bertsch, C. Gröpl, K. Reinert, and O. Kohlbacher, OpenMS and TOPP: open
-source software for LC-MS data analysis., Methods in molecular biology (Clifton,
-N.J.) 696, 353–367 (2011), doi:10.1007/978-1-60761-987-1_23. 83
+[^23]: A. Bertsch, C. Gröpl, K. Reinert, and O. Kohlbacher, <a href="https://link.springer.com/protocol/10.1007/978-1-60761-987-1_23">OpenMS and TOPP: open source software for LC-MS data analysis.</a>, Methods in molecular biology (Clifton,
+N.J.) 696, 353–367 (2011), <a href="https://link.springer.com/protocol/10.1007/978-1-60761-987-1_23">doi:10.1007/978-1-60761-987-1_23</a>. 83
 
 [^24]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti, H.-c. Ehrlich, P. Gutenbrunner, E. Kenar, X. Liang, S. Nahnsen, L. Nilse,
 J. Pfeuffer, G. Rosenberger, M. Rurik, U. Schmitt, J. Veit, M. Walzer, D. Wojnar,
-W. E. Wolski, O. Schilling, J. S. Choudhary, L. Malmström, R. Aebersold, K. Reinert, and O. Kohlbacher, OpenMS: a flexible open-source software platform
-for mass spectrometry data analysis, Nat. Methods 13(9), 741–748 (sep 2016),doi:10.1038/nmeth.3959. 83
+W. E. Wolski, O. Schilling, J. S. Choudhary, L. Malmström, R. Aebersold, K. Reinert, and O. Kohlbacher, <a href="https://www.nature.com/articles/nmeth.3959">OpenMS: a flexible open-source software platform
+for mass spectrometry data analysis</a>, Nat. Methods 13(9), 741–748 (sep 2016),<a href="https://www.nature.com/articles/nmeth.3959">doi:10.1038/nmeth.3959</a>. 83
 
 [^25]: J. Pfeuffer, T. Sachsenberg, O. Alka, M. Walzer, A. Fillbrunn, L. Nilse, O. Schilling,
 K. Reinert, and O. Kohlbacher, OpenMS - A platform for reproducible analysis
-of mass spectrometry data, J. Biotechnol. 261(February), 142–148 (2017), doi:
-10.1016/j.jbiotec.2017.05.016. 83
+of mass spectrometry data, J. Biotechnol. 261(February), 142–148 (2017), <a href="https://www.sciencedirect.com/science/article/pii/S0168165617302511?via%3Dihub">doi:10.1016/j.jbiotec.2017.05.016</a>. 83
 
-[^26]: L. Reiter, O. Rinner, P. Picotti, R. Huttenhain, M. Beck, M.-Y. Brusniak, M. O. Hengartner, and R. Aebersold, mProphet: automated data processing and statistical
-validation for large-scale SRM experiments, Nature Methods 8(5), 430–435 (May
-2011), doi:10.1038/nmeth.1584. 83
+[^26]: L. Reiter, O. Rinner, P. Picotti, R. Huttenhain, M. Beck, M.-Y. Brusniak, M. O. Hengartner, and R. Aebersold, <a href="https://www.nature.com/articles/nmeth.1584">mProphet: automated data processing and statistical validation for large-scale SRM experiments</a>, Nature Methods 8(5), 430–435 (May
+2011), <a href="https://www.nature.com/articles/nmeth.1584">doi:10.1038/nmeth.1584</a>. 83
 
 [^27]: E. W. Deutsch, M. Chambers, S. Neumann, F. Levander, P.-A. Binz, J. Shofstahl,
 D. S. Campbell, L. Mendoza, D. Ovelleiro, K. Helsens, L. Martens, R. Aebersold,
-R. L. Moritz, and M.-Y. Brusniak, TraML—A Standard Format for Exchange of
-Selected Reaction Monitoring Transition Lists, Molecular & Cellular Proteomics
-11(4) (Apr. 2012), doi:10.1074/mcp.R111.015040. 84
+R. L. Moritz, and M.-Y. Brusniak, <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">TraML—A Standard Format for Exchange of Selected Reaction Monitoring Transition Lists</a>, Molecular & Cellular Proteomics
+11(4) (Apr. 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">doi:10.1074/mcp.R111.015040</a>. 84
 
-[^28]: C. Escher, L. Reiter, B. MacLean, R. Ossola, F. Herzog, J. Chilton, M. J. MacCoss, and O. Rinner, Using iRT, a normalized retention time for more targeted measurement of peptides., Proteomics 12(8), 1111–1121 (Apr. 2012),
+[^28]: C. Escher, L. Reiter, B. MacLean, R. Ossola, F. Herzog, J. Chilton, M. J. MacCoss, and O. Rinner, <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">Using iRT, a normalized retention time for more targeted measurement of peptides</a>., Proteomics 12(8), 1111–1121 (Apr. 2012),
 doi:10.1002/pmic.201100463. 84
 
 [^29]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinović, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmström, L. Malmström, and R. Aebersold,
-OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data., Nat. Biotechnol. 32(3), 219–23 (2014), doi:10.1038/nbt.2841.
+<a href="https://pubmed.ncbi.nlm.nih.gov/24727770/">OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data</a>., Nat. Biotechnol. 32(3), 219–23 (2014), <a href="https://www.nature.com/articles/nbt.2841">doi:10.1038/nbt.2841</a>.
 89, 90
 
 [^30]: J. Teleman, H. L. Röst, G. Rosenberger, U. Schmitt, L. Malmström, J. Malmström, and F. Levander, DIANA-algorithmic improvements for analysis of dataindependent acquisition MS data, Bioinformatics 31(4), 555–562 (2015), arXiv:
-9808008, doi:10.1093/bioinformatics/btu686. 89, 90
+9808008, <a href="https://academic.oup.com/bioinformatics/article/31/4/555/209120">doi:10.1093/bioinformatics/btu686</a>. 89, 90
 
 [^31]: K. Dührkop, M. Fleischauer, M. Ludwig, A. A. Aksenov, A. V. Melnik, M. Meusel,
-P. C. Dorrestein, J. Rousu, and S. Böcker, SIRIUS 4: a rapid tool for turning tandem
-mass spectra into metabolite structure information, Nat. Methods 16(4), 299–
-302 (apr 2019), doi:10.1038/s41592-019-0344-8. 89
+P. C. Dorrestein, J. Rousu, and S. Böcker, <a href="https://www.nature.com/articles/s41592-019-0344-8">SIRIUS 4: a rapid tool for turning tandem
+mass spectra into metabolite structure information</a>, Nat. Methods 16(4), 299–
+302 (apr 2019), <a href="https://www.nature.com/articles/s41592-019-0344-8">doi:10.1038/s41592-019-0344-8</a>. 89
 
 [^32]: J. E. Elias and S. P. Gygi, Target-decoy search strategy for increased confidence
 in large-scale protein identifications by mass spectrometry, Nat. Methods 4(3),
 207–214 (Mar. 2007). 89
 
-[^33]: K. Scheubert, F. Hufsky, D. Petras, M. Wang, L. F. Nothias, K. Dührkop, N. Bandeira, P. C. Dorrestein, and S. Böcker, Significance estimation for large scale
-metabolomics annotations by spectral matching, Nat. Commun. 8(1) (2017),
-doi:10.1038/s41467-017-01318-5. 89
+[^33]: K. Scheubert, F. Hufsky, D. Petras, M. Wang, L. F. Nothias, K. Dührkop, N. Bandeira, P. C. Dorrestein, and S. Böcker, <a href="https://www.nature.com/articles/s41467-017-01318-5">Significance estimation for large scale
+metabolomics annotations by spectral matching</a>, Nat. Commun. 8(1) (2017),
+<a href="https://www.nature.com/articles/s41467-017-01318-5">doi:10.1038/s41467-017-01318-5</a>. 89
