@@ -76,6 +76,7 @@ Contents
 
    tutorials-and-quickstart-guides/openms-user-tutorial.md
    tutorials-and-quickstart-guides/tutorials.md
+   tutorials-and-quickstart-guides/untargeted_metabolomics_preprocessing.md
    tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
