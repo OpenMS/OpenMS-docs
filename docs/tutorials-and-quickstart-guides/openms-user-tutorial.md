@@ -2834,15 +2834,19 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 #### General
 
 **Q:** Can I add my own modifications to the Unimod.xml?
+
 **A:** Unfortunately not very easy. This is an open issue since the selections are hard-coded during creation of the tools. We included 10 places for dummy modifications that can be entered in our Unimod.xml and selected in KNIME.
 
 **Q:** I have problem XYZ but it also occurs with other nodes or generally in the KNIME environment/GUI, what should I do?
+
 **A:** This sounds like a general KNIME bug and we advise to search help directly at the KNIME developers. They also provide a [FAQ](https://tech.knime.org/) and a [forum](https://tech.knime.org/forum).
 
 **Q:** After exporting and reading in results into a KNIME table (e.g. with a MzTabExporter and MzTabReader combination) numeric values get rounded (e.g. from scientific notation 4.5e-10 to zero) or are in a different representation than in the underlying exported file!
+
 **A:** Please try a different table column renderer in KNIME. Open the table in question, right-click on the header of an affected column and select another Available Renderer by hovering and finally left-clicking.
 
 **Q:** I have checked all the configurations but KNIME complains that it can not find certain output Files (FileStoreObjects).
+
 **A:** Sometimes KNIME/GKN has hiccups with multiple nodes with a same name, executed at the same time in the same loop. We have seen that a simple save and restart of KNIME usually solves the problem.
 
 #### Platform-specific problems
@@ -2867,9 +2871,11 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 ##### macOS
 
 **Q:** I have problems installing RServe in my local R installation for the R KNIME Extension.
+
 **A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory. See [StackOverflow question 21370363](http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl).
 
 **Q:** Although <kbd>Ctrl</kbd> + <kbd>Left-click</kbd> TOPPAS.app or TOPPView.app and accept the risk of a downloaded application, the icon only shortly blinks and nothing happens.
+
 **A:** It seems like your OS is not able to remove the quarantine flag. If you trust us, please remove it yourself by typing the following command in your Terminal.app:
 
 ```bash
@@ -2879,14 +2885,17 @@ xattr -r -d com.apple.quarantine /Applications/OpenMS-2.7.0
 ##### Windows
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
+
 **A:** Get the prerequisites installer [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/OpenMS-2.7-prerequisites-installer.exe) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
 
 #### Nodes
 
 **Q:** Why is my XTandemAdapter printing empty or VERY few results, although I did not use an e-value cutoff?
+
 **A:** Due to a bug in OpenMS 2.0.1 the XTandemAdapter requires a default parameter file. Give it the default configuration in `YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/share/CHEMISTRY/XTandemxdefaultxinput.xml` as a third input file. This should be resolved in newer versions though, such that it automatically uses this file if the optional inputs is empty. This should be solved in newer versions.
 
 **Q:** Do MSGFPlusAdapter, LuciphorAdapter or SiriusAdapter generally behave different/unexpected?
+
 **A:** These are Java processes that are started underneath. For example they can not be killed during cancellation of the node. This should not affect its performance, however. Make sure you set the Java memory parameter in these nodes to a reasonable value. Also MSGFPlus is creating several auxiliary files and accesses them during execution. Some users therefore experienced problems when executing several instances at the same time.
 
 ### Sources of support
