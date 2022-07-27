@@ -23,7 +23,7 @@ MapRTTransformer -in sample1.mzML -out aligned_sample1.mzML -trafo_in sample1.tr
 MapRTTransformer -in sample2.mzML -out aligned_sample2.mzML -trafo_in sample2.trafoXML
 ```
 
-Map MS2 spectra to features as PeptideIdentification objects (optional, only for GNPS). Requires an [empty idXML](link to empty idXML file) file.
+Map MS2 spectra to features as PeptideIdentification objects (optional, only for GNPS). Requires an [empty idXML](../data/empty.idXML) file.
 ```shell
 IDMapper -id empty.idXML -in aligned_sample1.featureXML -spectra:in aligned_sample1.mzML -out IDmapped_sample1.featureXML
 IDMapper -id empty.idXML -in aligned_sample2.featureXML -spectra:in aligned_sample2.mzML -out IDmapped_sample2.featureXML
