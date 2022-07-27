@@ -36,6 +36,8 @@ extensions = [
   'sphinx_inline_tabs',
 ]
 
+numfig = True
+
 myst_enable_extensions = [
   "tasklist",
   "dollarmath",
@@ -44,6 +46,7 @@ myst_enable_extensions = [
   "linkify",
   "replacements",
   "linkify_fuzzy_links",
+  "html_admonition",
 ]
 
 autosummary_generate = True
