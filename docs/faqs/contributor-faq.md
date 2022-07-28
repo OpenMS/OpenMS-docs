@@ -14,7 +14,8 @@ The following section provides general information to new contributors.
 * Read the [OpenMS Coding Conventions](https://github.com/OpenMS/OpenMS/wiki/Coding-conventions).
 * Read the [OpenMS Tutorial](../tutorials/user-tutorial.md).
 * Create a GitHub account.
-* Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) or [contact us](../contact-us.md).
+* Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
+or [contact us](../contact-us.md).
 
 ### What is the difference between an OpenMS tool and util?
 
@@ -65,8 +66,8 @@ the `CMakeCache.txt` file directly.
 
 ### How do I generate a build-system for Eclipse, KDevelop, CodeBlocks etc?
 
-Type `cmake` into a console. This will list the available code generators available on your platform, pass them to `CMake`
-using the `-G` option.
+Type `cmake` into a console. This will list the available code generators available on your platform, 
+pass them to `CMake` using the `-G` option.
 
 ### How do I add a new class to the build system?
 
@@ -77,7 +78,8 @@ using the `-G` option.
    `src/openms/include/OpenMS/FORMAT/`).
 3. Add the corresponding class test to `src/tests/class_tests/<sub-project>/`
    (e.g., `src/tests/class_tests/openms/source/NewFileFormat_test.cpp`).
-4. Add the test to the `executables.cmake` file in the test folder (e.g., `src/tests/class_tests/openms/executables.cmake`).
+4. Add the test to the `executables.cmake` file in the test folder 
+   (e.g., `src/tests/class_tests/openms/executables.cmake`).
 5. Add them to git by using the command `git add`.
 
 ### How do I add a new directory to the build system?
@@ -85,7 +87,8 @@ using the `-G` option.
 1. Create two new `sources.cmake` files (one for `src/<sub-project>/include/OpenMS/MYDIR`, one for
    `src/<sub-project>/source/MYDIR`), using existing `sources.cmake` files as template.
 2. Add the new `sources.cmake` files to `src/<sub-project>/includes.cmake`
-3. If you created a new directory directly under `src/openms/source`, then have a look at `src/tests/class_tests/openms/executables.cmake`.
+3. If you created a new directory directly under `src/openms/source`, then have a look 
+   at `src/tests/class_tests/openms/executables.cmake`.
 4. Add a new section that makes the unit testing system aware of the new (upcoming) tests.
 5. Look at the very bottom and augment `TEST_executables`.
 6. Add a new group target to `src/tests/class_tests/openms/CMakeLists.txt`.
@@ -167,7 +170,8 @@ Add a new module [here](https://github.com/OpenMS/OpenMS/edit/develop/doc/doxyge
 ### How is the command line documentation for TOPP/UTILS tools created?
 
 The program `OpenMS/doc/doxygen/parameters/TOPPDocumenter.cpp` creates the command line documentation for all classes
-that are included in the static `ToolHandler.cpp` tools list. It can be included in the documentation using the following `doxygen` command:
+that are included in the static `ToolHandler.cpp` tools list. It can be included in the documentation using 
+the following `doxygen` command:
 
 `@verbinclude TOPP_<tool name>.cli`
 
@@ -193,7 +197,8 @@ View the following TOPP and TOPPView tutorials:
 To contribute to a bug fix:
 
 1. Submit the bug as a GitHub issue.
-2. Create a feature branch (e.g. `feature/fix_missing_filename_issue_615`) from your (up-to-date) develop branch in your fork of OpenMS.
+2. Create a feature branch (e.g. `feature/fix_missing_filename_issue_615`) from your (up-to-date) 
+   develop branch in your fork of OpenMS.
 3. Fix the bug and add a test.
 4. Create a pull request for your branch.
 5. After approval and merge make sure the issue is closed.

@@ -43,6 +43,7 @@ phase or change of column. Retention time shifts between runs may be compensated
 retention time alignment methods. In the {term}`LC-MS` setup, the column is directly coupled to the ion source of the {term}`mass`
 spectrometer.
 
+
 ![](images/introduction/introduction_LC.png)
 
 ## Mass Spectrometry
@@ -82,12 +83,14 @@ The measurement of one sample is called an MS run and the set of spectra called 
 The left image displays spectrum with peaks (m/z and intensity values) and the right image shows spectra stacked in
 retention time yielding a peak map.
 
+
 In proteomics and metabolomics, the {term}`MS(1)` intensity is often used for the quantification of an analyte. Identification
-based on the {term}`MS(1)` mass-to-charge and the isotope pattern is highly ambiguous. To improve identification, tandem {term}`mass`
+based on the {term}`MS(1)` mass-to-charge and the isotope pattern is highly ambiguous. To improve identification, tandem mass
 spectrometry {term}`(MS/MS)` can be applied to assess the analyte substructure. To this end, the precursor ion is isolated and
 kinetically fragmented using an inert gas (e.g., Argon). Fragments produced by {term}`collision-induced dissociation (CID)`
 are stored in an {term}`MS^2` (or {term}`MS/MS`) spectrum and provide information that helps to resolve the ambiguities in identification.
 Alternatively, {term}`MS/MS` spectra can be used for quantification.
+
 
 Get started with installing OpenMS using the installers available for different operating systems!
 
@@ -97,9 +100,6 @@ Get started with installing OpenMS using the installers available for different 
 
 ```bash
 wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
-
-```
-
 ```
 
 ```{tab} Windows
@@ -108,12 +108,8 @@ wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstall
 wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
 ```
 
-```
-
 ```{tab} macOS
 
 ```bash
 wget https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
-```
-
 ```
