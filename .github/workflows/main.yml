@@ -38,12 +38,14 @@ jobs:
       - name: Run sphinx build. No warnings allowed
         run: sphinx-build -b html ./docs build -W
         
+      # link check of html
       - name: Run lychee
         uses: lycheeverse/lychee-action@v1.5.1
         with:
           fail: true
           args: --cache --max-cache-age 1d './**/*.html'
         
+      # upload html
       - uses: actions/upload-artifact@v3
         with:
           name: html
