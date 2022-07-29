@@ -96,7 +96,7 @@ pygments_dark_style = 'rrt'
 html_static_path = ['../_static']
 
 html_css_files = [
-    '../css/custom.css',
+    'css/custom.css',
 ]
 
 root_doc = 'index'
