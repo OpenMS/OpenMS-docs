@@ -7,11 +7,14 @@ To choose any specific compiler, instead of the system default, add the whole pa
 
 ```{tab} GCC
 
-`cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/gcc -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/g++`
-  ```
+```bash
+cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/gcc -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/g++
+```
+
 ```{tab} Clang
 
-`cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/clang -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/clang++`
+```bash
+cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/clang -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/clang++
 ```
 
 To compile OpenMS with clang and a specific GCC stdlib, instead of the system default one:
