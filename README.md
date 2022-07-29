@@ -20,7 +20,7 @@ The documentation can be browsed online and offline.
 ## Browse OpenMS documentation online
 
 1. https://openms.readthedocs.io/en/develop
-2. https://openms.readthedocs.io/en/latest/
+2. https://openms.readthedocs.io/en/latest
 
 `develop` denotes the developing version of OpenMS documentation. `latest` corresponds to the OpenMS stable release
 documentation.
@@ -28,12 +28,10 @@ documentation.
 
 ## Browse OpenMS documentation offline
 
-1. Download latest [EPUB](https://openms.readthedocs.io/_/downloads/en/latest/epub/).
-2. Download latest [PDF](https://openms.readthedocs.io/_/downloads/en/latest/pdf/).
-3. Download latest [HTMLZip](https://openms.readthedocs.io/_/downloads/en/latest/htmlzip/).
-4. Download develop [EPUB](https://openms.readthedocs.io/_/downloads/en/develop/epub/).
-5. Download develop [PDF](https://openms.readthedocs.io/_/downloads/en/develop/pdf/).
-6. Download develop [HTMLZip](https://openms.readthedocs.io/_/downloads/en/develop/htmlzip/).
+1. Download latest [PDF](https://openms.readthedocs.io/_/downloads/en/latest/pdf/).
+2. Download latest [HTMLZip](https://openms.readthedocs.io/_/downloads/en/latest/htmlzip/).
+3. Download develop [PDF](https://openms.readthedocs.io/_/downloads/en/develop/pdf/).
+4. Download develop [HTMLZip](https://openms.readthedocs.io/_/downloads/en/develop/htmlzip/).
 
 ## Build OpenMS Docs locally
 
@@ -51,7 +49,7 @@ As the next step, there are a few options to build OpenMS/OpenMS-docs locally:
 2. Run `sphinx-build -a docs /tmp/rtd` to build all files.
 3. Run `sphinx-build docs/ /tmp/rtd` to build changed files.
 
-Now, open index.html file to view the changes or output OpenMS ReadTheDocs documentation.
+Now, open index.html file to view the changes or output of OpenMS ReadTheDocs documentation.
 
 ## Contributing to OpenMS Docs
 
