@@ -26,7 +26,7 @@ author = 'OpenMS Team'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-# The short X.Y version.
+# The short major.minor.patch version.
 version = '2.7.0'
 # Short version for the latest supported KNIME
 knime_version = '4.6.0'
