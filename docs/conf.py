@@ -43,7 +43,6 @@ myst_enable_extensions = [
   "colon_fence",
   "linkify",
   "replacements",
-  "linkify_fuzzy_links",
 ]
 
 autosummary_generate = True
