@@ -45,6 +45,8 @@ myst_enable_extensions = [
   "replacements",
 ]
 
+myst_heading_anchors = 3
+
 autosummary_generate = True
 autosummary_imported_members = True
 
