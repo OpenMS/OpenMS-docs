@@ -34,9 +34,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # build docs
-      - name: Run sphinx build. No warnings allowed
-        run: sphinx-build -b html ./docs build -W
+      # build docs. "-n" for nitpick link checking
+      - name: Run sphinx build. No warnings allowed but keep going.
+        run: sphinx-build -b html ./docs build -W --keep-going -n
         
       # link check of html
       - name: Run lychee
