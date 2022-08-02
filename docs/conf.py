@@ -21,6 +21,19 @@ project = 'OpenMS'
 copyright = '2022, OpenMS Team'
 author = 'OpenMS Team'
 
+
+# The version info for the project you're documenting, acts as replacement for
+# |version| and |release|, also used in various other places throughout the
+# built documents.
+#
+# The short major.minor.patch version.
+version = '2.7.0'
+# Short version for the latest supported KNIME
+knime_version = '4.6.0'
+
+# The full version, including alpha/beta/rc tags.
+release = '2.7.0'
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -43,6 +56,7 @@ myst_enable_extensions = [
   "colon_fence",
   "linkify",
   "replacements",
+  "substitution",
 ]
 
 autosummary_generate = True
@@ -60,15 +74,6 @@ source_suffix = ['.rst', '.md']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-#
-# The short X.Y version.
-version = '2.8.0'
-# The full version, including alpha/beta/rc tags.
-release = '2.8.0'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -100,3 +105,17 @@ html_css_files = [
 ]
 
 root_doc = 'index'
+
+variables_to_export = [
+    "project",
+    "version",
+    "knime_version"
+]
+myst_substitutions = {}
+for v in variables_to_export:
+    myst_substitutions[v] = globals()[v]
+frozen_locals = dict(locals())
+# Makes variables_to_export available in the epilog
+rst_epilog = '\n'.join(map(lambda x: f".. |{x}| replace:: {frozen_locals[x]}", variables_to_export))
+del frozen_locals
+
