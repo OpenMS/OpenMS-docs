@@ -11,5 +11,5 @@ a.hxr-hoverxref {
 }
 
 a.hxr-hoverxref:hover {
-    text-decoration-color: var(--color-link-underline-hover);
+    text-decoration-color: var(--color-link-underline--hover);
 }
