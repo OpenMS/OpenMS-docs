@@ -15,10 +15,13 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 ## Create a Pull Request(PR)
 
 1. Fork this repository.
-2. Add the change in your fork.
-3. Create a pull request to [OpenMS/OpenMS-Docs](https://github.com/OpenMS/OpenMS-docs) `develop` branch.
-4. Make sure you attach a few screenshots as to how your change looks like.
-5. If this change belongs to [OpenMS API reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html),
+2. Add the change in your fork. Make sure to [build locally](https://github.com/OpenMS/OpenMS-docs#build-openms-docs-locally).
+3. Create a ReadTheDocs project from your fork following [these](https://docs.readthedocs.io/en/stable/tutorial/#first-steps)
+   steps.
+4. Now, create a pull request to [OpenMS/OpenMS-Docs](https://github.com/OpenMS/OpenMS-docs) `develop` branch.
+5. Make sure you attach a few screenshots as to how your change looks like.
+6. Add ReadTheDocs URL. It would look like: `\<your-project-name\>.readthedocs.io/\<your-branch-name\>`.
+7. If this change belongs to [OpenMS API reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html),
    please create a pull request [here](https://github.com/OpenMS/OpenMS/tree/develop/doc).
 
 ## Documentation content writing conventions
