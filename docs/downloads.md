@@ -1,5 +1,8 @@
 # OpenMS Installers
 
+{path}`foo,bar,baz,/break,foobaz`
+
+
 | Platform | Name | SHA256 Hash |
 |----------|------|-------------|
 | Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47`|

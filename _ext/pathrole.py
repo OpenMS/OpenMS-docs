@@ -65,6 +65,7 @@ def make_path_nodes(rawtext, pathparts, app, options):
             retnodes.append(nobrelemclose)
             retnodes.append(brelem)
             retnodes.append(nobrelem)
+            retnodes.append(triangle.deepcopy())
         else:
             retnodes.append(nodes.Text(part))
             retnodes.append(triangle.deepcopy())
