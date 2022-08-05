@@ -1,5 +1,5 @@
-Tutorials: How to Read File Information
-=======================================
+Worked Examples: Different OpenMS Methods to Achieve the Same Outcome
+======================================================================
 
 The following tutorials provide the opportunity to complete a real-world example while also seeing the different methods OpenMS makes available to complete the same task.
 
