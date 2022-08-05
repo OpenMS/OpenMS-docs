@@ -47,6 +47,7 @@ extensions = [
   'notfound.extension',
   'sphinxcontrib.images',
   'sphinx_inline_tabs',
+  'hoverxref.extension',
 ]
 
 myst_enable_extensions = [
@@ -93,6 +94,12 @@ html_theme_options = {
 pygments_style = 'sas'
 
 pygments_dark_style = 'rrt'
+
+
+# Configure tooltips
+hoverxref_roles = ['term']
+
+hoverxref_role_types = {'term':'tooltip'}
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
