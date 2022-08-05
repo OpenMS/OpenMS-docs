@@ -10,3 +10,15 @@ span.pathsep_triangle {
 i.fa.fa-folder-open {
     margin-right: 3px;
 }
+
+a.hxr-hoverxref {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color-link-underline);
+    border-bottom: none;
+}
+
+a.hxr-hoverxref:hover {
+    text-decoration-color: var(--color-link-underline--hover);
+}
