@@ -11,8 +11,8 @@ OpenMS User Tutorial
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- All sample data referenced in this tutorial can be found in the
-`C: / Example_Data` folder, on the USB stick that came with this tutorial, or released online on our GitHub repository `OpenMS/Tutorials`.
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the
+`C: / Example_Data` folder, on the USB stick, or released online on our GitHub repository `OpenMS/Tutorials`.
 
 ## Getting Started
 
@@ -129,7 +129,7 @@ Recently the open-source platform independent ThermoRawFileParser tool has been 
 
 ```{note}
 To learn more about the `ThermoRawFileParser` and how to use it in
-KNIME see Section 2.4.7
+KNIME see <a href="#a-minimal-workflow">A minimal workflow</a>.
 ```
 ### Data visualization using TOPPView
 
@@ -142,7 +142,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 
 |![TOPPView](../images/openms-user-tutorial/introduction/3dview.png)|
 |:--:|
-|Figure 4: 3D representation of the measured spectra, signals of eluting peptides arecolored according to the raw peak intensities.|
+|Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.|
 
 - Start TOPPView (see Windows' Start-Menu or `Applications` ► `OpenMS-2.7.0` on macOS)
 
@@ -173,7 +173,7 @@ also resets the zoom history).
     - Press the left mouse button down while a peak is selected and drag
 the mouse to another peak to measure the distance between peaks.
     - This mode is implemented in the 1D and 2D mode only.
-- Right click on your 2D map and select **Switch to 3D mode** and examine your data in 3D mode (see Fig. 4).
+- Right click on your 2D map and select **Switch to 3D mode** and examine your data in 3D mode (see <a href="#figure-4">Fig. 4</a>).
 - Go back to the 2D view. In 2D mode, visualize your data in different intensity normalization modes, use linear , percentage, snap and log-view (icons on
 the upper left tool bar). You can hover over the icons for additional information.
 
@@ -226,13 +226,13 @@ required by our OpenMS nodes or used in the Tutorials e.g. for visualization and
    - RDKit KNIME integration
 8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
 
-In addition, we need to install R for the statistical downstream analysis. Choose the directory that matches your
-operating system, double-click the R installer and follow the instructions. We recommend to use the default settings
-whenever possible. On macOS you also need to install XQuartz from the same directory.
+In addition, we need to install `R` for the statistical downstream analysis. Choose the directory that matches your
+operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
+whenever possible. On macOS you also need to install `XQuartz` from the same directory.
 
-Afterwards open your R installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
-macOS, you will find R in your Applications folder. In R type the following lines (you might also copy them from the file
-**R** > **install_R_packages.R** folder on the USB stick):
+Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
+macOS, you will find R in your Applications folder. In `R`, type the following lines (you might also copy them from the file
+`R` > `install_R_packages.R` folder on the USB stick):
 
 ```r
 install.packages('Rserve',,"http://rforge.net/",type="source")
@@ -283,7 +283,7 @@ can be slow.
   opening dialog enter the following details.
 
   Name: OpenMS 2.5 UpdateSite
-  Location: https://abibuilder.informatik.uni- tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
+  Location: https://abibuilder.informatik.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
@@ -928,8 +928,8 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 |Figure 18: KNIME data analysis of iPRG LFQ data.|
 
 The iPRG LFQ workflow (Fig. 18) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
-`ExamplexData` ► `iPRG2015` ► `database` ► `iPRG2015xtargetxdecoyxnocontaminants.fasta`
-against the MS2 from the original data (**Input Files** node with all mzMLs following `ExamplexData` ► `iPRG2015` ► `datasets` ► `JDx06232014xsample*.mzML` using the `OMSSAAdapter`.
+`ExampleData` ► `iPRG2015` ► `database` ► `iPRG2015targetdecoynocontaminants.fasta`
+against the MS2 from the original data (**Input Files** node with all mzMLs following `ExampleData` ► `iPRG2015` ► `datasets` ► `JD06232014sample*.mzML` using the `OMSSAAdapter`.
 
 ```{note}
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
@@ -1020,11 +1020,11 @@ The conditions are highly dependent on the type of experiment and on which kind 
 
 Conversion of the OpenMS-internal consensusXML format (which is an aggregation of quantified and possibly identified features across several MS-maps) to a table (in MSstats-conformant CSV format) is very easy. First, create a new KNIME workflow. Then, run the **MSstatsConverter** node with a consensusXML and the manually created (e.g. in Excel) experimental design as inputs (loaded via **Input File** nodes). The first input can be found in:
 
-`ExamplexData` ► `iPRG2015` ► `openmsLFQResults` ► `iPRGxlfq.consensusXML`
+`ExampleData` ► `iPRG2015` ► `openmsLFQResults` ► `iPRGlfq.consensusXML`
 
-This file was generated by using the `Workflows` ► `openmsLFQxiPRG2015.knwf` workflow (seen in Fig. 18). The second input is specified in:
+This file was generated by using the `Workflows` ► `openmsLFQiPRG2015.knwf` workflow (seen in Fig. 18). The second input is specified in:
 
-`ExamplexData` ► `iPRG2015` ► `experimentalxdesign.tsv`
+`ExampleData` ► `iPRG2015` ► `experimentaldesign.tsv`
 
 Adjust the parameters in the config dialog of the converter to match the given experimental design file and to use a simple summing for peptides that elute in multiple features (with the same charge state, i.e. m/z value).
 
@@ -1212,7 +1212,7 @@ An excerpt of the main result of the group comparison can be seen in Figure 20.
 The Volcano plots show differently expressed spiked-in proteins. In the left plot, which shows the fold-change C2-C1, we can see the proteins D and F (`sp|P44983|UTR6_YEAST` and `sp|P55249|ZRT4_YEAST`) are significantly over-expressed in C2, while the proteins B,C, and E (`sp|P55752|ISCB_YEAST`, `sp|P55752|ISCB_YEAST`, and `sp|P44683|PGA4_YEAST`) are under-expressed. In the right plot, which shows the fold-change ratio of C3 vs. C2, we can see the proteins E and C (`sp|P44683|PGA4_YEAST` and `sp|P44374|SFG2_YEAST`) over-expressed and the proteins A and F (`sp|P44015|VAC2_YEAST` and `sp|P55249|ZRT4_YEAST`) under-expressed. The plots also show further differentially-expressed proteins, which do not belong to the spiked-in proteins.
 
 The full analysis workflow can be found under:
-`Workflows` ► `MSstatsxstatPostProcessingxiPRG2015.knwf`
+`Workflows` ► `MSstatsstatPostProcessingiPRG2015.knwf`
 
 ## Protein inference
 
@@ -1296,13 +1296,13 @@ Let’s have a look at the workflow (see <a href="#figure-23">Fig 23</a>).
 |Figure 23: Workflow for the analysis of isobaric data|
 
 The full analysis workflow can be found here:
-`Workflows` ► `IdentificationxquantificationxisobaricxinferencexepifanyxMSstatsTMT`
+`Workflows` ► `IdentificationquantificationisobaricinferenceepifanyMSstatsTMT`
 
 The workflow has four input nodes. The first for the experimental design to allow for MSstatsTMT compatible export (**MSstatsConverter**). The second for the `.mzML` files with the centroided spectra from the isobaric labeling experiment and the third one for the `.fasta` database used for identification. The last one allows to specify an output path for the plots generated by the R View, which runs MSstatsTMT (I). The quantification (A) is performed using the **IsobaricAnalzyer**. The tool is able to extract and normalize quantitative information from TMT and iTRAQ data. The values can be assessed from centroided MS2 or MS3 spectra (if available). Isotope correction is performed based on the specified correction matrix (as provided by the manufacturer). The identification (C) is applied as known from the previous chapters by using database search and a target-decoy database.
 
 To reduce the complexity of the data for later inference the q-value estimation and FDR filtering is performed on PSM level for each file individually (B). Afterwards the identification (PSM) and quantiative information is combined using the **IDMapper**. After the processing of all available files, the intermediate results are aggregated (**FileMerger** - D). All PSM results are used for score estimation and protein inference (**Epifany**) (E). For detailed information about protein inference please see Chaper 4. Then, decoys are removed and the inference results are filtered via a protein group FDR. Peptide level results can be exported via **MzTabExporter** (F), protein level results can be obtained via the **ProteinQuantifier** (G) or the results can exported (**MSstatsConverter** - H) and further processed with the following R pipeline to allow for downstream processing using `MSstatsTMT`.
 
-Please import the workflow from `Workflows` ► `IdentificationxquantificationxisobaricxinferencexepifanyxMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the **Input Files** nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
+Please import the workflow from `Workflows` ► `IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the **Input Files** nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
 
 ### Excursion MSstatsTMT
 
@@ -1515,7 +1515,7 @@ All plots are saved to the in the beginning specified output directory in additi
 
 ### Note
 
-The isobaric analysis does not always has to be performed on protein level, for example for phosphoproteomics studies one is usually interested on the peptide level - in addition inference on peptides with post-translational modification is not straight forward. Here, we present and additonal workflow on peptide level, which can potentially be adapted and used for such cases. Please see `Workflows`►`IdentificationxquantificationxisobaricxMSstatsTMT`
+The isobaric analysis does not always has to be performed on protein level, for example for phosphoproteomics studies one is usually interested on the peptide level - in addition inference on peptides with post-translational modification is not straight forward. Here, we present and additonal workflow on peptide level, which can potentially be adapted and used for such cases. Please see `Workflows`►`IdentificationquantificationisobaricMSstatsTMT`
 
 ## Label-free quantification of metabolites
 
@@ -1714,7 +1714,7 @@ Options to respect or replace ion charges or adducts allow for example:
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in <code>Workflows</code> ► <code>MetabolitexAdductxGrouping.knwf</code>. Run the workflow, inspect tool outputs and compare <b>AccurateMassSearch</b> results with and without adduct grouping.
+A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in <code>Workflows</code> ► <code>MetaboliteAdductGrouping.knwf</code>. Run the workflow, inspect tool outputs and compare <b>AccurateMassSearch</b> results with and without adduct grouping.
 </div>
 
 #### Visualizing data
@@ -1744,7 +1744,7 @@ Because these libraries tend to be large we don’t distribute them with OpenMS.
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Construct the workflow as shown in <a href="#figure-39">Fig. 39</a>. Use the file <code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetabolitexIDxSpectraDBxpositive.mzML</code> as input for your workflow. You can use the spectral library from <code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>databases</code> ► <code>MetaboliteSpectralDB.mzML</code> as second input. The first input file contains tandem spectra that are identified by the <b>MetaboliteSpectralMatcher</b>. The resulting mzTab file is read back into a KNIME table The retention time values are exported as a list based on the current PSI-Standard. This has to be parsed using the <b>SplitCollectionColumn</b>, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the <b>ColumnRename</b> before it is stored in an Excel table. Make sure that you connect the <b>MzTabReader</b> port corresponding to the Small Molecule Section to the <b>Excel writer (XLS)</b>. Please select the ”add column headers” option in the <b>Excel writer (XLS)</b>).
+Construct the workflow as shown in <a href="#figure-39">Fig. 39</a>. Use the file <code>ExampleData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetaboliteIDSpectraDBpositive.mzML</code> as input for your workflow. You can use the spectral library from <code>ExampleData</code> ► <code>Metabolomics</code> ► <code>databases</code> ► <code>MetaboliteSpectralDB.mzML</code> as second input. The first input file contains tandem spectra that are identified by the <b>MetaboliteSpectralMatcher</b>. The resulting mzTab file is read back into a KNIME table The retention time values are exported as a list based on the current PSI-Standard. This has to be parsed using the <b>SplitCollectionColumn</b>, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the <b>ColumnRename</b> before it is stored in an Excel table. Make sure that you connect the <b>MzTabReader</b> port corresponding to the Small Molecule Section to the <b>Excel writer (XLS)</b>. Please select the ”add column headers” option in the <b>Excel writer (XLS)</b>).
 </div>
 
 (Figure_39)=
@@ -1766,7 +1766,7 @@ Here, we will use METLIN to manually validate metabolites.
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the <code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetabolitexIDxSpectraDBxpositive.mzML</code> in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
+Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the <code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetaboliteIDSpectraDBpositive.mzML</code> in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
 </div>
 
 (Figure_40)=
@@ -1801,8 +1801,8 @@ By using a mzML and featureXML, SIRIUS gains a lot of additional information by 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
 Construct the workflow as shown in <a href="#figure-42">Fig. 42</a>.
-<code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>datasets</code>
-Use the file <code>MetabolitexDeNovoID.mzML</code> as input for your workflow.
+<code>ExampleData</code> ► <code>Metabolomics</code> ► <code>datasets</code>
+Use the file <code>MetaboliteDeNovoID.mzML</code> as input for your workflow.
 </div>
 
 Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
@@ -1822,7 +1822,7 @@ In this part of the metabolomics session we take a look at more advanced downstr
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Import the workflow from <code>Workflows</code> ► <code>metabolitexID.knwf</code> in KNIME:
+Import the workflow from <code>Workflows</code> ► <code>metaboliteID.knwf</code> in KNIME:
 <b>File</b> > <b>Import KNIME Workflow...</b>
 </div>
 
@@ -1936,7 +1936,7 @@ mProphet will be used in this tutorial.
 
 #### Generating TraML from transition lists
 
-OpenSWATH requires an assay library to be supplied in the TraML format[^27]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in `ExamplexData` ► `OpenSWATH` ► `assay`. Please note that the transition lists need to be named `.tsv`.
+OpenSWATH requires an assay library to be supplied in the TraML format[^27]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in `ExampleData` ► `OpenSWATH` ► `assay`. Please note that the transition lists need to be named `.tsv`.
 
 The header of the transition list contains the following variables (with example values in brackets):
 
@@ -2053,13 +2053,13 @@ OpenSwathDecoyGenerator.exe -in OpenSWATH_SGS_AssayLibrary_woDecoy.TraML -out Op
 An example KNIME workflow for OpenSWATH is supplied in `Workflows` (<a href="#figure-44">Fig. 44</a>). The example dataset can be used for this workflow (filenames in brackets):
 
 1. Open `Workflows` ► `OpenSWATH.knwf` in KNIME: **File** > **Import KNIME Workflow...**
-2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. (`ExamplexData` ► `OpenSWATH` ► `assay` ► `OpenSWATHxiRTxAssayLibrary.TraML`).
-3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. (`ExamplexData` ► `OpenSWATH` ► `data` ► `splitxnapedroxL120420x010xSW-*.nf.pp.mzML`).
-4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. (`ExamplexData` ► `OpenSWATH` ► `assay` ► `OpenSWATHxSGSxAssayLibrary.TraML`).
+2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. (`ExampleData` ► `OpenSWATH` ► `assay` ► `OpenSWATHiRTAssayLibrary.TraML`).
+3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. (`ExampleData` ► `OpenSWATH` ► `data` ► `splitnapedroL120420x010SW-*.nf.pp.mzML`).
+4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. (`ExampleData` ► `OpenSWATH` ► `assay` ► `OpenSWATHSGSAssayLibrary.TraML`).
 5. Set the output destination by double-clicking on node **Output File**.
 6. Run the workflow.
 
-The resulting output can be found at your selected path, which will be used as input for mProphet. Execute the script on the Terminal (Linux or Mac) or cmd.exe (Windows) in `ExamplexData` ► `OpenSWATH` ► `result`. Please use the absolute path to your R installation and the result file:
+The resulting output can be found at your selected path, which will be used as input for mProphet. Execute the script on the Terminal (Linux or Mac) or cmd.exe (Windows) in `ExampleData` ► `OpenSWATH` ► `result`. Please use the absolute path to your R installation and the result file:
 
 ```r
 R --slave --args bin_dir=../../../External_Tools/mProphet/ mquest=OpenSWATH_quant.tsv workflow=LABEL_FREE num_xval=5 run_log=FALSE write_classifier=1 write_all_pg=1 < ../../../External_Tools/mProphet/mProphet.R
@@ -2464,7 +2464,7 @@ For further examples and the pyOpenMS datastructure please see the following [li
 
 ### Tool development with pyOpenMS
 
-Scripting is one side of pyOpenMS, the other is the ability to create Tools using the C++ OpenMS library in the background. In the following section we will create a ”ProteinDigestor” pyOpenMS Tool. It should be able to read in a fasta file. Digest the proteins with a specific enzyme (e.g. Trypsin) and export an idXML output file. Please see `ExamplexData` ► `pyopenms` for code snippets.
+Scripting is one side of pyOpenMS, the other is the ability to create Tools using the C++ OpenMS library in the background. In the following section we will create a ”ProteinDigestor” pyOpenMS Tool. It should be able to read in a fasta file. Digest the proteins with a specific enzyme (e.g. Trypsin) and export an idXML output file. Please see `ExampleData` ► `pyopenms` for code snippets.
 
 ```bash
 usage: ProteinDigestor.py [-h] [-in INFILE] [-out OUTFILE] [-enzyme ENZYME]
@@ -2535,7 +2535,7 @@ if __name__ == '__main__':
     options = handle_args() 
     main(options)
 ```
-Open the Anaconda Terminal and change into the `ExamplexData` ► `pyopenmss` directory. Execute the example script.
+Open the Anaconda Terminal and change into the `ExampleData` ► `pyopenms` directory. Execute the example script.
 
 ```bash
 python ProteinDigestor_argparse.py -h
@@ -2680,7 +2680,7 @@ def main(options):
 
 The paramter input and the functions can be used to construct the program we are looking for. If you are struggling please have a look in the example data section `ProteinDigestor.py`.
 
-Now you can run your tool in the Anaconda Terminal `ExamplexData` ► `pyopenms`.
+Now you can run your tool in the Anaconda Terminal `ExampleData` ► `pyopenms`.
 
 ```bash
 python ProteinDigestor.py -in mini_example.fasta -out mini_example_out.idXML -enzyme Trypsin -min_length 6 -max_length 40 -missed_cleavages 1
