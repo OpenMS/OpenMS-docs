@@ -31,12 +31,12 @@ p.question-title {
   background-color: var(--color-admonition-title);
   
 span.pathsep_triangle {
-    margin-left: 2px;
-    font-size: 80%;
+    margin-left: 2px !important;
+    font-size: 80% !important;
 }
 
 i.fa.fa-folder-open {
-    margin-right: 3px;
+    margin-right: 3px !important;
 }
 
 a.hxr-hoverxref {
