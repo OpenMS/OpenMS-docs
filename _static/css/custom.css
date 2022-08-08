@@ -29,4 +29,15 @@ p.question-title {
   -webkit-mask-size: 90%;
   mask-size: 90%;
   background-color: var(--color-admonition-title);
+  
+a.hxr-hoverxref {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color-link-underline);
+    border-bottom: none;
+}
+
+a.hxr-hoverxref:hover {
+    text-decoration-color: var(--color-link-underline--hover);
 }

@@ -21,6 +21,19 @@ project = 'OpenMS'
 copyright = '2022, OpenMS Team'
 author = 'OpenMS Team'
 
+
+# The version info for the project you're documenting, acts as replacement for
+# |version| and |release|, also used in various other places throughout the
+# built documents.
+#
+# The short major.minor.patch version.
+version = '2.7.0'
+# Short version for the latest supported KNIME
+knime_version = '4.6.0'
+
+# The full version, including alpha/beta/rc tags.
+release = '2.7.0'
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -34,6 +47,7 @@ extensions = [
   'notfound.extension',
   'sphinxcontrib.images',
   'sphinx_inline_tabs',
+  'hoverxref.extension',
 ]
 
 numfig = True
@@ -47,6 +61,7 @@ myst_enable_extensions = [
   "replacements",
   "linkify_fuzzy_links",
   "html_admonition",
+  "substitution",
 ]
 
 autosummary_generate = True
@@ -65,24 +80,15 @@ source_suffix = ['.rst', '.md']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-#
-# The short X.Y version.
-version = '2.8.0'
-# The full version, including alpha/beta/rc tags.
-release = '2.8.0'
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = 'furo'
-html_logo = 'assets/logo/OpenMS_transparent_background.png'
-html_favicon = 'assets/logo/OpenMS_transparent_background.png'
 
+html_favicon = 'assets/logo/OpenMS_transparent_background.png'
+html_logo = '../assets/logo/OpenMS_transparent_background.png'
 html_theme_options = {
     "navigation_with_keys": True,
     "light_css_variables": {
@@ -95,13 +101,32 @@ pygments_style = 'sas'
 
 pygments_dark_style = 'rrt'
 
+# Configure tooltips
+hoverxref_roles = ['term']
+
+hoverxref_role_types = {'term':'tooltip'}
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['../_static']
 
 html_css_files = [
     'css/custom.css',
 ]
 
-root_doc = 'docs/index'
+root_doc = 'index'
+
+variables_to_export = [
+    "project",
+    "version",
+    "knime_version"
+]
+myst_substitutions = {}
+for v in variables_to_export:
+    myst_substitutions[v] = globals()[v]
+frozen_locals = dict(locals())
+# Makes variables_to_export available in the epilog
+rst_epilog = '\n'.join(map(lambda x: f".. |{x}| replace:: {frozen_locals[x]}", variables_to_export))
+del frozen_locals
+

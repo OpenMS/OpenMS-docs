@@ -2,7 +2,7 @@
 
 | Platform | Name | SHA256 Hash |
 |----------|------|-------------|
-| Windows   | [OpenMS-2.8.0-Win64.exe](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Win64.exe) | `d203985c7042b885ac1085c30a2d9f36d7609b47`|
+| Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47`|
 | macOS | [OpenMS-2.8.0-macOS.dmg](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-macOS.dmg) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
 | GNU/Linux | [OpenMS-2.8.0-Debian-Linux-x86_64.deb](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Debian-Linux-x86_64.deb) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
 | Source | [OpenMS-2.8.0-src.tar.gz](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |

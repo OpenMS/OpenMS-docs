@@ -6,12 +6,11 @@ To compile with self built compilers and non default standard libraries, follow 
 To choose any specific compiler, instead of the system default, add the whole path to these options for the cmake call:
 
 ```{tab} GCC
+cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/gcc -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/g++
+```
 
-`cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/gcc -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/g++`
-  ```
 ```{tab} Clang
-
-`cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/clang -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/clang++`
+cmake -DCMAKE_C_COMPILER=/path/to/c-compiler/binary/clang -DCMAKE_CXX_COMPILER=/path/to/c++-compiler/binary/clang++
 ```
 
 To compile OpenMS with clang and a specific GCC stdlib, instead of the system default one:
