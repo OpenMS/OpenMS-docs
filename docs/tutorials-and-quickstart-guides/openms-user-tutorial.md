@@ -26,13 +26,13 @@ Please choose the directory that matches your operating system and execute the i
 
 For Windows, you call:
 
-- The OpenMS installer: `Windows / OpenMS-2.7.0-Win64.exe`
-- The KNIME installer: `Windows / KNIME-4.4.1-Installer-64bit.exe`
-- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows / OpenMS-2.7-prerequisites-installer.exe`).
+- The OpenMS installer: `Windows` / `OpenMS-{0}-Win64.exe`
+- The KNIME installer: `Windows` / `KNIME-4.4.1-Installer-64bit.exe`
+- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows` / `OpenMS-2.7-prerequisites-installer.exe`).
 
 On macOS, you call:
 
-- The OpenMS installer: `Mac / OpenMS-2.7.0-macOS.dmg`
+- The OpenMS installer: `Mac` / `OpenMS-{0}-macOS.dmg`
 - The KNIME installer: `Mac / knime_4.4.1.app.macosx.cocoa.x86_64.dmg`
 
 Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
@@ -40,7 +40,7 @@ Afterwards, follow the instructions. For the OpenMS installation on macOS, accep
 ```{note}
 Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
-open, you might need to move them from **Applications** > **OpenMS-2.7.0** to e.g. your Desktop and back.
+open, you might need to move them from **Applications** > **OpenMS-{0}** to e.g. your Desktop and back.
 ```
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](www.openms.de/documentation) website.
 
