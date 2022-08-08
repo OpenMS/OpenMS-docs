@@ -2,6 +2,15 @@ div.highlight {
   background-color: #f6f8fa;
 }
 
+span.pathsep_triangle {
+    margin-left: 2px;
+    font-size: 80%;
+}
+
+i.fa.fa-folder-open {
+    margin-right: 3px;
+}
+
 a.hxr-hoverxref {
     text-decoration: underline;
     text-decoration-style: dotted;
