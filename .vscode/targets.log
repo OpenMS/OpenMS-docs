@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Mon Aug  8 20:12:43 2022
+# Make data base, printed on Mon Aug  8 21:07:31 2022
 
 # Variables
 
@@ -41,7 +40,6 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_CWD = /
 # environment
- 
 PATH = /Users/christinakumar/.sdkman/candidates/java/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
 # environment
 SDKMAN_DIR = /Users/christinakumar/.sdkman
@@ -74,7 +72,7 @@ VSCODE_CODE_CACHE_PATH = /Users/christinakumar/Library/Application Support/Code/
 # environment
 LOGNAME = christinakumar
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -155,7 +153,6 @@ SOURCEDIR = docs
 VSCODE_PID = 21212
 # variable set hash-table stats:
 # Load=70/1024=7%, Rehash=0, Collisions=1/101=1%
- 
 
 # Pattern-specific Variable Values
 
@@ -163,9 +160,9 @@ VSCODE_PID = 21212
 
 # Directories
 
-# . (device 16777220, inode 12923647332): 16 files, no impossibilities.
+# . (device 16777220, inode 12923647332): 17 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -253,6 +250,6 @@ help:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug  8 20:12:43 2022
+# Finished Make data base on Mon Aug  8 21:07:31 2022
 
  
