@@ -29,24 +29,25 @@ p.question-title {
   -webkit-mask-size: 90%;
   mask-size: 90%;
   background-color: var(--color-admonition-title);
-  
+}
+ 
 span.pathsep_triangle {
-    margin-left: 2px !important;
-    font-size: 80% !important;
+  margin-left: 2px !important;
+  font-size: 80% !important;
 }
 
 i.fa.fa-folder-open {
-    margin-right: 3px !important;
+  margin-right: 3px !important;
 }
 
 a.hxr-hoverxref {
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-thickness: 2px;
-    text-decoration-color: var(--color-link-underline);
-    border-bottom: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-link-underline);
+  border-bottom: none;
 }
 
 a.hxr-hoverxref:hover {
-    text-decoration-color: var(--color-link-underline--hover);
+  text-decoration-color: var(--color-link-underline--hover);
 }
