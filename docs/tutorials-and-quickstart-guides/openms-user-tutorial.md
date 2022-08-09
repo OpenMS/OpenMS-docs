@@ -32,7 +32,7 @@ For Windows, you call:
 On macOS, you call:
 
 - The OpenMS installer: `Mac` / {{ '`OpenMS-{0}-macOS.dmg`'.format(version) }}
-- The KNIME installer: `Mac / knime_4.4.1.app.macosx.cocoa.x86_64.dmg`
+- The KNIME installer: {path}`Mac, knime_4.4.1.app.macosx.cocoa.x86_64.dmg`
 
 Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
 
@@ -87,10 +87,9 @@ graphical user interface) or `msconvert` (a simple command line tool).
 |Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see Fig. 2)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
 
 Both tools are
-available in: `C: / Program Files / OpenMS-2.7.0 / share / OpenMS / THIRDPARTY / pwiz-bin`.
+available in: {path}`C:,Program Files,OpenMS-2.7.0,share,OpenMS, THIRDPARTY,pwiz-bin`.
 
-You can find a small RAW file on the USB stick `C: / Example_Data Introduction
-datasets/raw`.
+You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introduction,datasets,raw`.
 
 #### MSConvertGUI
 
