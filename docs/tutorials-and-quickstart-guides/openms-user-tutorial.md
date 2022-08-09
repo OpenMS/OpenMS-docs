@@ -24,7 +24,9 @@ Before we get started, we will install OpenMS and KNIME. If you take part in a t
 Please choose the directory that matches your operating system and execute the installer.
 
 For Windows, you call:
+
 {{ '`foo{0}`'.format(version) }}
+
 - The OpenMS installer: `Windows` / {{ '`OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: `Windows` / `KNIME-4.4.1-Installer-64bit.exe`
 - OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows` / `OpenMS-2.7-prerequisites-installer.exe`).
@@ -558,15 +560,15 @@ improve handling and clarity of large workflows:
 **Metanodes** allow to bundle several nodes into a single **Metanode**.
 
 <div class="admonition task" name="html-admonition">
-<p class="admonition-title task title"><b>Task</b></p>
-Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
-<div class="admonition tip" name="html-admonition">
-<p class="admonition-title"><b>Tip</b></p>
-There is a <b>Select Loop</b> option when you right-click a node in a loop, that does exactly that for you. Then, open the
-context menu (right-click on a node in the selection) and select <b>Create Metanode</b>. Enter a caption for the <b>Metanode</b>.
-The previously selected nodes are now contained in the <b>Metanode</b>. Double-clicking on the <b>Metanode</b> will display
-the contained nodes in a new tab window.
-</div>
+  <p class="admonition-title task title"><b>Task</b></p>
+  Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
+  <div class="admonition tip" name="html-admonition">
+    <p class="admonition-title"><b>Tip</b></p>
+    There is a <b>Select Loop</b> option when you right-click a node in a loop, that does exactly that for you. Then, open the
+    context menu (right-click on a node in the selection) and select <b>Create Metanode</b>. Enter a caption for the <b>Metanode</b>.
+    The previously selected nodes are now contained in the <b>Metanode</b>. Double-clicking on the <b>Metanode</b> will display
+    the contained nodes in a new tab window.
+  </div>
 </div>
 
 <div class="admonition task" name="html-admonition">
@@ -591,39 +593,46 @@ languages can be integrated. In this tutorial, we primarily use scripts of the p
 Note that this part is considered advanced and might be difficult to follow if you are not familiar with R. In this case
 you might skip this part.
 
-**R View (Table)** allows to seamlessly include R scripts into KNIME. We will demonstrate on a minimal. We will
+**R View (Table)** allows to seamlessly include R scripts into KNIME. We will
 demonstrate on a minimal example how such a script is integrated.
 
 <div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-First we need some example data in KNIME, which we will generate using the <b>Data Generator</b> node. You can keep the
+  <p class="admonition-title task-title">**Task**</p>
+  <p>
+First we need some example data in KNIME, which we will generate using the **Data Generator** node. You can keep the
 default settings and execute the node. The table contains four columns, each containing random coordinates and one column
-containing a cluster number (Cluster_0 to Cluster_3). Now place a <b>R View (Table)</b> node into the workflow and connect
-the upper output port of the <b>Data Generator</b> node to the input of the <b>R View (Table)</b> node. Right-click and
-configure the node. If you get an error message like ”Execute failed: R_HOME does not contain a folder with name ’bin’.”
-or ”Execution failed: R Home is invalid.”: please change the R settings in the preferences. To do so open <b>File</b> >
-<b>Preferences</b> > <b>KNIME</b> > <b>R</b> and enter the path to your R installation (the folder that contains the bin
-directory. (e.g., <b>C:</b> > <b>Program Files</b> > <b>R</b> > <b>R-3.4.3</b>).
-
+containing a cluster number (Cluster_0 to Cluster_3). Now place a **R View (Table)** node into the workflow and connect
+the upper output port of the **Data Generator** node to the input of the **R View (Table)** node. Right-click and
+configure the node. If you get an error message like `Execute failed: R_HOME does not contain a folder with name ’bin’.`
+or `Execution failed: R Home is invalid.`: please change the R settings in the preferences. To do so open **File** >
+**Preferences** > **KNIME** > **R** and enter the path to your R installation (the folder that contains the bin
+directory. (e.g., {path}`C:,Program Files,R,R-3.4.3`).
+  </p>
+  <p>
 If you get an error message like: ”Execute failed: Could not find Rserve package. Please install it in your R
 installation by running ”install.packages(’Rserve’)”.” You may need to run your R binary as administrator (In windows
 explorer: right-click ”Run as administrator”) and enter install.packages(’Rserve’) to install the package.
-
+  </p>
+  <p>
 If R is correctly recognized we can start writing an R script. Consider that we are interested in plotting the first and
 second coordinates and color them according to their cluster number. In R this can be done in a single line. In the
-<b>R view (Table)</b> text editor, enter the following code:
-
-<code>plot(x=knime.in$Universe_0_0, y=knime.in$Universe_0_1, main="Plotting column Universe_0_0 vs. Universe_0_1", col=knime.in$"Cluster Membership")</code>
-
+**R view (Table)** text editor, enter the following code:
+```r
+plot(x=knime.in$Universe_0_0, y=knime.in$Universe_0_1, main="Plotting column Universe_0_0 vs. Universe_0_1", col=knime.in$"Cluster Membership")
+```
+  </p>
+  <p>
 **Explanation:** The table provided as input to the **R View (Table)** node is available as R **data.frame** with name
-<code>knime.in</code>. Columns (also listed on the left side of the R View window) can be accessed in the usual R way by first
-specifying the <code>data.frame</code> name and then the column name (e.g <code>knime.in$Universe_0_0</code>). <code>plot</code> is the plotting function
-we use to generate the image. We tell it to use the data in column <b>Universe_0_0</b> of the dataframe object <b>knime.in</b>
-(denoted as <code>knime.in$Universe_0_0</code>) as x-coordinate and the other column <code>knime.in$Universe_0_1</code> as y-coordinate in the
-plot. <code>main</code> is simply the main title of the plot and <code>col</code> the column that is used to determine the color (in this case
-it is the <code>Cluster Membership</code> column).
-
-Now press the <b>Eval script</b> and <b>Show plot</b> buttons.
+`knime.in`. Columns (also listed on the left side of the R View window) can be accessed in the usual R way by first
+specifying the `data.frame` name and then the column name (e.g., `knime.in$Universe_0_0`). `plot` is the plotting function
+we use to generate the image. We tell it to use the data in column `Universe_0_0` of the dataframe object **knime.in**
+(denoted as `knime.in$Universe_0_0`) as x-coordinate and the other column `knime.in$Universe_0_1` as y-coordinate in the
+plot. `main` is simply the main title of the plot and `col` the column that is used to determine the color (in this case
+it is the `Cluster Membership` column).
+  </p>
+  <p>
+Now press the <kbd>Eval script</kbd> and <kbd>Show plot</kbd> buttons.
+  </p>
 </div>
 
 ```{note}
@@ -726,7 +735,7 @@ FDR of < 1 %.
 - Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
   **Community Nodes** > **OpenMS** > **ID Processing**).
 - In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
-  Configuring its parameter score `→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
+  Configuring its parameter score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
 - Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
   identify at this FDR threshold?
@@ -771,7 +780,7 @@ probabilities (PEP) and a combination of the normalized scores by considering mi
 
   ```{note}
   By default, X!Tandem takes additional enzyme cutting rules into consideration (besides the specified tryptic digest).
-  Thus for the tutorial files, you have to set PeptideIndexer’s `enzyme` →specificity parameter to `none` to accept
+  Thus for the tutorial files, you have to set PeptideIndexer’s `enzyme→specificity` parameter to `none` to accept
   X!Tandems non-tryptic identifications as well.
   ```
 
@@ -2801,13 +2810,17 @@ When inspecting the set-qcML file in a browser, we will be presented another ove
 
 (Figure_51)=
 |![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
-|:--:|
+|:-----:|
 |Figure 51: QC set creation from ZipLoop.|
 
+foo
+
 <div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<p class="title">**Task**</p>
 For ideas on new QC metrics and parameters -as you add them in your qcML files as generic parameters, feel free to contact us, so we can include them in the CV.
 </div>
+
+foo
 
 ## Troubleshooting guide
 
