@@ -11,8 +11,7 @@ OpenMS User Tutorial
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data`
-`C: / Example_Data` folder, on the USB stick, or released online on our GitHub repository `OpenMS/Tutorials`.
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our GitHub repository {path}`OpenMS,Tutorials`.
 
 ## Getting Started
 
@@ -25,7 +24,7 @@ Before we get started, we will install OpenMS and KNIME. If you take part in a t
 Please choose the directory that matches your operating system and execute the installer.
 
 For Windows, you call:
-
+{{ '`foo{0}`'.format(version) }}
 - The OpenMS installer: `Windows` / {{ '`OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: `Windows` / `KNIME-4.4.1-Installer-64bit.exe`
 - OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows` / `OpenMS-2.7-prerequisites-installer.exe`).
