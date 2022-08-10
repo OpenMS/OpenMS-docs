@@ -559,29 +559,29 @@ improve handling and clarity of large workflows:
 
 **Metanodes** allow to bundle several nodes into a single **Metanode**.
 
-<div class="admonition task" name="html-admonition">
-  <p class="admonition-title task title"><b>Task</b></p>
+<div class="admonition task">
+  <p class="admonition-title task title">**Task**</p>
   Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
-  <div class="admonition tip" name="html-admonition">
-    <p class="admonition-title"><b>Tip</b></p>
-    There is a <b>Select Loop</b> option when you right-click a node in a loop, that does exactly that for you. Then, open the
-    context menu (right-click on a node in the selection) and select <b>Create Metanode</b>. Enter a caption for the <b>Metanode</b>.
-    The previously selected nodes are now contained in the <b>Metanode</b>. Double-clicking on the <b>Metanode</b> will display
+  <div class="admonition tip">
+    <p class="admonition-title">**Tip**</p>
+    There is a **Select Loop** option when you right-click a node in a loop, that does exactly that for you. Then, open the
+    context menu (right-click on a node in the selection) and select **Create Metanode**. Enter a caption for the **Metanode**.
+    The previously selected nodes are now contained in the **Metanode**. Double-clicking on the **Metanode** will display
     the contained nodes in a new tab window.
   </div>
 </div>
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Create the Metanode to let it behave like an encapsulated single node. First select the <b>Metanode</b>, open the context
-menu (right-click) and select <b>Metanode</b> > <b>Wrap</b>. The differences between Metanodes and their wrapped counterparts
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Create the Metanode to let it behave like an encapsulated single node. First select the **Metanode**, open the context
+menu (right-click) and select **Metanode** > **Wrap**. The differences between Metanodes and their wrapped counterparts
 are marginal (and only apply when exposing user inputs and workflow variables). Therefore we suggest to use standard
 Metanodes to clean up your workflow and cluster common subparts until you actually notice their limits.
 </div>
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Undo the packaging. First select the (<b>Wrapped</b>) <b>Metanode</b>, open the context menu (right-click) and select <b>(Wrapped) Metanode</b> > <b>Expand</b>.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Undo the packaging. First select the (**Wrapped**) **Metanode**, open the context menu (right-click) and select **(Wrapped) Metanode** > **Expand**.
 </div>
 
 #### Advanced topic: R integration
@@ -596,7 +596,7 @@ you might skip this part.
 **R View (Table)** allows to seamlessly include R scripts into KNIME. We will
 demonstrate on a minimal example how such a script is integrated.
 
-<div class="admonition task" name="html-admonition">
+<div class="admonition task">
   <p class="admonition-title task-title">**Task**</p>
   <p>
 First we need some example data in KNIME, which we will generate using the **Data Generator** node. You can keep the
@@ -1719,28 +1719,28 @@ Options to respect or replace ion charges or adducts allow for example:
 |:--:|
 |Figure 38: Metabolite Adduct Decharger adduct grouping workflow. |
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in <code>Workflows</code> ► <code>MetaboliteAdductGrouping.knwf</code>. Run the workflow, inspect tool outputs and compare <b>AccurateMassSearch</b> results with and without adduct grouping.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in {path}`Workflows,MetaboliteAdductGrouping.knwf`. Run the workflow, inspect tool outputs and compare **AccurateMassSearch** results with and without adduct grouping.
 </div>
 
 #### Visualizing data
 
 Now that you have your data in KNIME you should try to get a feeling for the capabilities of KNIME.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Check out the <b>Molecule Type Cast</b> node (<b>Chemistry</b> > <b>Translators</b>) together with subsequent cheminformatics nodes (e.g. <b>RDKit From Molecule</b>(<b>Community Nodes</b> > <b>RDKit</b> > <b>Converters</b>)) to render the structural formula contained in the result table.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Check out the **Molecule Type Cast** node (**Chemistry** > **Translators**) together with subsequent cheminformatics nodes (e.g. **RDKit From Molecule**(**Community Nodes** > **RDKit** > **Converters**)) to render the structural formula contained in the result table.
 </div>
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Have a look at the <b>Column Filter</b> node to reduce the table to the interesting columns, e.g., only the Ids, chemical formula, and intensities.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Have a look at the **Column Filter** node to reduce the table to the interesting columns, e.g., only the Ids, chemical formula, and intensities.
 </div>
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Try to compute and visualize the m/z and retention time error of the different feature elements (from the input maps) of each consensus feature. Hint: A nicely configured <b>Math Formula (Multi Column)</b> node should suffice.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Try to compute and visualize the m/z and retention time error of the different feature elements (from the input maps) of each consensus feature. Hint: A nicely configured **Math Formula (Multi Column)** node should suffice.
 </div>
 
 #### Spectral library search
@@ -1749,9 +1749,9 @@ Identifying metabolites using only the accurate mass may lead to ambiguous resul
 
 Because these libraries tend to be large we don’t distribute them with OpenMS.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Construct the workflow as shown in <a href="#figure-39">Fig. 39</a>. Use the file <code>ExampleData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetaboliteIDSpectraDBpositive.mzML</code> as input for your workflow. You can use the spectral library from <code>ExampleData</code> ► <code>Metabolomics</code> ► <code>databases</code> ► <code>MetaboliteSpectralDB.mzML</code> as second input. The first input file contains tandem spectra that are identified by the <b>MetaboliteSpectralMatcher</b>. The resulting mzTab file is read back into a KNIME table The retention time values are exported as a list based on the current PSI-Standard. This has to be parsed using the <b>SplitCollectionColumn</b>, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the <b>ColumnRename</b> before it is stored in an Excel table. Make sure that you connect the <b>MzTabReader</b> port corresponding to the Small Molecule Section to the <b>Excel writer (XLS)</b>. Please select the ”add column headers” option in the <b>Excel writer (XLS)</b>).
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Construct the workflow as shown in <a href="#figure-39">Fig. 39</a>. Use the file {path}`ExampleData,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` as input for your workflow. You can use the spectral library from {path}`ExampleData,Metabolomics,databases,MetaboliteSpectralDB.mzML` as second input. The first input file contains tandem spectra that are identified by the **MetaboliteSpectralMatcher**. The resulting mzTab file is read back into a KNIME table The retention time values are exported as a list based on the current PSI-Standard. This has to be parsed using the **SplitCollectionColumn**, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the **ColumnRename** before it is stored in an Excel table. Make sure that you connect the **MzTabReader** port corresponding to the Small Molecule Section to the **Excel writer (XLS)**. Please select the ”add column headers” option in the **Excel writer (XLS)**).
 </div>
 
 (Figure_39)=
@@ -1771,9 +1771,9 @@ In metabolomics, matches between tandem spectra and spectral libraries are manua
 
 Here, we will use METLIN to manually validate metabolites.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the <code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetaboliteIDSpectraDBpositive.mzML</code> in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
 </div>
 
 (Figure_40)=
@@ -1781,8 +1781,8 @@ Check in the .xlsx output from the Excel writer (XLS) if you can find glutathion
 |:--:|
 |Figure 40: Tandem spectrum of glutathione. Visualized in TOPPView.|
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 On the METLIN homepage search for **Name** Glutathione using the **Advanced Search**. See the [link](https://metlin.scripps.edu/landing_page.php?pgcontent=advanced_search). Note that free registration is required. Which collision energy (and polarity) gives the best (visual) match to your experimental spectrum in TOPPView? Here you can compare the fragmentation patterns in both spectra shown by the Intensity or relative Intensity, the m/z of a peak and the distance between peaks. Each distance between two peaks corresponds to a fragment of elemental composition (e.g., NH2 with the charge of one would have mass of two peaks of 16.023 Th).
 </div>
 
@@ -1805,11 +1805,11 @@ The node **SiriusAdapter** is able to work in different modes depending on the p
 
 By using a mzML and featureXML, SIRIUS gains a lot of additional information by using the OpenMS tools for preprocessing.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 Construct the workflow as shown in <a href="#figure-42">Fig. 42</a>.
-<code>ExampleData</code> ► <code>Metabolomics</code> ► <code>datasets</code>
-Use the file <code>MetaboliteDeNovoID.mzML</code> as input for your workflow.
+{path}`Example_Data,Metabolomics,datasets`
+Use the file `MetaboliteDeNovoID.mzML` as input for your workflow.
 </div>
 
 Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
@@ -1827,10 +1827,10 @@ The output consists of two mzTab files and an internal .ms file. One mzTab for S
 
 In this part of the metabolomics session we take a look at more advanced downstream analysis and the use of the statistical programming language R. As laid out in the introduction we try to detect a set of spike-in compounds against a complex blood background. As there are many ways to perform this type of analysis we provide a complete workflow.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 Import the workflow from <code>Workflows</code> ► <code>metaboliteID.knwf</code> in KNIME:
-<b>File</b> > <b>Import KNIME Workflow...</b>
+**File** > **Import KNIME Workflow...**
 </div>
 
 The section below will guide you in your understanding of the different parts of the workflow. Once you understood the workflow you should play around and be creative. Maybe create a novel visualization in KNIME or R? Do some more elaborate statistical analysis? Note that some basic R knowledge is required to fully understand the processing in **R Snippet** nodes.
@@ -1843,9 +1843,9 @@ The following part is analogous to what you did for the simple metabolomics pipe
 
 The first part is identical to what you did for the simple metabolomics pipeline. Additionally, we convert zero intensities into NA values and remove all rows that contain at least one NA value from the analysis. We do this using a very simple **R Snippet** and subsequent **Missing Value filter** node.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Inspect the <b>R Snippet</b> by double-clicking on it. The KNIME table that is passed to an <b>R Snippet</b> node is available in R as a data.frame named <code>knime.in</code>. The result of this node will be read from the data.frame <code>knime.out</code> after the script finishes. Try to understand and evaluate parts of the script (Eval Selection). In this dialog you can also print intermediary results using for example the R command <code>head(knime.in)</code> or <code>cat(knime.in)</code> to the Console pane.
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Inspect the **R Snippet** by double-clicking on it. The KNIME table that is passed to an **R Snippet** node is available in R as a data.frame named <code>knime.in</code>. The result of this node will be read from the data.frame <code>knime.out</code> after the script finishes. Try to understand and evaluate parts of the script (Eval Selection). In this dialog you can also print intermediary results using for example the R command <code>head(knime.in)</code> or <code>cat(knime.in)</code> to the Console pane.
 </div>
 
 #### Statistical analysis
@@ -1868,8 +1868,8 @@ KNIME supports multiple nodes for interactive visualization with interrelated ou
 - The **Scatter Plot** node (from the **Views** repository) enables interactive visualization of the logarithmized values as a volcano plot: the log-transformed values can be chosen in the ‘Column Selection’ tab of the plot view. Data points can be selected in the plot and highlighted via the menu option. The highlighting transfers to all other interactive nodes connected to the same data table. In our case, selection and the highlighting will also occur in the **Interactive Table** node (from the **Views** repository).
 - Output of the interactive table can then be filtered via the ”HiLite” menu tab. For example, we could restrict shown rows to points highlighted in the volcano plot.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 Inspect the nodes of this section. Customize your visualization and possibly try to visualize other aspects of your data.
 </div>
 
@@ -1909,13 +1909,13 @@ Following the identification, quantification and statistical analysis our data i
 |:--:|
 |Figure 43:  Data preparation for reporting|
 
-<div class="admonition question" name="html-admonition">
-<p class="admonition-title question-title"><b>Question</b></p>
-What happens if we use a <i>Left Outer Join</i>, <i>Right Outer Join</i> or <i>Full Outer Join</i> instead of the <i>Inner Join</i>?
+<div class="admonition question">
+<p class="admonition-title question-title">**Question**</p>
+What happens if we use a *Left Outer Join*, *Right Outer Join* or *Full Outer Join* instead of the *Inner Join*?
 </div>
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 Inspect the output of the join operation after the Molecule Type Cast and RDKit molecular structure generation.
 </div>
 
@@ -1934,7 +1934,7 @@ OpenSWATH has been fully integrated since OpenMS 1.10 [^4]<sup>,</sup> [^2]<sup>
 
 ### Installation of mProphet
 
-[mProphet](http://www.mprophet.org/)[^26] is available as standalone script in <code>External _Tools</code> ► <code>mProphet</code>. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
+[mProphet](http://www.mprophet.org/)[^26] is available as standalone script in {path}`External_Tools,mProphet`. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
 PyProphet, a much faster reimplementation of the mProphet algorithm is available from [PyPI](https://pypi.python.org/pypi/pyprophet/). The usage of pyprophet instead of mProphet is suggested for large-scale applications.
 
 mProphet will be used in this tutorial.
@@ -2555,15 +2555,16 @@ OpenMS has a `ProteaseDB` class containing a list of enzymes which can be used f
 
 ```python
 # from here pyopenms is needed   
-    # get available enzymes from ProteaseDB
- 
-    all_enzymes = []  
-    p_db=ProteaseDB().getAllNames(all_enzymes)  
+# get available enzymes from ProteaseDB
 
- 
-    # concatenate them to the enzyme argument. 
-    parser.add_argument('-enzyme', dest='enzyme', help='Enzymes which can be used for digestion: '+ ', '.join(map(bytes.decode, all_enzymes)))
+all_enzymes = []  
+p_db=ProteaseDB().getAllNames(all_enzymes)  
+
+
+# concatenate them to the enzyme argument. 
+parser.add_argument('-enzyme', dest='enzyme', help='Enzymes which can be used for digestion: '+ ', '.join(map(bytes.decode, all_enzymes)))
 ```
+
 #### Loading data structures with pyOpenMS
 
 We already scripted enzymatic digestion with the `AASequence` and `EnzymaticDigest` (see above). To make this even easier, we can use an existing class in OpenMS, called `ProteaseDigestion`.
@@ -2576,8 +2577,8 @@ digestor.setEnzyme(options.enzyme)
 digestor.setMissedCleavages(options.missed_cleavages)
 # call the ProteaseDigestion::digest function
 # which will return the number of discarded digestions products
-# and fill the current_digest list with digestes peptide sequences
-digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, → options.max_length)
+# and fill the current_digest list with digested peptide sequences
+digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, options.max_length)
 ```
 
 The next step is to use FASTAFile class to read the fasta input:
@@ -2695,8 +2696,8 @@ python ProteinDigestor.py -in mini_example.fasta -out mini_example_out.idXML -en
 
 #### Bonus task
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 Implement all other 184 TOPP tools using pyOpenMS.
 </div>
 
@@ -2731,9 +2732,9 @@ The created qcML files will not have much to show for, basic as they are. So we 
 
 There are two other basic plots which we almost always might want to look at before judging the quality of a mass spectrometry run and its identifications: the **total ion current** (TIC) and the **PSM mass error** (Mass accuracy), which we have available as pre-packaged QC metanodes.
 
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
-Import the workflow from <code>Workflows</code> ► <code>Quality Control</code> ► <code>QC Metanodes.zip</code> by navigating to <b>File</b> > <b>Import KNIME Workflow...</b>
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
+Import the workflow from {path}`Workflows,Quality Control,QC Metanodes.zip` by navigating to **File** > **Import KNIME Workflow...**
 </div>
 
 - Copy the **Mass accuracy** metanode into the workflow behind the **QCEmbedder** node and connect it. The qcML will be passed on and the Mass accuracy plots added. The information needed was already collected by the **QCCalculator**.
@@ -2760,8 +2761,9 @@ Press **Eval script** to execulte the script.
 ```{note}
 To have a peek into what our qcML now looks like for one of the **ZipLoop** iterations, we can add an **Output Folder** node from **Community Nodes** > **GenericKnimeNodes** > **IO** and set its destination parameter to somewhere we want to find our intermediate qcML files in, for example **tmp** > **qcxlfq**. If we now connect the last metanode with the Output Folder and restart the workflow, we can start inspecting the qcML files.
 ```
-<div class="admonition task" name="html-admonition">
-<p class="admonition-title task-title"><b>Task</b></p>
+
+<div class="admonition task">
+<p class="admonition-title task-title">**Task**</p>
 Find your first created qcML file and open it with the browser (not IE), and the contained QC parameters will be rendered for you.
 </div>
 
@@ -2796,6 +2798,8 @@ ggplot(knime.in, aes(x=peptide_charge)) +
 |:--:|
 |Figure 50: QC with new metric.|
 
+foo
+
 ### Set QC metrics
 
 Besides monitoring the quality of each individual mass spectrometry run analysis, another capability of QC with OpenMS and qcML is to monitor the complete set. The easiest control is to compare mass spectrometry runs which should be similar, e.g. technical replicates, to spot any aberrations in the set.
@@ -2810,17 +2814,14 @@ When inspecting the set-qcML file in a browser, we will be presented another ove
 
 (Figure_51)=
 |![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
-|:-----:|
+|:--:|
 |Figure 51: QC set creation from ZipLoop.|
 
-foo
 
-<div class="admonition task" name="html-admonition">
+<div class="admonition task" name="taskX">
 <p class="title">**Task**</p>
 For ideas on new QC metrics and parameters -as you add them in your qcML files as generic parameters, feel free to contact us, so we can include them in the CV.
 </div>
-
-foo
 
 ## Troubleshooting guide
 
