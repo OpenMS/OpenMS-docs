@@ -11,7 +11,7 @@ OpenMS User Tutorial
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our GitHub repository `OpenMS`/`Tutorials`.
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our GitHub repository [OpenMS/Tutorials](github.com/OpenMS/Tutorials).
 
 ## Getting Started
 
@@ -24,7 +24,6 @@ Before we get started, we will install OpenMS and KNIME. If you take part in a t
 Please choose the directory that matches your operating system and execute the installer.
 
 For Windows, you call:
-{{ '`foo{0}`'.format(version) }}
 - The OpenMS installer: `Windows` / {{ '`OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: `Windows` / `KNIME-4.4.1-Installer-64bit.exe`
 - OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows` / `OpenMS-2.7-prerequisites-installer.exe`).
@@ -45,7 +44,7 @@ On Linux, you can extract KNIME to a folder of your choice and for TOPPView you 
 
 ```{note}
 If you have installed OpenMS on Linux or macOS via your package
-manager (for instance by installing the `OpenMS-2.7.0-Linux.deb` package),
+manager (for instance by installing the {{ '`OpenMS-{0}-Linux.deb`'.format(version) }} package),
 then you need to set the `OPENMS_DATA_PATH` variable to the directory containing the shared data (normally `/usr/share/OpenMS`). This must be done prior to running any TOPP tool.
 ```
 #### Installation from the internet
@@ -142,10 +141,10 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 |:--:|
 |Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.|
 
-- Start TOPPView (see Windows' Start-Menu or `Applications` ► `OpenMS-2.7.0` on macOS)
+- Start TOPPView (see Windows' Start-Menu or {path}`Applications, OpenMS-2.7.0` on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
-of the USB stick to, and select `Example_Data` ► `Introduction` ► `datasets` ► `small` ► `velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
+of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
 obtain a global view on the whole LC-MS map - the default option Map view 2D
 is the correct one and we can click the <kbd>Ok</kbd> button.
 
@@ -203,8 +202,7 @@ concepts will also be reviewed in this tutorial.
 
 #### Plugin and dependency installation
 
-Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the
-program automatically detects missing plugins when you open a workflow but to make sure that the right source for the
+Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the program automatically detects missing plugins when you open a workflow but to make sure that the right source for the
 OpenMS plugin is chosen, please follow the instructions here. First, we install some additional extensions that are
 required by our OpenMS nodes or used in the Tutorials e.g. for visualization and file handling.
 
@@ -461,7 +459,7 @@ The complete workflow is shown in below image. `FileInfo` can produce two differ
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
 - All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
-  **Browse**. In the file system browser select `Example_Data` ► `Introduction` ► `datasets` ► `tiny` ► `velos005614.mzML`
+  **Browse**. In the file system browser select {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
   and click **Open**. Afterwards close the dialog by clicking **Ok**.
 
 ```{note}
@@ -926,8 +924,8 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 |Figure 18: KNIME data analysis of iPRG LFQ data.|
 
 The iPRG LFQ workflow (Fig. 18) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
-`ExampleData` ► `iPRG2015` ► `database` ► `iPRG2015targetdecoynocontaminants.fasta`
-against the MS2 from the original data (**Input Files** node with all mzMLs following `ExampleData` ► `iPRG2015` ► `datasets` ► `JD06232014sample*.mzML` using the `OMSSAAdapter`.
+{path}`ExampleData,iPRG2015,database,iPRG2015targetdecoynocontaminants.fasta`
+against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `OMSSAAdapter`.
 
 ```{note}
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
@@ -1018,11 +1016,11 @@ The conditions are highly dependent on the type of experiment and on which kind 
 
 Conversion of the OpenMS-internal consensusXML format (which is an aggregation of quantified and possibly identified features across several MS-maps) to a table (in MSstats-conformant CSV format) is very easy. First, create a new KNIME workflow. Then, run the **MSstatsConverter** node with a consensusXML and the manually created (e.g. in Excel) experimental design as inputs (loaded via **Input File** nodes). The first input can be found in:
 
-`ExampleData` ► `iPRG2015` ► `openmsLFQResults` ► `iPRGlfq.consensusXML`
+{path}`ExampleData,iPRG2015,openmsLFQResults,iPRGlfq.consensusXML`
 
-This file was generated by using the `Workflows` ► `openmsLFQiPRG2015.knwf` workflow (seen in Fig. 18). The second input is specified in:
+This file was generated by using the {path}`Workflows,openmsLFQiPRG2015.knwf` workflow (seen in <a href="#figure-18">Fig. 18</a>). The second input is specified in:
 
-`ExampleData` ► `iPRG2015` ► `experimentaldesign.tsv`
+{path}`ExampleData,iPRG2015,experimentaldesign.tsv`
 
 Adjust the parameters in the config dialog of the converter to match the given experimental design file and to use a simple summing for peptides that elute in multiple features (with the same charge state, i.e. m/z value).
 
@@ -1210,11 +1208,11 @@ An excerpt of the main result of the group comparison can be seen in Figure 20.
 The Volcano plots show differently expressed spiked-in proteins. In the left plot, which shows the fold-change C2-C1, we can see the proteins D and F (`sp|P44983|UTR6_YEAST` and `sp|P55249|ZRT4_YEAST`) are significantly over-expressed in C2, while the proteins B,C, and E (`sp|P55752|ISCB_YEAST`, `sp|P55752|ISCB_YEAST`, and `sp|P44683|PGA4_YEAST`) are under-expressed. In the right plot, which shows the fold-change ratio of C3 vs. C2, we can see the proteins E and C (`sp|P44683|PGA4_YEAST` and `sp|P44374|SFG2_YEAST`) over-expressed and the proteins A and F (`sp|P44015|VAC2_YEAST` and `sp|P55249|ZRT4_YEAST`) under-expressed. The plots also show further differentially-expressed proteins, which do not belong to the spiked-in proteins.
 
 The full analysis workflow can be found under:
-`Workflows` ► `MSstatsstatPostProcessingiPRG2015.knwf`
+{path}`Workflows,MSstatsstatPostProcessingiPRG2015.knwf`
 
 ## Protein inference
 
-In the last chapter, we have successfully quantified peptides in a label-free experiment. As a next step, we will further extend this label-free quantification workflow by protein inference and protein quantification capabilities. This workflow uses some of the more advanced concepts of KNIME, as well as a few more nodes containing R code. For these reasons, you will not have to build it yourself. Instead, we have already prepared and copied this workflow to the USB sticks. Just import `Workflows` ► `labelfree_with_protein_quantification.knwf` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it.
+In the last chapter, we have successfully quantified peptides in a label-free experiment. As a next step, we will further extend this label-free quantification workflow by protein inference and protein quantification capabilities. This workflow uses some of the more advanced concepts of KNIME, as well as a few more nodes containing R code. For these reasons, you will not have to build it yourself. Instead, we have already prepared and copied this workflow to the USB sticks. Just import {path}`Workflows,labelfree_with_protein_quantification.knwf` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it.
 
 Before you can execute the workflow, you again have to correct the locations of
 the files in the Input Files nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
@@ -1294,13 +1292,13 @@ Let’s have a look at the workflow (see <a href="#figure-23">Fig 23</a>).
 |Figure 23: Workflow for the analysis of isobaric data|
 
 The full analysis workflow can be found here:
-`Workflows` ► `IdentificationquantificationisobaricinferenceepifanyMSstatsTMT`
+{path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT`
 
 The workflow has four input nodes. The first for the experimental design to allow for MSstatsTMT compatible export (**MSstatsConverter**). The second for the `.mzML` files with the centroided spectra from the isobaric labeling experiment and the third one for the `.fasta` database used for identification. The last one allows to specify an output path for the plots generated by the R View, which runs MSstatsTMT (I). The quantification (A) is performed using the **IsobaricAnalzyer**. The tool is able to extract and normalize quantitative information from TMT and iTRAQ data. The values can be assessed from centroided MS2 or MS3 spectra (if available). Isotope correction is performed based on the specified correction matrix (as provided by the manufacturer). The identification (C) is applied as known from the previous chapters by using database search and a target-decoy database.
 
 To reduce the complexity of the data for later inference the q-value estimation and FDR filtering is performed on PSM level for each file individually (B). Afterwards the identification (PSM) and quantiative information is combined using the **IDMapper**. After the processing of all available files, the intermediate results are aggregated (**FileMerger** - D). All PSM results are used for score estimation and protein inference (**Epifany**) (E). For detailed information about protein inference please see Chaper 4. Then, decoys are removed and the inference results are filtered via a protein group FDR. Peptide level results can be exported via **MzTabExporter** (F), protein level results can be obtained via the **ProteinQuantifier** (G) or the results can exported (**MSstatsConverter** - H) and further processed with the following R pipeline to allow for downstream processing using `MSstatsTMT`.
 
-Please import the workflow from `Workflows` ► `IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the **Input Files** nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
+Please import the workflow from {path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the **Input Files** nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
 
 ### Excursion MSstatsTMT
 
@@ -1413,7 +1411,7 @@ After running the worklfow, the **MSstatsConverter** will convert the OpenMS out
 
 #### MSstatsTMT analysis
 
-Here, we depict the analysis by `MSstatsTMT` using a segment of the isobaric analysis workflow (<a href="#figure-25">Fig. 25</a>). The segment is available as `Workflows`►`MSstatsTMT.knwf`.
+Here, we depict the analysis by `MSstatsTMT` using a segment of the isobaric analysis workflow (<a href="#figure-25">Fig. 25</a>). The segment is available as {path}`Workflows,MSstatsTMT.knwf`.
 
 (Figure_25)=
 |![MSstatsTMT workflow segment](../images/openms-user-tutorial/isobaric/isobaric_msstatstmt_wf.png)|
@@ -1513,7 +1511,7 @@ All plots are saved to the in the beginning specified output directory in additi
 
 ### Note
 
-The isobaric analysis does not always has to be performed on protein level, for example for phosphoproteomics studies one is usually interested on the peptide level - in addition inference on peptides with post-translational modification is not straight forward. Here, we present and additonal workflow on peptide level, which can potentially be adapted and used for such cases. Please see `Workflows`►`IdentificationquantificationisobaricMSstatsTMT`
+The isobaric analysis does not always has to be performed on protein level, for example for phosphoproteomics studies one is usually interested on the peptide level - in addition inference on peptides with post-translational modification is not straight forward. Here, we present and additonal workflow on peptide level, which can potentially be adapted and used for such cases. Please see {path}`Workflows,IdentificationquantificationisobaricMSstatsTMT`
 
 ## Label-free quantification of metabolites
 
@@ -1528,7 +1526,7 @@ why we need a different feature finder for metabolites lies in the step after tr
 have very different isotopic distributions. To group small molecule mass traces correctly, an aggregation model tailored to small molecules is thus needed.
 
 - Create a new workflow called for instance ”Metabolomics”.
-- Add an **Input File** node and configure it with one mzML file from the `Example_Data`►`Metabolomics`►`datasets`.
+- Add an **Input File** node and configure it with one mzML file from the {path}`Example_Data,Metabolomics,datasets`.
 - Add a **FeatureFinderMetabo** node (from **Community Nodes** > **OpenMS** > **Quantitation**) and
 connect the first output port of the **Input File** to the **FeatureFinderMetabo**.
 -  For an optimal result adjust the following settings. Please note that some of these are advanced parameters.
@@ -1660,13 +1658,13 @@ At the current state we found several metabolites in the individual maps but so 
 - Open the Configure dialog of the **FileConverter** node and select the tab **OutputTypes**. In the drop down list for FileConverter.1.out select **featureXML**.
 - Add an **AccurateMassSearch** node (**Community Nodes** > **OpenMS** > **Utilities**) and connect the output of the **FileConverter** node to the first port of the **AccurateMassSearch** node.
 - Add four **Input File** nodes and configure them with the following files:
-  - `Example_Data` ► `Metabolomics` ► `databases` ► `PositiveAdducts.tsv`
+  - {path}`Example_Data,Metabolomics,databases,PositiveAdducts.tsv`
     This file specifies the list of adducts that are considered in the positive mode. Each line contains the formula and charge of an adduct separated by a semicolon (e.g. M+H;1+). The mass of the adduct is calculated automatically.
-  - `Example_Data` ► `Metabolomics` ► `databases` ► `NegativeAdducts.tsv`
+  - {path}`Example_Data,Metabolomics,databases,NegativeAdducts.tsv`
     This file specifies the list of adducts that are considered in the negative mode analogous to the positive mode.
-  - `Example_Data` ► `Metabolomics` ► `databases` ► `HMDBMappingFile.tsv`
+  - {path}`Example_Data,Metabolomics,databases,HMDBMappingFile.tsv`
     This file contains information from a metabolite database in this case from HMDB. It has three (or more) tab-separated columns: mass, formula, and identifier(s). This allows for an efficient search by mass.
-  - `Example_Data` ► `Metabolomics` ► `databases` ► `HMDB2StructMapping.tsv`
+  - {path}`Example_Data,Metabolomics,databases,HMDB2StructMapping.tsv`
     This file contains additional information about the identifiers in the mapping file. It has four tab-separated columns that contain the identifier, name, SMILES, and INCHI. These will be included in the result file. The identifiers in this file must match the identifiers in the `HMDBMappingFile.tsv`.
 - In the same order as they are given above connect them to the remaining input ports of the **AccurateMassSearch** node.
 - Add an **Output Folder** node and connect the first output port of the
@@ -1712,7 +1710,7 @@ Options to respect or replace ion charges or adducts allow for example:
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in <code>Workflows</code> ► <code>MetaboliteAdductGrouping.knwf</code>. Run the workflow, inspect tool outputs and compare <b>AccurateMassSearch</b> results with and without adduct grouping.
+A modified metabolomics workflow with exemplary MetaboliteAdductDecharger use and parameters is provided in {path}`Workflows,MetaboliteAdductGrouping.knwf`. Run the workflow, inspect tool outputs and compare <b>AccurateMassSearch</b> results with and without adduct grouping.
 </div>
 
 #### Visualizing data
