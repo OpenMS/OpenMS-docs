@@ -9,13 +9,13 @@ The following section provides general information to new contributors.
 
 ### I am new to OpenMS. What should I do first?
 
-* Check out the development version of OpenMS (see OpenMS [releases and installers](downloads/releases.md)).
+* Check out the development version of OpenMS (see OpenMS <a href="../downloads.md#openms-releases">releases and installers</a>).
 * Build OpenMS according to the installation instructions.
 * Read the [OpenMS Coding Conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
-* Read the [OpenMS Tutorial](../tutorials/user-tutorial.md).
+* Read the [OpenMS User Tutorial](../tutorials-and-quickstart-guides/openms-user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
-or [contact us](../contact-us.md).
+or [contact us](../quick-reference/contact-us.md).
 
 ### What is the difference between an OpenMS tool and util?
 

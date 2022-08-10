@@ -19,7 +19,7 @@ Before using OpenMS, become familiar with the following terms:
 |--------------------|-------------|
 |**TOPPView**        |A tool that is used to view and explore {term}`LC-MS` data, alignments, groups, peptide identifications, and more.|
 |**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools` (and {term}`UTILS`).|
-|**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. See also: [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md) and [TOPP documentation](../../topp-and-utils/topp-and-utils.md)|
+|**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. |
 |**UTILS**           |Besides {term}`TOPP`, OpenMS offers range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. A set of command line utilities, similar to {term}`TOPP tools`, mostly used during pipeline construction or parameter optimization. |
 
 ```{seealso}
@@ -36,8 +36,6 @@ Please find more information about using {term}`KNIME` in [KNIME tutorial](../..
 ## How to run a Tool
 
 A good start are the example pipelines (select **File** > **Open example file** within {term}`TOPPAS`).
-
-Read the documentation of the tools see [TOPP tutorial](../../tutorials/TOPP/TOPP-tutorial.md), [TOPP documentation](../../topp-and-utils/topp-and-utils.md) and the one of ([TOPPAS tutorial](../../tutorials/TOPPAS/TOPPAS-tutorial.md)).
 
 Alternatively, use the command line and call tools directly. In this case, you'll probably want to use some type of shell
 script for automation.
@@ -59,7 +57,7 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 
    e.g. `FileFilter -write_ini filefilter.ini`
 
-   Now, edit the INI file (which is a XML file) using the [INIFileEditor](../../topp-and-utils/ini-file-editor.md), which is another GUI tool shipped with
+   Now, edit the INI file (which is a XML file) using the [INIFileEditor](../../openms-applications-and-tools/openms-applications/ini-file-editor.md), which is another GUI tool shipped with
    OpenMS and similar to the one build into {term}`TOPPAS`.
 
 ### How do I feed the INI file to a Tool?
@@ -74,5 +72,5 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 ### What parameters to set and to what value?
 
 The answer is complex, in general, read the tool description, change the parameters and compare the results using
-{term}`TOPPView` if possible. If that does not help, [contact us](../../contact-us.md). Please include all the necessary
+{term}`TOPPView` if possible. If that does not help, [contact us](../../quick-reference/contact-us.md). Please include all the necessary
 details we need in order to help you.

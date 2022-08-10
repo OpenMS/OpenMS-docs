@@ -415,7 +415,7 @@ Those *knwf* files can again be imported by selecting:
 
 ```{note}
 For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
- Additionally, the workflow files can be found on [workflow downloads](../downloads.md#workflows). If you want to check
+ Additionally, the workflow files can be found on <a href="../downloads.md#workflows">workflow downloads</a>. If you want to check
  your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding
  *knwf* file and after that double-click it in your KNIME Workflow repository to open it.
 ```
@@ -515,7 +515,7 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
 or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
 In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
-Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string C[C@H](N)C(O)=O. As we will discuss later, all OpenMS tools that perform metabolite
+Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string "C[C@H](N)C(O)=O". As we will discuss later, all OpenMS tools that perform metabolite
 identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
 and KNIME.
 
@@ -661,7 +661,7 @@ different concentrations. [^10]
   and we have a very basic peptide identification workflow.
 
   ```{note}
-  You might also want to save your new identification workflow under a different name. Have a look at [duplicating workflows](#duplicating-workflows)
+  You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows>duplicating workflows</a>
   for information on how to create copies of workflows.
   ```
 - The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
@@ -748,7 +748,7 @@ FDR of < 1 %.
 
 ```{note}
 If you are ahead of the tutorial or later on, you can further improve your FDR identification workflow by a so-called
-consensus identification using several search engines. Otherwise, just continue with [quantification](#quantification).
+consensus identification using several search engines. Otherwise, just continue with <a href="#quantification">quantification</a>.
 ```
 
 It has become widely accepted that the parallel usage of different search engines can increase peptide identification
@@ -931,7 +931,7 @@ against the MS2 from the original data (**Input Files** node with all mzMLs foll
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
 ```
 
-Afterwards, the results are scored using the **FalseDiscoveryRate** node and filtered to obtain only unique peptides (**IDFilter**) since `MSstats` does not support shared peptides, yet. The quantification is achieved by using the **FeatureFinderCentroided** node, which performs the feature detection on the samples (maps). In the end the quantification results are combined with the filtered identification results (**IDMapper**). In addition, a linear retention time alignment is performed (**MapAlignerPoseClustering**), followed by the feature linking process (**FeatureLinkerUnlabledQT**). The **ConsensusMapNormalizer**s is used to normalize the intensities via robust regression over a set of maps and the **IDConflictResolver** assures that only one identification (best score) is associated with a feature. The output of this workflow is a consensusXML file, which can now be converted using the **MSstatsConverter** (see [Conversion and downstream analysis](openms-user-tutorial.md#conversion-and-downstream-analysis) section).
+Afterwards, the results are scored using the **FalseDiscoveryRate** node and filtered to obtain only unique peptides (**IDFilter**) since `MSstats` does not support shared peptides, yet. The quantification is achieved by using the **FeatureFinderCentroided** node, which performs the feature detection on the samples (maps). In the end the quantification results are combined with the filtered identification results (**IDMapper**). In addition, a linear retention time alignment is performed (**MapAlignerPoseClustering**), followed by the feature linking process (**FeatureLinkerUnlabledQT**). The **ConsensusMapNormalizer**s is used to normalize the intensities via robust regression over a set of maps and the **IDConflictResolver** assures that only one identification (best score) is associated with a feature. The output of this workflow is a consensusXML file, which can now be converted using the **MSstatsConverter** (see <a href="#conversion-and-downstream-analysis">Conversion and downstream analysis</a> section).
 
 #### Experimental design
 
@@ -2728,7 +2728,7 @@ Import the workflow from <code>Workflows</code> ► <code>Quality Control</code>
 - Copy the **Mass accuracy** metanode into the workflow behind the **QCEmbedder** node and connect it. The qcML will be passed on and the Mass accuracy plots added. The information needed was already collected by the **QCCalculator**.
 - Do the same with the **TIC** metanode so that your qcML file will get passed on and enriched on each step.
 
-R Dependencies: This section requires that the R packages `ggplot2` and scales are both installed. This is the same procedure as in this [section](#advanced-visualization). In case that you use an R installation where one or both of them are not yet installed, open the **R Snippet** nodes inside the metanodes you just used (double-click). Edit the script in the *R Script* text editor from:
+R Dependencies: This section requires that the R packages `ggplot2` and scales are both installed. This is the same procedure as in this <a href="#advanced-visualization">section</a>. In case that you use an R installation where one or both of them are not yet installed, open the **R Snippet** nodes inside the metanodes you just used (double-click). Edit the script in the *R Script* text editor from:
 
 ```r
 #install.packages("ggplot2")  

@@ -3,7 +3,7 @@ Introduction to TOPP
 
 **TOPP - The OpenMS Pipeline** is a set of tools for the analysis of HPLC-MS data. These tools can be either:
 
-- [Executed from the command line](../openms-applications-and-tools/command-line-interface.md) or,
+- [Executed from the command line](../../openms-applications-and-tools/command-line-interface.md) or,
 - Applied individually using OpenMS graphical applications.
 - Applied in sequence as a workflow using a workflow editor such as KNIME, Nextflow or Galaxy.
 

@@ -7,7 +7,7 @@ A glossary of common terms used throughout OpenMS documentation.
 :sorted:
 
 LC-MS
-  [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
+  <a href="../introduction/background.md#liquid-chromatography-lc">Liquid Chromatography(LC)</a> and <a href="../introduction/background.md#mass-spectrometry">Mass Spectrometry(MS)</a>.
 
 peptides
   A short chain of amino acids.
@@ -86,7 +86,7 @@ UTILS
   analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
 
 TOPPView
-  TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](topp/toppview.md).
+  TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](../openms-applications-and-tools/visualize-with-openms.md).
 
 [Nightly Snapshot](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html)
   Untested installers and containers are known as the nightly snapshot.
