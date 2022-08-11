@@ -11,7 +11,7 @@ OpenMS User Tutorial
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our GitHub repository [OpenMS/Tutorials](github.com/OpenMS/Tutorials).
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our GitHub repository [OpenMS/Tutorials](https://www.github.com/OpenMS/Tutorials).
 
 ## Getting Started
 
@@ -40,7 +40,7 @@ Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
 open, you might need to move them from **Applications** > {{ '**OpenMS-{0}**'.format(version) }} to e.g. your Desktop and back.
 ```
-On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](www.openms.de/documentation) website.
+On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://www.openms.de/documentation) website.
 
 ```{note}
 If you have installed OpenMS on Linux or macOS via your package
@@ -2543,13 +2543,12 @@ The parameters are being read from the command line by the function `handle_args
 OpenMS has a `ProteaseDB` class containing a list of enzymes which can be used for digestion of proteins. You can add this to the `argparse` code to be able to see the usable enzymes. From this point onward, pyOpenMS is required.
 
 ```python
-# from here pyopenms is needed   
+    # from here pyopenms is needed   
     # get available enzymes from ProteaseDB
  
     all_enzymes = []  
     p_db=ProteaseDB().getAllNames(all_enzymes)  
 
- 
     # concatenate them to the enzyme argument. 
     parser.add_argument('-enzyme', dest='enzyme', help='Enzymes which can be used for digestion: '+ ', '.join(map(bytes.decode, all_enzymes)))
 ```
@@ -2558,15 +2557,15 @@ OpenMS has a `ProteaseDB` class containing a list of enzymes which can be used f
 We already scripted enzymatic digestion with the `AASequence` and `EnzymaticDigest` (see above). To make this even easier, we can use an existing class in OpenMS, called `ProteaseDigestion`.
 
 ```python
-# Use the ProteaseDigestion class
-# set the enzyme used for digestion and the number of missed cleavages
-digestor = ProteaseDigestion()
-digestor.setEnzyme(options.enzyme)
-digestor.setMissedCleavages(options.missed_cleavages)
-# call the ProteaseDigestion::digest function
-# which will return the number of discarded digestions products
-# and fill the current_digest list with digestes peptide sequences
-digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, → options.max_length)
+    # Use the ProteaseDigestion class
+    # set the enzyme used for digestion and the number of missed cleavages
+    digestor = ProteaseDigestion()
+    digestor.setEnzyme(options.enzyme)
+    digestor.setMissedCleavages(options.missed_cleavages)
+    # call the ProteaseDigestion::digest function
+    # which will return the number of discarded digestions products
+    # and fill the current_digest list with digestes peptide sequences
+    digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, → options.max_length)
 ```
 
 The next step is to use FASTAFile class to read the fasta input:
@@ -2899,7 +2898,7 @@ xattr -r -d com.apple.quarantine /Applications/OpenMS-2.7.0
 If your questions could not be answered by the FAQ, please feel free to turn to our developers via one of the following means:
 
 - File an issue on [GitHub](https://github.com/OpenMS/OpenMS/issues)
-- Write to the [Mailing List](open-ms-developers@lists.sourceforge.net)
+- Write to the [Mailing List](https://sourceforge.net/projects/open-ms/lists/open-ms-general)
 - Open a thread on the KNIME Community Contributions [forum](https://forum.knime.com/) for OpenMS
 
 ## References

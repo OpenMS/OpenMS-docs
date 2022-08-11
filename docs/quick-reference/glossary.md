@@ -147,4 +147,34 @@ TOPPAS
 
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
+
+KNIME
+  An advanced workflow editor which OpenMS provides a plugin for.
+
+SILAC
+  Stands for Stable isotope labeling using amino acids in cell culture.
+
+iTRAQ
+  Stands for Isobaric tags for relative and absolute quantitation.
+
+TMT
+  Tandem Mass Tag (TMT) is a mass spectrometry based system designed to identify and quantify proteins in different samples.
+
+SRM
+  Selected reation monitoring is a mass spectrometry technique for small molecule analysis.
+
+SWATH
+  Stands for Sequential acquisition of all theoretical fragment ion spectra.
+
+OpenMS API
+  An interface that allows developers to use OpenMS core library classes and methods. 
+
+TOPPAS.app
+  A deprecated workflow editor.
+
+RT
+  Retention time.
+
+
+
 ```
