@@ -30,6 +30,14 @@ p.question-title {
   mask-size: 90%;
   background-color: var(--color-admonition-title);
 }
+
+div.admonition.task p::before {
+  -webkit-mask-image: var(--icon-task) !important;
+  mask-image: var (--icon-task) !important;
+  -webkit-mask-size: 90%;
+  mask-size: 90%;
+  background-color: var(--color-admonition-title);
+}
  
 span.pathsep_triangle {
   margin-left: 2px !important;
