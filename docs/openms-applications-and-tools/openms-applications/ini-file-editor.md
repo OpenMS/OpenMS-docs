@@ -1,5 +1,6 @@
-```
-:orphan:
+---
+orphan: true
+---
 INIFileEditor
 ============
 
@@ -10,4 +11,3 @@ The values can be edited by double-clicking or pressing <kbd>F2</kbd>.
 The documentation of each value is shown in the text area on the bottom of the widget.
 
 ![INIFileEditor](../../images/topp/INIFileEditor.png)
-```
