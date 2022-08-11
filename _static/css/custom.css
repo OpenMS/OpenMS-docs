@@ -13,10 +13,7 @@ div.highlight {
   
 }
 
-p.question-title {
-  background-color: #89bd5669 !important;
-}
-div.admonition.question p {
+div.admonition.question p:first-of-type {
   background-color: #89bd5669 !important;
 }
 
