@@ -1740,7 +1740,7 @@ Because these libraries tend to be large we don’t distribute them with OpenMS.
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Construct the workflow as shown in <a href="#figure-39">Fig. 39</a>. Use the file <code>ExampleData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetaboliteIDSpectraDBpositive.mzML</code> as input for your workflow. You can use the spectral library from <code>ExampleData</code> ► <code>Metabolomics</code> ► <code>databases</code> ► <code>MetaboliteSpectralDB.mzML</code> as second input. The first input file contains tandem spectra that are identified by the <b>MetaboliteSpectralMatcher</b>. The resulting mzTab file is read back into a KNIME table The retention time values are exported as a list based on the current PSI-Standard. This has to be parsed using the <b>SplitCollectionColumn</b>, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the <b>ColumnRename</b> before it is stored in an Excel table. Make sure that you connect the <b>MzTabReader</b> port corresponding to the Small Molecule Section to the <b>Excel writer (XLS)</b>. Please select the ”add column headers” option in the <b>Excel writer (XLS)</b>).
+Construct the workflow as shown in <a href="#figure-39">Fig. 39</a>. Use the file {path}`ExampleData,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` as input for your workflow. You can use the spectral library from {path}`ExampleData,Metabolomics,databases,MetaboliteSpectralDB.mzML` as second input. The first input file contains tandem spectra that are identified by the <b>MetaboliteSpectralMatcher</b>. The resulting mzTab file is read back into a KNIME table The retention time values are exported as a list based on the current PSI-Standard. This has to be parsed using the <b>SplitCollectionColumn</b>, which outputs a ”Split Value 1” based on the first entry in the rention time list, which has to be renamed to retention time using the <b>ColumnRename</b> before it is stored in an Excel table. Make sure that you connect the <b>MzTabReader</b> port corresponding to the Small Molecule Section to the <b>Excel writer (XLS)</b>. Please select the ”add column headers” option in the <b>Excel writer (XLS)</b>).
 </div>
 
 (Figure_39)=
@@ -1762,7 +1762,7 @@ Here, we will use METLIN to manually validate metabolites.
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the <code>ExamplexData</code> ► <code>Metabolomics</code> ► <code>datasets</code> ► <code>MetaboliteIDSpectraDBpositive.mzML</code> in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
+Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the {path}`ExampleData,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
 </div>
 
 (Figure_40)=
@@ -1797,7 +1797,7 @@ By using a mzML and featureXML, SIRIUS gains a lot of additional information by 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
 Construct the workflow as shown in <a href="#figure-42">Fig. 42</a>.
-<code>ExampleData</code> ► <code>Metabolomics</code> ► <code>datasets</code>
+{path}`ExampleData,Metabolomics,datasets`
 Use the file <code>MetaboliteDeNovoID.mzML</code> as input for your workflow.
 </div>
 
@@ -1818,7 +1818,7 @@ In this part of the metabolomics session we take a look at more advanced downstr
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Import the workflow from <code>Workflows</code> ► <code>metaboliteID.knwf</code> in KNIME:
+Import the workflow from {path}`Workflows,metaboliteID.knwf` in KNIME:
 <b>File</b> > <b>Import KNIME Workflow...</b>
 </div>
 
@@ -1923,7 +1923,7 @@ OpenSWATH has been fully integrated since OpenMS 1.10 [^4]<sup>,</sup> [^2]<sup>
 
 ### Installation of mProphet
 
-[mProphet](http://www.mprophet.org/)[^26] is available as standalone script in <code>External _Tools</code> ► <code>mProphet</code>. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
+[mProphet](http://www.mprophet.org/)[^26] is available as standalone script in {path}`External _Tools,mProphet`. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
 PyProphet, a much faster reimplementation of the mProphet algorithm is available from [PyPI](https://pypi.python.org/pypi/pyprophet/). The usage of pyprophet instead of mProphet is suggested for large-scale applications.
 
 mProphet will be used in this tutorial.
@@ -1932,7 +1932,7 @@ mProphet will be used in this tutorial.
 
 #### Generating TraML from transition lists
 
-OpenSWATH requires an assay library to be supplied in the TraML format[^27]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in `ExampleData` ► `OpenSWATH` ► `assay`. Please note that the transition lists need to be named `.tsv`.
+OpenSWATH requires an assay library to be supplied in the TraML format[^27]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in {path}`ExampleData,OpenSWATH,assay`. Please note that the transition lists need to be named `.tsv`.
 
 The header of the transition list contains the following variables (with example values in brackets):
 
@@ -2048,14 +2048,14 @@ OpenSwathDecoyGenerator.exe -in OpenSWATH_SGS_AssayLibrary_woDecoy.TraML -out Op
 
 An example KNIME workflow for OpenSWATH is supplied in `Workflows` (<a href="#figure-44">Fig. 44</a>). The example dataset can be used for this workflow (filenames in brackets):
 
-1. Open `Workflows` ► `OpenSWATH.knwf` in KNIME: **File** > **Import KNIME Workflow...**
-2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. (`ExampleData` ► `OpenSWATH` ► `assay` ► `OpenSWATHiRTAssayLibrary.TraML`).
-3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. (`ExampleData` ► `OpenSWATH` ► `data` ► `splitnapedroL120420x010SW-*.nf.pp.mzML`).
-4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. (`ExampleData` ► `OpenSWATH` ► `assay` ► `OpenSWATHSGSAssayLibrary.TraML`).
+1. Open {path}`Workflows,OpenSWATH.knwf` in KNIME: **File** > **Import KNIME Workflow...**
+2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHiRTAssayLibrary.TraML`).
+3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. ({path}`ExampleData,OpenSWATH,data,splitnapedroL120420x010SW-*.nf.pp.mzML`).
+4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHSGSAssayLibrary.TraML`).
 5. Set the output destination by double-clicking on node **Output File**.
 6. Run the workflow.
 
-The resulting output can be found at your selected path, which will be used as input for mProphet. Execute the script on the Terminal (Linux or Mac) or cmd.exe (Windows) in `ExampleData` ► `OpenSWATH` ► `result`. Please use the absolute path to your R installation and the result file:
+The resulting output can be found at your selected path, which will be used as input for mProphet. Execute the script on the Terminal (Linux or Mac) or cmd.exe (Windows) in {path}`ExampleData,OpenSWATH,result`. Please use the absolute path to your R installation and the result file:
 
 ```r
 R --slave --args bin_dir=../../../External_Tools/mProphet/ mquest=OpenSWATH_quant.tsv workflow=LABEL_FREE num_xval=5 run_log=FALSE write_classifier=1 write_all_pg=1 < ../../../External_Tools/mProphet/mProphet.R
@@ -2067,7 +2067,7 @@ or for Windows:
 "C:\Program Files\R\R-3.5.1\bin\x86\R.exe" --slave --args bin_dir=../../../External_Tools/mProphet/ mquest=OpenSWATH_quant.tsv workflow=LABEL_FREE num_xval=5 run_log=FALSE write_classifier=1 write_all_pg=1 < ../../../External_Tools/mProphet/mProphet.R
 ```
 
-The main output will be called: `OpenSWATH` ► `result` ► `mProphetxallxpeakgroups.xls` with statistical information available in `OpenSWATH` ► `result` ► `mProphet.pdf`. 
+The main output will be called: {path}`OpenSWATH,result,mProphetxallxpeakgroups.xls` with statistical information available in {path}`OpenSWATH,result,mProphet.pdf`. 
 
 Please note that due to the semi-supervised machine learning approach of mProphet the results differ slightly when mProphet is executed several times.
 
@@ -2460,7 +2460,7 @@ For further examples and the pyOpenMS datastructure please see the following [li
 
 ### Tool development with pyOpenMS
 
-Scripting is one side of pyOpenMS, the other is the ability to create Tools using the C++ OpenMS library in the background. In the following section we will create a ”ProteinDigestor” pyOpenMS Tool. It should be able to read in a fasta file. Digest the proteins with a specific enzyme (e.g. Trypsin) and export an idXML output file. Please see `ExampleData` ► `pyopenms` for code snippets.
+Scripting is one side of pyOpenMS, the other is the ability to create Tools using the C++ OpenMS library in the background. In the following section we will create a ”ProteinDigestor” pyOpenMS Tool. It should be able to read in a fasta file. Digest the proteins with a specific enzyme (e.g. Trypsin) and export an idXML output file. Please see {path}`ExampleData,pyopenms` for code snippets.
 
 ```bash
 usage: ProteinDigestor.py [-h] [-in INFILE] [-out OUTFILE] [-enzyme ENZYME]
@@ -2531,7 +2531,7 @@ if __name__ == '__main__':
     options = handle_args() 
     main(options)
 ```
-Open the Anaconda Terminal and change into the `ExampleData` ► `pyopenms` directory. Execute the example script.
+Open the Anaconda Terminal and change into the {path}`ExampleData,pyopenms` directory. Execute the example script.
 
 ```bash
 python ProteinDigestor_argparse.py -h
@@ -2675,7 +2675,7 @@ def main(options):
 
 The paramter input and the functions can be used to construct the program we are looking for. If you are struggling please have a look in the example data section `ProteinDigestor.py`.
 
-Now you can run your tool in the Anaconda Terminal `ExampleData` ► `pyopenms`.
+Now you can run your tool in the Anaconda Terminal {path}`ExampleData,pyopenms`.
 
 ```bash
 python ProteinDigestor.py -in mini_example.fasta -out mini_example_out.idXML -enzyme Trypsin -min_length 6 -max_length 40 -missed_cleavages 1
@@ -2721,7 +2721,7 @@ There are two other basic plots which we almost always might want to look at bef
 
 <div class="admonition task" name="html-admonition">
 <p class="admonition-title task-title"><b>Task</b></p>
-Import the workflow from <code>Workflows</code> ► <code>Quality Control</code> ► <code>QC Metanodes.zip</code> by navigating to <b>File</b> > <b>Import KNIME Workflow...</b>
+Import the workflow from {path}`Workflows,Quality Control,QC Metanodes.zip` by navigating to <b>File</b> > <b>Import KNIME Workflow...</b>
 </div>
 
 - Copy the **Mass accuracy** metanode into the workflow behind the **QCEmbedder** node and connect it. The qcML will be passed on and the Mass accuracy plots added. The information needed was already collected by the **QCCalculator**.

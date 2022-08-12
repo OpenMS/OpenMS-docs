@@ -181,7 +181,7 @@ MS
 TOPP tool
   OpenMS offers a vast array of TOPP tools for processing, analyzing and visualizing mass spectrometry data.
 
-MS<sup>3</sup>
+MS^3
   Multi-stage Mass Spectrometry
 
 
