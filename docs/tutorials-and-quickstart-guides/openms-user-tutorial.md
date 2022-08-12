@@ -589,7 +589,7 @@ languages can be integrated. In this tutorial, we primarily use scripts of the p
 Note that this part is considered advanced and might be difficult to follow if you are not familiar with R. In this case
 you might skip this part.
 
-**R View (Table)** allows to seamlessly include R scripts into KNIME. We will demonstrate on a minimal. We will
+**R View (Table)** allows to seamlessly include R scripts into KNIME. We will
 demonstrate on a minimal example how such a script is integrated.
 
 <div class="admonition task" name="html-admonition">
@@ -601,7 +601,9 @@ If R is correctly recognized we can start writing an R script. Consider that we 
 ```r
 plot(x=knime.in$Universe_0_0, y=knime.in$Universe_0_1, main="Plotting column Universe_0_0 vs. Universe_0_1", col=knime.in$"Cluster Membership")
 ```
+<p>
 <b>Explanation:</b> The table provided as input to the <b>R View (Table)</b> node is available as R data.frame with name <code>knime.in</code>. Columns (also listed on the left side of the R View window) can be accessed in the usual <code>R</code> way by first specifying the <code>data.frame</code> name and then the column name (e.g <code>knime.in$Universe_0_0</code>). <code>plot</code> is the plotting function we use to generate the image. We tell it to use the data in column <code>Universe_0_0</code> of the dataframe object <code>knime.in</code> (denoted as <code>knime.in$Universe_0_0</code>) as x-coordinate and the other column <code>knime.in$Universe_0_1</code> as y-coordinate in the plot. <code>main</code> is simply the main title of the plot and <code>col</code> the column that is used to determine the color (in this case it is the <code>Cluster Membership</code> column). Now press the <b>Eval script</b> and <b>Show plot</b> buttons.
+</p>
 </div>
 
 ```{note}
