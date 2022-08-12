@@ -1,3 +1,6 @@
+---
+orphan: true
+---
 Conversion Between OpenMS XML Formats and Text Formats
 =====================================================
 

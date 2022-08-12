@@ -1,6 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/christinakumar/openms-docs/OpenMS-docs'
 sphinx-build -M help "docs" "build"  
- 
 make: Leaving directory `/Users/christinakumar/openms-docs/OpenMS-docs'
  

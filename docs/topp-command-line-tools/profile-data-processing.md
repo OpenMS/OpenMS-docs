@@ -1,3 +1,6 @@
+---
+orphan: true
+---
 Profile data processing
 ======================
 
@@ -9,7 +12,7 @@ To find all peaks in the profile data:
 2. The now smoothed profile data can be further processed by subtracting the baseline with the **BaselineFilter**.
 3. Then use one of the **PeakPickers** to find all peaks in the baseline-reduced profile data.
 
-![TOPP raw data](../../images/tutorials/topp/TOPP_raw_data.png)
+![TOPP raw data](../images/tutorials/topp/TOPP_raw_data.png)
 
 There are two different smoothing filters: NoiseFilterGaussian and NoiseFilterSGolay. To use the Savitzky Golay filter,
 or the **BaselineFilter** with non equally spaced profile data, e.g. TOF data, you have to generate equally spaced data

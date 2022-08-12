@@ -31,7 +31,7 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 * The class and all the members must be documented thoroughly.
 * Check your code with the tool  `tools/checker.php`. Call `php tools/checker.php` for detailed instructions.
 
-Please open a pull request and follow the [pull request guidelines](../additional-resources/pull-request-checklist.md).
+Please open a pull request and follow the [pull request guidelines](../contribute-to-openms/pull-request-checklist.md).
 
 ## Troubleshooting
 

@@ -36,7 +36,7 @@ To create a fork:
 1. Follow the documentation on [forking](https://help.github.com/articles/fork-a-repo).
 2. Keep your fork [up-to-date](https://help.github.com/articles/syncing-a-fork).
 3. Create a [pull request](https://help.github.com/articles/using-pull-requests). Before opening the pull request, please
-   view the [pull request guidelines](../additional-resources/pull-request-checklist.md).
+   view the [pull request guidelines](../../contribute-to-openms/pull-request-checklist.md).
 
 ### Coding conventions
 
