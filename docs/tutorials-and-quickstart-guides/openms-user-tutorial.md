@@ -2404,7 +2404,7 @@ Instructions on how to build pyOpenMS can be found {{ "[online](https://pyopenms
 
 A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
 
-Calculation of teh monisotopic and average mass of a peptide sequence:
+Calculation of the monisotopic and average mass of a peptide sequence:
 
 ```python
 from pyopenms import *   
