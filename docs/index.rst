@@ -98,6 +98,7 @@ Contents
    contribute-to-openms/write-and-label-github-issues.md
    contribute-to-openms/adding-new-tool-to-topp.md
    contribute-to-openms/pull-request-checklist.md
+   contribute-to-openms/reporting-bugs-and-issues.md
    contribute-to-openms/advanced.md
 
 .. toctree::

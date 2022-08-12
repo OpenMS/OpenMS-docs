@@ -1,3 +1,6 @@
+---
+orphan: true
+---
 Feature Grouping
 ================
 
@@ -21,13 +24,13 @@ To differentially quantify the features of an isotope-labeled HPLC-MS map, follo
    - feature quality of feature 2
    - quality measure for the shift (how near is it to the optimal shift)
 
-   ![TOPP labeled quant](../../images/tutorials/topp/TOPP_labeled_quant.png)
+   ![TOPP labeled quant](../../../images/tutorials/topp/TOPP_labeled_quant.png)
 
 ## Label-free quantitation
 
 To differentially quantify the features of two or more label-free HPLC-MS map.
 
-![TOPP labelfree quant](../../images/tutorials/topp/TOPP_labelfree_quant.png)
+![TOPP labelfree quant](../../../images/tutorials/topp/TOPP_labelfree_quant.png)
 
 ```{tip}
 This algorithm assumes that the retention time axes of all input maps are very similar. To correct for

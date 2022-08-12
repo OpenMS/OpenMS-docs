@@ -3,11 +3,11 @@ Contributor's Quick Start Guide
 
 To contribute to OpenMS:
 
-- Familiarise yourself with the [OpenMS online documentation](../index.rst).
-- Learn how to [build OpenMS](../installations/build-openms-from-source.md).
+- Familiarise yourself with the [OpenMS online documentation](../../index.rst).
+- Learn how to [build OpenMS](../../develop-with-openms/build-openms-from-source.md).
 - Check out the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
-For any questions, please [contact us](../contact-us.md).
+For any questions, please [contact us](../../quick-reference/contact-us.md).
 
 ## Technical documentation
 
@@ -36,7 +36,7 @@ To create a fork:
 1. Follow the documentation on [forking](https://help.github.com/articles/fork-a-repo).
 2. Keep your fork [up-to-date](https://help.github.com/articles/syncing-a-fork).
 3. Create a [pull request](https://help.github.com/articles/using-pull-requests). Before opening the pull request, please
-   view the [pull request guidelines](../additional-resources/pull-request-checklist.md).
+   view the [pull request guidelines](../../contribute-to-openms/pull-request-checklist.md).
 
 ### Coding conventions
 
@@ -67,8 +67,8 @@ Nightly tests: [CDASH](http://cdash.openms.de/index.php?project=OpenMS).
 
 Consider the following resources for further information:
 
-- **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries](../additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md).
+- **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries](../../contribute-to-openms/advanced/developer-guidelines-for-adding-new-dependent-libraries.md).
 -  **Experimental installers**: We automatically build installers for different platforms. These usually contain
    unstable or partially untested code.
    The nightly (unstable) installers are available at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
-- **Developer FAQ**: Visit the [Developer FAQ](../faqs/developer-faq.md) to get answers to frequently asked questions.
+- **Developer FAQ**: Visit the [Developer FAQ](../../quick-reference/developer-faq.md) to get answers to frequently asked questions.

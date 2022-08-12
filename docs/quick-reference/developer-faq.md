@@ -10,12 +10,12 @@ The following section provides general information to new contributors.
 ### I am new to OpenMS. What should I do first?
 
 * Check out the development version of OpenMS (see website).
-* Build OpenMS by following the [installation instructions]() or [from source](../installations/build-openms-from-source.md).
+* Build OpenMS by following the installation instructions or [from source](../develop-with-openms/build-openms-from-source.md).
 * Read the [OpenMS Coding Conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html)
-* Read the [OpenMS Tutorial](../tutorials/user-tutorial.md).
+* Read the [OpenMS User Tutorial](../tutorials-and-quickstart-guides/openms-user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
-  or [contact-us](../contact-us.md).
+  or [contact-us](../quick-reference/contact-us.md).
 
 ### What is the difference between an OpenMS tool and util?
 
@@ -31,7 +31,7 @@ Coding style (brackets, variable names, etc.) must conform to the conventions.
 * The class and all the members should be properly documented.
 * Check your code with the tool  `tools/checker.php`. Call `php tools/checker.php` for detailed instructions.
 
-Please open a pull request and follow the [pull request guidelines](../additional-resources/pull-request-checklist.md).
+Please open a pull request and follow the [pull request guidelines](../contribute-to-openms/pull-request-checklist.md).
 
 ### Can I use QT designer to create GUI widgets?
 
@@ -377,7 +377,7 @@ Test if everything worked by calling `make doc_param_internal`. The command line
 
 ### How to contribute a bug fix?
 
-Read [contributor quickstart guide](../guides/contributors-quickstart-guide.md).
+Read [contributor quickstart guide](../tutorials-and-quickstart-guides/guides/contributors-quickstart-guide.md).
 
 ### How can I profile my code?
 

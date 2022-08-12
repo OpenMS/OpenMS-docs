@@ -7,7 +7,7 @@ A glossary of common terms used throughout OpenMS documentation.
 :sorted:
 
 LC-MS
-  [Liquid Chromatography(LC)](introduction.md#liquid-chromatography-lc) and [Mass Spectrometry(MS)](introduction.md#mass-spectrometry).
+  <a href="../introduction/background.md#liquid-chromatography-lc">Liquid Chromatography(LC)</a> and <a href="../introduction/background.md#mass-spectrometry">Mass Spectrometry(MS)</a>.
 
 peptides
   A short chain of amino acids.
@@ -86,7 +86,7 @@ UTILS
   analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
 
 TOPPView
-  TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](topp/toppview.md).
+  TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](../openms-applications-and-tools/visualize-with-openms.md).
 
 [Nightly Snapshot](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html)
   Untested installers and containers are known as the nightly snapshot.
@@ -147,4 +147,44 @@ TOPPAS
 
 chromatogram
   A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
+
+KNIME
+  An advanced workflow editor which OpenMS provides a plugin for.
+
+SILAC
+  Stands for Stable isotope labeling using amino acids in cell culture.
+
+iTRAQ
+  Stands for Isobaric tags for relative and absolute quantitation.
+
+TMT
+  Tandem Mass Tag (TMT) is a mass spectrometry based system designed to identify and quantify proteins in different samples.
+
+SRM
+  Selected reation monitoring is a mass spectrometry technique for small molecule analysis.
+
+SWATH
+  Stands for Sequential acquisition of all theoretical fragment ion spectra.
+
+OpenMS API
+  An interface that allows developers to use OpenMS core library classes and methods. 
+
+TOPPAS.app
+  A deprecated workflow editor.
+
+RT
+  Retention time.
+
+MS
+  Mass Spectrometry
+
+TOPP tool
+  OpenMS offers a vast array of TOPP tools for processing, analyzing and visualizing mass spectrometry data.
+
+MS^3
+  Multi-stage Mass Spectrometry
+
+
+
+
 ```

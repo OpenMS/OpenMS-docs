@@ -13,7 +13,7 @@ div.highlight {
   
 }
 
-p.question-title {
+div.admonition.question p:first-of-type {
   background-color: #89bd5669 !important;
 }
 
@@ -23,12 +23,18 @@ p.question-title {
   background-color:#48983f !important;
 }
 
-.task-title::before {
+div.admonition.task p::before {
   -webkit-mask-image: var(--icon-task) !important;
   mask-image: var (--icon-task) !important;
   -webkit-mask-size: 90%;
   mask-size: 90%;
   background-color: var(--color-admonition-title);
+}
+
+div.admonition.question p::before {
+  -webkit-mask-image: var(--icon-question) !important;
+  mask-image: var(--icon-question) !important;
+  background-color:#48983f !important;
 }
  
 span.pathsep_triangle {
