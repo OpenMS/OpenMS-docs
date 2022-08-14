@@ -26,13 +26,13 @@ Please choose the directory that matches your operating system and execute the i
 For Windows, you call:
 
 - The OpenMS installer: `Windows` / {{ '`OpenMS-{0}-Win64.exe`'.format(version) }}
-- The KNIME installer: `Windows` / `KNIME-4.4.1-Installer-64bit.exe`
+- The KNIME installer: `Windows` / {{ '`KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
 - OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows` / `OpenMS-2.7-prerequisites-installer.exe`).
 
 On macOS, you call:
 
-- The OpenMS installer: `Mac` / {{ '`OpenMS-{0}-macOS.dmg`'.format(version) }}
-- The KNIME installer: {path}`Mac, knime_4.4.1.app.macosx.cocoa.x86_64.dmg`
+- The OpenMS installer: {{ '{path} `Mac, OpenMS-{0}-macOS.dmg`'.format(version) }}
+- The KNIME installer: {{ '{path}`Mac, knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(knime_version) }}
 
 Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
 
@@ -87,7 +87,7 @@ graphical user interface) or `msconvert` (a simple command line tool).
 |Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see <a href="#figure-2">Fig. 2</a>)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
 
 Both tools are
-available in: {path}`C:,Program Files,OpenMS-2.7.0,share,OpenMS, THIRDPARTY,pwiz-bin`.
+available in: {{ '{path}`C:,Program Files,OpenMS-{0},share,OpenMS, THIRDPARTY,pwiz-bin`'.format(version) }}.
 
 You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introduction,datasets,raw`.
 
@@ -142,7 +142,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 |:--:|
 |Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.|
 
-- Start TOPPView (see Windows' Start-Menu or {path}`Applications, OpenMS-2.7.0` on macOS)
+- Start TOPPView (see Windows' Start-Menu or {{ '{path}`Applications, OpenMS-{0}`'.format(version)}} on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
 of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
@@ -255,8 +255,7 @@ You are now ready to install the OpenMS nodes.
 - Open KNIME.
 - Click on **Help** > **Install New Software**
 
-We included a custom KNIME update site to install the OpenMS KNIME plugins from the USB stick. If you do not have a stick
-available, please see below.
+We included a custom KNIME update site to install the OpenMS KNIME plugins from the USB stick. If you do not have a stick available, please see below.
 
 - In the now open dialog choose **Add** (in the upper right corner of the dialog) to define a new update site. In the
   opening dialog enter the following details.
@@ -2398,7 +2397,7 @@ Now launch ”Spyder” (python IDE) in the home menu.
 
 ### Build instructions
 
-Instructions on how to build pyOpenMS can be found {{ "[online](https://pyopenms.readthedocs.io/en/release_{0}/build_from_source.html)".format(version) }}.
+Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/build_from_source.html).
 
 ### Scripting with pyOpenMS
 
@@ -2464,7 +2463,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS datastructure please see the following [link](https://pyopenms.readthedocs.io/en/release_2.7.0/datastructures.html).
+For further examples and the pyOpenMS datastructure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures.html).
 
 ### Tool development with pyOpenMS
 
@@ -2888,9 +2887,8 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 **A:** It seems like your OS is not able to remove the quarantine flag. If you trust us, please remove it yourself by typing the following command in your Terminal.app:
 
 ```bash
-xattr -r -d com.apple.quarantine /Applications/OpenMS-2.7.0
+{{ xattr -r -d com.apple.quarantine /Applications/OpenMS-"{0}".format(version) }}
 ```
-
 ##### Windows
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
@@ -2901,7 +2899,7 @@ xattr -r -d com.apple.quarantine /Applications/OpenMS-2.7.0
 
 **Q:** Why is my XTandemAdapter printing empty or VERY few results, although I did not use an e-value cutoff?
 
-**A:** Due to a bug in OpenMS 2.0.1 the XTandemAdapter requires a default parameter file. Give it the default configuration in `YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/share/CHEMISTRY/XTandemxdefaultxinput.xml` as a third input file. This should be resolved in newer versions though, such that it automatically uses this file if the optional inputs is empty. This should be solved in newer versions.
+**A:** Due to a bug in OpenMS 2.0.1, the XTandemAdapter requires a default parameter file. Give it the default configuration in `YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/share/CHEMISTRY/XTandemxdefaultxinput.xml` as a third input file. This should be resolved in newer versions though, such that it automatically uses this file if the optional inputs is empty. This should be solved in newer versions.
 
 **Q:** Do MSGFPlusAdapter, LuciphorAdapter or SiriusAdapter generally behave different/unexpected?
 
