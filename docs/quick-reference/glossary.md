@@ -55,16 +55,14 @@ orbitrap analyzers
   A high resoltion mass spectrometry analyzer.
 
 MS(1)
-  First stage to get a spectra. A sample is injected into the mass spectrometer, ionized, accelerated and analyzed by
-  mass spectrometry.
+  First stage to get a spectra. A sample is injected into the mass spectrometer, ionized, accelerated and analyzed by mass spectrometry.
 
 MS(2)
   Ions from MS1 spectra are then selectively fragmented and analyzed by a second stage of mass spectrometry (MS2) to
   generate the spectra for the ion fragments.
 
 MS/MS
-  Tandem mass spectrometry, MS^2^, a technique where two or more mass analyzers are coupled together using an additional
-  reaction step to increase their abilities to analyse chemical samples.
+  Tandem mass spectrometry, MS^2^, a technique where two or more mass analyzers are coupled together using an additional reaction step to increase their abilities to analyse chemical samples.
 
 collision-induced dissociation (CID)
   A mass spectrometry technique to induce fragmentation of selected ions in the gas phase. Also known as Collision
@@ -88,8 +86,7 @@ TOPP Tools
   All {term}`TOPP` tools can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
 
 UTILS
-  Besides TOPP, OpenMS offers a range of other tools. They are not included in TOPP as they are not part of typical
-  analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
+  Besides {term}`TOPP`, OpenMS offers a range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
 
 TOPPView
   TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](../openms-applications-and-tools/visualize-with-openms.md).

@@ -2810,14 +2810,9 @@ When inspecting the set-qcML file in a browser, we will be presented another ove
 |:--:|
 |Figure 51: QC set creation from ZipLoop.|
 
-<div class="admonition task">
-<p class="admonition-title">**Task**</p>
-For ideas on new QC metrics and parameters, as you add them in your qcML files as generic parameters, feel free to [contact us](../quick-reference/contact-us.md), so we can include them in the CV.
-</div>
-
 ## Troubleshooting guide
 
-This section will show you where you can turn to when you encounter any problems with this tutorial or with our nodes in general. Please see the FAQ first. If your problem is not listed or the proposed solution does not work, feel free to leave us a message at the means of support that you see most fit. If that is the case, please provide us with as much information as you can. In an ideal case, that would be:
+This section will show you where you can turn to when you encounter any problems with this tutorial or with our nodes in general. Please see the [FAQ](../quick-reference/contributor-faq.md) first. If your problem is not listed or the proposed solution does not work, feel free to leave us a message at the means of support that you see most fit. If that is the case, please provide us with as much information as you can. In an ideal case, that would be:
 
 - Your operating system and its version (e.g. Windows 8, Ubuntu 14.04).
 - Your KNIME version (e.g. KNIME 3.1.2 full, KNIME 3.1.1 core). 
