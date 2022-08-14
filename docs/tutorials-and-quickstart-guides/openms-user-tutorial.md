@@ -2812,10 +2812,9 @@ When inspecting the set-qcML file in a browser, we will be presented another ove
 |:--:|
 |Figure 51: QC set creation from ZipLoop.|
 
-
 <div class="admonition task">
 <p class="admonition-title">**Task**</p>
-For ideas on new QC metrics and parameters -as you add them in your qcML files as generic parameters, feel free to contact us, so we can include them in the CV.
+For ideas on new QC metrics and parameters - as you add them in your qcML files as generic parameters, feel free to [contact us](../quick-reference/contact-us.md), so we can include them in the CV.
 </div>
 
 ## Troubleshooting guide
