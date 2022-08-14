@@ -31,8 +31,8 @@ For Windows, you call:
 
 On macOS, you call:
 
-- The OpenMS installer: {{ '{path} `Mac, OpenMS-{0}-macOS.dmg`'.format(version) }}
-- The KNIME installer: {{ '{path}`Mac, knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(knime_version) }}
+- The OpenMS installer: {{ {path} '`Mac, OpenMS-{0}-macOS.dmg`'.format(version) }}
+- The KNIME installer: {path} {{ '`Mac, knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(knime_version) }}
 
 Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
 
