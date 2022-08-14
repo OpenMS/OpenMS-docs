@@ -31,25 +31,20 @@ ions
 electrospray ionization (ESI)
   A technique used in mass spectrometry to produce ions.
 
-MS/MS
-  Tandem Mass Spectrometry is a two-stage process for analyzing complex mixtures. Also known as {term}`MS^2`.
-
 MS^2
-  See {term}`MS\MS`.
+  See {term}`MS/MS`.
 
 atom
   An atom is the smallest unit of ordinary matter that forms a chemical element.
 
 electrospray ionization
-  A technique used in mass spectrometry to produce ions using an electrospray in which a high voltage is applied to a
-  liquid to create an {term}`aerosol`.
+  A technique used in mass spectrometry to produce ions using an electrospray in which a high voltage is applied to a liquid to create an {term}`aerosol`.
 
 aerosol
   An aerosol is a suspension of fine solid particles or liquid droplets in air or another gas.
 
 time-of-flight (TOF)
-  A measurement of the time taken by an object, particle of wave (be it acoustic, electromagnetic, e.t.c) to travel a
-  distance through a medium.
+  A measurement of the time taken by an object, particle of wave (be it acoustic, electromagnetic, e.t.c) to travel a distance through a medium.
 
 quadrupole mass filters
   A mass filter allowing one mass channel at a time to reach the detector as the mass range is scanned.
@@ -194,8 +189,5 @@ TOPP tool
 
 MS^3
   Multi-stage Mass Spectrometry
-
-
-
 
 ```

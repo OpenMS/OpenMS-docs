@@ -17,7 +17,7 @@ Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, 
 
 1. Download the latest {term}`KNIME` release from the [KNIME website](https://www.knime.com/).
 2. In the full install of {term}`KNIME` skip the following installation routine since all required plugins should be
-   installed by default. For the standard (core) installation, follow the instructions here or in the extended [user-tutorial]().
+   installed by default. For the standard (core) installation, follow the instructions here or in the extended [user-tutorial](../../tutorials-and-quickstart-guides/openms-user-tutorial.md).
 
    ![](../../images/tutorials/knime/KNIME_Install.png)
 

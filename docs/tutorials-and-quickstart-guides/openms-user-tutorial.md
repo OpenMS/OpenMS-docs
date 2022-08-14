@@ -2793,8 +2793,6 @@ ggplot(knime.in, aes(x=peptide_charge)) +
 |:--:|
 |Figure 50: QC with new metric.|
 
-foo
-
 ### Set QC metrics
 
 Besides monitoring the quality of each individual mass spectrometry run analysis, another capability of QC with OpenMS and qcML is to monitor the complete set. The easiest control is to compare mass spectrometry runs which should be similar, e.g. technical replicates, to spot any aberrations in the set.
