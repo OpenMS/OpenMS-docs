@@ -31,15 +31,15 @@ For Windows, you call:
 
 On macOS, you call:
 
-- The OpenMS installer: {path}`Mac, OpenMS-2.7.0-macOS.dmg`
-- The KNIME installer: {path}`Mac, knime_4.6.0.app.macosx.cocoa.x86_64.dmg`
+- The OpenMS installer: {path}`Mac,OpenMS-2.7.0-macOS.dmg`
+- The KNIME installer: {path}`Mac,knime_4.6.0.app.macosx.cocoa.x86_64.dmg`
 
 Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
 
 ```{note}
 Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
-open, you might need to move them from {path}`Applications, OpenMS-2.7.0` to e.g. your Desktop and back.
+open, you might need to move them from {path}`Applications,OpenMS-2.7.0` to e.g. your Desktop and back.
 ```
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://www.openms.de/documentation) website.
 
