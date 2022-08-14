@@ -4,19 +4,17 @@ orphan: true
 Picking Peaks
 ============
 
-For low resolution data, consider to smooth the data first ([Smoothing raw data](smoothing-raw-data.md)) and subtract
-the baseline ([Subtracting a baseline from a spectrum](subtracting-a-baseline-from-a-spectrum.md)) before peak picking.
+For low resolution data, consider to smooth the data first ([Smoothing raw data](../../../topp-command-line-tools/smoothing-raw-data.md)) and subtract
+the baseline ([Subtracting a baseline from a spectrum](../../../topp-command-line-tools/subtracting-a-baseline-from-a-spectrum.md)) before peak picking.
 
-There are two types of PeakPickers: the **PeakPickerWavelet** and one especially suited for high resolution data
-(**PeakPickerHiRes**). This tutorial explains the PeakPickerWavelet. Use the file `peakpicker_tutorial_2.mzML` from the
-examples data (select **File** > **Open example data**).
+There are two types of PeakPickers: the **PeakPickerWavelet** and one especially suited for high resolution data (**PeakPickerHiRes**). This tutorial explains the PeakPickerWavelet. Use the file `peakpicker_tutorial_2.mzML` from the examples data (select **File** > **Open example data**).
 
 The main parameters are the peak width and the minimal signal to noise ratio for a peak to be picked. If you don't know
 the approximate `fwhm` of peaks, use the estimation included in the PeakPickerWavelet, set the flag `estimate_peak_width`
 to `true`. After applying the PeakPickerWavelet, observe which peak width was estimated and used for peak picking in the
 log window.
 
-To estimate the peak width, use the measuring tool ([Action Modes and Their Uses](views-in-toppview.md#action-modes-and-their-uses)) to determine
+To estimate the peak width, use the measuring tool <a href="../../visualize-with-openms/display-modes-and-view-options.md">Action Modes and Their Uses</a> to determine
 the fwhm of one or several representative peaks.
 
 If the peak picker delivers only a few peaks even though the `peak_with` and `signal_to_noise` parameters are set to

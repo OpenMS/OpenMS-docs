@@ -37,7 +37,7 @@ Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, 
 6. Now, install the actual OpenMS pluging. Next to the **Work with:** dropdown menu, click on **Add...**. In the opening
    dialog fill in at least one of the following additional Update Sites (if not already present):
 
-   **Recommened**:
+   **Recommended**:
 
    **Name**: KNIME Community Contributions (Stable)
 
@@ -58,11 +58,11 @@ Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, 
 
 ## Creating workflows with KNIME
 
-Download Introduction to OpenMS in KNIME [user tutorial]() containing hands-on training material covering also basic
+Download Introduction to OpenMS in KNIME [user tutorial](../../tutorials-and-quickstart-guides/openms-user-tutorial.md) containing hands-on training material covering also basic
 usage of KNIME. See the official [KNIME Getting Started Guide](https://tech.knime.org/knime) for a more in-depth view of
 the KNIME functionality besides OpenMS.
 
-If you face any issues, please [contact us](../../contact-us.md) and specifically for the usage of OpenMS in KNIME, the
+If you face any issues, please [contact us](../../quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the
 KNIME community contribution [forum](https://tech.knime.org/forum/openms).
 
 ## Creating your own Generic KNIME Nodes

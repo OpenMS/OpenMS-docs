@@ -15,7 +15,7 @@ peptides
 FASTA format
   A text-based format for representing nucleotide or amino acid sequences.
 
-Octadecyl(C18)
+octadecyl (C18)
   An alkyl radical C(18)H(37) derived from an octadecane by removal of one hydrogen atom.
 
 Mass
@@ -23,8 +23,19 @@ Mass
   a measure of the force of gravity on that object.
 
 ion
-  Any {term}`atom` or group of atoms that bears one or more positive or negative electrical charges. Positively charged are
-  cations, negavtively charged anions.
+  Any {term}`atom` or group of atoms that bears one or more positive or negative electrical charges. Positively charged are cations, negavtively charged anions.
+
+ions
+  See {term}`ion`.
+
+electrospray ionization (ESI)
+  A technique used in mass spectrometry to produce ions.
+
+MS/MS
+  Tandem Mass Spectrometry is a two-stage process for analyzing complex mixtures. Also known as {term}`MS^2`.
+
+MS^2
+  See {term}`MS\MS`.
 
 atom
   An atom is the smallest unit of ordinary matter that forms a chemical element.
