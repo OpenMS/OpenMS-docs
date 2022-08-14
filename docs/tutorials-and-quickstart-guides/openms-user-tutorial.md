@@ -25,7 +25,7 @@ Please choose the directory that matches your operating system and execute the i
 
 For Windows, you call:
 
-- The OpenMS installer: {{ '{path} `Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
+- The OpenMS installer: {{ '{path}`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: `Windows` / {{ '`KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
 - OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick (`Windows` / `OpenMS-2.7-prerequisites-installer.exe`).
 
