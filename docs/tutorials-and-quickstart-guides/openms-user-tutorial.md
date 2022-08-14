@@ -27,7 +27,7 @@ For Windows, you call:
 
 - The OpenMS installer: {path}`Windows,OpenMS-2.7.0-Win64.exe`
 - The KNIME installer: {path}`Windows,KNIME-4.6.0-Installer-64bit.exe`
-- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick {path}`Windows,OpenMS-2.7-prerequisites-installer.exe`.
+- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick {path}`Windows,OpenMS-2.7-prerequisites-installer.exe.
 
 On macOS, you call:
 
@@ -86,8 +86,7 @@ graphical user interface) or `msconvert` (a simple command line tool).
 |:--:|
 |Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see <a href="#figure-2">Fig. 2</a>)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
 
-Both tools are
-available in: {{ '{path}`C:,Program Files,OpenMS-{0},share,OpenMS, THIRDPARTY,pwiz-bin`'.format(version) }}.
+Both tools are available in: {path}`C:,Program Files,OpenMS-2.7.0,share,OpenMS, THIRDPARTY,pwiz-bin`.
 
 You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introduction,datasets,raw`.
 
@@ -142,7 +141,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 |:--:|
 |Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.|
 
-- Start TOPPView (see Windows' Start-Menu or {{ '{path}`Applications, OpenMS-{0}`'.format(version)}} on macOS)
+- Start TOPPView (see Windows' Start-Menu or {path}`Applications,OpenMS-2.7.0` on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
 of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
@@ -2814,7 +2813,7 @@ When inspecting the set-qcML file in a browser, we will be presented another ove
 |Figure 51: QC set creation from ZipLoop.|
 
 
-<div class="admonition task" name="taskX">
+<div class="admonition task">
 <p class="title">**Task**</p>
 For ideas on new QC metrics and parameters -as you add them in your qcML files as generic parameters, feel free to contact us, so we can include them in the CV.
 </div>
