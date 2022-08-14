@@ -27,7 +27,7 @@ For Windows, you call:
 
 - The OpenMS installer: {path}`Windows,OpenMS-2.7.0-Win64.exe`
 - The KNIME installer: {path}`Windows,KNIME-4.6.0-Installer-64bit.exe`
-- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick {path}`Windows,OpenMS-2.7-prerequisites-installer.exe`).
+- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick {path}`Windows,OpenMS-2.7-prerequisites-installer.exe`.
 
 On macOS, you call:
 
