@@ -53,6 +53,7 @@ extensions = [
   'sphinx_inline_tabs',
   'pathrole',
   'hoverxref.extension',
+  'sphinx_search.extension',
 ]
 
 numfig = True
