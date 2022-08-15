@@ -27,7 +27,7 @@ For Windows, you call:
 
 - The OpenMS installer: {{ '{path}'+'`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Windows,KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
-- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick: {path}`Windows,OpenMS-2.7-prerequisites-installer.exe`.
+- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick: {{ '{path}'+'`Windows,OpenMS-{0}-prerequisites-installer.exe`'.format(version) }}.
 
 On macOS, you call:
 
@@ -39,7 +39,7 @@ Afterwards, follow the instructions. For the OpenMS installation on macOS, accep
 ```{note}
 Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
-open, you might need to move them from {{ '{path}'+'`Applications,OpenMS-2.7.0`'.format(version) }} to e.g. your Desktop and back.
+open, you might need to move them from {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} to e.g. your Desktop and back.
 ```
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://www.openms.de/documentation) website.
 
@@ -86,7 +86,7 @@ graphical user interface) or `msconvert` (a simple command line tool).
 |:--:|
 |Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see <a href="#figure-2">Fig. 2</a>)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
 
-Both tools are available in: {path}`C:,Program Files,OpenMS-2.7.0,share,OpenMS, THIRDPARTY,pwiz-bin`.
+Both tools are available in: {{ '{path}'+'`C:,Program Files,OpenMS-{0},share,OpenMS,THIRDPARTY,pwiz-bin`'.format(version) }}.
 
 You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introduction,datasets,raw`.
 
@@ -141,7 +141,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 |:--:|
 |Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.|
 
-- Start TOPPView (see Windows' Start-Menu or {path}`Applications,OpenMS-2.7.0` on macOS)
+- Start TOPPView (see Windows' Start-Menu or {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
 of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
@@ -259,8 +259,8 @@ We included a custom KNIME update site to install the OpenMS KNIME plugins from 
 - In the now open dialog choose **Add** (in the upper right corner of the dialog) to define a new update site. In the
   opening dialog enter the following details.
 
-  Name: OpenMS 2.7 UpdateSite
-  Location: `file:/KNIMEUpdateSite/2.7.0/`
+  Name: OpenMS {{ version }} UpdateSite
+  Location: {{ '`file:/KNIMEUpdateSite/{0}/`'.format(version) }}
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
@@ -274,10 +274,9 @@ From now on, you can use this repository for plugins in the **Work with**: drop-
 Alternatively, you can try these steps that will install the OpenMS KNIME plugins from the internet. Note that download
 can be slow.
 
-- In the now open dialog, choose **Add** (in the upper right corner of the dialog) to define a new update site. In the
-  opening dialog enter the following details.
+- In the now open dialog, choose **Add** (in the upper right corner of the dialog) to define a new update site. In the opening dialog enter the following details.
 
-  Name: OpenMS 2.5 UpdateSite
+  Name: OpenMS {{ version }} UpdateSite
   Location: https://abibuilder.informatik.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
@@ -2889,13 +2888,13 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
 
-**A:** Get the prerequisites installer [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/OpenMS-2.7-prerequisites-installer.exe) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
+**A:** Get the prerequisites installer {{ '[here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/OpenMS-{0}-prerequisites-installer.exe)'.format(version) }} or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
 
 #### Nodes
 
 **Q:** Why is my XTandemAdapter printing empty or VERY few results, although I did not use an e-value cutoff?
 
-**A:** Due to a bug in OpenMS 2.0.1, the XTandemAdapter requires a default parameter file. Give it the default configuration in `YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/share/CHEMISTRY/XTandemxdefaultxinput.xml` as a third input file. This should be resolved in newer versions though, such that it automatically uses this file if the optional inputs is empty. This should be solved in newer versions.
+**A:** Due to a bug in OpenMS 2.0.1, the XTandemAdapter requires a default parameter file. Give it the default configuration in `YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/share/CHEMISTRY/XTandemdefaultinput.xml` as a third input file. This should be resolved in newer versions though, such that it automatically uses this file if the optional inputs is empty. This should be solved in newer versions.
 
 **Q:** Do MSGFPlusAdapter, LuciphorAdapter or SiriusAdapter generally behave different/unexpected?
 
