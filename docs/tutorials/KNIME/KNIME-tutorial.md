@@ -67,4 +67,4 @@ KNIME community contribution [forum](https://tech.knime.org/forum/openms).
 
 ## Creating your own Generic KNIME Nodes
 
-See the more advanced instructions on our [Getting Started]() page for developers in OpenMS API reference.
+To create your own generic KNIME nodes, refer to their [documentation](https://docs.knime.com/latest/pure_python_node_extensions_guide/index.html#introduction).
