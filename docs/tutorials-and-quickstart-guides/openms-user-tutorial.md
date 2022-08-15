@@ -2882,7 +2882,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 **A:** It seems like your OS is not able to remove the quarantine flag. If you trust us, please remove it yourself by typing the following command in your Terminal.app:
 
 ```bash
-{{ xattr -r -d com.apple.quarantine /Applications/OpenMS-"{0}".format(version) }}
+  xattr -r -d {{ 'com.apple.quarantine /Applications/OpenMS-{0}'.format(version) }}
 ```
 ##### Windows
 
