@@ -25,21 +25,21 @@ Please choose the directory that matches your operating system and execute the i
 
 For Windows, you call:
 
-- The OpenMS installer: {path}`Windows,OpenMS-2.7.0-Win64.exe`
-- The KNIME installer: {path}`Windows,KNIME-4.6.0-Installer-64bit.exe`
+- The OpenMS installer: {{ '{path}'+'`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
+- The KNIME installer: {{ '{path}'+'`Windows,KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
 - OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick: {path}`Windows,OpenMS-2.7-prerequisites-installer.exe`.
 
 On macOS, you call:
 
-- The OpenMS installer: {path}`Mac,OpenMS-2.7.0-macOS.dmg`
-- The KNIME installer: {path}`Mac,knime_4.6.0.app.macosx.cocoa.x86_64.dmg`
+- The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
+- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(version) }}
 
 Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
 
 ```{note}
 Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
-open, you might need to move them from {path}`Applications,OpenMS-2.7.0` to e.g. your Desktop and back.
+open, you might need to move them from {{ '{path}'+'`Applications,OpenMS-2.7.0`'.format(version) }} to e.g. your Desktop and back.
 ```
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://www.openms.de/documentation) website.
 
@@ -2746,7 +2746,7 @@ to
 install.packages("ggplot2")  
 install.packages("scales")
 ```
-Press **Eval script** to execulte the script.
+Press **Eval script** to execute the script.
 
 (Figure_49)=
 |![Basic QC setup within a LFQ workflow.](../images/openms-user-tutorial/quality-control/qc_basic.png)|
@@ -2809,6 +2809,11 @@ When inspecting the set-qcML file in a browser, we will be presented another ove
 |![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
 |:--:|
 |Figure 51: QC set creation from ZipLoop.|
+
+<div class="admonition task">
+<p class="admonition-title">**Task**</p>
+For ideas on new QC metrics and parameters, as you add them in your qcML files as generic parameters, feel free to [contact us](../quick-reference/contact-us.md), so we can include them in the CV.
+</div>
 
 ## Troubleshooting guide
 
