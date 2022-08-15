@@ -37,13 +37,18 @@ div.admonition.question p::before {
   background-color:#48983f !important;
 }
  
-span.pathsep_triangle {
-  margin-left: 2px !important;
-  font-size: 80% !important;
+
+nobr.path {
+  font-family: monospace;
+}
+nobr>span.pathsep_triangle {
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
-i.fa.fa-folder-open {
-  margin-right: 3px !important;
+nobr>i.fa.fa-folder-open {
+  margin-right: 3px;
+  font-size: 80%;
 }
 
 a.hxr-hoverxref {

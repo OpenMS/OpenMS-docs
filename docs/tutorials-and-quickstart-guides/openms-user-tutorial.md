@@ -100,7 +100,7 @@ The `msconvert` command line tool has no graphical user interface but offers mor
 To convert and pick the file `raw_data_file.RAW` you may write:
 
 ```bash
-msconvert raw_data_file.RAW --filter ”peakPicking true 1-”
+msconvert raw_data_file.RAW --filter "peakPicking true 1-"
 ```
 
 in your command line.
@@ -166,7 +166,7 @@ can be traversed using <kbd>Ctrl</kbd> + <kbd>+</kbd> or <kbd>Ctrl</kbd> + <kbd>
     - Pressing backspace <kbd>←</kbd> zooms out to show the full LC-MS map (and
 also resets the zoom history).
   - **Measure mode**
-    - It is activated using the <kbd>⇧</kbd>(shift) key.
+    - It is activated using the <kbd>⇧ Shift</kbd> key.
     - Press the left mouse button down while a peak is selected and drag
 the mouse to another peak to measure the distance between peaks.
     - This mode is implemented in the 1D and 2D mode only.
@@ -207,7 +207,7 @@ OpenMS plugin is chosen, please follow the instructions here. First, we install 
 required by our OpenMS nodes or used in the Tutorials e.g. for visualization and file handling.
 
 1. Click on **Help** > **Install New Software**.
-2. From the **Work with**: drop-down list select http://update.knime.com/analytics- platform/4.4.
+2. From the '**Work with**:' drop-down list select http://update.knime.com/analytics-platform/4.6.
 3. Now select the following plugins from the KNIME & Extensions category
    - KNIME Base Chemistry Types & Nodes
    - KNIME Chemistry Add-Ons
@@ -217,7 +217,7 @@ required by our OpenMS nodes or used in the Tutorials e.g. for visualization and
    - KNIME SVG Support
 4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
-6. From the **Work with**: drop-down list select http://update.knime.com/community -contributions/trusted/4.4
+6. From the '**Work with**:'' drop-down list select http://update.knime.com/community-contributions/trusted/4.6
 7. Now select the following plugin from the ”KNIME Community Contributions - Cheminformatics” category
    - RDKit KNIME integration
 8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
@@ -228,7 +228,7 @@ whenever possible. On macOS you also need to install `XQuartz` from the same dir
 
 Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
 macOS, you will find R in your Applications folder. In `R`, type the following lines (you might also copy them from the file
-`R` > `install_R_packages.R` folder on the USB stick):
+{path}`R,install_R_packages.R` on the USB stick):
 
 ```r
 install.packages('Rserve',,"http://rforge.net/",type="source")
@@ -247,7 +247,7 @@ BiocManager::install(c("MSstats"))
 In KNIME, click on **KNIME** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
 your installation path. You can use the following settings, if you installed R as described above:
 
-- Windows: `C: \Program Files \R \R-3.6.X (where X is the version you used to install the above libraries)`
+- Windows: `C:\Program Files\R\R-3.6.X'` (where X is the version you used to install the above libraries)
 - macOS: `/Library/Frameworks/R.framework/Versions/3.6/Resources`
 
 You are now ready to install the OpenMS nodes.
@@ -259,8 +259,9 @@ We included a custom KNIME update site to install the OpenMS KNIME plugins from 
 - In the now open dialog choose **Add** (in the upper right corner of the dialog) to define a new update site. In the
   opening dialog enter the following details.
 
-  Name: OpenMS {{ version }} UpdateSite
-  Location: {{ '`file:/KNIMEUpdateSite/{0}/`'.format(version) }}
+  **Name:** OpenMS {{ version }} UpdateSite
+
+  **Location:** {{ '`file:/KNIMEUpdateSite/{0}/`'.format(version) }}
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
@@ -269,21 +270,22 @@ From now on, you can use this repository for plugins in the **Work with**: drop-
 
 - Select the OpenMS nodes in the ”Uncategorized” category and click **Next**.
 - Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
-  “Community Nodes”.
+  "Community Nodes”.
 
 Alternatively, you can try these steps that will install the OpenMS KNIME plugins from the internet. Note that download
 can be slow.
 
 - In the now open dialog, choose **Add** (in the upper right corner of the dialog) to define a new update site. In the opening dialog enter the following details.
 
-  Name: OpenMS {{ version }} UpdateSite
-  Location: https://abibuilder.informatik.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
+  **Name:** OpenMS {{ version }} UpdateSite
+
+  **Location:** https://abibuilder.informatik.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
 From now on, you can use this repository for plugins in the **Work with:** drop-drown list.
 ```
-- Select the OpenMS nodes in the ”Uncategorized” category and click **Next**.
+- Select the OpenMS nodes in the "Uncategorized" category and click **Next**.
 - Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
   "Community Nodes".
 
@@ -407,9 +409,7 @@ To be able to share a workflow with others, KNIME supports the import and export
 workflow, select it in the Workflow Explorer and select **File** > **Export KNIME Workflow**. KNIME will export
 workflows as a _knwf_ file containing all the information on nodes, their connections, and their parameter configuration.
 
-Those *knwf* files can again be imported by selecting:
-
-**File** > **Import KNIME Workflow**
+Those *knwf* files can again be imported by selecting: **File** > **Import KNIME Workflow**
 
 ```{note}
 For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
@@ -513,7 +513,7 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
 or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
 In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
-Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string "C[C@H](N)C(O)=O". As we will discuss later, all OpenMS tools that perform metabolite
+Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later, all OpenMS tools that perform metabolite
 identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
 and KNIME.
 
@@ -661,12 +661,11 @@ different concentrations. [^10]
   databases. Thus, we need to introduce a search database input. As we want to use the same search database for all of
   our input files, we can just add a single `Input File` node to the workflow and connect it directly with the
   `OMSSAAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
-  started. In order to specify the database,
-  **Example_Data** > **Labelfree** > **databases** > select **s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta**,
+  started. In order to specify the database, select {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`,
   and we have a very basic peptide identification workflow.
 
   ```{note}
-  You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows>duplicating workflows</a>
+  You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows">duplicating workflows</a>
   for information on how to create copies of workflows.
   ```
 - The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
@@ -729,7 +728,7 @@ FDR of < 1 %.
 - Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
   **Community Nodes** > **OpenMS** > **ID Processing**).
 - In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
-  Configuring its parameter score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
+  Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
 - Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
   identify at this FDR threshold?
@@ -905,7 +904,7 @@ database (see <a href="#table-1">Table 1</a>).
 
 <a id="x1-32001r1"></a>
 <a id="x1-32002"></a>
-<figcaption class="caption"><span class="id">Table&nbsp;1: Samples (background: 200 ng <i>S.&nbsp;cerevisiae</i>) with spiked-in proteins in different
+<figcaption class="caption"><span class="id">Table&nbsp;1: Samples (background: 200 ng <i>S.&nbsp;cerevisiae</i>) with spiked-in proteins <br> in different
 quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 <div class="tabular">
  <table class="tabular" id="TBL-1"><colgroup id="TBL-1-1g"><col id="TBL-1-1"><col id="TBL-1-2"><col id="TBL-1-3"><col id="TBL-1-4"><col id="TBL-1-5"><col id="TBL-1-6"><col id="TBL-1-7"><col id="TBL-1-8"></colgroup><tbody><tr id="TBL-1-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-1">   </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-2">                      </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-3">                   </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-1-1-4">                 </td><td class="td11" style="white-space:nowrap; text-align:right;" colspan="4" id="TBL-1-1-5">         <div class="multicolumn" style="white-space:nowrap; text-align:center;"><span class="rm-lmr-10x-x-109">Samples</span></div>
@@ -1083,7 +1082,7 @@ This matrix has the following properties:
 - The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
 ```{math}
  \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
- ```
+```
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
 ```r
@@ -1205,9 +1204,8 @@ knime.out <- test.MSstats.cr.spikedins
 
 An excerpt of the main result of the group comparison can be seen in Figure 20.
 
-|![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png)|
+|![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png) ![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png)|
 |:--:|
-|![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png)|
 |Figure 20: Volcano plots produced by the Group Comparison in MSstats The dotted line indicates an adjusted p-value threshold|
 
 The Volcano plots show differently expressed spiked-in proteins. In the left plot, which shows the fold-change C2-C1, we can see the proteins D and F (`sp|P44983|UTR6_YEAST` and `sp|P55249|ZRT4_YEAST`) are significantly over-expressed in C2, while the proteins B,C, and E (`sp|P55752|ISCB_YEAST`, `sp|P55752|ISCB_YEAST`, and `sp|P44683|PGA4_YEAST`) are under-expressed. In the right plot, which shows the fold-change ratio of C3 vs. C2, we can see the proteins E and C (`sp|P44683|PGA4_YEAST` and `sp|P44374|SFG2_YEAST`) over-expressed and the proteins A and F (`sp|P44015|VAC2_YEAST` and `sp|P55249|ZRT4_YEAST`) under-expressed. The plots also show further differentially-expressed proteins, which do not belong to the spiked-in proteins.
@@ -2270,12 +2268,14 @@ was detected in e.g. 50% of all samples it might be only identified correctly by
 #### OpenSWATH
 
 |**parameter**|**explanation**|
+|:------------|:--------------|
 |*rt_extraction_window*|Extract x seconds around this value.|
 |*rt_normalization_factor*|Please use the range of your gradient e.g. 950 seconds.|
 
 If you are analysing a lot of big DIA mzML files ≈ 3-20GB per File, it makes sense to change how OpenSWATH processes the spectra.
 
 |**parameter**|**explanation**|
+|:------------|:--------------|
 |*readOptions*|Set cacheWorkingInMemory - will cache the files to disk
 and read SWATH-by-SWATH into memory|
 |*tempDirectory*|Set a directory, where cached mzMLs are stored (be
