@@ -69,6 +69,10 @@ myst_enable_extensions = [
   "substitution",
 ]
 
+# do not start footnotes with transition, gives warnings/errors when
+# foot notes are directly used after a heading.
+myst_footnote_transition = False
+
 autosummary_generate = True
 autosummary_imported_members = True
 
