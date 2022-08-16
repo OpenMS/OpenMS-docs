@@ -29,6 +29,9 @@ jobs:
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      # Install newer python and pip
+      - uses: actions/setup-python@v2
 
       # install deps
       - name: Install dependencies
