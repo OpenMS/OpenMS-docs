@@ -9,7 +9,7 @@ The following section provides general information to new contributors.
 
 ### I am new to OpenMS. What should I do first?
 
-* Check out the development version of OpenMS (see OpenMS <a href="../downloads.md#openms-releases">releases and installers</a>).
+* Check out the development version of OpenMS (see OpenMS <a href="../downloads.html#openms-releases">releases and installers</a>).
 * Build OpenMS according to the installation instructions.
 * Read the [OpenMS Coding Conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
 * Read the [OpenMS User Tutorial](../tutorials-and-quickstart-guides/openms-user-tutorial.md).
