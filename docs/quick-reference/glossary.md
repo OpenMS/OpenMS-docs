@@ -7,7 +7,7 @@ A glossary of common terms used throughout OpenMS documentation.
 :sorted:
 
 LC-MS
-  <a href="../introduction/background.md#liquid-chromatography-lc">Liquid Chromatography(LC)</a> and <a href="../introduction/background.md#mass-spectrometry">Mass Spectrometry(MS)</a>.
+  <a href="../introduction/background.html#liquid-chromatography-lc">Liquid Chromatography(LC)</a> and <a href="../introduction/background.html#mass-spectrometry">Mass Spectrometry(MS)</a>.
 
 peptides
   A short chain of amino acids.
@@ -124,9 +124,7 @@ spectra
   Singular of spectrum.
 
 mass spectrum
-  A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used
-  to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to
-  elucidate the chemical identity or structure of molecules and other chemical compounds.
+  A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds.
 
 m/z
   mass to charge ratio.
@@ -135,15 +133,13 @@ retention time
   retention time (RT) in liquid chromatography, is the time it takes for a separated analyte to move through the stationary phase.
 
 ProteoWizard
-  ProteoWizard is a set of open-source, cross-platform tools and libraries for proteomics data analyses. It provides a
-  framework for unified mass spectrometry data file access and performs standard chemistry and LCMS dataset computations.
+  ProteoWizard is a set of open-source, cross-platform tools and libraries for proteomics data analyses. It provides a framework for unified mass spectrometry data file access and performs standard chemistry and LCMS dataset computations.
 
 PepNovo
   PepNovo is a de novo sequencing algorithm for {term}`MS/MS` {term}`spectra`.
 
 de novo peptide sequencing
-  A peptide’s amino acid sequence is inferred directly from the precursor peptide mass and tandem mass spectrum
-  ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
+  A peptide’s amino acid sequence is inferred directly from the precursor peptide mass and tandem mass spectrum ({term}`MS/MS` or {term}`MS^3`) fragment ions, without comparison to a reference proteome.
 
 TOPPAS
   An assistant for GUI-driven TOPP workflow design. It is recommended to use OpenMS through the KNIME plugins.

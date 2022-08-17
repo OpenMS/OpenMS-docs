@@ -25,23 +25,22 @@ Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, 
 4. Install the required KNIME File Handling nodes from the official KNIME Update Site (a standard entry in the update
    sites). Choose the update site from the **Work with:** dropdown menu.
 
+   **Name**: KNIME Analytics Platform {{ knime_version }} Update Site.
 
-   **Name**: KNIME Analytics Platform ${YOUR_KNIME_VERSION} Update Site.
-
-   **Location**: http://update.knime.org/analytics-platform/${YOUR_KNIME_VERSION}
+   **Location**: {{ 'http://update.knime.org/analytics-platform/{0}'.format(knime_version) }}
 
 5. Filter the results for **File handling** and select the {term}`KNIME` File Handling Nodes. Click **Next** and install.
 
    ![](../../images/tutorials/knime/KNIME_update_site.jpeg)
 
-6. Now, install the actual OpenMS pluging. Next to the **Work with:** dropdown menu, click on **Add...**. In the opening
+6. Now, install the actual OpenMS plugin. Next to the **Work with:** dropdown menu, click on **Add...**. In the opening
    dialog fill in at least one of the following additional Update Sites (if not already present):
 
    **Recommended**:
 
    **Name**: KNIME Community Contributions (Stable)
 
-   **Location**: http://update.knime.org/community-contributions/trusted/${YOUR_KNIME_VERSION}
+   **Location**: {{ 'http://update.knime.org/community-contributions/trusted/{0}'.format(knime_version) }}
 
    **Unstable**:
 
@@ -62,8 +61,7 @@ Download Introduction to OpenMS in KNIME [user tutorial](../../tutorials-and-qui
 usage of KNIME. See the official [KNIME Getting Started Guide](https://tech.knime.org/knime) for a more in-depth view of
 the KNIME functionality besides OpenMS.
 
-If you face any issues, please [contact us](../../quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the
-KNIME community contribution [forum](https://tech.knime.org/forum/openms).
+If you face any issues, please [contact us](../../quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the KNIME community contribution [forum](https://forum.knime.com/c/community-extensions/openms/40).
 
 ## Creating your own Generic KNIME Nodes
 

@@ -413,7 +413,7 @@ Those *knwf* files can again be imported by selecting: **File** > **Import KNIME
 
 ```{note}
 For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
- Additionally, the workflow files can be found on <a href="../downloads.md#workflows">workflow downloads</a>. If you want to check
+ Additionally, the workflow files can be found on <a href="../downloads.html#workflows">workflow downloads</a>. If you want to check
  your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding
  *knwf* file and after that double-click it in your KNIME Workflow repository to open it.
 ```
@@ -799,7 +799,7 @@ assigns an overall intensity.
 - `FeatureFinderCentroided` produces a featureXML file as output, containing only quantitative information of so-far unidentified peptide signals. In order to annotate these with the corresponding ID information, we need the **IDMapper** node.
 -  Run your pipeline and inspect the results of the **IDMapper** node in TOPPView. Open the mzML file of your data to display the raw peak intensities.
 - To assess how well the feature finding worked, you can project the features contained in the featureXML file on the raw data contained in the mzML file. To
-this end, open the featureXML file in TOPPView by clicking on File Open file and add it to a new layer ( Open in New layer ). The features are now visualized on top of your raw data. If you zoom in on a small region, you should be able to see the individual boxes around features that have been detected (see <a href="figure-14">Fig. 14</a>). If you
+this end, open the featureXML file in TOPPView by clicking on File Open file and add it to a new layer ( Open in New layer ). The features are now visualized on top of your raw data. If you zoom in on a small region, you should be able to see the individual boxes around features that have been detected (see <a href="#figure-14">Fig. 14</a>). If you
 hover over the the feature centroid (small circle indicating the chromatographic apex of monoisotopic trace) additional information of the feature is displayed.
 
   |![Visualization of detected features (boxes) in TOPPView](../images/openms-user-tutorial/labelfree/featureXML.png)|
@@ -1503,7 +1503,7 @@ library(MSstats)
 groupComparisonPlots(data=data.res.mod, type="VolcanoPlot", address=F, which.Comparison = "0125-05", sig = 0.05)
 ```
 
-Here, we have a example output of the **R View**, which depicts the significant regulated UPS proteins in the comparison of 125 to 05 (<a href="figure-26">Fig. 26</a>).
+Here, we have a example output of the **R View**, which depicts the significant regulated UPS proteins in the comparison of 125 to 05 (<a href="#figure-26">Fig. 26</a>).
 
 (Figure_26)=
 |![Volcanoplot of the group comparison regarding 0125 to 05](../images/openms-user-tutorial/isobaric/isobaric_img_output_knime.png)|
@@ -2308,8 +2308,7 @@ It is also possible to use identified and in addition unknown (non-identified) f
 ### Introduction
 
 pyOpenMS provides Python bindings for a large part of the OpenMS library for mass spectrometry based proteomics and metabolomics. It thus provides access to a featurerich, open-source algorithm library for mass-spectrometry based LC-MS analysis. These Python bindings allow raw access to the data-structures and algorithms implemented
-in OpenMS, specifically those for file access (mzXML, mzML, TraML, mzIdentML among others), basic signal processing (smoothing, filtering, de-isotoping and peak-picking) and complex data analysis (including label-free, SILAC, iTRAQ and SWATH analysis tools). pyOpenMS is integrated into OpenMS starting from version 1.11. This tutorial is addressed to people already familiar with Python. If you are new to Python, we suggest
-to start with a [Python tutorial](https://en.wikibooks.org/wiki/Non-Programmer%27s_Tutorial_for_Python_3).
+in OpenMS, specifically those for file access (mzXML, mzML, TraML, mzIdentML among others), basic signal processing (smoothing, filtering, de-isotoping and peak-picking) and complex data analysis (including label-free, SILAC, iTRAQ and SWATH analysis tools). pyOpenMS is integrated into OpenMS starting from version 1.11. This tutorial is addressed to people already familiar with Python. If you are new to Python, we suggest to start with a [Python tutorial](https://en.wikibooks.org/wiki/Non-Programmer%27s_Tutorial_for_Python_3).
 
 ### Installation
 
@@ -2461,7 +2460,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS datastructure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures.html).
+For further examples and the pyOpenMS data structure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures.html).
 
 ### Tool development with pyOpenMS
 
@@ -2888,7 +2887,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
 
-**A:** Get the prerequisites installer {{ '[here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/OpenMS-{0}-prerequisites-installer.exe)'.format(version) }} or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
+**A:** Get the prerequisites installer [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
 
 #### Nodes
 
