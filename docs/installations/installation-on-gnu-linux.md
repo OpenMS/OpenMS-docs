@@ -61,7 +61,7 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    ```
    Run the installation again.
 2. ICU with its `libicu` is missing.
-   You can find the missing version on pkgs.org and install it with `gdebi`, too. You can have
+   You can find the missing version on [pkgs.org](https://pkgs.org) and install it with `gdebi`, too. You can have
    multiple versions of ICU installed.
 3. Error while executing a tool
    To ensure the tool functionality, make sure you add the `OPENMS_DATA_PATH` variable to your environment as follow
