@@ -1926,7 +1926,7 @@ OpenSWATH has been fully integrated since OpenMS 1.10 [^4]<sup>,</sup> [^2]<sup>
 
 ### Installation of mProphet
 
-[mProphet](http://www.mprophet.org/)[^26] is available as standalone script in {path}`External_Tools,mProphet`. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
+mProphet[^26] is available as standalone script in {path}`External_Tools,mProphet`. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
 PyProphet, a much faster reimplementation of the mProphet algorithm is available from [PyPI](https://pypi.python.org/pypi/pyprophet/). The usage of pyprophet instead of mProphet is suggested for large-scale applications.
 
 mProphet will be used in this tutorial.
@@ -2460,7 +2460,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS data structure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures.html).
+For further examples and the pyOpenMS data structure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures_peak.html).
 
 ### Tool development with pyOpenMS
 
