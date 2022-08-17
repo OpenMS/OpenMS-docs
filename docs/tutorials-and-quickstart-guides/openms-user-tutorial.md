@@ -2941,7 +2941,7 @@ W. Shi, and S. H. Bryant, <a href="http://pubs.acs.org/doi/abs/10.1021/pr0499491
 Proteome Research 3(5), 958–964 (2004). 30
 
 [^10]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, <a href="http://dx.doi.org/10.1021/pr500665j">Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis</a>, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
-arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
+arXiv:http://dx.doi.org/10.1021/pr500665j, <a href="https://pubs.acs.org/doi/10.1021/pr500665j">doi:10.1021/pr500665j</a>. 30
 
 [^11]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311, arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
 
@@ -3001,7 +3001,7 @@ R. L. Moritz, and M.-Y. Brusniak, <a href="https://www.mcponline.org/article/S15
 11(4) (Apr. 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">doi:10.1074/mcp.R111.015040</a>. 84
 
 [^28]: C. Escher, L. Reiter, B. MacLean, R. Ossola, F. Herzog, J. Chilton, M. J. MacCoss, and O. Rinner, <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">Using iRT, a normalized retention time for more targeted measurement of peptides</a>., Proteomics 12(8), 1111–1121 (Apr. 2012),
-doi:10.1002/pmic.201100463. 84
+<a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">doi:10.1002/pmic.201100463</a>. 84
 
 [^29]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinović, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmström, L. Malmström, and R. Aebersold,
 <a href="https://pubmed.ncbi.nlm.nih.gov/24727770/">OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data</a>., Nat. Biotechnol. 32(3), 219–23 (2014), <a href="https://www.nature.com/articles/nbt.2841">doi:10.1038/nbt.2841</a>.
