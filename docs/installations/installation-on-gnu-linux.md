@@ -1,9 +1,19 @@
-Installation on GNU/Linux
+GNU/Linux
 =========================
 
 ## Install via Conda
 
 Use conda or bioconda to install OpenMS.
+
+1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
+2. Install OpenMS using conda:
+   `conda install -c openms openms`
+3. Other OpenMS packages can be installed using:
+   ```
+   conda install -c openms pyopenms
+   conda install -c openms openms-thirdparty
+   conda install -c openms libopenms
+   ```
 
 ```{tab} openms
 openms contains OpenMS C++ Tools.
@@ -21,16 +31,6 @@ pyopenms is the python package that allows to use algorithms from libopenms in P
 openms-thirdparty are external tools that are wrapped in OpenMS with adapters. This is required to use the adapters in
 the openms package.
 ```
-
-1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
-2. Install OpenMS using conda:
-   `conda install -c openms openms`
-3. Other OpenMS packages can be installed using:
-   ```
-   conda install -c openms pyopenms
-   conda install -c openms openms-thirdparty
-   conda install -c openms libopenms
-   ```
 
 To install using bioconda:
 
@@ -61,7 +61,7 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    ```
    Run the installation again.
 2. ICU with its `libicu` is missing.
-   You can find the missing version on pkgs.org and install it with `gdebi`, too. You can have
+   You can find the missing version on [pkgs.org](https://pkgs.org) and install it with `gdebi`, too. You can have
    multiple versions of ICU installed.
 3. Error while executing a tool
    To ensure the tool functionality, make sure you add the `OPENMS_DATA_PATH` variable to your environment as follow
@@ -118,14 +118,7 @@ Docker images can be pulled via or one of the following commands:
 
 ```
 docker pull biocontainers/openms
-docker pull biocontainers/libopenms
-docker pull biocontainers/openms-thirdparty
-docker pull biocontainers/pyopenms
+docker pull openms/library
+docker pull openms/executables
+docker pull openms/pyopenms
 ```
-
-Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) can be found on
-GitHub in [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository.
-
-## Build OpenMS from source
-
-To build OpenMS from source, follow the build instructions for [Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_linux.html).

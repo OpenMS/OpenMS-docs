@@ -53,7 +53,10 @@ extensions = [
   'sphinx_inline_tabs',
   'pathrole',
   'hoverxref.extension',
+  'sphinx_search.extension',
 ]
+
+numfig = True
 
 myst_enable_extensions = [
   "tasklist",
@@ -62,8 +65,13 @@ myst_enable_extensions = [
   "colon_fence",
   "linkify",
   "replacements",
+  "html_admonition",
   "substitution",
 ]
+
+# do not start footnotes with transition, gives warnings/errors when
+# foot notes are directly used after a heading.
+myst_footnote_transition = False
 
 autosummary_generate = True
 autosummary_imported_members = True
@@ -87,6 +95,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'furo'
+
+html_favicon = '../assets/logo/OpenMS_transparent_background.png'
 html_logo = '../assets/logo/OpenMS_transparent_background.png'
 html_theme_options = {
     "navigation_with_keys": True,
@@ -100,12 +110,10 @@ pygments_style = 'sas'
 
 pygments_dark_style = 'rrt'
 
-
 # Configure tooltips
 hoverxref_roles = ['term']
 
 hoverxref_role_types = {'term':'tooltip'}
-
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

@@ -46,19 +46,19 @@ def make_path_nodes(rawtext, pathparts, app, options):
     except AttributeError:
         raise ValueError('pathicon configuration value is not set')
     #
-    triangle = nodes.inline(text="▹")
+    triangle = nodes.inline(text="▸")
     #triangle = nodes.Text("▹")
     triangle.set_class("pathsep_triangle")
 
     #retnodes = [nodes.image(app.config.pathicon, **options), triangle]
-    nobrhtml = "<nobr>"
+    nobrhtml = "<nobr class='path'>"
     nobrelem = nodes.raw('', nobrhtml, format="html")
     brhtml = "<br>"
     brelem = nodes.raw('', brhtml, format="html")
     nobrhtmlclose = "</nobr>"
     nobrelemclose = nodes.raw('', nobrhtmlclose, format="html")
 
-    html = f"<i class=\"{app.config.pathicon}\"></i>"
+    html = f"<i class=\"{app.config.pathicon} path\"></i>"
     retnodes = [nobrelem, nodes.raw('', html, format="html")]
     for part in pathparts[:-1]:
         if part == "/break":
