@@ -2307,7 +2307,10 @@ It is also possible to use identified and in addition unknown (non-identified) f
 
 The universal workflow for untargeted metabolomics always consists of feature detection in the individual MS sample files and their linkage to consensus features with common m/z and retention time values. In addition, there are optional steps such as adduct detection and annotation of features with associated MS2 spectra. This workflow prepares all the file necessary to do formula and structural annotations via `SiriusAdapter`. Furthermore it prepares all required files to run `GNPSExport`, which generates all files necessary to directly run [GNPS](https://gnps.ucsd.edu) Feature Based Molecular Networking (FBMN) and Ion Identity Molecular Networking (IIMN).
 
-![metabolomics preprocessing](../images/tutorials/metabolomics-preprocessing.png)
+(Figure_49)=
+|![metabolomics preprocessing](../images/tutorials/metabolomics-preprocessing.png)|
+|:--:|
+|Figure 49: Metabolomics preprocessing steps|
 
 If you want to use the example data, download the files [sample1.mzML](../data/sample1.mzML) and [sample2.mzML](../data/sample2.mzML).
 
@@ -2353,7 +2356,10 @@ TextExporter -in Preprocessed.consensusXML -out Features.tsv -consensus:add_meta
 
 You can recreate this workflow in KNIME. [Download the KNIME workflow here](../workflows/UntargetedMetabolomicsPreProcessing.knwf). The workflow should look like this:
 
-![metabolomics preprocessing](../images/tutorials/metabolomics-preprocessing-knime-workflow.png)
+(Figure_50)=
+|![metabolomics preprocessing workflow in KNIME](../images/tutorials/metabolomics-preprocessing-knime-workflow.png)|
+|:--:|
+|Figure 50: Metabolomics preprocessing workflow in KNIME|
 
 
 ## An introduction to pyOpenMS
@@ -2839,10 +2845,10 @@ ggplot(knime.in, aes(x=peptide_charge)) +
 - To have the plot later displayed properly, we assign it the parameter `cv_acc` of `QC:0000051`, a generic plot. Also we made sure in the *R Script*, that our plot carries a caption so that we know which is which, if we had more than one new plot.
 - Now we redirect the **QCEmbedders** output to the **Output Folder** from before and can have a look at how our qcML is coming along after restarting the workflow.
 
-(Figure_50)=
+(Figure_51)=
 |![QC with new metric](../images/openms-user-tutorial/quality-control/qc_extra.png)|
 |:--:|
-|Figure 50: QC with new metric.|
+|Figure 51: QC with new metric.|
 
 ### Set QC metrics
 
@@ -2856,10 +2862,10 @@ For this, we will first collect all created qcML files, merge them together and 
 
 When inspecting the set-qcML file in a browser, we will be presented another overview. After the set content listing, the basic QC parameters (like number of identifications) are each displayed in a graph. Each set member (or run) has its own section on the x-axis and each run is connected with that graph via a link in the mouseover on one of the QC parameter values.
 
-(Figure_51)=
+(Figure_52)=
 |![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
 |:--:|
-|Figure 51: QC set creation from ZipLoop.|
+|Figure 52: QC set creation from ZipLoop.|
 
 <div class="admonition task">
 <p class="admonition-title">**Task**</p>
