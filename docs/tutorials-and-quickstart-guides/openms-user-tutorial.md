@@ -2805,10 +2805,10 @@ install.packages("scales")
 ```
 Press **Eval script** to execute the script.
 
-(Figure_49)=
+(Figure_51)=
 |![Basic QC setup within a LFQ workflow.](../images/openms-user-tutorial/quality-control/qc_basic.png)|
 |:--:|
-|Figure 49: Basic QC setup within a LFQ workflow.|
+|Figure 51: Basic QC setup within a LFQ workflow.|
 
 ```{note}
 To have a peek into what our qcML now looks like for one of the **ZipLoop** iterations, we can add an **Output Folder** node from **Community Nodes** > **GenericKnimeNodes** > **IO** and set its destination parameter to somewhere we want to find our intermediate qcML files in, for example **tmp** > **qcxlfq**. If we now connect the last metanode with the Output Folder and restart the workflow, we can start inspecting the qcML files.
@@ -2845,10 +2845,10 @@ ggplot(knime.in, aes(x=peptide_charge)) +
 - To have the plot later displayed properly, we assign it the parameter `cv_acc` of `QC:0000051`, a generic plot. Also we made sure in the *R Script*, that our plot carries a caption so that we know which is which, if we had more than one new plot.
 - Now we redirect the **QCEmbedders** output to the **Output Folder** from before and can have a look at how our qcML is coming along after restarting the workflow.
 
-(Figure_51)=
+(Figure_52)=
 |![QC with new metric](../images/openms-user-tutorial/quality-control/qc_extra.png)|
 |:--:|
-|Figure 51: QC with new metric.|
+|Figure 52: QC with new metric.|
 
 ### Set QC metrics
 
@@ -2862,10 +2862,10 @@ For this, we will first collect all created qcML files, merge them together and 
 
 When inspecting the set-qcML file in a browser, we will be presented another overview. After the set content listing, the basic QC parameters (like number of identifications) are each displayed in a graph. Each set member (or run) has its own section on the x-axis and each run is connected with that graph via a link in the mouseover on one of the QC parameter values.
 
-(Figure_52)=
+(Figure_53)=
 |![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
 |:--:|
-|Figure 52: QC set creation from ZipLoop.|
+|Figure 53: QC set creation from ZipLoop.|
 
 <div class="admonition task">
 <p class="admonition-title">**Task**</p>
