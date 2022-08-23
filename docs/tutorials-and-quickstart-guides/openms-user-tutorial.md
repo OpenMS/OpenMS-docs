@@ -1035,7 +1035,7 @@ Adjust the parameters in the config dialog of the converter to match the given e
 |*labeled_reference_peptides*|false|
 |*retention_time_summarization_method (advanced)*|sum|
 
-The downstream analysis of the peptide ions with `MSstats` is performed in several steps. These steps are reflected by several KNIME R nodes, which consume the output of **MSstatsConverter**. The outline of the workflow is shown in Figure 19.
+The downstream analysis of the peptide ions with `MSstats` is performed in several steps. These steps are reflected by several KNIME R nodes, which consume the output of **MSstatsConverter**. The outline of the workflow is shown in <a href="#figure-19">Figure 19</a>.
 
 |![MSstats analysis using KNIME](../images/openms-user-tutorial/labelfree/MSstats.png)|
 |:--:|
@@ -1109,7 +1109,7 @@ No more parameters need to be set for performing the comparison.
 
 ##### Result processing
 
-In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in Figure 20:
+In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in <a href="#figure-20">Figure 20</a>:
 
 ```r
   test.MSstats.cr <- test.MSstats$ComparisonResult   
@@ -1202,7 +1202,7 @@ knime.out <- test.MSstats.cr.spikedins
 
 #### Result
 
-An excerpt of the main result of the group comparison can be seen in Figure 20.
+An excerpt of the main result of the group comparison can be seen in <a href="#figure-20">Figure 20</a>.
 
 |![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png) ![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png)|
 |:--:|
@@ -1270,11 +1270,11 @@ FDR are. Good results should show a close correspondence between these two measu
 
 The calculation is done by using a simple R script in R snippet. First, the target decoy protein FDR is computed as the proportion of decoy proteins among all significant protein IDs. Then posterior probabilistic-driven FDR is estimated by the average of the posterior error probability of all significant protein IDs. Since FDR is the property for a group of protein IDs, we can also calculate a local property for each protein: the q-value of a certain protein ID is the minimum FDR of any groups of protein IDs
 that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see <a href="#figure-22">Fig. 22</a>).
-
+(Figure_21)=
 |![The workflow of statistical analysis of protein inference results](../images/openms-user-tutorial/protein-inference/inference_metanode.png)|
 |:--:|
 |Figure 21: The workflow of statistical analysis of protein inference results|
-
+(Figure_22)=
 |![The pseudo-ROC Curve of protein IDs](../images/openms-user-tutorial/protein-inference/proteinFDR.png)|
 |:--:|
 |Figure 22: The pseudo-ROC Curve of protein IDs. The accumulated number of protein IDs is plotted on two kinds of scales: target-decoy protein FDR and Fido posterior probability estimated FDR. The largest value of posterior probability estimated FDR is already smaller than 0.04, this is because the posterior probability output from Fido is generally very high|
