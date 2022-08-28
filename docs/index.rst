@@ -42,7 +42,7 @@ Contents
 
    introduction/about-open-ms.md
    introduction/background.md
-   introduction/how-openms-works.md
+   introduction/entry-points-to-openms.md
 
 .. toctree::
    :maxdepth: 2
