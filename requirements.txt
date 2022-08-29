@@ -6,6 +6,7 @@ readthedocs-sphinx-search
 sphinx
 sphinxcontrib-images
 sphinx-copybutton
+sphinx-design
 sphinx-notfound-page
 sphinx-inline-tabs
 sphinx-hoverxref

@@ -54,6 +54,7 @@ extensions = [
   'pathrole',
   'hoverxref.extension',
   'sphinx_search.extension',
+  'sphinx_design',
 ]
 
 numfig = True
