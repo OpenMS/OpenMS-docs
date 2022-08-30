@@ -14,4 +14,4 @@ There are also a number of tools in the beta stage called UTILS. They include bu
 - RNA
 - Quality control
 
-Additional information for the [ProteomicsLFQ](../topp-and-utils/proteomicslfq.md) Quantitation UTILS tool is provided. For the full list of UTILS tools, visit the [API Reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html) website.
+Additional information for the [ProteomicsLFQ](../topp-and-utils/proteomicslfq.md) Quantitation UTILS tool is provided. For the full list of UTILS tools, visit the [API Reference](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html) website.

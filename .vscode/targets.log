@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Sun Aug 28 18:55:26 2022
+# Make data base, printed on Tue Aug 30 20:03:31 2022
 
 # Variables
 
@@ -17,6 +18,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 ?F = $(notdir $?)
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+ 
 # makefile (from `Makefile', line 7)
 SPHINXPROJ = openms
 # automatic
@@ -52,11 +54,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Q4hr3MO7nY/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.fHENl474uo/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.IMEqI2fl3s/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.JEnGN8O7CC/org.xquartz:0
 # environment
 PWD = /Users/christinakumar/openms-docs/OpenMS-docs
 # environment
@@ -68,7 +70,7 @@ HOME = /Users/christinakumar
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/christinakumar/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /Users/christinakumar/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = christinakumar
 # environment
@@ -108,7 +110,7 @@ TMPDIR = /var/folders/hj/1tg2psn112l93qd9chvzg8bm0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/christinakumar/Library/Application Support/Code/1.69.2-main.sock
+VSCODE_IPC_HOOK = /Users/christinakumar/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -118,7 +120,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.12929192943.12929192949
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12932566621.12932566628
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from `Makefile', line 6)
@@ -150,8 +152,9 @@ LANG = C
 # makefile (from `Makefile', line 8)
 SOURCEDIR = docs
 # environment
-VSCODE_PID = 2876
+VSCODE_PID = 3959
 # variable set hash-table stats:
+ 
 # Load=70/1024=7%, Rehash=0, Collisions=1/101=1%
 
 # Pattern-specific Variable Values
@@ -160,12 +163,14 @@ VSCODE_PID = 2876
 
 # Directories
 
+ 
 # . (device 16777220, inode 12923647332): 18 files, no impossibilities.
 
 # 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
+ 
 %: Makefile
 #  commands to execute (from `Makefile', line 21):
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
@@ -177,6 +182,7 @@ VSCODE_PID = 2876
 
 all: Makefile
 #  Command-line target.
+ 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `all'
 #  File does not exist.
@@ -229,6 +235,7 @@ help:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 13):
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+ 
 	
 
 # Not a target:
@@ -250,6 +257,6 @@ help:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Aug 28 18:55:26 2022
+# Finished Make data base on Tue Aug 30 20:03:31 2022
 
  

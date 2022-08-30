@@ -11,7 +11,7 @@ The following section provides general information to new contributors.
 
 * Check out the development version of OpenMS (see website).
 * Build OpenMS by following the installation instructions or [from source](../develop-with-openms/build-openms-from-source.md).
-* Read the [OpenMS Coding Conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html)
+* Read the [OpenMS Coding Conventions](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html)
 * Read the [OpenMS User Tutorial](../tutorials-and-quickstart-guides/openms-user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
@@ -24,7 +24,7 @@ to `TOOLS` if they are stable enough, are fully tested, fully documented, and a 
 
 ### I have written a class for OpenMS. What should I do?
 
-Follow the [OpenMS coding conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
+Follow the [OpenMS coding conventions](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
 
 Coding style (brackets, variable names, etc.) must conform to the conventions.
 
@@ -51,7 +51,7 @@ Insert round brackets around the method declaration.
 
 ### Where can I find the binary installers created?
 
-View the binary installers at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
+View the binary installers at the [build archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
 Please verify the creation date of the individual installers, as there may have been an error while creating 
 the installer.
 

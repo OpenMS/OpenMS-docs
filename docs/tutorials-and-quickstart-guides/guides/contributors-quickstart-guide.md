@@ -5,7 +5,7 @@ To contribute to OpenMS:
 
 - Familiarise yourself with the [OpenMS online documentation](../../index.rst).
 - Learn how to [build OpenMS](../../develop-with-openms/build-openms-from-source.md).
-- Check out the [OpenMS tutorial for developers](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
+- Check out the [OpenMS tutorial for developers](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
 For any questions, please [contact us](../../quick-reference/contact-us.md).
 
@@ -17,9 +17,9 @@ automated continuous integration tests but no manual tests.
 ```
 
 View the documentation for the nightly snapshot of [OpenMS develop branch](https://github.com/OpenMS/OpenMS/tree/develop)
-at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
+at the [build archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
 
-See the documentation for the [latest release](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
+See the documentation for the [latest release](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/index.html).
 
 ## Contribution guidelines
 
@@ -40,10 +40,10 @@ To create a fork:
 
 ### Coding conventions
 
-See the manual for coding style recommended by OpenMS: [Coding conventions](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
+See the manual for coding style recommended by OpenMS: [Coding conventions](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
 
 ```{seealso}
-[C++ Guide](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/developer_faq.html).
+[C++ Guide](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/developer_faq.html).
 ```
 
 OpenMS automatically tests for common coding convention violations using a modified version of `cpplint`.
@@ -70,5 +70,5 @@ Consider the following resources for further information:
 - **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries](../../contribute-to-openms/advanced/developer-guidelines-for-adding-new-dependent-libraries.md).
 -  **Experimental installers**: We automatically build installers for different platforms. These usually contain
    unstable or partially untested code.
-   The nightly (unstable) installers are available at the [build archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
+   The nightly (unstable) installers are available at the [build archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
 - **Developer FAQ**: Visit the [Developer FAQ](../../quick-reference/developer-faq.md) to get answers to frequently asked questions.

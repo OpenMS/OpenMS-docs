@@ -83,7 +83,7 @@ Contents
    :caption: Develop with OpenMS
 
    develop-with-openms/openms-core-cplusplus-library.md
-   OpenMS API Reference <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
+   OpenMS API Reference <https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
    pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
    develop-with-openms/build-openms-from-source.md
    develop-with-openms/link-external-code-to-openms.md
