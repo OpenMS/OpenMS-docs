@@ -7,7 +7,7 @@ OpenMS has been structured so that users from a wide range of fields can access 
 
 The following entry points for OpenMS and its TOPP tools are available for users (click the card for more information):
 
-::::{grid} 2
+::::{grid} 1 1 2 2
 
 :::{grid-item-card} {material-regular}`account_tree;5em;sd-text-info` **Workflows** <br/> Use a supported workflow editor to create or run predefined workflows
   :link: ../run-workflows-with-openms-tools/overview
@@ -26,7 +26,7 @@ The following entry points for OpenMS and its TOPP tools are available for users
 
 ::::
 
-::::{grid} 2
+::::{grid} 1 1 2 2
 
 :::{grid-item-card} {octicon}`terminal;5em;sd-text-info` **Command-line tools** <br/> Use over 100 command-line tools to automate pre-defined tasks efficiently
   :link: ../openms-applications-and-tools/command-line-interface
