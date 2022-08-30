@@ -5,7 +5,7 @@ macOS
 
 To install OpenMS on macOS, run the following steps:
 
-1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
+1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
 2. Double click on the dowloaded file. It will start to open the download `openms-<version>-macos.dmg` file
 
 <img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/opening-openms%3Cversion%3E-macos.png" alt="Verifying OpenMS-<version>-macOS.dmg" width="500" float: left/>

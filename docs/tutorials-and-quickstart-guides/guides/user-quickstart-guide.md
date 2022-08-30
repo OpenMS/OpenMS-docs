@@ -2,7 +2,7 @@ User Quickstart Guide
 ====================
 
 Read the User Quickstart guide to gain a brief understanding of key concepts and how to use the tools. For more in-depth
-information, consult [OpenMS API Reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
+information, consult [OpenMS API Reference](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
 
 ## What is OpenMS
 
@@ -24,7 +24,7 @@ Before using OpenMS, become familiar with the following terms:
 
 ```{seealso}
 
-[UTILS documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
+[UTILS documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
 ```
 
 ```{important}
