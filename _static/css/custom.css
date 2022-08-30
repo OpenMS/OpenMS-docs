@@ -62,3 +62,24 @@ a.hxr-hoverxref {
 a.hxr-hoverxref:hover {
   text-decoration-color: var(--color-link-underline--hover);
 }
+
+span.fa-xl {
+  font-size: 5em;
+  margin-right: 5px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+img.halfwidth {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

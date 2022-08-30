@@ -66,9 +66,7 @@ Contents
    :maxdepth: 2
    :caption: Run Workflows with OpenMS Tools
 
-   run-workflows-with-openms-tools/openms-in-knime.md
-   run-workflows-with-openms-tools/openms-in-nextflow.md
-   run-workflows-with-openms-tools/openms-on-galaxy.md
+   run-workflows-with-openms-tools/overview.md
 
 .. toctree::
    :maxdepth: 2
