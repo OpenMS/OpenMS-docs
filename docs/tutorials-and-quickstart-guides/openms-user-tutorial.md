@@ -279,7 +279,7 @@ can be slow.
 
   **Name:** OpenMS {{ version }} UpdateSite
 
-  **Location:** https://abibuilder.informatik.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
+  **Location:** https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
@@ -1313,7 +1313,7 @@ There is also an [online lecture](https://youtu.be/3CDnrQxGLbA) and tutorial for
 
 ### Dataset and experimental design
 
-We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. <a href="#figure-24">Figure 24</a> shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
+We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. <a href="#figure-24">Figure 24</a> shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
 
 (Figure_24)=
 |![Experimental Design](../images/openms-user-tutorial/isobaric/isobaric_experimental_design.jpeg)|
@@ -2189,7 +2189,7 @@ Use your package manager apt-get or yum, where possible.
 
 For the assay library construction pesticide mixes (Agilent Technologies, Waldbronn, Germany) were measured individually in solvent (DDA). Benchmark DIA samples were prepared by spiking different commercially available pesticide mixes into human plasma metabolite extracts in a 1:4 dilution series, which covers 5 orders of magnitude.
 
-The example data can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/DIAMetAlyzer/).
+The example data can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/DIAMetAlyzer/).
 
 ### Example workflow
 
@@ -2457,7 +2457,7 @@ Instructions on how to build pyOpenMS can be found [online](https://pyopenms.rea
 
 ### Scripting with pyOpenMS
 
-A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
+A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
 
 Calculation of the monisotopic and average mass of a peptide sequence:
 
@@ -2946,7 +2946,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
 
-**A:** Get the prerequisites installer [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
+**A:** Get the prerequisites installer [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
 
 #### Nodes
 
