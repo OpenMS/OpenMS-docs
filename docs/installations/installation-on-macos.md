@@ -8,25 +8,44 @@ To install OpenMS on macOS, run the following steps:
 1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
 2. Double click on the dowloaded file. It will start to open the download `openms-<version>-macos.dmg` file
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/opening-openms2-8-macos.png" alt="Verifying OpenMS-<version>-macOS.dmg" width="500" float: left/>
+```{image} ../images/installations/macos/opening-openms2-8-macos.png
+:alt: Opening OpenMS-<version>-macOS.dmg
+:width: 500px
+```
 
 3. Verify the download.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/verifying-openms2-8-macos.png" alt="Verifying OpenMS-<version>-macOS.dmg" width="500" float: left/>
+```{image} ../images/installations/macos/verifying-openms2-8-macos.png
+:alt: Verifying OpenMS-<version>-macOS.dmg
+:width: 500px
+```
 
-4. Agree the license agreements.
+4. Agree to the license agreements.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/license-agreements.png" alt="License Agreement" width="500" float: left/>
+```{image} ../images/installations/macos/license-agreements.png
+:alt: Verifying OpenMS-<version>-macOS.dmg
+:width: 500px
+```
 
-5. Drag openms to applications.
+5. Drag OpenMS to the Applications folder.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/move-openms-to-applications.png" alt="License Agreement" width="500" float: left/>
+```{image} ../images/installations/macos/move-openms-to-applications.png
+:alt: Move to Applications
+:width: 500px
+```
 
 6. It will start copying to applications.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/preparing-to-copy-to-applications.png" alt="Preparing to Copy to Applications" width="500" float: left/>
+```{image} ../images/installations/macos/preparing-to-copy-to-applications.png
+:alt: Preparing to copy to Applications
+:width: 500px
+```
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/copying-to-applications.png" alt="Copying to Applications" width="500" float: left/>
+```{image} ../images/installations/macos/copying-to-applications.png
+:alt: Copying to Applications
+:width: 500px
+```
+
 
 To use {term}`TOPP` as regular app in the shell, add the following lines to the `~/.profile` file.
 
