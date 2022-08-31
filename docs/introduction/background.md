@@ -4,11 +4,10 @@ Background
 OpenMS was primarily designed to process, analyze and visualize liquid chromatography - mass spectrometry (LC-MS) data.
 
 ```{note}
-OpenMS in recent times has been expanded to include other mass spectrometry methods. To design your experimental analysis solution, [contact the OpenMS team](../quick-reference/contact-us.md) today.
+OpenMS in recent times has been expanded to include other mass spectrometry methods. To design your experimental analysis solution, [contact the OpenMS team](https://openms.github.io/community/) today.
 ```
 
 To understand how to use OpenMS, one must have a basic understanding of an LC-MS setup.
-
 
 ## Liquid Chromatography (LC)
 
