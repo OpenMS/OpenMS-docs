@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Aug 30 20:03:31 2022
+# Make data base, printed on Thu Sep  1 17:45:29 2022
 
 # Variables
 
@@ -18,7 +18,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 ?F = $(notdir $?)
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
- 
 # makefile (from `Makefile', line 7)
 SPHINXPROJ = openms
 # automatic
@@ -27,6 +26,7 @@ SPHINXPROJ = openms
 @F = $(notdir $@)
 # makefile
 CURDIR := /Users/christinakumar/openms-docs/OpenMS-docs
+ 
 # makefile
 SHELL = /bin/sh
 # environment
@@ -54,11 +54,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.fHENl474uo/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rQ7itQVYv3/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.JEnGN8O7CC/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.QRnA7tpNoZ/org.xquartz:0
 # environment
 PWD = /Users/christinakumar/openms-docs/OpenMS-docs
 # environment
@@ -152,9 +152,8 @@ LANG = C
 # makefile (from `Makefile', line 8)
 SOURCEDIR = docs
 # environment
-VSCODE_PID = 3959
+VSCODE_PID = 3153
 # variable set hash-table stats:
- 
 # Load=70/1024=7%, Rehash=0, Collisions=1/101=1%
 
 # Pattern-specific Variable Values
@@ -163,14 +162,12 @@ VSCODE_PID = 3959
 
 # Directories
 
- 
 # . (device 16777220, inode 12923647332): 18 files, no impossibilities.
 
 # 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
- 
 %: Makefile
 #  commands to execute (from `Makefile', line 21):
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
@@ -182,7 +179,6 @@ VSCODE_PID = 3959
 
 all: Makefile
 #  Command-line target.
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `all'
 #  File does not exist.
@@ -190,6 +186,7 @@ all: Makefile
 #  Needs to be updated (-q is set).
 # automatic
 # @ := all
+ 
 # automatic
 # % := 
 # automatic
@@ -235,7 +232,6 @@ help:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 13):
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
- 
 	
 
 # Not a target:
@@ -257,6 +253,6 @@ help:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Aug 30 20:03:31 2022
+# Finished Make data base on Thu Sep  1 17:45:29 2022
 
  
