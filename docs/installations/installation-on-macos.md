@@ -65,14 +65,8 @@ Follow the <a href="installation-on-gnu-linux.html#install-via-conda">instructio
 1. Nothing happens when you click OpenMS apps or the validity of the developer could not be confirmed.
    
    This usually means the OpenMS software lands in quarantine after installation of the `.dmg`.
-   Since macOS Catalina (maybe also Mojave) notarized apps and executables are mandatory but we
+   Since macOS Catalina (maybe also Mojave) all apps and executables have to be officially notarized by Apple but we
    currently do not have the resources for a streamlined notarization workflow.
-
-   ```{important}
-   Although there is a lot of effort in signing and notarizing everything, it seems like OpenMS
-   still lands in quarantine on the above mentioned systems, after installation of the `.dmg` (when downloading it from a
-   browser).
-   ```
 
    To have a streamlined experience without blocking popups, it is recommended to remove the quarantine flag manually,
    using the following steps:
