@@ -16,9 +16,9 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 
 1. Fork this repository.
 2. Add the change in your fork.
-3. Create a pull request to [OpenMS/OpenMS-Docs](https://github.com/OpenMS/OpenMS-docs/tree/staging) `staging` branch.
+3. Create a pull request to [OpenMS/OpenMS-Docs](https://github.com/OpenMS/OpenMS-docs) `develop` branch.
 4. Make sure you attach a few screenshots as to how your change looks like.
-5. If this change belongs to [OpenMS API reference](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html),
+5. If this change belongs to [OpenMS API reference](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html),
    please create a pull request [here](https://github.com/OpenMS/OpenMS/tree/develop/doc).
 
 ## Documentation content writing conventions

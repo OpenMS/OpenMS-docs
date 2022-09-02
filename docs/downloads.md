@@ -2,10 +2,10 @@
 
 | Platform | Name | SHA256 Hash |
 |----------|------|-------------|
-| Windows   | [OpenMS-2.8.0-Win64.exe](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Win64.exe) | `d203985c7042b885ac1085c30a2d9f36d7609b47`|
-| macOS | [OpenMS-2.8.0-macOS.dmg](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-macOS.dmg) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
-| GNU/Linux | [OpenMS-2.8.0-Debian-Linux-x86_64.deb](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Debian-Linux-x86_64.deb) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
-| Source | [OpenMS-2.8.0-src.tar.gz](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
+| Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47`|
+| macOS | [OpenMS-2.8.0-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-macOS.dmg) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
+| GNU/Linux | [OpenMS-2.8.0-Debian-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Debian-Linux-x86_64.deb) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
+| Source | [OpenMS-2.8.0-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
 
 
 # Workflows
@@ -13,7 +13,6 @@
 | Workflow | Description | Download Link |
 |----------|-------------|---------------|
 |`ProteomicsLFQ_tool_and_MSstats_postprocessing` | Label-free identification and quantification using the comet search engine, the ProteomicsLFQ tool and statistical down-stream processing using MSstats. Compared to the other proteomics LFQ workflows, it is less complex as it combines quantification and inference steps in a single ProtemicLFQ tool. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/ProteomicsLFQ_tool_and_MSstats_postprocessing.knwf?raw=true) |
-|`basic_peptide_identification` | Label-free identification using the omssa search engine. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/basic_peptide_identification.knwf?raw=true) |
 |`DIAMetAlyzer` | Metabolomics assay library construction with decoy generation from DDA data and targeted DIA analysis using OpenSWATH and pyprophet for statistical validation. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/DIAMetAlyzer.knwf?raw=true) |
 |`Identification_quantification_with_inference_isobaric_epifany_MSstatsTMT` | Identification and quantification for isobaric experiments using MSGFPlus as search engine, epifany for inference and MSstatsTMT for statistical down-stream analysis. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/Identification_quantification_with_inference_isobaric_epifany_MSstatsTMT.knwf?raw=true) |
 |`labelfree_with_protein_quantification` | Label-free with protein quantification steps implemented using individual OpenMS tools | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/labelfree_with_protein_quantification.knwf?raw=true) |
@@ -30,13 +29,13 @@
 
 | Release                                                |  Installers |
 |--------------------------------------------------------|-------------|
-| Stable release     | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/) |
-| Release candidates | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/RC/) |
-| Nightly release    | [Archive Link](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/) |
+| Stable release     | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/) |
+| Release candidates | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/RC/) |
+| Nightly release    | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/) |
 
 # Other Resources
 
 | Name | Description | Download Link |
 |------|-------------|---------------|
 | Schemas | Documented schemas of the OpenMS formats | [Download](https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS/SCHEMAS)|
-| iPRG2016 data | Dataset mxMLs, Fasta database, Identification file (idXML), Big Data (idXML) | [Download](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/iPRG2016/) |
+| iPRG2016 data | Dataset mxMLs, Fasta database, Identification file (idXML), Big Data (idXML) | [Download](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/iPRG2016/) |

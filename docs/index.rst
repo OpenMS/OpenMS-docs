@@ -15,8 +15,7 @@ OpenMS offers analyses for various quantitation protocols, including label-free
 quantitation, :term:`SILAC`, :term:`iTRAQ`, :term:`TMT`, :term:`SRM`, :term:`SWATH`, etc.
 
 It provides built-in algorithms for de-novo identification and database search,
-as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`,
-OMSSA, etc. It supports easy integration of OpenMS built tools into workflow
+as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`, etc. It supports easy integration of OpenMS built tools into workflow
 engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the :term:`TOPP tools` concept and
 a unified parameter handling via a 'common tool description' (CTD) scheme.
 
@@ -26,7 +25,6 @@ a unified parameter handling via a 'common tool description' (CTD) scheme.
   OpenMS is currently focusing the development efforts on the integration of OpenMS into KNIME. KNIME is a well-established
   data analysis framework that supports the generation of workflows for data analysis. Using a Common Tool Description
   (CTD) file which is writeable by every TOPP tool and a node generator program (`Generic KNIME Nodes <https://github.com/genericworkflownodes/GenericKnimeNodes>`_), all   :term:`TOPP tools` can be made available to run in KNIME.
-
 
 With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`
 to enable rapid algorithm development. OpenMS supports the Proteomics Standard
@@ -42,71 +40,63 @@ Contents
    :caption: Introduction
    :titlesonly:
 
-   introduction
+   introduction/about-open-ms.md
+   introduction/background.md
+   introduction/entry-points-to-openms.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
-   :titlesonly:
+   :caption: Installation Guides
 
-   installations/installation-on-gnu-linux
-   installations/installation-on-windows
-   installations/installation-on-macos
-   installations/build-openms-from-source
+   installations/installation-on-gnu-linux.md
+   installations/installation-on-macos.md
+   installations/installation-on-windows.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Quick Start Guides
-   :titlesonly:
+   :caption: OpenMS Applications and Tools
 
-   guides/user-guides/user-quickstart-guide
-   guides/contributors-quickstart-guide.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Tutorials
-   :titlesonly:
-
-   tutorials/TOPP/TOPP-tutorial
-   tutorials/TOPPAS/TOPPAS-tutorial
-   tutorials/KNIME/KNIME-tutorial
+   openms-applications-and-tools/openms-graphical-user-interfaces.md
+   openms-applications-and-tools/topp-tools.md
+   openms-applications-and-tools/utils-tools.md
+   openms-applications-and-tools/command-line-interface.md
+   openms-applications-and-tools/visualize-with-openms.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: OpenMS TOPP Tools
-   :titlesonly:
+   :caption: Run Workflows with OpenMS Tools
 
-   topp-and-utils/topp-and-utils.md
-   topp-and-utils/adding-new-tool-to-topp.md
+   run-workflows-with-openms-tools/overview.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Developer Resources
-   :titlesonly:
+   :caption: Tutorials and Quick Start Guides
 
-   additional-resources/developer-guidelines-for-addding-new-dependent-libraries.md
-   additional-resources/external-code-using-openms.md
-   advanced-resources/custom-compilation.md
-   advanced-resources/build-custom-openms-knime-package.md
+   tutorials-and-quickstart-guides/openms-user-tutorial.md
+   tutorials-and-quickstart-guides/tutorials.md
+   tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: OpenMS GitHub Workflow
-   :titlesonly:
+   :caption: Develop with OpenMS
 
-   additional-resources/openms-git-workflow.md
-   additional-resources/reporting-bugs-and-issues.md
-   additional-resources/write-and-label-github-issues.md
-   additional-resources/pull-request-checklist.md
+   develop-with-openms/openms-core-cplusplus-library.md
+   OpenMS API Reference <https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
+   pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
+   develop-with-openms/build-openms-from-source.md
+   develop-with-openms/link-external-code-to-openms.md
+   develop-with-openms/developer-tutorial.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Frequently Asked Questions
-   :titlesonly:
+   :caption: Contribute to OpenMS
 
-   faqs/developer-faq.md
-   faqs/contributor-faq.md
-
+   contribute-to-openms/openms-git-workflow.md
+   contribute-to-openms/write-and-label-github-issues.md
+   contribute-to-openms/adding-new-tool-to-topp.md
+   contribute-to-openms/pull-request-checklist.md
+   contribute-to-openms/reporting-bugs-and-issues.md
+   contribute-to-openms/advanced.md
 
 .. toctree::
    :maxdepth: 2
@@ -116,16 +106,12 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Glossary
+   :caption: Quick Reference
 
-   glossary.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contact Us
-
-   contact-us
-
+   quick-reference/contributor-faq.md
+   quick-reference/developer-faq.md
+   quick-reference/contact-us.md
+   quick-reference/glossary.md
 
 Indices and tables
 ==================

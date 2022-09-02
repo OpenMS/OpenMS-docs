@@ -1,4 +1,4 @@
-Installation on GNU/Linux
+GNU/Linux
 =========================
 
 ## Install via Conda
@@ -7,6 +7,7 @@ You can use conda to install the OpenMS library and tools without user interface
 obtain release versions (`bioconda` channel) and nightly versions (`openms` channel).
 
 1. Follow the instructions to [install conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).
+
 2. Add channels for dependencies:
    ```bash
     conda config --add channels defaults
@@ -16,7 +17,7 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
 3. Install any of the following packages related to OpenMS
 
 ```{group-tab} openms
-openms contains OpenMS C++ Tools.
+openms contains OpenMS C++ command-line tools.
 ```
 
 ```{group-tab} libopenms
@@ -70,7 +71,7 @@ conda install -c openms openms-thirdparty
 
 ## Install via Debian package
 
-For Debian-based Linux users, it is suggested to  use the [deb-package](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) provided. It is most easily installed with **[gdebi](https://launchpad.net/gdebi)**
+For Debian-based Linux users, it is suggested to  use the [deb-package](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) provided. It is most easily installed with **[gdebi](https://launchpad.net/gdebi)**
 which automatically resolves the dependencies available in the PPA Repositories.
 
 ```bash
@@ -123,11 +124,20 @@ Some thirdparty software used via adapter tools in OpenMS might also require an 
 
 Install a containerization software (e.g., [Docker](https://docs.docker.com/engine/install/) or [Singularity](https://sylabs.io/guides/3.0/user-guide/quick_start.html#quick-installation-steps))
 
-Our container support is constantly updated. Docker images provided by us,
-can be obtained via [ghcr.io](https://ghcr.io).
+Our container support is constantly updated. Docker images provided by us can be obtained via [ghcr.io](https://ghcr.io).
 
-1. [openms-executables](https://ghcr.io/openms/openms-executables)
-2. [openms-library](https://ghcr.io/openms/openms-library)
+1. [openms-library](https://ghcr.io/openms/openms-library)
+2. [openms-executables](https://ghcr.io/openms/openms-executables)
+
+Docker images from our own continuous integration can be installed via the following commands:
+
+```bash
+docker pull ghcr.io/openms/openms-library
+docker pull ghcr.io/openms/openms-executables
+```
+
+per default this results in the download of the latest nightly snapshot. Specify a release version (e.g.,
+`docker pull ghcr.io/openms/openms-library:2.7.0` to receive a stable version.
 
 Otherwise, the [BioContainers Registries](https://biocontainers.pro/registry) and the associated Galaxy
 project provide native containers from our bioconda packages for both Docker and Singularity.
@@ -152,17 +162,8 @@ docker pull https://depot.galaxyproject.org/singularity/openms
 docker pull https://depot.galaxyproject.org/singularity/pyopenms
 docker pull https://depot.galaxyproject.org/singularity/openms-thirdparty
 ```
+
 If Singularity images fail to download or run, try to use the Docker images as Singularity will automatically convert them.
-
-Docker images from our own continuous integration can be installed via the following commands:
-
-```bash
-docker pull ghcr.io/openms/openms-library
-docker pull ghcr.io/openms/openms-executables
-```
-
-per default this results in the download of the latest nightly snapshot. Specify a release version to
-receive a stable version.
 
 Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) yourself can be found on
 GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository.
@@ -170,4 +171,3 @@ GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) reposi
 ## Build OpenMS from source
 
 To build OpenMS from source, follow the build instructions for [Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_linux.html).
-
