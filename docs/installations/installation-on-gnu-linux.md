@@ -239,4 +239,4 @@ GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) reposi
 
 ## Build OpenMS from source
 
-To build OpenMS from source, follow the build instructions for [Linux](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_linux.html).
+To build OpenMS from source, follow the build instructions for [Linux](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_linux.html).
