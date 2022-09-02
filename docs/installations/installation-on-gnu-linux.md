@@ -16,60 +16,130 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
    ```
 3. Install any of the following packages related to OpenMS
 
-```{group-tab} openms
-openms contains OpenMS C++ command-line tools.
-```
+::::{tab-set}
 
-```{group-tab} libopenms
-libopenms is the C++ library required for the OpenMS C++ Tools to work.
-```
+:::{tab-item} openms
+:sync: openms
 
-```{group-tab} pyopenms
+openms contains all OpenMS C++ command-line tools.
+:::
+
+:::{tab-item} libopenms
+:sync: libopenms
+
+libopenms is the C++ library required for the OpenMS C++ Tools to work. This is also an auto-installed dependency of openms.
+:::
+
+:::{tab-item} pyopenms
+:sync: pyopenms
+
 pyopenms is the python package that allows to use algorithms from libopenms in Python.
-```
+:::
 
-```{group-tab} openms-thirdparty
+:::{tab-item} openms-thirdparty
+:sync: openms-thirdparty
+
 openms-thirdparty are external tools that are wrapped in OpenMS with adapters. This is required to use the adapters in
 the openms package.
-```
+:::
+
+::::
 
 via `bioconda` for release versions
 
-```{code-tab} bash openms
+
+::::{tab-set}
+
+:::{tab-item} openms
+:sync: openms
+
+```{code-block} bash 
 conda install openms
 ```
+:::
 
-```{code-tab} bash libopenms
+:::{tab-item} libopenms
+:sync: libopenms
+
+```{code-block} bash
 conda install libopenms
 ```
+:::
 
-```{code-tab} bash pyopenms
+:::{tab-item} pyopenms
+:sync: pyopenms
+
+```{code-block} bash
 conda install pyopenms
 ```
+:::
 
-```{code-tab} bash openms-thirdparty
+:::{tab-item} openms-thirdparty
+:sync: openms-thirdparty
+
+```{code-block} bash
 conda install openms-thirdparty
 ```
+:::
+
+::::
 
 or our own `openms` channel for nightly snapshots (which are build based on the same bioconda dependencies)
 
-```{code-tab} bash openms
+::::{tab-set}
+
+:::{tab-item} openms
+:sync: openms
+
+```{code-block} bash 
 conda install -c openms openms
 ```
+:::
 
-```{code-tab} bash libopenms
+:::{tab-item} libopenms
+:sync: libopenms
+
+```{code-block} bash
 conda install -c openms libopenms
 ```
+:::
 
-```{code-tab} bash pyopenms
+:::{tab-item} pyopenms
+:sync: pyopenms
+
+```{code-block} bash
 conda install -c openms pyopenms
 ```
+:::
 
-```{code-tab} bash openms-thirdparty
-conda install -c openms openms-thirdparty
+:::{tab-item} openms-thirdparty
+:sync: openms-thirdparty
+
+```{code-block} bash
+conda install -c openms  openms-thirdparty
+```
+:::
+
+::::
+
+## Install via package managers
+
+Packaged versions of **OpenMS** are provided for Fedora, OpenSUSE, Debian, and Ubuntu. You can find them to download
+[here](https://pkgs.org/download/openms). For other GNU/Linux distributions or to obtain the most recent version of the
+library, installation should be done via building from the source code.
+
+```{important}
+These packages are not directly maintained by the OpenMS team and they can not be guaranteed to have the
+same behaviour as when building it from source code. Also, their availability and version is subject to change and
+support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
+Debian package.
 ```
 
-## Install via Debian package
+```{note}
+Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
+```
+
+## Install via the provided Debian package
 
 For Debian-based Linux users, it is suggested to  use the [deb-package](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) provided. It is most easily installed with **[gdebi](https://launchpad.net/gdebi)**
 which automatically resolves the dependencies available in the PPA Repositories.
@@ -89,36 +159,23 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    sudo apt-get update
    ```
    Run the installation again.
+
 2. ICU with its `libicu` is missing.
    You can find the missing version on [pkgs.org](https://pkgs.org) and install it with `gdebi`, too. You can have
    multiple versions of ICU installed.
+
 3. Error while executing a tool
    To ensure the tool functionality, make sure you add the `OPENMS_DATA_PATH` variable to your environment as follow
    `export OPENMS_DATA_PATH=/usr/share/OpenMS`
-4. Thirdparty installation of Qt5 in 1
+
+4. Thirdparty installation of Qt5 in step 1
    Make sure you source the provided environment file using:
    `source /opt/qt59/bin/qt59-env.sh`
 
-   Executables for THIRDPARTY applications can be found in:
+5. Adapters are not finding thirdparty applications
+   Executables for thirdparty applications can be found in:
    `/usr/share/OpenMS/THIRDPARTY`
-5. Add the folders in your `PATH` for a convenient use of the adapters.
-
-## Install via package managers
-
-Packaged versions of **OpenMS** are provided for Fedora, OpenSUSE, Debian, and Ubuntu. You can find them to download
-[here](https://pkgs.org/download/openms). For other GNU/Linux distributions or to obtain the most recent version of the
-library, installation should be done via building from the source code.
-
-```{important}
-These packages are not directly maintained by the OpenMS team and they can not be guaranteed to have the
-same behaviour as when building it from source code. Also, their availability and version is subject to change and
-support might be limited (due to unforeseen or untested behaviour). It is suggested not to install them parallel to our
-Debian package.
-```
-
-```{note}
-Some thirdparty software used via adapter tools in OpenMS might also require an installed JavaVM.
-```
+   Add the folders in your `PATH` for a convenient use of the adapters.
 
 ## Run via a (Bio)Container
 
@@ -149,19 +206,31 @@ project provide native containers from our bioconda packages for both Docker and
 
 Images of the containers can be pulled via or one of the following commands:
 
-```{code-tab} bash Docker
+::::{tab-set}
+
+:::{tab-item} Docker
+
+```{code-block} bash
 docker pull quay.io/biocontainers/libopenms
 docker pull quay.io/biocontainers/openms
 docker pull quay.io/biocontainers/pyopenms
 docker pull quay.io/biocontainers/openms-thirdparty
 ```
 
-```{code-tab} bash Singularity
+:::
+
+:::{tab-item} Singularity
+
+```{code-block} bash
 docker pull https://depot.galaxyproject.org/singularity/libopenms
 docker pull https://depot.galaxyproject.org/singularity/openms
 docker pull https://depot.galaxyproject.org/singularity/pyopenms
 docker pull https://depot.galaxyproject.org/singularity/openms-thirdparty
 ```
+
+:::
+
+::::
 
 If Singularity images fail to download or run, try to use the Docker images as Singularity will automatically convert them.
 
