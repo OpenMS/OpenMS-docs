@@ -222,10 +222,10 @@ docker pull quay.io/biocontainers/openms-thirdparty
 :::{tab-item} Singularity
 
 ```{code-block} bash
-docker pull https://depot.galaxyproject.org/singularity/libopenms
-docker pull https://depot.galaxyproject.org/singularity/openms
-docker pull https://depot.galaxyproject.org/singularity/pyopenms
-docker pull https://depot.galaxyproject.org/singularity/openms-thirdparty
+singularity run https://depot.galaxyproject.org/singularity/libopenms
+singularity run https://depot.galaxyproject.org/singularity/openms
+singularity run https://depot.galaxyproject.org/singularity/pyopenms
+singularity run https://depot.galaxyproject.org/singularity/openms-thirdparty
 ```
 
 :::
