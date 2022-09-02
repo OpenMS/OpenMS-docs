@@ -21,7 +21,7 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
 :::{tab-item} openms
 :sync: openms
 
-openms contains all OpenMS C++ command-line tools.
+openms contains all OpenMS C++ command-line tools. GUI applications like TOPPView currently cannot be installed via conda.
 :::
 
 :::{tab-item} libopenms
@@ -151,6 +151,7 @@ sudo gdebi /PATH/TO/OpenMS.deb
 If you encounter errors with unavailable packages, troubleshoot using the following steps.
 
 1. Qt5 (or one of its packages, e.g. `qt5xbase`) is missing.
+
    It might be because your Debian is too old to have a recent enough version in its official repositories. It is
    suggested to use the same packages that are used while building (make sure to adapt the Qt version and your
    Debian/Ubuntu version, here Xenial):
@@ -161,18 +162,22 @@ If you encounter errors with unavailable packages, troubleshoot using the follow
    Run the installation again.
 
 2. ICU with its `libicu` is missing.
+
    You can find the missing version on [pkgs.org](https://pkgs.org) and install it with `gdebi`, too. You can have
    multiple versions of ICU installed.
 
 3. Error while executing a tool
+
    To ensure the tool functionality, make sure you add the `OPENMS_DATA_PATH` variable to your environment as follow
    `export OPENMS_DATA_PATH=/usr/share/OpenMS`
 
 4. Thirdparty installation of Qt5 in step 1
+
    Make sure you source the provided environment file using:
    `source /opt/qt59/bin/qt59-env.sh`
 
 5. Adapters are not finding thirdparty applications
+
    Executables for thirdparty applications can be found in:
    `/usr/share/OpenMS/THIRDPARTY`
    Add the folders in your `PATH` for a convenient use of the adapters.
@@ -234,8 +239,9 @@ singularity run https://depot.galaxyproject.org/singularity/openms-thirdparty
 
 If Singularity images fail to download or run, try to use the Docker images as Singularity will automatically convert them.
 
-Dockerfiles to build different kind of images (corresponding to build instructions, e.g. on ArchLinux) yourself can be found on
-GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository.
+Dockerfiles to build different kind of images (e.g., for ArchLinux) yourself can be found on
+GitHub in our [OpenMS/dockerfiles](https://github.com/OpenMS/dockerfiles) repository. They usually follow our build
+instructions closely, so you can have a look on how this is done in a clean environment.
 
 ## Build OpenMS from source
 
