@@ -72,26 +72,26 @@ TOPP
   The OpenMS Pipeline.
 
 MSGFPlusAdapter
-  Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
+  Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
 
 LuciphorAdapter
   Adapter for the LuciPHOr2: a site localisation tool of generic post-translational modifications from tandem mass
-  spectrometry data. More information is available [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_LuciphorAdapter.html).
+  spectrometry data. More information is available [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_LuciphorAdapter.html).
 
 pyOpenMS
   pyOpenMS is an open-source Python library for mass spectrometry, specifically for the analysis of proteomics and
   metabolomics data in Python. For pyOpenMS documentaion visit [this](https://pyopenms.readthedocs.io/en/latest/) link.
 
 TOPP Tools
-  All {term}`TOPP` tools can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
+  All {term}`TOPP` tools can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
 
 UTILS
-  Besides {term}`TOPP`, OpenMS offers a range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
+  Besides {term}`TOPP`, OpenMS offers a range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
 
 TOPPView
   TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](../openms-applications-and-tools/visualize-with-openms.md).
 
-[Nightly Snapshot](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html)
+[Nightly Snapshot](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html)
   Untested installers and containers are known as the nightly snapshot.
 
 proteomics
@@ -102,7 +102,7 @@ proteins
   muscle to the enzymes that catalyze the digestion of food to synthesizing and replicating DNA.
 
 Mascot
-  Identifies peptides in MS/MS spectra via Mascot. Please find more information in the {term}`TOPP` [Documentation](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MascotAdapter.html).
+  Identifies peptides in MS/MS spectra via Mascot. Please find more information in the {term}`TOPP` [Documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MascotAdapter.html).
 
 HPLC-MS
   Data produced by High performance liquid chromatography (HPLC) separates components of a mixture, whereas mass

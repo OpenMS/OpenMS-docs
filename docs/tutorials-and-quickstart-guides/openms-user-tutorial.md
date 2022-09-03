@@ -281,7 +281,7 @@ can be slow.
 
   **Name:** OpenMS {{ version }} UpdateSite
 
-  **Location:** https://abibuilder.informatik.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
+  **Location:** https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
@@ -1037,7 +1037,7 @@ Adjust the parameters in the config dialog of the converter to match the given e
 |*labeled_reference_peptides*|false|
 |*retention_time_summarization_method (advanced)*|sum|
 
-The downstream analysis of the peptide ions with `MSstats` is performed in several steps. These steps are reflected by several KNIME R nodes, which consume the output of **MSstatsConverter**. The outline of the workflow is shown in Figure 19.
+The downstream analysis of the peptide ions with `MSstats` is performed in several steps. These steps are reflected by several KNIME R nodes, which consume the output of **MSstatsConverter**. The outline of the workflow is shown in <a href="#figure-19">Figure 19</a>.
 
 |![MSstats analysis using KNIME](../images/openms-user-tutorial/labelfree/MSstats.png)|
 |:--:|
@@ -1111,7 +1111,7 @@ No more parameters need to be set for performing the comparison.
 
 ##### Result processing
 
-In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in Figure 20:
+In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in <a href="#figure-20">Figure 20</a>:
 
 ```r
   test.MSstats.cr <- test.MSstats$ComparisonResult   
@@ -1204,7 +1204,7 @@ knime.out <- test.MSstats.cr.spikedins
 
 #### Result
 
-An excerpt of the main result of the group comparison can be seen in Figure 20.
+An excerpt of the main result of the group comparison can be seen in <a href="#figure-20">Figure 20</a>.
 
 |![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png) ![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png)|
 |:--:|
@@ -1272,11 +1272,11 @@ FDR are. Good results should show a close correspondence between these two measu
 
 The calculation is done by using a simple R script in R snippet. First, the target decoy protein FDR is computed as the proportion of decoy proteins among all significant protein IDs. Then posterior probabilistic-driven FDR is estimated by the average of the posterior error probability of all significant protein IDs. Since FDR is the property for a group of protein IDs, we can also calculate a local property for each protein: the q-value of a certain protein ID is the minimum FDR of any groups of protein IDs
 that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see <a href="#figure-22">Fig. 22</a>).
-
+(Figure_21)=
 |![The workflow of statistical analysis of protein inference results](../images/openms-user-tutorial/protein-inference/inference_metanode.png)|
 |:--:|
 |Figure 21: The workflow of statistical analysis of protein inference results|
-
+(Figure_22)=
 |![The pseudo-ROC Curve of protein IDs](../images/openms-user-tutorial/protein-inference/proteinFDR.png)|
 |:--:|
 |Figure 22: The pseudo-ROC Curve of protein IDs. The accumulated number of protein IDs is plotted on two kinds of scales: target-decoy protein FDR and Fido posterior probability estimated FDR. The largest value of posterior probability estimated FDR is already smaller than 0.04, this is because the posterior probability output from Fido is generally very high|
@@ -1315,7 +1315,7 @@ There is also an [online lecture](https://youtu.be/3CDnrQxGLbA) and tutorial for
 
 ### Dataset and experimental design
 
-We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. <a href="#figure-24">Figure 24</a> shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
+We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. <a href="#figure-24">Figure 24</a> shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
 
 (Figure_24)=
 |![Experimental Design](../images/openms-user-tutorial/isobaric/isobaric_experimental_design.jpeg)|
@@ -2191,7 +2191,7 @@ Use your package manager apt-get or yum, where possible.
 
 For the assay library construction pesticide mixes (Agilent Technologies, Waldbronn, Germany) were measured individually in solvent (DDA). Benchmark DIA samples were prepared by spiking different commercially available pesticide mixes into human plasma metabolite extracts in a 1:4 dilution series, which covers 5 orders of magnitude.
 
-The example data can be found [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Tutorials/Data/DIAMetAlyzer/).
+The example data can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/DIAMetAlyzer/).
 
 ### Example workflow
 
@@ -2305,6 +2305,65 @@ The workflow can be used without any identification (remove AccurateMassSearch).
 Here, all features (**known_unknowns**) are processed. The assay library is constructed based on the chemical composition elucidated via the fragment annotation (SIRIUS 4).
 It is also possible to use identified and in addition unknown (non-identified) features, by using **AccurateMassSearch** in combination with the use_known_unknowns in the **AssayGeneratorMetabo**.
 
+## Untargeted metabolomics preprocessing
+
+The universal workflow for untargeted metabolomics always consists of feature detection in the individual MS sample files and their linkage to consensus features with common m/z and retention time values. In addition, there are optional steps such as adduct detection and annotation of features with associated MS2 spectra. This workflow prepares all the file necessary to do formula and structural annotations via `SiriusAdapter`. Furthermore it prepares all required files to run `GNPSExport`, which generates all files necessary to directly run [GNPS](https://gnps.ucsd.edu) Feature Based Molecular Networking (FBMN) and Ion Identity Molecular Networking (IIMN).
+
+(Figure_49)=
+|![metabolomics preprocessing](../images/tutorials/metabolomics-preprocessing.png)|
+|:--:|
+|Figure 49: Metabolomics preprocessing steps|
+
+If you want to use the example data, download the files [sample1.mzML](../data/sample1.mzML) and [sample2.mzML](../data/sample2.mzML).
+
+For each mzML file do mass trace, elution peak and feature detection.
+```shell
+FeatureFinderMetabo -in sample1.mzML -out sample1.featureXML -algorithm:common:noise_threshold_int 10000 -algorithm:mtd:mass_error_ppm 10 -algorithm:ffm:remove_single_traces true
+FeatureFinderMetabo -in sample2.mzML -out sample2.featureXML -algorithm:common:noise_threshold_int 10000 -algorithm:mtd:mass_error_ppm 10 -algorithm:ffm:remove_single_traces true
+```
+
+Align feature retention times based on the feature map with the highest number of features (reference map).
+```shell
+MapAlignerPoseClustering -in sample1.featureXML sample2.featureXML -out aligned_sample1.featureXML aligned_sample2.featureXML -trafo_out sample1.trafoXML sample2.trafoXML -algorithm:pairfinder:distance_MZ:max_difference 10.0 -algorithm:pairfinder:distance_MZ:unit ppm
+```
+
+Align mzML files aligment based on FeatureMap alignment (optional, only for GNPS).
+```shell
+MapRTTransformer -in sample1.mzML -out aligned_sample1.mzML -trafo_in sample1.trafoXML
+MapRTTransformer -in sample2.mzML -out aligned_sample2.mzML -trafo_in sample2.trafoXML
+```
+
+Map MS2 spectra to features as PeptideIdentification objects (optional, only for GNPS). Requires an [empty idXML](../data/empty.idXML) file.
+```shell
+IDMapper -id empty.idXML -in aligned_sample1.featureXML -spectra:in aligned_sample1.mzML -out IDmapped_sample1.featureXML
+IDMapper -id empty.idXML -in aligned_sample2.featureXML -spectra:in aligned_sample2.mzML -out IDmapped_sample2.featureXML
+```
+
+Detect adducts (optional, only for SIRIUS and GNPS Ion Identity 
+Molecular Networking).
+```shell
+MetaboliteAdductDecharger -in IDmapped_sample1.featureXML -out_fm adducts_sample1.featureXML -algorithm:MetaboliteFeatureDeconvolution:potential_adducts "H:+:0.6" "Na:+:0.1" "NH4:+:0.1" "H-1O-1:+:0.1" "H-3O-2:+:0.1"
+MetaboliteAdductDecharger -in IDmapped_sample2.featureXML -out_fm adducts_sample2.featureXML -algorithm:MetaboliteFeatureDeconvolution:potential_adducts "H:+:0.6" "Na:+:0.1" "NH4:+:0.1" "H-1O-1:+:0.1" "H-3O-2:+:0.1"
+```
+
+Link features in a ConsensusMap.
+```shell
+FeatureLinkerUnlabeledKD -in adducts_sample1.featureXML adducts_sample2.featureXML -out Preprocessed.consensusXML -algorithm:link:rt_tol 30.0 -algorithm:link:mz_tol 10.0
+```
+
+Export table of metabolic features as tsv file including meta values (e.g. best consensus adduct ion).
+```shell
+TextExporter -in Preprocessed.consensusXML -out Features.tsv -consensus:add_metavalues
+```
+
+You can recreate this workflow in KNIME. [Download the KNIME workflow here](../workflows/UntargetedMetabolomicsPreProcessing.knwf). The workflow should look like this:
+
+(Figure_50)=
+|![metabolomics preprocessing workflow in KNIME](../images/tutorials/metabolomics-preprocessing-knime-workflow.png)|
+|:--:|
+|Figure 50: Metabolomics preprocessing workflow in KNIME|
+
+
 ## An introduction to pyOpenMS
 
 ### Introduction
@@ -2400,7 +2459,7 @@ Instructions on how to build pyOpenMS can be found [online](https://pyopenms.rea
 
 ### Scripting with pyOpenMS
 
-A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
+A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
 
 Calculation of the monisotopic and average mass of a peptide sequence:
 
@@ -2748,10 +2807,10 @@ install.packages("scales")
 ```
 Press **Eval script** to execute the script.
 
-(Figure_49)=
+(Figure_51)=
 |![Basic QC setup within a LFQ workflow.](../images/openms-user-tutorial/quality-control/qc_basic.png)|
 |:--:|
-|Figure 49: Basic QC setup within a LFQ workflow.|
+|Figure 51: Basic QC setup within a LFQ workflow.|
 
 ```{note}
 To have a peek into what our qcML now looks like for one of the **ZipLoop** iterations, we can add an **Output Folder** node from **Community Nodes** > **GenericKnimeNodes** > **IO** and set its destination parameter to somewhere we want to find our intermediate qcML files in, for example **tmp** > **qcxlfq**. If we now connect the last metanode with the Output Folder and restart the workflow, we can start inspecting the qcML files.
@@ -2788,10 +2847,10 @@ ggplot(knime.in, aes(x=peptide_charge)) +
 - To have the plot later displayed properly, we assign it the parameter `cv_acc` of `QC:0000051`, a generic plot. Also we made sure in the *R Script*, that our plot carries a caption so that we know which is which, if we had more than one new plot.
 - Now we redirect the **QCEmbedders** output to the **Output Folder** from before and can have a look at how our qcML is coming along after restarting the workflow.
 
-(Figure_50)=
+(Figure_52)=
 |![QC with new metric](../images/openms-user-tutorial/quality-control/qc_extra.png)|
 |:--:|
-|Figure 50: QC with new metric.|
+|Figure 52: QC with new metric.|
 
 ### Set QC metrics
 
@@ -2805,10 +2864,10 @@ For this, we will first collect all created qcML files, merge them together and 
 
 When inspecting the set-qcML file in a browser, we will be presented another overview. After the set content listing, the basic QC parameters (like number of identifications) are each displayed in a graph. Each set member (or run) has its own section on the x-axis and each run is connected with that graph via a link in the mouseover on one of the QC parameter values.
 
-(Figure_51)=
+(Figure_53)=
 |![QC set creation from ZipLoop](../images/openms-user-tutorial/quality-control/qc_set.png)|
 |:--:|
-|Figure 51: QC set creation from ZipLoop.|
+|Figure 53: QC set creation from ZipLoop.|
 
 <div class="admonition task">
 <p class="admonition-title">**Task**</p>
@@ -2889,7 +2948,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
 
-**A:** Get the prerequisites installer [here](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
+**A:** Get the prerequisites installer [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/PrerequisitesInstaller/) or install .NET3.5, .NET4 and VCRedist10.0 and 12.0 yourself.
 
 #### Nodes
 

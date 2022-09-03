@@ -42,7 +42,7 @@ Contents
 
    introduction/about-open-ms.md
    introduction/background.md
-   introduction/how-openms-works.md
+   introduction/entry-points-to-openms.md
 
 .. toctree::
    :maxdepth: 2
@@ -66,9 +66,7 @@ Contents
    :maxdepth: 2
    :caption: Run Workflows with OpenMS Tools
 
-   run-workflows-with-openms-tools/openms-in-knime.md
-   run-workflows-with-openms-tools/openms-in-nextflow.md
-   run-workflows-with-openms-tools/openms-on-galaxy.md
+   run-workflows-with-openms-tools/overview.md
 
 .. toctree::
    :maxdepth: 2
@@ -76,7 +74,6 @@ Contents
 
    tutorials-and-quickstart-guides/openms-user-tutorial.md
    tutorials-and-quickstart-guides/tutorials.md
-   tutorials-and-quickstart-guides/untargeted_metabolomics_preprocessing.md
    tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
@@ -84,7 +81,7 @@ Contents
    :caption: Develop with OpenMS
 
    develop-with-openms/openms-core-cplusplus-library.md
-   OpenMS API Reference <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
+   OpenMS API Reference <https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
    pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
    develop-with-openms/build-openms-from-source.md
    develop-with-openms/link-external-code-to-openms.md
