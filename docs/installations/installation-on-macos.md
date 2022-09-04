@@ -1,32 +1,51 @@
-Installation on macOS
+macOS
 ====================
 
 ## Install via macOS installer
 
 To install OpenMS on macOS, run the following steps:
 
-1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
-2. Double click on the dowloaded file. It will start to open the download `openms-<version>-macos.dmg` file
+1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
+2. Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.dmg` disk image file.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/opening-openms%3Cversion%3E-macos.png" alt="Verifying OpenMS-<version>-macOS.dmg" width="500" float: left/>
+```{image} ../images/installations/macos/opening-openms2-8-macos.png
+:alt: Opening OpenMS-<version>-macOS.dmg
+:width: 500px
+```
 
 3. Verify the download.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/verifying-OpenMS%3Cversion%3E.png" alt="Verifying OpenMS-<version>-macOS.dmg" width="500" float: left/>
+```{image} ../images/installations/macos/verifying-openms2-8-macos.png
+:alt: Verifying OpenMS-<version>-macOS.dmg
+:width: 500px
+```
 
-4. Agree the license agreements.
+4. Agree to the license agreements.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/license-agreements.png" alt="License Agreement" width="500" float: left/>
+```{image} ../images/installations/macos/license-agreements.png
+:alt: License agreement
+:width: 500px
+```
 
-5. Drag openms to applications.
+5. Drag OpenMS to the Applications folder.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/move-openms-to-applications.png" alt="License Agreement" width="500" float: left/>
+```{image} ../images/installations/macos/move-openms-to-applications.png
+:alt: Move to Applications
+:width: 500px
+```
 
 6. It will start copying to applications.
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/preparing-to-copy-to-applications.png" alt="Preparing to Copy to Applications" width="500" float: left/>
+```{image} ../images/installations/macos/preparing-to-copy-to-applications.png
+:alt: Preparing to copy to Applications
+:width: 500px
+```
 
-<img src="https://raw.githubusercontent.com/OpenMS/OpenMS-docs/staging/docs/images/installations/macos/copying-to-applications.png" alt="Copying to Applications" width="500" float: left/>
+```{image} ../images/installations/macos/copying-to-applications.png
+:alt: Copying to Applications
+:width: 500px
+```
+
 
 To use {term}`TOPP` as regular app in the shell, add the following lines to the `~/.profile` file.
 
@@ -39,24 +58,21 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
 
 ## Install via Conda or Bioconda
 
-Follow [these](./installation-on-gnu-linux.md#install-via-conda) instructions.
+Follow [these](./installation-on-gnu-linux.md#install-via-conda) instructions for Unix-like systems.
 
 
 ## Build OpenMS from source
 
 To build OpenMS from source, follow the build instructions for [macOS](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_mac.html).
 
+
 ## Known Issues
 
-1. OpenMS software landing in quarantine since macOS Catalina after installation of the `.dmg`.
-
-   Since macOS Catalina (maybe also Mojave) notarized apps and executables are mandatory.
-
-   ```{important}
-   Although there is a lot of effort in signing and notarizing everything, it seems like openms software
-   still lands in quarantine on the above mentioned systems, after installation of the DMG (when downloading it from a
-   browser).
-   ```
+1. Nothing happens when you click OpenMS apps or the validity of the developer could not be confirmed.
+   
+   This usually means the OpenMS software lands in quarantine after installation of the `.dmg`.
+   Since macOS Catalina (maybe also Mojave) all apps and executables have to be officially notarized by Apple but we
+   currently do not have the resources for a streamlined notarization workflow.
 
    To have a streamlined experience without blocking popups, it is recommended to remove the quarantine flag manually,
    using the following steps:
@@ -66,6 +82,7 @@ To build OpenMS from source, follow the build instructions for [macOS](https://a
    cd /Applications/OpenMS-<version>
    sudo xattr -r -d com.apple.quarantine *
    ```
+   
 2. Bug with running Java based thirdparty tools like {term}`MSGFPlusAdapter` and {term}`LuciphorAdapter` from within **TOPPAS.app**
 
    If you face issues while running Java based thirdparty tools from within {term}`TOPPAS.app`, run the {term}`TOPPAS.app`

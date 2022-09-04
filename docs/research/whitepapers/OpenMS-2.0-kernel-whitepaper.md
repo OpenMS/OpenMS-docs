@@ -1,3 +1,6 @@
+---
+orphan: true
+---
 OpenMS 2.0 Kernel Whitepaper
 ===========================
 
