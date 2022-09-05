@@ -63,7 +63,7 @@ Follow [these](./installation-on-gnu-linux.md#install-via-conda) instructions fo
 
 ## Build OpenMS from source
 
-To build OpenMS from source, follow the build instructions for [macOS](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_mac.html).
+To build OpenMS from source, follow the build instructions for [macOS](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_mac.html).
 
 
 ## Known Issues
