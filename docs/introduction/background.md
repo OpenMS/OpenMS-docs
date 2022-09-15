@@ -15,6 +15,12 @@ Liquid chromatography (LC) is an analytical technique used to separate analytes 
 
 ![liquid chromatography setup](../images/introduction/introduction_LC.png)
 
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on liquid chromatography, [view this video](https://timms.uni-tuebingen.de/Player/EPlayer?id=UT_20141021_001_cpm_0001&t=0.0#).
+</div>
+
+
 ## Mass Spectrometry
 
 Mass spectrometry is an analytical technique used to determine the abundance of molecules in a sample. There are three major components in a mass spectrometer:

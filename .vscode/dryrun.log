@@ -1,5 +1,4 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/christinakumar/openms-docs/OpenMS-docs'
-sphinx-build -M help "docs" "build"  
-make: Leaving directory `/Users/christinakumar/openms-docs/OpenMS-docs'
- 
+
+You have not agreed to the Xcode license agreements, please run 'sudo xcodebuild -license' from within a Terminal window to review and agree to the Xcode license agreements.
+
