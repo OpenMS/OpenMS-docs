@@ -23,15 +23,18 @@ This section provides a detailed explanation on LC and MS, and how they are comb
 
 Chromatography is a technique used by life scientists to separate molecules based on a specific physical or chemical property. There are many types of chromatography, but this section focuses on LC as it is widely used in proteomics and metabolomics. 
 
-LC separates molecules based on a specific physical or chemicl property by mixing a sample containing the molecules of interest (otherwise known as **analytes**) in a liquid.
+LC separates molecules based on a specific physical or chemical property by mixing a sample containing the molecules of interest (otherwise known as **analytes**) in a liquid solution.
 
 ### Key components of LC
 
-LC is made up of the following components:
+An LC setup is made up of the following components:
 - **A liquid solution**, known as the **mobile phase**, containing the analytes. 
 - **A pump** which transports the liquid solution.
 - **A stationary phase** which is a solid, homogeneous substance.
-- **A column** which contains the stationary phase.
+- **A column** that contains the stationary phase. 
+- **A detector** that plots the time it takes for the analyte to escape the column (retention time) against the analyte's concentration. This plot is called a **chromatogram**.
+
+![schematic illustration of an LC setup](../images/introduction/lc-components.png)
 
 ### How does LC work?
 
@@ -67,6 +70,8 @@ There are three key components in a mass spectrometer:
 - A **mass analyzer**, which separates the ions according to their mass-to-charge ratio. There are several types such as time of flight (TOF), orbitrap and quadrupole mass analyzers. Depending on the mass analyzer, OpenMS offers calibration tools, so that highly accurate results can be achieved.
 - A **detector**, which records the mass-to-charge ratio of each ion against their relative abundance in a plot known as a mass spectrum.
 
+![schematic illustration of a mass spectrometer](../images/introduction/mass-spectrometry-components.png)
+
 #### Ion source
 
 We want the analytes to move through the electrostatic and electromagnetic fields in the mass analyzer. To achieve this objective, we need to convert them to ions by charging them. There are a number of ways to charge our analytes including:
@@ -88,7 +93,6 @@ EI can be broken down into the following steps.
 5. The particles are fed to the mass analyzer. 
 
 ![a simplified, schematic representation of EI](../images/introduction/electrospray-ionization.png)
-
 
 ##### Matrix Assisted Laser Desorption/Ionization (MALDI)
 
@@ -147,3 +151,44 @@ Therefore,, **t**, for a given instrument's path length, **s**, depends on an io
 ```
 
 ##### Orbitrap analyzer
+
+The orbitrap analyzer is the most frequently used analyzer in mass spectrometry for proteomic and metabolomic applications. It consists of two outer electrodes and a central electrode. Ions are captured inside the analyzer because of an applied electrostatic field. The ions in the orbitrap analyzer oscillate around the central electrode along the axis of the electrostatic field at a set frequency, ω. This frequency is used to determine the mass-to-charge ratio using the following formula:
+
+```{math}
+ \begin{equation} ω = \sqrt{\frac{kz}{m}}}
+ \end{equation}
+```
+, where *k* is a constant.
+
+### Improving MS: Tandem Mass Spectrometry
+
+To get better results, we can use two mass analyzers sequentially to generate and analyze ions. This technique is called **tandem mass spectrometry** or MS/MS (MS2). Tandem mass spectrometry is especially useful for ienar polymers like proteins, RNA and DNA. 
+
+With MS2, ions called **precursor ions** are isolated and fragmented into ion fragments or **product ions**. A mass spectrum is recorded for both the precursor and the product ions.   
+
+Different fragmentation techniques to fragment peptides exist:
+
+- Collision-Induced  Dissociation (CID)
+- Pulsed Q Dissociation (PQD)
+- Electron transfer dissociation (ETD)
+- Electron capture dissociation (ECD)
+- Higher energy collision dissociation (HCD)
+
+CID is the most frequently used fragmentation technique and will therefore be discussed in more detail in the following section.
+
+#### Collision-induced dissociation
+
+Collision-induced dissociation is a method to fragment peptides using an inert gas such as argon or helium. Selected primary or precursor ions enter a collision cell filled with the inert gas. The application of the inert gas on the precursor ions causes the precursor ions that reach the energy threshold to fragment into smaller, product ions and or neutral losses.  A mass spectrum is recorded for both the precursor ions and the product ions. The mass spectrum for the precursor ions will give you the mass for the entire peptide while the product ions will inform you about it’s amino acid composition. 
+
+## LC-MS
+
+Liquid chromatography is often coupled with mass spectrometry to reduce complexity in the mass spectra. If complex samples were directly fed to a mass spectrometer, you would not be able to detect the less abundant analyte ions. The separated analytes from the liquid chromatography setup are directly injected into the ion source from the mass spectrometry setup. Multiple analytes that escape the column at the same time are separated by their mass-to-charge ratio using the mass spectrometer. 
+
+![lc-ms setup](../images/introduction/hplc-mass-spectrometry-setup.png)
+
+From the LC-MS setup, a set of spectra called a peak map is produced. In a peak map, each spectrum represents the ions detected at a particular retention time. Each peak in a spectrum has a retention time, mass-to-charge and intensity dimension.
+
+![peak map](../images/introduction/spectrum_peakmap.png)
+
+## Data analysis: Techniques for improved identification
+
