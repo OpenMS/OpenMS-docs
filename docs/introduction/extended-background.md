@@ -47,7 +47,7 @@ The retention times for each analyte are recorded by a detector. The most common
 
 ### High performance liquid chromatography (HPLC)
 
-HPLC is the most commonly used tecchnique for separating proteins and metabolites. In HPLC, a high-pressured pump is used to transport a liquid (solvent) containing the molecules of interest through a thin capillary column. The stationary phase is ‘packed’ into the column. 
+HPLC is the most commonly used technique for separating proteins and metabolites. In HPLC, a high-pressured pump is used to transport a liquid (solvent) containing the molecules of interest through a thin capillary column. The stationary phase is ‘packed’ into the column. 
 
 Several variations of HPLC exist such as:
 - Reversed-phase (RP) chromatography
@@ -119,9 +119,13 @@ The next sections describe each analyzer type in detail.
 
 In a quadropole analyzer, you can set the quadropole voltage so that ions with a specific m/z ratio travel through. The oscillating electrostatic fields stabilize the flight path for the ions so that they can pass through the quadropole. Other ions will be accelerated out of the quadropole and will not make it to the end. 
 
-##### Time-of-Flight analyzer
+![a simplified, schematic representation of the quadrupole analyzer](../images/introduction/quadrupole-analyzer.png)
+
+##### Time-of-Flight (TOF) analyzer
 
 In a time-of-flight analyzer, ions are extracted from the ion source through an electrostatic field in pulses in a field-free drift zone. An electrostatic mirror called a reflectron reflects the ions back onto the next component of mass spectrometry, the detector. The detector counts the particles and records the time of flight from extraction to the moment the particle hits the detector. 
+
+![a simplified, schematic representation of TOF](../images/introduction/TOF.png)
 
 Lighter ions fly faster than heavier ions of the same charge and will arrive earlier at the detector. Therefore, an ion’s time of flight depends on the ion’s mass.  The ion's time of flight is also dependant on the ion's charge. This can be demonstrated by using the following equations:
 1. Potential energy is transferred to an ion with charge **q** accelerated by an electrostatic field with voltage.
@@ -190,5 +194,56 @@ From the LC-MS setup, a set of spectra called a peak map is produced. In a peak 
 
 ![peak map](../images/introduction/spectrum_peakmap.png)
 
-## Data analysis: Techniques for improved identification
+## Techniques for improved identification and quanitifcation
+
+While the combination of liquid chromatography and mass spectrometry can ease the process of characterising molecules of interest, further techniques are required to easily identify and quantify these molecules. This section discusses both labeled and label-free quantification techniques.
+
+### Labeling
+
+Relative quantification is one strategy where one sample is chemically treated and compared to another sample without treatment. This section discusses a particular relative quanitification technique called **labeling** or **stable isotope labeling** which involves the addition of isotopes to one sample. An isotope of an element behaves the same chemically but has a different mass. Stable isotope labeling is used in mass spectrometry so that scientists can easily identify proteins and metabolites. 
+
+Two types of stable isotope labeling exist: chemical labeling and metabolic labeling.
+
+#### Chemical labeling
+
+During chemical labeling, the label is attached at specific functional groups in a molecule like the N-terminus of a peptide or specific side chains. 
+
+Chemical labeling occurs late in the process, therefore experiments that incorporate this technique are not highly reproducible. 
+
+#### Metabolic labeling
+
+During metabolic labeling, the organism is 'fed' with labeled metabolites. Metabolites include but are not limited to amino acids, nitrogen sources and glucose. Unlike chemical labeling, metabolic labeling occurs early in the study. Therefore, experiments that incorporate metabolic labeling are highly reproducible. 
+
+##### Stable Isotope Labeling with Amino Aids in Cell Culture (SILAC)
+
+In SILAC, the labeled amino acids are fed to the cell culture. The labels are integrated into the proteins after a period. The labeled sample is then compared with the unlabeled sample. 
+
+OpenMS contains tools that simulate SILAC experiments. 
+
+https://timms.uni-tuebingen.de:/tp/UT_20141118_002_cpm_0001?t=18.25
+
+##### Isobaric labeling
+
+Isobaric labeling, is a technique where peptides and proteins are labeled with chemical groups that have identical mass, but vary in terms of of distribution of heavy isotopes in their structure. 
+
+### Label-free quantification (LFQ)
+
+LFQ is a cheap and natural method of quantifying molecules of interest. As the name suggests, no labeling of molecules is involved. 
+
+LFQ includes the following steps:
+
+1. **Conduct multiple, identical experiments**.
+2. **Generate LC-MS maps** for each experiment.
+3. **Find features** in all LC-MS maps.
+4. **Align maps** to address shifts in retention times (see <a href= "#feature-alignment">feature alignment</a>).
+5. **Match corresponding features** in different maps. We refer to this as **grouping** or **linking**.
+6. **Identify feature groups**, called **consensus features**.
+7. **Quantify consensus features**.
+
+#### Feature alignment
+
+LC-MS maps contains milions of peaks. Retention times of peptides and metabolites can shift between LFQ experiments. Therefore, we need to align these maps to properly identify corresponding features.
+
+#### Feature finding
+
 
