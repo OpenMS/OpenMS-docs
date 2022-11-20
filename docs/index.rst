@@ -42,6 +42,7 @@ Contents
 
    introduction/about-open-ms.md
    introduction/background.md
+   introduction/extended-background.md
    introduction/entry-points-to-openms.md
 
 .. toctree::
