@@ -2,7 +2,7 @@ Background - Extended
 =====================
 
 Proteomics and metabolomics are interdisciplinary research fields that study the function and interaction of proteins and metabolites. They use large-scale experimental techniques that obtain data at the level of cellular systems to whole organisms. One of the main analytical methods to identify, characterize or quantify proteins and metabolites is mass spectrometry (MS) combined with chromatographic separation.
-In mass spectrometry-based proteomics and metabolomics, biological samples are extracted, prepared, and separated by liquid chromatography (LC) to reduce sample complexity. The separated analytes are ionized and measured in the mass spectrometer. Mass and abundance of ions are stored in mass spectra and used to identify and quantify the analytes in the sample using computational methods. The quantity and identity of analytes can then be used in biomarker discovery, medical diagnostics, or basic research.
+In mass spectrometry-based proteomics and metabolomics, biological samples are extracted, prepared, and separated by liquid chromatography (LC) to reduce sample complexity. The separated analytes are ionized and measured in the mass spectrometer. Mass and abundance of ions are recorded in mass spectra and used to identify and quantify the analytes in the sample using computational methods. The quantity and identity of analytes can then be used in biomarker discovery, medical diagnostics, or basic research.
 
 ## Why use OpenMS
 
