@@ -122,18 +122,28 @@ In a time-of-flight analyzer, ions are extracted from the ion source through an 
 Lighter ions fly faster than heavier ions of the same charge and will arrive earlier at the detector. Therefore, an ion’s time of flight depends on the ion’s mass.  The ion's time of flight is also dependant on the ion's charge. This can be demonstrated by using the following equations:
 1. Potential energy is transferred to an ion with charge **q** accelerated by an electrostatic field with voltage.
 ```{math}
- \begin{equation} E_pot = qU_a
+ \begin{equation} E_p = qU_a
  \end{equation}
 ```
 2. The potential energy is converted to kinetic energy as the ion accelerates.
 
 ```{math}
- \begin{equation} E_pot = E_kin = \frac{1}{2}mv^2
+ \begin{equation} E_p = E_k = \frac{1}{2}mv^2
  \end{equation}
 ```
 
 3. We know that for a given path,**s**, from extraction to the detector, the time of flight, **t** is equal to:
 
+```{math}
+ \begin{equation} t = \frac{s}{v}
+ \end{equation}
+```
+
 Therefore,, **t**, for a given instrument's path length, **s**, depends on an ion's charge and mass. 
+
+```{math}
+ \begin{equation} t = \frac{s}{v} = \frac{s}{\sqrt{\frac{2qU_a}{m}}}
+ \end{equation}
+```
 
 ##### Orbitrap analyzer
