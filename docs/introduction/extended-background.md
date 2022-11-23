@@ -79,12 +79,12 @@ We want the analytes to move through the electrostatic and electromagnetic field
 - Matrix Assisted Lser Desorption/Ionization (MALDI)
 - Electron Impact Ionization (EI)
 
-In proteomics and metabolomics, ESI and MALDI are used because they are soft ionization techniques.. A soft ionization technique is one which charges analytes while keeping the largely intact, so that they can be characterized easily at a later stage. Hard ionization techniques such as EI shatter analytes in smaller fragments, making it difficult to characterize large molecules. 
+In proteomics and metabolomics, ESI and MALDI are used because they are soft ionization techniques. A soft ionization technique is one which charges analytes while keeping the largely intact, so that they can be characterized easily at a later stage. Hard ionization techniques such as EI shatter analytes in smaller fragments, making it difficult to characterize large molecules. 
 
-Given that OpenMS focuses on proteomic and metabolomic applictions, we will describe ESI and MALDI in further detail.
+Given that OpenMS focuses on proteomic and metabolomic applications, we will describe ESI and MALDI in further detail.
 
-##### Electrospray Ionization (EI)
-EI can be broken down into the following steps.
+##### Electrospray Ionization (ESI)
+ESI can be broken down into the following steps.
 
 1. The sample is dissolved in a polar, volatile buffer.
 2. The sample - dissolved in the buffer - is pumped through a thin, stainless steel capillary.
@@ -92,7 +92,7 @@ EI can be broken down into the following steps.
 4. The aerosol is directed through regions of high vacuum until the droplets evaporate to near atomic size.
 5. The particles are fed to the mass analyzer. 
 
-![a simplified, schematic representation of EI](../images/introduction/electrospray-ionization.png)
+![a simplified, schematic representation of ESI](../images/introduction/electrospray-ionization.png)
 
 ##### Matrix Assisted Laser Desorption/Ionization (MALDI)
 
@@ -115,13 +115,13 @@ A number of mass analyzers exists. These include:
 
 The next sections describe each analyzer type in detail.
 
-##### Quadrupole analyzer
+##### Quadrupole
 
 In a quadropole analyzer, you can set the quadropole voltage so that ions with a specific m/z ratio travel through. The oscillating electrostatic fields stabilize the flight path for the ions so that they can pass through the quadropole. Other ions will be accelerated out of the quadropole and will not make it to the end. 
 
 ![a simplified, schematic representation of the quadrupole analyzer](../images/introduction/quadrupole-analyzer.png)
 
-##### Time-of-Flight (TOF) analyzer
+##### Time-of-Flight (TOF)
 
 In a time-of-flight analyzer, ions are extracted from the ion source through an electrostatic field in pulses in a field-free drift zone. An electrostatic mirror called a reflectron reflects the ions back onto the next component of mass spectrometry, the detector. The detector counts the particles and records the time of flight from extraction to the moment the particle hits the detector. 
 
@@ -154,19 +154,19 @@ Therefore,, **t**, for a given instrument's path length, **s**, depends on an io
  \end{equation}
 ```
 
-##### Orbitrap analyzer
+##### Orbitrap
 
 The orbitrap analyzer is the most frequently used analyzer in mass spectrometry for proteomic and metabolomic applications. It consists of two outer electrodes and a central electrode. Ions are captured inside the analyzer because of an applied electrostatic field. The ions in the orbitrap analyzer oscillate around the central electrode along the axis of the electrostatic field at a set frequency, ω. This frequency is used to determine the mass-to-charge ratio using the following formula:
 
 ```{math}
- \begin{equation} ω = \sqrt{\frac{kz}{m}}}
+ \begin{equation} ω = \sqrt{\frac{kz}{m}}
  \end{equation}
 ```
 , where *k* is a constant.
 
-### Improving MS: Tandem Mass Spectrometry
+### Identifying molecules with Tandem Mass Spectrometry (MS2)
 
-To get better results, we can use two mass analyzers sequentially to generate and analyze ions. This technique is called **tandem mass spectrometry** or MS/MS (MS2). Tandem mass spectrometry is especially useful for ienar polymers like proteins, RNA and DNA. 
+To get better results, we can use two mass analyzers sequentially to generate and analyze ions. This technique is called **tandem mass spectrometry** or MS/MS (MS2). Tandem mass spectrometry is especially useful for linear polymers like proteins, RNA and DNA. 
 
 With MS2, ions called **precursor ions** are isolated and fragmented into ion fragments or **product ions**. A mass spectrum is recorded for both the precursor and the product ions.   
 
@@ -194,7 +194,7 @@ From the LC-MS setup, a set of spectra called a peak map is produced. In a peak 
 
 ![peak map](../images/introduction/spectrum_peakmap.png)
 
-## Techniques for improved identification and quanitifcation
+## Improving identification and quantification with labelling techniques
 
 While the combination of liquid chromatography and mass spectrometry can ease the process of characterising molecules of interest, further techniques are required to easily identify and quantify these molecules. This section discusses both labeled and label-free quantification techniques.
 
@@ -235,14 +235,10 @@ LFQ includes the following steps:
 1. **Conduct multiple, identical experiments**.
 2. **Generate LC-MS maps** for each experiment.
 3. **Find features** in all LC-MS maps.
-4. **Align maps** to address shifts in retention times (see <a href= "#feature-alignment">feature alignment</a>).
+4. **Align maps** to address shifts in retention times.
 5. **Match corresponding features** in different maps. We refer to this as **grouping** or **linking**.
 6. **Identify feature groups**, called **consensus features**.
 7. **Quantify consensus features**.
-
-#### Feature alignment
-
-LC-MS maps contains milions of peaks. Retention times of peptides and metabolites can shift between LFQ experiments. Therefore, we need to align these maps to properly identify corresponding features.
 
 #### Feature finding
 
