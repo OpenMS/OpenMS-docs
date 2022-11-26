@@ -242,4 +242,8 @@ LFQ includes the following steps:
 
 #### Feature finding
 
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on liquid chromatography, [view this video](https://timms.uni-tuebingen.de/Player/EPlayer?id=UT_20141021_001_cpm_0001&t=0.0#).
+</div>
 

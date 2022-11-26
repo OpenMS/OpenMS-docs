@@ -14,6 +14,10 @@ div.highlight {
   
 }
 
+.video {
+  border-left: .2rem solid burlywood;
+}
+
 div.admonition.question p:first-of-type {
   background-color: #89bd5669 !important;
 }
@@ -43,6 +47,7 @@ div.admonition.video p::before {
   mask-image: var (--icon-video) !important;
   -webkit-mask-size: 90%;
   mask-size: 90%;
+  background-color: bisque;
 }
  
 
