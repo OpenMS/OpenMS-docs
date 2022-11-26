@@ -94,6 +94,11 @@ ESI can be broken down into the following steps.
 
 ![a simplified, schematic representation of ESI](../images/introduction/electrospray-ionization.png)
 
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on ESI, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=624.28).
+</div>
+
 ##### Matrix Assisted Laser Desorption/Ionization (MALDI)
 
 MALDI can be broken down into the following steps:
@@ -103,6 +108,11 @@ MALDI can be broken down into the following steps:
 4. The analytes become charged and are fed to the mass analyzer.
 
 ![a simplified, schematic representation of MALDI](../images/introduction/MALDI.png)
+
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on MALDI, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=838.40).
+</div>
 
 #### Mass analyzer
 
@@ -120,6 +130,11 @@ The next sections describe each analyzer type in detail.
 In a quadropole analyzer, you can set the quadropole voltage so that ions with a specific m/z ratio travel through. The oscillating electrostatic fields stabilize the flight path for the ions so that they can pass through the quadropole. Other ions will be accelerated out of the quadropole and will not make it to the end. 
 
 ![a simplified, schematic representation of the quadrupole analyzer](../images/introduction/quadrupole-analyzer.png)
+
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on quadrupole analyzers, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=1477.00).
+</div>
 
 ##### Time-of-Flight (TOF)
 
@@ -153,6 +168,10 @@ Therefore,, **t**, for a given instrument's path length, **s**, depends on an io
  \begin{equation} t = \frac{s}{v} = \frac{s}{\sqrt{\frac{2qU_a}{m}}}
  \end{equation}
 ```
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on TOF analyzers, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=1262.00).
+</div>
 
 ##### Orbitrap
 
@@ -164,11 +183,21 @@ The orbitrap analyzer is the most frequently used analyzer in mass spectrometry 
 ```
 , where *k* is a constant.
 
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on orbitrap analyzers, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=1572.96).
+</div>
+
 ### Identifying molecules with Tandem Mass Spectrometry (MS2)
 
 To get better results, we can use two mass analyzers sequentially to generate and analyze ions. This technique is called **tandem mass spectrometry** or MS/MS (MS2). Tandem mass spectrometry is especially useful for linear polymers like proteins, RNA and DNA. 
 
-With MS2, ions called **precursor ions** are isolated and fragmented into ion fragments or **product ions**. A mass spectrum is recorded for both the precursor and the product ions.   
+With MS2, ions called **precursor ions** are isolated and fragmented into ion fragments or **product ions**. A mass spectrum is recorded for both the precursor and the product ions.
+
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on MS2, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=1650.00).
+</div>
 
 Different fragmentation techniques to fragment peptides exist:
 
@@ -183,6 +212,11 @@ CID is the most frequently used fragmentation technique and will therefore be di
 #### Collision-induced dissociation
 
 Collision-induced dissociation is a method to fragment peptides using an inert gas such as argon or helium. Selected primary or precursor ions enter a collision cell filled with the inert gas. The application of the inert gas on the precursor ions causes the precursor ions that reach the energy threshold to fragment into smaller, product ions and or neutral losses.  A mass spectrum is recorded for both the precursor ions and the product ions. The mass spectrum for the precursor ions will give you the mass for the entire peptide while the product ions will inform you about it’s amino acid composition. 
+
+<div class="admonition video">
+<p class="admonition-title">**Video**</p>
+For more information on CID, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=1757.45).
+</div>
 
 ## LC-MS
 
