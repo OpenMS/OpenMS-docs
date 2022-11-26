@@ -15,7 +15,11 @@ div.highlight {
 }
 
 .video {
-  border-left: .2rem solid burlywood;
+  border-left: .2rem solid rgb(125, 185, 117);
+}
+
+div.admonition.video p:first-of-type {
+  background-color: antiquewhite;
 }
 
 div.admonition.question p:first-of-type {
@@ -47,7 +51,7 @@ div.admonition.video p::before {
   mask-image: var (--icon-video) !important;
   -webkit-mask-size: 90%;
   mask-size: 90%;
-  background-color: bisque;
+  background-color: rgb(88, 60, 25);
 }
  
 
