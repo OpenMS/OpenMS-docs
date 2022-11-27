@@ -294,8 +294,10 @@ OpenMS contains tools that simulate SILAC experiments.
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
 For more information on SILAC, view the following links:
-- [Video 1](https://timms.uni-tuebingen.de:/tp/UT_20141118_002_cpm_0001?t=18.25)
-- [Video 2](https://timms.uni-tuebingen.de:/tp/UT_20141202_001_cpm_0001?t=540.13)
+<ul>
+<li><a href="https://timms.uni-tuebingen.de:/tp/UT_20141118_002_cpm_0001?t=18.25">Video 1</a></li>
+<li><a href="https://timms.uni-tuebingen.de:/tp/UT_20141202_001_cpm_0001?t=540.13">Video 2</a></li>
+</ul>
 </div>
 
 ### Label-free quantification (LFQ)
