@@ -271,8 +271,12 @@ Isobaric labeling, is a technique where peptides and proteins are labeled with c
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
 For more information on isobaric labeling, view the following links:
-- [Video 1](https://timms.uni-tuebingen.de:/tp/UT_20141118_002_cpm_0001?t=1108.15)
-- [Video 2](https://timms.uni-tuebingen.de:/tp/UT_20141202_002_cpm_0001?t=311.78)
+<ul>
+<li><a href="https://timms.uni-tuebingen.de:/tp/UT_20141118_002_cpm_0001?t=1108.15">Video 1</a>
+</li>
+<li><a href="https://timms.uni-tuebingen.de:/tp/UT_20141202_002_cpm_0001?t=311.78">Video 2</a>
+</li>
+<ul>
 </div>
 
 OpenMS contains tools that simulate isobaric labeling experiments. 
