@@ -124,7 +124,7 @@ spectra
   Singular of spectrum.
 
 mass spectrum
-  A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds.
+  A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds. OpenMS represents a one dimensional mass spectrum using the class [MSSpectrum](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1MSSpectrum.html). 
 
 m/z
   mass to charge ratio.
@@ -145,7 +145,7 @@ TOPPAS
   An assistant for GUI-driven TOPP workflow design. It is recommended to use OpenMS through the KNIME plugins.
 
 chromatogram
-  A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
+  A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time. OpenMS represents a chromatogram using the class [MSChromatogram](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1MSChromatogram.html)
 
 KNIME
   An advanced workflow editor which OpenMS provides a plugin for.
@@ -183,4 +183,24 @@ TOPP tool
 MS^3
   Multi-stage Mass Spectrometry
 
+feature
+  An LC-MS feature represents the combined isotopic mass traces of a detected chemical compound. The chromatographic peak shape of a feature is defined by the interaction of the analyte with the LC column. Each feature contains information on retention time, mass-to-charge ratio, intensity and overall quality. OpenMS represents a feature using the class [Feature](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1Feature.html).
+
+feature map
+  A feature map is a collection of features identified in a mass spectrum from a single experiment. One feature map can contain many features. OpenMS represents a feature map using the class [FeatureMap](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1FeatureMap.html).
+
+consensus feature
+  Features from replicate experiments with similar retention times and m/z values are linked and considered a consensus feature. A consensus feature contains information on the common retention time and m/z values as well as intensities for each sample. OpenMS represents a consensus feature using the class [ConsensusFeature](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1ConsensusFeature.html).
+
+consensus features
+  see {term}`consensus feature`. 
+
+consensus map
+  A consensus map is a collection of {term}`consensus features` identified from mass spectra across replicate experiments. One consensus map can contain many consensus features. OpenMS represents a consensus map using the class [ConsensusMap](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1ConsensusMap.html).
+
+peaks
+  see {term}`peak`.
+
+peak
+  A single raw data point in a chromatogram or a mass spectrum. OpenMS represents a peak in a chromatogram using the class [ChromatogramPeak](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1ChromatogramPeak.html). OpenMS represents a single, one-dimensional peak in a mass spectrum using the class [PeakID](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1Peak1D.html)
 ```

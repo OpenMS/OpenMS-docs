@@ -3,7 +3,7 @@ Background - Extended
 
 Proteomics and metabolomics focus on complex interactions within biological systems; the former is centered on proteins while the latter is based on metabolites. To understand these interactions, we need to accurately identify the different biological components involved. 
 
-Currently, {term}`liquid chromatography`(LC) and {term}`mass spectrometry`(MS) are the analytical techniques used in combination to isolate and identify biological components in both proteomics and metabolomics. LC-MS data can be difficult to analyze manually given its amount and complexity. Therefore, we need specialized software that can analyze high-throughput LC-MS data quickly and accurately. 
+Currently, {term}`liquid chromatography`(LC) and {term}`mass spectrometry`(MS) are the analytical techniques used to isolate and identify biological components in both proteomics and metabolomics. LC-MS data can be difficult to analyze manually given its amount and complexity. Therefore, we need specialized software that can analyze high-throughput LC-MS data quickly and accurately. 
 
 ## Why use OpenMS
 
@@ -84,7 +84,7 @@ Mass spectrometry is an analytical technique used to determine the abundance of 
 There are three key components in a mass spectrometer:
 - An **ion source**, which generates ions from the incoming sample. All mass spectrometry techniques rely on ionized molecules to control their movement in an electric field.
 - A **mass analyzer**, which separates the ions according to their mass-to-charge (m/z) ratio. There are several types such as time of flight (TOF), orbitrap and quadrupole mass analyzers. Depending on the mass analyzer, OpenMS offers calibration tools, so that highly accurate results can be achieved.
-- A **detector**, which scans ions at a given time point producing a mass spectrum, where the intensity is plotted against the m/z. 
+- A **detector**, which scans ions at a given time point producing a {term}`mass spectrum`, where the intensity is plotted against the m/z. 
 
 ![schematic illustration of a mass spectrometer](../images/introduction/mass-spectrometry-components.png)
 
@@ -208,7 +208,7 @@ For more information on orbitrap analyzers, [view this video](https://timms.uni-
 
 To get better results, we can use two mass analyzers sequentially to generate and analyze ions. This technique is called **tandem mass spectrometry** or MS/MS (MS2). Tandem mass spectrometry is especially useful for linear polymers like proteins, RNA and DNA. 
 
-With MS2, ions called **precursor ions** are isolated and fragmented into ion fragments or **product ions**. A mass spectrum is recorded for both the precursor and the product ions.
+With MS2, ions called **precursor ions** are isolated and fragmented into ion fragments or **product ions**. A {term}`mass spectrum` is recorded for both the precursor and the product ions.
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -227,7 +227,7 @@ CID is the most frequently used fragmentation technique and will therefore be di
 
 #### Collision-induced dissociation
 
-Collision-induced dissociation is a method to fragment peptides using an inert gas such as argon or helium. Selected primary or precursor ions enter a collision cell filled with the inert gas. The application of the inert gas on the precursor ions causes the precursor ions that reach the energy threshold to fragment into smaller, product ions and or neutral losses.  A mass spectrum is recorded for both the precursor ions and the product ions. The mass spectrum for the precursor ions will give you the mass for the entire peptide while the product ions will inform you about it’s amino acid composition. 
+Collision-induced dissociation is a method to fragment peptides using an inert gas such as argon or helium. Selected primary or precursor ions enter a collision cell filled with the inert gas. The application of the inert gas on the precursor ions causes the precursor ions that reach the energy threshold to fragment into smaller, product ions and or neutral losses.  A {term}`mass spectrum` is recorded for both the precursor ions and the product ions. The {term}`mass spectrum` for the precursor ions will give you the mass for the entire peptide while the product ions will inform you about it’s amino acid composition. 
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -238,9 +238,11 @@ For more information on CID, [view this video](https://timms.uni-tuebingen.de:/t
 
 Liquid chromatography is often coupled with mass spectrometry to reduce complexity in the mass spectra. If complex samples were directly fed to a mass spectrometer, you would not be able to detect the less abundant analyte ions. The separated analytes from the liquid chromatography setup are directly injected into the ion source from the mass spectrometry setup. Multiple analytes that escape the column at the same time are separated by their mass-to-charge ratio using the mass spectrometer. 
 
-![lc-ms setup](../images/introduction/hplc-mass-spectrometry-setup.png)
+![lc-ms setup](../images/introduction/lc-ms-setup.png)
 
 From the LC-MS setup, a set of spectra called a peak map is produced. In a peak map, each spectrum represents the ions detected at a particular retention time. Each peak in a spectrum has a retention time, mass-to-charge and intensity dimension.
+
+From the LC-MS setup, a series of spectra are 'stacked' together to form what is known as a peak map. Each spectrum in a peak map is a collection of data points called {term}`peaks` which indicate the retention time, mass-to-charge and intensity of each detected ion. Analyzing peak maps are difficult as different compounds can elute at the same time which means that peaks can overlap. Therefore, sophisticated techniques are required for the accurate identification and quantification of molecules. 
 
 ![peak map](../images/introduction/spectrum_peakmap.png)
 
@@ -308,11 +310,11 @@ LFQ includes the following steps:
 
 1. **Conduct replicate experiments**.
 2. **Generate LC-MS maps** for each experiment.
-3. **Find features** in all LC-MS maps.
+3. **Find features** in all LC-MS maps. A {term}`feature` is a collection of peaks that belong to a chemical compound.
 4. **Align maps** to address shifts in retention times.
 5. **Match corresponding features** in different maps. We refer to this as **grouping** or **linking**.
-6. **Identify feature groups**, called **consensus features**.
-7. **Quantify consensus features**.
+6. **Identify feature groups**, called {term}`consensus features`.
+7. **Quantify consensus features**. 
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -322,7 +324,7 @@ For more information on the steps involved in LFQ, [view this video](https://tim
 
 #### Feature finding
 
-Feature finding is method for identifying all peaks belonging to the one peptide. Feature finding involves the following steps:
+Feature finding is method for identifying all peaks belonging to a chemical compound. Feature finding involves the following steps:
 
 1. **Extension** where we collect all data points we think belong to the peptide.
 2. **Refinement** where we remove peaks that we think do not belong to the peptide.
