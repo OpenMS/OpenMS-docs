@@ -50,7 +50,7 @@ The following entry points for OpenMS and its TOPP tools are available for users
   :link: ../develop-with-openms/openms-core-cplusplus-library
   :link-type: doc
 
-  As shown in the image above, TOPP tools have been created using the OpenMS core library and some external libraries, which are written in C++. Using the OpenMS core library directly provides faster access to tools and shorter run-times. Additional TOPP tools can also be developed, customized or extended based on the user’s needs.
+  As shown in the image above, TOPP tools have been created using the OpenMS core library and some external libraries, which are written in C++. Using the OpenMS core library directly provides faster access to tools and shorter run-times. Additionaly, TOPP tools can also be developed, customized or extended based on the user’s needs.
 :::
 
 
