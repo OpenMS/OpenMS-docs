@@ -17,7 +17,7 @@ quantitation, :term:`SILAC`, :term:`iTRAQ`, :term:`TMT`, :term:`SRM`, :term:`SWA
 It provides built-in algorithms for de-novo identification and database search,
 as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`, etc. It supports easy integration of OpenMS built tools into workflow
 engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the :term:`TOPP tools` concept and
-a unified parameter handling via a 'common tool description' (CTD) scheme.
+a unified parameter handling via a Common Tool Description' (CTD) scheme.
 
 .. important::
   As part of the **Center for Integrative Bioinformatics** (CiBi) in the **German Network for Bioinformatics**
