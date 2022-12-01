@@ -20,7 +20,7 @@ The windows binary version works with most versions of windows from Win7 to Win1
    >"The installation of the Microsoft .NET 3.5 SP1' package failed!
 
    You must download and install it manually in order for Proteowizard to work.
-   This should only happen if installion is done by selecting the "Third Party - Proteowizard" components. The reason is
+   This should only happen if installation is done by selecting the "Third Party - Proteowizard" components. The reason is
    usually that **.NET 3.5 SP1** is already installed (see Windows Control Panel). If it's not installed, follow the
    instructions of the error message.
 2. During installation, an error message pops up, saying:
