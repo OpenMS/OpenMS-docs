@@ -3,7 +3,7 @@ Background - Extended
 
 Proteomics and metabolomics focus on complex interactions within biological systems; the former is centered on proteins while the latter is based on metabolites. To understand these interactions, we need to accurately identify the different biological components involved. 
 
-Currently, {term}`liquid chromatography`(LC) and {term}`mass spectrometry`(MS) are the analytical techniques used to isolate and identify biological components in both proteomics and metabolomics. LC-MS data can be difficult to analyze manually given its amount and complexity. Therefore, we need specialized software that can analyze high-throughput LC-MS data quickly and accurately. 
+{term}`Liquid chromatography`(LC) and {term}`mass spectrometry`(MS) are the analytical techniques used to isolate and identify biological components in proteomics and metabolomics. LC-MS data can be difficult to analyze manually given its amount and complexity. Therefore, we need specialized software that can analyze high-throughput LC-MS data quickly and accurately. 
 
 ## Why use OpenMS
 
@@ -12,8 +12,6 @@ OpenMS is an open-source, C++ framework for analyzing large volumes of mass spec
 ```{note}
 OpenMS in recent times has been expanded to support a wide variety of mass spectrometry experiments. To design your analysis solution, [contact the OpenMS team](https://openms.github.io/community/) today.
 ```
-
-## Purpose of section
 
 To use OpenMS effectively, an understanding of chromatography and mass spectrometry is required as many of the algorithms are based on these techniques. 
 This section provides a detailed explanation on LC and MS, and how they are combined to identify and quantify substances. 
