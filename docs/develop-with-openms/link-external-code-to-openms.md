@@ -1,8 +1,8 @@
 External Code using OpenMS
 ==========================
 
-If OpenMS' TOPP and UTILS tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
-feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are 
+If OpenMS TOPP and UTILS tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
+feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the later, there are 
 multiple ways to do this:
 
 - Modify the developer version of OpenMS by changing existing tools or adding new ones.
@@ -109,10 +109,10 @@ required (for macOS and Linux see `OpenMS/cmake/package*.cmake`).
 
 In short:
 
-- copy the `OpenMS/share/OpenMS` directory to the client machine (e.g `<client/my_dir>/share`) and set the environment
+- Copy the `OpenMS/share/OpenMS` directory to the client machine (e.g `<client/my_dir>/share`) and set the environment
   variable `OPENMS_DATA_PATH` to this directory
-- copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
-- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 
+- Copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
+- Copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 
   package.
 - [Windows only] copy Xerces dll (see `contrib/lib`) to `<client/my_dir>/bin`
 - [Windows only] install the VS redistributable package (see Microsoft Homepage) on the client machine which corresponds
