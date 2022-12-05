@@ -1083,11 +1083,15 @@ This matrix has the following properties:
 
 - The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
 - The entries of each row consist of exactly one 1 and one -1, the others must be 0.
-- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
+- The condition with the entry `1` constitutes the enumerator of the :math:`\log_2` fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
 
+:math:`\log_2 \frac{C_{2}}{C_{1}}`
+
+<!--
 ```{math}
  \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
 ```
+-->
 
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
@@ -1630,11 +1634,11 @@ The next step after retention time correction is the grouping of corresponding f
 |Figure 33: Features A and B correspond to the same analyte. The linking of features between runs (indicated by an arrow) allows comparing feature intensities.|
 
 - After the **MapAlignerPoseClustering** node, add a **FeatureLinkerUnlabeledQT** node (**Community Nodes** > **OpenMS**>**Map Alignment**) and adjust the following settings:
-  | **parameter**                                  | **value** |
+  | **parameter** | **value** |
   | :--------------------------------------------- | :-------- |
-  | _algorithm_ → _distance_RT_ → _max_difference_ | 40        |
-  | _algorithm_ → _distance_MZ_ → _max_difference_ | 20        |
-  | _algorithm_ → _distance_MZ_ → _unit_           | ppm       |
+  | _algorithm_ → _distance_RT_ → _max_difference_ | 40 |
+  | _algorithm_ → _distance_MZ_ → _max_difference_ | 20 |
+  | _algorithm_ → _distance_MZ_ → _unit_ | ppm |
   The parameters change the behavior of **FeatureLinkerUnlabeledQT** as follows (similar to the parameters we adjusted for **MapAlignerPoseClustering**):
   - **distance_RT → max_difference**: Features that have a larger RT difference will never be paired.
   - **distance_MZ → max_difference**: Features that have a larger m/z difference will never be paired.
@@ -1811,10 +1815,10 @@ Use the file `MetaboliteDeNovoID.mzML` as input for your workflow.
 
 Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
 
-(Figure_42)=
+(Figure*42)=
 |![De novo identification workflow](../images/openms-user-tutorial/metabo/denovoid.png)|
 |:--:|
-|Figure 42: _De novo_ identification workflow|
+|Figure 42: \_De novo* identification workflow|
 
 Run the workflow and inspect the output.
 
