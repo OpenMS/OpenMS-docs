@@ -311,7 +311,7 @@ LFQ includes the following steps:
 3. **Find features** in all LC-MS maps. A {term}`feature` is a collection of peaks that belong to a chemical compound.
 4. **Align maps** to address shifts in retention times.
 5. **Match corresponding features** in different maps. We refer to this as **grouping** or **linking**.
-6. **Identify feature groups**, called {term}`consensus features`.
+6. **Identify feature groups**, called {term}`consensus features <consensus feature>`.
 7. **Quantify consensus features**. 
 
 <div class="admonition video">
