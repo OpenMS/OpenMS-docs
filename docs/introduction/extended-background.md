@@ -90,10 +90,10 @@ There are three key components in a mass spectrometer:
 
 We want the analytes to move through the electrostatic and electromagnetic fields in the mass analyzer. To achieve this objective, we need to convert them to ions by charging them. There are a number of ways to charge our analytes including:
 - Electrospray Ionization (ESI)
-- Matrix Assisted Lser Desorption/Ionization (MALDI)
+- Matrix Assisted Laser Desorption/Ionization (MALDI)
 - Electron Impact Ionization (EI)
 
-In proteomics and metabolomics, ESI and MALDI are used because they are soft ionization techniques. A soft ionization technique is one which charges analytes while keeping the largely intact, so that they can be characterized easily at a later stage. Hard ionization techniques such as EI shatter analytes in smaller fragments, making it difficult to characterize large molecules. 
+In proteomics and metabolomics, ESI and MALDI are used because they are soft ionization techniques. A soft ionization technique is one which charges analytes while keeping the molecules of interest largely intact, so that they can be characterized easily at a later stage. Hard ionization techniques such as EI shatter analytes in smaller fragments, making it difficult to characterize large molecules. 
 
 Given that OpenMS focuses on proteomic and metabolomic applications, we will describe ESI and MALDI in further detail.
 
@@ -103,7 +103,7 @@ ESI can be broken down into the following steps.
 1. The sample is dissolved in a polar, volatile buffer.
 2. The sample - dissolved in the buffer - is pumped through a thin, stainless steel capillary.
 3. The sample is converted to small, charged, stable droplets (aerosolized) by applying high voltage.   
-4. The aerosol is directed through regions of high vacuum until the droplets evaporate to near atomic size.
+4. The aerosol is directed through regions of high vacuum until the droplets evaporate until only the charged molecules are left.
 5. The particles are fed to the mass analyzer. 
 
 ![a simplified, schematic representation of ESI](../images/introduction/electrospray-ionization.png)
@@ -240,7 +240,7 @@ Liquid chromatography is often coupled with mass spectrometry to reduce complexi
 
 From the LC-MS setup, a set of spectra called a peak map is produced. In a peak map, each spectrum represents the ions detected at a particular retention time. Each peak in a spectrum has a retention time, mass-to-charge and intensity dimension.
 
-From the LC-MS setup, a series of spectra are 'stacked' together to form what is known as a peak map. Each spectrum in a peak map is a collection of data points called {term}`peaks <peak>` which indicate the retention time, mass-to-charge and intensity of each detected ion. Analyzing peak maps are difficult as different compounds can elute at the same time which means that peaks can overlap. Therefore, sophisticated techniques are required for the accurate identification and quantification of molecules. 
+From the LC-MS setup, a series of spectra are 'stacked' together to form what is known as a peak map. Each spectrum in a peak map is a collection of data points called {term}`peaks <peak>` which indicate the retention time, mass-to-charge and intensity of each detected ion. Analyzing peak maps is difficult as different compounds can elute at the same time which means that peaks can overlap. Therefore, sophisticated techniques are required for the accurate identification and quantification of molecules. 
 
 ![peak map](../images/introduction/spectrum_peakmap.png)
 
@@ -279,7 +279,7 @@ For more information on isobaric labeling, view the following links:
 <ul>
 </div>
 
-OpenMS contains tools that simulate isobaric labeling experiments. 
+OpenMS contains tools that analyze data from isobaric labeling experiments. 
 
 #### Metabolic labeling
 
@@ -289,7 +289,7 @@ During metabolic labeling, the organism is 'fed' with labeled metabolites. Metab
 
 In SILAC, the labeled amino acids are fed to the cell culture. The labels are integrated into the proteins after a period. The labeled sample is then compared with the unlabeled sample. 
 
-OpenMS contains tools that simulate SILAC experiments. 
+OpenMS contains tools that analyze data from SILAC experiments. 
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
