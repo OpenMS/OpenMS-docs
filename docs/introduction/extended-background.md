@@ -3,7 +3,7 @@ Background - Extended
 
 Proteomics and metabolomics focus on complex interactions within biological systems; the former is centered on proteins while the latter is based on metabolites. To understand these interactions, we need to accurately identify the different biological components involved. 
 
-{term}`Liquid chromatography`(LC) and {term}`mass spectrometry`(MS) are the analytical techniques used to isolate and identify biological components in proteomics and metabolomics. LC-MS data can be difficult to analyze manually given its amount and complexity. Therefore, we need specialized software that can analyze high-throughput LC-MS data quickly and accurately. 
+{term}`Liquid chromatography` (LC) and {term}`mass spectrometry` (MS) are the analytical techniques used to isolate and identify biological components in proteomics and metabolomics. LC-MS data can be difficult to analyze manually given its amount and complexity. Therefore, we need specialized software that can analyze high-throughput LC-MS data quickly and accurately. 
 
 ## Why use OpenMS
 
@@ -240,7 +240,7 @@ Liquid chromatography is often coupled with mass spectrometry to reduce complexi
 
 From the LC-MS setup, a set of spectra called a peak map is produced. In a peak map, each spectrum represents the ions detected at a particular retention time. Each peak in a spectrum has a retention time, mass-to-charge and intensity dimension.
 
-From the LC-MS setup, a series of spectra are 'stacked' together to form what is known as a peak map. Each spectrum in a peak map is a collection of data points called {term}`peaks` which indicate the retention time, mass-to-charge and intensity of each detected ion. Analyzing peak maps are difficult as different compounds can elute at the same time which means that peaks can overlap. Therefore, sophisticated techniques are required for the accurate identification and quantification of molecules. 
+From the LC-MS setup, a series of spectra are 'stacked' together to form what is known as a peak map. Each spectrum in a peak map is a collection of data points called {term}`peaks <peak>` which indicate the retention time, mass-to-charge and intensity of each detected ion. Analyzing peak maps are difficult as different compounds can elute at the same time which means that peaks can overlap. Therefore, sophisticated techniques are required for the accurate identification and quantification of molecules. 
 
 ![peak map](../images/introduction/spectrum_peakmap.png)
 
