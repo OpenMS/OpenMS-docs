@@ -38,6 +38,8 @@ An LC setup is made up of the following components:
 - **A column** that contains the stationary phase. 
 - **A detector** that plots the time it takes for the analyte to escape the column (retention time) against the analyte's concentration. This plot is called a **chromatogram**.
 
+Refer to the image below for a diagrammatic representation of an LC setup. 
+
 ![schematic illustration of an LC setup](../images/introduction/lc-components.png)
 
 ### How does LC work?
@@ -84,6 +86,8 @@ There are three key components in a mass spectrometer:
 - A **mass analyzer**, which separates the ions according to their mass-to-charge (m/z) ratio. There are several types such as time of flight (TOF), orbitrap and quadrupole mass analyzers. Depending on the mass analyzer, OpenMS offers calibration tools, so that highly accurate results can be achieved.
 - A **detector**, which scans ions at a given time point producing a {term}`mass spectrum`, where the intensity is plotted against the m/z. 
 
+Refer to the image below for a diagrammatic representation of the key components in MS.
+
 ![schematic illustration of a mass spectrometer](../images/introduction/mass-spectrometry-components.png)
 
 #### Ion source
@@ -106,6 +110,8 @@ ESI can be broken down into the following steps.
 4. The aerosol is directed through regions of high vacuum until the droplets evaporate until only the charged molecules are left.
 5. The particles are fed to the mass analyzer. 
 
+Refer to the image below for a diagrammatic representation of the steps in ESI.
+
 ![a simplified, schematic representation of ESI](../images/introduction/electrospray-ionization.png)
 
 <div class="admonition video">
@@ -120,6 +126,8 @@ MALDI can be broken down into the following steps:
 2. The mixture is exposed to radiation with short pulses of laser light, charging the matrix. 
 3. The matrix transfers its charge to the analytes because the wavelength of the laser light is the same as the absorbance maximum of the matrix.
 4. The analytes become charged and are fed to the mass analyzer.
+
+Refer to the image below for a diagrammatic representation of the steps in MALDI.
 
 ![a simplified, schematic representation of MALDI](../images/introduction/MALDI.png)
 
@@ -143,6 +151,8 @@ The next sections describe each analyzer type in detail.
 
 In a quadropole analyzer, you can set the quadropole voltage so that ions with a specific m/z ratio travel through. The oscillating electrostatic fields stabilize the flight path for the ions so that they can pass through the quadropole. Other ions will be accelerated out of the quadropole and will not make it to the end. 
 
+Refer to the image below for a diagrammatic representation of the quadrupole analyzer.
+
 ![a simplified, schematic representation of the quadrupole analyzer](../images/introduction/quadrupole-analyzer.png)
 
 <div class="admonition video">
@@ -153,6 +163,8 @@ For more information on quadrupole analyzers, [view this video](https://timms.un
 ##### Time-of-Flight (TOF)
 
 In a time-of-flight analyzer, ions are extracted from the ion source through an electrostatic field in pulses in a field-free drift zone. An electrostatic mirror called a reflectron reflects the ions back onto the next component of mass spectrometry, the detector. The detector counts the particles and records the time of flight from extraction to the moment the particle hits the detector. 
+
+Refer to the image below for a diagrammatic representation of the TOF analyzer.
 
 ![a simplified, schematic representation of TOF](../images/introduction/TOF.png)
 
@@ -236,11 +248,15 @@ For more information on CID, [view this video](https://timms.uni-tuebingen.de:/t
 
 Liquid chromatography is often coupled with mass spectrometry to reduce complexity in the mass spectra. If complex samples were directly fed to a mass spectrometer, you would not be able to detect the less abundant analyte ions. The separated analytes from the liquid chromatography setup are directly injected into the ion source from the mass spectrometry setup. Multiple analytes that escape the column at the same time are separated by their mass-to-charge ratio using the mass spectrometer. 
 
+Refer to the image below for a diagrammatic representation of the LC-MS setup.
+
 ![lc-ms setup](../images/introduction/lc-ms-setup.png)
 
 From the LC-MS setup, a set of spectra called a peak map is produced. In a peak map, each spectrum represents the ions detected at a particular retention time. Each peak in a spectrum has a retention time, mass-to-charge and intensity dimension.
 
 From the LC-MS setup, a series of spectra are 'stacked' together to form what is known as a peak map. Each spectrum in a peak map is a collection of data points called {term}`peaks <peak>` which indicate the retention time, mass-to-charge and intensity of each detected ion. Analyzing peak maps is difficult as different compounds can elute at the same time which means that peaks can overlap. Therefore, sophisticated techniques are required for the accurate identification and quantification of molecules. 
+
+The image below includes a spectrum at a given retention time (left) and a peak map (right).
 
 ![peak map](../images/introduction/spectrum_peakmap.png)
 
