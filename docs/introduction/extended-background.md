@@ -1,5 +1,5 @@
-Background - Extended
-=====================
+Background
+==========
 
 Proteomics and metabolomics focus on complex interactions within biological systems; the former is centered on proteins while the latter is based on metabolites. To understand these interactions, we need to accurately identify the different biological components involved. 
 
