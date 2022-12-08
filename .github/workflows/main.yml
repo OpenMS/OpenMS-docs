@@ -41,7 +41,7 @@ jobs:
 
       # build docs. "-n" for nitpick link checking
       - name: Run sphinx build. No warnings allowed but keep going.
-        run: sphinx-build -M html ./docs build -W --keep-going -n
+        run: sphinx-build -b html ./docs build -W --keep-going -n
         
       # link check of html
       - name: Run lychee
