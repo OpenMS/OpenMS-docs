@@ -43,7 +43,7 @@ jobs:
         
       # link check of html
       - name: Run lychee
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         with:
           fail: true
           args: --cache --max-cache-age 1d './**/*.html'
