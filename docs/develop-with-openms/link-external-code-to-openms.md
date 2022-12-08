@@ -2,7 +2,7 @@ External Code using OpenMS
 ==========================
 
 If OpenMS TOPP and UTILS tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
-feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the later, there are 
+feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are 
 multiple ways to do this:
 
 - Modify the developer version of OpenMS by changing existing tools or adding new ones.
