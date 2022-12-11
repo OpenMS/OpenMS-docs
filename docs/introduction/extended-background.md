@@ -82,7 +82,7 @@ Mass spectrometry is an analytical technique used to determine the abundance of 
 ### Key components of MS
 
 There are three key components in a mass spectrometer:
-- An **ion source**, which generates ions from the incoming sample. All mass spectrometry techniques rely on ionized molecules to control their movement in an electric field.
+- An **ion source**, which generates {term}`ions <ion>` from the incoming sample. All mass spectrometry techniques rely on ionized molecules to control their movement in an electric field.
 - A **mass analyzer**, which separates the ions according to their mass-to-charge (m/z) ratio. There are several types such as time of flight (TOF), orbitrap and quadrupole mass analyzers. Depending on the mass analyzer, OpenMS offers calibration tools, so that highly accurate results can be achieved.
 - A **detector**, which scans ions at a given time point producing a {term}`mass spectrum`, where the intensity is plotted against the m/z. 
 

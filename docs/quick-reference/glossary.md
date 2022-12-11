@@ -25,9 +25,6 @@ Mass
 ion
   Any {term}`atom` or group of atoms that bears one or more positive or negative electrical charges. Positively charged are cations, negavtively charged anions.
 
-ions
-  See {term}`ion`.
-
 electrospray ionization (ESI)
   A technique used in mass spectrometry to produce ions.
 
