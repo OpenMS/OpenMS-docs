@@ -7,7 +7,7 @@ A glossary of common terms used throughout OpenMS documentation.
 :sorted:
 
 LC-MS
-  <a href="../introduction/background.html#liquid-chromatography-lc">Liquid Chromatography(LC)</a> and <a href="../introduction/background.html#mass-spectrometry">Mass Spectrometry(MS)</a>.
+  Liquid Chromatography-Mass Spectrometry.
 
 peptides
   A short chain of amino acids.
@@ -72,18 +72,18 @@ TOPP
   The OpenMS Pipeline.
 
 MSGFPlusAdapter
-  Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
+  Adapter for the MS-GF+ protein identification (database search) engine. More information is available in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
 
 LuciphorAdapter
   Adapter for the LuciPHOr2: a site localisation tool of generic post-translational modifications from tandem mass
-  spectrometry data. More information is available [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_LuciphorAdapter.html).
+  spectrometry data. More information is available in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_LuciphorAdapter.html).
 
 pyOpenMS
   pyOpenMS is an open-source Python library for mass spectrometry, specifically for the analysis of proteomics and
   metabolomics data in Python. For pyOpenMS documentaion visit [this](https://pyopenms.readthedocs.io/en/latest/) link.
 
 TOPP Tools
-  All {term}`TOPP` tools can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
+  OpenMS provides a number of functions that process mass spectrometry data called TOPP tools. More information on TOPP tools can be found in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
 
 UTILS
   Besides {term}`TOPP`, OpenMS offers a range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
