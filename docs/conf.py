@@ -145,3 +145,5 @@ frozen_locals = dict(locals())
 rst_epilog = '\n'.join(map(lambda x: f".. |{x}| replace:: {frozen_locals[x]}", variables_to_export))
 del frozen_locals
 
+def setup(app):
+    app.add_js_file('../_static/js/piwik.js')
