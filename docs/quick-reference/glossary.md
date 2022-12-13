@@ -193,7 +193,7 @@ consensus feature
   Features from replicate experiments with similar retention times and m/z values are linked and considered a consensus feature. A consensus feature contains information on the common retention time and m/z values as well as intensities for each sample. OpenMS represents a consensus feature using the class [ConsensusFeature](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ConsensusFeature.html).
 
 consensus map
-  A consensus map is a collection of {term}`consensus features` identified from mass spectra across replicate experiments. One consensus map can contain many consensus features. OpenMS represents a consensus map using the class [ConsensusMap](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ConsensusMap.html).
+  A consensus map is a collection of {term}`consensus features <consensus feature>` identified from mass spectra across replicate experiments. One consensus map can contain many consensus features. OpenMS represents a consensus map using the class [ConsensusMap](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ConsensusMap.html).
 
 peak
   A single raw data point in a chromatogram or a mass spectrum. OpenMS represents a peak in a chromatogram using the class [ChromatogramPeak](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ChromatogramPeak.html). OpenMS represents a single, one-dimensional peak in a mass spectrum using the class [PeakID](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1Peak1D.html)
