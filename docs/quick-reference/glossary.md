@@ -6,6 +6,12 @@ A glossary of common terms used throughout OpenMS documentation.
 ```{glossary}
 :sorted:
 
+Liquid chromatography
+  An analytical technique used to separate molecules.
+
+mass spectrometry
+  An analytical technique used to identify and quantify molecules of interest.
+
 LC-MS
   Liquid Chromatography-Mass Spectrometry.
 

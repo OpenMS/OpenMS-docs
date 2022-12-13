@@ -59,7 +59,7 @@ fields.
 
 In a typical {term}`mass` spectrometer, three principal components can be identified:
 
-- **Ion Source**: A {term}`mass` spectrometer only handles {term}`ions`. Thus, charge needs first be transferred to uncharged
+- **Ion Source**: A {term}`mass` spectrometer only handles {term}`ions <ion>`. Thus, charge needs first be transferred to uncharged
   particles. The component responsible for the ionization is the ion source. Different types of ion sources and ionization
   techniques exist with {term}`electrospray ionization (ESI)` being currently the most widely used ionization technique
   for {term}`mass` spectrometry-based proteomics.
