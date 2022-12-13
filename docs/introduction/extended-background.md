@@ -209,6 +209,10 @@ The orbitrap analyzer is the most frequently used analyzer in mass spectrometry 
 ```
 , where *k* is a constant.
 
+The following diagram is a conceptual representation of the orbitrap analyzer. 
+
+![schematic illustration of a mass spectrometer](../images/introduction/orbitrap.png)
+
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
 For more information on orbitrap analyzers, [view this video](https://timms.uni-tuebingen.de:/tp/UT_20141028_002_cpm_0001?t=1572.96).
