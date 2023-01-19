@@ -79,7 +79,7 @@ Follow the <a href="installation-on-gnu-linux.html#install-via-conda">instructio
    
 2. Bug with running Java based thirdparty tools like {term}`MSGFPlusAdapter` and {term}`LuciphorAdapter` from within **TOPPAS.app**
 
-   If you face issues while running Java based thirdparty tools from within {term}`TOPPAS.app`, run the {term}`TOPPAS.app`
+   If you face issues while running Java based thirdparty tools from within {term}`TOPPAS.app <TOPPAS>`, run the {term}`TOPPAS.app <TOPPAS>`
    from within the Terminal.app (e.g. with the `open` command) to get access to the path where Java is located.
    Java is usually present in the `PATH` of the terminal. Advanced users can set this path in the `Info.plist` of/inside
    the TOPPAS.app.
