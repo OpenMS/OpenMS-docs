@@ -1,4 +1,5 @@
-# OpenMS User Tutorial
+OpenMS User Tutorial
+====================
 
 ## General Remarks
 
@@ -33,14 +34,13 @@ On macOS, you call:
 - The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(version) }}
 
-Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop the OpenMS folder into your Applications folder.
+Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
 
 ```{note}
 Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
 open, you might need to move them from {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} to e.g. your Desktop and back.
 ```
-
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://www.openms.de/documentation) website.
 
 ```{note}
@@ -48,7 +48,6 @@ If you have installed OpenMS on Linux or macOS via your package
 manager (for instance by installing the {{ '`OpenMS-{0}-Linux.deb`'.format(version) }} package),
 then you need to set the `OPENMS_DATA_PATH` variable to the directory containing the shared data (normally `/usr/share/OpenMS`). This must be done prior to running any TOPP tool.
 ```
-
 #### Installation from the internet
 
 If you are working through this tutorial at home, you can get the installers under the following links:
@@ -56,9 +55,9 @@ If you are working through this tutorial at home, you can get the installers und
 - [OpenMS](https://www.openms.de/download/openms-binaries)
 - [KNIME](https://www.knime.org/downloads/overview)
 - OpenMS prerequisites (Windows-only): After installation, before your first use
-  of the OpenMS plugin in KNIME you will be asked to download it automatically
-  if certain requirements are not found in your Windows registry. Alternatively,
-  you can get a bundled version here.
+of the OpenMS plugin in KNIME you will be asked to download it automatically
+if certain requirements are not found in your Windows registry. Alternatively,
+you can get a bundled version here.
 
 Choose the installers for the platform you are working on.
 
@@ -79,7 +78,6 @@ formats is only possible on Windows systems. In practice, performing the
 conversion to mzML on the acquisition PC connected to the instrument is
 usually the most convenient option.
 ```
-
 To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI (a
 graphical user interface) or `msconvert` (a simple command line tool).
 
@@ -130,58 +128,66 @@ Recently the open-source platform independent ThermoRawFileParser tool has been 
 To learn more about the `ThermoRawFileParser` and how to use it in
 KNIME see <a href="#a-minimal-workflow">A minimal workflow</a>.
 ```
-
 ### Data visualization using TOPPView
 
 Visualizing the data is the first step in quality control, an essential tool in understanding the data, and of course an essential step in pipeline development. OpenMS provides a convenient viewer for some of the data: TOPPView. We will guide you through some of the basic features of TOPPView. Please familiarize yourself with the key controls and visualization methods. We will make use of these later throughout the tutorial. Let’s start with a first look at one of the files of
 our tutorial data set. Note that conceptually, there are no differences in visualizing metabolomic or proteomic data. Here, we inspect a simple proteomic measurement:
 
-|                                                                                                                                                                      ![TOPPView](../images/openms-user-tutorial/introduction/TOPPView.png)                                                                                                                                                                      |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Figure 3: TOPPView, the graphical application for viewing mass spectra and analysis results. Top window shows a small region of a peak map. In this 2D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities. The lower window displays an extracted spectrum (=scan) from the peak map. On the right side, the list of spectra can be browsed. |
+|![TOPPView](../images/openms-user-tutorial/introduction/TOPPView.png)|
+|:--:|
+|Figure 3: TOPPView, the graphical application for viewing mass spectra and analysis results. Top window shows a small region of a peak map. In this 2D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities. The lower window displays an extracted spectrum (=scan) from the peak map. On the right side, the list of spectra can be browsed.|
 
-|                                 ![TOPPView](../images/openms-user-tutorial/introduction/3dview.png)                                 |
-| :---------------------------------------------------------------------------------------------------------------------------------: |
-| Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities. |
+|![TOPPView](../images/openms-user-tutorial/introduction/3dview.png)|
+|:--:|
+|Figure 4: 3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.|
 
 - Start TOPPView (see Windows' Start-Menu or {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
-  of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
-  obtain a global view on the whole LC-MS map - the default option Map view 2D
-  is the correct one and we can click the <kbd>Ok</kbd> button.
+of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
+obtain a global view on the whole LC-MS map - the default option Map view 2D
+is the correct one and we can click the <kbd>Ok</kbd> button.
 
 - Play around.
 
 - Three basic modes allow you to interact with the displayed data: scrolling, zooming and measuring:
-  - **Scroll mode** - Is activated by default (though each loaded spectra file is displayed
-    zoomed out first, so you do not need to scroll). - Allows you to browse your data by moving around in RT and m/z range. - When zoomed in, you can scroll through the spectra. Click-drag on the current view. - Arrow keys can be used to scroll the view as well.
-  - **Zoom mode** - Zooming into the data; either mark an area in the current view with
-    your mouse while holding the left mouse button plus the <kbd>Ctrl</kbd> key to
-    zoom to this area or use your mouse wheel to zoom in and out. - All previous zoom levels are stored in a zoom history. The zoom history
-    can be traversed using <kbd>Ctrl</kbd> + <kbd>+</kbd> or <kbd>Ctrl</kbd> + <kbd>-</kbd> or the mouse wheel (scroll up and down). - Pressing backspace <kbd>←</kbd> zooms out to show the full LC-MS map (and
-    also resets the zoom history).
-  - **Measure mode** - It is activated using the <kbd>⇧ Shift</kbd> key. - Press the left mouse button down while a peak is selected and drag
-    the mouse to another peak to measure the distance between peaks. - This mode is implemented in the 1D and 2D mode only.
+  - **Scroll mode**
+    - Is activated by default (though each loaded spectra file is displayed
+zoomed out first, so you do not need to scroll).
+    - Allows you to browse your data by moving around in RT and m/z range.
+    - When zoomed in, you can scroll through the spectra. Click-drag on the current view.
+    - Arrow keys can be used to scroll the view as well.
+  - **Zoom mode**
+    - Zooming into the data; either mark an area in the current view with
+your mouse while holding the left mouse button plus the <kbd>Ctrl</kbd> key to
+zoom to this area or use your mouse wheel to zoom in and out.
+    - All previous zoom levels are stored in a zoom history. The zoom history
+can be traversed using <kbd>Ctrl</kbd> + <kbd>+</kbd> or <kbd>Ctrl</kbd> + <kbd>-</kbd> or the mouse wheel (scroll up and down).
+    - Pressing backspace <kbd>←</kbd> zooms out to show the full LC-MS map (and
+also resets the zoom history).
+  - **Measure mode**
+    - It is activated using the <kbd>⇧ Shift</kbd> key.
+    - Press the left mouse button down while a peak is selected and drag
+the mouse to another peak to measure the distance between peaks.
+    - This mode is implemented in the 1D and 2D mode only.
 - Right click on your 2D map and select **Switch to 3D mode** and examine your data in 3D mode (see <a href="#figure-4">Fig. 4</a>).
 - Go back to the 2D view. In 2D mode, visualize your data in different intensity normalization modes, use linear , percentage, snap and log-view (icons on
-  the upper left tool bar). You can hover over the icons for additional information.
+the upper left tool bar). You can hover over the icons for additional information.
 
   ```{note}
   On macOS, due to a bug in one of the external libraries used by
   OpenMS, you will see a small window of the 3D mode when switching
   to 2D. Close the 3D tab in order to get rid of it.
   ```
-
 - In TOPPView you can also execute TOPP tools. Go to **Tools** > **Apply tool (whole layer)**
-  and choose a TOPP tool (e.g., `FileInfo`) and inspect the results.
+and choose a TOPP tool (e.g., `FileInfo`) and inspect the results.
 
 Dependent on your data MS/MS spectra can be visualized as well (see <a href="#figure-5">Fig.5</a>) . You can
 do so, by double-click on the MS/MS spectrum shown in scan view
 
-| ![ms2 spectrum](../images/openms-user-tutorial/introduction/ms2_introduction.png) |
-| :-------------------------------------------------------------------------------: |
-|                             Figure 5: MS/MS spectrum                              |
+|![ms2 spectrum](../images/openms-user-tutorial/introduction/ms2_introduction.png)|
+|:--:|
+|Figure 5: MS/MS spectrum|
 
 ### Introduction to KNIME/OpenMS
 
@@ -214,7 +220,7 @@ required by our OpenMS nodes or used in the Tutorials e.g. for visualization and
 6. From the '**Work with**:'' drop-down list select http://update.knime.com/community-contributions/trusted/4.6
 7. Now select the following plugin from the ”KNIME Community Contributions - Cheminformatics” category
    - RDKit KNIME integration
-8. Click on **Next** and follow the instructions and after a restart of KNIME the dependencies will be installed.
+8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
 
 In addition, we need to install `R` for the statistical downstream analysis. Choose the directory that matches your
 operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
@@ -238,7 +244,6 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install()
 BiocManager::install(c("MSstats"))
 ```
-
 In KNIME, click on **KNIME** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
 your installation path. You can use the following settings, if you installed R as described above:
 
@@ -246,7 +251,6 @@ your installation path. You can use the following settings, if you installed R a
 - macOS: `/Library/Frameworks/R.framework/Versions/3.6/Resources`
 
 You are now ready to install the OpenMS nodes.
-
 - Open KNIME.
 - Click on **Help** > **Install New Software**
 
@@ -258,7 +262,6 @@ We included a custom KNIME update site to install the OpenMS KNIME plugins from 
   **Name:** OpenMS {{ version }} UpdateSite
 
   **Location:** {{ '`file:/KNIMEUpdateSite/{0}/`'.format(version) }}
-
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
@@ -277,13 +280,11 @@ can be slow.
   **Name:** OpenMS {{ version }} UpdateSite
 
   **Location:** https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
-
 - After pressing **OK** KNIME will show you all the contents of the added Update Site.
 
 ```{note}
 From now on, you can use this repository for plugins in the **Work with:** drop-drown list.
 ```
-
 - Select the OpenMS nodes in the "Uncategorized" category and click **Next**.
 - Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
   "Community Nodes".
@@ -310,7 +311,6 @@ A typical OpenMS workflow in KNIME can be divided in two conceptually different 
   usually happens with our provided Exporter and Reader nodes (e.g. MzTabExporter followed by MzTabReader).
 
 Nodes can have three different states, indicated by the small traffic light below the node.
-
 - Inactive, failed, and not yet fully configured nodes are marked red.
 - Configured but not yet executed nodes are marked yellow.
 - Successfully executed nodes are marked green.
@@ -324,9 +324,9 @@ this case, or if you want to customize the default configuration in general, you
 node with a double-click on the node. For all OpenMS nodes you will see a configuration dialog like the one shown in
 below figure.
 
-| ![Node configuration dialog of an OpenMS node](../images/openms-user-tutorial/knime-setup/knime_configure_dialog.png) |
-| :-------------------------------------------------------------------------------------------------------------------: |
-|                                 Figure 6: Node configuration dialog of an OpenMS node                                 |
+|![Node configuration dialog of an OpenMS node](../images/openms-user-tutorial/knime-setup/knime_configure_dialog.png)|
+|:--:|
+|Figure 6: Node configuration dialog of an OpenMS node|
 
 ```{tip}
 OpenMS distinguishes between normal parameters and advanced parameters. Advanced parameters are by default hidden from
@@ -345,9 +345,9 @@ nodes connected to this port.
 
 #### Overview of the graphical user interface
 
-| ![The KNIME workbench](../images/openms-user-tutorial/knime-setup/knime_workbench_marked.png) |
-| :-------------------------------------------------------------------------------------------: |
-|                                 Figure 7: The KNIME workbench                                 |
+|![The KNIME workbench](../images/openms-user-tutorial/knime-setup/knime_workbench_marked.png)|
+|:--:|
+|Figure 7: The KNIME workbench|
 
 The graphical user interface (GUI) of KNIME consists of different components or so-called panels that are shown in
 above image. We will briefly introduce the individual panels and their purposes below.
@@ -409,7 +409,7 @@ To be able to share a workflow with others, KNIME supports the import and export
 workflow, select it in the Workflow Explorer and select **File** > **Export KNIME Workflow**. KNIME will export
 workflows as a _knwf_ file containing all the information on nodes, their connections, and their parameter configuration.
 
-Those _knwf_ files can again be imported by selecting: **File** > **Import KNIME Workflow**
+Those *knwf* files can again be imported by selecting: **File** > **Import KNIME Workflow**
 
 ```{note}
 For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
@@ -442,7 +442,7 @@ can also be used to check if all requirements are met and that your system is co
 
 - Create a new workflow.
 - Add an Input File node and an Output Folder node (to be found in **Community Nodes** > **GenericKnimeNodes** > **IO**
-  and a FileInfo node (to be found in the category **Community Node** > **OpenMS** > **File Handling**) to the workflow.
+  and a FileInfo node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
 - Connect the Input File node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
   node.
 
@@ -450,12 +450,11 @@ can also be used to check if all requirements are met and that your system is co
 In case you are unsure about which node port to use, hovering the cursor over the port in question will display the port
 name and what kind of input it expects.
 ```
-
 The complete workflow is shown in below image. `FileInfo` can produce two different kinds of output files.
 
-| ![A minimal workflow calling FileInfo on a single file.](../images/openms-user-tutorial/knime-setup/minimal_FileInfo.svg) |
-| :-----------------------------------------------------------------------------------------------------------------------: |
-|                             Figure 8: A minimal workflow calling `FileInfo` on a single file.                             |
+|![A minimal workflow calling FileInfo on a single file.](../images/openms-user-tutorial/knime-setup/minimal_FileInfo.svg)|
+|:--:|
+|Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
 - All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
   **Browse**. In the file system browser select {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
@@ -464,7 +463,6 @@ The complete workflow is shown in below image. `FileInfo` can produce two differ
 ```{note}
 Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
 ```
-
 - The **Input File** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
   Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
 - Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
@@ -474,7 +472,7 @@ Make sure to use the “tiny” version this time, not “small”, for the sake
   a progress in percent or a moving blue bar, nodes waiting for data show the small word “queued”, and successfully
   executed ones become green. If something goes wrong (e.g., a tool crashes), the light will become red.
 - In order to inspect the results, you can just right-click the Output Folder node and select **View: Open the output folder**
-  You can then open the text file and inspect its contents. You will find some basic information of the data contained
+  You can then open the text file and inspect its contents.  You will find some basic information of the data contained
   in the mzML file, e.g., the total number of spectra and peaks, the RT and m/z range, and how many MS1 and MS2 spectra
   the file contains.
 
@@ -496,9 +494,9 @@ same information on three different files and then write the output files to a f
 
 The complete workflow is shown in below figure.
 
-| ![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](../images/openms-user-tutorial/knime-setup/Minimal_RawFileConverter_Loop.png) |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                    Figure 9: A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop                                     |
+|![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](../images/openms-user-tutorial/knime-setup/Minimal_RawFileConverter_Loop.png)|
+|:--:|
+|Figure 9: A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop|
 
 Execute the workflow and inspect the output as before.
 
@@ -515,13 +513,13 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
 or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
 In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
-Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine(i.e :math:`C_3H_7NO_2`) can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later, all OpenMS tools that perform metabolite
+Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later, all OpenMS tools that perform metabolite
 identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
 and KNIME.
 
-| ![ Workflow to visualize a list of SMILES strings and filter them by predefined substructures](../images/openms-user-tutorial/metabo/structures_filter_workflow.png) |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                Figure 10: Workflow to visualize a list of SMILES strings and filter them by predefined substructures                                 |
+|![ Workflow to visualize a list of SMILES strings and filter them by predefined substructures](../images/openms-user-tutorial/metabo/structures_filter_workflow.png)|
+|:--:|
+|Figure 10: Workflow to visualize a list of SMILES strings and filter them by predefined substructures|
 
 Perform the following steps to build the workflow shown in the above figure. You will use this workflow to visualize a
 list of SMILES strings and filter them by predefined substructures:
@@ -541,11 +539,12 @@ list of SMILES strings and filter them by predefined substructures:
   to a file. Right click **RDKit Functional Group Filter** and select the view ’Molecules passing the filter’ to inspect
   the selected compounds in KNIME. How many compounds pass the chosen filter, see below figure.
 
+
 The following figure shows resulting list of compounds that contains at least one aromatic carboxylic acid group.
 
-| ![Resulting list of compounds that contains at least one aromatic carboxylic acid group](../images/openms-user-tutorial/metabo/structures_filter_results.png) |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                               Figure 11: Resulting list of compounds that contains at least one aromatic carboxylic acid group.                               |
+|![Resulting list of compounds that contains at least one aromatic carboxylic acid group](../images/openms-user-tutorial/metabo/structures_filter_results.png)|
+|:--:|
+|Figure 11:  Resulting list of compounds that contains at least one aromatic carboxylic acid group.|
 
 #### Advanced topic: Metanodes
 
@@ -647,7 +646,7 @@ start from the minimal workflow of the last chapter and, step-by-step, build a l
 ### Peptide identification
 
 As a start, we will extend the minimal workflow so that it performs a peptide identification using the OMSSA[^9] search
-engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to download and
+engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to  download and
 install it yourself.
 
 Let’s start by replacing the input files in our **Input Files** node by the three mzML files in
@@ -669,7 +668,6 @@ different concentrations. [^10]
   You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows">duplicating workflows</a>
   for information on how to create copies of workflows.
   ```
-
 - The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
   will be stored in an idXML file. Now we can run the pipeline and after execution is finished, we can have a first look
   at the the results: just open the input files folder with a file browser and from there open an mzML file in **TOPPView**.
@@ -683,7 +681,6 @@ different concentrations. [^10]
   Opening the output file of `OMSSAAdapter` (the idXML file) directly is also possible, but the direct visusalisation of
   an idXML files is less useful.
   ```
-
 - The search results stored in the idXML file can also be read back into a KNIME table for inspection and subsequent
   analyses: Add a `TextExporter` node from **Community Nodes** > **OpenMS** > **File Handling** to your workflow and
   connect the output port of your `OMSSAAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
@@ -717,7 +714,6 @@ FDR of < 1 %.
   new dialog click **Add**. Then select the newly added modification to open the drop down list where you can select the
   the correct modification.
   ```
-
 - A common step in analysis is to search not only against a regular protein database, but to also search against a decoy
   database for FDR estimation. The fasta file we used before already contains such a decoy database. For OpenMS to know
   which OMSSA PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
@@ -727,13 +723,13 @@ FDR of < 1 %.
   ```{tip}
   You can direct the files of an `Input File` node to more than just one destination port.
   ```
-
-- The decoys in the database are prefixed with “DECOY*”, so we have to set `decoy_string` to `DECOY*`and`decoy_string_position`to`prefix`in the configuration dialog of`PeptideIndexer`.
+- The decoys in the database are prefixed with “DECOY_”, so we have to set `decoy_string` to `DECOY_` and `decoy_string_position`
+  to `prefix` in the configuration dialog of `PeptideIndexer`.
 - Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
   **Community Nodes** > **OpenMS** > **ID Processing**).
 - In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
   Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
-  the `FalseDiscoveryRate` node will go into the _in_ port of the `IDFilter` node.
+  the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
 - Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
   identify at this FDR threshold?
 
@@ -747,9 +743,10 @@ FDR of < 1 %.
 
   The below images shows OMSSA ID pipeline including FDR filtering.
 
-  | ![OMSSA ID pipeline including FDR filtering](../images/openms-user-tutorial/labelfree/PepIdFDR.png) |
-  | :-------------------------------------------------------------------------------------------------: |
-  |                        Figure 12: OMSSA ID pipeline including FDR filtering                         |
+  |![OMSSA ID pipeline including FDR filtering](../images/openms-user-tutorial/labelfree/PepIdFDR.png)|
+  |:--:|
+  |Figure 12: OMSSA ID pipeline including FDR filtering|
+
 
 #### Bonus task: Identification using several search engines
 
@@ -782,9 +779,9 @@ probabilities (PEP) and a combination of the normalized scores by considering mi
 
 In the end, the ID processing part of the workflow can be collapsed into a Metanode to keep the structure clean (see below figure which shows complete consensus identification workflow).
 
-| ![Complete consensus identification workflow](../images/openms-user-tutorial/labelfree/PepConsensusId.png) |
-| :--------------------------------------------------------------------------------------------------------: |
-|                           Figure 13: Complete consensus identification workflow                            |
+|![Complete consensus identification workflow](../images/openms-user-tutorial/labelfree/PepConsensusId.png)|
+|:--:|
+|Figure 13: Complete consensus identification workflow|
 
 ### Quantification
 
@@ -792,22 +789,22 @@ Now that we have successfully constructed a peptide identification pipeline, we 
 add quantification capabilities to our workflow.
 
 - Add a **FeatureFinderCentroided** node from **Community Nodes** > **OpenMS** > **Quantitation**
-  which gets input from the first output port of the **ZipLoopStart** node. Also, add
-  an **IDMapper** node (from **Community Nodes** > **OpenMS** > **ID Processing** ) which receives
-  input from the **FeatureFinderCentroided** node (Port 1) and the ID Metanode (or **IDFilter** node (Port 0) if you haven’t used the Metanode). The output of the **IDMapper** node is then connected to an in port of the **ZipLoopEnd** node.
+which gets input from the first output port of the **ZipLoopStart** node. Also, add
+an **IDMapper** node (from **Community Nodes** > **OpenMS** > **ID Processing** ) which receives
+input from the **FeatureFinderCentroided** node (Port 1) and the ID Metanode (or **IDFilter** node (Port 0) if you haven’t used the Metanode). The output of the **IDMapper** node is then connected to an in port of the **ZipLoopEnd** node.
 - `FeatureFinderCentroided` finds and quantifies peptide ion signals contained in
-  the MS1 data. It reduces the entire signal, i.e., all peaks explained by one and
-  the same peptide ion signal, to a single peak at the maximum of the chromatographic elution profile of the monoisotopic mass trace of this peptide ion and
-  assigns an overall intensity.
+the MS1 data. It reduces the entire signal, i.e., all peaks explained by one and
+the same peptide ion signal, to a single peak at the maximum of the chromatographic elution profile of the monoisotopic mass trace of this peptide ion and
+assigns an overall intensity.
 - `FeatureFinderCentroided` produces a featureXML file as output, containing only quantitative information of so-far unidentified peptide signals. In order to annotate these with the corresponding ID information, we need the **IDMapper** node.
-- Run your pipeline and inspect the results of the **IDMapper** node in TOPPView. Open the mzML file of your data to display the raw peak intensities.
+-  Run your pipeline and inspect the results of the **IDMapper** node in TOPPView. Open the mzML file of your data to display the raw peak intensities.
 - To assess how well the feature finding worked, you can project the features contained in the featureXML file on the raw data contained in the mzML file. To
-  this end, open the featureXML file in TOPPView by clicking on File Open file and add it to a new layer ( Open in New layer ). The features are now visualized on top of your raw data. If you zoom in on a small region, you should be able to see the individual boxes around features that have been detected (see <a href="#figure-14">Fig. 14</a>). If you
-  hover over the the feature centroid (small circle indicating the chromatographic apex of monoisotopic trace) additional information of the feature is displayed.
+this end, open the featureXML file in TOPPView by clicking on File Open file and add it to a new layer ( Open in New layer ). The features are now visualized on top of your raw data. If you zoom in on a small region, you should be able to see the individual boxes around features that have been detected (see <a href="#figure-14">Fig. 14</a>). If you
+hover over the the feature centroid (small circle indicating the chromatographic apex of monoisotopic trace) additional information of the feature is displayed.
 
-  | ![Visualization of detected features (boxes) in TOPPView](../images/openms-user-tutorial/labelfree/featureXML.png) |
-  | :----------------------------------------------------------------------------------------------------------------: |
-  |                         Figure 14: Visualization of detected features (boxes) in TOPPView                          |
+  |![Visualization of detected features (boxes) in TOPPView](../images/openms-user-tutorial/labelfree/featureXML.png)|
+  |:--:|
+  |Figure 14: Visualization of detected features (boxes) in TOPPView|
 
   ```{note}
   The chromatographic RT range of a feature is about 30-60 s and
@@ -815,16 +812,15 @@ add quantification capabilities to our workflow.
   m/z dimension by holding down <kb>Ctrl</kb> ( <kbd>cmd ⌘</kbd> on macOS) and repeatedly
   dragging a narrow box from the very left to the very right
   ```
-
 - You can see which features were annotated with a peptide identification by first
-  selecting the featureXML file in the **Layers** window on the upper right side and then clicking on the icon with the letters A, B and C on the upper icon bar. Now,
-  click on the small triangle next to that icon and select **Peptide identification**.
+selecting the featureXML file in the **Layers** window on the upper right side and then clicking on the icon with the letters A, B and C on the upper icon bar. Now,
+click on the small triangle next to that icon and select **Peptide identification**.
 
 The following image shows the final constructed workflow:
 
-| ![Extended workflow featuring peptide identification and quantification](../images/openms-user-tutorial/labelfree/PepQuantIdNoAlign.png) |
-| :--------------------------------------------------------------------------------------------------------------------------------------: |
-|                             Figure 15: Extended workflow featuring peptide identification and quantification                             |
+|![Extended workflow featuring peptide identification and quantification](../images/openms-user-tutorial/labelfree/PepQuantIdNoAlign.png)|
+|:--:|
+|Figure 15: Extended workflow featuring peptide identification and quantification|
 
 ### Combining quantitative information across several label-free experiments
 
@@ -832,16 +828,15 @@ So far, we successfully performed peptide identification as well as quantificati
 individual LC-MS runs. For differential label-free analyses, however, we need to identify and quantify corresponding signals in different experiments and link them together to compare their intensities. Thus, we will now run our pipeline on all three
 available input files and extend it a bit further, so that it is able to find and link features across several runs.
 
-| ![Complete identification and label-free quantification workflow](../images/openms-user-tutorial/labelfree/PepQuantId.png) |
-| :------------------------------------------------------------------------------------------------------------------------: |
-|                         Figure 16: Complete identification and label-free quantification workflow                          |
+|![Complete identification and label-free quantification workflow](../images/openms-user-tutorial/labelfree/PepQuantId.png)|
+|:--:|
+|Figure 16: Complete identification and label-free quantification workflow|
 
 - To find features across several maps, we first have to align them to correct for retention time shifts between the different label-free measurements. With the **MapAlignerPoseClustering** node in **Community Nodes** > **OpenMS** > **Map Alignment**, we can align corresponding peptide signals to each other as closely as possible by applying a transformation in the RT dimension.
 
   ```{note}
   `MapAlignerPoseClustering` consumes several featureXML files and its output should still be several featureXML files containing the same features, but with the transformed RT values. In its configuration dialog, make sure that **OutputTypes** is set to **featureXML**.
   ```
-
 - With the **FeatureLinkerUnlabeledQT** node in **Community Nodes** > **OpenMS** > **Map Alignment**, we can then perform the actual linking of corresponding features. Its output is a consensusXML file containing linked groups of corresponding features across the different experiments.
 - Since the overall intensities can vary a lot between different measurements (for example, because the amount of injected analytes was different), we apply the **ConsensusMapNormalizer** node in **Community Node** > **OpenMS** > **Map Alignment** as a last processing step. Configure its parameters with setting `algorithm_type` to `median`. It will then normalize the maps in such a way that the median intensity of all input maps is equal.
 - Finally, export the resulting normalized consensusXML file to a csv format using the **TextExporter** node. Connect its out port to a new **Output Folder** node.
@@ -868,15 +863,14 @@ For downstream analysis of the quantification results within the KNIME environme
   x <- log10(x)       # compute log of all values
   knime.out <- x      # write result to output table
   ```
-
 - Now we are ready to plot! Add a **Box Plot (local)** node `Views -Swing (local)` after the **R Snippet** node, execute it, and open its view. If everything went well, you should see a significant fold change of your human peptide intensities across the three runs.
 - To verify that the concentration of background peptides is constant in all three runs, copy and paste the three nodes after **Row Splitter** and connect the duplicated **Column Filter** to the second output port (Filtered Out) of **Row Splitter**, as shown in <a href="#figure-17">Fig. 17</a>. Execute and open the view of your second **Box Plot**.
 
 You have now constructed an entire identification and label-free quantification workflow including a simple data analysis using KNIME. The final workflow should like the workflow shown in the following image:
 
-| ![Simple KNIME data analysis example for LFQ](../images/openms-user-tutorial/labelfree/data_analysis.png) |
-| :-------------------------------------------------------------------------------------------------------: |
-|                           Figure 17: Simple KNIME data analysis example for LFQ                           |
+|![Simple KNIME data analysis example for LFQ](../images/openms-user-tutorial/labelfree/data_analysis.png)|
+|:--:|
+|Figure 17: Simple KNIME data analysis example for LFQ|
 
 ### Identification and quantification of the iPRG2015 data with subsequent MSstats analysis
 
@@ -900,7 +894,7 @@ information.
 The iPRG (Proteome Informatics Research Group) dataset from the study in 2015, as
 described in [^12], aims at evaluating the effect of statistical analysis software on the
 accuracy of results on a proteomics label-free quantification experiment. The data is
-based on four artificial samples with known composition (background: 200 ng _S. cerevisiae_). These were spiked with different quantities of individual digested proteins,
+based on four artificial samples with known composition (background: 200 ng *S. cerevisiae*). These were spiked with different quantities of individual digested proteins,
 whose identifiers were masked for the competition as yeast proteins in the provided
 database (see <a href="#table-1">Table 1</a>).
 
@@ -910,7 +904,6 @@ database (see <a href="#table-1">Table 1</a>).
 
 <a id="x1-32001r1"></a>
 <a id="x1-32002"></a>
-
 <figcaption class="caption"><span class="id">Table&nbsp;1: Samples (background: 200 ng <i>S.&nbsp;cerevisiae</i>) with spiked-in proteins <br> in different
 quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 <div class="tabular">
@@ -930,9 +923,9 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 
 #### Identification and quantification
 
-| ![KNIME data analysis of iPRG LFQ data](../images/openms-user-tutorial/labelfree/iPRG_lfq.png) |
-| :--------------------------------------------------------------------------------------------: |
-|                        Figure 18: KNIME data analysis of iPRG LFQ data.                        |
+|![KNIME data analysis of iPRG LFQ data](../images/openms-user-tutorial/labelfree/iPRG_lfq.png)|
+|:--:|
+|Figure 18: KNIME data analysis of iPRG LFQ data.|
 
 The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
 {path}`ExampleData,iPRG2015,database,iPRG2015targetdecoynocontaminants.fasta`
@@ -950,11 +943,12 @@ As mentioned before, the downstream analysis can be performed using `MSstats`. I
 
 <div class="table" id="table-2">
 
+
 <!-- l. 1238 --><p class="indent">   </p><figure class="float">
+
 
 <a id="x1-34001r2"></a>
 <a id="x1-34002"></a>
-
 <figcaption class="caption"><span class="id">Table&nbsp;2: OpenMS Experimental design for the iPRG2015 dataset.</span></figcaption><!-- tex4ht:label?: x1-34001r3  -->
 <div class="tabular"> <table class="tabular" id="TBL-2"><colgroup id="TBL-2-1g"><col id="TBL-2-1"><col id="TBL-2-2"><col id="TBL-2-3"><col id="TBL-2-4"><col id="TBL-2-5"></colgroup><tbody><tr id="TBL-2-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"> <span class="rm-lmr-10x-x-109">Fraction_Group  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"> <span class="rm-lmr-10x-x-109">Fraction                </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-3"> <span class="rm-lmr-10x-x-109">Spectra_Filepath        </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-4"> <span class="rm-lmr-10x-x-109">Label  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-1-5"> <span class="rm-lmr-10x-x-109">Sample  </span></td>
 </tr><tr id="TBL-2-2-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"> <span class="rm-lmr-10x-x-109">1                      </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"> <span class="rm-lmr-10x-x-109">1                         </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"> <span class="rm-lmr-10x-x-109">Sample1-A                </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-4"> <span class="rm-lmr-10x-x-109">1       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-2-5"> <span class="rm-lmr-10x-x-109">1          </span></td>
@@ -985,6 +979,7 @@ As mentioned before, the downstream analysis can be performed using `MSstats`. I
 </tr><tr id="TBL-2-27-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-27-1"> <span class="rm-lmr-10x-x-109">11                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-27-2"> <span class="rm-lmr-10x-x-109">4                         </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-27-3"> <span class="rm-lmr-10x-x-109">11                            </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-27-4">       </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-27-5">        </td>
 </tr><tr id="TBL-2-28-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-28-1"> <span class="rm-lmr-10x-x-109">12                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-28-2"> <span class="rm-lmr-10x-x-109">4                         </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-28-3"> <span class="rm-lmr-10x-x-109">12                            </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-28-4">       </td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-2-28-5">        </td></tr></tbody></table></div>
 
+
    </figure>
    </div>
 
@@ -992,11 +987,12 @@ An explanation of the variables can be found in <a href="#table-3">Table 3</a>.
 
 <div class="table">
 
+
 <!-- l. 1275 --><p class="indent">   </p><figure class="float">
+
 
 <a id="x1-34003r3"></a>
 <a id="x1-34004"></a>
-
 <figcaption class="caption"><span class="id">Table&nbsp;3: Explanation of the column of the experimental design table</span></figcaption><!-- tex4ht:label?: x1-34003r3  -->
 
  <table class="tabular" id="TBL-5"><colgroup id="TBL-5-1g"><col id="TBL-5-1"><col id="TBL-5-2"></colgroup><tbody><tr id="TBL-5-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-5-1-1"> <strong>variables</strong>        </td><td class="td11" style="white-space:normal; text-align:left;" id="TBL-5-1-2"> <!-- l. 1293 --><p class="noindent"><strong>value</strong>                                                                         </p></td>
@@ -1013,6 +1009,7 @@ An explanation of the variables can be found in <a href="#table-3">Table 3</a>.
   </span><span class="rm-lmr-10x-x-109">MSstats_BioReplicate)</span>                                                              </p></td>
 
 </tr></tbody></table>
+
 
    </figure>
    </div>
@@ -1031,20 +1028,20 @@ This file was generated by using the {path}`Workflows,openmsLFQiPRG2015.knwf` wo
 
 Adjust the parameters in the config dialog of the converter to match the given experimental design file and to use a simple summing for peptides that elute in multiple features (with the same charge state, i.e. m/z value).
 
-|                                    **parameter** | **value**            |
-| -----------------------------------------------: | :------------------- |
-|                           _msstats_bioreplicate_ | MSstats_Bioreplicate |
-|                              _msstats_condition_ | MSstats_Condition    |
-|                     _labeled_reference_peptides_ | false                |
-| _retention_time_summarization_method (advanced)_ | sum                  |
+|**parameter**|**value**|
+|------------:|:--------|
+|*msstats_bioreplicate*|MSstats_Bioreplicate|
+|*msstats_condition*|MSstats_Condition|
+|*labeled_reference_peptides*|false|
+|*retention_time_summarization_method (advanced)*|sum|
 
 The downstream analysis of the peptide ions with `MSstats` is performed in several steps. These steps are reflected by several KNIME R nodes, which consume the output of **MSstatsConverter**. The outline of the workflow is shown in <a href="#figure-19">Figure 19</a>.
 
-|                                             ![MSstats analysis using KNIME](../images/openms-user-tutorial/labelfree/MSstats.png)                                             |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Figure 19: MSstats analysis using KNIME. The individual steps (Preprocessing, Group Comparisons, Result Data Renaming, and Export) are split among several consecutive nodes. |
+|![MSstats analysis using KNIME](../images/openms-user-tutorial/labelfree/MSstats.png)|
+|:--:|
+|Figure 19: MSstats analysis using KNIME. The individual steps (Preprocessing, Group Comparisons, Result Data Renaming, and Export) are split among several consecutive nodes.|
 
-We load the file resulting from **MSStatsConverter** either by saving it with an **Output File** node and reloading it with the **File Reader**. Alternatively, for advanced users, you can use a URI Port to Variable node and use the variable in the File Reader config dialog (**V** button - located on the right of the **Browse** button) to read from the temporary file.
+We load the file resulting from **MSStatsConverter** either by saving it with an **Output File** node and reloading it with the **File Reader**.  Alternatively, for advanced users, you can use a URI Port to Variable node and use the variable in the File Reader config dialog (**V** button - located on the right of the **Browse** button) to read from the temporary file.
 
 ##### Preprocessing
 
@@ -1062,7 +1059,6 @@ In the same node, most importantly, the following line transforms the data into 
 ```r
 processed.quant <- dataProcess(quant, censoredInt = 'NA')
 ```
-
 Here, `dataProcess` is one of the most important functions that the R package provides. The function performs the following steps:
 
 1. Logarithm transformation of the intensities
@@ -1075,7 +1071,7 @@ In this example, we just state that missing intensity values are represented by 
 
 ##### Group Comparison
 
-The goal of the analysis is the determination of differentially-expressed proteins among the different conditions C1-C4. We can specify the comparisons that we want to make in a _comparison_ matrix. For this, let’s consider the following example:
+The goal of the analysis is the determination of differentially-expressed proteins among the different conditions C1-C4. We can specify the comparisons that we want to make in a *comparison* matrix. For this, let’s consider the following example:
 
 ![comparison matrix](../images/openms-user-tutorial/labelfree/handout-clean129x.svg)
 
@@ -1083,6 +1079,7 @@ This matrix has the following properties:
 
 - The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
 - The entries of each row consist of exactly one 1 and one -1, the others must be 0.
+<<<<<<< HEAD
 - The condition with the entry `1` constitutes the enumerator of the :math:`\log_2` fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
 
 :math:`\log_2 \frac{C_{2}}{C_{1}}`
@@ -1093,16 +1090,22 @@ This matrix has the following properties:
 ```
 -->
 
+=======
+- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
+```{math}
+ \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
+```
+>>>>>>> parent of c65975c (Added the chemical structure)
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
 ```r
-comparison1<-matrix(c(-1,1,0,0),nrow=1)
+comparison1<-matrix(c(-1,1,0,0),nrow=1)   
 comparison2<-matrix(c(-1,0,1,0),nrow=1)
 
-comparison3<-matrix(c(-1,0,0,1),nrow=1)
+comparison3<-matrix(c(-1,0,0,1),nrow=1)  
 comparison4<-matrix(c(0,-1,1,0),nrow=1)
 
-comparison5<-matrix(c(0,-1,0,1),nrow=1)
+comparison5<-matrix(c(0,-1,0,1),nrow=1)  
 comparison6<-matrix(c(0,0,-1,1),nrow=1)
 
 comparison <- rbind(comparison1, comparison2, comparison3, comparison4, comparison5, comparison6)
@@ -1115,7 +1118,6 @@ In MSstats, the group comparison is then performed with the following line:
 ```r
 test.MSstats <- groupComparison(contrast.matrix=comparison, data=processed.quant)
 ```
-
 No more parameters need to be set for performing the comparison.
 
 ##### Result processing
@@ -1123,22 +1125,22 @@ No more parameters need to be set for performing the comparison.
 In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in <a href="#figure-20">Figure 20</a>:
 
 ```r
-  test.MSstats.cr <- test.MSstats$ComparisonResult
+  test.MSstats.cr <- test.MSstats$ComparisonResult   
 
 
-  # Rename spiked ins to A,B,C....
+  # Rename spiked ins to A,B,C....  
   pnames <- c("A", "B", "C", "D", "E", "F")
 
-  names(pnames) <- c(
-  "sp|P44015|VAC2_YEAST",
+  names(pnames) <- c(  
+  "sp|P44015|VAC2_YEAST",  
   "sp|P55752|ISCB_YEAST",
 
-  "sp|P44374|SFG2_YEAST",
-  "sp|P44983|UTR6_YEAST",
+  "sp|P44374|SFG2_YEAST",  
+  "sp|P44983|UTR6_YEAST",  
   "sp|P44683|PGA4_YEAST",
 
-  "sp|P55249|ZRT4_YEAST"
-  )
+  "sp|P55249|ZRT4_YEAST"  
+  )  
 
   test.MSstats.cr.spikedins <- bind_rows(
 
@@ -1152,8 +1154,8 @@ In a next R to R node, the results are being processed. The following code snipp
 
   test.MSstats.cr[grep("P44983", test.MSstats.cr$Protein),],
 
-  test.MSstats.cr[grep("P55249", test.MSstats.cr$Protein),]
-  )
+  test.MSstats.cr[grep("P55249", test.MSstats.cr$Protein),]  
+  )  
   # Rename Proteins
 
   test.MSstats.cr.spikedins$Protein <- sapply(test.MSstats.cr.spikedins$Protein, function(x) {pnames[as.character(x)]})
@@ -1163,13 +1165,13 @@ In a next R to R node, the results are being processed. The following code snipp
   test.MSstats.cr$Protein <- sapply(test.MSstats.cr$Protein, function(x) {
 
 
-    x <- as.character(x)
+    x <- as.character(x)  
 
     if (x %in% names(pnames)) {
 
 
-      return(pnames[as.character(x)])
-      } else {
+      return(pnames[as.character(x)])  
+      } else {  
       return("")
 
     }
@@ -1182,7 +1184,7 @@ In a next R to R node, the results are being processed. The following code snipp
 The last four nodes, each connected and making use of the same workspace from the last node, will export the results to a textual representation and volcano plots for further inspection. Firstly, quality control can be performed with the following snippet:
 
 ```r
-qcplot <- dataProcessPlots(processed.quant, type="QCplot",
+qcplot <- dataProcessPlots(processed.quant, type="QCplot",   
         ylimDown=0,
 
 which.Protein = 'allonly',
@@ -1200,13 +1202,11 @@ groupComparisonPlots(data=test.MSstats.cr, type="VolcanoPlot",
                     which.Comparison = "C2-C1",
                     address=F)
 ```
-
 The last two nodes export the `MSstats` results as a KNIME table for potential further analysis or for writing it to a (e.g. csv) file. Note that you could also write output inside the Rscript if you are familiar with it. Use the following for an **R to Table** node exporting all results:
 
 ```r
 knime.out <- test.MSstats.cr
 ```
-
 And this for an **R to Table** node exporting only results for the spike-ins:
 
 ```r
@@ -1217,9 +1217,9 @@ knime.out <- test.MSstats.cr.spikedins
 
 An excerpt of the main result of the group comparison can be seen in <a href="#figure-20">Figure 20</a>.
 
-| ![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png) ![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png) |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
-|              Figure 20: Volcano plots produced by the Group Comparison in MSstats The dotted line indicates an adjusted p-value threshold               |
+|![Volcano plots c2_c1](../images/openms-user-tutorial/labelfree/c2_c1-.png) ![Volcano plots c3_c2](../images/openms-user-tutorial/labelfree/c3_c2-.png)|
+|:--:|
+|Figure 20: Volcano plots produced by the Group Comparison in MSstats The dotted line indicates an adjusted p-value threshold|
 
 The Volcano plots show differently expressed spiked-in proteins. In the left plot, which shows the fold-change C2-C1, we can see the proteins D and F (`sp|P44983|UTR6_YEAST` and `sp|P55249|ZRT4_YEAST`) are significantly over-expressed in C2, while the proteins B,C, and E (`sp|P55752|ISCB_YEAST`, `sp|P55752|ISCB_YEAST`, and `sp|P44683|PGA4_YEAST`) are under-expressed. In the right plot, which shows the fold-change ratio of C3 vs. C2, we can see the proteins E and C (`sp|P44683|PGA4_YEAST` and `sp|P44374|SFG2_YEAST`) over-expressed and the proteins A and F (`sp|P44015|VAC2_YEAST` and `sp|P55249|ZRT4_YEAST`) under-expressed. The plots also show further differentially-expressed proteins, which do not belong to the spiked-in proteins.
 
@@ -1240,13 +1240,13 @@ We have made the following changes compared to the original label-free quantific
 - First, we have added a **ProteinQuantifier** node and connected its input port to the output port of the **ConsensusMapNormalizer** node.
 - This already enables protein quantification. **ProteinQuantifier** quantifies peptides by summarizing over all observed charge states and proteins by summarizing over their quantified peptides. It stores two output files, one for the quantified peptides and one for the proteins.
 - In this example, we consider only the protein quantification output file, which is written to the first output port of **ProteinQuantifier**.
-- Because there is no dedicated node in KNIME to read back the **ProteinQuantifier** output file format into a KNIME table, we have to use a workaround. Here, we have added an additional URI Port to Variable node which converts the name of the output file to a so-called “flow variable” in KNIME. This variable is passed on to the next node **CSV Reader**, where it is used to specify the name of the input file to be read. If you double-click on **CSV Reader**, you will see that the text field, where you usually enter the location of the CSV file to be read, is greyed out. Instead, the flow variable is used to specify the location, as indicated by the small green button with the “v=?” label on the right.
+-  Because there is no dedicated node in KNIME to read back the **ProteinQuantifier** output file format into a KNIME table, we have to use a workaround. Here, we have added an additional URI Port to Variable node which converts the name of the output file to a so-called “flow variable” in KNIME. This variable is passed on to the next node **CSV Reader**, where it is used to specify the name of the input file to be read. If you double-click on **CSV Reader**, you will see that the text field, where you usually enter the location of the CSV file to be read, is greyed out. Instead, the flow variable is used to specify the location, as indicated by the small green button with the “v=?” label on the right.
 - The table containing the **ProteinQuantifier** results is filtered one more time in order to remove decoy proteins. You can have a look at the final list of quantified protein groups by right-clicking the **Row Filter** and selecting **Filtered**.
 - By default, i.e., when the second input port `protein_groups` is not used, **ProteinQuantifier** quantifies proteins using only the unique peptides, which usually results in rather low numbers of quantified proteins.
 - In this example, however, we have performed protein inference using Fido and
-  used the resulting protein grouping information to also quantify indistinguishable proteins. In fact, we also used a greedy method in **FidoAdapter** (parameter `greedy_group_resolution`) to uniquely assign the peptides of a group to the most probable protein(s) in the respective group. This boosts the number of quantifications but slightly raises the chances to yield distorted protein quantities.
+used the resulting protein grouping information to also quantify indistinguishable proteins. In fact, we also used a greedy method in **FidoAdapter** (parameter `greedy_group_resolution`) to uniquely assign the peptides of a group to the most probable protein(s) in the respective group. This boosts the number of quantifications but slightly raises the chances to yield distorted protein quantities.
 - As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
-  set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
+set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
 - Next, we have added a third outgoing connection to our ID meta node and connected it to the second input port of **ZipLoopEnd**. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
 - Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **ID Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
 
@@ -1259,14 +1259,14 @@ In the following section, we will explain the subworkflow contained in the **Pro
 For downstream analysis on the protein ID level in KNIME, it is again necessary to convert the idXML-file-format result generated from **FidoAdapter** into a KNIME table.
 
 - We use the **MzTabExporter** to convert the inference results from **FidoAdapter** to a human readable, tab-separated mzTab file. mzTab contains multiple sections,
-  that are all exported by default, if applicable. This file, with its different sections can again be read by the **MzTabReader** that produces one output in KNIME table
-  format (triangle ports) for each section. Some ports might be empty if a section did not exist. Of course, we continue by connecting the downstream nodes with the protein section output (second port).
+that are all exported by default, if applicable. This file, with its different sections can again be read by the **MzTabReader** that produces one output in KNIME table
+format (triangle ports) for each section. Some ports might be empty if a section did not exist. Of course, we continue by connecting the downstream nodes with the protein section output (second port).
 - Since the protein section contains single proteins as well as protein groups, we filter them for single proteins with the standard **Row Filter**.
 
 #### ROC curve of protein ID
 
 ROC Curves (Receiver Operating Characteristic curves) are graphical plots that visualize sensitivity (true-positive rate) against fall-out (false positive rate). They are often used to judge the quality of a discrimination method like e.g., peptide or protein identification engines. ROC Curve already provides the functionality of drawing ROC curves for binary classification problems. When configuring this node, select the `opt_global_target_decoy` column as the class (i.e. target outcome) column. We want to find out, how good our inferred protein probability discriminates between them,
-therefore add `best_search_engine_score[1]` (the inference engine score is treated like a peptide search engine score) to the list of _”Columns containing positive class probabilities”_. View the plot by right-clicking and selecting **View: ROC Curves**. A perfect classifier has
+therefore add `best_search_engine_score[1]` (the inference engine score is treated like a peptide search engine score) to the list of *”Columns containing positive class probabilities”*. View the plot by right-clicking and selecting **View: ROC Curves**. A perfect classifier has
 an area under the curve (AUC) of 1.0 and its curve touches the upper left of the plot. However, in protein or peptide identification, the ground-truth (i.e., which target
 identifications are true, which are false) is usually not known. Instead, so called pseudoROC Curves are regularly used to plot the number of target proteins against the false
 discovery rate (FDR) or its protein-centric counterpart, the q-value. The FDR is approximated by using the target-decoy estimate in order to distinguish true IDs from
@@ -1337,11 +1337,12 @@ The experimental design in table format allows for `MSstatsTMT` compatible expor
 
 <div class="table" id="table-4">
 
+
 <!-- l. 1737 --><p class="indent">   </p><figure class="float">
+
 
 <a id="x1-50003r4"></a>
 <a id="x1-50004"></a>
-
 <figcaption class="caption"><span class="id">Table&nbsp;4: </span><span class="content">Experimental Design 1
 </span></figcaption><!-- tex4ht:label?: x1-50003r5  -->
  <table class="tabular" id="TBL-7"><colgroup id="TBL-7-1g"><col id="TBL-7-1"><col id="TBL-7-2"><col id="TBL-7-3"><col id="TBL-7-4"><col id="TBL-7-5"></colgroup><tbody><tr id="TBL-7-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-1-1">  <span class="rm-lmr-6">Spectra_Filepath                                                                   </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-1-2">  <span class="rm-lmr-6">Fraction  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-1-3">  <span class="rm-lmr-6">Label  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-1-4">  <span class="rm-lmr-6">Fraction_Group  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-7-1-5">  <span class="rm-lmr-6">Sample  </span></td>
@@ -1378,13 +1379,15 @@ The experimental design in table format allows for `MSstatsTMT` compatible expor
   </figure>
   </div>
 
+
    <div class="table" id="table-5">
+
 
    <!-- l. 1777 --><p class="indent">   </p><figure class="float">
 
-<a id="x1-50005r5"></a>
-<a id="x1-50006"></a>
 
+   <a id="x1-50005r5"></a>
+   <a id="x1-50006"></a>
    <figcaption class="caption"><span class="id">Table&nbsp;5: Experimental Design 2 </span></figcaption><!-- tex4ht:label?: x1-50005r5  -->
     <table class="tabular" id="TBL-8"><colgroup id="TBL-8-1g"><col id="TBL-8-1"><col id="TBL-8-2"><col id="TBL-8-3"><col id="TBL-8-4"><col id="TBL-8-5"></colgroup><tbody><tr id="TBL-8-1-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-1">  <span class="rm-lmr-6">Sample  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-2">  <span class="rm-lmr-6">MSstats_Condition  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-3">  <span class="rm-lmr-6">MSstats_BioReplicate  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-4">  <span class="rm-lmr-6">MSstats_Mixture  </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-1-5">  <span class="rm-lmr-6">LabelName  </span></td>
    </tr><tr id="TBL-8-2-"><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-1">  <span class="rm-lmr-6">1           </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-2">  <span class="rm-lmr-6">Norm                    </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-3">  <span class="rm-lmr-6">Norm                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-4">  <span class="rm-lmr-6">1                       </span></td><td class="td11" style="white-space:nowrap; text-align:left;" id="TBL-8-2-5">  <span class="rm-lmr-6">126            </span></td>
@@ -1451,13 +1454,13 @@ processed.data <- OpenMStoMSstatsTMTFormat(data)
 Afterwards different normalization steps are performed (global, protein, runs) as well as data imputation by using the msstats method. In addition peptide level data is summarized to protein level data.
 
 ```r
-quant.data <- proteinSummarization(processed.data,
+quant.data <- proteinSummarization(processed.data,   
                                   method="msstats",
 
-                                  global_norm=TRUE,
+                                  global_norm=TRUE,  
                                   reference_norm=TRUE,
 
-                                  MBimpute = TRUE,
+                                  MBimpute = TRUE,  
                                   maxQuantileforCensored = NULL,
 
                                   remove_norm_channel = TRUE,
@@ -1469,25 +1472,25 @@ There a lot of different possibilities to configure this method please have a lo
 The next step is the comparions of the different conditions, here either a pairwise comparision can be performed or a confusion matrix can be created. The goal is to detect and compare the UPS peptides spiked in at different concentrations.
 
 ```r
-# prepare contrast matrix
-unique(quant.data$Condition)
+# prepare contrast matrix   
+unique(quant.data$Condition)  
 
 comparison<-matrix(c(-1,0,0,1,
 
-                     0,-1,0,1,
+                     0,-1,0,1,  
                      0,0,-1,1,
 
-                     0,1,-1,0,
-                     1,-1,0,0), nrow=5, byrow = T)
+                     0,1,-1,0,  
+                     1,-1,0,0), nrow=5, byrow = T)  
 
 
-# Set the names of each row
+# Set the names of each row  
 row.names(comparison)<- contrasts <- c("1-0125",
 
-                                       "1-05",
+                                       "1-05",  
                                        "1-0667",
 
-                                       "05-0667",
+                                       "05-0667",  
                                        "0125-05")
 
 # Set the column names
@@ -1497,7 +1500,7 @@ colnames(comparison)<- c("0.125", "0.5", "0.667", "1")
 The constructed confusion matrix is used in the `groupComparisonTMT` function to test for significant changes in protein abundance across conditions based on a family of linear mixed-effects models in TMT experiments.
 
 ```r
-data.res <- groupComparisonTMT(data = quant.data,
+data.res <- groupComparisonTMT(data = quant.data,   
                                contrast.matrix = comparison,
 
                                moderated = TRUE, # do moderated t test
@@ -1509,7 +1512,7 @@ data.res <- data.res %>% filter(!is.na(Protein))
 In the next step the comparison can be plotted using the `groupComparisonPlots` function by `MSstats`.
 
 ```r
-library(MSstats)
+library(MSstats)  
 groupComparisonPlots(data=data.res.mod, type="VolcanoPlot", address=F, which.Comparison = "0125-05", sig = 0.05)
 ```
 
@@ -1541,8 +1544,8 @@ have very different isotopic distributions. To group small molecule mass traces 
 - Create a new workflow called for instance ”Metabolomics”.
 - Add an **Input File** node and configure it with one mzML file from the {path}`Example_Data,Metabolomics,datasets`.
 - Add a **FeatureFinderMetabo** node (from **Community Nodes** > **OpenMS** > **Quantitation**) and
-  connect the first output port of the **Input File** to the **FeatureFinderMetabo**.
-- For an optimal result adjust the following settings. Please note that some of these are advanced parameters.
+connect the first output port of the **Input File** to the **FeatureFinderMetabo**.
+-  For an optimal result adjust the following settings. Please note that some of these are advanced parameters.
 - Connect a **Output Folder** to the output of the **FeatureFinderMetabo** (see <a href="#figure-27">Fig. 27</a>).
 
 (Figure_27)=
@@ -1552,21 +1555,21 @@ have very different isotopic distributions. To group small molecule mass traces 
 
 In the following advanced parameters will be highlighted. These parameter can be altered if the `Show advanced parameter` field in the specific tool is activated.
 
-| **parameter**                                   | **value**   |
-| :---------------------------------------------- | :---------- |
-| *algorithm*→*common*→*chrom_fwhm*               | 8.0         |
-| *algorithm*→*mtd*→*trace_termination_criterion* | sample_rate |
-| *algorithm*→*mtd*→*min_trace_length*            | 3.0         |
-| *algorithm*→*mtd*→*max_trace_length*            | 600.0       |
-| *algorithm*→*epd*→*width_filtering*             | off         |
-| *algorithm*→*ffm*→*report_convex_hulls*         | true        |
+|**parameter**|**value**|
+|:------------|:--------|
+|*algorithm*→*common*→*chrom_fwhm*|8.0|
+|*algorithm*→*mtd*→*trace_termination_criterion*|sample_rate|
+|*algorithm*→*mtd*→*min_trace_length*|3.0|
+|*algorithm*→*mtd*→*max_trace_length*|600.0|
+|*algorithm*→*epd*→*width_filtering*|off|
+|*algorithm*→*ffm*→*report_convex_hulls*|true|
 
 The parameters change the behavior of **FeatureFinderMetabo** as follows:
 
 - **chrom_fwhm**: The expected chromatographic peak width in seconds.
 - **trace_termination_criterion**: In the first stage **FeatureFinderMetabo** assembles
-  mass traces with a pre-defined mass accuracy. If this parameter is set to ’outlier’, the extension of a mass trace is stopped after a predefined number of consecutive outliers is found. If this parameter is set to ’sample_rate’, the extension of a mass trace is stopped once the ratio of collected peaks versus visited spectra falls below the ratio given by `min_sample_rate`.
-- **min_trace_length**: Minimal length of a mass trace in seconds. Choose a small value, if you want to identify low-intensity compounds.
+mass traces with a pre-defined mass accuracy. If this parameter is set to ’outlier’, the extension of a mass trace is stopped after a predefined number of consecutive outliers is found. If this parameter is set to ’sample_rate’, the extension of a mass trace is stopped once the ratio of collected peaks versus visited spectra falls below the ratio given by `min_sample_rate`.
+-  **min_trace_length**: Minimal length of a mass trace in seconds. Choose a small value, if you want to identify low-intensity compounds.
 - **max_trace_length**: Maximal length of a mass trace in seconds. Set this parameter to -1 to disable the filtering by maximal length.
 - **width_filtering**: **FeatureFinderMetabo** can remove features with unlikely peak widths from the results. If activated it will use the interval provided by the parameters `min_fwhm` and `max_fwhm`.
 - **report_convex_hulls**: If set to true, convex hulls including mass traces will be reported for all identified features. This increases the output size considerably.
@@ -1606,19 +1609,18 @@ To facilitate the collection of features corresponding to the same compound ion 
 
 - After the **ZipLoopEnd** node, add a **MapAlignerPoseClustering** node (**Community Nodes**>**OpenMS**>**Map Alignment**), set its Output Type to featureXML, and adjust the following settings:
 
-| **parameter**                                                 | **value** |
-| :------------------------------------------------------------ | :-------- |
-| _algorithm_ → _max_num_peaks_considered_                      | −1        |
-| _algorithm_ → _superimposer_ → _mz_pair_max_distance_         | 0.005     |
-| _algorithm_ → _superimposer_ → _num_used_points_              | 10000     |
-| _algorithm_ → _pairfinder_ → _distance_RT_ → _max_difference_ | 20.0      |
-| _algorithm_ → _pairfinder_ → _distance_MZ_ → _max_difference_ | 20.0      |
-| _algorithm_ → _pairfinder_ → _distance_MZ_ → _unit_           | ppm       |
+|**parameter**|	**value**|
+|:------------|:---------|
+|*algorithm* → *max_num_peaks_considered*|	−1|
+|*algorithm* → *superimposer* → *mz_pair_max_distance*|	0.005|
+|*algorithm* → *superimposer* → *num_used_points*|	10000|
+|*algorithm* → *pairfinder* → *distance_RT* → *max_difference*|	20.0|
+|*algorithm* → *pairfinder* → *distance_MZ* → *max_difference*|	20.0|
+|*algorithm* → *pairfinder* → *distance_MZ* → *unit*|	ppm|
 
 `MapAlignerPoseClustering` provides an algorithm to align the retention time scales of multiple input files, correcting shifts and distortions between them. Retention time adjustment may be necessary to correct for chromatography differences e.g. before data from multiple LC-MS runs can be combined (feature linking). The alignment algorithm implemented here is the pose clustering algorithm.
 
 The parameters change the behavior of `MapAlignerPoseClustering` as follows:
-
 - **max_num_peaks_considered**: The maximal number of peaks/features to be considered per map. To use all, set this parameter to -1.
 - **mz_pair_max_distance**: Maximum of m/z deviation of corresponding elements in different maps. This condition applies to the pairs considered in hashing.
 - **num_used_points**: Maximum number of elements considered in each map (selected by intensity). Use a smaller number to reduce the running time and to disregard weak signals during alignment.
@@ -1634,6 +1636,7 @@ The next step after retention time correction is the grouping of corresponding f
 |Figure 33: Features A and B correspond to the same analyte. The linking of features between runs (indicated by an arrow) allows comparing feature intensities.|
 
 - After the **MapAlignerPoseClustering** node, add a **FeatureLinkerUnlabeledQT** node (**Community Nodes** > **OpenMS**>**Map Alignment**) and adjust the following settings:
+<<<<<<< HEAD
   | **parameter** | **value** |
   | :--------------------------------------------- | :-------- |
   | _algorithm_ → _distance_RT_ → _max_difference_ | 40 |
@@ -1643,6 +1646,21 @@ The next step after retention time correction is the grouping of corresponding f
   - **distance_RT → max_difference**: Features that have a larger RT difference will never be paired.
   - **distance_MZ → max_difference**: Features that have a larger m/z difference will never be paired.
   - **distance_MZ → unit**: Unit used for the parameter distance_MZ max_difference, either Da or ppm.
+=======
+    
+    |**parameter**|**value**|
+    |:------------|:--------|
+    |*algorithm* → *distance_RT* → *max_difference*|40|
+    |*algorithm* → *distance_MZ* → *max_difference*|20|
+    |*algorithm* → *distance_MZ* → *unit*|ppm|
+    
+    The parameters change the behavior of **FeatureLinkerUnlabeledQT** as follows (similar to the parameters we adjusted for **MapAlignerPoseClustering**):
+    
+    - **distance_RT → max_difference**: Features that have a larger RT difference will never be paired.
+    - **distance_MZ → max_difference**: Features that have a larger m/z difference will never be paired.
+    - **distance_MZ → unit**: Unit used for the parameter distance_MZ max_difference, either Da or ppm.
+    
+>>>>>>> parent of c65975c (Added the chemical structure)
 - After the **FeatureLinkerUnlabeledQT** node, add a **TextExporter** node (**Community Nodes** > **OpenMS** > **File Handling**).
 - Add an **Output Folder** node and configure it with an output directory where you want to store the resulting files.
 - Run the pipeline and inspect the output.
@@ -1662,7 +1680,6 @@ The **FeatureLinkerUnlabeledQT** output can be visualized in TOPPView on top of 
 |Figure 35: Visualization of .consensusXML output over the .mzML and .featureXML ’layer’.|
 
 ### Basic metabolite identification
-
 At the current state we found several metabolites in the individual maps but so far don’t know what they are. To identify metabolites, OpenMS provides multiple tools, including search by mass: the AccurateMassSearch node searches observed masses against the Human Metabolome Database (HMDB)[^14]<sup>,</sup> [^15]<sup>,</sup> [^16]. We start with the workflow from the previous section (see <a href="#figure-34">Figure 34</a>).
 
 - Add a **FileConverter** node (**Community Nodes** > **OpenMS** > **File Handling**) and connect the output of the FeatureLinkerUnlabeledQT to the incoming port.
@@ -1679,7 +1696,7 @@ At the current state we found several metabolites in the individual maps but so 
     This file contains additional information about the identifiers in the mapping file. It has four tab-separated columns that contain the identifier, name, SMILES, and INCHI. These will be included in the result file. The identifiers in this file must match the identifiers in the `HMDBMappingFile.tsv`.
 - In the same order as they are given above connect them to the remaining input ports of the **AccurateMassSearch** node.
 - Add an **Output Folder** node and connect the first output port of the
-  **AccurateMassSearch** node to the **Output Folder** node.
+**AccurateMassSearch** node to the **Output Folder** node.
 
 The result of the **AccurateMassSearch** node is in the mzTab format[^17] so you can easily open it in a text editor or import it into Excel or KNIME, which we will do in the next section. The complete workflow from this section is shown in <a href="#figure-36">Figure 36</a>.
 
@@ -1711,7 +1728,6 @@ Alternatively, consensusXML data from feature linking can be converted for use, 
 The two main tool outputs are a consensusXML file with compound groups of related input ions, and a featureXML containing the input file but annotated with inferred adduct information and charges.
 
 Options to respect or replace ion charges or adducts allow for example:
-
 - Heuristic but faster, iterative adduct grouping(**MetaboliteAdductDecharger → MetaboliteFeatureDeconvolution → q_try** set to “feature”) by chaining multiple **MetaboliteAdductDecharger** nodes with growing adduct sets, charge ranges or otherwise relaxed tolerances.
 - More specific feature linking (**FeatureLinkerUnlabeledQT → algorithm → ignore_adduct** set to “false”)
 
@@ -1818,7 +1834,11 @@ Below we show an example workflow for de novo identification (<a href="#figure-4
 (Figure*42)=
 |![De novo identification workflow](../images/openms-user-tutorial/metabo/denovoid.png)|
 |:--:|
+<<<<<<< HEAD
 |Figure 42: \_De novo* identification workflow|
+=======
+|Figure 42: *De novo* identification workflow|
+>>>>>>> parent of c65975c (Added the chemical structure)
 
 Run the workflow and inspect the output.
 
@@ -1852,7 +1872,6 @@ Inspect the **R Snippet** by double-clicking on it. The KNIME table that is pass
 #### Statistical analysis
 
 After we linked features across all maps, we want to identify features that are significantly deregulated between the two conditions. We will first scale and normalize the data, then perform a t-test, and finally correct the obtained p-values for multiple testing using Benjamini-Hochberg. All of these steps will be carried out in individual **R Snippet** nodes.
-
 - Double-click on the first **R Snippet** node labeled ”log scaling” to open the **R Snippet** dialog. In the middle you will see a short R script that performs the log scaling. To perform the log scaling we use a so-called regular expression (<code>grepl</code>) to select all columns containing the intensities in the six maps and take the log2 logarithm.
 - The output of the log scaling node is also used to draw a boxplot that can be used to examine the structure of the data. Since we only want to plot the intensities in the different maps (and not m/z or rt) we first use a **Column Filter** node to keep only the columns that contain the intensities. We connect the resulting table to a **Box Plot** node which draws one box for every column in the input table. Right-click and select **View: Box Plot**
 - The median normalization is performed in a similar way to the log scaling. First we calculate the median intensity for each intensity column, then we subtract the median from every intensity.
@@ -1880,13 +1899,13 @@ Inspect the nodes of this section. Customize your visualization and possibly try
 R Dependencies: This section requires that the R packages <code>ggplot2</code> and <code>ggfortify</code> are both installed. <code>ggplot2</code> is part of the KNIME R Statistics Integration (Windows Binaries) which should already be installed via the full KNIME installer, ggfortify however is not. In case that you use an R installation where one or both of them are not yet installed, add an **R Snippet** node and double-click to configure. In the R Script text editor, enter the following code:
 
 ```r
-#Include the next line if you also have to install ggplot2:
+#Include the next line if you also have to install ggplot2:   
 install.packages("ggplot2")
-
-#Include the following lines to install ggfortify:
+ 
+#Include the following lines to install ggfortify:  
 install.packages("ggfortify")
-
-library(ggplot2)
+ 
+library(ggplot2) 
 library(ggfortify)
 ```
 
@@ -1899,7 +1918,6 @@ install.packages
 commands once it was successfully installed.
 
 Even though the basic capabilities for (interactive) plots in KNIME are valuable for initial data exploration, professional looking depiction of analysis results often relies on dedicated plotting libraries. The statistics language R supports the addition of a large variety of packages, including packages providing extensive plotting capabilities. This part of the workflow shows how to use R nodes in KNIME to visualize more advanced figures. Specifically, we make use of different plotting packages to realize heatmaps.
-
 - The used **RView (Table)** nodes combine the possibility to write R snippet code with visualization capabilities inside KNIME. Resulting images can be looked at in the output RView, or saved via the **Image Writer (Port)** node.
 - The heatmap nodes make use of the `gplots` libary, which is by default part of the R Windows binaries (for full KNIME version 3.1.1 or higher). We again use regular expressions to extract all measured intensity columns for plotting. For clarity, feature names are only shown in the heatmap after filtering by fold changes.
 
@@ -1910,7 +1928,7 @@ Following the identification, quantification and statistical analysis our data i
 (Figure_43)=
 |![Data preparation for reporting](../images/openms-user-tutorial/metabo/reporting.png)|
 |:--:|
-|Figure 43: Data preparation for reporting|
+|Figure 43:  Data preparation for reporting|
 
 <div class="admonition question">
 <p class="admonition-title question-title">**Question**</p>
@@ -1928,7 +1946,7 @@ While all relevant information is now contained in our table the presentation co
 
 ### Introduction
 
-OpenSWATH [^21] allows the analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet _et al_. [^22]. The DIA approach described there uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquires a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete “snapshots” of all fragments of a specific window every 3.2 seconds.
+OpenSWATH [^21] allows the analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet *et al*. [^22]. The DIA approach described there uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquires a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete “snapshots” of all fragments of a specific window every 3.2 seconds.
 The analysis approach described by Gillet et al. extracts ion traces of specific fragment ions from all MS2 spectra that have the same precursor isolation window, thus generating data that is very similar to SRM traces.
 
 ### Installation of OpenSWATH
@@ -1953,71 +1971,71 @@ The header of the transition list contains the following variables (with example
 **Required Columns**:
 `PrecursorMz`
 
-The mass-to-charge (m/z) of the precursor ion. (924.539)
+  The mass-to-charge (m/z) of the precursor ion. (924.539)
 
 `ProductMz`
 
-The mass-to-charge (m/z) of the product or fragment ion. (728.99)
+  The mass-to-charge (m/z) of the product or fragment ion. (728.99)
 
 `LibraryIntensity`
 
-The relative intensity of the transition. (0.74)
+  The relative intensity of the transition. (0.74)
 
 `NormalizedRetentionTime`
 
-The normalized retention time (or iRT)[^28] of the peptide. (26.5)
+  The normalized retention time (or iRT)[^28] of the peptide. (26.5)
 
 **Targeted Proteomics Columns**
 `ProteinId`
 
-A unique identifier for the protein. (AQUA4SWATH_HMLangeA)
+  A unique identifier for the protein. (AQUA4SWATH_HMLangeA)
 
 `PeptideSequence`
 
-The unmodified peptide sequence. (ADSTGTLVITDPTR)
+  The unmodified peptide sequence. (ADSTGTLVITDPTR)
 
 `ModifiedPeptideSequence`
 
-The peptide sequence with UniMod modifications. (ADSTGTLVITDPTR(UniMod:267))
+  The peptide sequence with UniMod modifications. (ADSTGTLVITDPTR(UniMod:267))
 
 `PrecursorCharge`
 
-The precursor ion charge. (2)
+  The precursor ion charge. (2)
 
 `ProductCharge`
 
-The product ion charge. (2)
+  The product ion charge. (2)
 
 **Grouping Columns**:
 `TransitionGroupId`
 
-A unique identifier for the transition group.
+  A unique identifier for the transition group.
 (AQUA4SWATH_HMLangeA_ADSTGTLVITDPTR(UniMod:267)/2)
 
 `TransitionId`
 
-A unique identifier for the transition.
+  A unique identifier for the transition.
 (AQUA4SWATH_HMLangeA_ADSTGTLVITDPTR(UniMod:267)/2_y8)
 
 `Decoy`
 
-A binary value whether the transition is target or decoy. (target: 0, decoy: 1)
+  A binary value whether the transition is target or decoy. (target: 0, decoy: 1)
 
 `PeptideGroupLabel`
 
-Which label group the peptide belongs to.
+  Which label group the peptide belongs to.
 
 `DetectingTransition`
 
-Use transition for peak group detection. (1)
+  Use transition for peak group detection. (1)
 
 `IdentifyingTransition`
 
-Use transition for peptidoform inference using IPF. (0)
+  Use transition for peptidoform inference using IPF. (0)
 
 `QuantifyingTransition`
 
-Use transition to quantify peak group. (1)
+  Use transition to quantify peak group. (1)
 
 For further instructions about generic transition list and assay library generation please see the following [link](http://openswath.org/en/latest/docs/generic.html).
 To convert transitions lists to TraML, use the TargetedFileConverter: Please use the absolute path to your OpenMS installation.
@@ -2081,7 +2099,7 @@ or for Windows:
 "C:\Program Files\R\R-3.5.1\bin\x86\R.exe" --slave --args bin_dir=../../../External_Tools/mProphet/ mquest=OpenSWATH_quant.tsv workflow=LABEL_FREE num_xval=5 run_log=FALSE write_classifier=1 write_all_pg=1 < ../../../External_Tools/mProphet/mProphet.R
 ```
 
-The main output will be called: {path}`OpenSWATH,result,mProphetxallxpeakgroups.xls` with statistical information available in {path}`OpenSWATH,result,mProphet.pdf`.
+The main output will be called: {path}`OpenSWATH,result,mProphetxallxpeakgroups.xls` with statistical information available in {path}`OpenSWATH,result,mProphet.pdf`. 
 
 Please note that due to the semi-supervised machine learning approach of mProphet the results differ slightly when mProphet is executed several times.
 
@@ -2095,7 +2113,7 @@ For additional instructions on how to use pyProphet instead of mProphet please h
 
 ### From the example dataset to real-life applications
 
-The sample dataset used in this tutorial is part of the larger SWATH MS Gold Standard (SGS) dataset which is described in the publication of Roest _et al._[^21]. It contains one of 90 SWATH-MS runs with significant data reduction (peak picking of the raw, profile data) to make file transfer and working with it easier. Usually SWATH-MS datasets are huge with several gigabyte per run. Especially when complex samples in combination with large assay libraries are analyzed, the TOPP tool based workflow requires a lot of computational resources. Additional information and instruction can be found at the following [link](http://openswath.org/en/latest/).
+The sample dataset used in this tutorial is part of the larger SWATH MS Gold Standard (SGS) dataset which is described in the publication of Roest *et al.*[^21]. It contains one of 90 SWATH-MS runs with significant data reduction (peak picking of the raw, profile data) to make file transfer and working with it easier. Usually SWATH-MS datasets are huge with several gigabyte per run. Especially when complex samples in combination with large assay libraries are analyzed, the TOPP tool based workflow requires a lot of computational resources. Additional information and instruction can be found at the following [link](http://openswath.org/en/latest/).
 
 ## OpenSWATH for Metabolomics
 
@@ -2123,7 +2141,7 @@ The workflow follows multiple steps (see <a href="#figure-45">Fig. 45</a>).
 |Figure 47: Decoy generation. The compositional fragmentations trees from the step above are used to run the fragmentation tree re-rooting method from Passatutto, generating a compound specific decoy MS2 spectrum. Here, the n highest intensity decoy transitions are extracted and stored in the target-decoy assay library.|
 
 - **Candidate identification**
-  Feature detection, adduct grouping and accurate mass search are applied on DDA data.
+   Feature detection, adduct grouping and accurate mass search are applied on DDA data.
 - **Library construction**
   The knowledge determined from the DDA data, about compound identification, its potential adduct and the corresponding fragment spectra are used to perform fragment annotation via compositional fragmentation trees sugin SIRIUS 4[^31]. Afterwards transitions, which are the reference of a precursor to its fragment ions are stored in a so-called assay library (<a href="#figure-46">Fig. 46</a>). Assay libraries usually contain additional metadata (i.e. retention time, peak intensities). FDR estimation is based on the target-decoy approach[^32]. For the generation of the MS2 decoys, the fragmentation tree-based rerooting method by Passatutto ensure the consistency of decoy spectra (<a href="#figure-47">Fig.47</a>)[^33]. The target-decoy assay library is then used to analyse the SWATH data.
 - **Targeted extraction**
@@ -2132,7 +2150,6 @@ The workflow follows multiple steps (see <a href="#figure-45">Fig. 45</a>).
   FDR estimation uses the PyProphet algorithm[^30]. To prevent overfitting we chose the simpler linear model (LDA) for target-decoy discrimination in PyProphet, using MS1 and MS2 scoring with low correlated scores.
 
 ### Prerequisites
-
 Apart from the usual KNIME nodes, the workflow uses python scripting nodes. One basic requirement for the installation of python packages, in particular pyOpenMS, is a package manager for python. Using conda as an environment manger allows to specify a specific environment in the KNIME settings (**File**>**Preferences**>**KNIME**>**Python**).
 
 #### Windows
@@ -2140,47 +2157,45 @@ Apart from the usual KNIME nodes, the workflow uses python scripting nodes. One 
 We suggest do use a virtual environment for the Python 3 installation on windows. Here you can install miniconda and follow the further instructions.
 
 1. Create new `conda` python environment.
-   ```bash
-   conda create -n py39 python=3.9
-   ```
+    ```bash
+    conda create -n py39 python=3.9
+    ```
 2. Activate `py39` environment.
-   ```bash
-   conda activate py39
-   ```
+    ```bash
+    conda activate py39
+    ```    
 3. Install pip (see above).
 4. On the command line:
-
-   ```bash
-   python -m pip install -U pip
-   python -m pip install -U numpy
-   python -m pip install -U pandas
-
-   python -m pip install -U pyprophet
-   python -m pip install -U pyopenms
-   ```
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy  
+    python -m pip install -U pandas
+ 
+    python -m pip install -U pyprophet 
+    python -m pip install -U pyopenms
+    ```
 
 #### macOS
 
 We suggest do use a virtual environment for the Python 3 installation on Mac. Here you can install miniconda and follow the further instructions.
 
 1. Create new `conda` python environment.
-   ```bash
-   conda create -n py39 python=3.9
-   ```
+    ```bash
+    conda create -n py39 python=3.9
+    ```
 2. Activate py39 environment.
-   ```bash
-   conda activate py39
-   ```
+    ```bash
+    conda activate py39
+    ```
 3. On the Terminal:
-
-   ```bash
-   python -m pip install -U pip
-   python -m pip install -U numpy
-   python -m pip install -U pandas
-
-   python -m pip install -U pyprophet
-   python -m pip install -U pyopenms
-   ```
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy  
+    python -m pip install -U pandas
+ 
+    python -m pip install -U pyprophet 
+    python -m pip install -U pyopenms
+    ```
 
 #### Linux
 
@@ -2190,15 +2205,14 @@ Use your package manager apt-get or yum, where possible.
 2. Install NumPy (Debian/RedHat: python-numpy).
 3. Install setuptools (Debian/RedHat: python-setuptools).
 4. On the Terminal:
-
-   ```bash
-   python -m pip install -U pip
-   python -m pip install -U numpy
-   python -m pip install -U pandas
-
-   python -m pip install -U pyprophet
-   python -m pip install -U pyopenms
-   ```
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy  
+    python -m pip install -U pandas
+ 
+    python -m pip install -U pyprophet 
+    python -m pip install -U pyopenms 
+    ```
 
 ### Benchmark data
 
@@ -2218,11 +2232,10 @@ Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME (see <a hre
 ### Run the workflow
 
 These steps need to be followed to run the workflow successfully:
-
 - Add DDA Input Files (.mzML).
 - Specify SIRIUS 4.9.0 executable.
 - Specify library files (mapping, struct) for **AccurateMassSearch**.
-- Add positive/negative adducts lists for **AccurateMassSearch**.
+- Add positive/negative adducts lists for **AccurateMassSearch**. 
 - Supply an output path for the SIRIUS workspace in the **AssayGeneratorMetabo**.
 - Specify additional paths and variables, such as an output path for the target-decoy assay library and a path to the pyprophet installation as well as decoy fragment mz filter (min/max).
 - Input DIA/SWATH files (.mzML).
@@ -2236,79 +2249,77 @@ Please have a look at the most important parameters, which should be tweaked to 
 
 #### FeatureFinderMetabo
 
-| **parameter**         | **explanation**                                              |
-| :-------------------- | :----------------------------------------------------------- |
-| _noise_threshold_int_ | Intensity threshold below which peaks are regarded as noise. |
-| _chrom_fwhm_          | Expected chromatographic peak width (in seconds).            |
-| _mass_error_ppm_      | Allowed mass deviation (in ppm).                             |
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*noise_threshold_int*|Intensity threshold below which peaks are regarded as noise.|
+|*chrom_fwhm*|Expected chromatographic peak width (in seconds).|
+|*mass_error_ppm*|Allowed mass deviation (in ppm).|
 
 #### MetaboliteAdductDecharger
 
-| **parameter**       | **explanation**                                                                                                  |
-| :------------------ | :--------------------------------------------------------------------------------------------------------------- |
-| _mass_max_diff_     | Maximum allowed mass tolerance per feature..                                                                     |
-| _potential_adducts_ | Adducts used to explain mass differences - These should fit to the adduct list specified for AccurateMassSearch. |
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*mass_max_diff*|Maximum allowed mass tolerance per feature..|
+|*potential_adducts*|Adducts used to explain mass differences - These should fit to the adduct list specified for AccurateMassSearch.|
 
 #### AccurateMassSearch
 
-| **parameter**      | **explanation**                             |
-| :----------------- | :------------------------------------------ |
-| _mass_error_value_ | Tolerance allowed for accurate mass search. |
-| _ionization_mode_  | Positive or negative ionization mode.       |
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*mass_error_value*|Tolerance allowed for accurate mass search.|
+|*ionization_mode*|Positive or negative ionization mode.|
 
 #### AssayGeneratorMetabo
 
-| **parameter**                           | **explanation**                                                                                                                                                                    |
-| :-------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _min_transitions_                       | Minimal number of transitions (3).                                                                                                                                                 |
-| _max_transitions_                       | Maximal number of transitions (3).                                                                                                                                                 |
-| **min_fragment_mz**                     | Minimal m/z of a fragment ion choosen as a transition                                                                                                                              |
-| **max_fragment_mz**                     | Maximal m/z of a fragment ion choosen as a transition                                                                                                                              |
-| _transitions_threshold_                 | Further transitions need at least x% of the maximum intensity.                                                                                                                     |
-| **fragment_annotation_score_threshold** | Filters annotations based on the explained intensity of the peaks in a spectrum (0.8).                                                                                             |
-| SIRIUS (internal):                      |
-| _out_workspace_directory_               | Output directory for SIRIUS workspace (Fragmentation Trees).                                                                                                                       |
-| _filter_by_num_masstraces_              | Features have to have at least x MassTraces. To use this parameter feature_only is neccessary.                                                                                     |
-| _precursor_mass_tolerance_              | Tolerance window for precursor selection (Feature selection in regard to the precursor).                                                                                           |
-| _precursor_rt_tolerance_                | Tolerance allowed for matching MS2 spectra depending on the feature size (should be around the FWHM of the chromatograms).                                                         |
-| _profile_                               | Specify the used analysis profile (e.g. qtof).                                                                                                                                     |
-| _elements_                              | Allowed elements for assessing the putative sumformula (e.g. CHNOP[5]S[8]Cl[1]). Elements found in the isotopic pattern are added automatically, but can be specified nonetheless. |
-| Feature linking (internal):             |
-| **ambiguity_resolution mz_tolerance**   | M/z tolerance for the resolution of identification ambiguity over multiple files - Feature linking m/z tolerance.                                                                  |
-| **ambiguity_resolution rt_tolerance**   | RT tolerance in seconds for the resolution of identification ambiguity over multiple files - Feature linking m/z tolerance.                                                        |
-| **total_occurrence_filter**             | Filter compound based on total occurrence in analysed samples.                                                                                                                     |
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*min_transitions*|Minimal number of transitions (3).|
+|*max_transitions*|Maximal number of transitions (3).|
+|**min_fragment_mz**|Minimal m/z of a fragment ion choosen as a transition|
+|**max_fragment_mz**|Maximal m/z of a fragment ion choosen as a transition|
+|*transitions_threshold*|Further transitions need at least x% of the maximum intensity.|
+|**fragment_annotation_score_threshold**|Filters annotations based on the explained intensity of the peaks in a spectrum (0.8).|
+|SIRIUS (internal):|
+|*out_workspace_directory*|Output directory for SIRIUS workspace (Fragmentation Trees).|
+|*filter_by_num_masstraces*|Features have to have at least x MassTraces. To use this parameter feature_only is neccessary.|
+|*precursor_mass_tolerance*|Tolerance window for precursor selection (Feature selection in regard to the precursor).|
+|*precursor_rt_tolerance*|Tolerance allowed for matching MS2 spectra depending on the feature size (should be around the FWHM of the chromatograms).|
+|*profile*|Specify the used analysis profile (e.g. qtof).|
+|*elements*|Allowed elements for assessing the putative sumformula (e.g. CHNOP[5]S[8]Cl[1]). Elements found in the isotopic pattern are added automatically, but can be specified nonetheless.|
+|Feature linking (internal):|
+|**ambiguity_resolution mz_tolerance**|M/z tolerance for the resolution of identification ambiguity over multiple files - Feature linking m/z tolerance.|
+|**ambiguity_resolution rt_tolerance**|RT tolerance in seconds for the resolution of identification ambiguity over multiple files - Feature linking m/z tolerance.|
+|**total_occurrence_filter**|Filter compound based on total occurrence in analysed samples.|
 
 In case of the **total_occurrence_filter** the value to chose depends on the analysis strategy used. In the instance you are using only identified compounds (**use_known_unknowns**= false) - it will filter based on identified features. This means that even if the feature
 was detected in e.g. 50% of all samples it might be only identified correctly by accurate mass search in 20% of all samples. Using a **total_occurrence_filter** this specific feature would still be filtered out due to less identifications.
 
 #### OpenSWATH
 
-| **parameter**             | **explanation**                                         |
-| :------------------------ | :------------------------------------------------------ |
-| _rt_extraction_window_    | Extract x seconds around this value.                    |
-| _rt_normalization_factor_ | Please use the range of your gradient e.g. 950 seconds. |
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*rt_extraction_window*|Extract x seconds around this value.|
+|*rt_normalization_factor*|Please use the range of your gradient e.g. 950 seconds.|
 
 If you are analysing a lot of big DIA mzML files ≈ 3-20GB per File, it makes sense to change how OpenSWATH processes the spectra.
 
-| **parameter**                                                      | **explanation**                                         |
-| :----------------------------------------------------------------- | :------------------------------------------------------ |
-| _readOptions_                                                      | Set cacheWorkingInMemory - will cache the files to disk |
-| and read SWATH-by-SWATH into memory                                |
-| _tempDirectory_                                                    | Set a directory, where cached mzMLs are stored (be      |
-| aware that his directory can be quite huge depending on the data). |
+|**parameter**|**explanation**|
+|:------------|:--------------|
+|*readOptions*|Set cacheWorkingInMemory - will cache the files to disk
+and read SWATH-by-SWATH into memory|
+|*tempDirectory*|Set a directory, where cached mzMLs are stored (be
+aware that his directory can be quite huge depending on the data).|
 
 In the workflow pyprophet is called after OpenSWATH, it merges the result files, which allows to get enough data for the model training.
 
 ```bash
 pyprophet merge --template path_to_target-decoy_assay_library.pqp --out merged.osw,→ ./*.osw
 ```
-
 Afterwards, the results are scored using the MS1 and MS2 levels and filter for metabolomics scores, which have a low correlation.
 
 ```bash
 pyprophet score --in merged.osw --out scored.osw --level ms1ms2 --ss_main_score,→ ”var_isotope_correlation_score” --ss_score_filter metabolomics
 ```
-
 Export the non filtered results:
 
 ```bash
@@ -2333,48 +2344,41 @@ The universal workflow for untargeted metabolomics always consists of feature de
 If you want to use the example data, download the files [sample1.mzML](../data/sample1.mzML) and [sample2.mzML](../data/sample2.mzML).
 
 For each mzML file do mass trace, elution peak and feature detection.
-
 ```shell
 FeatureFinderMetabo -in sample1.mzML -out sample1.featureXML -algorithm:common:noise_threshold_int 10000 -algorithm:mtd:mass_error_ppm 10 -algorithm:ffm:remove_single_traces true
 FeatureFinderMetabo -in sample2.mzML -out sample2.featureXML -algorithm:common:noise_threshold_int 10000 -algorithm:mtd:mass_error_ppm 10 -algorithm:ffm:remove_single_traces true
 ```
 
 Align feature retention times based on the feature map with the highest number of features (reference map).
-
 ```shell
 MapAlignerPoseClustering -in sample1.featureXML sample2.featureXML -out aligned_sample1.featureXML aligned_sample2.featureXML -trafo_out sample1.trafoXML sample2.trafoXML -algorithm:pairfinder:distance_MZ:max_difference 10.0 -algorithm:pairfinder:distance_MZ:unit ppm
 ```
 
 Align mzML files aligment based on FeatureMap alignment (optional, only for GNPS).
-
 ```shell
 MapRTTransformer -in sample1.mzML -out aligned_sample1.mzML -trafo_in sample1.trafoXML
 MapRTTransformer -in sample2.mzML -out aligned_sample2.mzML -trafo_in sample2.trafoXML
 ```
 
 Map MS2 spectra to features as PeptideIdentification objects (optional, only for GNPS). Requires an [empty idXML](../data/empty.idXML) file.
-
 ```shell
 IDMapper -id empty.idXML -in aligned_sample1.featureXML -spectra:in aligned_sample1.mzML -out IDmapped_sample1.featureXML
 IDMapper -id empty.idXML -in aligned_sample2.featureXML -spectra:in aligned_sample2.mzML -out IDmapped_sample2.featureXML
 ```
 
-Detect adducts (optional, only for SIRIUS and GNPS Ion Identity
+Detect adducts (optional, only for SIRIUS and GNPS Ion Identity 
 Molecular Networking).
-
 ```shell
 MetaboliteAdductDecharger -in IDmapped_sample1.featureXML -out_fm adducts_sample1.featureXML -algorithm:MetaboliteFeatureDeconvolution:potential_adducts "H:+:0.6" "Na:+:0.1" "NH4:+:0.1" "H-1O-1:+:0.1" "H-3O-2:+:0.1"
 MetaboliteAdductDecharger -in IDmapped_sample2.featureXML -out_fm adducts_sample2.featureXML -algorithm:MetaboliteFeatureDeconvolution:potential_adducts "H:+:0.6" "Na:+:0.1" "NH4:+:0.1" "H-1O-1:+:0.1" "H-3O-2:+:0.1"
 ```
 
 Link features in a ConsensusMap.
-
 ```shell
 FeatureLinkerUnlabeledKD -in adducts_sample1.featureXML adducts_sample2.featureXML -out Preprocessed.consensusXML -algorithm:link:rt_tol 30.0 -algorithm:link:mz_tol 10.0
 ```
 
 Export table of metabolic features as tsv file including meta values (e.g. best consensus adduct ion).
-
 ```shell
 TextExporter -in Preprocessed.consensusXML -out Features.tsv -consensus:add_metavalues
 ```
@@ -2385,6 +2389,7 @@ You can recreate this workflow in KNIME. [Download the KNIME workflow here](../w
 |![metabolomics preprocessing workflow in KNIME](../images/tutorials/metabolomics-preprocessing-knime-workflow.png)|
 |:--:|
 |Figure 50: Metabolomics preprocessing workflow in KNIME|
+
 
 ## An introduction to pyOpenMS
 
@@ -2401,44 +2406,44 @@ One basic requirement for the installation of python packages, in particular pyO
 
 1. Install [Python 3.9](http://www.python.org/download/).
 2. Install [NumPy](http:///www.lfd.uci.edu/~gohlke/pythonlibs/#numpy).
-3. Install pip (see above).
+3. Install pip (see above). 
 4. On the command line:
-   ```bash
-   python -m pip install -U pip
-   python -m pip install -U numpy
-   python -m pip install pyopenms
-   ```
+    ```bash
+    python -m pip install -U pip   
+    python -m pip install -U numpy 
+    python -m pip install pyopenms
+    ```
 
 #### macOS
 
 We suggest do use a virtual environment for the Python 3 installation on Mac. Here you can install miniconda and follow the further instructions.
 
 1. Create new `conda` python environment.
-   ```bash
-   conda create -n py37 python=3.9 anaconda
-   ```
+    ```bash
+    conda create -n py37 python=3.9 anaconda
+    ```
 2. Activate `py37` environment.
-   ```bash
-   source activate py37
-   ```
+    ```bash
+    source activate py37
+    ```
 3. On the Terminal:
-   ```bash
-   pip install -U pip
-   pip install -U numpy
-   pip install pyopenms
-   ```
+    ```bash
+    pip install -U pip   
+    pip install -U numpy 
+    pip install pyopenms
+    ```
 
 #### Linux
 
 Use your package manager apt-get or yum, where possible.
 
-1. Install Python 3.9 (Debian: python-dev, RedHat: python-devel).
+1. Install Python 3.9 (Debian: python-dev, RedHat: python-devel). 
 2. Install NumPy (Debian / RedHat: python-numpy).
-3. Install setuptools (Debian / RedHat: python-setuptools).
+3. Install setuptools (Debian / RedHat: python-setuptools). 
 4. On the Terminal:
-   ```bash
-    pip install pyopenms
-   ```
+    ```bash
+     pip install pyopenms
+    ```
 
 #### IDE with Anaconda integration
 
@@ -2448,30 +2453,29 @@ After installation, the ANACONDA Navigator (Anaconda 3) should be available. Ple
 Update `pip` and install `pyopenms` (MacOS, Linux):
 
 ```bash
-pip install -U pip
-pip install -U numpy
+pip install -U pip   
+pip install -U numpy 
 pip install -U pyopenms
 ```
 
 Update `pip` and install `pyopenms`:
 
 ```bash
-python -m pip install -U pip
-python -m pip install -U numpy
+python -m pip install -U pip   
+python -m pip install -U numpy 
 python -m pip install -U pyopenms
 ```
 
 Install a local available package:
 
 ```bash
-pip install numpy-1.20.0-cp37*.whl
-pip install pyopenms-2.7.0-cp37*.whl
+pip install numpy-1.20.0-cp37*.whl   
+pip install pyopenms-2.7.0-cp37*.whl  
 or (in case of windows)
-
-python -m pip install -U numpy-1.20.0-cp37*.whl
+ 
+python -m pip install -U numpy-1.20.0-cp37*.whl 
 python -m pip install -U pyopenms-2.7.0-cp37*.whl
 ```
-
 The local available packages can be found in the directory corresponding to your operating system. Please use the absolute path to the packages for the installation.
 
 Now launch ”Spyder” (python IDE) in the home menu.
@@ -2487,60 +2491,60 @@ A big advantage of pyOpenMS are its scripting capabilities (beyond its applicati
 Calculation of the monisotopic and average mass of a peptide sequence:
 
 ```python
-from pyopenms import *
-
+from pyopenms import *   
+  
 seq = AASequence.fromString("DFPIANGER")
-
-
+ 
+  
 mono_mass = seq.getMonoWeight(Residue.ResidueType.Full, 0)
+ 
+average_mass = seq.getAverageWeight(Residue.ResidueType.Full, 0)  
 
-average_mass = seq.getAverageWeight(Residue.ResidueType.Full, 0)
-
-
+ 
 print("The masses of the peptide sequence " + seq.toString().decode('utf-8') + " are:")
-
-print("mono: " + str(mono_mass))
+ 
+print("mono: " + str(mono_mass)) 
 print("average: "+ str(average_mass))
 ```
 
 Enzymatic digest of a peptide/protein sequence:
 
 ```python
-enzyme = "Trypsin"
+enzyme = "Trypsin"   
 to_digest = AASequence.fromString("MKWVTFISLLLLFSSAYSRGVFRRDTHKSEIAHRFKDLGE")
-
-after_digest = []
-
+ 
+after_digest = []  
+  
 EnzymaticDigest = EnzymaticDigestionLogModel()
+ 
+EnzymaticDigest.setEnzyme(enzyme)  
+EnzymaticDigest.digest(to_digest, after_digest)  
 
-EnzymaticDigest.setEnzyme(enzyme)
-EnzymaticDigest.digest(to_digest, after_digest)
-
-
+ 
 print("The peptide " + to_digest.toString().decode('utf-8') + " was digested using " + str(EnzymaticDigest.getEnzymeName().decode('utf-8')) + " to:")
-
-
-for element in after_digest:
+ 
+  
+for element in after_digest: 
     print(element.toString().decode('utf-8'))
 ```
 
 Use empirical formula to calculate the isotope distribution:
 
 ```python
-from pyopenms import *
-
-methanol = EmpiricalFormula("CH3OH")
+from pyopenms import *   
+  
+methanol = EmpiricalFormula("CH3OH")  
 water = EmpiricalFormula("H2O")
-
+ 
 wm = EmpiricalFormula(water.toString().decode('utf-8') + methanol.toString().decode('utf-8'))
+ 
+print(wm.toString().decode('utf-8'))  
+print(wm.getElementalComposition())  
 
-print(wm.toString().decode('utf-8'))
-print(wm.getElementalComposition())
-
-
+ 
 isotopes = wm.getIsotopeDistribution( CoarseIsotopePatternGenerator(3) )
-
-for iso in isotopes.getContainer():
+ 
+for iso in isotopes.getContainer(): 
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
@@ -2552,75 +2556,73 @@ Scripting is one side of pyOpenMS, the other is the ability to create Tools usin
 
 ```bash
 usage: ProteinDigestor.py [-h] [-in INFILE] [-out OUTFILE] [-enzyme ENZYME]
-
+ 
                           [-min_length MIN_LENGTH] [-max_length MAX_LENGTH]
-
-                          [-missed_cleavages MISSED_CLEAVAGES]
-
+ 
+                          [-missed_cleavages MISSED_CLEAVAGES]  
+  
 ProteinDigestor −− In silico digestion of proteins.
-
-
-optional arguments:
+ 
+  
+optional arguments:  
   -h, --help            show this help message and exit
-
+ 
   -in INFILE            An input file containing amino acid sequences [fasta]
-
+ 
   -out OUTFILE          Output digested sequences in idXML format [idXML]
-
-  -enzyme ENZYME        Enzyme used for digestion
+ 
+  -enzyme ENZYME        Enzyme used for digestion  
   -min_length MIN_LENGTH                Minimum length of peptide
-
-  -max_length MAX_LENGTH                Maximum length of peptide
+ 
+  -max_length MAX_LENGTH                Maximum length of peptide 
   -missed_cleavages MISSED_CLEAVAGES                        The number of allowed missed cleavages
 ```
 
 #### Basics
-
 First, your tool needs to be able to read parameters from the command line and provide a main routine. Here standard Python can be used (no pyOpenMS is required so far).
 
 ```python
-#!/usr/bin/env python
-import sys
-
-def main(options):
-
+#!/usr/bin/env python   
+import sys  
+  
+def main(options):  
+  
     # test parameter handling
-
+ 
     print(options.infile, options.outfile, options.enzyme, options.min_length, options.max_length, options.missed_cleavages)
-
-
-def handle_args():
-    import argparse
-
+ 
+  
+def handle_args():  
+    import argparse  
+  
     usage = ""
-
+ 
     usage += "\nProteinDigestor −− In silico digestion of proteins."
-
-
+ 
+  
     parser = argparse.ArgumentParser(description = usage)
-
+ 
     parser.add_argument('-in', dest='infile', help='An input file containing amino acid sequences [fasta]')
-
+ 
     parser.add_argument('-out', dest='outfile', help='Output digested sequences in idXML format [idXML]')
-
+ 
     parser.add_argument('-enzyme', dest='enzyme', help='Enzyme used for digestion')
-
+ 
     parser.add_argument('-min_length', type=int, dest='min_length', help ='Minimum length of peptide')
-
+ 
     parser.add_argument('-max_length', type=int, dest='max_length', help='Maximum length of peptide')
-
+ 
     parser.add_argument('-missed_cleavages', type=int, dest='missed_cleavages', help='The number of allowed missed cleavages')
-
-
-    args = parser.parse_args(sys.argv[1:])
-    return args
-
+ 
+  
+    args = parser.parse_args(sys.argv[1:])  
+    return args  
+  
 if __name__ == '__main__':
-
-    options = handle_args()
+ 
+    options = handle_args() 
     main(options)
 ```
-
 Open the Anaconda Terminal and change into the {path}`ExampleData,pyopenms` directory. Execute the example script.
 
 ```bash
@@ -2633,14 +2635,14 @@ The parameters are being read from the command line by the function `handle_args
 OpenMS has a `ProteaseDB` class containing a list of enzymes which can be used for digestion of proteins. You can add this to the `argparse` code to be able to see the usable enzymes. From this point onward, pyOpenMS is required.
 
 ```python
-# from here pyopenms is needed
+# from here pyopenms is needed   
 # get available enzymes from ProteaseDB
 
-all_enzymes = []
-p_db=ProteaseDB().getAllNames(all_enzymes)
+all_enzymes = []  
+p_db=ProteaseDB().getAllNames(all_enzymes)  
 
 
-# concatenate them to the enzyme argument.
+# concatenate them to the enzyme argument. 
 parser.add_argument('-enzyme', dest='enzyme', help='Enzymes which can be used for digestion: '+ ', '.join(map(bytes.decode, all_enzymes)))
 ```
 
@@ -2663,107 +2665,106 @@ We already scripted enzymatic digestion with the `AASequence` and `EnzymaticDige
 The next step is to use FASTAFile class to read the fasta input:
 
 ```python
-     # construct a FASTAFile Object and read the input file
+     # construct a FASTAFile Object and read the input file   
     ff = FASTAFile()
-
-    ff.readStart(options.infile)
-
-    # construct and FASTAEntry Object
+ 
+    ff.readStart(options.infile)  
+  
+    # construct and FASTAEntry Object  
     fe = FASTAEntry()
-
-
-    # loop over the entry in the fasta while using while
+ 
+  
+    # loop over the entry in the fasta while using while 
     while(ff.readNext(fe)):
 ```
 
 The output idXML needs the information about protein and peptide level, which can be saved in the `ProteinIdentification` and `PeptideIdentification` classes.
 
 ```python
-idxml = IdXMLFile()
+idxml = IdXMLFile()  
 idxml.store(options.outfile, protein_identifications, peptide_identifications)
 ```
 
 This is the part of the program which unifies the snippets provided above. Please have a closer look how the protein and peptide datastructure is incorporated in the program.
 
 ```python
-def main(options):
-    # read fasta file
-    ff = FASTAFile()
+def main(options):   
+    # read fasta file  
+    ff = FASTAFile()  
     ff.readStart(options.infile)
-
-    fe = FASTAEntry()
-
-    # use ProteaseDigestion class
+ 
+    fe = FASTAEntry()  
+  
+    # use ProteaseDigestion class  
     digestor = ProteaseDigestion()
+ 
+    digestor.setEnzyme(options.enzyme)  
+    digestor.setMissedCleavages(options.missed_cleavages)  
 
-    digestor.setEnzyme(options.enzyme)
-    digestor.setMissedCleavages(options.missed_cleavages)
-
-
-    # protein and peptide datastructure
+ 
+    # protein and peptide datastructure  
     protein_identifications = []
-
-    peptide_identifications = []
+ 
+    peptide_identifications = []  
     protein_identification = ProteinIdentification()
+ 
+    protein_identifications.append(protein_identification)  
+    temp_pe = PeptideEvidence()  
 
-    protein_identifications.append(protein_identification)
-    temp_pe = PeptideEvidence()
-
-
-    # number of dropped peptides due to length restriction
-    dropped_by_length = 0
-
+ 
+    # number of dropped peptides due to length restriction  
+    dropped_by_length = 0  
+  
     while(ff.readNext(fe)):
-
-        # construct ProteinHit and fill it with sequence information
+ 
+        # construct ProteinHit and fill it with sequence information  
         temp_protein_hit = ProteinHit()
-
-        temp_protein_hit.setSequence(fe.sequence)
+ 
+        temp_protein_hit.setSequence(fe.sequence)  
         temp_protein_hit.setAccession(fe.identifier)
-
-
+ 
+  
         # save the ProteinHit in a ProteinIdentification Object
+ 
+        protein_identification.insertHit(temp_protein_hit)  
 
-        protein_identification.insertHit(temp_protein_hit)
-
-
-        # construct a PeptideHit and save the ProteinEvidence (Mapping) for the specific
+ 
+        # construct a PeptideHit and save the ProteinEvidence (Mapping) for the specific  
         # current protein
-
-        temp_peptide_hit = PeptideHit()
+ 
+        temp_peptide_hit = PeptideHit()  
         temp_pe.setProteinAccession(fe.identifier);
-
-        temp_peptide_hit.setPeptideEvidences([temp_pe])
-
+ 
+        temp_peptide_hit.setPeptideEvidences([temp_pe])  
+  
         # digestion
-
-        current_digest = []
-        aaseq = AASequence()
+ 
+        current_digest = []  
+        aaseq = AASequence()  
         if (options.enzyme == "none"):
-
-            current_digest.append(aaseq.fromString(fe.sequence))
+ 
+            current_digest.append(aaseq.fromString(fe.sequence))  
         else:
-
+ 
             dropped_by_length += digestor.digest(aaseq.fromString(fe.sequence), current_digest, options.min_length, options.max_length)
-
-
-        for seq in current_digest:
+ 
+  
+        for seq in current_digest:  
             # fill the PeptideHit and PeptideIdentification datastructure
-
-            peptide_identification = PeptideIdentification()
+ 
+            peptide_identification = PeptideIdentification()  
             temp_peptide_hit.setSequence(seq)
-
+ 
             peptide_identification.insertHit(temp_peptide_hit)
+ 
+            peptide_identifications.append(peptide_identification)  
 
-            peptide_identifications.append(peptide_identification)
-
-
+ 
     print(str(dropped_by_length) + " peptides have been dropped due to the length restriction.")
-
-    idxml = IdXMLFile()
+ 
+    idxml = IdXMLFile() 
     idxml.store(options.outfile, protein_identifications, peptide_identifications)
 ```
-
 #### Putting things together
 
 The paramter input and the functions can be used to construct the program we are looking for. If you are struggling please have a look in the example data section `ProteinDigestor.py`.
@@ -2796,7 +2797,7 @@ Finally, in a qcml file, we split the metrics on a per mass-spectrometry-run bas
 
 ### Building a qcML file per run
 
-As a start, we will build a basic qcML file for each mzML file in the label-free analysis. We are already creating the two necessary analysis files to build a basic qcML file upon each mzML file, a feature file and an identification file. We use the **QCCalculator** node from **Community** > **OpenMS** > **Utilities** where also all other QC\* nodes will be found. The **QCCalculator** will create a very basic qcML file in which it will store collected and calculated quality data.
+As a start, we will build a basic qcML file for each mzML file in the label-free analysis. We are already creating the two necessary analysis files to build a basic qcML file upon each mzML file, a feature file and an identification file. We use the **QCCalculator** node from **Community** > **OpenMS** > **Utilities** where also all other QC* nodes will be found. The **QCCalculator** will create a very basic qcML file in which it will store collected and calculated quality data.
 
 - Copy your label-fee quantitation workflow into a new lfq-qc workflow and open it.
 - Place the **QCCalculator** node after the **IDMapper** node. Being inside the **ZipLoop**, it will execute for each of the three mzML files the **Input** node.
@@ -2820,20 +2821,17 @@ Import the workflow from {path}`Workflows,Quality Control,QC Metanodes.zip` by n
 - Copy the **Mass accuracy** metanode into the workflow behind the **QCEmbedder** node and connect it. The qcML will be passed on and the Mass accuracy plots added. The information needed was already collected by the **QCCalculator**.
 - Do the same with the **TIC** metanode so that your qcML file will get passed on and enriched on each step.
 
-R Dependencies: This section requires that the R packages `ggplot2` and scales are both installed. This is the same procedure as in this <a href="#advanced-visualization">section</a>. In case that you use an R installation where one or both of them are not yet installed, open the **R Snippet** nodes inside the metanodes you just used (double-click). Edit the script in the _R Script_ text editor from:
+R Dependencies: This section requires that the R packages `ggplot2` and scales are both installed. This is the same procedure as in this <a href="#advanced-visualization">section</a>. In case that you use an R installation where one or both of them are not yet installed, open the **R Snippet** nodes inside the metanodes you just used (double-click). Edit the script in the *R Script* text editor from:
 
 ```r
-#install.packages("ggplot2")
+#install.packages("ggplot2")  
 #install.packages("scales")
 ```
-
 to
-
 ```r
-install.packages("ggplot2")
+install.packages("ggplot2")  
 install.packages("scales")
 ```
-
 Press **Eval script** to execute the script.
 
 (Figure_51)=
@@ -2855,25 +2853,25 @@ Find your first created qcML file and open it with the browser (not IE), and the
 We can also add brand new QC metrics to our qcML files. Remember the **Histogram** you added inside the **ZipLoop** during the label-free quantitation section? Let’s imagine for a moment this was a brand new and utterly important metric and plot for the assessment of your analyses quality. There is an easy way to integrate such new metrics into your qcMLs. Though the **Histogram** node cannot pass its plot to an image, we can do so with a **R View (table)**.
 
 - Add an **R View (table)** next to the **IDTextReader** node and connect them.
-- Edit the **R View (table)** by adding the _R Script_ according to this:
+- Edit the **R View (table)** by adding the *R Script* according to this:
 
 ```r
- #install.packages("ggplot2")
-library("ggplot2")
+ #install.packages("ggplot2")   
+library("ggplot2")  
 ggplot(knime.in, aes(x=peptide_charge)) +
-
- geom_histogram(binwidth=1, origin =-0.5) +
+ 
+ geom_histogram(binwidth=1, origin =-0.5) +  
  scale_x_discrete() +
-
- ggtitle("Identified peptides charge histogram") +
+ 
+ ggtitle("Identified peptides charge histogram") + 
  ylab("Count")
 ```
 
-- This will create a plot like the **Histogram** node on _peptide_charge_ and pass it on as an _image_.
+- This will create a plot like the **Histogram** node on *peptide_charge* and pass it on as an *image*.
 - Now add and connect a **Image2FilePort** node from **Community Nodes** > **GenericKnimeNodes** > **Flow** to the **R View (table)**.
 - We can now use a **QCEmbetter** node like before to add our new metric plot into the qcML.
-- After looking for an appropriate target from the following [link](https://github.com/qcML/qcML-development/blob/master/cv/qc-cv.obo), we found that we can attach our plot to the MS _identification result details_ by setting the parameter `qp_att_acc` to `QC:0000025`, as we are plotting the charge histogram of our identified peptides.
-- To have the plot later displayed properly, we assign it the parameter `cv_acc` of `QC:0000051`, a generic plot. Also we made sure in the _R Script_, that our plot carries a caption so that we know which is which, if we had more than one new plot.
+- After looking for an appropriate target from the following [link](https://github.com/qcML/qcML-development/blob/master/cv/qc-cv.obo), we found that we can attach our plot to the MS *identification result details* by setting the parameter `qp_att_acc` to `QC:0000025`, as we are plotting the charge histogram of our identified peptides.
+- To have the plot later displayed properly, we assign it the parameter `cv_acc` of `QC:0000051`, a generic plot. Also we made sure in the *R Script*, that our plot carries a caption so that we know which is which, if we had more than one new plot.
 - Now we redirect the **QCEmbedders** output to the **Output Folder** from before and can have a look at how our qcML is coming along after restarting the workflow.
 
 (Figure_52)=
@@ -2908,7 +2906,7 @@ For ideas on new QC metrics and parameters, as you add them in your qcML files a
 This section will show you where you can turn to when you encounter any problems with this tutorial or with our nodes in general. Please see the [FAQ](../quick-reference/contributor-faq.md) first. If your problem is not listed or the proposed solution does not work, feel free to leave us a message at the means of support that you see most fit. If that is the case, please provide us with as much information as you can. In an ideal case, that would be:
 
 - Your operating system and its version (e.g. Windows 8, Ubuntu 14.04).
-- Your KNIME version (e.g. KNIME 3.1.2 full, KNIME 3.1.1 core).
+- Your KNIME version (e.g. KNIME 3.1.2 full, KNIME 3.1.1 core). 
 - If not full: Which update site did you use for the OpenMS plugin? Trunk (nightly-builds) or Stable?
 - Your OpenMS plugin version found under **Help** > **Install New Software** > **What is already installed?**
 - Other installations of OpenMS on your computer (e.g. from the independent OpenMS installer, another KNIME instance etc.)
@@ -2919,9 +2917,9 @@ This section will show you where you can turn to when you encounter any problems
 
 #### How to debug KNIME and/or the OpenMS nodes?
 
-- **KNIME**: Start with the normal log on the bottom right of KNIME. In general all warnings and errors will be listed there. If the output is not helpful enough, try to set the logging verbosity to the highest (DEBUG) under **Preferences** > **KNIME** > **Log file log level**.
+- **KNIME**: Start with the normal log on the bottom right of KNIME. In general all warnings and errors will be listed there. If the output is not helpful enough, try to set the logging verbosity to the highest (DEBUG) under **Preferences** > **KNIME** > **Log file log level**. 
 - **OpenMS nodes**: The first step should also be the log of KNIME. Additionally, you can view the output and the errors of our tools by right-clicking on the node and selecting **View: NODENAME Std Output?error**. This shows you the output of the OpenMS executable that was called by that node. For advanced users, you can try to execute the underlying executable in your `KNIME/plugins/de.openms.platform.arch.version/payload/bin` folder, to see if the error is reproducible outside of KNIME.
-  You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the Input File node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
+You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the Input File node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
 
 #### General
 
@@ -2951,18 +2949,15 @@ This section will show you where you can turn to when you encounter any problems
 /usr/lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found
 /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
 ```
-
 **A:** We currently build the binaries shipped in the OpenMS KNIME plugin with gcc 4.8. We will try to extend our support for older compilers. Until then you either need to upgrade your gcc compiler or at least the library that the tool complained about or you need to build the binaries yourself (see OpenMS documentation) and replace them in your KNIME binary folder (`YOURKNIMEFOLDER/plugins/de.openms.platform.architecture.version/payload/bin`)
 
 **Q:** Why is my configuration dialog closing right away when I double-click or try to configure it? Or why is my GUI responding so slow?
 
 **A:** If you have any problems with the KNIME GUI or the opening of dialogues under Linux you might be affected by a GTK bug. See the KNIME forum (e.g. [here](https://tech.knime.org/forum/knime-general/ubuntu-1604-slow-performance) or [here](https://tech.knime.org/forum/knime-users/knime-300-crashes-after-splash-screen)) for a discussion and a possible solution. In short: set environment variable by calling `export SWT_GTK3=0` or edit `knime.ini` to make Eclipse use GTK2 by adding the following two lines:
-
 ```xml
 –launcher.GTK_version
 2
 ```
-
 ##### macOS
 
 **Q:** I have problems installing RServe in my local R installation for the R KNIME Extension.
@@ -2976,7 +2971,6 @@ This section will show you where you can turn to when you encounter any problems
 ```bash
   xattr -r -d {{ 'com.apple.quarantine /Applications/OpenMS-{0}'.format(version) }}
 ```
-
 ##### Windows
 
 **Q:** KNIME has problems getting the requirements for some of the OpenMS nodes on Windows, what can I do?
@@ -3004,140 +2998,115 @@ If your questions could not be answered by the FAQ, please feel free to turn to 
 ## References
 
 [^1]: OpenMS, <a href="http://www.openms.de/">OpenMS home page</a> [online].
-[^2]:
-    M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
-    O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="http://dx.doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
-    (2008), <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-163">doi:10.1186/1471-2105-9-163</a>. 7, 83
 
-[^3]:
-    H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti,
-    H.-C. Ehrlich, P. Gutenbrunner, E. Kenar, et al., OpenMS: a flexible open-source
-    software platform for mass spectrometry data analysis, Nature Methods 13(9),
-    741–748 (2016). 7
+[^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
+O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="http://dx.doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
+(2008), <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-163">doi:10.1186/1471-2105-9-163</a>. 7, 83
 
-[^4]:
-    O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
-    M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
-    2007). 7, 83
+[^3]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti,
+H.-C. Ehrlich, P. Gutenbrunner, E. Kenar, et al., OpenMS: a flexible open-source
+software platform for mass spectrometry data analysis, Nature Methods 13(9),
+741–748 (2016). 7
+
+[^4]: O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
+M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
+2007). 7, 83
 
 [^5]: M. R. Berthold, N. Cebron, F. Dill, T. R. Gabriel, T. Kötter, T. Meinl, P. Ohl, C. Sieb, K. Thiel, and B. Wiswedel, KNIME: The Konstanz Information Miner, in Studies in Classification, Data Analysis, and Knowledge Organization (GfKL 2007), Springer, 2007.
+
 [^6]: M. Sturm and O. Kohlbacher, <a href="http://dx.doi.org/10.1021/pr900171m">TOPPView: An Open-Source Viewer for Mass Spectrometry Data</a>, Journal of proteome research 8(7), 3760–3763 (July 2009), <a href="https://pubs.acs.org/doi/10.1021/pr900171m?cookieSet=1">doi:10.1021/pr900171m</a>. 7
-[^7]:
-    RDKit: Open-source cheminformatics, http://www.rdkit.org, [Online; accessed
-    31-August-2018]. 25
 
-[^8]:
-    C. Steinbeck, Y. Han, S. Kuhn, O. Horlacher, E. Luttmann, and E. Willighagen, The
-    Chemistry Development Kit (CDK): An Open-Source Java Library for Chemo- and
-    Bioinformatics, Journal of Chemical Information and Computer Sciences 43(2),
-    493–500 (2003), PMID: 12653513, <a href="https://pubs.acs.org/doi/10.1021/ci025584y">doi:10.1021/ci025584y</a>. 25
+[^7]: RDKit: Open-source cheminformatics, http://www.rdkit.org, [Online; accessed
+31-August-2018]. 25
 
-[^9]:
-    L. Y. Geer, S. P. Markey, J. A. Kowalak, L. Wagner, M. Xu, D. M. Maynard, X. Yang,
-    W. Shi, and S. H. Bryant, <a href="http://pubs.acs.org/doi/abs/10.1021/pr0499491">Open mass spectrometry search algorithm</a>, Journal of
-    Proteome Research 3(5), 958–964 (2004). 30
+[^8]: C. Steinbeck, Y. Han, S. Kuhn, O. Horlacher, E. Luttmann, and E. Willighagen, The
+Chemistry Development Kit (CDK): An Open-Source Java Library for Chemo- and
+Bioinformatics, Journal of Chemical Information and Computer Sciences 43(2),
+493–500 (2003), PMID: 12653513, <a href="https://pubs.acs.org/doi/10.1021/ci025584y">doi:10.1021/ci025584y</a>. 25
 
-[^10]:
-    A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, <a href="http://dx.doi.org/10.1021/pr500665j">Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis</a>, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
-    arXiv:http://dx.doi.org/10.1021/pr500665j, <a href="https://pubs.acs.org/doi/10.1021/pr500665j">doi:10.1021/pr500665j</a>. 30
+[^9]: L. Y. Geer, S. P. Markey, J. A. Kowalak, L. Wagner, M. Xu, D. M. Maynard, X. Yang,
+W. Shi, and S. H. Bryant, <a href="http://pubs.acs.org/doi/abs/10.1021/pr0499491">Open mass spectrometry search algorithm</a>, Journal of
+Proteome Research 3(5), 958–964 (2004). 30
+
+[^10]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, <a href="http://dx.doi.org/10.1021/pr500665j">Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis</a>, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
+arXiv:http://dx.doi.org/10.1021/pr500665j, <a href="https://pubs.acs.org/doi/10.1021/pr500665j">doi:10.1021/pr500665j</a>. 30
 
 [^11]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311, arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
-[^12]:
-    M. Choi, Z. F. Eren-Dogu, C. Colangelo, J. Cottrell, M. R. Hoopmann, E. A. Kapp,
-    S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub, B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
-    2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), <a href="https://pubs.acs.org/doi/10.1021/acs.jproteome.6b00881">doi: 10.1021/acs.jproteome.6b00881</a>. 40
 
-[^13]:
-    T. Huang, M. Choi, S. Hao, and O. Vitek, MSstatsTMT: Protein Significance Analysis in shotgun mass spectrometry-based proteomic experiments with tandem
-    mass tag (TMT) labeling., (2020), <a href="https://bioconductor.org/packages/release/bioc/html/MSstatsTMT.html">doi:10.18129/B9.bioc.MSstatsTMT</a>. 55
+[^12]: M. Choi, Z. F. Eren-Dogu, C. Colangelo, J. Cottrell, M. R. Hoopmann, E. A. Kapp,
+S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub, B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
+2015 Study: Detection of Differentially Abundant Proteins in Label-Free Quantitative LC-MS/MS Experiments, J. Proteome Res. 16(2), 945–957 (2017), <a href="https://pubs.acs.org/doi/10.1021/acs.jproteome.6b00881">doi: 10.1021/acs.jproteome.6b00881</a>. 40
 
-[^14]:
-    D. S. Wishart, D. Tzur, C. Knox, et al., HMDB: the Human Metabolome Database,
-    Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), <a href="https://academic.oup.com/nar/article/35/suppl_1/D521/1109186">doi:10.1093/nar/gkl923</a>. 69
+[^13]: T. Huang, M. Choi, S. Hao, and O. Vitek, MSstatsTMT: Protein Significance Analysis in shotgun mass spectrometry-based proteomic experiments with tandem
+mass tag (TMT) labeling., (2020), <a href="https://bioconductor.org/packages/release/bioc/html/MSstatsTMT.html">doi:10.18129/B9.bioc.MSstatsTMT</a>. 55
 
-[^15]:
-    D. S. Wishart, C. Knox, A. C. Guo, et al., HMDB: a knowledgebase for the human
-    metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), <a href="https://academic.oup.com/nar/article/37/suppl_1/D603/1011821">doi: 10.1093/nar/gkn810</a>. 69
+[^14]: D. S. Wishart, D. Tzur, C. Knox, et al., HMDB: the Human Metabolome Database,
+Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), <a href="https://academic.oup.com/nar/article/35/suppl_1/D521/1109186">doi:10.1093/nar/gkl923</a>. 69
 
-[^16]:
-    D. S. Wishart, T. Jewison, A. C. Guo, M. Wilson, C. Knox, et al., HMDB 3.0–The
-    Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), <a href="https://academic.oup.com/nar/article/41/D1/D801/1055560">doi:10.1093/nar/gks1065</a>. 69
+[^15]: D. S. Wishart, C. Knox, A. C. Guo, et al., HMDB: a knowledgebase for the human
+metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), <a href="https://academic.oup.com/nar/article/37/suppl_1/D603/1011821">doi: 10.1093/nar/gkn810</a>. 69
 
-[^17]:
-    J. Griss, A. R. Jones, T. Sachsenberg, M. Walzer, L. Gatto, J. Hartler, G. G.
-    Thallinger, R. M. Salek, C. Steinbeck, N. Neuhauser, J. Cox, S. Neumann, J. Fan,
-    F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), <a href="https://www.mcponline.org/article/S1535-9476(20)32821-8/fulltext">doi:10.1074/mcp.O113.036681</a>. 69
+[^16]: D. S. Wishart, T. Jewison, A. C. Guo, M. Wilson, C. Knox, et al., HMDB 3.0–The
+Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), <a href="https://academic.oup.com/nar/article/41/D1/D801/1055560">doi:10.1093/nar/gks1065</a>. 69
 
-[^18]:
-    S. Böcker, M. C. Letzel, Z. Lipták, and A. Pervukhin, SIRIUS: Decomposing isotope
-    patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), <a href="https://academic.oup.com/bioinformatics/article/25/2/218/218950">doi:10.1093/bioinformatics/btn603</a>. 75
+[^17]: J. Griss, A. R. Jones, T. Sachsenberg, M. Walzer, L. Gatto, J. Hartler, G. G.
+Thallinger, R. M. Salek, C. Steinbeck, N. Neuhauser, J. Cox, S. Neumann, J. Fan,
+F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), <a href="https://www.mcponline.org/article/S1535-9476(20)32821-8/fulltext">doi:10.1074/mcp.O113.036681</a>. 69
 
-[^19]:
-    S. Böcker and K. Dührkop, Fragmentation trees reloaded, J. Cheminform. 8(1),
-    1–26 (2016), <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-016-0116-8">doi:10.1186/s13321-016-0116-8</a>. 75
+[^18]: S. Böcker, M. C. Letzel, Z. Lipták, and A. Pervukhin, SIRIUS: Decomposing isotope
+patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), <a href="https://academic.oup.com/bioinformatics/article/25/2/218/218950">doi:10.1093/bioinformatics/btn603</a>. 75
 
-[^20]:
-    K. Dührkop, H. Shen, M. Meusel, J. Rousu, and S. Böcker, <a href="https://www.pnas.org/doi/abs/10.1073/pnas.1509788112">Searching molecular structure databases with tandem mass spectra using CSI:FingerID</a>, Proc. Natl.
-    Acad. Sci. 112(41), 12580–12585 (oct 2015), <a href="https://www.pnas.org/doi/full/10.1073/pnas.1509788112">doi:10.1073/pnas.1509788112</a>. 75
+[^19]: S. Böcker and K. Dührkop, Fragmentation trees reloaded, J. Cheminform. 8(1),
+1–26 (2016), <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-016-0116-8">doi:10.1186/s13321-016-0116-8</a>. 75
 
-[^21]:
-    H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinovic, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmstrom, L. Malmström, and R. Aebersold,
-    OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data, Nature Biotechnology 32(3), 219–223 (Mar. 2014). 83, 87
+[^20]: K. Dührkop, H. Shen, M. Meusel, J. Rousu, and S. Böcker, <a href="https://www.pnas.org/doi/abs/10.1073/pnas.1509788112">Searching molecular structure databases with tandem mass spectra using CSI:FingerID</a>, Proc. Natl.
+Acad. Sci. 112(41), 12580–12585 (oct 2015), <a href="https://www.pnas.org/doi/full/10.1073/pnas.1509788112">doi:10.1073/pnas.1509788112</a>. 75
 
-[^22]:
-    L. C. Gillet, P. Navarro, S. Tate, H. Röst, N. Selevsek, L. Reiter, R. Bonner, and
-    R. Aebersold, <a href="https://www.mcponline.org/article/S1535-9476(20)30442-4/fulltext">Targeted Data Extraction of the MS/MS Spectra Generated by Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis.</a>, Molecular & Cellular Proteomics 11(6) (June 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30442-4/fulltext">doi:10.1074/mcp.O111.016717</a>. 83
+[^21]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinovic, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmstrom, L. Malmström, and R. Aebersold,
+OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data, Nature Biotechnology 32(3), 219–223 (Mar. 2014). 83, 87
 
-[^23]:
-    A. Bertsch, C. Gröpl, K. Reinert, and O. Kohlbacher, <a href="https://link.springer.com/protocol/10.1007/978-1-60761-987-1_23">OpenMS and TOPP: open source software for LC-MS data analysis.</a>, Methods in molecular biology (Clifton,
-    N.J.) 696, 353–367 (2011), <a href="https://link.springer.com/protocol/10.1007/978-1-60761-987-1_23">doi:10.1007/978-1-60761-987-1_23</a>. 83
+[^22]: L. C. Gillet, P. Navarro, S. Tate, H. Röst, N. Selevsek, L. Reiter, R. Bonner, and
+R. Aebersold, <a href="https://www.mcponline.org/article/S1535-9476(20)30442-4/fulltext">Targeted Data Extraction of the MS/MS Spectra Generated by Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis.</a>, Molecular & Cellular Proteomics 11(6) (June 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30442-4/fulltext">doi:10.1074/mcp.O111.016717</a>. 83
 
-[^24]:
-    H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti, H.-c. Ehrlich, P. Gutenbrunner, E. Kenar, X. Liang, S. Nahnsen, L. Nilse,
-    J. Pfeuffer, G. Rosenberger, M. Rurik, U. Schmitt, J. Veit, M. Walzer, D. Wojnar,
-    W. E. Wolski, O. Schilling, J. S. Choudhary, L. Malmström, R. Aebersold, K. Reinert, and O. Kohlbacher, <a href="https://www.nature.com/articles/nmeth.3959">OpenMS: a flexible open-source software platform
-    for mass spectrometry data analysis</a>, Nat. Methods 13(9), 741–748 (sep 2016),<a href="https://www.nature.com/articles/nmeth.3959">doi:10.1038/nmeth.3959</a>. 83
+[^23]: A. Bertsch, C. Gröpl, K. Reinert, and O. Kohlbacher, <a href="https://link.springer.com/protocol/10.1007/978-1-60761-987-1_23">OpenMS and TOPP: open source software for LC-MS data analysis.</a>, Methods in molecular biology (Clifton,
+N.J.) 696, 353–367 (2011), <a href="https://link.springer.com/protocol/10.1007/978-1-60761-987-1_23">doi:10.1007/978-1-60761-987-1_23</a>. 83
 
-[^25]:
-    J. Pfeuffer, T. Sachsenberg, O. Alka, M. Walzer, A. Fillbrunn, L. Nilse, O. Schilling,
-    K. Reinert, and O. Kohlbacher, OpenMS - A platform for reproducible analysis
-    of mass spectrometry data, J. Biotechnol. 261(February), 142–148 (2017), <a href="https://www.sciencedirect.com/science/article/pii/S0168165617302511?via%3Dihub">doi:10.1016/j.jbiotec.2017.05.016</a>. 83
+[^24]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti, H.-c. Ehrlich, P. Gutenbrunner, E. Kenar, X. Liang, S. Nahnsen, L. Nilse,
+J. Pfeuffer, G. Rosenberger, M. Rurik, U. Schmitt, J. Veit, M. Walzer, D. Wojnar,
+W. E. Wolski, O. Schilling, J. S. Choudhary, L. Malmström, R. Aebersold, K. Reinert, and O. Kohlbacher, <a href="https://www.nature.com/articles/nmeth.3959">OpenMS: a flexible open-source software platform
+for mass spectrometry data analysis</a>, Nat. Methods 13(9), 741–748 (sep 2016),<a href="https://www.nature.com/articles/nmeth.3959">doi:10.1038/nmeth.3959</a>. 83
 
-[^26]:
-    L. Reiter, O. Rinner, P. Picotti, R. Huttenhain, M. Beck, M.-Y. Brusniak, M. O. Hengartner, and R. Aebersold, <a href="https://www.nature.com/articles/nmeth.1584">mProphet: automated data processing and statistical validation for large-scale SRM experiments</a>, Nature Methods 8(5), 430–435 (May
-    2011), <a href="https://www.nature.com/articles/nmeth.1584">doi:10.1038/nmeth.1584</a>. 83
+[^25]: J. Pfeuffer, T. Sachsenberg, O. Alka, M. Walzer, A. Fillbrunn, L. Nilse, O. Schilling,
+K. Reinert, and O. Kohlbacher, OpenMS - A platform for reproducible analysis
+of mass spectrometry data, J. Biotechnol. 261(February), 142–148 (2017), <a href="https://www.sciencedirect.com/science/article/pii/S0168165617302511?via%3Dihub">doi:10.1016/j.jbiotec.2017.05.016</a>. 83
 
-[^27]:
-    E. W. Deutsch, M. Chambers, S. Neumann, F. Levander, P.-A. Binz, J. Shofstahl,
-    D. S. Campbell, L. Mendoza, D. Ovelleiro, K. Helsens, L. Martens, R. Aebersold,
-    R. L. Moritz, and M.-Y. Brusniak, <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">TraML—A Standard Format for Exchange of Selected Reaction Monitoring Transition Lists</a>, Molecular & Cellular Proteomics
-    11(4) (Apr. 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">doi:10.1074/mcp.R111.015040</a>. 84
+[^26]: L. Reiter, O. Rinner, P. Picotti, R. Huttenhain, M. Beck, M.-Y. Brusniak, M. O. Hengartner, and R. Aebersold, <a href="https://www.nature.com/articles/nmeth.1584">mProphet: automated data processing and statistical validation for large-scale SRM experiments</a>, Nature Methods 8(5), 430–435 (May
+2011), <a href="https://www.nature.com/articles/nmeth.1584">doi:10.1038/nmeth.1584</a>. 83
 
-[^28]:
-    C. Escher, L. Reiter, B. MacLean, R. Ossola, F. Herzog, J. Chilton, M. J. MacCoss, and O. Rinner, <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">Using iRT, a normalized retention time for more targeted measurement of peptides</a>., Proteomics 12(8), 1111–1121 (Apr. 2012),
-    <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">doi:10.1002/pmic.201100463</a>. 84
+[^27]: E. W. Deutsch, M. Chambers, S. Neumann, F. Levander, P.-A. Binz, J. Shofstahl,
+D. S. Campbell, L. Mendoza, D. Ovelleiro, K. Helsens, L. Martens, R. Aebersold,
+R. L. Moritz, and M.-Y. Brusniak, <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">TraML—A Standard Format for Exchange of Selected Reaction Monitoring Transition Lists</a>, Molecular & Cellular Proteomics
+11(4) (Apr. 2012), <a href="https://www.mcponline.org/article/S1535-9476(20)30489-8/fulltext">doi:10.1074/mcp.R111.015040</a>. 84
 
-[^29]:
-    H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinović, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmström, L. Malmström, and R. Aebersold,
-    <a href="https://pubmed.ncbi.nlm.nih.gov/24727770/">OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data</a>., Nat. Biotechnol. 32(3), 219–23 (2014), <a href="https://www.nature.com/articles/nbt.2841">doi:10.1038/nbt.2841</a>.
-    89, 90
+[^28]: C. Escher, L. Reiter, B. MacLean, R. Ossola, F. Herzog, J. Chilton, M. J. MacCoss, and O. Rinner, <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">Using iRT, a normalized retention time for more targeted measurement of peptides</a>., Proteomics 12(8), 1111–1121 (Apr. 2012),
+<a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201100463">doi:10.1002/pmic.201100463</a>. 84
 
-[^30]:
-    J. Teleman, H. L. Röst, G. Rosenberger, U. Schmitt, L. Malmström, J. Malmström, and F. Levander, DIANA-algorithmic improvements for analysis of dataindependent acquisition MS data, Bioinformatics 31(4), 555–562 (2015), arXiv:
-    9808008, <a href="https://academic.oup.com/bioinformatics/article/31/4/555/209120">doi:10.1093/bioinformatics/btu686</a>. 89, 90
+[^29]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinović, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmström, L. Malmström, and R. Aebersold,
+<a href="https://pubmed.ncbi.nlm.nih.gov/24727770/">OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data</a>., Nat. Biotechnol. 32(3), 219–23 (2014), <a href="https://www.nature.com/articles/nbt.2841">doi:10.1038/nbt.2841</a>.
+89, 90
 
-[^31]:
-    K. Dührkop, M. Fleischauer, M. Ludwig, A. A. Aksenov, A. V. Melnik, M. Meusel,
-    P. C. Dorrestein, J. Rousu, and S. Böcker, <a href="https://www.nature.com/articles/s41592-019-0344-8">SIRIUS 4: a rapid tool for turning tandem
-    mass spectra into metabolite structure information</a>, Nat. Methods 16(4), 299–
-    302 (apr 2019), <a href="https://www.nature.com/articles/s41592-019-0344-8">doi:10.1038/s41592-019-0344-8</a>. 89
+[^30]: J. Teleman, H. L. Röst, G. Rosenberger, U. Schmitt, L. Malmström, J. Malmström, and F. Levander, DIANA-algorithmic improvements for analysis of dataindependent acquisition MS data, Bioinformatics 31(4), 555–562 (2015), arXiv:
+9808008, <a href="https://academic.oup.com/bioinformatics/article/31/4/555/209120">doi:10.1093/bioinformatics/btu686</a>. 89, 90
 
-[^32]:
-    J. E. Elias and S. P. Gygi, Target-decoy search strategy for increased confidence
-    in large-scale protein identifications by mass spectrometry, Nat. Methods 4(3),
-    207–214 (Mar. 2007). 89
+[^31]: K. Dührkop, M. Fleischauer, M. Ludwig, A. A. Aksenov, A. V. Melnik, M. Meusel,
+P. C. Dorrestein, J. Rousu, and S. Böcker, <a href="https://www.nature.com/articles/s41592-019-0344-8">SIRIUS 4: a rapid tool for turning tandem
+mass spectra into metabolite structure information</a>, Nat. Methods 16(4), 299–
+302 (apr 2019), <a href="https://www.nature.com/articles/s41592-019-0344-8">doi:10.1038/s41592-019-0344-8</a>. 89
 
-[^33]:
-    K. Scheubert, F. Hufsky, D. Petras, M. Wang, L. F. Nothias, K. Dührkop, N. Bandeira, P. C. Dorrestein, and S. Böcker, <a href="https://www.nature.com/articles/s41467-017-01318-5">Significance estimation for large scale
-    metabolomics annotations by spectral matching</a>, Nat. Commun. 8(1) (2017),
-    <a href="https://www.nature.com/articles/s41467-017-01318-5">doi:10.1038/s41467-017-01318-5</a>. 89
+[^32]: J. E. Elias and S. P. Gygi, Target-decoy search strategy for increased confidence
+in large-scale protein identifications by mass spectrometry, Nat. Methods 4(3),
+207–214 (Mar. 2007). 89
+
+[^33]: K. Scheubert, F. Hufsky, D. Petras, M. Wang, L. F. Nothias, K. Dührkop, N. Bandeira, P. C. Dorrestein, and S. Böcker, <a href="https://www.nature.com/articles/s41467-017-01318-5">Significance estimation for large scale
+metabolomics annotations by spectral matching</a>, Nat. Commun. 8(1) (2017),
+<a href="https://www.nature.com/articles/s41467-017-01318-5">doi:10.1038/s41467-017-01318-5</a>. 89
