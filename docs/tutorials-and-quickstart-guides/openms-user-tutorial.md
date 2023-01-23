@@ -1813,7 +1813,7 @@ Use the file `MetaboliteDeNovoID.mzML` as input for your workflow.
 
 Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
 
-(Figure*42)=
+(Figure_42)=
 |![De novo identification workflow](../images/openms-user-tutorial/metabo/denovoid.png)|
 |:--:|
 |Figure 42: *De novo* identification workflow|
