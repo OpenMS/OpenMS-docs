@@ -1630,17 +1630,6 @@ The next step after retention time correction is the grouping of corresponding f
 |Figure 33: Features A and B correspond to the same analyte. The linking of features between runs (indicated by an arrow) allows comparing feature intensities.|
 
 - After the **MapAlignerPoseClustering** node, add a **FeatureLinkerUnlabeledQT** node (**Community Nodes** > **OpenMS**>**Map Alignment**) and adjust the following settings:
-<<<<<<< HEAD
-  | **parameter** | **value** |
-  | :--------------------------------------------- | :-------- |
-  | _algorithm_ → _distance_RT_ → _max_difference_ | 40 |
-  | _algorithm_ → _distance_MZ_ → _max_difference_ | 20 |
-  | _algorithm_ → _distance_MZ_ → _unit_ | ppm |
-  The parameters change the behavior of **FeatureLinkerUnlabeledQT** as follows (similar to the parameters we adjusted for **MapAlignerPoseClustering**):
-  - **distance_RT → max_difference**: Features that have a larger RT difference will never be paired.
-  - **distance_MZ → max_difference**: Features that have a larger m/z difference will never be paired.
-  - **distance_MZ → unit**: Unit used for the parameter distance_MZ max_difference, either Da or ppm.
-=======
     
     |**parameter**|**value**|
     |:------------|:--------|
@@ -1654,7 +1643,6 @@ The next step after retention time correction is the grouping of corresponding f
     - **distance_MZ → max_difference**: Features that have a larger m/z difference will never be paired.
     - **distance_MZ → unit**: Unit used for the parameter distance_MZ max_difference, either Da or ppm.
     
->>>>>>> parent of c65975c (Added the chemical structure)
 - After the **FeatureLinkerUnlabeledQT** node, add a **TextExporter** node (**Community Nodes** > **OpenMS** > **File Handling**).
 - Add an **Output Folder** node and configure it with an output directory where you want to store the resulting files.
 - Run the pipeline and inspect the output.
