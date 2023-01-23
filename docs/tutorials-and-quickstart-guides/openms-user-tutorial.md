@@ -1090,15 +1090,8 @@ This matrix has the following properties:
 ```
 -->
 
-=======
-- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
-```{math}
- \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
-```
->>>>>>> parent of c65975c (Added the chemical structure)
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
-```r
 comparison1<-matrix(c(-1,1,0,0),nrow=1)   
 comparison2<-matrix(c(-1,0,1,0),nrow=1)
 
