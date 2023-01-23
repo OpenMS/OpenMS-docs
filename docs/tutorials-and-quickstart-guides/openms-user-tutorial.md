@@ -41,7 +41,7 @@ Due to increasing security measures for downloaded apps (e.g. path
 randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
 open, you might need to move them from {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} to e.g. your Desktop and back.
 ```
-On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://www.openms.de/documentation) website.
+On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html) website.
 
 ```{note}
 If you have installed OpenMS on Linux or macOS via your package
