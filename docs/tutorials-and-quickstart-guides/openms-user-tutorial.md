@@ -1092,7 +1092,7 @@ This matrix has the following properties:
 
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
-
+```r
 comparison1<-matrix(c(-1,1,0,0),nrow=1)   
 comparison2<-matrix(c(-1,0,1,0),nrow=1)
 
