@@ -1816,11 +1816,7 @@ Below we show an example workflow for de novo identification (<a href="#figure-4
 (Figure*42)=
 |![De novo identification workflow](../images/openms-user-tutorial/metabo/denovoid.png)|
 |:--:|
-<<<<<<< HEAD
-|Figure 42: \_De novo* identification workflow|
-=======
 |Figure 42: *De novo* identification workflow|
->>>>>>> parent of c65975c (Added the chemical structure)
 
 Run the workflow and inspect the output.
 
