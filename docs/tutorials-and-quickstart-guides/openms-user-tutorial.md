@@ -81,10 +81,12 @@ usually the most convenient option.
 To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI (a
 graphical user interface) or `msconvert` (a simple command line tool).
 
-(Figure_1)=
-|![msconvertgui](../images/openms-user-tutorial/introduction/proteowizard.png)|
-|:--:|
-|Figure 1: `MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see <a href="#figure-2">Fig. 2</a>)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.|
+
+```{figure} ../images/openms-user-tutorial/introduction/proteowizard.png
+:name: pwiz
+
+`MSConvertGUI` (part of `ProteoWizard`), allows converting raw files to mzML. Select the raw files you want to convert by clicking on the browse button and then on Add. Default parameters can usually be kept as-is. To reduce the initial data size, make sure that the `peakPicking` filter (converts profile data to centroided data (see <a href="#figure-2">Fig. 2</a>)) is listed, enabled (true) and applied to all MS levels (parameter ”1-”). Start the conversion process by clicking on the Start button.
+```
 
 Both tools are available in: {{ '{path}'+'`C:,Program Files,OpenMS-{0},share,OpenMS,THIRDPARTY,pwiz-bin`'.format(version) }}.
 
@@ -92,7 +94,7 @@ You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introducti
 
 #### MSConvertGUI
 
-`MSConvertGUI` (see <a href="#figure-1">Fig. 1</a>) exposes the main parameters for data conversion in a convenient graphical user interface.
+`MSConvertGUI` (see {numref}`pwiz`) exposes the main parameters for data conversion in a convenient graphical user interface.
 
 #### msconvert
 
