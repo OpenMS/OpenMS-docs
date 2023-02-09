@@ -50,14 +50,6 @@
 |`OpenSWATH` | Targeted extraction and scoring of transitions in DIA data based on an (iRT) assay library. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/OpenSWATH.knwf?raw=true) |
 |`Phosphoproteomics_ID` | Identification of Phosphorilation sites. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/Phosphoproteomics_ID.knwf?raw=true) |
 
-# OpenMS Releases
-
-| Release                                                |  Installers |
-|--------------------------------------------------------|-------------|
-| Stable release     | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/) |
-| Release candidates | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/RC/) |
-| Nightly release    | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/) |
-
 # Other Resources
 
 | Name | Description | Download Link |
