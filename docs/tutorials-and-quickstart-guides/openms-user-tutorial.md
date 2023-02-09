@@ -52,7 +52,7 @@ then you need to set the `OPENMS_DATA_PATH` variable to the directory containing
 
 If you are working through this tutorial at home, you can get the installers under the following links:
 
-- [OpenMS](https://www.openms.de/download/openms-binaries)
+- [OpenMS](https://openms.readthedocs.io/en/latest/downloads.html)
 - [KNIME](https://www.knime.org/downloads/overview)
 - OpenMS prerequisites (Windows-only): After installation, before your first use
 of the OpenMS plugin in KNIME you will be asked to download it automatically
