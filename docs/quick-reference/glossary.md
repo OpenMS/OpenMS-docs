@@ -22,7 +22,7 @@ FASTA format
   A text-based format for representing nucleotide or amino acid sequences.
 
 octadecyl (C18)
-  An alkyl radical C(18)H(37) derived from an octadecane by removal of one hydrogen atom.
+  An alkyl radical :math:`C_{18}H_{37}` derived from an octadecane by removal of one hydrogen atom.
 
 Mass
   Mass is a measure of the amount of matter that an object contains. In comparison to often used term weight, which is
