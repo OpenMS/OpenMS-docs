@@ -46,7 +46,6 @@ To install OpenMS on macOS, run the following steps:
 :width: 500px
 ```
 
-
 To use {term}`TOPP` as regular app in the shell, add the following lines to the `~/.profile` file.
 
 ```bash
@@ -55,6 +54,7 @@ source ${OPENMS_TOPP_PATH}/.TOPP_bash_profile
 ```
 
 Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally (e.g., `/Applications/OpenMS-<version>`)
+
 
 ## Install via Conda or Bioconda
 
@@ -85,7 +85,7 @@ To build OpenMS from source, follow the build instructions for [macOS](https://a
    
 2. Bug with running Java based thirdparty tools like {term}`MSGFPlusAdapter` and {term}`LuciphorAdapter` from within **TOPPAS.app**
 
-   If you face issues while running Java based thirdparty tools from within {term}`TOPPAS.app`, run the {term}`TOPPAS.app`
+   If you face issues while running Java based thirdparty tools from within {term}`TOPPAS.app <TOPPAS>`, run the {term}`TOPPAS.app <TOPPAS>`
    from within the Terminal.app (e.g. with the `open` command) to get access to the path where Java is located.
    Java is usually present in the `PATH` of the terminal. Advanced users can set this path in the `Info.plist` of/inside
    the TOPPAS.app.

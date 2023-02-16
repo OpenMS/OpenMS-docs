@@ -146,4 +146,3 @@ frozen_locals = dict(locals())
 # Makes variables_to_export available in the epilog
 rst_epilog = '\n'.join(map(lambda x: f".. |{x}| replace:: {frozen_locals[x]}", variables_to_export))
 del frozen_locals
-

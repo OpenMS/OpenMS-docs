@@ -48,7 +48,7 @@ def make_path_nodes(rawtext, pathparts, app, options):
     #
     triangle = nodes.inline(text="▸")
     #triangle = nodes.Text("▹")
-    triangle.set_class("pathsep_triangle")
+    triangle["classes"].append("pathsep_triangle")
 
     #retnodes = [nodes.image(app.config.pathicon, **options), triangle]
     nobrhtml = "<nobr class='path'>"
