@@ -18,48 +18,44 @@ OpenMS User Tutorial
 ### Installation
 
 Before we get started, we will install OpenMS and KNIME. If you take part in a training session you will have likely received an USB stick from us that contains the required data and software. If we provide laptops with the software you may of course skip the installation process and continue reading the next section.
+If you are doing this tutorial online, choose online in the following tab(s).
 
-#### Installation from the OpenMS USB stick
+::::{tab-set}
+
+:::{tab-item} Online
+:sync: online
+
+If you are working through this tutorial at home/online, proceed with the following steps:
+
+- Download and install OpenMS using the installation instructions for your operating system:
+  - [GNU/Linux](/installations/installation-on-gnu-linux.md)
+  - [macOS](/installations/installation-on-macos.md)
+  - [Windows](/installations/installation-on-windows.md)
+- Download and install [KNIME](https://www.knime.org/downloads/overview)
+
+:::
+
+:::{tab-item} USB Stick
+:sync: usb
 
 Please choose the directory that matches your operating system and execute the installer.
 
-For Windows, you call:
+For Windows, you run:
 
 - The OpenMS installer: {{ '{path}'+'`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Windows,KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
-- OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME, you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version here or on the OpenMS USB stick: {{ '{path}'+'`Windows,OpenMS-{0}-prerequisites-installer.exe`'.format(version) }}.
 
-On macOS, you call:
+On macOS, you run:
 
 - The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(version) }}
 
-Afterwards, follow the instructions. For the OpenMS installation on macOS, accept the license and drag and drop  the OpenMS folder into your Applications folder.
+On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with our
+[build instructions](installations/installation-on-gnu-linux.md#build-openms-from-source).
 
-```{note}
-Due to increasing security measures for downloaded apps (e.g. path
-randomization) on macOS you might need to open `TOPPView.app` and `TOPPAS.app` while holding <kbd>ctrl</kbd> and accept the warning. If the app still does not
-open, you might need to move them from {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} to e.g. your Desktop and back.
-```
-On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with the instructions under the [API reference](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html) website.
+:::
 
-```{note}
-If you have installed OpenMS on Linux or macOS via your package
-manager (for instance by installing the {{ '`OpenMS-{0}-Linux.deb`'.format(version) }} package),
-then you need to set the `OPENMS_DATA_PATH` variable to the directory containing the shared data (normally `/usr/share/OpenMS`). This must be done prior to running any TOPP tool.
-```
-#### Installation from the internet
-
-If you are working through this tutorial at home, you can get the installers under the following links:
-
-- [OpenMS](https://www.openms.de/download/openms-binaries)
-- [KNIME](https://www.knime.org/downloads/overview)
-- OpenMS prerequisites (Windows-only): After installation, before your first use
-of the OpenMS plugin in KNIME you will be asked to download it automatically
-if certain requirements are not found in your Windows registry. Alternatively,
-you can get a bundled version here.
-
-Choose the installers for the platform you are working on.
+::::
 
 ### Data conversion
 
@@ -78,6 +74,7 @@ formats is only possible on Windows systems. In practice, performing the
 conversion to mzML on the acquisition PC connected to the instrument is
 usually the most convenient option.
 ```
+
 To convert raw data to mzML using `ProteoWizard` you can either use MSConvertGUI (a
 graphical user interface) or `msconvert` (a simple command line tool).
 
@@ -128,6 +125,7 @@ Recently the open-source platform independent ThermoRawFileParser tool has been 
 To learn more about the `ThermoRawFileParser` and how to use it in
 KNIME see <a href="#a-minimal-workflow">A minimal workflow</a>.
 ```
+
 ### Data visualization using TOPPView
 
 Visualizing the data is the first step in quality control, an essential tool in understanding the data, and of course an essential step in pipeline development. OpenMS provides a convenient viewer for some of the data: TOPPView. We will guide you through some of the basic features of TOPPView. Please familiarize yourself with the key controls and visualization methods. We will make use of these later throughout the tutorial. Let’s start with a first look at one of the files of
@@ -201,13 +199,18 @@ concepts will also be reviewed in this tutorial.
 
 #### Plugin and dependency installation
 
-Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the program automatically detects missing plugins when you open a workflow but to make sure that the right source for the
-OpenMS plugin is chosen, please follow the instructions here. First, we install some additional extensions that are
-required by our OpenMS nodes or used in the Tutorials e.g. for visualization and file handling.
+Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the program automatically
+detects missing plugins when you open a workflow but to make sure that the right source for the
+OpenMS plugin is chosen, please follow the instructions here.
 
-1. Click on **Help** > **Install New Software**.
-2. From the '**Work with**:' drop-down list select http://update.knime.com/analytics-platform/4.6.
-3. Now select the following plugins from the KNIME & Extensions category
+##### Required KNIME plugins
+
+First, we install some additional extensions that are
+required by our OpenMS nodes or used in the Tutorials for downstream processing, visualization or reporting.
+
+1. In KNIME, click on **Help** > **Install New Software**.
+2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 4.6 - https://update.knime.com/community-contributions/trusted/4.6'
+3. Now select the following KNIME core plugins from the KNIME & Extensions category
    - KNIME Base Chemistry Types & Nodes
    - KNIME Chemistry Add-Ons
    - KNIME Interactive R Statistics Integration
@@ -216,11 +219,11 @@ required by our OpenMS nodes or used in the Tutorials e.g. for visualization and
 4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
 6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
-   If you do not find OpenMS there, please report it to us and meanwhile try _update sites_ from older KNIME versions by editing the version at the end of the URL or
-   use our inofficial _update site_ https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/release/latest/.
-8. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
+7. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
    - RDKit KNIME integration
-9. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
+8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
+
+##### R programming language and its KNIME integration
 
 In addition, we need to install `R` for the statistical downstream analysis. Choose the directory that matches your
 operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
@@ -250,9 +253,36 @@ your installation path. You can use the following settings, if you installed R a
 - Windows: `C:\Program Files\R\R-3.6.X'` (where X is the version you used to install the above libraries)
 - macOS: `/Library/Frameworks/R.framework/Versions/3.6/Resources`
 
+##### KNIME OpenMS plugin
+
 You are now ready to install the OpenMS nodes.
-- Open KNIME.
-- Click on **Help** > **Install New Software**
+- In KNIME, click on **Help** > **Install New Software**
+
+You now have to choose an _update site_ to install the OpenMS plugin from. Which _update site_ to choose depends on if you received an USB stick
+in a hands-on Tutorial or if you are doing this Tutorial online.
+
+::::{tab-set}
+
+:::{tab-item} Online
+:sync: online
+
+To install the OpenMS KNIME plugin from the internet, do the following:
+
+1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
+2. Now select the following plugin from the "KNIME Community Contributions - Bioinformatics & NGS" category
+   - OpenMS
+3. Click on **Next**  and follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
+  "Community Nodes".
+  
+```{note}
+If this does not work for you, report it and while waiting for a reply/fix, try to use an _update site_ of an older KNIME version by editing the KNIME
+version number in the URL or by using our inofficial _update site_ at https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/release/latest
+```
+
+:::
+
+:::{tab-item} USB
+:sync: usb
 
 We included a custom KNIME update site to install the OpenMS KNIME plugins from the USB stick. If you do not have a stick available, please see below.
 
@@ -271,11 +301,15 @@ From now on, you can use this repository for plugins in the **Work with**: drop-
 - Select the OpenMS nodes in the ”Uncategorized” category and click **Next**.
 - Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
   "Community Nodes”.
+  
+:::
 
-Alternatively, you can try these steps that will install the OpenMS KNIME plugins from the internet. Note that download
-can be slow.
+:::{tab-item} Online experimental
+:sync: onlineexp
 
-- In the now open dialog, choose **Add** (in the upper right corner of the dialog) to define a new update site. In the opening dialog enter the following details.
+To install the nightly/experimental version of the OpenMS KNIME plugin from the internet, do the following:
+
+- In the now open dialog, choose **Add** (in the upper right corner of the dialog) to define a new _update site_. In the opening dialog enter the following details.
 
   **Name:** OpenMS {{ version }} UpdateSite
 
@@ -288,6 +322,10 @@ From now on, you can use this repository for plugins in the **Work with:** drop-
 - Select the OpenMS nodes in the "Uncategorized" category and click **Next**.
 - Follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
   "Community Nodes".
+  
+:::
+
+::::
 
 #### KNIME concepts
 
