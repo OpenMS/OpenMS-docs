@@ -58,7 +58,7 @@ Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally
 
 ## Install via Conda or Bioconda
 
-Follow the <a href="installation-on-gnu-linux.html#install-via-conda">instructions</a> .
+Follow the equivalent <a href="installation-on-gnu-linux.html#install-via-conda">instructions for GNU/Linux</a>.
 
 ## Known Issues
 
