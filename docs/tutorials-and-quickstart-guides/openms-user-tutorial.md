@@ -152,8 +152,7 @@ is the correct one and we can click the <kbd>Ok</kbd> button.
 
 - Three basic modes allow you to interact with the displayed data: scrolling, zooming and measuring:
   - **Scroll mode**
-    - Is activated by default (though each loaded spectra file is displayed
-zoomed out first, so you do not need to scroll).
+    - Is activated by default (though each loaded spectra file is displayed zoomed out first, so you do not need to scroll).
     - Allows you to browse your data by moving around in RT and m/z range.
     - When zoomed in, you can scroll through the spectra. Click-drag on the current view.
     - Arrow keys can be used to scroll the view as well.
@@ -211,16 +210,17 @@ required by our OpenMS nodes or used in the Tutorials e.g. for visualization and
 3. Now select the following plugins from the KNIME & Extensions category
    - KNIME Base Chemistry Types & Nodes
    - KNIME Chemistry Add-Ons
-   - KNIME File Handling Nodes (required for OpenMS nodes in general)
    - KNIME Interactive R Statistics Integration
    - KNIME Report Designer
    - KNIME SVG Support
 4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
-6. From the '**Work with**:'' drop-down list select http://update.knime.com/community-contributions/trusted/4.6
-7. Now select the following plugin from the ”KNIME Community Contributions - Cheminformatics” category
+6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
+   If you do not find OpenMS there, please report it to us and meanwhile try _update sites_ from older KNIME versions by editing the version at the end of the URL or
+   use our inofficial _update site_ https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/release/latest/.
+8. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
    - RDKit KNIME integration
-8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
+9. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
 
 In addition, we need to install `R` for the statistical downstream analysis. Choose the directory that matches your
 operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
