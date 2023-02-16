@@ -3,6 +3,11 @@ GNU/Linux
 
 ## Install via Conda
 
+```{note}
+At this time, we do not provide a conda package for our GUI tools. This means if you want to install e.g., TOPPView or SwathWizard
+for use in for example one of our tutorials, please refer to a different installation method below.
+```
+
 You can use conda to install the OpenMS library and tools without user interface. Depending on the conda channel, you can
 obtain release versions (`bioconda` channel) and nightly versions (`openms` channel).
 
