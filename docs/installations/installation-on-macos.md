@@ -46,7 +46,6 @@ To install OpenMS on macOS, run the following steps:
 :width: 500px
 ```
 
-
 To use {term}`TOPP` as regular app in the shell, add the following lines to the `~/.profile` file.
 
 ```bash
@@ -56,9 +55,16 @@ source ${OPENMS_TOPP_PATH}/.TOPP_bash_profile
 
 Make sure `<OpenMS-PATH>` points to the folder where OpenMS is installed locally (e.g., `/Applications/OpenMS-<version>`)
 
+
 ## Install via Conda or Bioconda
 
-Follow the <a href="installation-on-gnu-linux.html#install-via-conda">instructions</a> .
+Follow [these](./installation-on-gnu-linux.md#install-via-conda) instructions for Unix-like systems.
+
+
+## Build OpenMS from source
+
+To build OpenMS from source, follow the build instructions for [macOS](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/install_mac.html).
+
 
 ## Known Issues
 

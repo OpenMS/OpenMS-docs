@@ -70,6 +70,8 @@ myst_enable_extensions = [
   "substitution",
 ]
 
+myst_heading_anchors = 3
+
 # do not start footnotes with transition, gives warnings/errors when
 # foot notes are directly used after a heading.
 myst_footnote_transition = False
