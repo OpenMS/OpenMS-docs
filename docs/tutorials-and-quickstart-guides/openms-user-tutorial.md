@@ -28,9 +28,9 @@ If you are doing this tutorial online, choose online in the following tab(s).
 If you are working through this tutorial at home/online, proceed with the following steps:
 
 - Download and install OpenMS using the installation instructions for your operating system:
-  - [GNU/Linux](/installations/installation-on-gnu-linux.md)
-  - [macOS](/installations/installation-on-macos.md)
-  - [Windows](/installations/installation-on-windows.md)
+  - [GNU/Linux](../installations/installation-on-gnu-linux.md)
+  - [macOS](../installations/installation-on-macos.md)
+  - [Windows](../installations/installation-on-windows.md)
 - Download and install [KNIME](https://www.knime.org/downloads/overview)
 
 :::
