@@ -28,9 +28,9 @@ If you are doing this tutorial online, choose online in the following tab(s).
 If you are working through this tutorial at home/online, proceed with the following steps:
 
 - Download and install OpenMS using the installation instructions for your operating system:
-  - [GNU/Linux](/installations/installation-on-gnu-linux.md)
-  - [macOS](/installations/installation-on-macos.md)
-  - [Windows](/installations/installation-on-windows.md)
+  - [GNU/Linux](../installations/installation-on-gnu-linux.md)
+  - [macOS](../installations/installation-on-macos.md)
+  - [Windows](../installations/installation-on-windows.md)
 - Download and install [KNIME](https://www.knime.org/downloads/overview)
 
 :::
@@ -51,7 +51,7 @@ On macOS, you run:
 - The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(version) }}
 
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with our
-[build instructions](installations/installation-on-gnu-linux.md#build-openms-from-source).
+[build instructions](../installations/installation-on-gnu-linux.md#build-openms-from-source).
 
 :::
 
@@ -197,7 +197,8 @@ workflows. The first step is to become familiar with KNIME. Additional informati
 found on the KNIME [Getting Started page](https://www.knime.com/getting-started-guide). However, the most important
 concepts will also be reviewed in this tutorial.
 
-#### Plugin and dependency installation
+#### Plugin and dependency 
+
 
 Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the program automatically
 detects missing plugins when you open a workflow but to make sure that the right source for the
@@ -2557,7 +2558,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS data structure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures_peak.html).
+For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/ms_data.html).
 
 ### Tool development with pyOpenMS
 
