@@ -2558,7 +2558,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS data structure please see the following [link](https://pyopenms.readthedocs.io/en/latest/datastructures_peak.html).
+For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/ms_data.html).
 
 ### Tool development with pyOpenMS
 
