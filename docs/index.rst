@@ -41,7 +41,7 @@ Contents
    :titlesonly:
 
    introduction/about-open-ms.md
-   introduction/background.md
+   introduction/extended-background.md
    introduction/entry-points-to-openms.md
    
 
@@ -69,9 +69,9 @@ Contents
    :maxdepth: 2
    :caption: Tutorials and Quick Start Guides
 
+   tutorials-and-quickstart-guides/guides/user-quickstart-guide.md
    tutorials-and-quickstart-guides/openms-user-tutorial.md
    tutorials-and-quickstart-guides/tutorials.md
-   tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
    :maxdepth: 2
@@ -88,6 +88,7 @@ Contents
    :maxdepth: 2
    :caption: Contribute to OpenMS
 
+   tutorials-and-quickstart-guides/guides/contributors-quickstart-guide.md
    contribute-to-openms/openms-git-workflow.md
    contribute-to-openms/write-and-label-github-issues.md
    contribute-to-openms/adding-new-tool-to-topp.md
