@@ -43,19 +43,13 @@ Contents
    introduction/about-open-ms.md
    introduction/background.md
    introduction/entry-points-to-openms.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Installation Guides
-
-   installations/installation-on-gnu-linux.md
-   installations/installation-on-macos.md
-   installations/installation-on-windows.md
+   
 
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS Applications and Tools
 
+   openms-applications-and-tools/installation.md
    openms-applications-and-tools/openms-graphical-user-interfaces.md
    openms-applications-and-tools/topp-tools.md
    openms-applications-and-tools/utils-tools.md
@@ -67,6 +61,9 @@ Contents
    :caption: Run Workflows with OpenMS Tools
 
    run-workflows-with-openms-tools/overview.md
+   run-workflows-with-openms-tools/openms-in-knime.md
+   run-workflows-with-openms-tools/openms-in-nextflow.md
+   run-workflows-with-openms-tools/openms-on-galaxy.md
 
 .. toctree::
    :maxdepth: 2

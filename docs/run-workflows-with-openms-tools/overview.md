@@ -1,16 +1,5 @@
 # Overview
 
-```{toctree}
----
-hidden: true
----
-
-openms-in-knime.md
-openms-in-nextflow.md
-openms-on-galaxy.md
-```
-
-
 Which workflow environment to choose for running OpenMS tools?
 
 :::{card} KNIME
