@@ -1,4 +1,4 @@
-# Overview
+# Recommended Workflow Systems
 
 Which workflow environment to choose for running OpenMS tools?
 

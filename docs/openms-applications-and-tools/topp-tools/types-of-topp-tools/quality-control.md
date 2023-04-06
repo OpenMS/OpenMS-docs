@@ -13,7 +13,7 @@ then be processed using custom scripts or via the R package (see [PTXQC](https:/
 
 ## Workflow
 
-![](../../../images/tutorials/topp/TOPP_qualitycontrol.png)
+![](/images/tutorials/topp/TOPP_qualitycontrol.png)
 
 Find an example workflow in `OpenMS/share/OpenMS/examples/TOPPAS/QualityControl.toppas`.
 

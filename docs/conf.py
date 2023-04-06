@@ -90,7 +90,10 @@ source_suffix = ['.rst', '.md']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
+    'openms-applications-and-tools/installation/installation-with-conda.md', # just a snippet to be included
+    'openms-applications-and-tools/installation/run-in-container.md', # just a snippet to be included 
+]
 
 # -- Options for HTML output -------------------------------------------------
 

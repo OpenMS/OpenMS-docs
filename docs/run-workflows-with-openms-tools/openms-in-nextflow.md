@@ -1,14 +1,11 @@
 OpenMS in Nextflow
 ==================
 
+This page is under construction.
+
 ```{toctree}
----
-hidden: true
----
 
 nextflow/installation.md
 nextflow/workflows.md
 nextflow/tutorial.md
 ```
-
-This page is under construction.

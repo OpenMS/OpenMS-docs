@@ -24,7 +24,7 @@ Start by [forking](https://docs.github.com/en/get-started/quickstart/fork-a-repo
 
 To create a fork, click **Fork** under the main menu as shown below.
 
-![image info](../images/additional-resources/click-fork.png)
+![image info](/images/additional-resources/click-fork.png)
 
 ## Clone your fork
 

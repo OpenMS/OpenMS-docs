@@ -76,7 +76,7 @@ class Spectrum : public RawDataArray
 
 The overall design is summarised in the following figure.
 
-![](../../images/research/whitepapers/summary.png)
+![](/images/research/whitepapers/summary.png)
 
 ## MSRun (was MSExperiment)
 
@@ -112,7 +112,7 @@ public:
 
 The overall design is summarised in the following figure.
 
-![](../../images/research/whitepapers/design-summary.png)
+![](/images/research/whitepapers/design-summary.png)
 
 ## Modularisation
 

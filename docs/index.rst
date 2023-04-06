@@ -60,7 +60,7 @@ Contents
    :maxdepth: 2
    :caption: Run Workflows with OpenMS Tools
 
-   run-workflows-with-openms-tools/overview.md
+   run-workflows-with-openms-tools/recommended-workflow-systems.md
    run-workflows-with-openms-tools/openms-in-knime.md
    run-workflows-with-openms-tools/openms-in-nextflow.md
    run-workflows-with-openms-tools/openms-on-galaxy.md
