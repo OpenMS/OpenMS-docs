@@ -204,7 +204,7 @@ docker pull ghcr.io/openms/openms-executables
 ```
 
 per default this results in the download of the latest nightly snapshot. Specify a release version (e.g.,
-`docker pull ghcr.io/openms/openms-library:2.7.0` to receive a stable version.
+`docker pull ghcr.io/openms/openms-library:3.0.0` to receive a stable version.
 
 Otherwise, the [BioContainers Registries](https://biocontainers.pro/registry) and the associated Galaxy
 project provide native containers from our bioconda packages for both Docker and Singularity.

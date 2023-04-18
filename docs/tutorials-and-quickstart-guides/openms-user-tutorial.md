@@ -2480,11 +2480,11 @@ Install a local available package:
 
 ```bash
 pip install numpy-1.20.0-cp37*.whl   
-pip install pyopenms-2.7.0-cp37*.whl  
+pip install pyopenms-3.0.0-cp37*.whl  
 or (in case of windows)
  
 python -m pip install -U numpy-1.20.0-cp37*.whl 
-python -m pip install -U pyopenms-2.7.0-cp37*.whl
+python -m pip install -U pyopenms-3.0.0-cp37*.whl
 ```
 The local available packages can be found in the directory corresponding to your operating system. Please use the absolute path to the packages for the installation.
 
