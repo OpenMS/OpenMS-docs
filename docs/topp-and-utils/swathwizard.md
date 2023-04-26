@@ -19,7 +19,7 @@ both the intermediate files from OpenSWATH (e.g. the XIC data in `.sqMass` forma
 
 This is how the wizard looks like:
 
-![SwathWizard](../images/topp/SwathWizard.png)
+![SwathWizard](/images/topp/SwathWizard.png)
 
 A schematic of the internal data flow (all tools are called by SwathWizard in the background) can be found in the
 [TOPP Documentation: SwathWizard](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_SwathWizard.html).

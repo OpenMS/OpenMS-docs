@@ -15,7 +15,7 @@ The following section provides general information to new contributors.
 * Read the [OpenMS User Tutorial](../tutorials-and-quickstart-guides/openms-user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
-  or [contact-us](../quick-reference/contact-us.md).
+  or [contact-us](/quick-reference/contact-us.md).
 
 ### What is the difference between an OpenMS tool and util?
 

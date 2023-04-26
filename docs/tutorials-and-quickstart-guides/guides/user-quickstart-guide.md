@@ -72,5 +72,5 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 ### What parameters to set and to what value?
 
 The answer is complex, in general, read the tool description, change the parameters and compare the results using
-{term}`TOPPView` if possible. If that does not help, [contact us](../../quick-reference/contact-us.md). Please include all the necessary
+{term}`TOPPView` if possible. If that does not help, [contact us](/quick-reference/contact-us.md). Please include all the necessary
 details we need in order to help you.

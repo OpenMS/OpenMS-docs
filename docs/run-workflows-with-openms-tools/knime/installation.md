@@ -1,17 +1,4 @@
----
-orphan: true
----
-KNIME Tutorial
-==============
-
-Users can now use {term}`KNIME` in place of {term}`TOPPAS`; the later will deprecated with no support in near future.
-
-The below image shows an example workflow in {term}`KNIME`.
-
-![](/images/tutorials/knime/KNIME_screenshot.png)
-
-
-## Installing OpenMS in KNIME
+# Installation of KNIME and its OpenMS plugin
 
 Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, MacOSX, and Linux.
 
@@ -36,17 +23,23 @@ Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, 
 6. Now, install the actual OpenMS plugin. Next to the **Work with:** dropdown menu, click on **Add...**. In the opening
    dialog fill in at least one of the following additional Update Sites (if not already present):
 
-   **Recommended**:
+   - **Recommended**:
 
-   **Name**: KNIME Community Contributions (Stable)
+     **Name**: KNIME Community Contributions (Stable)
 
-   **Location**: {{ 'http://update.knime.org/community-contributions/trusted/{0}'.format(knime_version) }}
+     **Location**: {{ 'http://update.knime.org/community-contributions/trusted/{0}'.format(knime_version) }}
 
-   **Unstable**:
+   - **Unstable**:
 
-   **Name**: KNIME Nightly Community Contributions (trunk)
+     **Name**: KNIME Nightly Community Contributions (trunk)
 
-   **Location**:  http://update.knime.org/community-contributions/trunk
+     **Location**:  http://update.knime.org/community-contributions/trunk
+
+   - **OpenMS-internal, unstable**:
+
+     **Name**: OpenMS nightly update site
+
+     **Location**:  https://abibuilder.cs.uni-tuebingen.de/archive/openms/knime-plugin/updateSite/nightly/
 
 7. Use the search or navigate to **KNIME Community Contributions – Bioinformatics & NGS** and select **OpenMS**. Then
    click **Next** and follow the installation instructions. A restart of KNIME might be necessary afterward. On Windows,

@@ -1,5 +1,5 @@
 Windows
-=======================
+=======
 
 ## Install via Windows installer
 

@@ -7,7 +7,7 @@ To contribute to OpenMS:
 - Learn how to [build OpenMS](../../develop-with-openms/build-openms-from-source.md).
 - Check out the [OpenMS tutorial for developers](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
 
-For any questions, please [contact us](../../quick-reference/contact-us.md).
+For any questions, please [contact us](/quick-reference/contact-us.md).
 
 ## Technical documentation
 
@@ -71,4 +71,4 @@ Consider the following resources for further information:
 -  **Experimental installers**: We automatically build installers for different platforms. These usually contain
    unstable or partially untested code.
    The nightly (unstable) installers are available at the [build archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
-- **Developer FAQ**: Visit the [Developer FAQ](../../quick-reference/developer-faq.md) to get answers to frequently asked questions.
+- **Developer FAQ**: Visit the [Developer FAQ](/quick-reference/developer-faq.md) to get answers to frequently asked questions.

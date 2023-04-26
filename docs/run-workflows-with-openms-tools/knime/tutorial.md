@@ -1,5 +1,4 @@
-OpenMS User Tutorial
-====================
+# OpenMS KNIME User Tutorial
 
 ## General Remarks
 
@@ -17,25 +16,27 @@ OpenMS User Tutorial
 
 ### Installation
 
-Before we get started, we will install OpenMS and KNIME. If you take part in a training session you will have likely received an USB stick from us that contains the required data and software. If we provide laptops with the software you may of course skip the installation process and continue reading the next section.
+Before we get started, we will install OpenMS with its viewer TOPPView, KNIME and the OpenMS KNIME plugin. If you take part in a live training session you will have likely received an USB stick from us that contains the required data and software. If we provide laptops with the software you may of course skip the installation process and continue reading the next section.
 If you are doing this tutorial online, choose online in the following tab(s).
 
-::::{tab-set}
+:::::{tab-set}
 
-:::{tab-item} Online
+::::{tab-item} Online
 :sync: online
 
 If you are working through this tutorial at home/online, proceed with the following steps:
 
-- Download and install OpenMS using the installation instructions for your operating system:
-  - [GNU/Linux](/openms-applications-and-tools/installation/installation-on-gnu-linux.md)
-  - [macOS](/openms-applications-and-tools/installation/installation-on-macos.md)
-  - [Windows](/openms-applications-and-tools/installation/installation-on-windows.md)
+- Download and install OpenMS using the installation instructions for the [OpenMS tools](/openms-applications-and-tools/installation.md).
+  :::{note}
+  To install the graphical application, please use the downloadable installer for your platform,
+  not conda, nor docker.
+  :::
+
 - Download and install [KNIME](https://www.knime.org/downloads/overview)
 
-:::
+::::
 
-:::{tab-item} USB Stick
+::::{tab-item} USB Stick
 :sync: usb
 
 Please choose the directory that matches your operating system and execute the installer.
@@ -53,9 +54,9 @@ On macOS, you run:
 On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with our
 [build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
 
-:::
-
 ::::
+
+:::::
 
 ### Data conversion
 
@@ -199,8 +200,8 @@ concepts will also be reviewed in this tutorial.
 
 #### Plugin and dependency 
 
-
-Before we can start with the tutorial, we need to install all the required extensions for KNIME. Since KNIME 3.2.1, the program automatically
+Before we can start with the tutorial, we need to install all the required extensions for KNIME.
+Since KNIME 3.2.1, the program automatically
 detects missing plugins when you open a workflow but to make sure that the right source for the
 OpenMS plugin is chosen, please follow the instructions here.
 
@@ -2393,7 +2394,7 @@ Export table of metabolic features as tsv file including meta values (e.g. best 
 TextExporter -in Preprocessed.consensusXML -out Features.tsv -consensus:add_metavalues
 ```
 
-You can recreate this workflow in KNIME. [Download the KNIME workflow here](../workflows/UntargetedMetabolomicsPreProcessing.knwf). The workflow should look like this:
+You can recreate this workflow in KNIME. [Download the KNIME workflow here](/workflows/UntargetedMetabolomicsPreProcessing.knwf). The workflow should look like this:
 
 (Figure_50)=
 |![metabolomics preprocessing workflow in KNIME](/images/tutorials/metabolomics-preprocessing-knime-workflow.png)|
@@ -2480,11 +2481,11 @@ Install a local available package:
 
 ```bash
 pip install numpy-1.20.0-cp37*.whl   
-pip install pyopenms-3.0.0-cp37*.whl  
+pip install pyopenms-2.7.0-cp37*.whl  
 or (in case of windows)
  
 python -m pip install -U numpy-1.20.0-cp37*.whl 
-python -m pip install -U pyopenms-3.0.0-cp37*.whl
+python -m pip install -U pyopenms-2.7.0-cp37*.whl
 ```
 The local available packages can be found in the directory corresponding to your operating system. Please use the absolute path to the packages for the installation.
 
