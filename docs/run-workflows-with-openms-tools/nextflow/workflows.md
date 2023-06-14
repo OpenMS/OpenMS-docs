@@ -16,4 +16,3 @@ Launch "https://nf-co.re/launch?pipeline=mhcquant"
 <script async src="https://cdn.rawgit.com/tsucres/GithubManyfacedCards/0.3.0/dist/gmc-loader.min.js" data-gmc-repo="nf-core/diaproteomics" data-gmc-theme="gh_recommendation"></script>
 
 Launch "https://nf-co.re/launch?pipeline=diaproteomics"
-***
