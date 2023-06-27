@@ -5,13 +5,19 @@ Windows
 
 To Install the binary package of OpenMS & {term}`TOPP`:
 
-1. Download and execute the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) and follow its instructions.
-2. Run the installer under the user account that later runs OpenMS. It is not advised to use admin account for
-   installation. When asked for an admin authentication, please enter the credentials.
+1. Download the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) 
+2. Execte the installer under the user account that later runs OpenMS and follow its instructions.
+   
+   You may see a Windows Defender Warning, since our installer is not digitally signed.
+   
+   Click on "More Info", and then "Run anyways".
+   
+   ![](/images/installations/win/smartscreen.gif)
+
+   When asked for an admin authentication, please enter the credentials (it is not advised to directly invoke the installer using an admin account).
 
 ```{tip}
-The windows binary version works with most versions of windows from Win7 to Win10 (older versions might
-  still work but are untested).
+The windows installer works with Windows 10 and 11 (older versions might still work but are untested).
 ```
 
 ## Known issues
