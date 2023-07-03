@@ -6,7 +6,7 @@ Windows
 To Install the binary package of OpenMS & {term}`TOPP`:
 
 1. Download the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) 
-2. Execte the installer under the user account that later runs OpenMS and follow its instructions.
+2. Execute the installer under the user account that later runs OpenMS and follow its instructions.
    
    You may see a Windows Defender Warning, since our installer is not digitally signed.
    
