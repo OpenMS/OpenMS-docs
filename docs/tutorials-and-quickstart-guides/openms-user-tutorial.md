@@ -552,9 +552,11 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
 or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
 In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
-Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later, all OpenMS tools that perform metabolite
-identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
-and KNIME.
+Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification),
+a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of
+L-alanine(i.e :math:`C_{3}H_{7}NO_{2}`) can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later,
+all OpenMS tools that perform metabolite identification will report SMILES as part of their result, which can then
+be further processed and visualized using RDKit and KNIME.
 
 |![ Workflow to visualize a list of SMILES strings and filter them by predefined substructures](/images/openms-user-tutorial/metabo/structures_filter_workflow.png)|
 |:--:|
@@ -1118,10 +1120,17 @@ This matrix has the following properties:
 
 - The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
 - The entries of each row consist of exactly one 1 and one -1, the others must be 0.
-- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
+
+- The condition with the entry `1` constitutes the enumerator of the :math:`\log_2` fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
+
+:math:`\log_2 \frac{C_{2}}{C_{1}}`
+
+<!--
 ```{math}
  \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
 ```
+-->
+
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
 ```r
@@ -1302,7 +1311,7 @@ false IDs by separating target IDs from decoy IDs.
 
 ROC curves illustrate the discriminative capability of the scores of IDs. In the case of protein identifications, Fido produces the posterior probability of each protein as
 the output score. However, a perfect score should not only be highly discriminative (distinguishing true from false IDs), it should also be “calibrated” (for probability indicating that all IDs with reported posterior probability scores of 95% should roughly have a 5% probability of being false. This implies that the estimated number of false
-positives can be computed as the sum of posterior error probabilities ( = 1 - posterior probability) in a set, divided by the number of proteins in the set. Thereby a
+positives can be computed as the sum of posterior error probabilities = (1 - posterior probability) in a set, divided by the number of proteins in the set. Thereby a
 posterior-probability-estimated FDR is computed which can be compared to the actual target-decoy FDR. We can plot calibration curves to help us visualize the quality of
 the score (when the score is interpreted as a probability as Fido does), by comparing how similar the target-decoy estimated FDR and the posterior probability estimated
 FDR are. Good results should show a close correspondence between these two measurements, although a non-correspondence does not necessarily indicate wrong results.
