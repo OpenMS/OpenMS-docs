@@ -5,9 +5,7 @@ Thank you for thinking about contributing to OpenMS Documentation!
 
 Please fill in the appropriate checklist below.
 
-Remember that PRs should be made against the staging branch, unless you're preparing a hotfix to be released.
-
-Learn more about contributing to OpenMS Documentation: https://staging-openms.readthedocs.io/en/staging/.github/CONTRIBUTING.html
+PRs should be made against the development branch.
 -->
 
 ## Describe the change
