@@ -62,7 +62,7 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 For images and figures:
 
 1. Add a screenshot of the window.
-2. In tutorial, align images in center. Other instructions, should have alighment to left.
+2. In tutorial, align images in center. Other instructions, should have aligment to left.
 3. Please set the size to `500px` of images added in step-by-step guides or instructions.
 
 ## OpenMS documentation contributors
