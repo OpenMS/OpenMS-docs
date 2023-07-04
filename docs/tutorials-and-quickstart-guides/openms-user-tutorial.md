@@ -2492,7 +2492,7 @@ Now launch ”Spyder” (python IDE) in the home menu.
 
 ### Build instructions
 
-Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/build_from_source.html).
+Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html).
 
 ### Scripting with pyOpenMS
 
@@ -2558,7 +2558,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/ms_data.html).
+For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/user_guide/ms_data.html).
 
 ### Tool development with pyOpenMS
 
