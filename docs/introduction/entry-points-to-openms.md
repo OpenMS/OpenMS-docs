@@ -36,7 +36,7 @@ The following entry points for OpenMS and its TOPP tools are available for users
 :::
 
 :::{grid-item-card} {fab}`python;sd-text-info fa-xl` **pyOpenMS** <br/> Use the pyOpenMS python library to rapidly prototype methods and scripts
-  :link: https://pyopenms.readthedocs.io/en/latest/installation.html
+  :link: https://pyopenms.readthedocs.io/en/latest/user_guide/installation.html
   :link-type: url
   :class-title: flex
 
