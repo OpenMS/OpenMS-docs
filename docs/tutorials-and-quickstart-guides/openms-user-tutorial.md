@@ -10,8 +10,26 @@ OpenMS User Tutorial
 - In order to facilitate workflow construction, OpenMS was integrated into KNIME[^5], the Konstanz Information Miner, an open-source integration platform providing a powerful and flexible workflow system combined with advanced data analytics, visualization, and report capabilities. Raw MS data as well as the results of data processing using TOPP can be visualized using TOPPView[^6].
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
+- If you are attending the tutorial, you can either access data via USB or online.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/latest/).
+:::{tab-set}
+:::{tab-item title="USB"}
+To access the data from the USB stick, follow these steps:
+1. Insert the USB stick into your computer.
+2. Navigate to the {path}`C:,Example_Data` folder on the USB stick.
+3. Find the required sample data for the tutorial.
+
+:::
+
+:::{tab-item title="Online"}
+To access the data from the online Archive, follow these steps:
+1. Click on the [Archive link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/latest/) to visit the online repository.
+2. Browse the available sample data and locate the data needed for the tutorial.
+3. Download the required data to your computer.
+
+
+:::
+:::
 
 ## Getting Started
 
