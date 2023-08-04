@@ -361,7 +361,7 @@ until the predecessor was executed. If nodes still remain in a red state, probab
 provided in the configuration dialog that can neither be guessed from the data nor filled with sensible defaults. In
 this case, or if you want to customize the default configuration in general, you can open the configuration dialog of a
 node with a double-click on the node. For all OpenMS nodes you will see a configuration dialog like the one shown in
-the below figure.
+the figure below.
 
 |![Node configuration dialog of an OpenMS node](/images/openms-user-tutorial/knime-setup/knime_configure_dialog.png)|
 |:--:|
