@@ -52,7 +52,6 @@ Contents
    openms-applications-and-tools/installation.md
    openms-applications-and-tools/openms-graphical-user-interfaces.md
    openms-applications-and-tools/topp-tools.md
-   openms-applications-and-tools/utils-tools.md
    openms-applications-and-tools/command-line-interface.md
    openms-applications-and-tools/visualize-with-openms.md
 

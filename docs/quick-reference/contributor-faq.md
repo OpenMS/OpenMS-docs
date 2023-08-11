@@ -17,11 +17,6 @@ The following section provides general information to new contributors.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
 or [contact us](/quick-reference/contact-us.md).
 
-### What is the difference between an OpenMS tool and util?
-
-A tool starts its lifecycle in `UTILS` and may exist without being thoroughly tested. Tools may be promoted from `UTILS`
-to `TOOLS` if they are stable enough, are fully tested, fully documented, and a test workflow exists.
-
 ### I have written a class for OpenMS. What should I do?
 
 Follow the [OpenMS coding conventions](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/coding_conventions.html).
@@ -167,7 +162,7 @@ Find a definition of the main page [here](https://github.com/OpenMS/OpenMS/edit/
 Add a new module [here](https://github.com/OpenMS/OpenMS/edit/develop/doc/doxygen/public/Modules.doxygen).
 
 
-### How is the command line documentation for TOPP/UTILS tools created?
+### How is the command line documentation for TOPP tools created?
 
 The program `OpenMS/doc/doxygen/parameters/TOPPDocumenter.cpp` creates the command line documentation for all classes
 that are included in the static `ToolHandler.cpp` tools list. It can be included in the documentation using 
