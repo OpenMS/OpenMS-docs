@@ -88,9 +88,6 @@ pyOpenMS
 TOPP Tools
   OpenMS provides a number of functions that process mass spectrometry data called TOPP tools. More information on TOPP tools can be found in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
 
-UTILS
-  Besides {term}`TOPP`, OpenMS offers a range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
-
 TOPPView
   TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](../openms-applications-and-tools/visualize-with-openms.md).
 

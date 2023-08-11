@@ -1,7 +1,7 @@
 OpenMS in KNIME
 ===============
 
-KNIME is a free graphical application for creating and executing workflows. OpenMS provides a plugin, which exposes TOPP and UTILS tools to the KNIME interface.
+KNIME is a free graphical application for creating and executing workflows. OpenMS provides a plugin, which exposes TOPP tools to the KNIME interface.
 
 
 ```{toctree}
