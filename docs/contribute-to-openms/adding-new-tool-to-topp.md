@@ -30,15 +30,6 @@ add `-test` to the call of your TOPP tool and also create the expected output th
 flag active. The flag ensures that UniqueId's,  dates etc are equal no matter where and when the tool is run.
 ```
 
-## What do I have to do to add a new UTILS tool?
-
-- Add the code to `src/utils/` and register it in `src/utils/executables.cmake`.
-- Add your tool to `getUtilList()` in `src/openms/source/APPLICATIONS/ToolHandler.cpp`. This creates a doxygen page with
-  the `–help` output of the tool (using `TOPPDocumenter`). This page must be included at the end of the doxygen
-  documentation of your tool (see other tools for an example).
-- Add it to the UTILS docu page (in `doc/doxygen/public/UTILS.doxygen`)
-- Write a test (this is optional for UTILS). See TOPP tools above and add the test to the bottom of `src/tests/topp/CMakeLists.txt`.
-
 ## I want to implement a new file adapter. What is to be done?
 
 First, add a file adapter class to the `include/OpenMS/FORMAT/` and `source/FORMAT/` folders. The file adapter should

@@ -15,12 +15,7 @@ The following section provides general information to new contributors.
 * Read the [OpenMS User Tutorial](../tutorials-and-quickstart-guides/openms-user-tutorial.md).
 * Create a GitHub account.
 * Subscribe to the [open-ms-general](https://sourceforge.net/projects/open-ms/lists/open-ms-general) 
-  or [contact-us](../quick-reference/contact-us.md).
-
-### What is the difference between an OpenMS tool and util?
-
-A tool starts its lifecycle in `UTILS` and may exist without being thoroughly tested. Tools may be promoted from `UTILS`
-to `TOOLS` if they are stable enough, are fully tested, fully documented, and a test workflow exists.
+  or [contact-us](/quick-reference/contact-us.md).
 
 ### I have written a class for OpenMS. What should I do?
 
@@ -204,10 +199,10 @@ to learn more about contributing to releases.
 
 ## Working in Integrated Development Environments (IDEs)
 
-### Why are there no `source/TEST` and `source/APPLICATIONS/TOPP|UTILS` folder?
+### Why are there no `source/TEST` and `source/APPLICATIONS/TOPP` folder?
 
 All source files added to an IDE are associated with their targets. Find the source files for each test within
-its own subproject. The same is true for the `TOPP` and `UTILS` classes.
+its own subproject. The same is true for the `TOPP` classes.
 
 ### I'm getting the error "Error C2471: cannot update program database"
 
@@ -347,22 +342,17 @@ generates a html table with the parameters. This table can then be included in t
 following `doxygen` command:`@htmlinclude OpenMS_<class name>.parameters`.
 
 ```{note}
-Parameter documentation is automatically generated for `TOPP/UTILS` included in the static `ToolHandler.cpp` tools list.
+Parameter documentation is automatically generated for `TOPP` included in the static `ToolHandler.cpp` tools list.
 ```
 
-To include TOPP/UTILS parameter documentation use following `doxygen` command:
-
+To include TOPP parameter documentation use following `doxygen` command:
 
 `@htmlinclude TOPP_<tool name>.parameters`
-
-or
-
-`@htmlinclude UTILS_<tool name>.parameters`
 
 Test if everything worked by calling `make doc_param_internal`. The parameters documentation is written to
 `OpenMS/doc/doxygen/parameters/output/`.
 
-### How is the command line documentation for TOPP/UTILS tools created?
+### How is the command line documentation for TOPP tools created?
 
 The program `OpenMS/doc/doxygen/parameters/TOPPDocumenter.cpp` creates the command line documentation for all classes
 that are included in the static `ToolHandler.cpp` tools list. It can be included in the documentation using the 

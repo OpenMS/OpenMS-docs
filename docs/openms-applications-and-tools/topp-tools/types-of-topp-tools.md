@@ -41,9 +41,7 @@ The following tools are offered:
 - **Protein/Peptide identification**
 - **Protein/Peptide processing**
 - **Targeted experiments and OpenSWATH**
-- **Peptide property prediction**
 
-  For more information, view the [Peptide property prediction](types-of-topp-tools/peptide-property-prediction.md) section.
 - **Cross-linking**
 
   Cross-linking is a technique where substances are chemically treated to create covalent bonds between different molecules. The strength of the covalent bonds can be quantified to indicate the proximity of certain molecules within a 3D structure.

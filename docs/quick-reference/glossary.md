@@ -6,8 +6,14 @@ A glossary of common terms used throughout OpenMS documentation.
 ```{glossary}
 :sorted:
 
+Liquid chromatography
+  An analytical technique used to separate molecules.
+
+mass spectrometry
+  An analytical technique used to identify and quantify molecules of interest.
+
 LC-MS
-  <a href="../introduction/background.html#liquid-chromatography-lc">Liquid Chromatography(LC)</a> and <a href="../introduction/background.html#mass-spectrometry">Mass Spectrometry(MS)</a>.
+  Liquid Chromatography-Mass Spectrometry.
 
 peptides
   A short chain of amino acids.
@@ -24,9 +30,6 @@ Mass
 
 ion
   Any {term}`atom` or group of atoms that bears one or more positive or negative electrical charges. Positively charged are cations, negavtively charged anions.
-
-ions
-  See {term}`ion`.
 
 electrospray ionization (ESI)
   A technique used in mass spectrometry to produce ions.
@@ -72,21 +75,18 @@ TOPP
   The OpenMS Pipeline.
 
 MSGFPlusAdapter
-  Adapter for the MS-GF+ protein identification (database search) engine. More information is available [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
+  Adapter for the MS-GF+ protein identification (database search) engine. More information is available in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_MSGFPlusAdapter.html).
 
 LuciphorAdapter
   Adapter for the LuciPHOr2: a site localisation tool of generic post-translational modifications from tandem mass
-  spectrometry data. More information is available [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_LuciphorAdapter.html).
+  spectrometry data. More information is available in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_LuciphorAdapter.html).
 
 pyOpenMS
   pyOpenMS is an open-source Python library for mass spectrometry, specifically for the analysis of proteomics and
   metabolomics data in Python. For pyOpenMS documentaion visit [this](https://pyopenms.readthedocs.io/en/latest/) link.
 
 TOPP Tools
-  All {term}`TOPP` tools can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
-
-UTILS
-  Besides {term}`TOPP`, OpenMS offers a range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. More information is present in [OpenMS UTILS Documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html).
+  OpenMS provides a number of functions that process mass spectrometry data called TOPP tools. More information on TOPP tools can be found in the [OpenMS API reference documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html).
 
 TOPPView
   TOPPView is a viewer for MS and HPLC-MS data. More information is available in [TOPPView documentation](../openms-applications-and-tools/visualize-with-openms.md).
@@ -121,10 +121,10 @@ mzXML
   Systems Biology.
 
 spectra
-  Singular of spectrum.
+  Plural of spectrum.
 
 mass spectrum
-  A mass spectrum is a type of plot of the ion signal as a function of the mass-to-charge ratio. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds.
+  A mass spectrum is a plot of the ion signal as a function of the mass-to-charge ratio. A mass spectrum is produced by a single mass spectrometry run. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds. OpenMS represents a one dimensional mass spectrum using the class [MSSpectrum](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1MSSpectrum.html). 
 
 m/z
   mass to charge ratio.
@@ -145,7 +145,7 @@ TOPPAS
   An assistant for GUI-driven TOPP workflow design. It is recommended to use OpenMS through the KNIME plugins.
 
 chromatogram
-  A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time.
+  A two-dimensional plot that describes the amount of analyte eluted from a chromatography versus the analyte's retention time. OpenMS represents a chromatogram using the class [MSChromatogram](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/structOpenMS_1_1Interfaces_1_1Chromatogram.html)
 
 KNIME
   An advanced workflow editor which OpenMS provides a plugin for.
@@ -168,9 +168,6 @@ SWATH
 OpenMS API
   An interface that allows developers to use OpenMS core library classes and methods. 
 
-TOPPAS.app
-  A deprecated workflow editor.
-
 RT
   Retention time.
 
@@ -183,4 +180,21 @@ TOPP tool
 MS^3
   Multi-stage Mass Spectrometry
 
+feature
+  An LC-MS feature represents the combined isotopic mass traces of a detected chemical compound. The chromatographic peak shape of a feature is defined by the interaction of the analyte with the LC column. Each feature contains information on retention time, mass-to-charge ratio, intensity and overall quality. OpenMS represents a feature using the class [Feature](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1Feature.html).
+
+feature map
+  A feature map is a collection of features identified in a mass spectrum from a single experiment. One feature map can contain many features. OpenMS represents a feature map using the class [FeatureMap](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1FeatureMap.html).
+
+consensus feature
+  Features from replicate experiments with similar retention times and m/z values are linked and considered a consensus feature. A consensus feature contains information on the common retention time and m/z values as well as intensities for each sample. OpenMS represents a consensus feature using the class [ConsensusFeature](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ConsensusFeature.html).
+
+consensus map
+  A consensus map is a collection of {term}`consensus features <consensus feature>` identified from mass spectra across replicate experiments. One consensus map can contain many consensus features. OpenMS represents a consensus map using the class [ConsensusMap](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ConsensusMap.html).
+
+peak
+  A single raw data point in a chromatogram or a mass spectrum. OpenMS represents a peak in a chromatogram using the class [ChromatogramPeak](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1ChromatogramPeak.html). OpenMS represents a single, one-dimensional peak in a mass spectrum using the class [PeakID](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1Peak1D.html)
+
+MSExperiment
+  An OpenMS class used to represent a single mass spectrometry run. [Read the documentation for further information](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/classOpenMS_1_1MSExperiment.html).
 ```

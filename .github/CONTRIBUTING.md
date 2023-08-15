@@ -40,10 +40,17 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 	- Tip
 	- See Also
 
-	Example of these are present in documentation, please follow them.
-11. Always specify lexers for code blocks.
-12. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`, as an example, please see [this](../docs/tutorials/TOPP/hotkeys-table.md) file.
-13. Be nice, polite, and respectful.
+	Example of these are present in the documentation, please follow them.
+11. OpenMS documentation features admonitions for links to videos. If you wish to add a link to a video, use following html code:
+
+	<div class="admonition video">
+		<p class="admonition-title">**Video**</p>
+		<!-- Insert text -->
+	</div>
+12. Always specify lexers for code blocks.
+13. Format keyboard strokes using `<kbd>qwerty-keyboard-button</kbd>`, as an example, please see [this](../docs/tutorials/TOPP/hotkeys-table.md) file.
+14. Be nice, polite, and respectful.
+
 
 ### Naming files
 
@@ -55,7 +62,7 @@ For any questions, drop us a ping in [OpenMS Gitter](https://gitter.im/OpenMS/Op
 For images and figures:
 
 1. Add a screenshot of the window.
-2. In tutorial, align images in center. Other instructions, should have alighment to left.
+2. In tutorial, align images in center. Other instructions, should have aligment to left.
 3. Please set the size to `500px` of images added in step-by-step guides or instructions.
 
 ## OpenMS documentation contributors

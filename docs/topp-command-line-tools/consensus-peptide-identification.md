@@ -14,7 +14,7 @@ In order to improve the identification accuracy, several identification engines 
 identification can be calculated from the results. The image below shows an example where Mascot results are
 fed to the **ConsensusID** tool (ConsensusID is currently usable for Mascot and XTandem).
 
-![TOPP Consensus ID](../images/tutorials/topp/TOPP_consensus_id.png)
+![TOPP Consensus ID](/images/tutorials/topp/TOPP_consensus_id.png)
 
 
 To combine quantitation and identification results:
