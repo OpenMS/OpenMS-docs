@@ -2492,7 +2492,7 @@ Now launch ”Spyder” (python IDE) in the home menu.
 
 ### Build instructions
 
-Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/build_from_source.html).
+Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html).
 
 ### Scripting with pyOpenMS
 
@@ -3061,7 +3061,7 @@ Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7
 
 [^17]: J. Griss, A. R. Jones, T. Sachsenberg, M. Walzer, L. Gatto, J. Hartler, G. G.
 Thallinger, R. M. Salek, C. Steinbeck, N. Neuhauser, J. Cox, S. Neumann, J. Fan,
-F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), <a href="https://www.mcponline.org/article/S1535-9476(20)32821-8/fulltext">doi:10.1074/mcp.O113.036681</a>. 69
+F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), <a href="https://pyopenms.readthedocs.io/en/latest/user_guide/ms_data.html">doi:10.1074/mcp.O113.036681</a>. 69
 
 [^18]: S. Böcker, M. C. Letzel, Z. Lipták, and A. Pervukhin, SIRIUS: Decomposing isotope
 patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), <a href="https://academic.oup.com/bioinformatics/article/25/2/218/218950">doi:10.1093/bioinformatics/btn603</a>. 75
