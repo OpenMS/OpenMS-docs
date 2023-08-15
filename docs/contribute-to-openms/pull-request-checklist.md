@@ -8,7 +8,7 @@ Before opening a pull request, check the following:
   Windows).
 2. **Do all tests pass?**
    To check if all tests have passed, execute `ctest`.
-   If a test that is unrelated to your changes fails, check the [nightly builds](http://cdash.openms.de/index.php?project=OpenMS)
+   If a test that is unrelated to your changes fails, check the [nightly builds](https://cdash.openms.de/index.php?project=OpenMS)
    to see if the error is also in `develop`. If the error is in develop, [create a github issue](write-and-label-github-issues.md).
 3. **Is the code documented?**
    Document all new classes, including their methods and parameters.

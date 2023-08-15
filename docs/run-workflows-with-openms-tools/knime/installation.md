@@ -51,10 +51,10 @@ Installation of OpenMS in {term}`KNIME` is platform-independent across Windows, 
 ## Creating workflows with KNIME
 
 Download Introduction to OpenMS in KNIME [user tutorial](../../tutorials-and-quickstart-guides/openms-user-tutorial.md) containing hands-on training material covering also basic
-usage of KNIME. See the official [KNIME Getting Started Guide](https://tech.knime.org/knime) for a more in-depth view of
+usage of KNIME. See the official [KNIME Getting Started Guide](https://www.knime.com/getting-started-guide) for a more in-depth view of
 the KNIME functionality besides OpenMS.
 
-If you face any issues, please [contact us](/quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the KNIME community contribution [forum](https://forum.knime.com/c/community-extensions/openms/40).
+If you face any issues, please [contact us](/quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the KNIME community contribution [forum](https://forum.knime.com/tag/openms).
 
 ## Creating your own Generic KNIME Nodes
 

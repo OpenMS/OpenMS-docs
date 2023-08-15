@@ -100,17 +100,17 @@ Get started with installing OpenMS using the installers available for different 
 ```{tab} GNU/Linux
 
 ```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
+wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Debian-Linux-x86_64.deb
 ```
 
 ```{tab} Windows
 
 ```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
+wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Win64.exe
 ```
 
 ```{tab} macOS
 
 ```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
+wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-macOS.dmg
 ```

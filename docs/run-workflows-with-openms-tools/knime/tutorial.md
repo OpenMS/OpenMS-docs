@@ -2493,7 +2493,7 @@ Now launch ”Spyder” (python IDE) in the home menu.
 
 ### Build instructions
 
-Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/build_from_source.html).
+Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html).
 
 ### Scripting with pyOpenMS
 
@@ -2559,7 +2559,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/ms_data.html).
+For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/user_guide/ms_data.html).
 
 ### Tool development with pyOpenMS
 
@@ -2964,7 +2964,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** Why is my configuration dialog closing right away when I double-click or try to configure it? Or why is my GUI responding so slow?
 
-**A:** If you have any problems with the KNIME GUI or the opening of dialogues under Linux you might be affected by a GTK bug. See the KNIME forum (e.g. [here](https://tech.knime.org/forum/knime-general/ubuntu-1604-slow-performance) or [here](https://tech.knime.org/forum/knime-users/knime-300-crashes-after-splash-screen)) for a discussion and a possible solution. In short: set environment variable by calling `export SWT_GTK3=0` or edit `knime.ini` to make Eclipse use GTK2 by adding the following two lines:
+**A:** If you have any problems with the KNIME GUI or the opening of dialogues under Linux you might be affected by a GTK bug. See the KNIME forum (e.g. [here](https://forum.knime.com/t/ubuntu-16-04-slow-performance/4345) or [here](https://forum.knime.com/t/knime-3-0-0-crashes-after-splash-screen/8370)) for a discussion and a possible solution. In short: set environment variable by calling `export SWT_GTK3=0` or edit `knime.ini` to make Eclipse use GTK2 by adding the following two lines:
 ```xml
 –launcher.GTK_version
 2
