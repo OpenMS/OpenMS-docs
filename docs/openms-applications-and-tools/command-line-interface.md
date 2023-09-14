@@ -35,4 +35,4 @@ Many (but not all) command line calls will have the following structure:
 
 The following command line call uses the FileFilter tool to extract data from an mzML file. Note, that this call directly specifies the tool-specific parameters and doesn’t rely on an INI file:
 
-![break down of example command line call](../images/topp/command-line-call.png)
+![break down of example command line call](/images/topp/command-line-call.png)

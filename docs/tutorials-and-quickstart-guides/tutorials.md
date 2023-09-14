@@ -113,7 +113,7 @@ If you want a graphical user interface to interact with, then use TOPPView. Foll
 3. Set **TOPP tool** to **FileInfo** and **output argument** to **out**.
 4. Load an existing INI file by clicking **Load** and selecting an INI file from the file importer. If you don’t have an INI file, click **Store**, enter a file name and click **OK** to generate an INI file, then click **Load** and load the file.
 
-   ![apply topp tool to layer](../images/tutorials/toppview/apply-topp-tool-to-layer.png)
+   ![apply topp tool to layer](/images/tutorials/toppview/apply-topp-tool-to-layer.png)
 5. Click **OK**.
 6. Open the **Log** panel at the bottom of the screen to view the resulting file information.
 

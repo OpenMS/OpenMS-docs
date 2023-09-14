@@ -40,7 +40,7 @@ An LC setup is made up of the following components:
 
 Refer to the image below for a diagrammatic representation of an LC setup. 
 
-![schematic illustration of an LC setup](../images/introduction/lc-components.png)
+![schematic illustration of an LC setup](/images/introduction/lc-components.png)
 
 ### How does LC work?
 
@@ -88,7 +88,7 @@ There are three key components in a mass spectrometer:
 
 Refer to the image below for a diagrammatic representation of the key components in MS.
 
-![schematic illustration of a mass spectrometer](../images/introduction/mass-spectrometry-components.png)
+![schematic illustration of a mass spectrometer](/images/introduction/mass-spectrometry-components.png)
 
 #### Ion source
 
@@ -112,7 +112,7 @@ ESI can be broken down into the following steps.
 
 Refer to the image below for a diagrammatic representation of the steps in ESI.
 
-![a simplified, schematic representation of ESI](../images/introduction/electrospray-ionization.png)
+![a simplified, schematic representation of ESI](/images/introduction/electrospray-ionization.png)
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -129,7 +129,7 @@ MALDI can be broken down into the following steps:
 
 Refer to the image below for a diagrammatic representation of the steps in MALDI.
 
-![a simplified, schematic representation of MALDI](../images/introduction/MALDI.png)
+![a simplified, schematic representation of MALDI](/images/introduction/MALDI.png)
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -153,7 +153,7 @@ In a quadropole analyzer, you can set the quadropole voltage so that ions with a
 
 Refer to the image below for a diagrammatic representation of the quadrupole analyzer.
 
-![a simplified, schematic representation of the quadrupole analyzer](../images/introduction/quadrupole-analyzer.png)
+![a simplified, schematic representation of the quadrupole analyzer](/images/introduction/quadrupole-analyzer.png)
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -166,7 +166,7 @@ In a time-of-flight analyzer, ions are extracted from the ion source through an 
 
 Refer to the image below for a diagrammatic representation of the TOF analyzer.
 
-![a simplified, schematic representation of TOF](../images/introduction/TOF.png)
+![a simplified, schematic representation of TOF](/images/introduction/TOF.png)
 
 Lighter ions fly faster than heavier ions of the same charge and will arrive earlier at the detector. Therefore, an ion’s time of flight depends on the ion’s mass.  The ion's time of flight is also dependant on the ion's charge. This can be demonstrated by using the following equations:
 1. Potential energy is transferred to an ion with charge **q** accelerated by an electrostatic field with voltage.
@@ -211,7 +211,7 @@ The orbitrap analyzer is the most frequently used analyzer in mass spectrometry 
 
 The following diagram is a conceptual representation of the orbitrap analyzer. 
 
-![schematic illustration of a mass spectrometer](../images/introduction/orbitrap.png)
+![schematic illustration of a mass spectrometer](/images/introduction/orbitrap.png)
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>
@@ -254,7 +254,7 @@ Liquid chromatography is often coupled with mass spectrometry to reduce complexi
 
 Refer to the image below for a diagrammatic representation of the LC-MS setup.
 
-![lc-ms setup](../images/introduction/lc-ms-setup.png)
+![lc-ms setup](/images/introduction/lc-ms-setup.png)
 
 From the LC-MS setup, a set of spectra called a peak map is produced. In a peak map, each spectrum represents the ions detected at a particular retention time. Each peak in a spectrum has a retention time, mass-to-charge and intensity dimension.
 
@@ -262,7 +262,7 @@ From the LC-MS setup, a series of spectra are 'stacked' together to form what is
 
 The image below includes a spectrum at a given retention time (left) and a peak map (right).
 
-![peak map](../images/introduction/spectrum_peakmap.png)
+![peak map](/images/introduction/spectrum_peakmap.png)
 
 <div class="admonition video">
 <p class="admonition-title">**Video**</p>

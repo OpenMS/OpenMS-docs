@@ -1,15 +1,4 @@
-# Overview
-
-```{toctree}
----
-hidden: true
----
-
-openms-in-knime.md
-openms-in-nextflow.md
-openms-on-galaxy.md
-```
-
+# Recommended Workflow Systems
 
 Which workflow environment to choose for running OpenMS tools?
 

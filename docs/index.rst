@@ -30,7 +30,7 @@ With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :ter
 to enable rapid algorithm development. OpenMS supports the Proteomics Standard
 Initiative (PSI) formats for MS data. The main contributors of OpenMS are
 currently the Eberhard-Karls-Universität in Tübingen, the Freie Universität
-Berlin, and the ETH Zürich.
+Berlin, and the University of Toronto.
 
 Contents
 --------
@@ -43,22 +43,15 @@ Contents
    introduction/about-open-ms.md
    introduction/extended-background.md
    introduction/entry-points-to-openms.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Installation Guides
-
-   installations/installation-on-gnu-linux.md
-   installations/installation-on-macos.md
-   installations/installation-on-windows.md
+   
 
 .. toctree::
    :maxdepth: 2
    :caption: OpenMS Applications and Tools
 
+   openms-applications-and-tools/installation.md
    openms-applications-and-tools/openms-graphical-user-interfaces.md
    openms-applications-and-tools/topp-tools.md
-   openms-applications-and-tools/utils-tools.md
    openms-applications-and-tools/command-line-interface.md
    openms-applications-and-tools/visualize-with-openms.md
 
@@ -66,15 +59,18 @@ Contents
    :maxdepth: 2
    :caption: Run Workflows with OpenMS Tools
 
-   run-workflows-with-openms-tools/overview.md
+   run-workflows-with-openms-tools/recommended-workflow-systems.md
+   run-workflows-with-openms-tools/openms-in-knime.md
+   run-workflows-with-openms-tools/openms-in-nextflow.md
+   run-workflows-with-openms-tools/openms-on-galaxy.md
 
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials and Quick Start Guides
 
+   tutorials-and-quickstart-guides/guides/user-quickstart-guide.md
    tutorials-and-quickstart-guides/openms-user-tutorial.md
    tutorials-and-quickstart-guides/tutorials.md
-   tutorials-and-quickstart-guides/quickstart-guides.md
 
 .. toctree::
    :maxdepth: 2
@@ -91,6 +87,7 @@ Contents
    :maxdepth: 2
    :caption: Contribute to OpenMS
 
+   tutorials-and-quickstart-guides/guides/contributors-quickstart-guide.md
    contribute-to-openms/openms-git-workflow.md
    contribute-to-openms/write-and-label-github-issues.md
    contribute-to-openms/adding-new-tool-to-topp.md

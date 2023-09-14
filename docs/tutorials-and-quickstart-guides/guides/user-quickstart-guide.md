@@ -18,14 +18,8 @@ Before using OpenMS, become familiar with the following terms:
 | Tool and Utilities | Description |
 |--------------------|-------------|
 |**TOPPView**        |A tool that is used to view and explore {term}`LC-MS` data, alignments, groups, peptide identifications, and more.|
-|**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools` (and {term}`UTILS`).|
+|**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools`.|
 |**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. |
-|**UTILS**           |Besides {term}`TOPP`, OpenMS offers range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. A set of command line utilities, similar to {term}`TOPP tools`, mostly used during pipeline construction or parameter optimization. |
-
-```{seealso}
-
-[UTILS documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
-```
 
 ```{important}
 Users can now use {term}`KNIME` in place of {term}`TOPPAS`; the later will deprecated with no support in near future.
@@ -72,5 +66,5 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 ### What parameters to set and to what value?
 
 The answer is complex, in general, read the tool description, change the parameters and compare the results using
-{term}`TOPPView` if possible. If that does not help, [contact us](../../quick-reference/contact-us.md). Please include all the necessary
+{term}`TOPPView` if possible. If that does not help, [contact us](/quick-reference/contact-us.md). Please include all the necessary
 details we need in order to help you.
