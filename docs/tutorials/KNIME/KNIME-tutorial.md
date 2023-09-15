@@ -4,8 +4,6 @@ orphan: true
 KNIME Tutorial
 ==============
 
-Users can now use {term}`KNIME` in place of {term}`TOPPAS`; the later will deprecated with no support in near future.
-
 The below image shows an example workflow in {term}`KNIME`.
 
 ![](/images/tutorials/knime/KNIME_screenshot.png)
