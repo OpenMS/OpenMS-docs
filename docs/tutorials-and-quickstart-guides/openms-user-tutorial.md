@@ -230,7 +230,7 @@ In addition, we need to install `R` for the statistical downstream analysis. Cho
 operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
 whenever possible. On macOS you also need to install `XQuartz` from the same directory.
 
-Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
+Afterwards, open your `R` installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
 macOS, you will find R in your Applications folder. In `R`, type the following lines (you might also copy them from the file
 {path}`R,install_R_packages.R` on the USB stick):
 
@@ -259,7 +259,7 @@ your installation path. You can use the following settings, if you installed R a
 You are now ready to install the OpenMS nodes.
 - In KNIME, click on **Help** > **Install New Software**
 
-You now have to choose an _update site_ to install the OpenMS plugin from. Which _update site_ to choose depends on if you received an USB stick
+You now have to choose an _update site_ to install the OpenMS plugin from. Which _update site_ to choose depends on if you received a USB stick
 in a hands-on Tutorial or if you are doing this Tutorial online.
 
 ::::{tab-set}
@@ -334,7 +334,7 @@ A workflow is a sequence of computational steps applied to a single or multiple 
 data. In KNIME such workflows are implemented graphically by connecting so-called nodes. A node represents a single
 analysis step in a workflow. Nodes have input and output ports where the data enters the node or the results are provided
 for other nodes after processing, respectively. KNIME distinguishes between different port types, representing different
-types of data. The most common representation of data in KNIME are tables (similar to an excel sheet). Ports that accept
+types of data. The most common representation of data in KNIME are tables (similar to an Excel sheet). Ports that accept
 tables are marked with a small triangle. For OpenMS nodes, we use a different port type, so called file ports, representing
 complete files. Those ports are marked by a small blue box. Filled blue boxes represent mandatory inputs and empty blue
 boxes optional inputs. The same holds for output ports, despite you can deactivate them in the configuration dialog
@@ -345,7 +345,7 @@ A typical OpenMS workflow in KNIME can be divided in two conceptually different 
 
 - Nodes for signal and data processing, filtering and data reduction. Here, files are passed between nodes. Execution
   times of the individual steps are typically longer for these types of nodes as they perform the main computations.
-- Downstream statistical analysis and visualization. Here, tables are passed between nodes and mostly internal KNIME
+- Downstream statistical analysis and visualization. Here, tables are passed between nodes, and mostly internal KNIME
   nodes or nodes from third-party statistics plugins are used. The transfer from files (produced by OpenMS) and tables
   usually happens with our provided Exporter and Reader nodes (e.g. MzTabExporter followed by MzTabReader).
 
@@ -361,7 +361,7 @@ until the predecessor was executed. If nodes still remain in a red state, probab
 provided in the configuration dialog that can neither be guessed from the data nor filled with sensible defaults. In
 this case, or if you want to customize the default configuration in general, you can open the configuration dialog of a
 node with a double-click on the node. For all OpenMS nodes you will see a configuration dialog like the one shown in
-below figure.
+the figure below.
 
 |![Node configuration dialog of an OpenMS node](/images/openms-user-tutorial/knime-setup/knime_configure_dialog.png)|
 |:--:|
@@ -371,14 +371,14 @@ below figure.
 OpenMS distinguishes between normal parameters and advanced parameters. Advanced parameters are by default hidden from
 the users since they should only rarely be customized. In case you want to have a look at the parameters or need to
 customize them in one of the tutorials you can show them by clicking on the checkbox **Show advanced parameter**
-in the lower part of the dialog. Afterwards the parameters are shown in a light gray color.
+in the lower part of the dialog. Afterwards, the parameters are shown in a light gray color.
 ```
 
 The dialog shows the individual parameters, their current value and type, and, in the lower part of the dialog, the
 documentation for the currently selected parameter. Please also note the tabs on the top of the configuration dialog.
 In the case of OpenMS nodes, there will be another tab called OutputTypes. It contains dropdown menus for every output
-port that let you select the output filetype that you want the node to return (if the tool supports it). For optional
-output ports you can select Inactive such that the port is crossed out after execution and the associated generation of
+port that let you select the output file type that you want the node to return (if the tool supports it). For optional
+output ports, you can select Inactive such that the port is crossed out after execution and the associated generation of
 the file and possible additional computations are not performed. Note that this will deactivate potential downstream
 nodes connected to this port.
 
@@ -389,7 +389,7 @@ nodes connected to this port.
 |Figure 7: The KNIME workbench|
 
 The graphical user interface (GUI) of KNIME consists of different components or so-called panels that are shown in
-above image. We will briefly introduce the individual panels and their purposes below.
+the above image. We will briefly introduce the individual panels and their purposes below.
 
 ##### Workflow Editor
 
@@ -411,8 +411,8 @@ from the appearing context menu. Remember to save your workflow often with the <
 ##### Workflow Coach (since KNIME 3.2.1)
 
 Shows a list of suggested following nodes, based on the last added/clicked nodes. When you are not sure which node to
-choose next, you have a reasonable suggestion based on other users behavior there. Connect them to the last node with a
-double-click.
+choose next, you have a reasonable suggestion based on other users' behavior there. Connect them to the last node with a
+double click.
 
 ##### Node Repository
 
@@ -440,7 +440,7 @@ may produce or expect. For OpenMS nodes you will also find a link to the tool pa
 
 #### Creating workflows
 
-Workflows can easily be created by a right click in the Workflow Explorer followed by clicking on **New KNIME workflow**.
+Workflows can easily be created by a right-click in the Workflow Explorer followed by clicking on **New KNIME workflow**.
 
 #### Sharing workflows
 
@@ -451,9 +451,9 @@ workflows as a _knwf_ file containing all the information on nodes, their connec
 Those *knwf* files can again be imported by selecting: **File** > **Import KNIME Workflow**
 
 ```{note}
-For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
+For your convenience, we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
  Additionally, the workflow files can be found on <a href="../downloads.html#workflows">workflow downloads</a>. If you want to check
- your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding
+ your own workflow by comparing it to the solution or get stuck, simply import the full workflow from the corresponding
  *knwf* file and after that double-click it in your KNIME Workflow repository to open it.
 ```
 
@@ -461,12 +461,12 @@ For your convenience we added all workflows discussed in this tutorial to the **
 
 In this tutorial, a lot of the workflows will be created based on the workflow from a previous task. To keep the
 intermediate workflows, we suggest you create copies of your workflows so you can see the progress. To create a copy of
-your workflow, save it, close it and follow the next steps.
+your workflow, save it, close it, and follow the next steps.
 
-- Right click on the workflow you want to create a copy of in the Workflow Explorer and select **Copy**.
-- Right click again somewhere on the workflow explorer and select **Paste**.
-- This will create a workflow with same name as the one you copied with a (2) appended.
-- To distinguish them later on you can easily rename the workflows in the Workflow Explorer by right clicking on the
+- Right-click on the workflow you want to create a copy of in the Workflow Explorer and select **Copy**.
+- Right-click again somewhere on the workflow explorer and select **Paste**.
+- This will create a workflow with the same name as the one you copied with a (2) appended.
+- To distinguish them later on you can easily rename the workflows in the Workflow Explorer by right-clicking on the
   workflow and selecting **Rename**.
 
 ```{note}
@@ -489,15 +489,15 @@ can also be used to check if all requirements are met and that your system is co
 In case you are unsure about which node port to use, hovering the cursor over the port in question will display the port
 name and what kind of input it expects.
 ```
-The complete workflow is shown in below image. `FileInfo` can produce two different kinds of output files.
+The complete workflow is shown in the below image. `FileInfo` can produce two different kinds of output files.
 
 |![A minimal workflow calling FileInfo on a single file.](/images/openms-user-tutorial/knime-setup/minimal_FileInfo.svg)|
 |:--:|
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
-- All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
+- All nodes are still marked red since we are missing an actual input file. Double-click the Input File node and select
   **Browse**. In the file system browser select {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
-  and click **Open**. Afterwards close the dialog by clicking **Ok**.
+  and click **Open**. Afterward, close the dialog by clicking **Ok**.
 
 ```{note}
 Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
@@ -505,13 +505,13 @@ Make sure to use the “tiny” version this time, not “small”, for the sake
 - The **Input File** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
   Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
 - Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
-  button with multiple green triangles in the KNIME Toolbar) to execute the complete workflow. You can also right click
+  button with multiple green triangles in the KNIME Toolbar) to execute the complete workflow. You can also right-click
   on any node of your workflow and select <kbd>Execute</kbd> from the context menu.
 - The traffic lights tell you about the current status of all nodes in your workflow. Currently running tools show either
   a progress in percent or a moving blue bar, nodes waiting for data show the small word “queued”, and successfully
   executed ones become green. If something goes wrong (e.g., a tool crashes), the light will become red.
 - In order to inspect the results, you can just right-click the Output Folder node and select **View: Open the output folder**
-  You can then open the text file and inspect its contents.  You will find some basic information of the data contained
+  You can then open the text file and inspect its contents.  You will find some basic information about the data contained
   in the mzML file, e.g., the total number of spectra and peaks, the RT and m/z range, and how many MS1 and MS2 spectra
   the file contains.
 
@@ -520,9 +520,9 @@ would like to convert multiple Thermo Raw files into the mzML format. We will no
 same information on three different files and then write the output files to a folder.
 
 - We start from the previous workflow.
-- First we need to replace our single input file with multiple files. Therefore we add the Input Files node from the
+- First, we need to replace our single input file with multiple files. Therefore we add the Input Files node from the
   category **Community Nodes** > **GenericKnimeNodes** > **IO**.
-- To select the files we double-click on the Input Files node and click on **Add**. In the filesystem browser we select
+- To select the files we double-click on the Input Files node and click on **Add**. In the filesystem browser, we select
   all three files from the directory **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
   with **Ok**.
 - We now add two more nodes: the **ZipLoopStart** and the **ZipLoopEnd** node from the category
@@ -531,7 +531,7 @@ same information on three different files and then write the output files to a f
   node to the **FileConverter** node, the first output port of the **FileConverter** node to the first input port of the
   **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node (NOT to the Output File).
 
-The complete workflow is shown in below figure.
+The complete workflow is shown in the below figure.
 
 |![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](/images/openms-user-tutorial/knime-setup/Minimal_RawFileConverter_Loop.png)|
 |:--:|
@@ -544,8 +544,8 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
 - The **Input Files** node passes a list of files to the ZipLoopStart node.
 - The ZipLoopStart node takes the files as input, but passes the single files sequentially (that is: one after the other)
   to the next node.
-- The ZipLoopEnd collects the single files that arrive at its input port. After all files have been processed, the collected
-  files are passed again as file list to the next node that follows.
+- The ZipLoopEnd collects the single files that arrive at its input port. After all, files have been processed, the collected
+  files are passed again as a file list to the next node that follows.
 
 #### Digression: Working with chemical structures
 
@@ -563,23 +563,23 @@ and KNIME.
 Perform the following steps to build the workflow shown in the above figure. You will use this workflow to visualize a
 list of SMILES strings and filter them by predefined substructures:
 
-- Add the node File Reader, open the node configuration dialog and select the file `smiles.csv`. This file has been
+- Add the node File Reader, open the node configuration dialog, and select the file `smiles.csv`. This file has been
   exported from the Human Metabolome Database (HMDB) and contains the portion of the human metabolome that has been
-  detected and quantified. The file preview on the bottom of the dialog shows that each compound is given by its HMDB
+  detected and quantified. The file preview atthe bottom of the dialog shows that each compound is given by its HMDB
   accession, compound name, and SMILES string. Click on the column header **SMILES** to change its properties. Change the
-  column type from **string** to **smiles** and close the dialog with **Ok**. Afterwards the **SMILES** column will be
+  column type from **string** to **smiles** and close the dialog with **Ok**. Afterward, the **SMILES** column will be
   visualized as chemical structures instead of text directly within all **KNIME** tables.
 - Add the node `RDKit From Molecule` and connect it to the `File Reader`. This node will use the provided `SMILES`
   strings to add an additional column that is required by RDKit.
 - Add the node `RDKit Functional Group Filter` and open the node configuration dialog. You can use this dialog to filter
-  the compounds by any combination of functional groups. In this case we want to find all compounds that contain at
+  the compounds by any combination of functional groups. In this case, we want to find all compounds that contain at
   least one aromatic carboxylic acid group. To do this, set this group as active and choose ’¿=’ and ’1’.
 - Connect the first output port (Molecules passing the filter) to a `CSV Writer` node to save the filtered metabolites
-  to a file. Right click **RDKit Functional Group Filter** and select the view ’Molecules passing the filter’ to inspect
-  the selected compounds in KNIME. How many compounds pass the chosen filter, see below figure.
+  to a file. Right-click **RDKit Functional Group Filter** and select the view ’Molecules passing the filter’ to inspect
+  the selected compounds in KNIME. How many compounds pass the chosen filter, see the below figure.
 
 
-The following figure shows resulting list of compounds that contains at least one aromatic carboxylic acid group.
+The following figure shows the resulting list of compounds that contains at least one aromatic carboxylic acid group.
 
 |![Resulting list of compounds that contains at least one aromatic carboxylic acid group](/images/openms-user-tutorial/metabo/structures_filter_results.png)|
 |:--:|
@@ -606,9 +606,9 @@ improve handling and clarity of large workflows:
 
 <div class="admonition task">
 <p class="admonition-title task-title">**Task**</p>
-Create the Metanode to let it behave like an encapsulated single node. First select the **Metanode**, open the context
-menu (right-click) and select **Metanode** > **Wrap**. The differences between Metanodes and their wrapped counterparts
-are marginal (and only apply when exposing user inputs and workflow variables). Therefore we suggest to use standard
+Create the Metanode to let it behave like an encapsulated single node. First, select the **Metanode**, open the context
+menu (right-click), and select **Metanode** > **Wrap**. The differences between Metanodes and their wrapped counterparts
+are marginal (and only apply when exposing user inputs and workflow variables). Therefore we suggest using standard
 Metanodes to clean up your workflow and cluster common subparts until you actually notice their limits.
 </div>
 
@@ -620,19 +620,19 @@ Undo the packaging. First select the (**Wrapped**) **Metanode**, open the contex
 #### Advanced topic: R integration
 
 KNIME provides a large number of nodes for a wide range of statistical analysis, machine learning, data processing, and
-visualization. Still, more recent statistical analysis methods, specialized visualizations or cutting edge algorithms
+visualization. Still, more recent statistical analysis methods, specialized visualizations, or cutting-edge algorithms
 may not be covered in KNIME. In order to expand its capabilities beyond the readily available nodes, external scripting
 languages can be integrated. In this tutorial, we primarily use scripts of the powerful statistical computing language R.
-Note that this part is considered advanced and might be difficult to follow if you are not familiar with R. In this case
+Note that this part is considered advanced and might be difficult to follow if you are not familiar with R. In this case,
 you might skip this part.
 
 **R View (Table)** allows to seamlessly include R scripts into KNIME. We will
-demonstrate on a minimal example how such a script is integrated.
+demonstrate in a minimal example how such a script is integrated.
 
 <div class="admonition task">
   <p class="admonition-title task-title">**Task**</p>
   <p>
-First we need some example data in KNIME, which we will generate using the **Data Generator** node. You can keep the
+First, we need some example data in KNIME, which we will generate using the **Data Generator** node. You can keep the
 default settings and execute the node. The table contains four columns, each containing random coordinates and one column
 containing a cluster number (Cluster_0 to Cluster_3). Now place a **R View (Table)** node into the workflow and connect
 the upper output port of the **Data Generator** node to the input of the **R View (Table)** node. Right-click and
@@ -660,7 +660,7 @@ plot(x=knime.in$Universe_0_0, y=knime.in$Universe_0_1, main="Plotting column Uni
 specifying the `data.frame` name and then the column name (e.g., `knime.in$Universe_0_0`). `plot` is the plotting function
 we use to generate the image. We tell it to use the data in column `Universe_0_0` of the dataframe object **knime.in**
 (denoted as `knime.in$Universe_0_0`) as x-coordinate and the other column `knime.in$Universe_0_1` as y-coordinate in the
-plot. `main` is simply the main title of the plot and `col` the column that is used to determine the color (in this case
+plot. `main` is simply the main title of the plot and `col` is the column that is used to determine the color (in this case
 it is the `Cluster Membership` column).
   </p>
   <p>
@@ -671,7 +671,7 @@ Now press the <kbd>Eval script</kbd> and <kbd>Show plot</kbd> buttons.
 ```{note}
 Note that we needed to put some extra quotes around `Cluster Membership`. If we omit those, R would interpret the column
 name only up to the first space `(knime.in$Cluster)` which is not present in the table and leads to an error. Quotes are
-regularly needed if column names contain spaces, tabs or other special characters like $ itself.
+regularly needed if column names contain spaces, tabs, or other special characters like $ itself.
 ```
 
 ## Label-free quantification of peptides
@@ -685,10 +685,10 @@ start from the minimal workflow of the last chapter and, step-by-step, build a l
 ### Peptide identification
 
 As a start, we will extend the minimal workflow so that it performs a peptide identification using the OMSSA[^9] search
-engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to  download and
+engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to download and
 install it yourself.
 
-Let’s start by replacing the input files in our **Input Files** node by the three mzML files in
+Let’s start by replacing the input files in our **Input Files** node with the three mzML files in
 **Example Data** > **Labelfree** > **datasets** > **lfqxspikeinxdilutionx1-3.mzML**. This is a reduced toy dataset where
 each of the three runs contains a constant background of S. `pyogenes` peptides as well as human spike-in peptides in
 different concentrations. [^10]
@@ -709,11 +709,11 @@ different concentrations. [^10]
   ```
 - The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
   will be stored in an idXML file. Now we can run the pipeline and after execution is finished, we can have a first look
-  at the the results: just open the input files folder with a file browser and from there open an mzML file in **TOPPView**.
+  at the results: just open the input files folder with a file browser, and from there open an mzML file in **TOPPView**.
 - Here, annotate this spectrum data file with the peptide identification results. Choose **Tools** > **Annonate with identification**
   from the menu and select the idXML file that **OMSSAAdapter** generated (it is located within the output directory that
   you specified when starting the pipeline).
-- On the right, select the tab **Identification view**. All identified peptides can be seen using this view. User can also
+- On the right, select the tab **Identification view**. All identified peptides can be seen using this view. Users can also
   browse the corresponding MS2 spectra.
 
   ```{note}
@@ -725,7 +725,7 @@ different concentrations. [^10]
   connect the output port of your `OMSSAAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
   tool will convert the idXML file to a more human-readable text file which can also be read into a KNIME table using
   the `IDTextReader` node. Add an `IDTextReader` node(**Community Nodes** > **OpenMS** > **Conversion**) after
-  **TextExporter** and execute it. Now you can right click `IDTextReader` and select **ID Table** to browse your peptide
+  **TextExporter** and execute it. Now you can right-click `IDTextReader` and select **ID Table** to browse your peptide
   identifications.
 - From here, you can use all the tools KNIME offers for analyzing the data in this table. As a simple example, add a
   `Histogram (local)` node (from category **Views - Local (Swing)**) node after `IDTextReader`, double-click it, select
@@ -733,11 +733,11 @@ different concentrations. [^10]
   **Interactive View: Histogram view** will open a plot showing the charge state distribution of your identifications.
 
 In the next step, we will tweak the parameters of OMSSA to better reflect the instrument’s accuracy. Also, we will
-extend our pipeline with a false discovery rate (FDR) filter to retain only those identifications that will yeild an
+extend our pipeline with a false discovery rate (FDR) filter to retain only those identifications that will yield an
 FDR of < 1 %.
 
 - Open the configuration dialog of `OMSSAAdapter`. The dataset was recorded using an LTQ Orbitrap XL mass spectrometer,
-  set the precursor mass tolerance to a smaller value, say 5 ppm. Set `precursor_mass_tolerance` to 5 and
+  setting the precursor mass tolerance to a smaller value, say 5 ppm. Set `precursor_mass_tolerance` to 5 and
   `precursor_error_units` to `ppm`.
 
   ```{note}
@@ -750,10 +750,10 @@ FDR of < 1 %.
 
   ```{note}
   To add a modification click on the empty value field in the configuration dialog to open the list editor dialog. In the
-  new dialog click **Add**. Then select the newly added modification to open the drop down list where you can select the
-  the correct modification.
+  new dialog click **Add**. Then select the newly added modification to open the drop-down list where you can select the
+  correct modification.
   ```
-- A common step in analysis is to search not only against a regular protein database, but to also search against a decoy
+- A common step in the analysis is to search not only against a regular protein database but also search against a decoy
   database for FDR estimation. The fasta file we used before already contains such a decoy database. For OpenMS to know
   which OMSSA PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
   extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **ID Processing**. This node needs
@@ -769,7 +769,7 @@ FDR of < 1 %.
 - In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
   Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
-- Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
+- Execute your workflow and inspect the results using `IDTextReader` as you did before. How many peptides did you
   identify at this FDR threshold?
 
   ```{note}
@@ -811,12 +811,12 @@ probabilities (PEP) and a combination of the normalized scores by considering mi
   node. We can connect this to the `PeptideIndexer` and go along with our existing FDR filtering.
 
   ```{note}
-  By default, X!Tandem takes additional enzyme cutting rules into consideration (besides the specified tryptic digest).
+  By default, X!Tandem takes additional enzyme-cutting rules into consideration (besides the specified tryptic digest).
   Thus for the tutorial files, you have to set PeptideIndexer’s `enzyme→specificity` parameter to `none` to accept
   X!Tandems non-tryptic identifications as well.
   ```
 
-In the end, the ID processing part of the workflow can be collapsed into a Metanode to keep the structure clean (see below figure which shows complete consensus identification workflow).
+In the end, the ID processing part of the workflow can be collapsed into a Metanode to keep the structure clean (see the below figure which shows the complete consensus identification workflow).
 
 |![Complete consensus identification workflow](/images/openms-user-tutorial/labelfree/PepConsensusId.png)|
 |:--:|
@@ -839,7 +839,7 @@ assigns an overall intensity.
 -  Run your pipeline and inspect the results of the **IDMapper** node in TOPPView. Open the mzML file of your data to display the raw peak intensities.
 - To assess how well the feature finding worked, you can project the features contained in the featureXML file on the raw data contained in the mzML file. To
 this end, open the featureXML file in TOPPView by clicking on File Open file and add it to a new layer ( Open in New layer ). The features are now visualized on top of your raw data. If you zoom in on a small region, you should be able to see the individual boxes around features that have been detected (see <a href="#figure-14">Fig. 14</a>). If you
-hover over the the feature centroid (small circle indicating the chromatographic apex of monoisotopic trace) additional information of the feature is displayed.
+hover over the feature centroid (small circle indicating the chromatographic apex of the monoisotopic trace) additional information about the feature is displayed.
 
   |![Visualization of detected features (boxes) in TOPPView](/images/openms-user-tutorial/labelfree/featureXML.png)|
   |:--:|
@@ -871,13 +871,13 @@ available input files and extend it a bit further, so that it is able to find an
 |:--:|
 |Figure 16: Complete identification and label-free quantification workflow|
 
-- To find features across several maps, we first have to align them to correct for retention time shifts between the different label-free measurements. With the **MapAlignerPoseClustering** node in **Community Nodes** > **OpenMS** > **Map Alignment**, we can align corresponding peptide signals to each other as closely as possible by applying a transformation in the RT dimension.
+- To find features across several maps, we first have to align them to correct retention time shifts between the different label-free measurements. With the **MapAlignerPoseClustering** node in **Community Nodes** > **OpenMS** > **Map Alignment**, we can align corresponding peptide signals to each other as closely as possible by applying a transformation in the RT dimension.
 
   ```{note}
   `MapAlignerPoseClustering` consumes several featureXML files and its output should still be several featureXML files containing the same features, but with the transformed RT values. In its configuration dialog, make sure that **OutputTypes** is set to **featureXML**.
   ```
 - With the **FeatureLinkerUnlabeledQT** node in **Community Nodes** > **OpenMS** > **Map Alignment**, we can then perform the actual linking of corresponding features. Its output is a consensusXML file containing linked groups of corresponding features across the different experiments.
-- Since the overall intensities can vary a lot between different measurements (for example, because the amount of injected analytes was different), we apply the **ConsensusMapNormalizer** node in **Community Node** > **OpenMS** > **Map Alignment** as a last processing step. Configure its parameters with setting `algorithm_type` to `median`. It will then normalize the maps in such a way that the median intensity of all input maps is equal.
+- Since the overall intensities can vary a lot between different measurements (for example, because the amount of injected analytes was different), we apply the **ConsensusMapNormalizer** node in **Community Node** > **OpenMS** > **Map Alignment** as a last processing step. Configure its parameters by setting `algorithm_type` to `median`. It will then normalize the maps in such a way that the median intensity of all input maps is equal.
 - Finally, export the resulting normalized consensusXML file to a csv format using the **TextExporter** node. Connect its out port to a new **Output Folder** node.
 
   ```{note}
@@ -889,7 +889,7 @@ available input files and extend it a bit further, so that it is able to find an
 For downstream analysis of the quantification results within the KNIME environment, you can use the **ConsensusTextReader** node in **Community Nodes** > **OpenMS** > **Conversion** instead of the **Output Folder** node to convert the output into a KNIME table (indicated by a triangle as output port). After running the node you can view the KNIME table by right-clicking on the **ConsensusTextReader** node and selecting `Consensus Table`. Every row in this table corresponds to a so-called consensus feature, i.e., a peptide signal quantified across several runs. The first couple of columns describe the consensus feature as a whole (average RT and m/z across the maps, charge, etc.). The remaining columns describe the exact positions and intensities of the quantified features separately for all input samples (e.g., intensity_0 is the intensity of the feature in the first input file). The last 11 columns contain information on peptide identification.
 
 - Now, let’s say we want to plot the log intensity distributions of the human spike-in peptides for all input files. In addition, we will plot the intensity distributions of the background peptides.
-- As shown in <a href="#figure-17">Fig. 17</a>, add a **Row Splitter** node (**Data Manipulation** > **Row** > **Filter**) after the **ConsensusTextReader** node. Double-click it to configure. The human spike-in peptides have accessions starting with “hum”. Thus, set the column to apply the test to: accessions, select pattern matching as matching criterion, enter `hum` into the corresponding text field, and check the contains wild cards box. Press **OK** and execute the node.
+- As shown in <a href="#figure-17">Fig. 17</a>, add a **Row Splitter** node (**Data Manipulation** > **Row** > **Filter**) after the **ConsensusTextReader** node. Double-click it to configure. The human spike-in peptides have accessions starting with “hum”. Thus, set the column to apply the test to: accessions, select pattern matching as a matching criterion, enter `hum` into the corresponding text field, and check the contains wild cards box. Press **OK** and execute the node.
 - **Row Splitter** produces two output tables: the first one contains all rows from the input table matching the filter criterion, and the second table contains all other rows. You can inspect the tables by right-clicking and selecting **Filtered** and **Filtered Out**. The former table should now only contain peptides with a human accession, whereas the latter should contain all remaining peptides (including unidentified ones).
 - Now, since we only want to plot intensities, we can add a **Column Filter** node by going to **Data Manipulation** > **Column Filter**. Connect its input port to the **Filtered output** port of the **Row Filter** node, and open its configuration dialog. We could either manually select the columns we want to keep, or, more elegantly, select **Wildcard/Regex Selection** and enter `intensity_?` as the pattern. KNIME will interactively show you which columns your pattern applies to while you’re typing.
 - Since we want to plot log intensities, we will now compute the log of all intensity values in our table. The easiest way to do this in KNIME is a small piece of R code. Add an **R Snippet** node `R` after **Column Filter** and double-click to configure. In the R Script text editor, enter the following code:
@@ -902,10 +902,10 @@ For downstream analysis of the quantification results within the KNIME environme
   x <- log10(x)       # compute log of all values
   knime.out <- x      # write result to output table
   ```
-- Now we are ready to plot! Add a **Box Plot (local)** node `Views -Swing (local)` after the **R Snippet** node, execute it, and open its view. If everything went well, you should see a significant fold change of your human peptide intensities across the three runs.
+- Now we are ready to plot! Add a **Box Plot (local)** node `Views -Swing (local)` after the **R Snippet** node, execute it, and open its view. If everything went well, you should see a significant fold change in your human peptide intensities across the three runs.
 - To verify that the concentration of background peptides is constant in all three runs, copy and paste the three nodes after **Row Splitter** and connect the duplicated **Column Filter** to the second output port (Filtered Out) of **Row Splitter**, as shown in <a href="#figure-17">Fig. 17</a>. Execute and open the view of your second **Box Plot**.
 
-You have now constructed an entire identification and label-free quantification workflow including a simple data analysis using KNIME. The final workflow should like the workflow shown in the following image:
+You have now constructed an entire identification and label-free quantification workflow including a simple data analysis using KNIME. The final workflow should be like the workflow shown in the following image:
 
 |![Simple KNIME data analysis example for LFQ](/images/openms-user-tutorial/labelfree/data_analysis.png)|
 |:--:|
@@ -914,18 +914,18 @@ You have now constructed an entire identification and label-free quantification 
 ### Identification and quantification of the iPRG2015 data with subsequent MSstats analysis
 
 Advanced downstream data analysis of quantitative mass spectrometry-based proteomics data can be performed using MSstats[^11]. This tool can be combined with
-an OpenMS preprocessing pipeline (e.g. in KNIME). The OpenMS experimental design is used to present the data in an MSstats-conformant way for the analysis. Here,
-we give an example how to utilize these resources when working with quantitative label-free data. We describe how to use OpenMS and MSstats for the analysis of the
+an OpenMS preprocessing pipeline (e.g. in KNIME). The OpenMS experimental design is used to present the data in an MSstats-conformant way for analysis. Here,
+we give an example of how to utilize these resources when working with quantitative label-free data. We describe how to use OpenMS and MSstats for the analysis of the
 ABRF iPRG2015 dataset[^12].
 
 ```{note}
-Reanalysing the full dataset from scratch would take too long. In the following tutorial, we will focus on just the conversion process and the downstream analysis.
+Reanalyzing the full dataset from scratch would take too long. In the following tutorial, we will focus on just the conversion process and the downstream analysis.
 ```
 
 #### Excursion MSstats
 
-The R package `MSstats` can be used for statistical relative quantification of proteins and peptides in mass spectrometry-based proteomics. Supported are label-free as well as labeled experiments in combination with data-dependent, targeted and data independent acquisition. Inputs can be identified and quantified entities (peptides or proteins) and the output is a list of differentially abundant entities, or summaries of their relative abundance. It depends on accurate feature detection, identification
-and quantification which can be performed e.g. by an OpenMS workflow. MSstats can be used for data processing & visualization, as well as statistical modeling & inference. Please see [^11] and the [MSstats](http://msstats.org) website for further
+The R package `MSstats` can be used for statistical relative quantification of proteins and peptides in mass spectrometry-based proteomics. Supported are label-free as well as labeled experiments in combination with data-dependent, targeted, and data independent acquisition. Inputs can be identified and quantified entities (peptides or proteins) and the output is a list of differentially abundant entities or summaries of their relative abundance. It depends on accurate feature detection, identification
+, and quantification which can be performed e.g. by an OpenMS workflow. MSstats can be used for data processing & visualization, as well as statistical modeling & inference. Please see [^11] and the [MSstats](http://msstats.org) website for further
 information.
 
 #### Dataset
@@ -974,7 +974,7 @@ against the MS2 from the original data (**Input Files** node with all mzMLs foll
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
 ```
 
-Afterwards, the results are scored using the **FalseDiscoveryRate** node and filtered to obtain only unique peptides (**IDFilter**) since `MSstats` does not support shared peptides, yet. The quantification is achieved by using the **FeatureFinderCentroided** node, which performs the feature detection on the samples (maps). In the end the quantification results are combined with the filtered identification results (**IDMapper**). In addition, a linear retention time alignment is performed (**MapAlignerPoseClustering**), followed by the feature linking process (**FeatureLinkerUnlabledQT**). The **ConsensusMapNormalizer**s is used to normalize the intensities via robust regression over a set of maps and the **IDConflictResolver** assures that only one identification (best score) is associated with a feature. The output of this workflow is a consensusXML file, which can now be converted using the **MSstatsConverter** (see <a href="#conversion-and-downstream-analysis">Conversion and downstream analysis</a> section).
+Afterwards, the results are scored using the **FalseDiscoveryRate** node and filtered to obtain only unique peptides (**IDFilter**) since `MSstats` does not support shared peptides, yet. The quantification is achieved by using the **FeatureFinderCentroided** node, which performs the feature detection on the samples (maps). In the end, the quantification results are combined with the filtered identification results (**IDMapper**). In addition, a linear retention time alignment is performed (**MapAlignerPoseClustering**), followed by the feature linking process (**FeatureLinkerUnlabledQT**). The **ConsensusMapNormalizer**s is used to normalize the intensities via robust regression over a set of maps and the **IDConflictResolver** assures that only one identification (best score) is associated with a feature. The output of this workflow is a consensusXML file, which can now be converted using the **MSstatsConverter** (see <a href="#conversion-and-downstream-analysis">Conversion and downstream analysis</a> section).
 
 #### Experimental design
 
@@ -1092,7 +1092,7 @@ data <- knime.in
 quant <- OpenMStoMSstatsFormat(data, removeProtein_with1Feature = FALSE)
 ```
 
-The inline R script allows further preparation of the data produced by **MSstatsConverter** before the actual analysis is performed. In this example, the lines with proteins, which were identified with only one feature, were retained. Alternatively they could be removed.
+The inline R script allows further preparation of the data produced by **MSstatsConverter** before the actual analysis is performed. In this example, the lines with proteins, which were identified with only one feature, were retained. Alternatively, they could be removed.
 In the same node, most importantly, the following line transforms the data into a format that is understood by `MSstats`:
 
 ```r
@@ -1116,9 +1116,9 @@ The goal of the analysis is the determination of differentially-expressed protei
 
 This matrix has the following properties:
 
-- The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2 and so forth).
+- The number of rows equals the number of comparisons that we want to perform, the number of columns equals the number of conditions (here, column 1 refers to C1, column 2 to C2, and so forth).
 - The entries of each row consist of exactly one 1 and one -1, the others must be 0.
-- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want calculate:
+- The condition with the entry `1` constitutes the enumerator of the log2 fold-change. The one with entry `-1` denotes the denominator. Hence, the first row states that we want to calculate:
 ```{math}
  \begin{equation} \log_2 \frac{C_{2}}{C_{1}} \end{equation}
 ```
@@ -1264,16 +1264,16 @@ the files in the Input Files nodes (don’t forget the one for the FASTA databas
 We have made the following changes compared to the original label-free quantification workflow from the last chapter:
 
 - First, we have added a **ProteinQuantifier** node and connected its input port to the output port of the **ConsensusMapNormalizer** node.
-- This already enables protein quantification. **ProteinQuantifier** quantifies peptides by summarizing over all observed charge states and proteins by summarizing over their quantified peptides. It stores two output files, one for the quantified peptides and one for the proteins.
+- This already enables protein quantification. **ProteinQuantifier** quantifies peptides by summarizing overall observed charge states and proteins by summarizing their quantified peptides. It stores two output files, one for the quantified peptides and one for the proteins.
 - In this example, we consider only the protein quantification output file, which is written to the first output port of **ProteinQuantifier**.
--  Because there is no dedicated node in KNIME to read back the **ProteinQuantifier** output file format into a KNIME table, we have to use a workaround. Here, we have added an additional URI Port to Variable node which converts the name of the output file to a so-called “flow variable” in KNIME. This variable is passed on to the next node **CSV Reader**, where it is used to specify the name of the input file to be read. If you double-click on **CSV Reader**, you will see that the text field, where you usually enter the location of the CSV file to be read, is greyed out. Instead, the flow variable is used to specify the location, as indicated by the small green button with the “v=?” label on the right.
+-  Because there is no dedicated node in KNIME to read back the **ProteinQuantifier** output file format into a KNIME table, we have to use a workaround. Here, we have added an additional URI Port to the Variable node which converts the name of the output file to a so-called “flow variable” in KNIME. This variable is passed on to the next node **CSV Reader**, where it is used to specify the name of the input file to be read. If you double-click on **CSV Reader**, you will see that the text field, where you usually enter the location of the CSV file to be read, is greyed out. Instead, the flow variable is used to specify the location, as indicated by the small green button with the “v=?” label on the right.
 - The table containing the **ProteinQuantifier** results is filtered one more time in order to remove decoy proteins. You can have a look at the final list of quantified protein groups by right-clicking the **Row Filter** and selecting **Filtered**.
 - By default, i.e., when the second input port `protein_groups` is not used, **ProteinQuantifier** quantifies proteins using only the unique peptides, which usually results in rather low numbers of quantified proteins.
 - In this example, however, we have performed protein inference using Fido and
 used the resulting protein grouping information to also quantify indistinguishable proteins. In fact, we also used a greedy method in **FidoAdapter** (parameter `greedy_group_resolution`) to uniquely assign the peptides of a group to the most probable protein(s) in the respective group. This boosts the number of quantifications but slightly raises the chances to yield distorted protein quantities.
 - As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
-set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
-- Next, we have added a third outgoing connection to our ID meta node and connected it to the second input port of **ZipLoopEnd**. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
+set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on, used by the Fido algorithm. Also, note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
+- Next, we added a third outgoing connection to our ID meta node and connected it to the second input port of **ZipLoopEnd**. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
 - Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **ID Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
 
 ### Statistical validation of protein inference results
@@ -1284,17 +1284,17 @@ In the following section, we will explain the subworkflow contained in the **Pro
 
 For downstream analysis on the protein ID level in KNIME, it is again necessary to convert the idXML-file-format result generated from **FidoAdapter** into a KNIME table.
 
-- We use the **MzTabExporter** to convert the inference results from **FidoAdapter** to a human readable, tab-separated mzTab file. mzTab contains multiple sections,
-that are all exported by default, if applicable. This file, with its different sections can again be read by the **MzTabReader** that produces one output in KNIME table
+- We use the **MzTabExporter** to convert the inference results from **FidoAdapter** to a human-readable, tab-separated mzTab file. mzTab contains multiple sections,
+that are all exported by default, if applicable. This file, with its different sections, can again be read by the **MzTabReader** that produces one output in KNIME table
 format (triangle ports) for each section. Some ports might be empty if a section did not exist. Of course, we continue by connecting the downstream nodes with the protein section output (second port).
 - Since the protein section contains single proteins as well as protein groups, we filter them for single proteins with the standard **Row Filter**.
 
 #### ROC curve of protein ID
 
-ROC Curves (Receiver Operating Characteristic curves) are graphical plots that visualize sensitivity (true-positive rate) against fall-out (false positive rate). They are often used to judge the quality of a discrimination method like e.g., peptide or protein identification engines. ROC Curve already provides the functionality of drawing ROC curves for binary classification problems. When configuring this node, select the `opt_global_target_decoy` column as the class (i.e. target outcome) column. We want to find out, how good our inferred protein probability discriminates between them,
+ROC Curves (Receiver Operating Characteristic curves) are graphical plots that visualize sensitivity (true-positive rate) against fall-out (false positive rate). They are often used to judge the quality of a discrimination method e.g., peptide or protein identification engines. ROC Curve already provides the functionality of drawing ROC curves for binary classification problems. When configuring this node, select the `opt_global_target_decoy` column as the class (i.e. target outcome) column. We want to find out, how well our inferred protein probability discriminates between them,
 therefore add `best_search_engine_score[1]` (the inference engine score is treated like a peptide search engine score) to the list of *”Columns containing positive class probabilities”*. View the plot by right-clicking and selecting **View: ROC Curves**. A perfect classifier has
-an area under the curve (AUC) of 1.0 and its curve touches the upper left of the plot. However, in protein or peptide identification, the ground-truth (i.e., which target
-identifications are true, which are false) is usually not known. Instead, so called pseudoROC Curves are regularly used to plot the number of target proteins against the false
+an area under the curve (AUC) of 1.0 and its curve touches the upper left of the plot. However, in protein or peptide identification, the ground truth (i.e., which target
+identifications are true, and which are false) is usually not known. Instead, so-called pseudoROC Curves are regularly used to plot the number of target proteins against the false
 discovery rate (FDR) or its protein-centric counterpart, the q-value. The FDR is approximated by using the target-decoy estimate in order to distinguish true IDs from
 false IDs by separating target IDs from decoy IDs.
 
@@ -1336,15 +1336,15 @@ Let’s have a look at the workflow (see <a href="#figure-23">Fig 23</a>).
 The full analysis workflow can be found here:
 {path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT`
 
-The workflow has four input nodes. The first for the experimental design to allow for MSstatsTMT compatible export (**MSstatsConverter**). The second for the `.mzML` files with the centroided spectra from the isobaric labeling experiment and the third one for the `.fasta` database used for identification. The last one allows to specify an output path for the plots generated by the R View, which runs MSstatsTMT (I). The quantification (A) is performed using the **IsobaricAnalzyer**. The tool is able to extract and normalize quantitative information from TMT and iTRAQ data. The values can be assessed from centroided MS2 or MS3 spectra (if available). Isotope correction is performed based on the specified correction matrix (as provided by the manufacturer). The identification (C) is applied as known from the previous chapters by using database search and a target-decoy database.
+The workflow has four input nodes. The first is for the experimental design to allow for MSstatsTMT compatible export (**MSstatsConverter**). The second is for the `.mzML` files with the centroided spectra from the isobaric labeling experiment and the third one is for the `.fasta` database used for identification. The last one allows to specify an output path for the plots generated by the R View, which runs MSstatsTMT (I). The quantification (A) is performed using the **IsobaricAnalzyer**. The tool is able to extract and normalize quantitative information from TMT and iTRAQ data. The values can be assessed from centroided MS2 or MS3 spectra (if available). Isotope correction is performed based on the specified correction matrix (as provided by the manufacturer). The identification (C) is applied as known from the previous chapters by using a database search and a target-decoy database.
 
-To reduce the complexity of the data for later inference the q-value estimation and FDR filtering is performed on PSM level for each file individually (B). Afterwards the identification (PSM) and quantiative information is combined using the **IDMapper**. After the processing of all available files, the intermediate results are aggregated (**FileMerger** - D). All PSM results are used for score estimation and protein inference (**Epifany**) (E). For detailed information about protein inference please see Chaper 4. Then, decoys are removed and the inference results are filtered via a protein group FDR. Peptide level results can be exported via **MzTabExporter** (F), protein level results can be obtained via the **ProteinQuantifier** (G) or the results can exported (**MSstatsConverter** - H) and further processed with the following R pipeline to allow for downstream processing using `MSstatsTMT`.
+To reduce the complexity of the data for later inference the q-value estimation and FDR filtering is performed on PSM level for each file individually (B). Afterwards, the identification (PSM) and quantitative information is combined using the **IDMapper**. After the processing of all available files, the intermediate results are aggregated (**FileMerger** - D). All PSM results are used for score estimation and protein inference (**Epifany**) (E). For detailed information about protein inference please see Chapter 4. Then, decoys are removed and the inference results are filtered via a protein group FDR. Peptide level results can be exported via **MzTabExporter** (F), protein level results can be obtained via the **ProteinQuantifier** (G), or the results can be exported (**MSstatsConverter** - H) and further processed with the following R pipeline to allow for downstream processing using `MSstatsTMT`.
 
 Please import the workflow from {path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the **Input Files** nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
 
 ### Excursion MSstatsTMT
 
-The R package `MSstatsTMT` can be used for protein significance analysis in shotgun mass spectrometry-based proteomic experiments with tandem mass tag (TMT) labeling. `MSstatsTMT` provides functionality for two types of analysis & their visualization: Protein summarization based on peptide quantification and Model-based group comparison to detect significant changes in abundance. It depends on accurate feature detection, identification and quantification which can be performed e.g. by an OpenMS workflow.
+The R package `MSstatsTMT` can be used for protein significance analysis in shotgun mass spectrometry-based proteomic experiments with tandem mass tag (TMT) labeling. `MSstatsTMT` provides functionality for two types of analysis & their visualization: Protein summarization based on peptide quantification and Model-based group comparison to detect significant changes in abundance. It depends on accurate feature detection, identification, and quantification which can be performed e.g. by an OpenMS workflow.
 
 In general, `MSstatsTMT` can be used for data processing & visualization, as well as statistical modeling. Please see [^13] and the [MSstats](http://msstats.org/msstatstmt/) website for further information.
 
@@ -1359,7 +1359,7 @@ We are using the MSV000084264 ground truth dataset, which consists of TMT10plex 
 |:--:|
 |Figure 24: Experimental Design|
 
-The experimental design in table format allows for `MSstatsTMT` compatible export. The design is represented by two tables. The first one <a href="#table-4">4</a> represents the overall structure of the experiment in terms of samples, fractions, labels and fraction groups. The second one <a href="#table-5">5</a> adds to the first by specifying specific conditions, biological replicates as well as mixtures and label for each channel. For additional information about the experimental design please see <a href="#table-3">Table 3</a>.
+The experimental design in a table format allows for `MSstatsTMT` compatible export. The design is represented by two tables. The first one <a href="#table-4">4</a> represents the overall structure of the experiment in terms of samples, fractions, labels, and fraction groups. The second one <a href="#table-5">5</a> adds to the first by specifying specific conditions, biological replicates as well as mixtures and labels for each channel. For additional information about the experimental design please see <a href="#table-3">Table 3</a>.
 
 <div class="table" id="table-4">
 
@@ -1600,9 +1600,9 @@ mass traces with a pre-defined mass accuracy. If this parameter is set to ’out
 - **width_filtering**: **FeatureFinderMetabo** can remove features with unlikely peak widths from the results. If activated it will use the interval provided by the parameters `min_fwhm` and `max_fwhm`.
 - **report_convex_hulls**: If set to true, convex hulls including mass traces will be reported for all identified features. This increases the output size considerably.
 
-The output file .featureXML can be visualized with TOPPView on top of the used `.mzML` file - in a so called layer - to look at the identified features.
+The output file .featureXML can be visualized with TOPPView on top of the used `.mzML` file - in a so-called layer - to look at the identified features.
 
-First start TOPPView and open the example `.mzML` file (see <a href="#figure-28">Fig. 28</a>). Afterwards open the `.featureXML` output as new layer (see <a href="#figure-29">Fig. 29</a>). The overlay is depicted in <a href="#figure-30">Figure 30</a>. The zoom of the `.mzML` - `.featureXML` overlay shows the individual mass traces and the assembly of those in a feature (see <a href="#figure-31">Fig. 31</a>).
+First start TOPPView and open the example `.mzML` file (see <a href="#figure-28">Fig. 28</a>). Afterwards, open the `.featureXML` output as a new layer (see <a href="#figure-29">Fig. 29</a>). The overlay is depicted in <a href="#figure-30">Figure 30</a>. The zoom of the `.mzML` - `.featureXML` overlay shows the individual mass traces and the assembly of those in a feature (see <a href="#figure-31">Fig. 31</a>).
 
 (Figure_28)=
 |![Opened .mzML in TOPPView](/images/openms-user-tutorial/metabo/ToppView_1.png)|
@@ -1626,12 +1626,12 @@ First start TOPPView and open the example `.mzML` file (see <a href="#figure-28"
 
 The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **Input File** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
 
-To facilitate the collection of features corresponding to the same compound ion across different samples, an alignment of the samples’ feature maps along retention time is often helpful. In addition to local, small-scale elution differences, one can often see constant retention time shifts across large sections between samples. We can use linear transformations to correct for these large scale retention differences. This brings the majority of corresponding compound ions close to each other. Finding the correct corresponding ions is then faster and easier, as we don’t have to search as far around individual features.
+To facilitate the collection of features corresponding to the same compound ion across different samples, an alignment of the samples’ feature maps along retention time is often helpful. In addition to local, small-scale elution differences, one can often see constant retention time shifts across large sections between samples. We can use linear transformations to correct for these large-scale retention differences. This brings the majority of corresponding compound ions close to each other. Finding the correct corresponding ions is then faster and easier, as we don’t have to search as far around individual features.
 
 (Figure_32)=
 |![map alignment example](/images/openms-user-tutorial/metabo/align.png)|
 |:--:|
-|Figure 32: The first feature map is used as a reference to which other maps are aligned. The calculated transformation brings corresponding features into close retention time proximity. Linking of these features form a so-called consensus features of a consensus map.|
+|Figure 32: The first feature map is used as a reference to which other maps are aligned. The calculated transformation brings corresponding features into close retention time proximity. The linking of these features forms a so-called consensus features of a consensus map.|
 
 - After the **ZipLoopEnd** node, add a **MapAlignerPoseClustering** node (**Community Nodes**>**OpenMS**>**Map Alignment**), set its Output Type to featureXML, and adjust the following settings:
 
@@ -1731,7 +1731,7 @@ When executed, both nodes will import the OpenMS files and provide access to the
 
 #### Adduct grouping
 
-Metabolites commonly co-elute as ions with different adducts (e.g., glutathione+H, glutathione+Na) or with charge-neutral modifications (e.g., water loss). Grouping such related ions allows to leverage information across features. For example, a low intensity, single trace feature could still be assigned a charge and adduct due to a matching high-quality feature. Several OpenMS tools, such as **AccurateMassSearch**, can use this information to, for example, narrow down candidates for identification.
+Metabolites commonly co-elute as ions with different adducts (e.g., glutathione+H, glutathione+Na) or with charge-neutral modifications (e.g., water loss). Grouping such related ions allows to leverage information across features. For example, a low-intensity, single trace feature could still be assigned a charge and adduct due to a matching high-quality feature. Several OpenMS tools, such as **AccurateMassSearch**, can use this information to, for example, narrow down candidates for identification.
 
 For this grouping task, we provide the **MetaboliteAdductDecharger** node. Its method explores the combinatorial space of all adduct combinations in a charge range for optimal explanations. Using defined adduct probabilities, it assigns co-eluting features having suitable mass shifts and charges those adduct combinations which maximize overall ion probabilities.
 
@@ -1797,14 +1797,14 @@ Run the workflow and inspect the output.
 In metabolomics, matches between tandem spectra and spectral libraries are manually validated. Several commercial and free online resources exist which help in that task. Some examples are:
 
 - mzCloud contains only spectra from Thermo Orbitrap instruments. The webpage requires Microsoft Silverlight which currently does not work in modern browsers (see the following [link](https://www.mzcloud.org/DataViewer).
-- MassBank North America (MoNA) has spectra from different instruments but falls short in number of spectra (compared to Metlin and mzCloud). See the following [link](http://mona.fiehnlab.ucdavis.edu/spectra/display/KNA00122).
-- METLIN includes 961,829 molecules ranging from lipids, steroids, metabolites, small peptides, carbohydrates, exogenous drugs and toxicants. In total over 14,000 metabolites.
+- MassBank North America (MoNA) has spectra from different instruments but falls short in the number of spectra (compared to Metlin and mzCloud). See the following [link](http://mona.fiehnlab.ucdavis.edu/spectra/display/KNA00122).
+- METLIN includes 961,829 molecules ranging from lipids, steroids, metabolites, small peptides, carbohydrates, exogenous drugs, and toxicants. In total over 14,000 metabolites.
 
 Here, we will use METLIN to manually validate metabolites.
 
 <div class="admonition task">
 <p class="admonition-title task-title">**Task**</p>
-Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
+Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with a retention time of 67.6 s is used as an example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with a retention time of 66.9 s has to be double-clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
 </div>
 
 (Figure_40)=
@@ -1814,7 +1814,7 @@ Check in the .xlsx output from the Excel writer (XLS) if you can find glutathion
 
 <div class="admonition task">
 <p class="admonition-title task-title">**Task**</p>
-On the METLIN homepage search for **Name** Glutathione using the **Advanced Search**. See the [link](https://metlin.scripps.edu/landing_page.php?pgcontent=advanced_search). Note that free registration is required. Which collision energy (and polarity) gives the best (visual) match to your experimental spectrum in TOPPView? Here you can compare the fragmentation patterns in both spectra shown by the Intensity or relative Intensity, the m/z of a peak and the distance between peaks. Each distance between two peaks corresponds to a fragment of elemental composition (e.g., NH2 with the charge of one would have mass of two peaks of 16.023 Th).
+On the METLIN homepage search for **Name** Glutathione using the **Advanced Search**. See the [link](https://metlin.scripps.edu/landing_page.php?pgcontent=advanced_search). Note that free registration is required. Which collision energy (and polarity) gives the best (visual) match to your experimental spectrum in TOPPView? Here you can compare the fragmentation patterns in both spectra shown by the Intensity or relative Intensity, the m/z of a peak, and the distance between peaks. Each distance between two peaks corresponds to a fragment of elemental composition (e.g., NH2 with the charge of one would have mass of two peaks of 16.023 Th).
 </div>
 
 (Figure_41)=
@@ -1843,7 +1843,7 @@ Construct the workflow as shown in <a href="#figure-42">Fig. 42</a>.
 Use the file `MetaboliteDeNovoID.mzML` as input for your workflow.
 </div>
 
-Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
+Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity, and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
 
 (Figure_42)=
 |![De novo identification workflow](/images/openms-user-tutorial/metabo/denovoid.png)|
@@ -1852,7 +1852,7 @@ Below we show an example workflow for de novo identification (<a href="#figure-4
 
 Run the workflow and inspect the output.
 
-The output consists of two mzTab files and an internal .ms file. One mzTab for SIRIUS and the other for the CSI:FingerID. These provide information about the chemical formula, adduct and the possible compound structure. The information is referenced to the spectrum used in the analysis. Additional information can be extracted from the **SiriusAdapter** by setting an ”out_workspace_directory”. Here the SIRIUS workspace will be provided after the calculation has finished. This workspace contains information about annotated fragments for each successfully explained compound.
+The output consists of two mzTab files and an internal .ms file. One mzTab for SIRIUS and the other for the CSI:FingerID. These provide information about the chemical formula, adduct, and the possible compound structure. The information is referenced to the spectrum used in the analysis. Additional information can be extracted from the **SiriusAdapter** by setting an ”out_workspace_directory”. Here the SIRIUS workspace will be provided after the calculation has finished. This workspace contains information about annotated fragments for each successfully explained compound.
 
 ### Downstream data analysis and reporting
 
@@ -1886,16 +1886,16 @@ After we linked features across all maps, we want to identify features that are 
 - The output of the log scaling node is also used to draw a boxplot that can be used to examine the structure of the data. Since we only want to plot the intensities in the different maps (and not m/z or rt) we first use a **Column Filter** node to keep only the columns that contain the intensities. We connect the resulting table to a **Box Plot** node which draws one box for every column in the input table. Right-click and select **View: Box Plot**
 - The median normalization is performed in a similar way to the log scaling. First we calculate the median intensity for each intensity column, then we subtract the median from every intensity.
 - Open the **Box Plot** connected to the normalization node and compare it to the box plot connected to the log scaling node to examine the effect of the median normalization.
-- To perform the t-test we defined the two groups we want to compare. Finally we save the p-values and fold-changes in two new columns named p-value and FC.
-- The **Numeric Row Splitter** is used to filter less interesting parts of the data. In this case we only keep columns where the fold-change is ≥ 2.
+- To perform the t-test we defined the two groups we want to compare. Finally, we save the p-values and fold-changes in two new columns named p-value and FC.
+- The **Numeric Row Splitter** is used to filter less interesting parts of the data. In this case, we only keep columns where the fold-change is ≥ 2.
 - We adjust the p-values for multiple testing using Benjamini-Hochberg and keep all consensus features with a q-value ≤ 0.01 (i.e. we target a false-discovery rate of 1%).
 
 #### Interactive visualization
 
-KNIME supports multiple nodes for interactive visualization with interrelated output. The nodes used in this part of the workflow exemplify this concept. They further demonstrate how figures with data dependent customization can be easily realized using basic KNIME nodes. Several simple operations are concatenated in order to enable an interactive volcano plot.
+KNIME supports multiple nodes for interactive visualization with interrelated output. The nodes used in this part of the workflow exemplify this concept. They further demonstrate how figures with data-dependent customization can be easily realized using basic KNIME nodes. Several simple operations are concatenated in order to enable an interactive volcano plot.
 
 - We first log-transform fold changes and p-values in the **R Snippet** node. We then append columns noting interesting features (concerning fold change and p-value).
-- With this information, we can use various Manager nodes (**Views** > **Property**) to emphasize interesting data points. The configuration dialogs allow us to select columns to change color, shape or size of data points dependent on the column values.
+- With this information, we can use various Manager nodes (**Views** > **Property**) to emphasize interesting data points. The configuration dialogs allow us to select columns to change color, shape, or size of data points dependent on the column values.
 - The **Scatter Plot** node (from the **Views** repository) enables interactive visualization of the logarithmized values as a volcano plot: the log-transformed values can be chosen in the ‘Column Selection’ tab of the plot view. Data points can be selected in the plot and highlighted via the menu option. The highlighting transfers to all other interactive nodes connected to the same data table. In our case, selection and the highlighting will also occur in the **Interactive Table** node (from the **Views** repository).
 - Output of the interactive table can then be filtered via the ”HiLite” menu tab. For example, we could restrict shown rows to points highlighted in the volcano plot.
 
@@ -1906,7 +1906,7 @@ Inspect the nodes of this section. Customize your visualization and possibly try
 
 #### Advanced visualization
 
-R Dependencies: This section requires that the R packages <code>ggplot2</code> and <code>ggfortify</code> are both installed. <code>ggplot2</code> is part of the KNIME R Statistics Integration (Windows Binaries) which should already be installed via the full KNIME installer, ggfortify however is not. In case that you use an R installation where one or both of them are not yet installed, add an **R Snippet** node and double-click to configure. In the R Script text editor, enter the following code:
+R Dependencies: This section requires that the R packages <code>ggplot2</code> and <code>ggfortify</code> are both installed. <code>ggplot2</code> is part of the KNIME R Statistics Integration (Windows Binaries) which should already be installed via the full KNIME installer, ggfortify however is not. In case you use an R installation where one or both of them are not yet installed, add an **R Snippet** node and double-click to configure. In the R Script text editor, enter the following code:
 
 ```r
 #Include the next line if you also have to install ggplot2:   
@@ -1933,7 +1933,7 @@ Even though the basic capabilities for (interactive) plots in KNIME are valuable
 
 #### Data preparation for reporting
 
-Following the identification, quantification and statistical analysis our data is merged and formatted for reporting. First we want to discard our normalized and logarithmized intensity values in favor of the original ones. To this end we first remove the intensity columns (**Column Filter**) and add the original intensities back (**Joiner**). For that, we use an Inner Join 2 with the **Joiner** node. In the dialog of the node, we add two entries for the Joining Columns and for the first column we pick `retention_time` from the top input (i.e. the **AccurateMassSearch** output) and `rt_cf` (the retention time of the consensus features) for the bottom input (the result from the quantification). For the second column you should choose `exp_mass_to_charge` and `mz_cf` respectively to make the joining unique. Note that the workflow needs to be executed up to the previous nodes for the possible selections of columns to appear.
+Following the identification, quantification, and statistical analysis our data is merged and formatted for reporting. First we want to discard our normalized and logarithmized intensity values in favor of the original ones. To this end we first remove the intensity columns (**Column Filter**) and add the original intensities back (**Joiner**). For that, we use an Inner Join 2 with the **Joiner** node. In the dialog of the node, we add two entries for the Joining Columns and for the first column, we pick `retention_time` from the top input (i.e. the **AccurateMassSearch** output) and `rt_cf` (the retention time of the consensus features) for the bottom input (the result from the quantification). For the second column you should choose `exp_mass_to_charge` and `mz_cf` respectively to make the joining unique. Note that the workflow needs to be executed up to the previous nodes for the possible selections of columns to appear.
 
 (Figure_43)=
 |![Data preparation for reporting](/images/openms-user-tutorial/metabo/reporting.png)|
@@ -1974,7 +1974,7 @@ mProphet will be used in this tutorial.
 
 #### Generating TraML from transition lists
 
-OpenSWATH requires an assay library to be supplied in the TraML format[^27]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in {path}`ExampleData,OpenSWATH,assay`. Please note that the transition lists need to be named `.tsv`.
+OpenSWATH requires an assay library to be supplied in the TraML format[^27]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab-separated files as input. Example datasets are provided in {path}`ExampleData,OpenSWATH,assay`. Please note that the transition lists need to be named `.tsv`.
 
 The header of the transition list contains the following variables (with example values in brackets):
 
@@ -2068,7 +2068,7 @@ On the TOPP command:
 
 #### Appending decoys to a TraML file
 
-In addition to the target assays, OpenSWATH requires decoy assays in the library which are later used for classification and error rate estimation. For the decoy generation it is crucial that the decoys represent the targets in a realistic but unnatural manner without interfering with the targets. The methods for decoy generation implemented in OpenSWATH include ’shuffle’, ’pseudo-reverse’, ’reverse’ and ’shift’. To append decoys to a TraML, the TOPP tool **OpenSwathDecoyGenerator** can be used: Please use the absolute path to your OpenMS installation.
+In addition to the target assays, OpenSWATH requires decoy assays in the library which are later used for classification and error rate estimation. For the decoy generation, it is crucial that the decoys represent the targets in a realistic but unnatural manner without interfering with the targets. The methods for decoy generation implemented in OpenSWATH include ’shuffle’, ’pseudo-reverse’, ’reverse’, and ’shift’. To append decoys to a TraML, the TOPP tool **OpenSwathDecoyGenerator** can be used: Please use the absolute path to your OpenMS installation.
 
 **Linux or Mac**
 
@@ -2123,13 +2123,13 @@ For additional instructions on how to use pyProphet instead of mProphet please h
 
 ### From the example dataset to real-life applications
 
-The sample dataset used in this tutorial is part of the larger SWATH MS Gold Standard (SGS) dataset which is described in the publication of Roest *et al.*[^21]. It contains one of 90 SWATH-MS runs with significant data reduction (peak picking of the raw, profile data) to make file transfer and working with it easier. Usually SWATH-MS datasets are huge with several gigabyte per run. Especially when complex samples in combination with large assay libraries are analyzed, the TOPP tool based workflow requires a lot of computational resources. Additional information and instruction can be found at the following [link](http://openswath.org/en/latest/).
+The sample dataset used in this tutorial is part of the larger SWATH MS Gold Standard (SGS) dataset which is described in the publication of Roest *et al.*[^21]. It contains one of 90 SWATH-MS runs with significant data reduction (peak picking of the raw, profile data) to make file transfer and working with it easier. Usually, SWATH-MS datasets are huge with several gigabyte per run. Especially when complex samples in combination with large assay libraries are analyzed, the TOPP tool-based workflow requires a lot of computational resources. Additional information and instruction can be found at the following [link](http://openswath.org/en/latest/).
 
 ## OpenSWATH for Metabolomics
 
 ### Introduction
 
-We would like to present an automated DIA/SWATH analysis workflow for metabolomics, which takes advantage of experiment specific target-decoy assay library generation. This allows for targeted extraction, scoring and statistical validation of metabolomics DIA data[^29]<sup>,</sup> [^30].
+We would like to present an automated DIA/SWATH analysis workflow for metabolomics, which takes advantage of experiment-specific target-decoy assay library generation. This allows for targeted extraction, scoring, and statistical validation of metabolomics DIA data[^29]<sup>,</sup> [^30].
 
 ### Workflow
 
@@ -2138,7 +2138,7 @@ The workflow follows multiple steps (see <a href="#figure-45">Fig. 45</a>).
 (Figure_45)=
 |![DIAMetAlyzer - pipeline for assay library generation and targeted analysis with statistical validation](/images/openms-user-tutorial/openswath/pipeline_overview.png)|
 |:--:|
-|Figure 45: DIAMetAlyzer - pipeline for assay library generation and targeted analysis with statistical validation. DDA data is used for candidate identification containing feature detection, adduct grouping and accurate mass search. Library construction uses fragment annotation via compositional fragmentation trees and decoy generation using a fragmentation tree re-rooting method to create a target-decoy assay library. This library is used in a second step to analyse metabolomics DIA data performing targeted extraction, scoring and statistical validation (FDR estimation).|
+|Figure 45: DIAMetAlyzer - pipeline for assay library generation and targeted analysis with statistical validation. DDA data is used for candidate identification containing feature detection, adduct grouping, and accurate mass search. Library construction uses fragment annotation via compositional fragmentation trees and decoy generation using a fragmentation tree re-rooting method to create a target-decoy assay library. This library is used in a second step to analyze metabolomics DIA data by performing targeted extraction, scoring, and statistical validation (FDR estimation).|
 
 (Figure_46)=
 |![Assay library generation](/images/openms-user-tutorial/openswath/assay_library_generation.png)|
@@ -2148,19 +2148,19 @@ The workflow follows multiple steps (see <a href="#figure-45">Fig. 45</a>).
 (Figure_47)=
 |![Decoy generation](/images/openms-user-tutorial/openswath/decoy_generation.png)|
 |:--:|
-|Figure 47: Decoy generation. The compositional fragmentations trees from the step above are used to run the fragmentation tree re-rooting method from Passatutto, generating a compound specific decoy MS2 spectrum. Here, the n highest intensity decoy transitions are extracted and stored in the target-decoy assay library.|
+|Figure 47: Decoy generation. The compositional fragmentations trees from the step above are used to run the fragmentation tree re-rooting method from Passatutto, generating a compound-specific decoy MS2 spectrum. Here, the n highest intensity decoy transitions are extracted and stored in the target-decoy assay library.|
 
 - **Candidate identification**
-   Feature detection, adduct grouping and accurate mass search are applied on DDA data.
+   Feature detection, adduct grouping, and accurate mass search are applied to DDA data.
 - **Library construction**
-  The knowledge determined from the DDA data, about compound identification, its potential adduct and the corresponding fragment spectra are used to perform fragment annotation via compositional fragmentation trees sugin SIRIUS 4[^31]. Afterwards transitions, which are the reference of a precursor to its fragment ions are stored in a so-called assay library (<a href="#figure-46">Fig. 46</a>). Assay libraries usually contain additional metadata (i.e. retention time, peak intensities). FDR estimation is based on the target-decoy approach[^32]. For the generation of the MS2 decoys, the fragmentation tree-based rerooting method by Passatutto ensure the consistency of decoy spectra (<a href="#figure-47">Fig.47</a>)[^33]. The target-decoy assay library is then used to analyse the SWATH data.
+  The knowledge determined from the DDA data, about compound identification, its potential adduct, and the corresponding fragment spectra are used to perform fragment annotation via compositional fragmentation trees sugin SIRIUS 4[^31]. Afterwards transitions, which are the reference of a precursor to its fragment ions are stored in a so-called assay library (<a href="#figure-46">Fig. 46</a>). Assay libraries usually contain additional metadata (i.e. retention time, peak intensities). FDR estimation is based on the target-decoy approach[^32]. For the generation of the MS2 decoys, the fragmentation tree-based rerooting method by Passatutto ensures the consistency of decoy spectra (<a href="#figure-47">Fig.47</a>)[^33]. The target-decoy assay library is then used to analyze the SWATH data.
 - **Targeted extraction**
   Chromatogram extraction and peak-group scoring. This step is performed using an algorithm based on OpenSWATH[^29] for metabolomics data.
 - **Statistical validation**
   FDR estimation uses the PyProphet algorithm[^30]. To prevent overfitting we chose the simpler linear model (LDA) for target-decoy discrimination in PyProphet, using MS1 and MS2 scoring with low correlated scores.
 
 ### Prerequisites
-Apart from the usual KNIME nodes, the workflow uses python scripting nodes. One basic requirement for the installation of python packages, in particular pyOpenMS, is a package manager for python. Using conda as an environment manger allows to specify a specific environment in the KNIME settings (**File**>**Preferences**>**KNIME**>**Python**).
+Apart from the usual KNIME nodes, the workflow uses python scripting nodes. One basic requirement for the installation of python packages, in particular pyOpenMS, is a package manager for python. Using conda as an environment manager allows one to specify a specific environment in the KNIME settings (**File**>**Preferences**>**KNIME**>**Python**).
 
 #### Windows
 
@@ -2232,7 +2232,7 @@ The example data can be found [here](https://abibuilder.cs.uni-tuebingen.de/arch
 
 ### Example workflow
 
-Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME (see <a href="#figure-48">Fig. 48</a>). Inputs are the SWATH-MS data in profile mode (.mzML), a path for saving the new target-decoy assay library, the SIRIUS 4.9.0 executable, the DDA data (.mzML), custom libraries and adducts for **AccurateMassSearch**, the min/max fragment mass-to-charge to be able to restrict the mass of the transitions and the path to the PyProphet executable. The DDA is used for feature detection, adduct grouping, accurate mass search and forwarded to the **AssayGeneratorMetabo**. Here, feature mapping is performed to collect MS2 spectra that belong to a feature. All information collected before (feautre, adduct, putative identification, MS2 spectra) are then internally forwarded to SIRIUS. SIRIUS is used for fragment annotation and decoy generation based on the fragmentation tree re-rooting approach. This information is then used to filter spectra/decoys based on their explained intensity (min. 85%). Afterwards internal feature linking is performed which is most important for untargeted experiments using a lot of DDA data to construct the library. The constructed target-decoy assay library is processed with the SWATH-MS data in OpenSWATH. The results are used by PyProphet for scoring and output a list of metabolites with their respective q-value and quantitative information.
+Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME (see <a href="#figure-48">Fig. 48</a>). Inputs are the SWATH-MS data in profile mode (.mzML), a path for saving the new target-decoy assay library, the SIRIUS 4.9.0 executable, the DDA data (.mzML), custom libraries and adducts for **AccurateMassSearch**, the min/max fragment mass-to-charge to be able to restrict the mass of the transitions and the path to the PyProphet executable. The DDA is used for feature detection, adduct grouping, and accurate mass search and forwarded to the **AssayGeneratorMetabo**. Here, feature mapping is performed to collect MS2 spectra that belong to a feature. All information collected before (feature, adduct, putative identification, MS2 spectra) is then internally forwarded to SIRIUS. SIRIUS is used for fragment annotation and decoy generation based on the fragmentation tree re-rooting approach. This information is then used to filter spectra/decoys based on their explained intensity (min. 85%). Afterwards, internal feature linking is performed which is most important for untargeted experiments using a lot of DDA data to construct the library. The constructed target-decoy assay library is processed with the SWATH-MS data in OpenSWATH. The results are used by PyProphet for scoring and output a list of metabolites with their respective q-value and quantitative information.
 
 (Figure_48)=
 |![Example workflow for the usage of the DIAMetAlyzer Pipeline in KNIME](/images/openms-user-tutorial/openswath/oswm_example_wf.png)|
@@ -2344,7 +2344,7 @@ It is also possible to use identified and in addition unknown (non-identified) f
 
 ## Untargeted metabolomics preprocessing
 
-The universal workflow for untargeted metabolomics always consists of feature detection in the individual MS sample files and their linkage to consensus features with common m/z and retention time values. In addition, there are optional steps such as adduct detection and annotation of features with associated MS2 spectra. This workflow prepares all the file necessary to do formula and structural annotations via `SiriusAdapter`. Furthermore it prepares all required files to run `GNPSExport`, which generates all files necessary to directly run [GNPS](https://gnps.ucsd.edu) Feature Based Molecular Networking (FBMN) and Ion Identity Molecular Networking (IIMN).
+The universal workflow for untargeted metabolomics always consists of feature detection in the individual MS sample files and their linkage to consensus features with common m/z and retention time values. In addition, there are optional steps such as adduct detection and annotation of features with associated MS2 spectra. This workflow prepares all the file necessary to do formula and structural annotations via `SiriusAdapter`. Furthermore, it prepares all required files to run `GNPSExport`, which generates all files necessary to directly run [GNPS](https://gnps.ucsd.edu) Feature-Based Molecular Networking (FBMN) and Ion Identity Molecular Networking (IIMN).
 
 (Figure_49)=
 |![metabolomics preprocessing](/images/tutorials/metabolomics-preprocessing.png)|
@@ -2364,7 +2364,7 @@ Align feature retention times based on the feature map with the highest number o
 MapAlignerPoseClustering -in sample1.featureXML sample2.featureXML -out aligned_sample1.featureXML aligned_sample2.featureXML -trafo_out sample1.trafoXML sample2.trafoXML -algorithm:pairfinder:distance_MZ:max_difference 10.0 -algorithm:pairfinder:distance_MZ:unit ppm
 ```
 
-Align mzML files aligment based on FeatureMap alignment (optional, only for GNPS).
+Align mzML file alignment based on FeatureMap alignment (optional, only for GNPS).
 ```shell
 MapRTTransformer -in sample1.mzML -out aligned_sample1.mzML -trafo_in sample1.trafoXML
 MapRTTransformer -in sample2.mzML -out aligned_sample2.mzML -trafo_in sample2.trafoXML
@@ -2405,7 +2405,7 @@ You can recreate this workflow in KNIME. [Download the KNIME workflow here](../w
 
 ### Introduction
 
-pyOpenMS provides Python bindings for a large part of the OpenMS library for mass spectrometry based proteomics and metabolomics. It thus provides access to a featurerich, open-source algorithm library for mass-spectrometry based LC-MS analysis. These Python bindings allow raw access to the data-structures and algorithms implemented
+pyOpenMS provides Python bindings for a large part of the OpenMS library for mass-spectrometry based proteomics and metabolomics. It thus provides access to a featurerich, open-source algorithm library for mass-spectrometry based LC-MS analysis. These Python bindings allow raw access to the data-structures and algorithms implemented
 in OpenMS, specifically those for file access (mzXML, mzML, TraML, mzIdentML among others), basic signal processing (smoothing, filtering, de-isotoping and peak-picking) and complex data analysis (including label-free, SILAC, iTRAQ and SWATH analysis tools). pyOpenMS is integrated into OpenMS starting from version 1.11. This tutorial is addressed to people already familiar with Python. If you are new to Python, we suggest to start with a [Python tutorial](https://en.wikibooks.org/wiki/Non-Programmer%27s_Tutorial_for_Python_3).
 
 ### Installation
@@ -2492,11 +2492,11 @@ Now launch ”Spyder” (python IDE) in the home menu.
 
 ### Build instructions
 
-Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/build_from_source.html).
+Instructions on how to build pyOpenMS can be found [online](https://pyopenms.readthedocs.io/en/latest/community/build_from_source.html).
 
 ### Scripting with pyOpenMS
 
-A big advantage of pyOpenMS are its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
+A big advantage of pyOpenMS is its scripting capabilities (beyond its application in tool development). Most of the OpenMS datastructure can be accessed using [python](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html). Here we would like to give some examples on how pyOpenMS can be used for simple scripting task, such as peptide mass calculation and peptide/protein digestion as well as isotope distribution calculation.
 
 Calculation of the monisotopic and average mass of a peptide sequence:
 
@@ -2558,7 +2558,7 @@ for iso in isotopes.getContainer():
     print (iso.getMZ(), ":", iso.getIntensity())
 ```
 
-For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/ms_data.html).
+For further examples and the pyOpenMS data structures please see the following [link](https://pyopenms.readthedocs.io/en/latest/user_guide/ms_data.html).
 
 ### Tool development with pyOpenMS
 
@@ -2939,7 +2939,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** I have problem XYZ but it also occurs with other nodes or generally in the KNIME environment/GUI, what should I do?
 
-**A:** This sounds like a general KNIME bug and we advise to search help directly at the KNIME developers. They also provide a [FAQ](https://tech.knime.org/) and a [forum](https://tech.knime.org/forum).
+**A:** This sounds like a general KNIME bug and we advise to search help directly at the KNIME developers. They also provide a [FAQ](https://www.knime.com/faq) and a [forum](https://forum.knime.com).
 
 **Q:** After exporting and reading in results into a KNIME table (e.g. with a MzTabExporter and MzTabReader combination) numeric values get rounded (e.g. from scientific notation 4.5e-10 to zero) or are in a different representation than in the underlying exported file!
 
@@ -2963,7 +2963,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** Why is my configuration dialog closing right away when I double-click or try to configure it? Or why is my GUI responding so slow?
 
-**A:** If you have any problems with the KNIME GUI or the opening of dialogues under Linux you might be affected by a GTK bug. See the KNIME forum (e.g. [here](https://tech.knime.org/forum/knime-general/ubuntu-1604-slow-performance) or [here](https://tech.knime.org/forum/knime-users/knime-300-crashes-after-splash-screen)) for a discussion and a possible solution. In short: set environment variable by calling `export SWT_GTK3=0` or edit `knime.ini` to make Eclipse use GTK2 by adding the following two lines:
+**A:** If you have any problems with the KNIME GUI or the opening of dialogues under Linux you might be affected by a GTK bug. See the KNIME forum (e.g. [here](https://forum.knime.com/t/ubuntu-16-04-slow-performance/4345) or [here](https://forum.knime.com/t/knime-3-0-0-crashes-after-splash-screen/8370)) for a discussion and a possible solution. In short: set environment variable by calling `export SWT_GTK3=0` or edit `knime.ini` to make Eclipse use GTK2 by adding the following two lines:
 ```xml
 –launcher.GTK_version
 2
