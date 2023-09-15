@@ -54,7 +54,7 @@ Download Introduction to OpenMS in KNIME [user tutorial](../../tutorials-and-qui
 usage of KNIME. See the official [KNIME Getting Started Guide](https://tech.knime.org/knime) for a more in-depth view of
 the KNIME functionality besides OpenMS.
 
-If you face any issues, please [contact us](/quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the KNIME community contribution [forum](https://forum.knime.com/c/community-extensions/openms/40).
+If you face any issues, please [contact us](/quick-reference/contact-us.md) and specifically for the usage of OpenMS in KNIME, the KNIME community contribution [forum](https://forum.knime.com/tags/c/community-extensions/38/openms).
 
 ## Creating your own Generic KNIME Nodes
 
