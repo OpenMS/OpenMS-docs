@@ -80,7 +80,7 @@ Server and browser-based interactive workflow editor and runner. A public server
 
 :::{card} TOPPAS
 :img-top: /images/introduction/TOPPAS_logo_white.png
-:link: openms-in-TOPPAS
+:link: openms-in-toppas
 :link-type: doc
 :class-card: only-light
 :class-img-top: halfwidth
@@ -91,7 +91,7 @@ OpenMS' build-in workflow system, with limited capabilities but easy to use and 
 
 :::{card} TOPPAS
 :img-top: /images/introduction/TOPPAS_logo_dark.png
-:link: openms-in-TOPPAS
+:link: openms-in-toppas
 :link-type: doc
 :class-card: only-dark
 :class-img-top: halfwidth
