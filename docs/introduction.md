@@ -93,24 +93,4 @@ are stored in an {term}`MS^2` (or {term}`MS/MS`) spectrum and provide informatio
 Alternatively, {term}`MS/MS` spectra can be used for quantification.
 
 
-Get started with installing OpenMS using the installers available for different operating systems!
-
-## Installation on different platforms
-
-```{tab} GNU/Linux
-
-```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Debian-Linux-x86_64.deb
-```
-
-```{tab} Windows
-
-```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Win64.exe
-```
-
-```{tab} macOS
-
-```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-macOS.dmg
-```
+Get started with installing OpenMS using the [installers available for different operating systems](/openms-applications-and-tools/installation.md).
