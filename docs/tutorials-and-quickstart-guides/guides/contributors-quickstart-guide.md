@@ -61,7 +61,7 @@ Nightly tests run on different platforms. It is recommended to test on different
 This saves time and increases productivity during continuous integration tests.
 ```
 
-Nightly tests: [CDASH](https://cdash.openms.de/index.php?project=OpenMS).
+Nightly tests: [CDASH](https://cdash.seqan.de/index.php?project=OpenMS).
 
 ## Further contributor resources
 
