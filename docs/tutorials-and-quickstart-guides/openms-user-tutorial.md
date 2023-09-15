@@ -2939,7 +2939,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** I have problem XYZ but it also occurs with other nodes or generally in the KNIME environment/GUI, what should I do?
 
-**A:** This sounds like a general KNIME bug and we advise to search help directly at the KNIME developers. They also provide a [FAQ](https://tech.knime.org/) and a [forum](https://tech.knime.org/forum).
+**A:** This sounds like a general KNIME bug and we advise to search help directly at the KNIME developers. They also provide a [FAQ](https://www.knime.com/faq) and a [forum](https://forum.knime.com).
 
 **Q:** After exporting and reading in results into a KNIME table (e.g. with a MzTabExporter and MzTabReader combination) numeric values get rounded (e.g. from scientific notation 4.5e-10 to zero) or are in a different representation than in the underlying exported file!
 
