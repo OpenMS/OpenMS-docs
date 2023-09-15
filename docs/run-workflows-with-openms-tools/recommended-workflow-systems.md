@@ -2,6 +2,9 @@
 
 Which workflow environment to choose for running OpenMS tools?
 
+You can run OpenMS TOPP tools from the command line using your custom scripts, or use powerful
+workflow systems designed to make workflow creation and maintenance more fun:
+
 :::{card} KNIME
 :img-top: /images/introduction/KNIMELogoTM.svg
 :link: openms-in-knime
@@ -71,5 +74,29 @@ Server and browser-based interactive workflow editor and runner. A public server
 :class-img-top: halfwidth
 
 Server and browser-based interactive workflow editor and runner. A public server instance can be used for testing and smaller experiments. Provides nice guided tutorials.
+
+
+:::
+
+:::{card} TOPPAS
+:img-top: /images/introduction/TOPPAS_logo_white.png
+:link: openms-in-TOPPAS
+:link-type: doc
+:class-card: only-light
+:class-img-top: halfwidth
+
+OpenMS' build-in workflow system, with limited capabilities but easy to use and tailored to TOPP tools.
+
+:::
+
+:::{card} TOPPAS
+:img-top: /images/introduction/TOPPAS_logo_dark.png
+:link: openms-in-TOPPAS
+:link-type: doc
+:class-card: only-dark
+:class-img-top: halfwidth
+
+OpenMS' build-in workflow system, with limited capabilities but easy to use and tailored to TOPP tools.
+
 
 :::

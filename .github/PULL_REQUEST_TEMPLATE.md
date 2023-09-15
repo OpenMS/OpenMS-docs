@@ -1,7 +1,7 @@
 <!--
 # openms/openms-docs pull request
 
-Thank you for thinking about contributing to OpenMS Documentation!
+Thank you for contributing to OpenMS Documentation!
 
 Please fill in the appropriate checklist below.
 
