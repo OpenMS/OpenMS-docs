@@ -63,6 +63,7 @@ Contents
    run-workflows-with-openms-tools/openms-in-knime.md
    run-workflows-with-openms-tools/openms-in-nextflow.md
    run-workflows-with-openms-tools/openms-on-galaxy.md
+   run-workflows-with-openms-tools/openms-in-toppas.md
 
 .. toctree::
    :maxdepth: 2
