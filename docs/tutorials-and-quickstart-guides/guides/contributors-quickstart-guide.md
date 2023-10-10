@@ -5,7 +5,7 @@ To contribute to OpenMS:
 
 - Familiarise yourself with the [OpenMS online documentation](../../index.rst).
 - Learn how to [build OpenMS](../../develop-with-openms/build-openms-from-source.md).
-- Check out the [OpenMS tutorial for developers](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/OpenMS_tutorial.html).
+- Check out the [OpenMS tutorial for developers](https://openms.readthedocs.io/en/latest/develop-with-openms/developer-tutorial.html#developer-tutorial).
 
 For any questions, please [contact us](/quick-reference/contact-us.md).
 
@@ -61,7 +61,7 @@ Nightly tests run on different platforms. It is recommended to test on different
 This saves time and increases productivity during continuous integration tests.
 ```
 
-Nightly tests: [CDASH](http://cdash.openms.de/index.php?project=OpenMS).
+Nightly tests: [CDASH](https://cdash.seqan.de/index.php?project=OpenMS).
 
 ## Further contributor resources
 
