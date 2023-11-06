@@ -6,7 +6,7 @@
 | Platform | Name |
 |----------|------|
 | Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} |
-| macOS | {{ '[OpenMS-{0}-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-macOS.dmg)'.format(version) }} |
+| macOS | {{ '[OpenMS-{0}-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-macOS-Intel.dmg)'.format(version) }} |
 | GNU/Linux | {{ '[OpenMS-{0}-Debian-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Debian-Linux-x86_64.deb)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
 | Source | {{ '[OpenMS-{0}-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-src.tar.gz)'.format(version) }} |
 :::
@@ -15,10 +15,10 @@
 :sync: Nightly
 | Platform | Name |
 |----------|------|
-| Windows   | {{ '[OpenMS-3.0.0-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.0.0-pre-nightly-latest-Win64.exe)'.format(version) }} |
-| macOS | [OpenMS-3.0.0-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.0.0-pre-nightly-latest-macOS.dmg) |
-| GNU/Linux | [OpenMS-3.0.0-Debian-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.0.0-pre-nightly-latest-Debian-Linux-x86_64.deb) |
-| Source | [OpenMS-3.0.0-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.0.0-src.tar.gz) |
+| Windows   | {{ '[OpenMS-3.1.0-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-pre-nightly-latest-Win64.exe)'.format(version) }} |
+| macOS | [OpenMS-3.1.0-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-pre-nightly-2023-11-04-macOS-Intel.dmg) |
+| GNU/Linux | [OpenMS-3.1.0-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-pre-nightly-latest-Linux-x86_64.deb) |
+| Source | [OpenMS-3.1.0-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-src.tar.gz) |
 :::
 
 ::::
