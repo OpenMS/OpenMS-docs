@@ -54,7 +54,7 @@ On Linux, you can extract KNIME to a folder of your choice and for TOPPView you 
 [build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
 
 :::
-
+::::
 ```{note}
 If you have installed OpenMS on Linux or macOS via your package
 manager (for instance by installing the {{ '`OpenMS-{0}-Linux.deb`'.format(version) }} package),
