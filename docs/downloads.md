@@ -1,7 +1,8 @@
 # OpenMS Installers
 ::::{tab-set}
 
-
+:::{tab-item} Release
+:sync: Release
 | Platform | Name |
 |----------|------|
 | Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} |
