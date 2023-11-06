@@ -11,6 +11,3 @@ You can also contact us:
 3. To stay updated of new versions of OpenMS and releases, subscribe to 
    [openms-announcements mailing list](https://sourceforge.net/projects/open-ms/lists/open-ms-announcements).
 4. To report a new bug, create an issue on GitHub [OpenMS](https://github.com/OpenMS/OpenMS/issues) repository.
-
-
-Say hi on [OpenMS Twitter](https://twitter.com/openmsteam)!

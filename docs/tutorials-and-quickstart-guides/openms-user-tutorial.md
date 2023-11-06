@@ -54,8 +54,24 @@ On Linux, you can extract KNIME to a folder of your choice and for TOPPView you 
 [build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
 
 :::
-
 ::::
+```{note}
+If you have installed OpenMS on Linux or macOS via your package
+manager (for instance by installing the {{ '`OpenMS-{0}-Linux.deb`'.format(version) }} package),
+then you need to set the `OPENMS_DATA_PATH` variable to the directory containing the shared data (normally `/usr/share/OpenMS`). This must be done prior to running any TOPP tool.
+```
+#### Installation from the internet
+
+If you are working through this tutorial at home, you can get the installers under the following links:
+
+- [OpenMS](https://openms.readthedocs.io/en/latest/downloads.html)
+- [KNIME](https://www.knime.org/downloads/overview)
+- OpenMS prerequisites (Windows-only): After installation, before your first use
+of the OpenMS plugin in KNIME you will be asked to download it automatically
+if certain requirements are not found in your Windows registry. Alternatively,
+you can get a bundled version here.
+
+Choose the installers for the platform you are working on.
 
 ### Data conversion
 
@@ -1797,6 +1813,7 @@ Run the workflow and inspect the output.
 In metabolomics, matches between tandem spectra and spectral libraries are manually validated. Several commercial and free online resources exist which help in that task. Some examples are:
 
 - mzCloud contains only spectra from Thermo Orbitrap instruments. The webpage requires Microsoft Silverlight which currently does not work in modern browsers (see the following [link](https://www.mzcloud.org/DataViewer).
+
 - MassBank North America (MoNA) has spectra from different instruments but falls short in the number of spectra (compared to Metlin and mzCloud). See the following [link](http://mona.fiehnlab.ucdavis.edu/spectra/display/KNA00122).
 - METLIN includes 961,829 molecules ranging from lipids, steroids, metabolites, small peptides, carbohydrates, exogenous drugs, and toxicants. In total over 14,000 metabolites.
 
