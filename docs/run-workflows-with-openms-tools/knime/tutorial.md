@@ -211,18 +211,17 @@ First, we install some additional extensions that are
 required by our OpenMS nodes or used in the Tutorials for downstream processing, visualization or reporting.
 
 1. In KNIME, click on **Help** > **Install New Software**.
-2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 4.6 - https://update.knime.com/community-contributions/trusted/4.6'
+2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 5.1 - https://update.knime.com/analytics-platform/5.1'
 3. Now select the following KNIME core plugins from the KNIME & Extensions category
    - KNIME Base Chemistry Types & Nodes
    - KNIME Chemistry Add-Ons
    - KNIME Interactive R Statistics Integration
    - KNIME Report Designer
-   - KNIME SVG Support
 4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
-6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
+6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.1'
 7. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
-   - RDKit KNIME integration
+   - RDKit Nodes Feature
 8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
 
 ##### R programming language and its KNIME integration
@@ -270,7 +269,7 @@ in a hands-on Tutorial or if you are doing this Tutorial online.
 
 To install the OpenMS KNIME plugin from the internet, do the following:
 
-1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
+1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.1'
 2. Now select the following plugin from the "KNIME Community Contributions - Bioinformatics & NGS" category
    - OpenMS
 3. Click on **Next**  and follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
