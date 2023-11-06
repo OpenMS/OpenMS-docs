@@ -1,7 +1,7 @@
 External Code using OpenMS
 ==========================
 
-If OpenMS' TOPP and UTILS tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
+If OpenMS' TOPP tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
 feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are 
 multiple ways to do this:
 
@@ -100,7 +100,7 @@ installer for your platform (see our internal FAQ which is built using "make doc
 machine.
 
 If you've used an external project and have a new executable (+ an optional new library), use the installer approach as
-well, and manually copy the new executable to the `TOPP/UTILS` binary directory (e.g. on Windows this could be
+well, and manually copy the new executable to the `TOPP` binary directory (e.g. on Windows this could be
 `c:/program files/OpenMS/bin`, on Linux it could be `/bin`.
 
 If you do not use the installer, copy all required files manually, plus a few extra steps, see below. What needs to be

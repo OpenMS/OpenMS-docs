@@ -47,7 +47,7 @@ retention time alignment methods. In the {term}`LC-MS` setup, the column is dire
 spectrometer.
 
 
-![](images/introduction/introduction_LC.png)
+![](/images/introduction/introduction_LC.png)
 
 ## Mass Spectrometry
 
@@ -55,7 +55,7 @@ MS is an analytical technique used to determine the {term}`mass` of molecules. I
 {term}`mass` measurements at the atomic scale, {term}`mass` spectrometers manipulate charged particles using magnetic and electrostatic
 fields.
 
-![](images/introduction/introduction_MS.png)
+![](/images/introduction/introduction_MS.png)
 
 In a typical {term}`mass` spectrometer, three principal components can be identified:
 
@@ -81,7 +81,7 @@ are recorded in a {term}`mass` spectrum.
 A sample is measured over the retention time of the chromatography typically resulting in tens of thousands of spectra.
 The measurement of one sample is called an MS run and the set of spectra called an {term}`MS(1)` map or peak map.
 
-![](images/introduction/spectrum_peakmap.png)
+![](/images/introduction/spectrum_peakmap.png)
 
 The left image displays spectrum with peaks (m/z and intensity values) and the right image shows spectra stacked in
 retention time yielding a peak map.
@@ -93,24 +93,4 @@ are stored in an {term}`MS^2` (or {term}`MS/MS`) spectrum and provide informatio
 Alternatively, {term}`MS/MS` spectra can be used for quantification.
 
 
-Get started with installing OpenMS using the installers available for different operating systems!
-
-## Installation on different platforms
-
-```{tab} GNU/Linux
-
-```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Debian-Linux-x86_64.deb
-```
-
-```{tab} Windows
-
-```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-Win64.exe
-```
-
-```{tab} macOS
-
-```bash
-wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/OpenMS-2.8.0-macOS.dmg
-```
+Get started with installing OpenMS using the [installers available for different operating systems](/openms-applications-and-tools/installation.md).

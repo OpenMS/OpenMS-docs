@@ -2,7 +2,7 @@ User Quickstart Guide
 ====================
 
 Read the User Quickstart guide to gain a brief understanding of key concepts and how to use the tools. For more in-depth
-information, consult [OpenMS API Reference](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html).
+information, consult [OpenMS API Reference](https://openms.de/current_doxygen/).
 
 ## What is OpenMS
 
@@ -18,31 +18,20 @@ Before using OpenMS, become familiar with the following terms:
 | Tool and Utilities | Description |
 |--------------------|-------------|
 |**TOPPView**        |A tool that is used to view and explore {term}`LC-MS` data, alignments, groups, peptide identifications, and more.|
-|**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools` (and {term}`UTILS`).|
+|**TOPPAS**          |A graphical workflow design tool that is used to create pipelines from all {term}`TOPP tools`.|
 |**TOPP tools**      |A set of command line tools. Each of these command line tools is a building block of an analysis pipeline and are chained together in a way that fits the requirements of the user. The {term}`TOPP tools` are accessible from a command prompt/shell or via {term}`TOPPAS`. |
-|**UTILS**           |Besides {term}`TOPP`, OpenMS offers range of other tools. They are not included in {term}`TOPP` as they are not part of typical analysis pipelines. A set of command line utilities, similar to {term}`TOPP tools`, mostly used during pipeline construction or parameter optimization. |
-
-```{seealso}
-
-[UTILS documentation](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_documentation.html)|
-```
-
-```{important}
-Users can now use {term}`KNIME` in place of {term}`TOPPAS`; the later will deprecated with no support in near future.
-Please find more information about using {term}`KNIME` in [KNIME tutorial](../../tutorials/KNIME/KNIME-tutorial.md).
-```
 
 
 ## How to run a Tool
 
-A good start are the example pipelines (select **File** > **Open example file** within {term}`TOPPAS`).
-
-Alternatively, use the command line and call tools directly. In this case, you'll probably want to use some type of shell
-script for automation.
+In general TOPP tools are invoked via the command line, directly or indirectly (e.g. via worflow systems such as {term}`KNIME`, {term}`Nextflow`, snakemake, or {term}`TOPPAS`).
 
 ## Adapt pipeline parameters
 
 The default parameters of each tool can usually be tweaked to fit the data and improve results.
+Here, we describe how to work with TOPP tools on a command line (irrespective of the operating system) or using TOPPAS workflow system, which is shipped with OpenMS. 
+For [external workflow systems](../../run-workflows-with-openms-tools/recommended-workflow-systems.md), please refer to their documentation.
+
 
 ### Where do you change pipeline parameters?
 
@@ -50,7 +39,7 @@ The default parameters of each tool can usually be tweaked to fit the data and i
                show up once it is selected. All parameters which would be available on the command line and in the INI
 	       file are shown here as well.
 2. **Command line**: Very basic parameters can be set on the command line, e.g. `FileFilter -rt 1000:2000 .....`
-3. Doing 2 for all parameters would create a very long list, thus, use so-called `.ini` files to provide full parameter
+3. Passing all parameters via commandline would create a very long list, thus, use so-called `.ini` files to provide full parameter
    sets to {term}`TOPP tools`. If no INI file is given, default parameters are used. To get a default `.ini` use
 
    `<tool> -write_ini <file>`
@@ -72,5 +61,5 @@ The default parameters of each tool can usually be tweaked to fit the data and i
 ### What parameters to set and to what value?
 
 The answer is complex, in general, read the tool description, change the parameters and compare the results using
-{term}`TOPPView` if possible. If that does not help, [contact us](../../quick-reference/contact-us.md). Please include all the necessary
+{term}`TOPPView` if possible. If that does not help, [contact us](/quick-reference/contact-us.md). Please include all the necessary
 details we need in order to help you.

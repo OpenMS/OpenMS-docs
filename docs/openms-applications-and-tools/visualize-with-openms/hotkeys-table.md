@@ -50,7 +50,7 @@ TOPPView Hotkeys
 
 | Hotkey                                   | Function                                            |
 |------------------------------------------|-----------------------------------------------------|
-| <kbd>CTRL</kbd> + <kbd>A</kbd>           | Select all annotations of the current layer         |
+| <kbd>CTRL</kbd> + <kbd>B</kbd>           | Select all annotations of the current layer         |
 | <kbd>DEL</kbd>                           | Delete all currently selected annotations           |
 
 

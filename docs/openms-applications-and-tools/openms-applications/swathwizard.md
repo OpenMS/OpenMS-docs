@@ -7,7 +7,7 @@ SwathWizard
 SwathWizard is an assistant for Swath analysis.
 
 The Wizard takes the user through the whole analysis pipeline for SWATH proteomics data analysis, i.e. the
-[TOPP Documentation: OpenSwathWorkflow](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/UTILS_OpenSwathWorkflow.html) tool, including downstream tools such as [GitHub:PyProphet/pyProphet](https://github.com/PyProphet/pyprophet) and the [GitHub:msproteomicstools/TRIC alignment](https://github.com/msproteomicstools/msproteomicstools) tool.
+[TOPP Documentation: OpenSwathWorkflow](https://openms.readthedocs.io/en/latest/tutorials-and-quickstart-guides/openms-user-tutorial.html#id44) tool, including downstream tools such as [GitHub:PyProphet/pyProphet](https://github.com/PyProphet/pyprophet) and the [GitHub:msproteomicstools/TRIC alignment](https://github.com/msproteomicstools/msproteomicstools) tool.
 
 Since the downstream tools require Python and the respective modules, the Wizard will check their proper installation
 status and warn the user if a component is missing.
@@ -19,7 +19,7 @@ both the intermediate files from OpenSWATH (e.g. the XIC data in `.sqMass` forma
 
 This is how the wizard looks like:
 
-![SwathWizard](../../images/topp/SwathWizard.png)
+![SwathWizard](/images/topp/SwathWizard.png)
 
 A schematic of the internal data flow (all tools are called by SwathWizard in the background) can be found in the
 [TOPP Documentation: SwathWizard](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_SwathWizard.html).

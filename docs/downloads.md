@@ -1,15 +1,13 @@
 # OpenMS Installers
 ::::{tab-set}
 
-:::{tab-item} Release
-:sync: Release
-| Platform | Name | SHA256 Hash |
-|----------|------|-------------|
-| Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47`|
-| macOS | [OpenMS-2.8.0-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-macOS.dmg) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
-| GNU/Linux | [OpenMS-2.8.0-Debian-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-Debian-Linux-x86_64.deb) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
-| Source | [OpenMS-2.8.0-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz) | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
-:::
+
+| Platform | Name |
+|----------|------|
+| Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} |
+| macOS | {{ '[OpenMS-{0}-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-macOS.dmg)'.format(version) }} |
+| GNU/Linux | {{ '[OpenMS-{0}-Debian-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Debian-Linux-x86_64.deb)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
+| Source | {{ '[OpenMS-{0}-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-src.tar.gz)'.format(version) }} |
 
 :::{tab-item} RC
 :sync: RC
