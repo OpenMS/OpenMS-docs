@@ -49,7 +49,7 @@ jobs:
         uses: lycheeverse/lychee-action@v1.5.4
         with:
           fail: true
-          args: --cache --max-cache-age 1d './**/*.html'
+          args: --cache --max-cache-age 1d './**/*.html' --timeout 40
         
       # upload html
       - uses: actions/upload-artifact@v3
