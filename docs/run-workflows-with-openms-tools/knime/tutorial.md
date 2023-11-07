@@ -10,7 +10,7 @@
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/latest/).
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/tutorial.zip).
 
 ## Getting Started
 
@@ -143,7 +143,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 - Start TOPPView (see Windows' Start-Menu or {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
-of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
+of the USB stick to, and [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/small/velos005614.mzML) {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
 obtain a global view on the whole LC-MS map - the default option Map view 2D
 is the correct one and we can click the <kbd>Ok</kbd> button.
 
@@ -337,7 +337,7 @@ for other nodes after processing, respectively. KNIME distinguishes between diff
 types of data. The most common representation of data in KNIME are tables (similar to an excel sheet). Ports that accept
 tables are marked with a small triangle. For OpenMS nodes, we use a different port type, so called file ports, representing
 complete files. Those ports are marked by a small blue box. Filled blue boxes represent mandatory inputs and empty blue
-boxes optional inputs. The same holds for output ports, despite you can deactivate them in the configuration dialog
+boxes optional inputs. The same holds for output ports, except that you can deactivate them in the configuration dialog
 (double-click on node) under the **OutputTypes** tab. After execution, deactivated ports will be marked with a red cross and
 downstream nodes will be inactive (not configurable).
 
@@ -496,7 +496,7 @@ The complete workflow is shown in below image. `FileInfo` can produce two differ
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
 - All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
-  **Browse**. In the file system browser select {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
+  **Browse**. In the file system browser [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny/velos005614.mzML) {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
   and click **Open**. Afterwards close the dialog by clicking **Ok**.
 
 ```{note}
@@ -523,7 +523,7 @@ same information on three different files and then write the output files to a f
 - First we need to replace our single input file with multiple files. Therefore we add the Input Files node from the
   category **Community Nodes** > **GenericKnimeNodes** > **IO**.
 - To select the files we double-click on the Input Files node and click on **Add**. In the filesystem browser we select
-  all three files from the directory **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
+  all three files from the [directory](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny) **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
   with **Ok**.
 - We now add two more nodes: the **ZipLoopStart** and the **ZipLoopEnd** node from the category
   **Community Nodes** > **GenericKnimeNodFlow** > **Flow**.
@@ -682,47 +682,49 @@ In the following chapter, we will build a workflow with OpenMS / KNIME to quanti
 quantification is a method aiming to compare the relative amounts of proteins or peptides in two or more samples. We will
 start from the minimal workflow of the last chapter and, step-by-step, build a label-free quantification workflow.
 
+The complete workflow can be downloaded [here](https://hub.knime.com/openms-team/spaces/Tutorial%20Workflows%20OpenMS%203.0/Proteomics_LFQ~MvMoVSrTZKLI6H3B/current-state) as well.
+
 ### Peptide identification
 
-As a start, we will extend the minimal workflow so that it performs a peptide identification using the OMSSA[^9] search
-engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to  download and
+As a start, we will extend the minimal workflow so that it performs a peptide identification using the Comet search
+engine. Comet is included in the OpenMS installation, so you do not need to  download and
 install it yourself.
 
 Let’s start by replacing the input files in our **Input Files** node by the three mzML files in
 **Example Data** > **Labelfree** > **datasets** > **lfqxspikeinxdilutionx1-3.mzML**. This is a reduced toy dataset where
-each of the three runs contains a constant background of S. `pyogenes` peptides as well as human spike-in peptides in
+each of the three runs contains a constant background of `S. pyogenes` peptides as well as human spike-in peptides in
 different concentrations. [^10]
 
-- Instead of FileInfo, we want to perform OMSSA identification, so we simply replace the `FileInfo` node with the
-  `OMSSAAdapter` node **Community Nodes** > **OpenMS** > **Identification**, and we are almost done. Just make sure you
-  have connected the `ZipLoopStart` node with the `in` port of the `OMSSAAdapter` node.
-- OMSSA, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
+- Instead of FileInfo, we want to perform Comet identification, so we simply replace the `FileInfo` node with the
+  `CometAdapter` node **Community Nodes** > **OpenMSThirdParty** > **Identification of Proteins** > **Peptides(SearchEngines)**, and we are almost done. Just make sure you
+  have connected the `ZipLoopStart` node with the `in` port of the `CometAdapter` node.
+- Comet, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
   databases. Thus, we need to introduce a search database input. As we want to use the same search database for all of
   our input files, we can just add a single `Input File` node to the workflow and connect it directly with the
-  `OMSSAAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
-  started. In order to specify the database, select {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`,
+  `CometAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
+  started. In order to specify the database, [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Labelfree/databases/s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta) {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`,
   and we have a very basic peptide identification workflow.
 
   ```{note}
   You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows">duplicating workflows</a>
   for information on how to create copies of workflows.
   ```
-- The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
+- The result of a single Comet run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
   will be stored in an idXML file. Now we can run the pipeline and after execution is finished, we can have a first look
   at the the results: just open the input files folder with a file browser and from there open an mzML file in **TOPPView**.
 - Here, annotate this spectrum data file with the peptide identification results. Choose **Tools** > **Annonate with identification**
-  from the menu and select the idXML file that **OMSSAAdapter** generated (it is located within the output directory that
+  from the menu and select the idXML file that **CometAdapter** generated (it is located within the output directory that
   you specified when starting the pipeline).
 - On the right, select the tab **Identification view**. All identified peptides can be seen using this view. User can also
   browse the corresponding MS2 spectra.
 
   ```{note}
-  Opening the output file of `OMSSAAdapter` (the idXML file) directly is also possible, but the direct visusalisation of
+  Opening the output file of `CometAdapter` (the idXML file) directly is also possible, but the direct visusalisation of
   an idXML files is less useful.
   ```
 - The search results stored in the idXML file can also be read back into a KNIME table for inspection and subsequent
   analyses: Add a `TextExporter` node from **Community Nodes** > **OpenMS** > **File Handling** to your workflow and
-  connect the output port of your `OMSSAAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
+  connect the output port of your `CometAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
   tool will convert the idXML file to a more human-readable text file which can also be read into a KNIME table using
   the `IDTextReader` node. Add an `IDTextReader` node(**Community Nodes** > **OpenMS** > **Conversion**) after
   **TextExporter** and execute it. Now you can right click `IDTextReader` and select **ID Table** to browse your peptide
@@ -732,11 +734,11 @@ different concentrations. [^10]
   `peptide_charge` as Histogram column, hit **OK**, and execute it. Right-clicking and selecting
   **Interactive View: Histogram view** will open a plot showing the charge state distribution of your identifications.
 
-In the next step, we will tweak the parameters of OMSSA to better reflect the instrument’s accuracy. Also, we will
+In the next step, we will tweak the parameters of Comet to better reflect the instrument’s accuracy. Also, we will
 extend our pipeline with a false discovery rate (FDR) filter to retain only those identifications that will yeild an
 FDR of < 1 %.
 
-- Open the configuration dialog of `OMSSAAdapter`. The dataset was recorded using an LTQ Orbitrap XL mass spectrometer,
+- Open the configuration dialog of `CometAdapter`. The dataset was recorded using an LTQ Orbitrap XL mass spectrometer,
   set the precursor mass tolerance to a smaller value, say 5 ppm. Set `precursor_mass_tolerance` to 5 and
   `precursor_error_units` to `ppm`.
 
@@ -755,8 +757,8 @@ FDR of < 1 %.
   ```
 - A common step in analysis is to search not only against a regular protein database, but to also search against a decoy
   database for FDR estimation. The fasta file we used before already contains such a decoy database. For OpenMS to know
-  which OMSSA PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
-  extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **ID Processing**. This node needs
+  which Comet PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
+  extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **Identification Processing**. This node needs
   the idXML as input as well as the database file (see below figure).
 
   ```{tip}
@@ -765,8 +767,8 @@ FDR of < 1 %.
 - The decoys in the database are prefixed with “DECOY_”, so we have to set `decoy_string` to `DECOY_` and `decoy_string_position`
   to `prefix` in the configuration dialog of `PeptideIndexer`.
 - Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
-  **Community Nodes** > **OpenMS** > **ID Processing**).
-- In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
+  **Community Nodes** > **OpenMS** > **Identification Processing**).
+- In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **Identification Processing**.
   Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
 - Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
@@ -780,11 +782,11 @@ FDR of < 1 %.
 
   ```
 
-  The below images shows OMSSA ID pipeline including FDR filtering.
+  The below images shows Comet ID pipeline including FDR filtering.
 
-  |![OMSSA ID pipeline including FDR filtering](/images/openms-user-tutorial/labelfree/PepIdFDR.png)|
+  |![Comet ID pipeline including FDR filtering](/images/openms-user-tutorial/labelfree/PepIdFDR.png)|
   |:--:|
-  |Figure 12: OMSSA ID pipeline including FDR filtering|
+  |Figure 12: Comet ID pipeline including FDR filtering|
 
 
 #### Bonus task: Identification using several search engines
@@ -798,16 +800,16 @@ It has become widely accepted that the parallel usage of different search engine
 rates in shotgun proteomics experiments. The ConsensusID algorithm is based on the calculation of posterior error
 probabilities (PEP) and a combination of the normalized scores by considering missing peptide sequences.
 
-- Next to the `OMSSAAdapter` and a `XTandemAdapter` **Community Nodes** > **OpenMS** > **Identification** node and set
-  its parameters and ports analogously to the `OMSSAAdapter`. In XTandem, to get more evenly distributed scores, we
+- Next to the `CometAdapter` and a `XTandemAdapter` **Community Nodes** > **OpenMSThirdParty** > **Identification of Proteins** > **Peptides(SearchEngines)** node and set
+  its parameters and ports analogously to the `CometAdapter`. In XTandem, to get more evenly distributed scores, we
   decrease the number of candidates a bit by setting the precursor mass tolerance to 5 ppm and the fragment mass
   tolerance to 0.1 Da.
-- To calculate the PEP, introduce each a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **ID Processing**
+- To calculate the PEP, introduce each a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **Identification Processing**
   node to the output of each ID engine adapter node. This will calculate the PEP to each hit and output an updated idXML.
 - To create a consensus, we must first merge these two files with a `FileMerger` node **Community Nodes** >
   **GenericKnimeNode** > **Flow** so we can then merge the corresponding IDs with a `IDMerger` **Community Nodes** >
   **OpenMS** > **File Handling**.
-- Now we can create a consensus identification with the `ConsensusID` **Community Nodes** > **OpenMS** > **ID Processing**
+- Now we can create a consensus identification with the `ConsensusID` **Community Nodes** > **OpenMS** > **Identification Processing**
   node. We can connect this to the `PeptideIndexer` and go along with our existing FDR filtering.
 
   ```{note}
@@ -829,7 +831,7 @@ add quantification capabilities to our workflow.
 
 - Add a **FeatureFinderCentroided** node from **Community Nodes** > **OpenMS** > **Quantitation**
 which gets input from the first output port of the **ZipLoopStart** node. Also, add
-an **IDMapper** node (from **Community Nodes** > **OpenMS** > **ID Processing** ) which receives
+an **IDMapper** node (from **Community Nodes** > **OpenMS** > **Identification Processing** ) which receives
 input from the **FeatureFinderCentroided** node (Port 1) and the ID Metanode (or **IDFilter** node (Port 0) if you haven’t used the Metanode). The output of the **IDMapper** node is then connected to an in port of the **ZipLoopEnd** node.
 - `FeatureFinderCentroided` finds and quantifies peptide ion signals contained in
 the MS1 data. It reduces the entire signal, i.e., all peaks explained by one and
@@ -968,7 +970,7 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 
 The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
 {path}`ExampleData,iPRG2015,database,iPRG2015targetdecoynocontaminants.fasta`
-against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `OMSSAAdapter`.
+against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `CometAdapter`.
 
 ```{note}
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
@@ -1274,7 +1276,7 @@ used the resulting protein grouping information to also quantify indistinguishab
 - As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
 set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
 - Next, we have added a third outgoing connection to our ID meta node and connected it to the second input port of **ZipLoopEnd**. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
-- Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **ID Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
+- Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **Identification Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
 
 ### Statistical validation of protein inference results
 
@@ -1568,7 +1570,7 @@ why we need a different feature finder for metabolites lies in the step after tr
 have very different isotopic distributions. To group small molecule mass traces correctly, an aggregation model tailored to small molecules is thus needed.
 
 - Create a new workflow called for instance ”Metabolomics”.
-- Add an **Input File** node and configure it with one mzML file from the {path}`Example_Data,Metabolomics,datasets`.
+- Add an **Input File** node and configure it with one mzML file [from the](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/) {path}`Example_Data,Metabolomics,datasets`.
 - Add a **FeatureFinderMetabo** node (from **Community Nodes** > **OpenMS** > **Quantitation**) and
 connect the first output port of the **Input File** to the **FeatureFinderMetabo**.
 -  For an optimal result adjust the following settings. Please note that some of these are advanced parameters.
@@ -1699,7 +1701,7 @@ At the current state we found several metabolites in the individual maps but so 
 - Add a **FileConverter** node (**Community Nodes** > **OpenMS** > **File Handling**) and connect the output of the FeatureLinkerUnlabeledQT to the incoming port.
 - Open the Configure dialog of the **FileConverter** node and select the tab **OutputTypes**. In the drop down list for FileConverter.1.out select **featureXML**.
 - Add an **AccurateMassSearch** node (**Community Nodes** > **OpenMS** > **Utilities**) and connect the output of the **FileConverter** node to the first port of the **AccurateMassSearch** node.
-- Add four **Input File** nodes and configure them with the following files:
+- Add four **Input File** nodes and configure them with the following [files](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/databases/):
   - {path}`Example_Data,Metabolomics,databases,PositiveAdducts.tsv`
     This file specifies the list of adducts that are considered in the positive mode. Each line contains the formula and charge of an adduct separated by a semicolon (e.g. M+H;1+). The mass of the adduct is calculated automatically.
   - {path}`Example_Data,Metabolomics,databases,NegativeAdducts.tsv`
@@ -1804,7 +1806,7 @@ Here, we will use METLIN to manually validate metabolites.
 
 <div class="admonition task">
 <p class="admonition-title task-title">**Task**</p>
-Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
+Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the [file](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/Metabolite_ID_SpectraDB_positive.mzML) in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
 </div>
 
 (Figure_40)=
@@ -1840,7 +1842,7 @@ By using a mzML and featureXML, SIRIUS gains a lot of additional information by 
 <p class="admonition-title task-title">**Task**</p>
 Construct the workflow as shown in <a href="#figure-42">Fig. 42</a>.
 {path}`Example_Data,Metabolomics,datasets`
-Use the file `MetaboliteDeNovoID.mzML` as input for your workflow.
+Use the [file](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/Metabolite_DeNovoID.mzML) `MetaboliteDeNovoID.mzML` as input for your workflow.
 </div>
 
 Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
