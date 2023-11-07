@@ -10,7 +10,7 @@
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/).
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/tutorial.zip).
 
 ## Getting Started
 
