@@ -682,6 +682,8 @@ In the following chapter, we will build a workflow with OpenMS / KNIME to quanti
 quantification is a method aiming to compare the relative amounts of proteins or peptides in two or more samples. We will
 start from the minimal workflow of the last chapter and, step-by-step, build a label-free quantification workflow.
 
+The complete workflow can be downloaded [here](https://hub.knime.com/openms-team/spaces/Tutorial%20Workflows%20OpenMS%203.0/Proteomics_LFQ~MvMoVSrTZKLI6H3B/current-state) as well.
+
 ### Peptide identification
 
 As a start, we will extend the minimal workflow so that it performs a peptide identification using the Comet search
