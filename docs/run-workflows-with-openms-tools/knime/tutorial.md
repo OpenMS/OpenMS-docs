@@ -692,7 +692,7 @@ install it yourself.
 
 Let’s start by replacing the input files in our **Input Files** node by the three mzML files in
 **Example Data** > **Labelfree** > **datasets** > **lfqxspikeinxdilutionx1-3.mzML**. This is a reduced toy dataset where
-each of the three runs contains a constant background of S. `pyogenes` peptides as well as human spike-in peptides in
+each of the three runs contains a constant background of `S. pyogenes` peptides as well as human spike-in peptides in
 different concentrations. [^10]
 
 - Instead of FileInfo, we want to perform Comet identification, so we simply replace the `FileInfo` node with the
