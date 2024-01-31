@@ -206,7 +206,7 @@ its own subproject. The same is true for the `TOPP` classes.
 
 ### I'm getting the error "Error C2471: cannot update program database"
 
-This is a bug in Visual Studio and there is a [bug fix](http://code.msdn.microsoft.com/KB946040) Only apply it if you
+This is a bug in Visual Studio and there is a [bug fix](https://support.microsoft.com/en-us/topic/fix-error-message-when-you-compile-a-visual-c-2008-project-error-c2471-cannot-update-program-database-339dde4f-904c-6dfa-51cd-090674ece765) Only apply it if you
 encounter the error. The bug fix might have unwanted side effects!
 
 ### Visual Studio can't read the clang-format file.
