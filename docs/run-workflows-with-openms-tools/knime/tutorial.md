@@ -238,7 +238,7 @@ required by our OpenMS nodes or used in the Tutorials for downstream processing,
    - KNIME Report Designer
 4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
-6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.1'
+6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.2'
 7. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
    - RDKit Nodes Feature
 8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
