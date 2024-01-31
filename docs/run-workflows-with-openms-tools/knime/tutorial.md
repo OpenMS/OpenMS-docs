@@ -43,6 +43,9 @@ Please choose the directory that matches your operating system and execute the i
 
 For Windows, you run:
 
+```{note}
+The OpenMS installer for windows now supports installing only for a single user. If you choose this option the location of the tools will be different than {{ '{path}'+'`C:,Program Files,OpenMS-{0}`'.format(version) }} specified in this document. In most cases they will install to {{ '{path}'+'`C:,Users,$YOUR_USER,AppData,Local,OpenMS-{0}`'.format(version) }} where $YOUR_USER is replaced with your username.
+```
 - The OpenMS installer: {{ '{path}'+'`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Windows,KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
 
@@ -97,7 +100,7 @@ graphical user interface) or `msconvert` (a simple command line tool).
 
 Both tools are available in: {{ '{path}'+'`C:,Program Files,OpenMS-{0},share,OpenMS,THIRDPARTY,pwiz-bin`'.format(version) }}.
 
-You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introduction,datasets,raw`.
+You can find a small RAW file on the USB stick {path}`Example_Data,Introduction,datasets,raw`.
 
 #### MSConvertGUI
 
@@ -236,7 +239,7 @@ required by our OpenMS nodes or used in the Tutorials for downstream processing,
    - KNIME Chemistry Add-Ons
    - KNIME Interactive R Statistics Integration
    - KNIME Report Designer
-4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
+4. Click on **Next** and follow the instructions (it's not necessary to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
 6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.2'
 7. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
@@ -249,7 +252,7 @@ In addition, we need to install `R` for the statistical downstream analysis. Cho
 operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
 whenever possible. On macOS you also need to install `XQuartz` from the same directory.
 
-Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
+Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 4.3.2” icon on your desktop. If you use
 macOS, you will find R in your Applications folder. In `R`, type the following lines (you might also copy them from the file
 {path}`R,install_R_packages.R` on the USB stick):
 
@@ -267,11 +270,11 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install()
 BiocManager::install(c("MSstats"))
 ```
-In KNIME, click on **KNIME** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
+In KNIME, click on **File** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
 your installation path. You can use the following settings, if you installed R as described above:
 
-- Windows: `C:\Program Files\R\R-3.6.X'` (where X is the version you used to install the above libraries)
-- macOS: `/Library/Frameworks/R.framework/Versions/3.6/Resources`
+- Windows: `C:\Program Files\R\R-4.3.2'`
+- macOS: `/Library/Frameworks/R.framework/Versions/4.3/Resources`
 
 ##### KNIME OpenMS plugin
 
@@ -288,9 +291,10 @@ in a hands-on Tutorial or if you are doing this Tutorial online.
 
 To install the OpenMS KNIME plugin from the internet, do the following:
 
-1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.1'
+1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.2'
 2. Now select the following plugin from the "KNIME Community Contributions - Bioinformatics & NGS" category
    - OpenMS
+   - OpenMSThirdParty
 3. Click on **Next**  and follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
   "Community Nodes".
   
