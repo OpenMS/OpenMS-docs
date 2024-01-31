@@ -46,13 +46,24 @@ For Windows, you run:
 - The OpenMS installer: {{ '{path}'+'`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Windows,KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
 
-On macOS, you run:
+On macOS(x86), you run:
 
 - The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
-- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(version) }}
+- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(knime_version) }}
 
-On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with our
-[build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
+On macOS(arm), you run:
+
+- The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
+- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.aarch64.dmg`'.format(knime_version) }}
+
+On Linux:
+- The OpenMS package: {{ '{path}'+'`Linux,OpenMS-{0}-Debian-Linux-x86_64.deb`'.format(version) }} can be installed with your package manager
+- The KNIME package can be extracted to a folder of your choice from {{ '{path}'+'`knime_{0}.linux.gtk.x86_64.tar`'.format(knime_version) }} 
+
+ ```{note}
+ You can also install OpenMS via your package manager (version availability not guaranteed) or build it on your own with our
+ [build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
+ ```
 
 ::::
 
@@ -198,6 +209,14 @@ workflows. The first step is to become familiar with KNIME. Additional informati
 found on the KNIME [Getting Started page](https://www.knime.com/getting-started-guide). However, the most important
 concepts will also be reviewed in this tutorial.
 
+#### KNIME Modern and Classic UI ####
+
+Since version 5.0 KNIME has a new updated user interface. For the purposes of this tutorial we will continue to use the "classic user interface".
+Depending on your OS KNIME may have started automatically in the Modern UI, which looks like the following:
+|![ms2 spectrum](/images/openms-user-tutorial/introduction/KNIME_switch_to_classic.png)|
+|:--:|
+|Figure 5.5: The modern KNIME UI. To switch back to the classic UI, select "Menu" and click "Switch to classic user interface"|
+
 #### Plugin and dependency 
 
 Before we can start with the tutorial, we need to install all the required extensions for KNIME.
@@ -211,7 +230,7 @@ First, we install some additional extensions that are
 required by our OpenMS nodes or used in the Tutorials for downstream processing, visualization or reporting.
 
 1. In KNIME, click on **Help** > **Install New Software**.
-2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 5.1 - https://update.knime.com/analytics-platform/5.1'
+2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 5.2 - https://update.knime.com/analytics-platform/5.2'
 3. Now select the following KNIME core plugins from the KNIME & Extensions category
    - KNIME Base Chemistry Types & Nodes
    - KNIME Chemistry Add-Ons
