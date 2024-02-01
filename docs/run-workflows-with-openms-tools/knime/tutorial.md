@@ -506,8 +506,8 @@ information about the data set before starting the actual development of a data 
 can also be used to check if all requirements are met and that your system is compatible.
 
 - Create a new workflow.
-- Add an File Importer node and an Output Folder node (to be found in **Community Nodes** > **GenericKnimeNodes** > **IO**
-  and a FileInfo node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
+- Add an **File Importer** node and an **Output Folder** node (found in **Community Nodes** > **GenericKnimeNodes** > **IO**
+  and a **FileInfo** node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
 - Connect the File Importer node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
   node.
 
