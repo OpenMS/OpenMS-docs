@@ -517,7 +517,7 @@ name and what kind of input it expects.
 ```
 The complete workflow is shown in below image. `FileInfo` can produce two different kinds of output files.
 
-|![A minimal workflow calling FileInfo on a single file.](/images/openms-user-tutorial/knime-setup/minimal_FileInfo.svg)|
+|![A minimal workflow calling FileInfo on a single file.](/images/openms-user-tutorial/knime-setup/minimal_FileInfo.png)|
 |:--:|
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
