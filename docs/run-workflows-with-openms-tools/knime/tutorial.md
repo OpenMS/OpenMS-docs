@@ -496,7 +496,7 @@ your workflow, save it, close it and follow the next steps.
   workflow and selecting **Rename**.
 
 ```{note}
-To rename a workflow it has to be closed, too.
+To rename a workflow it has to be closed.
 ```
 
 #### A minimal workflow
@@ -506,9 +506,9 @@ information about the data set before starting the actual development of a data 
 can also be used to check if all requirements are met and that your system is compatible.
 
 - Create a new workflow.
-- Add an Input File node and an Output Folder node (to be found in **Community Nodes** > **GenericKnimeNodes** > **IO**
+- Add an File Importer node and an Output Folder node (to be found in **Community Nodes** > **GenericKnimeNodes** > **IO**
   and a FileInfo node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
-- Connect the Input File node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
+- Connect the File Importer node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
   node.
 
 ```{tip}
@@ -521,14 +521,14 @@ The complete workflow is shown in below image. `FileInfo` can produce two differ
 |:--:|
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
-- All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
+- All nodes are still marked red, since we are missing an actual input file. Double-click the File Importer node and select
   **Browse**. In the file system browser [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny/velos005614.mzML) {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
   and click **Open**. Afterwards close the dialog by clicking **Ok**.
 
 ```{note}
 Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
 ```
-- The **Input File** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
+- The **File Importer** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
   Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
 - Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
   button with multiple green triangles in the KNIME Toolbar) to execute the complete workflow. You can also right click
@@ -726,7 +726,7 @@ different concentrations. [^10]
   have connected the `ZipLoopStart` node with the `in` port of the `CometAdapter` node.
 - Comet, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
   databases. Thus, we need to introduce a search database input. As we want to use the same search database for all of
-  our input files, we can just add a single `Input File` node to the workflow and connect it directly with the
+  our input files, we can just add a single `File Importer` node to the workflow and connect it directly with the
   `CometAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
   started. In order to specify the database, [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Labelfree/databases/s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta) {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`,
   and we have a very basic peptide identification workflow.
@@ -788,7 +788,7 @@ FDR of < 1 %.
   the idXML as input as well as the database file (see below figure).
 
   ```{tip}
-  You can direct the files of an `Input File` node to more than just one destination port.
+  You can direct the files of an `File Importer` node to more than just one destination port.
   ```
 - The decoys in the database are prefixed with “DECOY_”, so we have to set `decoy_string` to `DECOY_` and `decoy_string_position`
   to `prefix` in the configuration dialog of `PeptideIndexer`.
@@ -802,7 +802,7 @@ FDR of < 1 %.
 
   ```{note}
   The finished identification workflow is now sufficiently complex that we might want to encapsulate it in a Metanode.
-  For this, select all nodes inside the ZipLoop (including the **Input File** node) and right-click to select
+  For this, select all nodes inside the ZipLoop (including the **File Importer** node) and right-click to select
   **Collapse into Metanode** and name it ID. Metanodes are useful when you construct even larger workflows and want to
   keep an overview.
 
@@ -994,7 +994,7 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 |:--:|
 |Figure 18: KNIME data analysis of iPRG LFQ data.|
 
-The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
+The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**File Importer** node, here with the given database from iPRG:
 {path}`ExampleData,iPRG2015,database,iPRG2015targetdecoynocontaminants.fasta`
 against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `CometAdapter`.
 
@@ -1085,7 +1085,7 @@ The conditions are highly dependent on the type of experiment and on which kind 
 
 #### Conversion and downstream analysis
 
-Conversion of the OpenMS-internal consensusXML format (which is an aggregation of quantified and possibly identified features across several MS-maps) to a table (in MSstats-conformant CSV format) is very easy. First, create a new KNIME workflow. Then, run the **MSstatsConverter** node with a consensusXML and the manually created (e.g. in Excel) experimental design as inputs (loaded via **Input File** nodes). The first input can be found in:
+Conversion of the OpenMS-internal consensusXML format (which is an aggregation of quantified and possibly identified features across several MS-maps) to a table (in MSstats-conformant CSV format) is very easy. First, create a new KNIME workflow. Then, run the **MSstatsConverter** node with a consensusXML and the manually created (e.g. in Excel) experimental design as inputs (loaded via **File Importer** nodes). The first input can be found in:
 
 {path}`ExampleData,iPRG2015,openmsLFQResults,iPRGlfq.consensusXML`
 
@@ -1490,7 +1490,7 @@ Here, we depict the analysis by `MSstatsTMT` using a segment of the isobaric ana
 
 There are two input nodes, the first one takes the result (.csv) from the **MSstatsConverter** and the second a path to the directory where the plots generated by `MSstatsTMT` should be saved. The **R source** node loads the required packages, such as `dplyr` for data wrangling, `MSstatsTMT` for analysis and `MSstats` for plotting. The inputs are further processed in the **R View** node.
 
-Here, the data of the **Input File** is loaded into **R** using the flow variable [”URI-0”]:
+Here, the data of the **File Importer** is loaded into **R** using the flow variable [”URI-0”]:
 
 ```r
 file <- substr(knime.flow.in[["URI-0"]], 6, nchar(knime.flow.in[["URI-0"]]))
@@ -1596,9 +1596,9 @@ why we need a different feature finder for metabolites lies in the step after tr
 have very different isotopic distributions. To group small molecule mass traces correctly, an aggregation model tailored to small molecules is thus needed.
 
 - Create a new workflow called for instance ”Metabolomics”.
-- Add an **Input File** node and configure it with one mzML file [from the](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/) {path}`Example_Data,Metabolomics,datasets`.
+- Add an **File Importer** node and configure it with one mzML file [from the](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/) {path}`Example_Data,Metabolomics,datasets`.
 - Add a **FeatureFinderMetabo** node (from **Community Nodes** > **OpenMS** > **Quantitation**) and
-connect the first output port of the **Input File** to the **FeatureFinderMetabo**.
+connect the first output port of the **File Importer** to the **FeatureFinderMetabo**.
 -  For an optimal result adjust the following settings. Please note that some of these are advanced parameters.
 - Connect a **Output Folder** to the output of the **FeatureFinderMetabo** (see <a href="#figure-27">Fig. 27</a>).
 
@@ -1652,7 +1652,7 @@ First start TOPPView and open the example `.mzML` file (see <a href="#figure-28"
 |:--:|
 |Figure 31: Zoom of the overlay of the .mzML with the .featureXML layer. Here the individual isotope traces (blue lines) are assembled into a feature here shown as convex hull (rectangular box).|
 
-The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **Input File** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
+The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **File Importer** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
 
 To facilitate the collection of features corresponding to the same compound ion across different samples, an alignment of the samples’ feature maps along retention time is often helpful. In addition to local, small-scale elution differences, one can often see constant retention time shifts across large sections between samples. We can use linear transformations to correct for these large scale retention differences. This brings the majority of corresponding compound ions close to each other. Finding the correct corresponding ions is then faster and easier, as we don’t have to search as far around individual features.
 
@@ -1727,7 +1727,7 @@ At the current state we found several metabolites in the individual maps but so 
 - Add a **FileConverter** node (**Community Nodes** > **OpenMS** > **File Handling**) and connect the output of the FeatureLinkerUnlabeledQT to the incoming port.
 - Open the Configure dialog of the **FileConverter** node and select the tab **OutputTypes**. In the drop down list for FileConverter.1.out select **featureXML**.
 - Add an **AccurateMassSearch** node (**Community Nodes** > **OpenMS** > **Utilities**) and connect the output of the **FileConverter** node to the first port of the **AccurateMassSearch** node.
-- Add four **Input File** nodes and configure them with the following [files](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/databases/):
+- Add four **File Importer** nodes and configure them with the following [files](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/databases/):
   - {path}`Example_Data,Metabolomics,databases,PositiveAdducts.tsv`
     This file specifies the list of adducts that are considered in the positive mode. Each line contains the formula and charge of an adduct separated by a semicolon (e.g. M+H;1+). The mass of the adduct is calculated automatically.
   - {path}`Example_Data,Metabolomics,databases,NegativeAdducts.tsv`
@@ -2119,7 +2119,7 @@ OpenSwathDecoyGenerator.exe -in OpenSWATH_SGS_AssayLibrary_woDecoy.TraML -out Op
 An example KNIME workflow for OpenSWATH is supplied in `Workflows` (<a href="#figure-44">Fig. 44</a>). The example dataset can be used for this workflow (filenames in brackets):
 
 1. Open {path}`Workflows,OpenSWATH.knwf` in KNIME: **File** > **Import KNIME Workflow...**
-2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHiRTAssayLibrary.TraML`).
+2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **File Importer** > **iRT Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHiRTAssayLibrary.TraML`).
 3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. ({path}`ExampleData,OpenSWATH,data,splitnapedroL120420x010SW-*.nf.pp.mzML`).
 4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHSGSAssayLibrary.TraML`).
 5. Set the output destination by double-clicking on node **Output File**.
@@ -2957,7 +2957,7 @@ This section will show you where you can turn to when you encounter any problems
 
 - **KNIME**: Start with the normal log on the bottom right of KNIME. In general all warnings and errors will be listed there. If the output is not helpful enough, try to set the logging verbosity to the highest (DEBUG) under **Preferences** > **KNIME** > **Log file log level**. 
 - **OpenMS nodes**: The first step should also be the log of KNIME. Additionally, you can view the output and the errors of our tools by right-clicking on the node and selecting **View: NODENAME Std Output?error**. This shows you the output of the OpenMS executable that was called by that node. For advanced users, you can try to execute the underlying executable in your `KNIME/plugins/de.openms.platform.arch.version/payload/bin` folder, to see if the error is reproducible outside of KNIME.
-You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the Input File node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
+You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the File Importer node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
 
 #### General
 
