@@ -506,7 +506,7 @@ information about the data set before starting the actual development of a data 
 can also be used to check if all requirements are met and that your system is compatible.
 
 - Create a new workflow.
-- Add an **File Importer** node and an **Output Folder** node (found in **Community Nodes** > **GenericKnimeNodes** > **IO**
+- Add an **File Importer** node and an **Output Folder** node (found in **Community Nodes** > **GenericKnimeNodes** > **IO**)
   and a **FileInfo** node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
 - Connect the File Importer node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
   node.
@@ -669,14 +669,14 @@ demonstrate on a minimal example how such a script is integrated.
 <div class="admonition task">
   <p class="admonition-title task-title">**Task**</p>
   <p>
-First we need some example data in KNIME, which we will generate using the **Data Generator** node. You can keep the
-default settings and execute the node. The table contains four columns, each containing random coordinates and one column
+First we need some example data in KNIME, which we will generate using the **Data Generator** node (**IO** > **Other** > **Data Generator**).
+You can keep the default settings and execute the node. The table contains four columns, each containing random coordinates and one column
 containing a cluster number (Cluster_0 to Cluster_3). Now place a **R View (Table)** node into the workflow and connect
 the upper output port of the **Data Generator** node to the input of the **R View (Table)** node. Right-click and
 configure the node. If you get an error message like `Execute failed: R_HOME does not contain a folder with name ’bin’.`
 or `Execution failed: R Home is invalid.`: please change the R settings in the preferences. To do so open **File** >
 **Preferences** > **KNIME** > **R** and enter the path to your R installation (the folder that contains the bin
-directory. (e.g., {path}`C:,Program Files,R,R-3.4.3`).
+directory. e.g., {path}`C:,Program Files,R,R-3.4.3`).
   </p>
   <p>
 If you get an error message like: ”Execute failed: Could not find Rserve package. Please install it in your R
