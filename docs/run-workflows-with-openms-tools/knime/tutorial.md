@@ -525,9 +525,6 @@ The complete workflow is shown in below image. `FileInfo` can produce two differ
   **Browse**. In the file system browser [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny/velos005614.mzML) {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
   and click **Open**. Afterwards close the dialog by clicking **Ok**.
 
-```{note}
-Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
-```
 - The **File Importer** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
   Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
 - Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
@@ -542,7 +539,7 @@ Make sure to use the “tiny” version this time, not “small”, for the sake
   the file contains.
 
 Workflows are typically constructed to process a large number of files automatically. As a simple example, consider you
-would like to convert multiple Thermo Raw files into the mzML format. We will now modify the workflow to compute the
+would like to filter multiple mzML files to only include MS1 spectra. We will now modify the workflow to compute the
 same information on three different files and then write the output files to a folder.
 
 - We start from the previous workflow.
@@ -552,18 +549,23 @@ same information on three different files and then write the output files to a f
   all three files from the [directory](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny) **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
   with **Ok**.
 - We now add two more nodes: the **ZipLoopStart** and the **ZipLoopEnd** node from the category
-  **Community Nodes** > **GenericKnimeNodFlow** > **Flow**.
+  **Community Nodes** > **GenericKnimeNodes* > **Flow** and replace the **FileInfo** node with **FileFilter** from  **Community Nodes** > **OpenMS** > **File Handling**.
 - Afterwards we connect the **Input Files** node to the first port of the **ZipLoopStart** node, the first port of the **ZipLoopStart**
   node to the **FileConverter** node, the first output port of the **FileConverter** node to the first input port of the
-  **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node (NOT to the Output File).
+  **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node.
 
-The complete workflow is shown in below figure.
+The complete workflow is shown in the top right of the figure below.
 
-|![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](/images/openms-user-tutorial/knime-setup/Minimal_RawFileConverter_Loop.png)|
+|![A minimal workflow calling the FileFilter on multiple mzML files in a loop](/images/openms-user-tutorial/knime-setup/KNIME_annotated_FileFilter.png)|
 |:--:|
-|Figure 9: A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop|
+|Figure 9: The fileFilter workflow. Showing the configure dialog for FileFilter, and the level selector pane.
 
-Execute the workflow and inspect the output as before.
+Now we need to configure the FileFilter to only store MS1 data. To do this we double click on the FileFilter node to open the configuration dialog (see left pane above), double click "level", select 2
+from the sub-pane (see bottom right panel above), and click delete. Repeat the process for 3. Select OK to exit the sub-pane, and then OK again in the configuration dialog.
+
+Execute the workflow and inspect the output as before. 
+
+Now, if you open the resulting files in TOPPView, you can see that only the MS1 spectra remain.
 
 In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** do, here is a brief explanation:
 
