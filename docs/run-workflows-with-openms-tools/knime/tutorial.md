@@ -433,7 +433,7 @@ Shows a list of available workflows (also called workflow projects). You can ope
 new workflow can be created with a right-click in the Workflow Explorer followed by choosing **New KNIME Workflow**
 from the appearing context menu. Remember to save your workflow often with the <kbd>Ctrl</kbd> + <kbd>S</kbd> shortcut.
 
-##### Workflow Coach (since KNIME 3.2.1)
+##### Workflow Coach
 
 Shows a list of suggested following nodes, based on the last added/clicked nodes. When you are not sure which node to
 choose next, you have a reasonable suggestion based on other users behavior there. Connect them to the last node with a
@@ -442,7 +442,8 @@ double-click.
 ##### Node Repository
 
 Shows all nodes that are available in your KNIME installation. Every plugin you install will provide new nodes that can
-be found here. The OpenMS nodes can be found in **Community Node** > **OpenMS** Nodes for managing files (e.g., Input
+be found here. The OpenMS nodes can be found in **Community Node** > **OpenMS** Nodes to hook up to external search engines
+and the RawFileConverter are found under **Community Node** > **OpenMSThirdParty** Nodes for managing files (e.g., Input
 Files or Output Folders) can be found in **Community Nodes** > **GenericKnimeNode**. You can search the node repository
 by typing the node name into the small text box in the upper part of the node repository.
 
