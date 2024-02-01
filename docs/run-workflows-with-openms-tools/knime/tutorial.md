@@ -242,9 +242,11 @@ required by our OpenMS nodes or used in the Tutorials for downstream processing,
 4. Click on **Next** and follow the instructions (it's not necessary to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
 6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.2'
-7. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
+7. From the "KNIME Community Contributions - Cheminformatics" category select
    - RDKit Nodes Feature
-8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
+8. From the "KNIME Community Extensions - Other" category select
+   - Generic Worfkflow Nodes for KNIME
+9.  Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
 
 ##### R programming language and its KNIME integration
 
