@@ -733,14 +733,14 @@ each of the three runs contains a constant background of `S. pyogenes` peptides 
 different concentrations. [^10]
 
 - Instead of FileInfo, we want to perform Comet identification, so we simply replace the `FileInfo` node with the
-  `CometAdapter` node **Community Nodes** > **OpenMSThirdParty** > **Identification of Proteins** > **Peptides(SearchEngines)**, and we are almost done. Just make sure you
-  have connected the `ZipLoopStart` node with the `in` port of the `CometAdapter` node.
+  `CometAdapter` node **Community Nodes** > **OpenMSThirdParty** > **Identification**, and we are almost done. Just make sure you
+  have connected the `ZipLoopStart` node with the `in` (top) port of the `CometAdapter` node.
 - Comet, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
   databases. Thus, we need to introduce a search database input. As we want to use the same search database for all of
   our input files, we can just add a single `File Importer` node to the workflow and connect it directly with the
-  `CometAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
-  started. In order to specify the database, [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Labelfree/databases/s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta) {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`,
-  and we have a very basic peptide identification workflow.
+  `CometAdapter database` (middle) port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
+  started. In order to specify the database, [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Labelfree/databases/s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta) {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`
+- Connect the **out** port of the **CometAdapter** to **ZipLoopEnd** and we have a very basic peptide identification workflow.
 
   ```{note}
   You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows">duplicating workflows</a>
@@ -748,7 +748,7 @@ different concentrations. [^10]
   ```
 - The result of a single Comet run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
   will be stored in an idXML file. Now we can run the pipeline and after execution is finished, we can have a first look
-  at the the results: just open the input files folder with a file browser and from there open an mzML file in **TOPPView**.
+  at the the results: just open the ouput folder with a file browser and from there open one of the three input mzML's in **TOPPView**.
 - Here, annotate this spectrum data file with the peptide identification results. Choose **Tools** > **Annonate with identification**
   from the menu and select the idXML file that **CometAdapter** generated (it is located within the output directory that
   you specified when starting the pipeline).
@@ -756,8 +756,8 @@ different concentrations. [^10]
   browse the corresponding MS2 spectra.
 
   ```{note}
-  Opening the output file of `CometAdapter` (the idXML file) directly is also possible, but the direct visusalisation of
-  an idXML files is less useful.
+  Opening the output file of `CometAdapter` (the idXML file) directly is also possible, but unless you REALLY like XML reading
+  idXML files is less useful.
   ```
 - The search results stored in the idXML file can also be read back into a KNIME table for inspection and subsequent
   analyses: Add a `TextExporter` node from **Community Nodes** > **OpenMS** > **File Handling** to your workflow and
@@ -767,9 +767,9 @@ different concentrations. [^10]
   **TextExporter** and execute it. Now you can right click `IDTextReader` and select **ID Table** to browse your peptide
   identifications.
 - From here, you can use all the tools KNIME offers for analyzing the data in this table. As a simple example, add a
-  `Histogram (local)` node (from category **Views - Local (Swing)**) node after `IDTextReader`, double-click it, select
-  `peptide_charge` as Histogram column, hit **OK**, and execute it. Right-clicking and selecting
-  **Interactive View: Histogram view** will open a plot showing the charge state distribution of your identifications.
+  `Histogram` node (from category **Views**) node after `IDTextReader`, double-click it, select
+  `peptide_charge` as Dimension, click **Save and Execute** to generate a plot showing the charge state distribution 
+  of your identifications.
 
 In the next step, we will tweak the parameters of Comet to better reflect the instrument’s accuracy. Also, we will
 extend our pipeline with a false discovery rate (FDR) filter to retain only those identifications that will yeild an
@@ -784,7 +784,6 @@ FDR of < 1 %.
   state (all node results are discarded and need to be recalculated by executing the nodes again).
   ```
 
-- Set `max_precursor_charge` to 5, in order to also search for peptides with charges up to 5.
 - Add `Carbamidomethyl (C)` as fixed modification and `Oxidation(M)` as variable modification.
 
   ```{note}
@@ -794,8 +793,8 @@ FDR of < 1 %.
   ```
 - A common step in analysis is to search not only against a regular protein database, but to also search against a decoy
   database for FDR estimation. The fasta file we used before already contains such a decoy database. For OpenMS to know
-  which Comet PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
-  extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **Identification Processing**. This node needs
+  which Comet PSM came from which part of the file (i.e. target versus decoy), we have to index the results. To this end,
+  extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **ID Processing**. This node needs
   the idXML as input as well as the database file (see below figure).
 
   ```{tip}
@@ -804,7 +803,8 @@ FDR of < 1 %.
 - The decoys in the database are prefixed with “DECOY_”, so we have to set `decoy_string` to `DECOY_` and `decoy_string_position`
   to `prefix` in the configuration dialog of `PeptideIndexer`.
 - Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
-  **Community Nodes** > **OpenMS** > **Identification Processing**).
+  **Community Nodes** > **OpenMS** > **Identification Processing**). `FalseDiscoveryRate` is meant to be run on data with protein inferencences
+  (more on that later), in order to just use it for peptides, open the configure window, select "show advanced parameter" and toggle "force" to true.
 - In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **Identification Processing**.
   Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
@@ -837,11 +837,11 @@ It has become widely accepted that the parallel usage of different search engine
 rates in shotgun proteomics experiments. The ConsensusID algorithm is based on the calculation of posterior error
 probabilities (PEP) and a combination of the normalized scores by considering missing peptide sequences.
 
-- Next to the `CometAdapter` and a `XTandemAdapter` **Community Nodes** > **OpenMSThirdParty** > **Identification of Proteins** > **Peptides(SearchEngines)** node and set
+- Next to the `CometAdapter` add a `XTandemAdapter` **Community Nodes** > **OpenMSThirdParty** > **Identification of Proteins** > **Peptides(SearchEngines)** node and set
   its parameters and ports analogously to the `CometAdapter`. In XTandem, to get more evenly distributed scores, we
   decrease the number of candidates a bit by setting the precursor mass tolerance to 5 ppm and the fragment mass
   tolerance to 0.1 Da.
-- To calculate the PEP, introduce each a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **Identification Processing**
+- To calculate the PEP, introduce a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **Identification Processing**
   node to the output of each ID engine adapter node. This will calculate the PEP to each hit and output an updated idXML.
 - To create a consensus, we must first merge these two files with a `FileMerger` node **Community Nodes** >
   **GenericKnimeNode** > **Flow** so we can then merge the corresponding IDs with a `IDMerger` **Community Nodes** >
@@ -852,7 +852,7 @@ probabilities (PEP) and a combination of the normalized scores by considering mi
   ```{note}
   By default, X!Tandem takes additional enzyme cutting rules into consideration (besides the specified tryptic digest).
   Thus for the tutorial files, you have to set PeptideIndexer’s `enzyme→specificity` parameter to `none` to accept
-  X!Tandems non-tryptic identifications as well.
+  X!Tandem's non-tryptic identifications as well.
   ```
 
 In the end, the ID processing part of the workflow can be collapsed into a Metanode to keep the structure clean (see below figure which shows complete consensus identification workflow).
