@@ -19,7 +19,7 @@ fed to the **ConsensusID** tool (ConsensusID is currently usable for Mascot and 
 
 To combine quantitation and identification results:
 
-Protein/peptide identifications can be annotated to quantitation results (featureXML, consensusXML) by the **IDMapper**
+Protein/peptide identifications can be annotated to quantitation results (featureXML, consensusXML) by the `IDMapper`
 tool. The combined results can then be exported by the **TextExporter** tool:
 
 [Conversion between OpenMS XML formats and text formats](conversion-between-openms-xml-formats-and-text-formats.md).
