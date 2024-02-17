@@ -2993,7 +2993,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** Whenever I try to execute an OpenMS node I get an error similar to these:
 
-```bash
+```bashinstall numpy
 /usr/lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found
 /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
 ```
@@ -3010,7 +3010,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** I have problems installing RServe in my local R installation for the R KNIME Extension.
 
-**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory. See [StackOverflow question 21370363](http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl).
+**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory.
 
 **Q:** Although <kbd>Ctrl</kbd> + <kbd>Left-click</kbd> TOPPAS.app or TOPPView.app and accept the risk of a downloaded application, the icon only shortly blinks and nothing happens.
 
