@@ -183,8 +183,8 @@ also resets the zoom history).
 the mouse to another peak to measure the distance between peaks.
     - This mode is implemented in the 1D and 2D mode only.
 - Right click on your 2D map and select **Switch to 3D mode** and examine your data in 3D mode (see <a href="#figure-4">Fig. 4</a>).
-- Go back to the 2D view. In 2D mode, visualize your data in different intensity normalization modes, use linear , percentage, snap and log-view (icons on
-the upper left tool bar). You can hover over the icons for additional information.
+- Visualize your data in different intensity normalization modes, use linear, percentage (set intensity axis scale to percentage), snap and log-view (icons on
+  the upper left tool bar). You can hover over the icons for additional information.
 
   ```{note}
   On macOS, due to a bug in one of the external libraries used by
