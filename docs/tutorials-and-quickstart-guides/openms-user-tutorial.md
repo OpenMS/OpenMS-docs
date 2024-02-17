@@ -2432,9 +2432,8 @@ One basic requirement for the installation of python packages, in particular pyO
 #### Windows
 
 1. Install [Python 3.9](http://www.python.org/download/).
-2. Install [NumPy](http:///www.lfd.uci.edu/~gohlke/pythonlibs/#numpy).
-3. Install pip (see above). 
-4. On the command line:
+2. Install pip (see above). 
+3. On the command line:
     ```bash
     python -m pip install -U pip   
     python -m pip install -U numpy 
@@ -2989,7 +2988,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** I have problems installing RServe in my local R installation for the R KNIME Extension.
 
-**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory. See [StackOverflow question 21370363](http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl).
+**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory.
 
 **Q:** Although <kbd>Ctrl</kbd> + <kbd>Left-click</kbd> TOPPAS.app or TOPPView.app and accept the risk of a downloaded application, the icon only shortly blinks and nothing happens.
 
