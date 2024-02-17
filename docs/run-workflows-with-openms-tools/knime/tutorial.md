@@ -2993,7 +2993,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** Whenever I try to execute an OpenMS node I get an error similar to these:
 
-```bashinstall numpy
+```bash
 /usr/lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found
 /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
 ```
