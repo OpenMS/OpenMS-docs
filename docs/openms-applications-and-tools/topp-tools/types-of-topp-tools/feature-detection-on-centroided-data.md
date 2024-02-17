@@ -4,7 +4,7 @@ orphan: true
 Feature Detection on Centroided Data
 ====================================
 
-To quantify peptide features, TOPP offers the **FeatureFinder** tools. In this section the **FeatureFinderCentroided**
+To quantify peptide features, TOPP offers the **FeatureFinder** tools. In this section the `FeatureFinderCentroided`
 is used, which works only on centroided data. There are other FeatureFinders available that also work on profile data.
 
 For this example the file `LCMS-centroided.mzML` from the examples data is used (**File** > **Open example data**). In order

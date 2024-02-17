@@ -518,7 +518,7 @@ The complete workflow is shown in the below image. `FileInfo` can produce two di
 ```{note}
 Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
 ```
-- The **Input File** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
+- The **Input File** node and the `FileInfo` node should now have switched to yellow, but the **Output Folder** node is still red.
   Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
 - Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
   button with multiple green triangles in the KNIME Toolbar) to execute the complete workflow. You can also right-click
@@ -541,11 +541,11 @@ same information on three different files and then write the output files to a f
 - To select the files we double-click on the Input Files node and click on **Add**. In the filesystem browser, we select
   all three files from the directory **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
   with **Ok**.
-- We now add two more nodes: the **ZipLoopStart** and the **ZipLoopEnd** node from the category
+- We now add two more nodes: the `ZipLoopStart` and the `ZipLoopEnd` node from the category
   **Community Nodes** > **GenericKnimeNodFlow** > **Flow**.
-- Afterwards we connect the **Input Files** node to the first port of the **ZipLoopStart** node, the first port of the **ZipLoopStart**
+- Afterwards we connect the `Input Files` node to the first port of the `ZipLoopStart` node, the first port of the `ZipLoopStart`
   node to the **FileConverter** node, the first output port of the **FileConverter** node to the first input port of the
-  **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node (NOT to the Output File).
+  `ZipLoopEnd` node, and the first output port of the `ZipLoopEnd` node to the **Output Folder** node (NOT to the Output File).
 
 The complete workflow is shown in the below figure.
 
@@ -555,9 +555,9 @@ The complete workflow is shown in the below figure.
 
 Execute the workflow and inspect the output as before.
 
-In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** do, here is a brief explanation:
+In case you had trouble to understand what `ZipLoopStart` and `ZipLoopEnd` do, here is a brief explanation:
 
-- The **Input Files** node passes a list of files to the ZipLoopStart node.
+- The `Input Files` node passes a list of files to the ZipLoopStart node.
 - The ZipLoopStart node takes the files as input, but passes the single files sequentially (that is: one after the other)
   to the next node.
 - The ZipLoopEnd collects the single files that arrive at its input port. After all, files have been processed, the collected
@@ -704,7 +704,7 @@ As a start, we will extend the minimal workflow so that it performs a peptide id
 engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to download and
 install it yourself.
 
-Let’s start by replacing the input files in our **Input Files** node with the three mzML files in
+Let’s start by replacing the input files in our `Input Files` node with the three mzML files in
 **Example Data** > **Labelfree** > **datasets** > **lfqxspikeinxdilutionx1-3.mzML**. This is a reduced toy dataset where
 each of the three runs contains a constant background of S. `pyogenes` peptides as well as human spike-in peptides in
 different concentrations. [^10]
@@ -843,16 +843,16 @@ In the end, the ID processing part of the workflow can be collapsed into a Metan
 Now that we have successfully constructed a peptide identification pipeline, we can
 add quantification capabilities to our workflow.
 
-- Add a **FeatureFinderCentroided** node from **Community Nodes** > **OpenMS** > **Quantitation**
-which gets input from the first output port of the **ZipLoopStart** node. Also, add
-an **IDMapper** node (from **Community Nodes** > **OpenMS** > **ID Processing** ) which receives
-input from the **FeatureFinderCentroided** node (Port 1) and the ID Metanode (or **IDFilter** node (Port 0) if you haven’t used the Metanode). The output of the **IDMapper** node is then connected to an in port of the **ZipLoopEnd** node.
+- Add a `FeatureFinderCentroided` node from **Community Nodes** > **OpenMS** > **Quantitation**
+which gets input from the first output port of the `ZipLoopStart` node. Also, add
+an `IDMapper` node (from **Community Nodes** > **OpenMS** > **ID Processing** ) which receives
+input from the `FeatureFinderCentroided` node (Port 1) and the ID Metanode (or **IDFilter** node (Port 0) if you haven’t used the Metanode). The output of the `IDMapper` node is then connected to an in port of the `ZipLoopEnd` node.
 - `FeatureFinderCentroided` finds and quantifies peptide ion signals contained in
 the MS1 data. It reduces the entire signal, i.e., all peaks explained by one and
 the same peptide ion signal, to a single peak at the maximum of the chromatographic elution profile of the monoisotopic mass trace of this peptide ion and
 assigns an overall intensity.
-- `FeatureFinderCentroided` produces a featureXML file as output, containing only quantitative information of so-far unidentified peptide signals. In order to annotate these with the corresponding ID information, we need the **IDMapper** node.
--  Run your pipeline and inspect the results of the **IDMapper** node in TOPPView. Open the mzML file of your data to display the raw peak intensities.
+- `FeatureFinderCentroided` produces a featureXML file as output, containing only quantitative information of so-far unidentified peptide signals. In order to annotate these with the corresponding ID information, we need the `IDMapper` node.
+-  Run your pipeline and inspect the results of the `IDMapper` node in TOPPView. Open the mzML file of your data to display the raw peak intensities.
 - To assess how well the feature finding worked, you can project the features contained in the featureXML file on the raw data contained in the mzML file. To
 this end, open the featureXML file in TOPPView by clicking on File Open file and add it to a new layer ( Open in New layer ). The features are now visualized on top of your raw data. If you zoom in on a small region, you should be able to see the individual boxes around features that have been detected (see <a href="#figure-14">Fig. 14</a>). If you
 hover over the feature centroid (small circle indicating the chromatographic apex of the monoisotopic trace) additional information about the feature is displayed.
@@ -984,13 +984,13 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 
 The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
 {path}`ExampleData,iPRG2015,database,iPRG2015targetdecoynocontaminants.fasta`
-against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `OMSSAAdapter`.
+against the MS2 from the original data (`Input Files` node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `OMSSAAdapter`.
 
 ```{note}
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
 ```
 
-Afterwards, the results are scored using the **FalseDiscoveryRate** node and filtered to obtain only unique peptides (**IDFilter**) since `MSstats` does not support shared peptides, yet. The quantification is achieved by using the **FeatureFinderCentroided** node, which performs the feature detection on the samples (maps). In the end, the quantification results are combined with the filtered identification results (**IDMapper**). In addition, a linear retention time alignment is performed (**MapAlignerPoseClustering**), followed by the feature linking process (**FeatureLinkerUnlabledQT**). The **ConsensusMapNormalizer**s is used to normalize the intensities via robust regression over a set of maps and the **IDConflictResolver** assures that only one identification (best score) is associated with a feature. The output of this workflow is a consensusXML file, which can now be converted using the **MSstatsConverter** (see <a href="#conversion-and-downstream-analysis">Conversion and downstream analysis</a> section).
+Afterwards, the results are scored using the **FalseDiscoveryRate** node and filtered to obtain only unique peptides (**IDFilter**) since `MSstats` does not support shared peptides, yet. The quantification is achieved by using the `FeatureFinderCentroided` node, which performs the feature detection on the samples (maps). In the end, the quantification results are combined with the filtered identification results (`IDMapper`). In addition, a linear retention time alignment is performed (**MapAlignerPoseClustering**), followed by the feature linking process (**FeatureLinkerUnlabledQT**). The **ConsensusMapNormalizer**s is used to normalize the intensities via robust regression over a set of maps and the **IDConflictResolver** assures that only one identification (best score) is associated with a feature. The output of this workflow is a consensusXML file, which can now be converted using the **MSstatsConverter** (see <a href="#conversion-and-downstream-analysis">Conversion and downstream analysis</a> section).
 
 #### Experimental design
 
@@ -1289,7 +1289,7 @@ We have made the following changes compared to the original label-free quantific
 used the resulting protein grouping information to also quantify indistinguishable proteins. In fact, we also used a greedy method in **FidoAdapter** (parameter `greedy_group_resolution`) to uniquely assign the peptides of a group to the most probable protein(s) in the respective group. This boosts the number of quantifications but slightly raises the chances to yield distorted protein quantities.
 - As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
 set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on, used by the Fido algorithm. Also, note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
-- Next, we added a third outgoing connection to our ID meta node and connected it to the second input port of **ZipLoopEnd**. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
+- Next, we added a third outgoing connection to our ID meta node and connected it to the second input port of `ZipLoopEnd`. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
 - Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **ID Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
 
 ### Statistical validation of protein inference results
@@ -1354,9 +1354,9 @@ The full analysis workflow can be found here:
 
 The workflow has four input nodes. The first is for the experimental design to allow for MSstatsTMT compatible export (**MSstatsConverter**). The second is for the `.mzML` files with the centroided spectra from the isobaric labeling experiment and the third one is for the `.fasta` database used for identification. The last one allows to specify an output path for the plots generated by the R View, which runs MSstatsTMT (I). The quantification (A) is performed using the **IsobaricAnalzyer**. The tool is able to extract and normalize quantitative information from TMT and iTRAQ data. The values can be assessed from centroided MS2 or MS3 spectra (if available). Isotope correction is performed based on the specified correction matrix (as provided by the manufacturer). The identification (C) is applied as known from the previous chapters by using a database search and a target-decoy database.
 
-To reduce the complexity of the data for later inference the q-value estimation and FDR filtering is performed on PSM level for each file individually (B). Afterwards, the identification (PSM) and quantitative information is combined using the **IDMapper**. After the processing of all available files, the intermediate results are aggregated (**FileMerger** - D). All PSM results are used for score estimation and protein inference (**Epifany**) (E). For detailed information about protein inference please see Chapter 4. Then, decoys are removed and the inference results are filtered via a protein group FDR. Peptide level results can be exported via **MzTabExporter** (F), protein level results can be obtained via the **ProteinQuantifier** (G), or the results can be exported (**MSstatsConverter** - H) and further processed with the following R pipeline to allow for downstream processing using `MSstatsTMT`.
+To reduce the complexity of the data for later inference the q-value estimation and FDR filtering is performed on PSM level for each file individually (B). Afterwards, the identification (PSM) and quantitative information is combined using the `IDMapper`. After the processing of all available files, the intermediate results are aggregated (**FileMerger** - D). All PSM results are used for score estimation and protein inference (**Epifany**) (E). For detailed information about protein inference please see Chapter 4. Then, decoys are removed and the inference results are filtered via a protein group FDR. Peptide level results can be exported via **MzTabExporter** (F), protein level results can be obtained via the **ProteinQuantifier** (G), or the results can be exported (**MSstatsConverter** - H) and further processed with the following R pipeline to allow for downstream processing using `MSstatsTMT`.
 
-Please import the workflow from {path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the **Input Files** nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
+Please import the workflow from {path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the `Input Files` nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
 
 ### Excursion MSstatsTMT
 
@@ -1640,7 +1640,7 @@ First start TOPPView and open the example `.mzML` file (see <a href="#figure-28"
 |:--:|
 |Figure 31: Zoom of the overlay of the .mzML with the .featureXML layer. Here the individual isotope traces (blue lines) are assembled into a feature here shown as convex hull (rectangular box).|
 
-The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **Input File** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
+The workflow can be extended for multi-file analysis, here an `Input Files` node is to be used instead of the **Input File** node. In front of the **FeatureFinderMetabo**, a `ZipLoopStart` and behind `ZipLoopEnd` has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
 
 To facilitate the collection of features corresponding to the same compound ion across different samples, an alignment of the samples’ feature maps along retention time is often helpful. In addition to local, small-scale elution differences, one can often see constant retention time shifts across large sections between samples. We can use linear transformations to correct for these large-scale retention differences. This brings the majority of corresponding compound ions close to each other. Finding the correct corresponding ions is then faster and easier, as we don’t have to search as far around individual features.
 
@@ -1649,7 +1649,7 @@ To facilitate the collection of features corresponding to the same compound ion 
 |:--:|
 |Figure 32: The first feature map is used as a reference to which other maps are aligned. The calculated transformation brings corresponding features into close retention time proximity. The linking of these features forms a so-called consensus features of a consensus map.|
 
-- After the **ZipLoopEnd** node, add a **MapAlignerPoseClustering** node (**Community Nodes**>**OpenMS**>**Map Alignment**), set its Output Type to featureXML, and adjust the following settings:
+- After the `ZipLoopEnd` node, add a **MapAlignerPoseClustering** node (**Community Nodes**>**OpenMS**>**Map Alignment**), set its Output Type to featureXML, and adjust the following settings:
 
 |**parameter**|	**value**|
 |:------------|:---------|
@@ -2110,7 +2110,7 @@ An example KNIME workflow for OpenSWATH is supplied in `Workflows` (<a href="#fi
 1. Open {path}`Workflows,OpenSWATH.knwf` in KNIME: **File** > **Import KNIME Workflow...**
 2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHiRTAssayLibrary.TraML`).
 3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. ({path}`ExampleData,OpenSWATH,data,splitnapedroL120420x010SW-*.nf.pp.mzML`).
-4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHSGSAssayLibrary.TraML`).
+4. Select the target peptide assay library in TraML format as input by double-clicking on node `Input Files` > **Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHSGSAssayLibrary.TraML`).
 5. Set the output destination by double-clicking on node **Output File**.
 6. Run the workflow.
 
@@ -2826,14 +2826,14 @@ Finally, in a qcml file, we split the metrics on a per mass-spectrometry-run bas
 As a start, we will build a basic qcML file for each mzML file in the label-free analysis. We are already creating the two necessary analysis files to build a basic qcML file upon each mzML file, a feature file and an identification file. We use the **QCCalculator** node from **Community** > **OpenMS** > **Utilities** where also all other QC* nodes will be found. The **QCCalculator** will create a very basic qcML file in which it will store collected and calculated quality data.
 
 - Copy your label-fee quantitation workflow into a new lfq-qc workflow and open it.
-- Place the **QCCalculator** node after the **IDMapper** node. Being inside the **ZipLoop**, it will execute for each of the three mzML files the **Input** node.
-- Connect the first **QCCalculator** port to the first **ZipLoopStart** outlet port, which will carry the individual mzML files.
+- Place the **QCCalculator** node after the `IDMapper` node. Being inside the **ZipLoop**, it will execute for each of the three mzML files the **Input** node.
+- Connect the first **QCCalculator** port to the first `ZipLoopStart` outlet port, which will carry the individual mzML files.
 - Connect the last’s ID outlet port (**IDFilter** or the ID metanode) to the second **QCCalculator** port for the identification file.
-- Finally, connect the **IDMapper** outlet to the third **QCCalculator** port for the feature file.
+- Finally, connect the `IDMapper` outlet to the third **QCCalculator** port for the feature file.
 
 The created qcML files will not have much to show for, basic as they are. So we will extend them with some basic plots.
 
-- First, we will add an 2D overview image of the given mass spectrometry run as you may know it from TOPPView. Add the **ImageCreator** node from **Community Nodes** > **OpenMS** > **Utilities**. Change the width and heigth parameters to 640x640 as we don’t want it to be too big. Connect it to the first **ZipLoopStart** outlet port, so it will create an image file of the mzML’s contained run.
+- First, we will add an 2D overview image of the given mass spectrometry run as you may know it from TOPPView. Add the **ImageCreator** node from **Community Nodes** > **OpenMS** > **Utilities**. Change the width and heigth parameters to 640x640 as we don’t want it to be too big. Connect it to the first `ZipLoopStart` outlet port, so it will create an image file of the mzML’s contained run.
 - Now we have to embed this file into the qcML file, and attach it to the right **QualityParameter**. For this, place a **QCEmbedder** node behind the **ImageCreator** and connect that to its third inlet port. Connect its first inlet port to the outlet of the **QCCalculator** node to pass on the qcML file. Now change the parameter cv_acc to QC:0000055 which designates the attached image to be of type QC:0000055 - MS experiment heatmap. Finally, change the parameter qp_att_acc to QC:0000004, to attach the image to the QualityParameter QC:0000004 - MS acquisition result details.
 - For a reference of which CVs are already defined for qcML, have a look at the following [link](https://github.com/qcML/qcML-development/blob/master/cv/qc-cv.obo).
 
@@ -2912,7 +2912,7 @@ For this, we will first collect all created qcML files, merge them together and 
 
 - Connect the **QCEmbedders** output from last section to the **ZipLoopEnds** second input port.
 - The corresponding output port will collect all qcML files from each **ZipLoop** iteration and pass them on as a list of files.
-- Now we add a **QCMerger** node after the **ZipLoopEnd** and feed it that list of qcML files. In addition, we set its parameter `setname` to give our newly created set a name - say `spikein_replicates`.
+- Now we add a **QCMerger** node after the `ZipLoopEnd` and feed it that list of qcML files. In addition, we set its parameter `setname` to give our newly created set a name - say `spikein_replicates`.
 - To inspect all the QCs next to each other in that created qcML file, we have to add a new **Output Folder** to which we can connect the **QCMerger** output.
 
 When inspecting the set-qcML file in a browser, we will be presented another overview. After the set content listing, the basic QC parameters (like number of identifications) are each displayed in a graph. Each set member (or run) has its own section on the x-axis and each run is connected with that graph via a link in the mouseover on one of the QC parameter values.

@@ -6,7 +6,7 @@ File Handling
 
 ## General information about peak and feature maps
 
-For general information about a peak or feature map, use the **FileInfo** tool.
+For general information about a peak or feature map, use the `FileInfo` tool.
 
 - It can print RT, m/z and intensity ranges, the overall number of peaks, and the distribution of MS levels.
 - It can print a statistical summary of intensities.
