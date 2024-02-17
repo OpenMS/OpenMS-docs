@@ -8,7 +8,7 @@ for use in for example one of our tutorials, please refer to a different install
 You can use conda or mamba to install the OpenMS library and tools without user interface. Depending on the conda channel, you can
 obtain release versions (`bioconda` channel) and nightly versions (`openms` channel).
 
-1. Follow the instructions to install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) or [mamba](https://mamba.readthedocs.io/en/latest/installation.html).
+1. Follow the instructions to install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) or [mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).
   In the following, every mention of conda may be substituted by mamba for faster environment solving.
 
 2. We recommend to create a new environment with one of the supported python version versions:

@@ -10,7 +10,7 @@
 
 - This tutorial was designed for use in a hands-on tutorial session but can also be worked through at home using the online resources. You will become familiar with some of the basic functionalities of OpenMS/TOPP, TOPPView, as well as KNIME and learn how to use a selection of TOPP tools used in the tutorial workflows.
 
-- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/latest/).
+- If you are attending the tutorial and received a USB stick, all sample data referenced in this tutorial can be found in the {path}`C:,Example_Data` folder, on the USB stick, or released online on our [Archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/tutorial.zip).
 
 ## Getting Started
 
@@ -43,16 +43,30 @@ Please choose the directory that matches your operating system and execute the i
 
 For Windows, you run:
 
+```{note}
+The OpenMS installer for windows now supports installing only for a single user. If you choose this option the location of the tools will be different than {{ '{path}'+'`C:,Program Files,OpenMS-{0}`'.format(version) }} specified in this document. In most cases they will install to {{ '{path}'+'`C:,Users,$YOUR_USER,AppData,Local,OpenMS-{0}`'.format(version) }} where $YOUR_USER is replaced with your username.
+```
 - The OpenMS installer: {{ '{path}'+'`Windows,OpenMS-{0}-Win64.exe`'.format(version) }}
 - The KNIME installer: {{ '{path}'+'`Windows,KNIME-{0}-Installer-64bit.exe`'.format(knime_version) }}
 
-On macOS, you run:
+On macOS(x86), you run:
 
 - The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
-- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(version) }}
+- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.x86_64.dmg`'.format(knime_version) }}
 
-On Linux, you can extract KNIME to a folder of your choice and for TOPPView you need to install OpenMS via your package manager or build it on your own with our
-[build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
+On macOS(arm), you run:
+
+- The OpenMS installer: {{ '{path}'+'`Mac,OpenMS-{0}-macOS.dmg`'.format(version) }}
+- The KNIME installer: {{ '{path}'+'`Mac,knime_{0}.app.macosx.cocoa.aarch64.dmg`'.format(knime_version) }}
+
+On Linux:
+- The OpenMS package: {{ '{path}'+'`Linux,OpenMS-{0}-Debian-Linux-x86_64.deb`'.format(version) }} can be installed with your package manager
+- The KNIME package can be extracted to a folder of your choice from {{ '{path}'+'`knime_{0}.linux.gtk.x86_64.tar`'.format(knime_version) }} 
+
+ ```{note}
+ You can also install OpenMS via your package manager (version availability not guaranteed) or build it on your own with our
+ [build instructions](/openms-applications-and-tools/installation/installation-on-gnu-linux.md#build-openms-from-source).
+ ```
 
 ::::
 
@@ -86,7 +100,7 @@ graphical user interface) or `msconvert` (a simple command line tool).
 
 Both tools are available in: {{ '{path}'+'`C:,Program Files,OpenMS-{0},share,OpenMS,THIRDPARTY,pwiz-bin`'.format(version) }}.
 
-You can find a small RAW file on the USB stick {path}`C:,Example_Data,Introduction,datasets,raw`.
+You can find a small RAW file on the USB stick {path}`Example_Data,Introduction,datasets,raw`.
 
 #### MSConvertGUI
 
@@ -143,7 +157,7 @@ our tutorial data set. Note that conceptually, there are no differences in visua
 - Start TOPPView (see Windows' Start-Menu or {{ '{path}'+'`Applications,OpenMS-{0}`'.format(version) }} on macOS)
 
 - Go to **File** > **Open File**, navigate to the directory where you copied the contents
-of the USB stick to, and select {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
+of the USB stick to, and [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/small/velos005614.mzML) {path}`Example_Data,Introduction,datasets,small,velos005614.mzML`. This file contains only a reduced LC-MS map of a label-free proteomic platelet measurement recorded on an Orbitrap velos. The other two mzML files contain technical replicates of this experiment. First, we want to
 obtain a global view on the whole LC-MS map - the default option Map view 2D
 is the correct one and we can click the <kbd>Ok</kbd> button.
 
@@ -198,6 +212,14 @@ workflows. The first step is to become familiar with KNIME. Additional informati
 found on the KNIME [Getting Started page](https://www.knime.com/getting-started-guide). However, the most important
 concepts will also be reviewed in this tutorial.
 
+#### KNIME Modern and Classic UI ####
+
+Since version 5.0 KNIME has a new updated user interface. For the purposes of this tutorial we will continue to use the "classic user interface".
+Depending on your OS KNIME may have started automatically in the Modern UI, which looks like the following:
+|![ms2 spectrum](/images/openms-user-tutorial/introduction/KNIME_switch_to_classic.png)|
+|:--:|
+|Figure 5.5: The modern KNIME UI. To switch back to the classic UI, select "Menu" and click "Switch to classic user interface"|
+
 #### Plugin and dependency 
 
 Before we can start with the tutorial, we need to install all the required extensions for KNIME.
@@ -211,19 +233,20 @@ First, we install some additional extensions that are
 required by our OpenMS nodes or used in the Tutorials for downstream processing, visualization or reporting.
 
 1. In KNIME, click on **Help** > **Install New Software**.
-2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 4.6 - https://update.knime.com/community-contributions/trusted/4.6'
+2. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME 5.2 - https://update.knime.com/analytics-platform/5.2'
 3. Now select the following KNIME core plugins from the KNIME & Extensions category
    - KNIME Base Chemistry Types & Nodes
    - KNIME Chemistry Add-Ons
    - KNIME Interactive R Statistics Integration
    - KNIME Report Designer
-   - KNIME SVG Support
-4. Click on **Next** and follow the instructions (you may but don’t need to restart KNIME now).
+4. Click on **Next** and follow the instructions (it's not necessary to restart KNIME now).
 5. Click again on **Help** > **Install New Software**
-6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
-7. Now select the following plugin from the "KNIME Community Contributions - Cheminformatics" category
-   - RDKit KNIME integration
-8. Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
+6. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.2'
+7. From the "KNIME Community Contributions - Cheminformatics" category select
+   - RDKit Nodes Feature
+8. From the "KNIME Community Extensions - Other" category select
+   - Generic Worfkflow Nodes for KNIME
+9.  Click on **Next**  and follow the instructions and after a restart of KNIME the dependencies will be installed.
 
 ##### R programming language and its KNIME integration
 
@@ -231,7 +254,7 @@ In addition, we need to install `R` for the statistical downstream analysis. Cho
 operating system, double-click the `R` installer and follow the instructions. We recommend to use the default settings
 whenever possible. On macOS you also need to install `XQuartz` from the same directory.
 
-Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 3.6.X” icon on your desktop. If you use
+Afterwards open your `R` installation. If you use Windows, you will find an ”R x64 4.3.2” icon on your desktop. If you use
 macOS, you will find R in your Applications folder. In `R`, type the following lines (you might also copy them from the file
 {path}`R,install_R_packages.R` on the USB stick):
 
@@ -249,11 +272,11 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install()
 BiocManager::install(c("MSstats"))
 ```
-In KNIME, click on **KNIME** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
+In KNIME, click on **File** > **Preferences**, select the category **KNIME** > **R** and set the ”Path to R Home” to
 your installation path. You can use the following settings, if you installed R as described above:
 
-- Windows: `C:\Program Files\R\R-3.6.X'` (where X is the version you used to install the above libraries)
-- macOS: `/Library/Frameworks/R.framework/Versions/3.6/Resources`
+- Windows: `C:\Program Files\R\R-4.3.2'`
+- macOS: `/Library/Frameworks/R.framework/Versions/4.3/Resources`
 
 ##### KNIME OpenMS plugin
 
@@ -270,9 +293,10 @@ in a hands-on Tutorial or if you are doing this Tutorial online.
 
 To install the OpenMS KNIME plugin from the internet, do the following:
 
-1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/4.6'
+1. From the '**Work with**:' drop-down list, select the _update site_ 'KNIME Community Extensions (Trusted) - https://update.knime.com/community-contributions/trusted/5.2'
 2. Now select the following plugin from the "KNIME Community Contributions - Bioinformatics & NGS" category
    - OpenMS
+   - OpenMSThirdParty
 3. Click on **Next**  and follow the instructions and after a restart of KNIME the OpenMS nodes will be available in the Node repository under
   "Community Nodes".
   
@@ -338,7 +362,7 @@ for other nodes after processing, respectively. KNIME distinguishes between diff
 types of data. The most common representation of data in KNIME are tables (similar to an excel sheet). Ports that accept
 tables are marked with a small triangle. For OpenMS nodes, we use a different port type, so called file ports, representing
 complete files. Those ports are marked by a small blue box. Filled blue boxes represent mandatory inputs and empty blue
-boxes optional inputs. The same holds for output ports, despite you can deactivate them in the configuration dialog
+boxes optional inputs. The same holds for output ports, except that you can deactivate them in the configuration dialog
 (double-click on node) under the **OutputTypes** tab. After execution, deactivated ports will be marked with a red cross and
 downstream nodes will be inactive (not configurable).
 
@@ -409,7 +433,7 @@ Shows a list of available workflows (also called workflow projects). You can ope
 new workflow can be created with a right-click in the Workflow Explorer followed by choosing **New KNIME Workflow**
 from the appearing context menu. Remember to save your workflow often with the <kbd>Ctrl</kbd> + <kbd>S</kbd> shortcut.
 
-##### Workflow Coach (since KNIME 3.2.1)
+##### Workflow Coach
 
 Shows a list of suggested following nodes, based on the last added/clicked nodes. When you are not sure which node to
 choose next, you have a reasonable suggestion based on other users behavior there. Connect them to the last node with a
@@ -418,7 +442,8 @@ double-click.
 ##### Node Repository
 
 Shows all nodes that are available in your KNIME installation. Every plugin you install will provide new nodes that can
-be found here. The OpenMS nodes can be found in **Community Node** > **OpenMS** Nodes for managing files (e.g., Input
+be found here. The OpenMS nodes can be found in **Community Node** > **OpenMS** Nodes to hook up to external search engines
+and the RawFileConverter are found under **Community Node** > **OpenMSThirdParty** Nodes for managing files (e.g., Input
 Files or Output Folders) can be found in **Community Nodes** > **GenericKnimeNode**. You can search the node repository
 by typing the node name into the small text box in the upper part of the node repository.
 
@@ -453,7 +478,7 @@ Those *knwf* files can again be imported by selecting: **File** > **Import KNIME
 
 ```{note}
 For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
- Additionally, the workflow files can be found on <a href="../downloads.html#workflows">workflow downloads</a>. If you want to check
+ Additionally, the workflow files can be found on <a href="../../downloads.html#workflows">workflow downloads</a>. If you want to check
  your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding
  *knwf* file and after that double-click it in your KNIME Workflow repository to open it.
 ```
@@ -471,7 +496,7 @@ your workflow, save it, close it and follow the next steps.
   workflow and selecting **Rename**.
 
 ```{note}
-To rename a workflow it has to be closed, too.
+To rename a workflow it has to be closed.
 ```
 
 #### A minimal workflow
@@ -481,9 +506,9 @@ information about the data set before starting the actual development of a data 
 can also be used to check if all requirements are met and that your system is compatible.
 
 - Create a new workflow.
-- Add an Input File node and an Output Folder node (to be found in **Community Nodes** > **GenericKnimeNodes** > **IO**
-  and a FileInfo node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
-- Connect the Input File node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
+- Add an **File Importer** node and an **Output Folder** node (found in **Community Nodes** > **GenericKnimeNodes** > **IO**)
+  and a **FileInfo** node (to be found in the category **Community Node** > **OpenMS** > **File Handling**)  to the workflow.
+- Connect the File Importer node to the FileInfo node, and the first output port of the FileInfo node to the Output Folder
   node.
 
 ```{tip}
@@ -492,18 +517,15 @@ name and what kind of input it expects.
 ```
 The complete workflow is shown in below image. `FileInfo` can produce two different kinds of output files.
 
-|![A minimal workflow calling FileInfo on a single file.](/images/openms-user-tutorial/knime-setup/minimal_FileInfo.svg)|
+|![A minimal workflow calling FileInfo on a single file.](/images/openms-user-tutorial/knime-setup/minimal_FileInfo.png)|
 |:--:|
 |Figure 8: A minimal workflow calling `FileInfo` on a single file.|
 
-- All nodes are still marked red, since we are missing an actual input file. Double-click the Input File node and select
-  **Browse**. In the file system browser select {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
+- All nodes are still marked red, since we are missing an actual input file. Double-click the File Importer node and select
+  **Browse**. In the file system browser [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny/velos005614.mzML) {path}`Example_Data,Introduction,datasets,tiny,velos005614.mzML`
   and click **Open**. Afterwards close the dialog by clicking **Ok**.
 
-```{note}
-Make sure to use the “tiny” version this time, not “small”, for the sake of faster workflow execution.
-```
-- The **Input File** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
+- The **File Importer** node and the **FileInfo** node should now have switched to yellow, but the **Output Folder** node is still red.
   Double-click on the **Output Folder** node and click on **Browse** to select an output directory for the generated data.
 - Great! Your first workflow is now ready to be run. Press <kbd>&uarr;</kbd> + <kbd>F7</kbd> (shift key + F7; or the
   button with multiple green triangles in the KNIME Toolbar) to execute the complete workflow. You can also right click
@@ -517,28 +539,33 @@ Make sure to use the “tiny” version this time, not “small”, for the sake
   the file contains.
 
 Workflows are typically constructed to process a large number of files automatically. As a simple example, consider you
-would like to convert multiple Thermo Raw files into the mzML format. We will now modify the workflow to compute the
+would like to filter multiple mzML files to only include MS1 spectra. We will now modify the workflow to compute the
 same information on three different files and then write the output files to a folder.
 
 - We start from the previous workflow.
 - First we need to replace our single input file with multiple files. Therefore we add the Input Files node from the
   category **Community Nodes** > **GenericKnimeNodes** > **IO**.
 - To select the files we double-click on the Input Files node and click on **Add**. In the filesystem browser we select
-  all three files from the directory **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
+  all three files from the [directory](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Introduction/datasets/tiny) **Example_Data** > **Introduction** > **datasets** > **tiny**. And close the dialog
   with **Ok**.
 - We now add two more nodes: the **ZipLoopStart** and the **ZipLoopEnd** node from the category
-  **Community Nodes** > **GenericKnimeNodFlow** > **Flow**.
+  **Community Nodes** > **GenericKnimeNodes* > **Flow** and replace the **FileInfo** node with **FileFilter** from  **Community Nodes** > **OpenMS** > **File Handling**.
 - Afterwards we connect the **Input Files** node to the first port of the **ZipLoopStart** node, the first port of the **ZipLoopStart**
   node to the **FileConverter** node, the first output port of the **FileConverter** node to the first input port of the
-  **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node (NOT to the Output File).
+  **ZipLoopEnd** node, and the first output port of the **ZipLoopEnd** node to the **Output Folder** node.
 
-The complete workflow is shown in below figure.
+The complete workflow is shown in the top right of the figure below.
 
-|![A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop](/images/openms-user-tutorial/knime-setup/Minimal_RawFileConverter_Loop.png)|
+|![A minimal workflow calling the FileFilter on multiple mzML files in a loop](/images/openms-user-tutorial/knime-setup/KNIME_annotated_FileFilter.png)|
 |:--:|
-|Figure 9: A minimal workflow calling the FileConverter on multiple Thermo Raw files in a loop|
+|Figure 9: The fileFilter workflow. Showing the configure dialog for FileFilter, and the level selector pane.
 
-Execute the workflow and inspect the output as before.
+Now we need to configure the FileFilter to only store MS1 data. To do this we double click on the FileFilter node to open the configuration dialog (see left pane above), double click "level", select 2
+from the sub-pane (see bottom right panel above), and click delete. Repeat the process for 3. Select OK to exit the sub-pane, and then OK again in the configuration dialog.
+
+Execute the workflow and inspect the output as before. 
+
+Now, if you open the resulting files in TOPPView, you can see that only the MS1 spectra remain.
 
 In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** do, here is a brief explanation:
 
@@ -547,44 +574,6 @@ In case you had trouble to understand what **ZipLoopStart** and **ZipLoopEnd** d
   to the next node.
 - The ZipLoopEnd collects the single files that arrive at its input port. After all files have been processed, the collected
   files are passed again as file list to the next node that follows.
-
-#### Digression: Working with chemical structures
-
-Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
-or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
-In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
-Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later, all OpenMS tools that perform metabolite
-identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
-and KNIME.
-
-|![ Workflow to visualize a list of SMILES strings and filter them by predefined substructures](/images/openms-user-tutorial/metabo/structures_filter_workflow.png)|
-|:--:|
-|Figure 10: Workflow to visualize a list of SMILES strings and filter them by predefined substructures|
-
-Perform the following steps to build the workflow shown in the above figure. You will use this workflow to visualize a
-list of SMILES strings and filter them by predefined substructures:
-
-- Add the node File Reader, open the node configuration dialog and select the file `smiles.csv`. This file has been
-  exported from the Human Metabolome Database (HMDB) and contains the portion of the human metabolome that has been
-  detected and quantified. The file preview on the bottom of the dialog shows that each compound is given by its HMDB
-  accession, compound name, and SMILES string. Click on the column header **SMILES** to change its properties. Change the
-  column type from **string** to **smiles** and close the dialog with **Ok**. Afterwards the **SMILES** column will be
-  visualized as chemical structures instead of text directly within all **KNIME** tables.
-- Add the node `RDKit From Molecule` and connect it to the `File Reader`. This node will use the provided `SMILES`
-  strings to add an additional column that is required by RDKit.
-- Add the node `RDKit Functional Group Filter` and open the node configuration dialog. You can use this dialog to filter
-  the compounds by any combination of functional groups. In this case we want to find all compounds that contain at
-  least one aromatic carboxylic acid group. To do this, set this group as active and choose ’¿=’ and ’1’.
-- Connect the first output port (Molecules passing the filter) to a `CSV Writer` node to save the filtered metabolites
-  to a file. Right click **RDKit Functional Group Filter** and select the view ’Molecules passing the filter’ to inspect
-  the selected compounds in KNIME. How many compounds pass the chosen filter, see below figure.
-
-
-The following figure shows resulting list of compounds that contains at least one aromatic carboxylic acid group.
-
-|![Resulting list of compounds that contains at least one aromatic carboxylic acid group](/images/openms-user-tutorial/metabo/structures_filter_results.png)|
-|:--:|
-|Figure 11:  Resulting list of compounds that contains at least one aromatic carboxylic acid group.|
 
 #### Advanced topic: Metanodes
 
@@ -598,7 +587,7 @@ improve handling and clarity of large workflows:
   Select multiple nodes (e.g. all nodes of the ZipLoop including the start and end node). To select a set of nodes, draw a rectangle around them with the left mouse button or hold <kbd>Ctrl</kbd> to add/remove single nodes from the selection.
   <div class="admonition tip">
     <p class="admonition-title">**Tip**</p>
-    There is a **Select Loop** option when you right-click a node in a loop, that does exactly that for you. Then, open the
+    There is a **Select Scope** option when you right-click a node in a loop, that does exactly that for you. Then, open the
     context menu (right-click on a node in the selection) and select **Create Metanode**. Enter a caption for the **Metanode**.
     The previously selected nodes are now contained in the **Metanode**. Double-clicking on the **Metanode** will display
     the contained nodes in a new tab window.
@@ -618,6 +607,53 @@ Metanodes to clean up your workflow and cluster common subparts until you actual
 Undo the packaging. First select the (**Wrapped**) **Metanode**, open the context menu (right-click) and select **(Wrapped) Metanode** > **Expand**.
 </div>
 
+#### Digression: Working with chemical structures
+
+Metabolomics analyses often involve working with chemical structures. Popular cheminformatic toolkits such as RDKit[^7]
+or CDK[^8] are available as KNIME plugins and allow us to work with chemical structures directly from within KNIME.
+In particular, we will use KNIME and RDKit to visualize a list of compounds and filter them by predefined substructures.
+Chemical structures are often represented as SMILES (**S**implified **m**olecular **i**nput **l**ine **e**ntry **s**pecification), a simple and compact way to describe complex chemical structures as text. For example, the chemical structure of L-alanine can be written as the SMILES string `C[C@H](N)C(O)=O`. As we will discuss later, all OpenMS tools that perform metabolite
+identification will report SMILES as part of their result, which can then be further processed and visualized using RDKit
+and KNIME.
+
+|![ Workflow to visualize a list of SMILES strings and filter them by predefined substructures](/images/openms-user-tutorial/metabo/structures_filter_workflow.png)|
+|:--:|
+|Figure 10: Workflow to visualize a list of SMILES strings and filter them by predefined substructures|
+
+Perform the following steps to build the workflow shown in the above figure. You will use this workflow to visualize a
+list of SMILES strings and filter them by predefined substructures:
+
+- Add the node File Reader, open the node configuration dialog and select the file {path}`Example_Data,Metabolomics,datasets,smiles.csv`. This file has been
+  exported from the Human Metabolome Database (HMDB) and contains the portion of the human metabolome that has been
+  detected and quantified. The file preview on the bottom of the dialog shows that each compound is given by its HMDB
+  accession, compound name, and SMILES string. To tell KNIME to treat the SMILES column as SMILES input, select the **Transformation** tab in the **File Reader** configuration dialog
+  then, click in the **Type** column for SMILES, and select **SMILES**.
+  Next go back to the **Settings** tab Right Click on the column header **SMILES** to change its properties. Change the
+  column type from **string** to **smiles** and close the dialog with **Ok**. Afterwards the **SMILES** column will be
+  visualized as chemical structures instead of text directly within all **KNIME** tables.
+
+|![ Workflow to visualize a list of SMILES strings and filter them by predefined substructures](/images/openms-user-tutorial/metabo/KNIME_SMILES_type.png)|
+|:--:|
+|Figure 10.5: To change the column type for the **File Reader** select **Transformation** and then **type** for the SMILES column|
+
+
+- Add the node `RDKit From Molecule` and connect it to the `File Reader`. This node will use the provided `SMILES`
+  strings to add an additional column that is required by RDKit.
+- Add the node `RDKit Functional Group Filter` and open the node configuration dialog. You can use this dialog to filter
+  the compounds by any combination of functional groups. In this case we want to find all compounds that contain at
+  least one aromatic carboxylic acid group. To do this, set this group as active and choose ’=’ and ’1’.
+- Connect the first output port (Molecules passing the filter) to a `CSV Writer` node to save the filtered metabolites
+  to a file. Right click **RDKit Functional Group Filter** and select the view ’Molecules passing the filter’ to inspect
+  the selected compounds in KNIME. How many compounds pass the chosen filter, see below figure.
+
+
+The following figure shows resulting list of compounds that contains at least one aromatic carboxylic acid group.
+
+|![Resulting list of compounds that contains at least one aromatic carboxylic acid group](/images/openms-user-tutorial/metabo/structures_filter_results.png)|
+|:--:|
+|Figure 11:  Resulting list of compounds that contains at least one aromatic carboxylic acid group.|
+
+
 #### Advanced topic: R integration
 
 KNIME provides a large number of nodes for a wide range of statistical analysis, machine learning, data processing, and
@@ -633,14 +669,14 @@ demonstrate on a minimal example how such a script is integrated.
 <div class="admonition task">
   <p class="admonition-title task-title">**Task**</p>
   <p>
-First we need some example data in KNIME, which we will generate using the **Data Generator** node. You can keep the
-default settings and execute the node. The table contains four columns, each containing random coordinates and one column
+First we need some example data in KNIME, which we will generate using the **Data Generator** node (**IO** > **Other** > **Data Generator**).
+You can keep the default settings and execute the node. The table contains four columns, each containing random coordinates and one column
 containing a cluster number (Cluster_0 to Cluster_3). Now place a **R View (Table)** node into the workflow and connect
 the upper output port of the **Data Generator** node to the input of the **R View (Table)** node. Right-click and
 configure the node. If you get an error message like `Execute failed: R_HOME does not contain a folder with name ’bin’.`
 or `Execution failed: R Home is invalid.`: please change the R settings in the preferences. To do so open **File** >
 **Preferences** > **KNIME** > **R** and enter the path to your R installation (the folder that contains the bin
-directory. (e.g., {path}`C:,Program Files,R,R-3.4.3`).
+directory. e.g., {path}`C:,Program Files,R,R-3.4.3`).
   </p>
   <p>
 If you get an error message like: ”Execute failed: Could not find Rserve package. Please install it in your R
@@ -683,61 +719,63 @@ In the following chapter, we will build a workflow with OpenMS / KNIME to quanti
 quantification is a method aiming to compare the relative amounts of proteins or peptides in two or more samples. We will
 start from the minimal workflow of the last chapter and, step-by-step, build a label-free quantification workflow.
 
+The complete workflow can be downloaded [here](https://hub.knime.com/openms-team/spaces/Tutorial%20Workflows%20OpenMS%203.0/Proteomics_LFQ~MvMoVSrTZKLI6H3B/current-state) as well.
+
 ### Peptide identification
 
-As a start, we will extend the minimal workflow so that it performs a peptide identification using the OMSSA[^9] search
-engine. Since OpenMS version 1.10, OMSSA is included in the OpenMS installation, so you do not need to  download and
+As a start, we will extend the minimal workflow so that it performs a peptide identification using the Comet search
+engine. Comet is included in the OpenMS installation, so you do not need to  download and
 install it yourself.
 
 Let’s start by replacing the input files in our **Input Files** node by the three mzML files in
 **Example Data** > **Labelfree** > **datasets** > **lfqxspikeinxdilutionx1-3.mzML**. This is a reduced toy dataset where
-each of the three runs contains a constant background of S. `pyogenes` peptides as well as human spike-in peptides in
+each of the three runs contains a constant background of `S. pyogenes` peptides as well as human spike-in peptides in
 different concentrations. [^10]
 
-- Instead of FileInfo, we want to perform OMSSA identification, so we simply replace the `FileInfo` node with the
-  `OMSSAAdapter` node **Community Nodes** > **OpenMS** > **Identification**, and we are almost done. Just make sure you
-  have connected the `ZipLoopStart` node with the `in` port of the `OMSSAAdapter` node.
-- OMSSA, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
+- Instead of FileInfo, we want to perform Comet identification, so we simply replace the `FileInfo` node with the
+  `CometAdapter` node **Community Nodes** > **OpenMSThirdParty** > **Identification**, and we are almost done. Just make sure you
+  have connected the `ZipLoopStart` node with the `in` (top) port of the `CometAdapter` node.
+- Comet, like most mass spectrometry identification engines, relies on searching the input spectra against sequence
   databases. Thus, we need to introduce a search database input. As we want to use the same search database for all of
-  our input files, we can just add a single `Input File` node to the workflow and connect it directly with the
-  `OMSSAAdapter database` port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
-  started. In order to specify the database, select {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`,
-  and we have a very basic peptide identification workflow.
+  our input files, we can just add a single `File Importer` node to the workflow and connect it directly with the
+  `CometAdapter database` (middle) port. KNIME will automatically reuse this Input node each time a new ZipLoop iteration is
+  started. In order to specify the database, [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Labelfree/databases/s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta) {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`
+- Connect the **out** port of the **CometAdapter** to **ZipLoopEnd** and we have a very basic peptide identification workflow.
 
   ```{note}
   You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows">duplicating workflows</a>
   for information on how to create copies of workflows.
   ```
-- The result of a single OMSSA run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
+- The result of a single Comet run is basically a number of peptide-spectrum-matches (PSM) with a score each, and these
   will be stored in an idXML file. Now we can run the pipeline and after execution is finished, we can have a first look
-  at the the results: just open the input files folder with a file browser and from there open an mzML file in **TOPPView**.
+  at the the results: just open the ouput folder with a file browser and from there open one of the three input mzML's in **TOPPView**.
 - Here, annotate this spectrum data file with the peptide identification results. Choose **Tools** > **Annonate with identification**
-  from the menu and select the idXML file that **OMSSAAdapter** generated (it is located within the output directory that
+  from the menu and select the idXML file that **CometAdapter** generated (it is located within the output directory that
   you specified when starting the pipeline).
 - On the right, select the tab **Identification view**. All identified peptides can be seen using this view. User can also
   browse the corresponding MS2 spectra.
 
   ```{note}
-  Opening the output file of `OMSSAAdapter` (the idXML file) directly is also possible, but the direct visusalisation of
-  an idXML files is less useful.
+  Opening the output file of `CometAdapter` (the idXML file) directly is also possible, but unless you REALLY like XML reading
+  idXML files is less useful.
   ```
 - The search results stored in the idXML file can also be read back into a KNIME table for inspection and subsequent
   analyses: Add a `TextExporter` node from **Community Nodes** > **OpenMS** > **File Handling** to your workflow and
-  connect the output port of your `OMSSAAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
+  connect the output port of your `CometAdapter` (the same port `ZipLoopEnd` is connected to) to its input port. This
   tool will convert the idXML file to a more human-readable text file which can also be read into a KNIME table using
   the `IDTextReader` node. Add an `IDTextReader` node(**Community Nodes** > **OpenMS** > **Conversion**) after
   **TextExporter** and execute it. Now you can right click `IDTextReader` and select **ID Table** to browse your peptide
   identifications.
 - From here, you can use all the tools KNIME offers for analyzing the data in this table. As a simple example, add a
-  `Histogram (local)` node (from category **Views - Local (Swing)**) node after `IDTextReader`, double-click it, select
-  `peptide_charge` as Histogram column, hit **OK**, and execute it. Right-clicking and selecting
-  **Interactive View: Histogram view** will open a plot showing the charge state distribution of your identifications.
+  `Histogram` node (from category **Views**) node after `IDTextReader`, double-click it, select
+  `peptide_charge` as Dimension, click **Save and Execute** to generate a plot showing the charge state distribution 
+  of your identifications.
 
-In the next step, we will tweak the parameters of OMSSA to better reflect the instrument’s accuracy. Also, we will
+In the next step, we will tweak the parameters of Comet to better reflect the instrument’s accuracy. Also, we will
 extend our pipeline with a false discovery rate (FDR) filter to retain only those identifications that will yeild an
 FDR of < 1 %.
 
-- Open the configuration dialog of `OMSSAAdapter`. The dataset was recorded using an LTQ Orbitrap XL mass spectrometer,
+- Open the configuration dialog of `CometAdapter`. The dataset was recorded using an LTQ Orbitrap XL mass spectrometer,
   set the precursor mass tolerance to a smaller value, say 5 ppm. Set `precursor_mass_tolerance` to 5 and
   `precursor_error_units` to `ppm`.
 
@@ -746,7 +784,6 @@ FDR of < 1 %.
   state (all node results are discarded and need to be recalculated by executing the nodes again).
   ```
 
-- Set `max_precursor_charge` to 5, in order to also search for peptides with charges up to 5.
 - Add `Carbamidomethyl (C)` as fixed modification and `Oxidation(M)` as variable modification.
 
   ```{note}
@@ -756,18 +793,19 @@ FDR of < 1 %.
   ```
 - A common step in analysis is to search not only against a regular protein database, but to also search against a decoy
   database for FDR estimation. The fasta file we used before already contains such a decoy database. For OpenMS to know
-  which OMSSA PSM came from which part of the file (i.e. target versus decoy), we have tso index the results. To this end,
+  which Comet PSM came from which part of the file (i.e. target versus decoy), we have to index the results. To this end,
   extend the workflow with a `PeptideIndexer` node **Community Nodes** > **OpenMS** > **ID Processing**. This node needs
   the idXML as input as well as the database file (see below figure).
 
   ```{tip}
-  You can direct the files of an `Input File` node to more than just one destination port.
+  You can direct the files of an `File Importer` node to more than just one destination port.
   ```
 - The decoys in the database are prefixed with “DECOY_”, so we have to set `decoy_string` to `DECOY_` and `decoy_string_position`
   to `prefix` in the configuration dialog of `PeptideIndexer`.
 - Now we can go for the FDR estimation, which the `FalseDiscoveryRate` node will calculate for us (you will find it in
-  **Community Nodes** > **OpenMS** > **ID Processing**).
-- In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **ID Processing**.
+  **Community Nodes** > **OpenMS** > **Identification Processing**). `FalseDiscoveryRate` is meant to be run on data with protein inferencences
+  (more on that later), in order to just use it for peptides, open the configure window, select "show advanced parameter" and toggle "force" to true.
+- In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **Identification Processing**.
   Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
 - Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
@@ -775,17 +813,17 @@ FDR of < 1 %.
 
   ```{note}
   The finished identification workflow is now sufficiently complex that we might want to encapsulate it in a Metanode.
-  For this, select all nodes inside the ZipLoop (including the **Input File** node) and right-click to select
+  For this, select all nodes inside the ZipLoop (including the **File Importer** node) and right-click to select
   **Collapse into Metanode** and name it ID. Metanodes are useful when you construct even larger workflows and want to
   keep an overview.
 
   ```
 
-  The below images shows OMSSA ID pipeline including FDR filtering.
+  The below images shows Comet ID pipeline including FDR filtering.
 
-  |![OMSSA ID pipeline including FDR filtering](/images/openms-user-tutorial/labelfree/PepIdFDR.png)|
+  |![Comet ID pipeline including FDR filtering](/images/openms-user-tutorial/labelfree/PepIdFDR.png)|
   |:--:|
-  |Figure 12: OMSSA ID pipeline including FDR filtering|
+  |Figure 12: Comet ID pipeline including FDR filtering|
 
 
 #### Bonus task: Identification using several search engines
@@ -799,22 +837,22 @@ It has become widely accepted that the parallel usage of different search engine
 rates in shotgun proteomics experiments. The ConsensusID algorithm is based on the calculation of posterior error
 probabilities (PEP) and a combination of the normalized scores by considering missing peptide sequences.
 
-- Next to the `OMSSAAdapter` and a `XTandemAdapter` **Community Nodes** > **OpenMS** > **Identification** node and set
-  its parameters and ports analogously to the `OMSSAAdapter`. In XTandem, to get more evenly distributed scores, we
+- Next to the `CometAdapter` add a `XTandemAdapter` **Community Nodes** > **OpenMSThirdParty** > **Identification of Proteins** > **Peptides(SearchEngines)** node and set
+  its parameters and ports analogously to the `CometAdapter`. In XTandem, to get more evenly distributed scores, we
   decrease the number of candidates a bit by setting the precursor mass tolerance to 5 ppm and the fragment mass
   tolerance to 0.1 Da.
-- To calculate the PEP, introduce each a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **ID Processing**
+- To calculate the PEP, introduce a `IDPosteriorErrorProbability` **Community Nodes** > **OpenMS** > **Identification Processing**
   node to the output of each ID engine adapter node. This will calculate the PEP to each hit and output an updated idXML.
 - To create a consensus, we must first merge these two files with a `FileMerger` node **Community Nodes** >
   **GenericKnimeNode** > **Flow** so we can then merge the corresponding IDs with a `IDMerger` **Community Nodes** >
   **OpenMS** > **File Handling**.
-- Now we can create a consensus identification with the `ConsensusID` **Community Nodes** > **OpenMS** > **ID Processing**
+- Now we can create a consensus identification with the `ConsensusID` **Community Nodes** > **OpenMS** > **Identification Processing**
   node. We can connect this to the `PeptideIndexer` and go along with our existing FDR filtering.
 
   ```{note}
   By default, X!Tandem takes additional enzyme cutting rules into consideration (besides the specified tryptic digest).
   Thus for the tutorial files, you have to set PeptideIndexer’s `enzyme→specificity` parameter to `none` to accept
-  X!Tandems non-tryptic identifications as well.
+  X!Tandem's non-tryptic identifications as well.
   ```
 
 In the end, the ID processing part of the workflow can be collapsed into a Metanode to keep the structure clean (see below figure which shows complete consensus identification workflow).
@@ -830,7 +868,7 @@ add quantification capabilities to our workflow.
 
 - Add a **FeatureFinderCentroided** node from **Community Nodes** > **OpenMS** > **Quantitation**
 which gets input from the first output port of the **ZipLoopStart** node. Also, add
-an **IDMapper** node (from **Community Nodes** > **OpenMS** > **ID Processing** ) which receives
+an **IDMapper** node (from **Community Nodes** > **OpenMS** > **Identification Processing** ) which receives
 input from the **FeatureFinderCentroided** node (Port 1) and the ID Metanode (or **IDFilter** node (Port 0) if you haven’t used the Metanode). The output of the **IDMapper** node is then connected to an in port of the **ZipLoopEnd** node.
 - `FeatureFinderCentroided` finds and quantifies peptide ion signals contained in
 the MS1 data. It reduces the entire signal, i.e., all peaks explained by one and
@@ -967,9 +1005,9 @@ quantities [fmols]</span></figcaption><!-- tex4ht:label?: x1-32001r3  -->
 |:--:|
 |Figure 18: KNIME data analysis of iPRG LFQ data.|
 
-The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**Input File** node, here with the given database from iPRG:
+The iPRG LFQ workflow (<a href="#figure-18">Fig. 18</a>) consists of an identification and a quantification part. The identification is achieved by searching the computationally calculated MS2 spectra from a sequence database (**File Importer** node, here with the given database from iPRG:
 {path}`ExampleData,iPRG2015,database,iPRG2015targetdecoynocontaminants.fasta`
-against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `OMSSAAdapter`.
+against the MS2 from the original data (**Input Files** node with all mzMLs following {path}`ExampleData,iPRG2015,datasets,JD06232014sample*.mzML` using the `CometAdapter`.
 
 ```{note}
 If you want to reproduce the results at home, you have to download the iPRG data in mzML format and perform peak picking on it or convert and pick the raw data with `msconvert`.
@@ -1058,7 +1096,7 @@ The conditions are highly dependent on the type of experiment and on which kind 
 
 #### Conversion and downstream analysis
 
-Conversion of the OpenMS-internal consensusXML format (which is an aggregation of quantified and possibly identified features across several MS-maps) to a table (in MSstats-conformant CSV format) is very easy. First, create a new KNIME workflow. Then, run the **MSstatsConverter** node with a consensusXML and the manually created (e.g. in Excel) experimental design as inputs (loaded via **Input File** nodes). The first input can be found in:
+Conversion of the OpenMS-internal consensusXML format (which is an aggregation of quantified and possibly identified features across several MS-maps) to a table (in MSstats-conformant CSV format) is very easy. First, create a new KNIME workflow. Then, run the **MSstatsConverter** node with a consensusXML and the manually created (e.g. in Excel) experimental design as inputs (loaded via **File Importer** nodes). The first input can be found in:
 
 {path}`ExampleData,iPRG2015,openmsLFQResults,iPRGlfq.consensusXML`
 
@@ -1275,7 +1313,7 @@ used the resulting protein grouping information to also quantify indistinguishab
 - As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
 set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
 - Next, we have added a third outgoing connection to our ID meta node and connected it to the second input port of **ZipLoopEnd**. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
-- Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **ID Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
+- Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **Identification Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
 
 ### Statistical validation of protein inference results
 
@@ -1463,7 +1501,7 @@ Here, we depict the analysis by `MSstatsTMT` using a segment of the isobaric ana
 
 There are two input nodes, the first one takes the result (.csv) from the **MSstatsConverter** and the second a path to the directory where the plots generated by `MSstatsTMT` should be saved. The **R source** node loads the required packages, such as `dplyr` for data wrangling, `MSstatsTMT` for analysis and `MSstats` for plotting. The inputs are further processed in the **R View** node.
 
-Here, the data of the **Input File** is loaded into **R** using the flow variable [”URI-0”]:
+Here, the data of the **File Importer** is loaded into **R** using the flow variable [”URI-0”]:
 
 ```r
 file <- substr(knime.flow.in[["URI-0"]], 6, nchar(knime.flow.in[["URI-0"]]))
@@ -1569,9 +1607,9 @@ why we need a different feature finder for metabolites lies in the step after tr
 have very different isotopic distributions. To group small molecule mass traces correctly, an aggregation model tailored to small molecules is thus needed.
 
 - Create a new workflow called for instance ”Metabolomics”.
-- Add an **Input File** node and configure it with one mzML file from the {path}`Example_Data,Metabolomics,datasets`.
+- Add an **File Importer** node and configure it with one mzML file [from the](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/) {path}`Example_Data,Metabolomics,datasets`.
 - Add a **FeatureFinderMetabo** node (from **Community Nodes** > **OpenMS** > **Quantitation**) and
-connect the first output port of the **Input File** to the **FeatureFinderMetabo**.
+connect the first output port of the **File Importer** to the **FeatureFinderMetabo**.
 -  For an optimal result adjust the following settings. Please note that some of these are advanced parameters.
 - Connect a **Output Folder** to the output of the **FeatureFinderMetabo** (see <a href="#figure-27">Fig. 27</a>).
 
@@ -1625,7 +1663,7 @@ First start TOPPView and open the example `.mzML` file (see <a href="#figure-28"
 |:--:|
 |Figure 31: Zoom of the overlay of the .mzML with the .featureXML layer. Here the individual isotope traces (blue lines) are assembled into a feature here shown as convex hull (rectangular box).|
 
-The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **Input File** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
+The workflow can be extended for multi-file analysis, here an **Input Files** node is to be used instead of the **File Importer** node. In front of the **FeatureFinderMetabo**, a **ZipLoopStart** and behind **ZipLoopEnd** has to be used, since **FeatureFinderMetabo** will analysis on file to file bases.
 
 To facilitate the collection of features corresponding to the same compound ion across different samples, an alignment of the samples’ feature maps along retention time is often helpful. In addition to local, small-scale elution differences, one can often see constant retention time shifts across large sections between samples. We can use linear transformations to correct for these large scale retention differences. This brings the majority of corresponding compound ions close to each other. Finding the correct corresponding ions is then faster and easier, as we don’t have to search as far around individual features.
 
@@ -1700,7 +1738,7 @@ At the current state we found several metabolites in the individual maps but so 
 - Add a **FileConverter** node (**Community Nodes** > **OpenMS** > **File Handling**) and connect the output of the FeatureLinkerUnlabeledQT to the incoming port.
 - Open the Configure dialog of the **FileConverter** node and select the tab **OutputTypes**. In the drop down list for FileConverter.1.out select **featureXML**.
 - Add an **AccurateMassSearch** node (**Community Nodes** > **OpenMS** > **Utilities**) and connect the output of the **FileConverter** node to the first port of the **AccurateMassSearch** node.
-- Add four **Input File** nodes and configure them with the following files:
+- Add four **File Importer** nodes and configure them with the following [files](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/databases/):
   - {path}`Example_Data,Metabolomics,databases,PositiveAdducts.tsv`
     This file specifies the list of adducts that are considered in the positive mode. Each line contains the formula and charge of an adduct separated by a semicolon (e.g. M+H;1+). The mass of the adduct is calculated automatically.
   - {path}`Example_Data,Metabolomics,databases,NegativeAdducts.tsv`
@@ -1805,7 +1843,7 @@ Here, we will use METLIN to manually validate metabolites.
 
 <div class="admonition task">
 <p class="admonition-title task-title">**Task**</p>
-Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the file in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
+Check in the .xlsx output from the Excel writer (XLS) if you can find glutathione. Use the retention time column to find the spectrum in the mzML file. Here open the [file](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/Metabolite_ID_SpectraDB_positive.mzML) in the {path}`Example_Data,Metabolomics,datasets,MetaboliteIDSpectraDBpositive.mzML` in TOPPView. The MSMS spectrum with the retention time of 67.6 s is used as example. The spectrum can be selected based on the retention time in the scan view window. Therefore the MS1 spectrum with the retention time of 66.9 s has to be double clicked and the MSMS spectra recorded in this time frame will show up. Select the tandem spectrum of Glutathione, but do not close TOPPView, yet.
 </div>
 
 (Figure_40)=
@@ -1841,7 +1879,7 @@ By using a mzML and featureXML, SIRIUS gains a lot of additional information by 
 <p class="admonition-title task-title">**Task**</p>
 Construct the workflow as shown in <a href="#figure-42">Fig. 42</a>.
 {path}`Example_Data,Metabolomics,datasets`
-Use the file `MetaboliteDeNovoID.mzML` as input for your workflow.
+Use the [file](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Metabolomics/datasets/Metabolite_DeNovoID.mzML) `MetaboliteDeNovoID.mzML` as input for your workflow.
 </div>
 
 Below we show an example workflow for de novo identification (<a href="#figure-42">Fig. 42</a>). Here, the node **FeatureFinderMetabo** is used for feature detection to annotate analytes in mz, rt, intensity and charge. This is followed by adduct grouping, trying to asses possible adducts based on the feature space using the **MetaboliteAdductDecharger**. In addition, the **HighResPrecursorMassCorrector** can use the newly generated feature information to map MS2 spectra, which were measured on one of the isotope traces to the monoisotopic precursor. This helps with feature mapping and analyte identification in the **SiriusAdapter** due to the usage of additional MS2 spectra that belong to a specific feature.
@@ -2092,7 +2130,7 @@ OpenSwathDecoyGenerator.exe -in OpenSWATH_SGS_AssayLibrary_woDecoy.TraML -out Op
 An example KNIME workflow for OpenSWATH is supplied in `Workflows` (<a href="#figure-44">Fig. 44</a>). The example dataset can be used for this workflow (filenames in brackets):
 
 1. Open {path}`Workflows,OpenSWATH.knwf` in KNIME: **File** > **Import KNIME Workflow...**
-2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **Input File** > **iRT Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHiRTAssayLibrary.TraML`).
+2. Select the normalized retention time (iRT) assay library in TraML format by double-clicking on node **File Importer** > **iRT Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHiRTAssayLibrary.TraML`).
 3. Select the SWATH MS data in mzML format as input by double-clicking on node **Input File** > **SWATH-MS files**. ({path}`ExampleData,OpenSWATH,data,splitnapedroL120420x010SW-*.nf.pp.mzML`).
 4. Select the target peptide assay library in TraML format as input by double-clicking on node **Input Files** > **Assay Library**. ({path}`ExampleData,OpenSWATH,assay,OpenSWATHSGSAssayLibrary.TraML`).
 5. Set the output destination by double-clicking on node **Output File**.
@@ -2416,9 +2454,8 @@ One basic requirement for the installation of python packages, in particular pyO
 #### Windows
 
 1. Install [Python 3.9](http://www.python.org/download/).
-2. Install [NumPy](http:///www.lfd.uci.edu/~gohlke/pythonlibs/#numpy).
-3. Install pip (see above). 
-4. On the command line:
+2. Install pip (see above). 
+3. On the command line:
     ```bash
     python -m pip install -U pip   
     python -m pip install -U numpy 
@@ -2930,7 +2967,7 @@ This section will show you where you can turn to when you encounter any problems
 
 - **KNIME**: Start with the normal log on the bottom right of KNIME. In general all warnings and errors will be listed there. If the output is not helpful enough, try to set the logging verbosity to the highest (DEBUG) under **Preferences** > **KNIME** > **Log file log level**. 
 - **OpenMS nodes**: The first step should also be the log of KNIME. Additionally, you can view the output and the errors of our tools by right-clicking on the node and selecting **View: NODENAME Std Output?error**. This shows you the output of the OpenMS executable that was called by that node. For advanced users, you can try to execute the underlying executable in your `KNIME/plugins/de.openms.platform.arch.version/payload/bin` folder, to see if the error is reproducible outside of KNIME.
-You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the Input File node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
+You can look up temporary files that are created by OpenMS nodes not connected to an Output or Viewer Node by right- clicking on a node and selecting the corresponding output view for the output you want to have a look at. The output views are located on the bottom of the menu that shows up after right-clicking. Their icon is a magnifying glass on top of a data table. The names of the output views in that menu may vary from node to node (usually a combination of ”file”,”out”,”output” and optionally its possible extensions). For example for the File Importer node you can open the information on the output files by clicking on ”loaded file”. In any case, a hierarchy of file descriptions will show up. If there are multiple files on that port they will be numbered (usually beginning from 0). Expand the information for the file you want to see and copy its URI (you might need to erase the ”file:” prefix). Now open it with an editor of your choice. Be aware that temporary files are subject to deletion and are usually only stored as long as they are actually needed. There is also a Debug mode for the GKN nodes that keeps temporary files that can be activated under **Preferences** > **KNIME** > **Generic KNIME Nodes** > **Debug mode**. For the single nodes you can also increase the debug level in the configuration dialog under the advanced parameters. You can also specify a log file there, to save the log output of a specific node on your file system.
 
 #### General
 
@@ -2973,7 +3010,7 @@ You can look up temporary files that are created by OpenMS nodes not connected t
 
 **Q:** I have problems installing RServe in my local R installation for the R KNIME Extension.
 
-**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory. See [StackOverflow question 21370363](http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl).
+**A:** If you encounter linker errors while running `install.packages(”Rserve”)` when using an R installation from homebrew, make sure gettext is installed via homebrew and you pass flags to its lib directory.
 
 **Q:** Although <kbd>Ctrl</kbd> + <kbd>Left-click</kbd> TOPPAS.app or TOPPView.app and accept the risk of a downloaded application, the icon only shortly blinks and nothing happens.
 

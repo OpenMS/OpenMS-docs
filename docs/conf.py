@@ -29,7 +29,7 @@ author = 'OpenMS Team'
 # The short major.minor.patch version.
 version = '3.1.0'
 # Short version for the latest supported KNIME
-knime_version = '5.1.0'
+knime_version = '5.2.0'
 
 # The full version, including alpha/beta/rc tags.
 release = '3.1.0dev'

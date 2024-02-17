@@ -1,12 +1,27 @@
 # OpenMS Installers
+::::{tab-set}
 
+:::{tab-item} Release
+:sync: Release
 | Platform | Name |
 |----------|------|
 | Windows   | {{ '[OpenMS-{0}-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Win64.exe)'.format(version) }} |
-| macOS | {{ '[OpenMS-{0}-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-macOS.dmg)'.format(version) }} |
+| macOS | {{ '[OpenMS-{0}-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-macOS-Intel.dmg)'.format(version) }} |
 | GNU/Linux | {{ '[OpenMS-{0}-Debian-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-Debian-Linux-x86_64.deb)'.format(version) }} | `d203985c7042b885ac1085c30a2d9f36d7609b47` |
 | Source | {{ '[OpenMS-{0}-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/{0}/OpenMS-{0}-src.tar.gz)'.format(version) }} |
+:::
 
+:::{tab-item} Nightly
+:sync: Nightly
+| Platform | Name |
+|----------|------|
+| Windows   | {{ '[OpenMS-3.1.0-Win64.exe](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-pre-nightly-latest-Win64.exe)'.format(version) }} |
+| macOS | [OpenMS-3.1.0-macOS.dmg](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-pre-nightly-latest-macOS-Intel.dmg) |
+| GNU/Linux | [OpenMS-3.1.0-Linux-x86_64.deb](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-pre-nightly-latest-Linux-x86_64.deb) |
+| Source | [OpenMS-3.1.0-src.tar.gz](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-3.1.0-src.tar.gz) |
+:::
+
+::::
 
 # Workflows
 
@@ -24,14 +39,6 @@
 |`MSstatsTMT` | Post processing workflow for using MSstatsTMT based on "Identification_quantification_with_inference_isobaric_epifany_MSstatsTMT". | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/MSstatsTMT.knwf?raw=true) |
 |`OpenSWATH` | Targeted extraction and scoring of transitions in DIA data based on an (iRT) assay library. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/OpenSWATH.knwf?raw=true) |
 |`Phosphoproteomics_ID` | Identification of Phosphorilation sites. | [Download](https://github.com/OpenMS/Tutorials/blob/master/Workflows/Phosphoproteomics_ID.knwf?raw=true) |
-
-# OpenMS Releases
-
-| Release                                                |  Installers |
-|--------------------------------------------------------|-------------|
-| Stable release     | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/) |
-| Release candidates | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/RC/) |
-| Nightly release    | [Archive Link](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/) |
 
 # Other Resources
 

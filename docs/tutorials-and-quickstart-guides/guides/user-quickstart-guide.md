@@ -24,7 +24,7 @@ Before using OpenMS, become familiar with the following terms:
 
 ## How to run a Tool
 
-In general TOPP tools are invoked via the command line, directly or indirectly (e.g. via worflow systems such as KNIME, Nextflow, snakemake, or {term}`TOPPAS`).
+In general TOPP tools are invoked via the command line, directly or indirectly (e.g. via worflow systems such as {term}`KNIME`, {term}`Nextflow`, snakemake, or {term}`TOPPAS`).
 
 ## Adapt pipeline parameters
 

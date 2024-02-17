@@ -11,4 +11,4 @@ and hand the resulting data to other tools, or use other workflow systems, such 
 The strong point of TOPPAS is that it ships with OpenMS natively, thus requires no extra installation effort.
 It also has a very shallow learning curve, making it very intuitive to create workflows.
 
-See [TOPPAS tutorial](https://openms.de/current_doxygen/html/TOPPAS_tutorial.html) for more details.
+See [TOPPAS tutorial](https://openms.de/doxygen/nightly/html/TOPPAS_tutorial.html) for more details.

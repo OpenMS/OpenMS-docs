@@ -5,7 +5,7 @@ To contribute to OpenMS:
 
 - Familiarise yourself with the [OpenMS online documentation](../../index.rst).
 - Learn how to [build OpenMS](../../develop-with-openms/build-openms-from-source.md).
-- Check out the [OpenMS tutorial for developers](https://openms.readthedocs.io/en/latest/develop-with-openms/developer-tutorial.html#developer-tutorial).
+- Check out the [OpenMS tutorial for developers](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/tutorial.html#tutorial_developing).
 
 For any questions, please [contact us](/quick-reference/contact-us.md).
 
