@@ -2454,9 +2454,8 @@ One basic requirement for the installation of python packages, in particular pyO
 #### Windows
 
 1. Install [Python 3.9](http://www.python.org/download/).
-2. Install [NumPy](http:///www.lfd.uci.edu/~gohlke/pythonlibs/#numpy).
-3. Install pip (see above). 
-4. On the command line:
+2. Install pip (see above). 
+3. On the command line:
     ```bash
     python -m pip install -U pip   
     python -m pip install -U numpy 
