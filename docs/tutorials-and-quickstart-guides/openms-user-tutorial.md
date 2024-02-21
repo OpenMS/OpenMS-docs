@@ -656,7 +656,7 @@ The following figure shows resulting list of compounds that contains at least on
 -->
 
 
-## Label-free quantification of peptides
+## Label-free quantification of peptides and proteins
 
 ### Introduction
 
@@ -887,22 +887,138 @@ You have now constructed an entire identification and label-free feature mapping
 |:--:|
 |Figure 17: Simple KNIME data analysis example for LFQ|
 
-### Identification and quantification of the iPRG2015 data with subsequent MSstats analysis
 
-Advanced downstream data analysis of quantitative mass spectrometry-based proteomics data can be performed using MSstats[^11]. This tool can be combined with
-an OpenMS preprocessing pipeline (e.g. in KNIME). The OpenMS experimental design is used to present the data in an MSstats-conformant way for the analysis. Here,
-we give an example how to utilize these resources when working with quantitative label-free data. We describe how to use OpenMS and MSstats for the analysis of the
-ABRF iPRG2015 dataset[^12].
+### Extending the LFQ workflow by protein inference and quantification
+
+We have made the following changes compared to the original label-free quantification workflow from the last chapter:
+
+- First, we have added a **ProteinQuantifier** node and connected its input port to the output port of the **ConsensusMapNormalizer** node.
+- This already enables protein quantification. **ProteinQuantifier** quantifies peptides by summarizing over all observed charge states and proteins by summarizing over their quantified peptides. It stores two output files, one for the quantified peptides and one for the proteins.
+- In this example, we consider only the protein quantification output file, which is written to the first output port of **ProteinQuantifier**.
+-  Because there is no dedicated node in KNIME to read back the **ProteinQuantifier** output file format into a KNIME table, we have to use a workaround. Here, we have added an additional URI Port to Variable node which converts the name of the output file to a so-called “flow variable” in KNIME. This variable is passed on to the next node **CSV Reader**, where it is used to specify the name of the input file to be read. If you double-click on **CSV Reader**, you will see that the text field, where you usually enter the location of the CSV file to be read, is greyed out. Instead, the flow variable is used to specify the location, as indicated by the small green button with the “v=?” label on the right.
+- The table containing the **ProteinQuantifier** results is filtered one more time in order to remove decoy proteins. You can have a look at the final list of quantified protein groups by right-clicking the **Row Filter** and selecting **Filtered**.
+- By default, i.e., when the second input port `protein_groups` is not used, **ProteinQuantifier** quantifies proteins using only the unique peptides, which usually results in rather low numbers of quantified proteins.
+- In this example, however, we have performed protein inference using Fido and
+  used the resulting protein grouping information to also quantify indistinguishable proteins. In fact, we also used a greedy method in **FidoAdapter** (parameter `greedy_group_resolution`) to uniquely assign the peptides of a group to the most probable protein(s) in the respective group. This boosts the number of quantifications but slightly raises the chances to yield distorted protein quantities.
+- As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
+  set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
+- Next, we have added a third outgoing connection to our ID meta node and connected it to the second input port of `ZipLoopEnd`. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
+- Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **Identification Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
+
+### Statistical validation of protein inference results
+
+In the following section, we will explain the subworkflow contained in the **Protein inference with FidoAdapter** meta node.
+
+#### Data preparation
+
+For downstream analysis on the protein ID level in KNIME, it is again necessary to convert the idXML-file-format result generated from **FidoAdapter** into a KNIME table.
+
+- We use the **MzTabExporter** to convert the inference results from **FidoAdapter** to a human readable, tab-separated mzTab file. mzTab contains multiple sections,
+  that are all exported by default, if applicable. This file, with its different sections can again be read by the **MzTabReader** that produces one output in KNIME table
+  format (triangle ports) for each section. Some ports might be empty if a section did not exist. Of course, we continue by connecting the downstream nodes with the protein section output (second port).
+- Since the protein section contains single proteins as well as protein groups, we filter them for single proteins with the standard **Row Filter**.
+
+#### ROC curve of protein ID
+
+ROC Curves (Receiver Operating Characteristic curves) are graphical plots that visualize sensitivity (true-positive rate) against fall-out (false positive rate). They are often used to judge the quality of a discrimination method like e.g., peptide or protein identification engines. ROC Curve already provides the functionality of drawing ROC curves for binary classification problems. When configuring this node, select the `opt_global_target_decoy` column as the class (i.e. target outcome) column. We want to find out, how good our inferred protein probability discriminates between them,
+therefore add `best_search_engine_score[1]` (the inference engine score is treated like a peptide search engine score) to the list of *”Columns containing positive class probabilities”*. View the plot by right-clicking and selecting **View: ROC Curves**. A perfect classifier has
+an area under the curve (AUC) of 1.0 and its curve touches the upper left of the plot. However, in protein or peptide identification, the ground-truth (i.e., which target
+identifications are true, which are false) is usually not known. Instead, so called pseudoROC Curves are regularly used to plot the number of target proteins against the false
+discovery rate (FDR) or its protein-centric counterpart, the q-value. The FDR is approximated by using the target-decoy estimate in order to distinguish true IDs from
+false IDs by separating target IDs from decoy IDs.
+
+#### Posterior probability and FDR of protein IDs
+
+ROC curves illustrate the discriminative capability of the scores of IDs. In the case of protein identifications, Fido produces the posterior probability of each protein as
+the output score. However, a perfect score should not only be highly discriminative (distinguishing true from false IDs), it should also be “calibrated” (for probability indicating that all IDs with reported posterior probability scores of 95% should roughly have a 5% probability of being false. This implies that the estimated number of false
+positives can be computed as the sum of posterior error probabilities ( = 1 - posterior probability) in a set, divided by the number of proteins in the set. Thereby a
+posterior-probability-estimated FDR is computed which can be compared to the actual target-decoy FDR. We can plot calibration curves to help us visualize the quality of
+the score (when the score is interpreted as a probability as Fido does), by comparing how similar the target-decoy estimated FDR and the posterior probability estimated
+FDR are. Good results should show a close correspondence between these two measurements, although a non-correspondence does not necessarily indicate wrong results.
+
+The calculation is done by using a simple R script in R snippet. First, the target decoy protein FDR is computed as the proportion of decoy proteins among all significant protein IDs. Then posterior probabilistic-driven FDR is estimated by the average of the posterior error probability of all significant protein IDs. Since FDR is the property for a group of protein IDs, we can also calculate a local property for each protein: the q-value of a certain protein ID is the minimum FDR of any groups of protein IDs
+that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see <a href="#figure-22">Fig. 22</a>).
+(Figure_21)=
+|![The workflow of statistical analysis of protein inference results](/images/openms-user-tutorial/protein-inference/inference_metanode.png)|
+|:--:|
+|Figure 21: The workflow of statistical analysis of protein inference results|
+(Figure_22)=
+|![The pseudo-ROC Curve of protein IDs](/images/openms-user-tutorial/protein-inference/proteinFDR.png)|
+|:--:|
+|Figure 22: The pseudo-ROC Curve of protein IDs. The accumulated number of protein IDs is plotted on two kinds of scales: target-decoy protein FDR and Fido posterior probability estimated FDR. The largest value of posterior probability estimated FDR is already smaller than 0.04, this is because the posterior probability output from Fido is generally very high|
+
+
+## Advanced topic: R integration
+
+KNIME provides a large number of nodes for a wide range of statistical analysis, machine learning, data processing, and
+visualization. Still, more recent statistical analysis methods, specialized visualizations or cutting edge algorithms
+may not be covered in KNIME. In order to expand its capabilities beyond the readily available nodes, external scripting
+languages can be integrated. In this tutorial, we primarily use scripts of the powerful statistical computing language R.
+Note that this part is considered advanced and might be difficult to follow if you are not familiar with R. In this case
+you might skip this part.
+
+**R View (Table)** allows to seamlessly include R scripts into KNIME. We will
+demonstrate on a minimal example how such a script is integrated.
+
+<div class="admonition task">
+  <p class="admonition-title task-title">**Task**</p>
+  <p>
+First we need some example data in KNIME, which we will generate using the **Data Generator** node (**IO** > **Other** > **Data Generator**).
+You can keep the default settings and execute the node. The table contains four columns, each containing random coordinates and one column
+containing a cluster number (Cluster_0 to Cluster_3). Now place a **R View (Table)** node into the workflow and connect
+the upper output port of the **Data Generator** node to the input of the **R View (Table)** node. Right-click and
+configure the node. If you get an error message like `Execute failed: R_HOME does not contain a folder with name ’bin’.`
+or `Execution failed: R Home is invalid.`: please change the R settings in the preferences. To do so open **File** >
+**Preferences** > **KNIME** > **R** and enter the path to your R installation (the folder that contains the bin
+directory. e.g., {path}`C:,Program Files,R,R-3.4.3`).
+  </p>
+  <p>
+If you get an error message like: ”Execute failed: Could not find Rserve package. Please install it in your R
+installation by running ”install.packages(’Rserve’)”.” You may need to run your R binary as administrator (In windows
+explorer: right-click ”Run as administrator”) and enter install.packages(’Rserve’) to install the package.
+  </p>
+  <p>
+If R is correctly recognized we can start writing an R script. Consider that we are interested in plotting the first and
+second coordinates and color them according to their cluster number. In R this can be done in a single line. In the
+**R view (Table)** text editor, enter the following code:
+```r
+plot(x=knime.in$Universe_0_0, y=knime.in$Universe_0_1, main="Plotting column Universe_0_0 vs. Universe_0_1", col=knime.in$"Cluster Membership")
+```
+  </p>
+  <p>
+**Explanation:** The table provided as input to the **R View (Table)** node is available as R **data.frame** with name
+`knime.in`. Columns (also listed on the left side of the R View window) can be accessed in the usual R way by first
+specifying the `data.frame` name and then the column name (e.g., `knime.in$Universe_0_0`). `plot` is the plotting function
+we use to generate the image. We tell it to use the data in column `Universe_0_0` of the dataframe object **knime.in**
+(denoted as `knime.in$Universe_0_0`) as x-coordinate and the other column `knime.in$Universe_0_1` as y-coordinate in the
+plot. `main` is simply the main title of the plot and `col` the column that is used to determine the color (in this case
+it is the `Cluster Membership` column).
+  </p>
+  <p>
+Now press the <kbd>Eval script</kbd> and <kbd>Show plot</kbd> buttons.
+  </p>
+</div>
+
+```{note}
+Note that we needed to put some extra quotes around `Cluster Membership`. If we omit those, R would interpret the column
+name only up to the first space `(knime.in$Cluster)` which is not present in the table and leads to an error. Quotes are
+regularly needed if column names contain spaces, tabs or other special characters like $ itself.
+```
+
+## Using MSstats in a KNIME workflow
+
+The R package `MSstats` can be used for statistical relative quantification of proteins and peptides in mass spectrometry-based proteomics. Supported are label-free as well as labeled experiments in combination with data-dependent, targeted and data independent acquisition. Inputs can be identified and quantified entities (peptides or proteins) and the output is a list of differentially abundant entities, or summaries of their relative abundance. It depends on accurate feature detection, identification
+and quantification which can be performed e.g. by an OpenMS workflow. MSstats can be used for data processing & visualization, as well as statistical modeling & inference. Please see [^11] and the [MSstats](http://msstats.org) website for further
+information.
+
+### Identification and quantification of the iPRG2015 data with subsequent MSstats analysis 
+
+Here, we describe how to use OpenMS and MSstats for the analysis of the ABRF iPRG2015 dataset[^12].
 
 ```{note}
 Reanalysing the full dataset from scratch would take too long. In the following tutorial, we will focus on just the conversion process and the downstream analysis.
 ```
 
-#### Excursion MSstats
-
-The R package `MSstats` can be used for statistical relative quantification of proteins and peptides in mass spectrometry-based proteomics. Supported are label-free as well as labeled experiments in combination with data-dependent, targeted and data independent acquisition. Inputs can be identified and quantified entities (peptides or proteins) and the output is a list of differentially abundant entities, or summaries of their relative abundance. It depends on accurate feature detection, identification
-and quantification which can be performed e.g. by an OpenMS workflow. MSstats can be used for data processing & visualization, as well as statistical modeling & inference. Please see [^11] and the [MSstats](http://msstats.org) website for further
-information.
 
 #### Dataset
 
@@ -1228,80 +1344,12 @@ The Volcano plots show differently expressed spiked-in proteins. In the left plo
 The full analysis workflow can be found under:
 {path}`Workflows,MSstatsstatPostProcessingiPRG2015.knwf`
 
-## Protein inference
 
-In the last chapter, we have successfully quantified peptides in a label-free experiment. As a next step, we will further extend this label-free quantification workflow by protein inference and protein quantification capabilities. This workflow uses some of the more advanced concepts of KNIME, as well as a few more nodes containing R code. For these reasons, you will not have to build it yourself. Instead, we have already prepared and copied this workflow to the USB sticks. Just import {path}`Workflows,labelfree_with_protein_quantification.knwf` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it.
-
-Before you can execute the workflow, you again have to correct the locations of
-the files in the Input Files nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
-
-### Extending the LFQ workflow by protein inference and quantification
-
-We have made the following changes compared to the original label-free quantification workflow from the last chapter:
-
-- First, we have added a **ProteinQuantifier** node and connected its input port to the output port of the **ConsensusMapNormalizer** node.
-- This already enables protein quantification. **ProteinQuantifier** quantifies peptides by summarizing over all observed charge states and proteins by summarizing over their quantified peptides. It stores two output files, one for the quantified peptides and one for the proteins.
-- In this example, we consider only the protein quantification output file, which is written to the first output port of **ProteinQuantifier**.
--  Because there is no dedicated node in KNIME to read back the **ProteinQuantifier** output file format into a KNIME table, we have to use a workaround. Here, we have added an additional URI Port to Variable node which converts the name of the output file to a so-called “flow variable” in KNIME. This variable is passed on to the next node **CSV Reader**, where it is used to specify the name of the input file to be read. If you double-click on **CSV Reader**, you will see that the text field, where you usually enter the location of the CSV file to be read, is greyed out. Instead, the flow variable is used to specify the location, as indicated by the small green button with the “v=?” label on the right.
-- The table containing the **ProteinQuantifier** results is filtered one more time in order to remove decoy proteins. You can have a look at the final list of quantified protein groups by right-clicking the **Row Filter** and selecting **Filtered**.
-- By default, i.e., when the second input port `protein_groups` is not used, **ProteinQuantifier** quantifies proteins using only the unique peptides, which usually results in rather low numbers of quantified proteins.
-- In this example, however, we have performed protein inference using Fido and
-  used the resulting protein grouping information to also quantify indistinguishable proteins. In fact, we also used a greedy method in **FidoAdapter** (parameter `greedy_group_resolution`) to uniquely assign the peptides of a group to the most probable protein(s) in the respective group. This boosts the number of quantifications but slightly raises the chances to yield distorted protein quantities.
-- As a prerequisite for using **FidoAdapter**, we have added an **IDPosteriorErrorProbability** node within the ID meta node, between the **XTandemAdapter** (note the replacement of OMSSA because of ill-calibrated scores) and **PeptideIndexer**. We have
-  set its parameter `prob_correct` to `true`, so it computes posterior probabilities instead of posterior error probabilities (1 - PEP). These are stored in the resulting idXML file and later on used by the Fido algorithm. Also note that we excluded FDR filtering from the standard meta node. Harsh filtering before inference impacts the calibration of the results. Since we filter peptides before quantification though, no potentially random peptides will be included in the results anyway.
-- Next, we have added a third outgoing connection to our ID meta node and connected it to the second input port of `ZipLoopEnd`. Thus, KNIME will wait until all input files have been processed by the loop and then pass on the resulting list of idXML files to the subsequent IDMerger node, which merges all identifications from all idXML files into a single idXML file. This is done to get a unique assignment of peptides to proteins over all samples.
-- Instead of the meta node **Protein inference** with **FidoAdapter**, we could have just used a **FidoAdapter** node ( **Community Nodes** > **OpenMS** > **Identification Processing**). However, the meta node contains an additional subworkflow which, besides calling **FidoAdapter**, performs a statistical validation (e.g. (pseudo) receiver operating curves; ROCs) of the protein inference results using some of the more advanced KNIME and R nodes. The meta node also shows how to use **MzTabExporter** and **MzTabReader**.
-
-### Statistical validation of protein inference results
-
-In the following section, we will explain the subworkflow contained in the **Protein inference with FidoAdapter** meta node.
-
-#### Data preparation
-
-For downstream analysis on the protein ID level in KNIME, it is again necessary to convert the idXML-file-format result generated from **FidoAdapter** into a KNIME table.
-
-- We use the **MzTabExporter** to convert the inference results from **FidoAdapter** to a human readable, tab-separated mzTab file. mzTab contains multiple sections,
-  that are all exported by default, if applicable. This file, with its different sections can again be read by the **MzTabReader** that produces one output in KNIME table
-  format (triangle ports) for each section. Some ports might be empty if a section did not exist. Of course, we continue by connecting the downstream nodes with the protein section output (second port).
-- Since the protein section contains single proteins as well as protein groups, we filter them for single proteins with the standard **Row Filter**.
-
-#### ROC curve of protein ID
-
-ROC Curves (Receiver Operating Characteristic curves) are graphical plots that visualize sensitivity (true-positive rate) against fall-out (false positive rate). They are often used to judge the quality of a discrimination method like e.g., peptide or protein identification engines. ROC Curve already provides the functionality of drawing ROC curves for binary classification problems. When configuring this node, select the `opt_global_target_decoy` column as the class (i.e. target outcome) column. We want to find out, how good our inferred protein probability discriminates between them,
-therefore add `best_search_engine_score[1]` (the inference engine score is treated like a peptide search engine score) to the list of *”Columns containing positive class probabilities”*. View the plot by right-clicking and selecting **View: ROC Curves**. A perfect classifier has
-an area under the curve (AUC) of 1.0 and its curve touches the upper left of the plot. However, in protein or peptide identification, the ground-truth (i.e., which target
-identifications are true, which are false) is usually not known. Instead, so called pseudoROC Curves are regularly used to plot the number of target proteins against the false
-discovery rate (FDR) or its protein-centric counterpart, the q-value. The FDR is approximated by using the target-decoy estimate in order to distinguish true IDs from
-false IDs by separating target IDs from decoy IDs.
-
-#### Posterior probability and FDR of protein IDs
-
-ROC curves illustrate the discriminative capability of the scores of IDs. In the case of protein identifications, Fido produces the posterior probability of each protein as
-the output score. However, a perfect score should not only be highly discriminative (distinguishing true from false IDs), it should also be “calibrated” (for probability indicating that all IDs with reported posterior probability scores of 95% should roughly have a 5% probability of being false. This implies that the estimated number of false
-positives can be computed as the sum of posterior error probabilities ( = 1 - posterior probability) in a set, divided by the number of proteins in the set. Thereby a
-posterior-probability-estimated FDR is computed which can be compared to the actual target-decoy FDR. We can plot calibration curves to help us visualize the quality of
-the score (when the score is interpreted as a probability as Fido does), by comparing how similar the target-decoy estimated FDR and the posterior probability estimated
-FDR are. Good results should show a close correspondence between these two measurements, although a non-correspondence does not necessarily indicate wrong results.
-
-The calculation is done by using a simple R script in R snippet. First, the target decoy protein FDR is computed as the proportion of decoy proteins among all significant protein IDs. Then posterior probabilistic-driven FDR is estimated by the average of the posterior error probability of all significant protein IDs. Since FDR is the property for a group of protein IDs, we can also calculate a local property for each protein: the q-value of a certain protein ID is the minimum FDR of any groups of protein IDs
-that contain this protein ID. We plot the protein ID results versus two different kinds of FDR estimates in R View(Table) (see <a href="#figure-22">Fig. 22</a>).
-(Figure_21)=
-|![The workflow of statistical analysis of protein inference results](/images/openms-user-tutorial/protein-inference/inference_metanode.png)|
-|:--:|
-|Figure 21: The workflow of statistical analysis of protein inference results|
-(Figure_22)=
-|![The pseudo-ROC Curve of protein IDs](/images/openms-user-tutorial/protein-inference/proteinFDR.png)|
-|:--:|
-|Figure 22: The pseudo-ROC Curve of protein IDs. The accumulated number of protein IDs is plotted on two kinds of scales: target-decoy protein FDR and Fido posterior probability estimated FDR. The largest value of posterior probability estimated FDR is already smaller than 0.04, this is because the posterior probability output from Fido is generally very high|
-
-## Isobaric analysis
+### Isobaric analysis workflow
 
 In the last chapters, we identified and quantified peptides in a label-free experiment.
 
 In this section, we would like to introduce a possible workflow for the analysis of isobaric data.
-
-### Isobaric analysis workflow
-
 Let’s have a look at the workflow (see <a href="#figure-23">Fig 23</a>).
 
 (Figure_23)=
@@ -1318,7 +1366,7 @@ To reduce the complexity of the data for later inference the q-value estimation 
 
 Please import the workflow from {path}`Workflows,IdentificationquantificationisobaricinferenceepifanyMSstatsTMT` into KNIME via the menu entry **File** > **Import KNIME workflow** > **Select file** and double-click the imported workflow in order to open it. Before you can execute the workflow, you have to correct the locations of the files in the `Input Files` nodes (don’t forget the one for the FASTA database inside the “ID” meta node). Try and run your workflow by executing all nodes at once.
 
-### Excursion MSstatsTMT
+#### Excursion MSstatsTMT
 
 The R package `MSstatsTMT` can be used for protein significance analysis in shotgun mass spectrometry-based proteomic experiments with tandem mass tag (TMT) labeling. `MSstatsTMT` provides functionality for two types of analysis & their visualization: Protein summarization based on peptide quantification and Model-based group comparison to detect significant changes in abundance. It depends on accurate feature detection, identification and quantification which can be performed e.g. by an OpenMS workflow.
 
@@ -1326,7 +1374,7 @@ In general, `MSstatsTMT` can be used for data processing & visualization, as wel
 
 There is also an [online lecture](https://youtu.be/3CDnrQxGLbA) and tutorial for `MSstatsTMT` from the May Institute Workshop 2020.
 
-### Dataset and experimental design
+#### Dataset and experimental design
 
 We are using the MSV000084264 ground truth dataset, which consists of TMT10plex controlled mixes of different concentrated UPS1 peptides spiked into SILAC HeLa peptides measured in a dilution series https://www.omicsdi.org/dataset/massive/MSV000084264. <a href="#figure-24">Figure 24</a> shows the experimental design. In this experiment, 5 different TMT10plex mixtures – different labeling strategies – were analysed. These were measured in triplicates represented by the 15 MS runs (3 runs each). The example data, database and experimental design to run the workflow can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Data/isobaric_MSV000084264/).
 
@@ -1527,9 +1575,10 @@ Here, we have a example output of the **R View**, which depicts the significant 
 
 All plots are saved to the in the beginning specified output directory in addition.
 
-### Note
+#### Note
 
 The isobaric analysis does not always has to be performed on protein level, for example for phosphoproteomics studies one is usually interested on the peptide level - in addition inference on peptides with post-translational modification is not straight forward. Here, we present and additonal workflow on peptide level, which can potentially be adapted and used for such cases. Please see {path}`Workflows,IdentificationquantificationisobaricMSstatsTMT`
+
 
 ## Label-free quantification of metabolites
 
