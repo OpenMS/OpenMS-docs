@@ -478,7 +478,7 @@ Those *knwf* files can again be imported by selecting: **File** > **Import KNIME
 
 ```{note}
 For your convenience we added all workflows discussed in this tutorial to the **Workflows** folder on the USB Stick.
- Additionally, the workflow files can be found on <a href="../../downloads.html#workflows">workflow downloads</a>. If you want to check
+ Additionally, the workflow files can be found on <a href="../downloads.html#workflows">workflow downloads</a>. If you want to check
  your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding
  *knwf* file and after that double-click it in your KNIME Workflow repository to open it.
 ```
