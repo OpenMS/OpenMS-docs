@@ -11,5 +11,5 @@ maxdepth: 1
 
 knime/installation.md
 knime/workflows.md
-knime/tutorial.md
+OpenMS KNIME User Tutorial <../tutorials-and-quickstart-guides/openms-user-tutorial.md>
 ```
