@@ -102,8 +102,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
 #
 html_theme = 'furo'
 
-html_favicon = '../assets/logo/OpenMS_transparent_background.png'
-html_logo = '../assets/logo/OpenMS_transparent_background.png'
+html_favicon = '../assets/logo/OpenMS.svg'
+html_logo = '../assets/logo/OpenMS.svg'
 html_theme_options = {
     "navigation_with_keys": True,
     "light_css_variables": {
