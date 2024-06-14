@@ -1,118 +1,75 @@
 About OpenMS
 ============
 
-`OpenMS <http://www.openms.org/>`_
-is an open-source software C++ library for :term:`LC-MS` data management and
-analyses. It offers an infrastructure for rapid development of mass
-spectrometry related software. OpenMS is free software available under the
-three clause BSD license and runs under Windows, macOS, and Linux.
+What is OpenMS
+--------------
 
-It comes with a vast variety of pre-built and ready-to-use tools for proteomics
-and metabolomics data analysis (:term:`TOPP Tools`) as well as powerful 1D, 2D and 3D
-visualization (:term:`TOPPView`).
+`OpenMS <http://www.openms.org/>`_ is a free, open-source framework based on a C++ library with Python bindings. It is commonly used for liquid
+chromatography-mass spectrometry (:term:`LC-MS`) data management and analyses. OpenMS provides an infrastructure for the rapid
+development of mass spectrometry related software as well as a rich toolset built on top of it. OpenMS is available
+under the `three clause BSD licence <https://github.com/OpenMS/OpenMS/blob/develop/LICENSE>`_ and runs under Windows, macOS, and Linux operating systems.
 
-OpenMS offers analyses for various quantitation protocols, including label-free
-quantitation, :term:`SILAC`, :term:`iTRAQ`, :term:`TMT`, :term:`SRM`, :term:`SWATH`, etc.
+.. figure:: _images/introduction/openms-overview.jpg
+    :target: https://www.nature.com/articles/s41592-024-02197-7
+    :align: left
+    :alt: OpenMS overview
 
-It provides built-in algorithms for de-novo identification and database search,
-as well as adapters to other state-of-the art tools like X!Tandem, :term:`Mascot`, etc. It supports easy integration of OpenMS built tools into workflow
-engines like :term:`KNIME`, Galaxy, WS-Pgrade, and :term:`TOPPAS` via the :term:`TOPP tools` concept and
-a unified parameter handling via a 'common tool description' (CTD) scheme.
+OpenMS developers can create new C++ algorithms and tools, while users can execute tools or implement new algorithms or scripts in Python.
+Workflows integrate pyOpenMS scripts and OpenMS tools with third-party tools and external Python libraries to create scalable data-processing pipelines.
+For deployment, users can use pyOpenMS with web frameworks or deploy workflows on desktop, high-performance computing (HPC) or cloud infrastructure using one of the community-supported workflow systems.
 
-.. important::
-  As part of the **Center for Integrative Bioinformatics** (CiBi) in the **German Network for Bioinformatics**
-  `deNBI <https://www.denbi.de/>`_,
-  OpenMS is currently focusing the development efforts on the integration of OpenMS into KNIME. KNIME is a well-established
-  data analysis framework that supports the generation of workflows for data analysis. Using a Common Tool Description
-  (CTD) file which is writeable by every TOPP tool and a node generator program (`Generic KNIME Nodes <https://github.com/genericworkflownodes/GenericKnimeNodes>`_), all   :term:`TOPP tools` can be made available to run in KNIME.
-
-With :term:`pyOpenMS`, OpenMS offers Python bindings to a large part of the :term:`OpenMS API`
-to enable rapid algorithm development. OpenMS supports the Proteomics Standard
-Initiative (PSI) formats for MS data. The main contributors of OpenMS are
+OpenMS supports the Proteomics Standard Initiative (PSI) formats for MS data. The main contributors of OpenMS are
 currently the Eberhard-Karls-Universität in Tübingen, the Freie Universität
 Berlin, and the University of Toronto.
 
-Contents
---------
+
+Get involved
+------------
+OpenMS is developed by a group of `core developers <https://openms.de/contributors/>`_ and the community. You can help spreading the idea of open source mass spectrometry analysis by:
+
+* Contribute to the development by giving us your feedback about the OpenMS project on `Discord <https://discord.gg/aJyWqf6uCn>`_ or become active by `developing new tools yourself </manual/develop>`_.
+* Donate to the OpenMS project using our `opencollective <https://opencollective.com/openms>`_ account. All donations will be used strictly to fund the development of Openms’s open source software, documentation, and community.
+* Promote OpenMS either online (`e.g. on X <https://x.com/OpenMSTeam>`_) or in your work group.
+
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Introduction
-   :titlesonly:
+    :maxdepth: 1
+    :caption: About
+    :hidden:
 
-   introduction/about-open-ms.md
-   introduction/extended-background.md
-   introduction/entry-points-to-openms.md
-   
-
-.. toctree::
-   :maxdepth: 2
-   :caption: OpenMS Applications and Tools
-
-   openms-applications-and-tools/installation.md
-   openms-applications-and-tools/openms-graphical-user-interfaces.md
-   openms-applications-and-tools/topp-tools.md
-   openms-applications-and-tools/command-line-interface.md
-   openms-applications-and-tools/visualize-with-openms.md
+    about/installation.md
+    about/communication.md
+    about/learning/background.md
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Run Workflows with OpenMS Tools
+    :maxdepth: 1
+    :caption: Getting Started
+    :hidden:
 
-   run-workflows-with-openms-tools/recommended-workflow-systems.md
-   run-workflows-with-openms-tools/openms-in-knime.md
-   run-workflows-with-openms-tools/openms-in-nextflow.md
-   run-workflows-with-openms-tools/openms-on-galaxy.md
-   run-workflows-with-openms-tools/openms-in-toppas.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Tutorials and Quick Start Guides
-
-   tutorials-and-quickstart-guides/guides/user-quickstart-guide.md
-   tutorials-and-quickstart-guides/openms-user-tutorial.md
-   tutorials-and-quickstart-guides/tutorials.md
+    getting-started/introduction.rst
+    getting-started/webapps.md
+    getting-started/workflows.md
+    getting-started/visualize-with-openms.md
+    getting-started/topp-tools.md
+    pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Develop with OpenMS
+    :maxdepth: 1
+    :caption: Manual
+    :hidden:
 
-   Developer Quickstart Guide <https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/tutorial.html>
-   develop-with-openms/openms-core-cplusplus-library.md
-   OpenMS API Reference <https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/index.html>
-   pyOpenMS <https://pyopenms.readthedocs.io/en/latest/>
-   develop-with-openms/build-openms-from-source.md
-   develop-with-openms/link-external-code-to-openms.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contribute to OpenMS
-
-   tutorials-and-quickstart-guides/guides/contributors-quickstart-guide.md
-   contribute-to-openms/openms-git-workflow.md
-   contribute-to-openms/write-and-label-github-issues.md
-   contribute-to-openms/adding-new-tool-to-topp.md
-   contribute-to-openms/pull-request-checklist.md
-   contribute-to-openms/reporting-bugs-and-issues.md
-   contribute-to-openms/advanced.md
+    manual/contribute.md
+    manual/develop.md
+    manual/additional.md
+    API Reference <https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/TOPP_documentation.html>
+    manual/glossary.md
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Downloads
+    :maxdepth: 1
+    :caption: Tutorials
+    :hidden:
 
-   downloads.md
+    tutorials/knime-user-tutorial.rst
+    tutorials/toppview-user-tutorial.md
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Quick Reference
 
-   quick-reference/contributor-faq.md
-   quick-reference/developer-faq.md
-   quick-reference/contact-us.md
-   quick-reference/glossary.md
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
