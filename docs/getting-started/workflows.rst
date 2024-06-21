@@ -101,6 +101,25 @@ workflow systems designed to make workflow creation and maintenance more fun:
 
         OpenMS' build-in workflow system, with limited capabilities but easy to use and tailored to TOPP tools.
 
+    .. grid-item-card:: CWL
+        :img-top: /_images/introduction/CWL-4K.png
+        :link: /getting-started/cwl-get-started
+        :link-type: doc
+        :class-card: only-light
+        :class-img-top: halfwidth
+        :columns: 12
+
+        The Common Workflow Language standards are automatically supported by every OpenMS tool from version 3.2 and onwards.
+
+    .. grid-item-card:: CWL
+        :img-top: /_images/introduction/CWL-4K.png
+        :link: /getting-started/cwl-get-started
+        :link-type: doc
+        :class-card: only-dark
+        :class-img-top: halfwidth
+        :columns: 12
+
+        The Common Workflow Language standards are automatically supported by every OpenMS tool from version 3.2 and onwards.
 
 .. toctree::
     :maxdepth: 1
@@ -110,3 +129,4 @@ workflow systems designed to make workflow creation and maintenance more fun:
     /getting-started/nextflow-get-started.md
     /getting-started/galaxy-get-started.md
     /getting-started/toppas-get-started.md
+    /getting-started/cwl-get-started.md

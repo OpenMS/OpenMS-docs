@@ -15,7 +15,7 @@ You can run OpenMS TOPP tools from the command line using your custom scripts, o
 workflow systems designed to make workflow creation and maintenance more fun, find out more in :ref:`workflows`.
 
 .. list-table::
-   :widths: 25 25 25 25
+   :widths: 20 20 20 20 20
    :class: borderless only-light
    :align: center
 
@@ -35,9 +35,13 @@ workflow systems designed to make workflow creation and maintenance more fun, fi
          :target: ../getting-started/toppas-get-started.html
          :width: 90%
 
+     - .. image:: /_images/introduction/CWL-4K.png
+         :target: ../getting-started/cwl-get-started.html
+         :width: 90%
+
 
 .. list-table::
-   :widths: 25 25 25 25
+   :widths: 20 20 20 20 20
    :class: borderless only-dark
    :align: center
 
@@ -57,6 +61,9 @@ workflow systems designed to make workflow creation and maintenance more fun, fi
          :target: ../getting-started/toppas-get-started.html
          :width: 90%
 
+     - .. image:: /_images/introduction/CWL-4K.png
+         :target: ../getting-started/cwl-get-started.html
+         :width: 90%
 
 Graphical and Command-Line Tools
 --------------------------------
