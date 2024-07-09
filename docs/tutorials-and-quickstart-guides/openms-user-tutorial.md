@@ -36,7 +36,7 @@ If you are working through this tutorial at home/online, proceed with the follow
   not conda, nor docker.
   :::
 
-- Download and install [KNIME](https://www.knime.org/downloads/overview)
+- Download and install [KNIME](https://www.knime.org/downloads/)
 
 ::::
 
