@@ -15,7 +15,7 @@ Alternatively click [here](https://nf-co.re/docs/usage/installation) to follow t
 ## Ready-made OpenMS nextflow workflows
 
 ***
-<script async src="https://cdn.rawgit.com/tsucres/GithubManyfacedCards/0.3.0/dist/gmc-loader.min.js" data-gmc-repo="nf-core/quantms" data-gmc-theme="gh_recommendation"></script>
+<script async src="https://cdn.rawgit.com/tsucres/GithubManyfacedCards/0.3.0/dist/gmc-loader.min.js" data-gmc-repo="bigbio/quantms" data-gmc-theme="gh_recommendation"></script>
 
 **SCALABLE [NF-CORE](https://nf-co.re/) COMPATIBLE [NEXTFLOW](https://nextflow.io/) PIPELINES**
 
