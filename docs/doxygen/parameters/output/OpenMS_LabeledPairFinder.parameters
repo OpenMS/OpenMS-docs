@@ -1,0 +1,45 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>rt_estimate</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If 'true' the optimal RT pair distance and deviation are estimated by fitting a gaussian distribution to the histogram of pair distance. Note that this works only datasets with a significant amount of pairs! If 'false' the parameters 'rt_pair_dist', 'rt_dev_low' and 'rt_dev_high' define the optimal distance.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>rt_pair_dist</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-20.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">optimal pair distance in RT [sec] from light to heavy feature</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>rt_dev_low</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">15.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">maximum allowed deviation below optimal retention time distance</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>rt_dev_high</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">15.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">maximum allowed deviation above optimal retention time distance</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>mz_pair_dists</b></td>
+  <td style="vertical-align:top">float list</td><td style="vertical-align:top">[4.0]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">optimal pair distances in m/z [Th] for features with charge +1 (adapted to +2, +3, .. by division through charge)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>mz_dev</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.05</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">maximum allowed deviation from optimal m/z distance<BR></td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>mrm</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">this option should be used if the features correspond mrm chromatograms (additionally the precursor is taken into account)</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

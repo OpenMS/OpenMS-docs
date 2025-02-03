@@ -1,0 +1,60 @@
+
+IDFileConverter -- Converts identification engine file formats.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IDFileConverter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IDFileConverter <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <path/file>*           Input file or directory containing the data to convert. This may be:
+                             - a single file in OpenMS database format (.oms),
+                             - a single file in a multi-purpose XML format (.idXML, .mzid, .pepXML, .protXML)
+                             ,
+                             - a single file in a search engine-specific format (Mascot: .mascotXML, OMSSA: 
+                             .omssaXML, X! Tandem: .xml, Percolator: .psms, xQuest: .xquest.xml),
+                             - a single file in fasta format (can only be used to generate a theoretical mzML
+                             ),
+                             ...
+                              (valid formats: 'oms', 'idXML', 'mzid', 'fasta', 'pepXML', 'protXML', 'mascotXM
+                             L', 'omssaXML', 'xml', 'psms', 'tsv', 'xquest.xml')
+  -out <file>*               Output file (valid formats: 'oms', 'idXML', 'mzid', 'pepXML', 'fasta', 'xquest.x
+                             ml', 'mzML')
+  -out_type <type>           Output file type (default: determined from file extension) (valid: 'oms', 'idXML
+                             ', 'mzid', 'pepXML', 'fasta', 'xquest.xml', 'mzML')
+                             
+  -mz_file <file>            [pepXML, Sequest, Mascot, X! Tandem, mzid, Percolator only] Retention times and 
+                             native spectrum ids (spectrum_references) will be looked up in this file (valid 
+                             formats: 'mzML', 'mzXML', 'mzData')
+                             
+  -mz_name <file>            [pepXML only] Experiment filename/path (extension will be removed) to match in 
+                             the pepXML file ('base_name' attribute). Only necessary if different from 'mz_fi
+                             le'.
+  -peptideprophet_analyzed   [pepXML output only] Write output in the format of a PeptideProphet analysis 
+                             result. By default a 'raw' pepXML is produced that contains only search engine 
+                             results.
+  -score_type <choice>       [Percolator only] Which of the Percolator scores to report as 'the' score for a 
+                             peptide hit (default: 'qvalue') (valid: 'qvalue', 'PEP', 'score')
+                             
+Common TOPP options:
+  -ini <file>                Use the given TOPP INI file
+  -threads <n>               Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>          Writes the default configuration file
+  --help                     Shows options
+  --helphelp                 Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - fasta_to_mzml   [FASTA input + MzML output only] Parameters used to adjust simulation of the theoretical 
+                   spectra.
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_IDFileConverter.html
+

@@ -1,0 +1,60 @@
+
+SpectraSTSearchAdapter -- Interface to the SEARCH Mode of the SpectraST executable
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SpectraSTSearchAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  SpectraSTSearchAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -executable <path>*                                                            Path to the SpectraST execut
+                                                                                 able to use; may be empty 
+                                                                                 if the executable is globall
+                                                                                 y available.
+  -spectra_files <SearchFileName1> [ <SearchFileName2> ... <SearchFileNameN> ]*  File names(s) of spectra to 
+                                                                                 be searched. (valid formats:
+                                                                                  'mzML', 'mzXML', 'mzData', 
+                                                                                 'mgf', 'dta', 'msp')
+  -output_files <OutputFile1> [ <OutputFileName2> ... <OutputFileNameN> ]*       Output files. Make sure to 
+                                                                                 specify one output file for 
+                                                                                 each input file (valid forma
+                                                                                 ts: 'txt', 'tsv', 'xml', 
+                                                                                 'pepXML', 'html')
+  -library_file <lib_file>.splib*                                                Specify library file. (valid
+                                                                                  formats: 'splib')
+  -sequence_database_file <sequencedb_file>.fasta                                The sequence database. (vali
+                                                                                 d formats: 'fasta')
+  -sequence_database_type <sequencedb_type>                                      Specify type of sequence 
+                                                                                 database (default: 'AA') 
+                                                                                 (valid: 'DNA', 'AA')
+  -search_file <search_file>                                                     Only search a subset of the 
+                                                                                 query spectra in the search 
+                                                                                 file (valid formats: 'txt', 
+                                                                                 ' dat')
+  -params_file <params_file>                                                     Read search options from 
+                                                                                 file. All options set in 
+                                                                                 the file will be overridden 
+                                                                                 by command-line options, if 
+                                                                                 specified. (valid formats: 
+                                                                                 'params')
+  -precursor_mz_tolerance <precursor_mz_tolerance>                               M/z (in Th) tolerance within
+                                                                                  which candidate entries 
+                                                                                 are compared to the query. 
+                                                                                 Monoisotopic mass is assumed
+                                                                                 . (default: '3.0') (min: 
+                                                                                 '0.0')
+                                                                                 
+Common TOPP options:
+  -ini <file>                                                                    Use the given TOPP INI file
+  -threads <n>                                                                   Sets the number of threads 
+                                                                                 allowed to be used by the 
+                                                                                 TOPP tool (default: '1')
+  -write_ini <file>                                                              Writes the default configura
+                                                                                 tion file
+  --help                                                                         Shows options
+  --helphelp                                                                     Shows all options (including
+                                                                                  advanced)
+

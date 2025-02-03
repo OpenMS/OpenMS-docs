@@ -1,0 +1,37 @@
+
+DigestorMotif -- Digests a protein database in-silico
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_DigestorMotif.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  DigestorMotif <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                 FASTA input file (valid formats: 'fasta')
+  -out <file>*                Output file (peptides)
+                               (valid formats: 'idXML')
+  -missed_cleavages <number>  The number of allowed missed cleavages (default: '1') (min: '0')
+  -mass_accuracy <number>     Give your mass accuracy in ppb (default: '1000')
+  -min_length <number>        Minimum length of peptide (default: '6')
+  -out_option <number>        Indicate 1 (peptide table only), 2 (statistics only) or (both peptide table + 
+                              statistics) (default: '1')
+  -enzyme <cleavage site>     The enzyme used for peptide digestion. (default: 'Trypsin') (valid: 'V8-DE', 
+                              'V8-E', 'Asp-N', 'CNBr', 'Lys-N', 'PepsinA', 'Arg-C', 'Chymotrypsin', 'Trypsin/
+                              P', 'Chymotrypsin/P', 'leukocyte elastase', 'Arg-C/P', 'Asp-N_ambic', 'Formic_a
+                              cid', 'Asp-N/B', 'Lys-C', 'Lys-C/P', 'TrypChymo', 'Trypsin', 'proline-endopepti
+                              dase/HKR', 'Glu-C+P', 'elastase-trypsin-chymotrypsin', 'iodosobenzoate', 'gluta
+                              myl endopeptidase', '2-iodobenzoate', 'staphylococcal protease/D', 'PepsinA + 
+                              P', 'cyanogen-bromide', 'no cleavage', 'proline endopeptidase', 'unspecific 
+                              cleavage', 'Clostripain/P', 'Alpha-lytic protease')
+  -motif <string>             The motif for the restricted peptidome (default: 'M')
+                              
+Common TOPP options:
+  -ini <file>                 Use the given TOPP INI file
+  -threads <n>                Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>           Writes the default configuration file
+  --help                      Shows options
+  --helphelp                  Shows all options (including advanced)
+

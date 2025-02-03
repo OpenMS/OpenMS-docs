@@ -1,0 +1,155 @@
+
+CometAdapter -- Annotates MS/MS spectra using Comet.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_CometAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite CometAdapter:
+ + Eng, Jimmy K. and Jahan, Tahmina A. and Hoopmann, Michael R.. Comet: An open-source MS/MS sequence databas
+   e search tool. PROTEOMICS 2013; 13-1: 22--24. doi:10.1002/pmic.201200439.
+
+Usage:
+  CometAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                             Input file (valid formats: 'mzML')
+  -out <file>*                                            Output file (valid formats: 'idXML')
+  -database <file>*                                       FASTA file (valid formats: 'FASTA')
+  -comet_executable <executable>*                         The Comet executable. Provide a full or relative 
+                                                          path, or make sure it can be found in your PATH 
+                                                          environment.
+  -pin_out <file>                                         Output file - for Percolator input (valid formats: 
+                                                          'tsv')
+  -default_params_file <file>                             Default Comet params file. All parameters of this 
+                                                          take precedence. A template file can be generated 
+                                                          using 'comet.exe -p' (valid formats: 'txt')
+  -precursor_mass_tolerance <tolerance>                   Precursor monoisotopic mass tolerance (Comet parame
+                                                          ter: peptide_mass_tolerance).  See also precursor_e
+                                                          rror_units to set the unit. (default: '10.0')
+  -precursor_error_units <choice>                         Unit of precursor monoisotopic mass tolerance for 
+                                                          parameter precursor_mass_tolerance (Comet parameter
+                                                          : peptide_mass_units) (default: 'ppm') (valid: 'amu
+                                                          ', 'ppm', 'Da')
+  -isotope_error <choice>                                 This parameter controls whether the peptide_mass_to
+                                                          lerance takes into account possible isotope errors 
+                                                          in the precursor mass measurement. Use -8/-4/0/4/8 
+                                                          only for SILAC. (default: 'off') (valid: 'off', 
+                                                          '0/1', '0/1/2', '0/1/2/3', '-8/-4/0/4/8', '-1/0/1/2
+                                                          /3')
+  -fragment_mass_tolerance <tolerance>                    This is half the bin size, which is used to segment
+                                                           the MS/MS spectrum. Thus, the value should be a 
+                                                          bit higher than for other search engines, since 
+                                                          the bin might not be centered around the peak apex 
+                                                          (see 'fragment_bin_offset').CAUTION: Low tolerances
+                                                           have heavy impact on RAM usage (since Comet uses 
+                                                          a lot of bins in this case). Consider using use_spa
+                                                          rse_matrix and/or spectrum_batch_size. (default: 
+                                                          '0.01') (min: '1.0e-04')
+  -fragment_error_units <unit>                            Fragment monoisotopic mass error units (default: 
+                                                          'Da') (valid: 'Da')
+  -fragment_bin_offset <fraction>                         Offset of fragment bins. Recommended by Comet: low-
+                                                          res: 0.4, high-res: 0.0 (default: '0.0') (min: '0.0
+                                                          ' max: '1.0')
+  -instrument <choice>                                    Comets theoretical_fragment_ions parameter: theoret
+                                                          ical fragment ion peak representation, high-res: 
+                                                          sum of intensities plus flanking bins, ion trap 
+                                                          (low-res) ms/ms: sum of intensities of central M 
+                                                          bin only (default: 'high_res') (valid: 'low_res', 
+                                                          'high_res')
+  -enzyme <cleavage site>                                 The enzyme used for peptide digestion. (default: 
+                                                          'Trypsin') (valid: 'Lys-C', 'Asp-N', 'Trypsin', 
+                                                          'CNBr', 'Arg-C', 'Arg-C/P', 'Chymotrypsin', 'Lys-N'
+                                                          , 'PepsinA', 'Trypsin/P', 'no cleavage', 'glutamyl 
+                                                          endopeptidase', 'unspecific cleavage')
+  -num_enzyme_termini <choice>                            Specify the termini where the cleavage rule has to 
+                                                          match (default: 'fully') (valid: 'semi', 'fully', 
+                                                          'C-term unspecific', 'N-term unspecific')
+  -missed_cleavages <num>                                 Number of possible cleavage sites missed by the 
+                                                          enzyme. It has no effect if enzyme is unspecific 
+                                                          cleavage. (default: '1') (min: '0' max: '5')
+  -min_peptide_length <num>                               Minimum peptide length to consider. (default: '5') 
+                                                          (min: '5' max: '63')
+  -max_peptide_length <num>                               Maximum peptide length to consider. (default: '63')
+                                                           (min: '5' max: '63')
+  -num_hits <num>                                         Number of peptide hits (PSMs) per spectrum in outpu
+                                                          t file (default: '1')
+  -precursor_charge [min]:[max]                           Precursor charge range to search (if spectrum is 
+                                                          not annotated with a charge or if override_charge!=
+                                                          keep any known): 0:[num] == search all charges, 
+                                                          2:6 == from +2 to +6, 3:3 == +3 (default: '0:0')
+  -override_charge <choice>                               _keep any known_: keep any precursor charge state 
+                                                          (from input), _ignore known_: ignore known precurso
+                                                          r charge state and use precursor_charge parameter, 
+                                                          _ignore outside range_: ignore precursor charges 
+                                                          outside precursor_charge range, _keep known search 
+                                                          unknown_: keep any known precursor charge state. 
+                                                          For unknown charge states, search as singly charged
+                                                           if there is no signal above the precursor m/z or 
+                                                          use the precursor_charge range (default: 'keep know
+                                                          n search unknown') (valid: 'keep any known', 'ignor
+                                                          e known', 'ignore outside range', 'keep known searc
+                                                          h unknown')
+  -ms_level <num>                                         MS level to analyze, valid are levels 2 (default) 
+                                                          or 3 (default: '2') (min: '2' max: '3')
+  -activation_method <method>                             If not ALL, only searches spectra of the given meth
+                                                          od (default: 'ALL') (valid: 'ALL', 'CID', 'ECD', 
+                                                          'ETD', 'PQD', 'HCD', 'IRMPD')
+  -max_fragment_charge <posnum>                           Set maximum fragment charge state to analyze as 
+                                                          long as still lower than precursor charge - 1. (All
+                                                          owed max 5) (default: '3') (min: '1' max: '5')
+  -clip_nterm_methionine <bool>                           If set to true, also considers the peptide sequence
+                                                           w/o N-term methionine separately and applies appro
+                                                          priate N-term mods to it (default: 'false') (valid:
+                                                           'true', 'false')
+  -fixed_modifications <mods>                             Fixed modifications, specified using Unimod (www.un
+                                                          imod.org) terms, e.g. 'Carbamidomethyl (C)' or 'Oxi
+                                                          dation (M)' (default: '[Carbamidomethyl (C)]') (val
+                                                          id: '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -variable_modifications <mods>                          Variable modifications, specified using Unimod (www
+                                                          .unimod.org) terms, e.g. 'Carbamidomethyl (C)' or 
+                                                          'Oxidation (M)' (default: '[Oxidation (M)]') (valid
+                                                          : '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -binary_modifications <mods>                            List of modification group indices. Indices corresp
+                                                          ond to the binary modification index used by comet 
+                                                          to group individually searched lists of variable 
+                                                          modifications.
+                                                          Note: if set, both variable_modifications and binar
+                                                          y_modifications need to have the same number of 
+                                                          entries as the N-th entry corresponds to the N-th 
+                                                          variable_modification.
+                                                          ...
+                                                          parameter description in the Comet help.
+  -reindex <choice>                                       Recalculate peptide to protein association using 
+                                                          OpenMS. Annotates target-decoy information. (defaul
+                                                          t: 'true') (valid: 'true', 'false')
+
+PeptideIndexing:
+  -PeptideIndexing:allow_nterm_protein_cleavage <choice>  Allow the protein N-terminus amino acid to clip. 
+                                                          (default: 'true') (valid: 'true', 'false')
+
+                                                          
+Common TOPP options:
+  -ini <file>                                             Use the given TOPP INI file
+  -threads <n>                                            Sets the number of threads allowed to be used by 
+                                                          the TOPP tool (default: '1')
+  -write_ini <file>                                       Writes the default configuration file
+  --help                                                  Shows options
+  --helphelp                                              Shows all options (including advanced)
+

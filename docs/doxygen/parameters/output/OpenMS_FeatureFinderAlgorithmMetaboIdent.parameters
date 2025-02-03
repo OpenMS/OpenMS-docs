@@ -1,0 +1,110 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>candidates_out</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Optional output file: Feature candidates (before filtering and model fitting).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>debug</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Debug level for feature detection.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Parameters for ion chromatogram extraction">extract</span>:mz_window</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">m/z window size for chromatogram extraction (unit: ppm if 1 or greater, else Da/Th)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for ion chromatogram extraction">extract</span>:rt_window</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">RT window size (in sec.) for chromatogram extraction. If set, this parameter takes precedence over 'extract:rt_quantile'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Parameters for ion chromatogram extraction">extract</span>:n_isotopes</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">min: 2</td><td style="vertical-align:top">Number of isotopes to include in each peptide assay.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for ion chromatogram extraction">extract</span>:isotope_pmin</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Minimum probability for an isotope to be included in the assay for a peptide. If set, this parameter takes precedence over 'extract:n_isotopes'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Parameters for detecting features in extracted ion chromatograms">detect</span>:peak_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">60.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Expected elution peak width in seconds, for smoothing (Gauss filter). Also determines the RT extration window, unless set explicitly via 'extract:rt_window'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for detecting features in extracted ion chromatograms">detect</span>:min_peak_width</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.2</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Minimum elution peak width. Absolute value in seconds if 1 or greater, else relative to 'peak_width'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for detecting features in extracted ion chromatograms">detect</span>:signal_to_noise</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.8</td>
+  <td style="vertical-align:top">min: 0.1</td><td style="vertical-align:top">Signal-to-noise threshold for OpenSWATH feature detection</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Parameters for fitting elution models to features">model</span>:type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">symmetric</td>
+  <td style="vertical-align:top">symmetric, asymmetric, none</td><td style="vertical-align:top">Type of elution model to fit to features</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:add_zeros</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.2</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Add zero-intensity points outside the feature range to constrain the model fit. This parameter sets the weight given to these points during model fitting; '0' to disable.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:unweighted_fit</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Suppress weighting of mass traces according to theoretical intensities when fitting elution models</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:no_imputation</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If fitting the elution model fails for a feature, set its intensity to zero instead of imputing a value from the initial intensity estimate</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:each_trace</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Fit elution model to each individual mass trace</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:<span title="Parameters for checking the validity of elution models (and rejecting them if necessary)">check</span>:min_area</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Lower bound for the area under the curve of a valid elution model</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:<span title="Parameters for checking the validity of elution models (and rejecting them if necessary)">check</span>:boundaries</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Time points corresponding to this fraction of the elution model height have to be within the data region used for model fitting</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:<span title="Parameters for checking the validity of elution models (and rejecting them if necessary)">check</span>:width</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Upper limit for acceptable widths of elution models (Gaussian or EGH), expressed in terms of modified (median-based) z-scores. '0' to disable. Not applied to individual mass traces (parameter 'each_trace').</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Parameters for fitting elution models to features">model</span>:<span title="Parameters for checking the validity of elution models (and rejecting them if necessary)">check</span>:asymmetry</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Upper limit for acceptable asymmetry of elution models (EGH only), expressed in terms of modified (median-based) z-scores. '0' to disable. Not applied to individual mass traces (parameter 'each_trace').</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Parameters for fitting exp. mod. Gaussians to mass traces.">EMGScoring</span>:max_iteration</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">100</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Maximum number of iterations for EMG fitting.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Parameters for fitting exp. mod. Gaussians to mass traces.">EMGScoring</span>:init_mom</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Alternative initial parameters for fitting through method of moments.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

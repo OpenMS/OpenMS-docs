@@ -1,0 +1,28 @@
+
+IDRTCalibration -- Calibrate RTs of peptide hits linearly to standards.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IDRTCalibration.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IDRTCalibration <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                  Input file  (valid formats: 'idXML')
+  -out <file>*                 Output file  (valid formats: 'idXML')
+  -calibrant_1_reference <RT>  The RT of the first calibrant in the reference file. (default: '0.1')
+  -calibrant_2_reference <RT>  The RT of the second calibrant in the reference file. (default: '0.9')
+  -calibrant_1_input <RT>      The RT of the first calibrant in the input file. Please note that this value 
+                               needs to be set. The default value -1.0 is not allowed. (default: '-1.0')
+  -calibrant_2_input <RT>      The RT of the second calibrant in the input file. Please note that this value 
+                               needs to be set. The default value -1.0 is not allowed. (default: '-1.0')
+                               
+Common TOPP options:
+  -ini <file>                  Use the given TOPP INI file
+  -threads <n>                 Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>            Writes the default configuration file
+  --help                       Shows options
+  --helphelp                   Shows all options (including advanced)
+

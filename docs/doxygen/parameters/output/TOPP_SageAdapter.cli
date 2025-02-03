@@ -1,0 +1,101 @@
+
+SageAdapter -- Annotates MS/MS spectra using Sage.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SageAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite SageAdapter:
+ + Michael Lazear. Sage: An Open-Source Tool for Fast Proteomics Searching and Quantification at Scale. J. 
+   Proteome Res. 2023, 22, 11, 3652??659. doi:https://doi.org/10.1021/acs.jproteome.3c00486.
+
+Usage:
+  SageAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                                            Input files separated by blank (valid formats: 'mzM
+                                                          L')
+  -out <file>*                                            Single output file containing all search results. 
+                                                          (valid formats: 'idXML')
+  -database <file>*                                       FASTA file (valid formats: 'FASTA')
+  -sage_executable <executable>*                          The Sage executable. Provide a full or relative 
+                                                          path, or make sure it can be found in your PATH 
+                                                          environment.
+  -decoy_prefix <prefix>                                  Prefix on protein accession used to distinguish 
+                                                          decoy from target proteins. NOTE: Decoy suffix is 
+                                                          currently not supported by sage. (default: 'DECOY_'
+                                                          )
+  -batch_size <int>                                       Number of files to load and search in parallel (def
+                                                          ault = # of CPUs/2) (default: '0')
+  -precursor_tol_left <double>                            Start (left side) of the precursor tolerance window
+                                                           w.r.t. precursor location. Usually used with negat
+                                                          ive values smaller or equal to the 'right' counterp
+                                                          art. (default: '-6.0')
+  -precursor_tol_right <double>                           End (right side) of the precursor tolerance window 
+                                                          w.r.t. precursor location. Usually used with positi
+                                                          ve values larger or equal to the 'left' counterpart
+                                                          . (default: '6.0')
+  -precursor_tol_unit <unit>                              Unit of precursor tolerance (ppm or Da) (default: 
+                                                          'ppm') (valid: 'ppm', 'Da')
+  -fragment_tol_left <double>                             Start (left side) of the fragment tolerance window 
+                                                          w.r.t. precursor location. Usually used with negati
+                                                          ve values smaller or equal to the 'right' counterpa
+                                                          rt. (default: '-20.0')
+  -fragment_tol_right <double>                            End (right side) of the fragment tolerance window 
+                                                          w.r.t. precursor location. Usually used with positi
+                                                          ve values larger or equal to the 'left' counterpart
+                                                          . (default: '20.0')
+  -fragment_tol_unit <unit>                               Unit of fragment tolerance (ppm or Da) (default: 
+                                                          'ppm') (valid: 'ppm', 'Da')
+  -enzyme <cleavage site>                                 The enzyme used for peptide digestion. (default: 
+                                                          'Trypsin') (valid: 'Arg-C/P', 'Trypsin', 'Lys-C', 
+                                                          'Chymotrypsin', 'PepsinA', 'Trypsin/P', 'Lys-N', 
+                                                          'V8-DE', 'proline endopeptidase', 'V8-E', 'Arg-C', 
+                                                          'Asp-N/B', 'Asp-N_ambic', 'Lys-C/P', 'TrypChymo', 
+                                                          'Asp-N', 'Chymotrypsin/P', 'Formic_acid', 'leukocyt
+                                                          e elastase', 'CNBr', 'iodosobenzoate', 'staphylococ
+                                                          cal protease/D', 'unspecific cleavage', 'Clostripai
+                                                          n/P', 'no cleavage', 'proline-endopeptidase/HKR', 
+                                                          ...
+                                                          e-trypsin-chymotrypsin', 'cyanogen-bromide')
+  -fixed_modifications <mods>                             Fixed modifications, specified using Unimod (www.un
+                                                          imod.org) terms, e.g. 'Carbamidomethyl (C)' or 'Oxi
+                                                          dation (M)' (default: '[Carbamidomethyl (C)]') (val
+                                                          id: '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -variable_modifications <mods>                          Variable modifications, specified using Unimod (www
+                                                          .unimod.org) terms, e.g. 'Carbamidomethyl (C)' or 
+                                                          'Oxidation (M)' (default: '[Oxidation (M)]') (valid
+                                                          : '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -reindex <choice>                                       Recalculate peptide to protein association using 
+                                                          OpenMS. Annotates target-decoy information. (defaul
+                                                          t: 'true') (valid: 'true', 'false')
+
+PeptideIndexing:
+  -PeptideIndexing:allow_nterm_protein_cleavage <choice>  Allow the protein N-terminus amino acid to clip. 
+                                                          (default: 'true') (valid: 'true', 'false')
+
+                                                          
+Common TOPP options:
+  -ini <file>                                             Use the given TOPP INI file
+  -threads <n>                                            Sets the number of threads allowed to be used by 
+                                                          the TOPP tool (default: '1')
+  -write_ini <file>                                       Writes the default configuration file
+  --help                                                  Shows options
+  --helphelp                                              Shows all options (including advanced)
+

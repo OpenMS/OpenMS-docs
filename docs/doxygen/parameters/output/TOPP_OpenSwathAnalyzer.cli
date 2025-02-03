@@ -1,0 +1,45 @@
+
+OpenSwathAnalyzer -- Picks peaks and finds features in an SWATH-MS or SRM experiment.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathAnalyzer.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathAnalyzer <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <file>*                    Input file containing the chromatograms. (valid formats: 'mzML')
+  -tr <file>*                    Transition file (valid formats: 'traML')
+  -rt_norm <file>                RT normalization file (how to map the RTs of this run to the ones stored in 
+                                 the library) (valid formats: 'trafoXML')
+  -out <file>*                   Output file (valid formats: 'featureXML')
+  -no-strict                     Run in non-strict mode and allow some chromatograms to not be mapped.
+                                 
+  -swath_files <files>           [applies only if you have full MS2 spectra maps] Swath files that were used 
+                                 to extract the transitions. If present, SWATH specific scoring will be used.
+                                  (valid formats: 'mzML')
+  -min_upper_edge_dist <double>  [applies only if you have full MS2 spectra maps] Minimal distance to the 
+                                 edge to still consider a precursor, in Thomson (only in SWATH) (default: 
+                                 '0.0')
+                                 
+Common TOPP options:
+  -ini <file>                    Use the given TOPP INI file
+  -threads <n>                   Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                 '1')
+  -write_ini <file>              Writes the default configuration file
+  --help                         Shows options
+  --helphelp                     Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - algorithm   Algorithm parameters section
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathAnalyzer.html
+

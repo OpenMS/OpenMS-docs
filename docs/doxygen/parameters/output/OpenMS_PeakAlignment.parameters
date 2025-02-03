@@ -1,0 +1,30 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>epsilon</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.2</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">defines the absolute error of the mass spectrometer</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>normalized</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">is set 1 if the similarity-measurement is normalized to the range [0,1]</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>heuristic_level</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">set 0 means no heuristic is applied otherwise the given value is interpreted as unsigned integer, the number of strongest peaks considered for heurisitcs - in those sets of peaks has to be at least one match to conduct comparison</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>precursor_mass_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Mass tolerance of the precursor peak, defines the distance of two PrecursorPeaks for which they are supposed to be from different peptides</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

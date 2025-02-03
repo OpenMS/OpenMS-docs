@@ -1,0 +1,34 @@
+
+ConsensusMapNormalizer -- Normalizes maps of one consensusXML file
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ConsensusMapNormalizer.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ConsensusMapNormalizer <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*               Input file (valid formats: 'consensusXML')
+  -out <file>*              Output file (valid formats: 'consensusXML')
+                            
+  -algorithm_type <type>    The normalization algorithm that is applied. 'robust_regression' scales each map 
+                            by a fator computed from the ratios of non-differential background features (as 
+                            determined by the ratio_threshold parameter), 'quantile' performs quantile normal
+                            ization, 'median' scales all maps to the same median intensity, 'median_shift' 
+                            shifts the median instead of scaling (WARNING: if you have regular, log-normal 
+                            MS data, 'median_shift' is probably the wrong choice. Use only if you know what 
+                            you're doing!) (default: 'robust_regression') (valid: 'robust_regression', 'media
+                            n', 'median_shift', 'quantile')
+  -ratio_threshold <ratio>  Only for 'robust_regression': the parameter is used to distinguish between non-ou
+                            tliers (ratio_threshold < intensity ratio < 1/ratio_threshold) and outliers. (def
+                            ault: '0.67') (min: '1.0e-03' max: '1.0')
+                            
+Common TOPP options:
+  -ini <file>               Use the given TOPP INI file
+  -threads <n>              Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>         Writes the default configuration file
+  --help                    Shows options
+  --helphelp                Shows all options (including advanced)
+

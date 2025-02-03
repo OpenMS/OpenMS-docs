@@ -1,0 +1,33 @@
+
+OpenSwathMzMLFileCacher -- Caches the spectra and chromatogram data of an mzML to disk.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathMzMLFileCacher.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathMzMLFileCacher <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                Input mzML file (valid formats: 'mzML', 'sqMass')
+  -in_type <type>            Input file type -- default: determined from file extension or content
+                              (valid: 'mzML', 'sqMass')
+  -out <file>*               Output file (valid formats: 'mzML', 'sqMass')
+  -out_type <type>           Output file type -- default: determined from file extension or content
+                             Note: that not all conversion paths work or make sense. (valid: 'mzML', 'sqMass'
+                             )
+  -convert_back              Convert back to mzML
+  -lossy_compression <type>  Use numpress compression to achieve optimally small file size (attention: may 
+                             cause small loss of precision; only for mzML data). (default: 'true') (valid: 
+                             'true', 'false')
+  -full_meta <type>          Write full meta information into sqMass file (may require large amounts of memor
+                             y) (default: 'true') (valid: 'true', 'false')
+                             
+Common TOPP options:
+  -ini <file>                Use the given TOPP INI file
+  -threads <n>               Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>          Writes the default configuration file
+  --help                     Shows options
+  --helphelp                 Shows all options (including advanced)
+

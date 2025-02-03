@@ -1,0 +1,50 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_extraction_window</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.05</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">DIA extraction window in Th or ppm.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_extraction_unit</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Th</td>
+  <td style="vertical-align:top">Th, ppm</td><td style="vertical-align:top">DIA extraction window unit</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_centroided</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use centroided DIA data.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_byseries_intensity_min</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">300.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">DIA b/y series minimum intensity to consider.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_byseries_ppm_diff</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">DIA b/y series minimal difference in ppm to consider.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_nr_isotopes</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">DIA number of isotopes to consider.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>dia_nr_charges</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">DIA number of charges to consider.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>peak_before_mono_max_ppm_diff</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">20.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">DIA maximal difference in ppm to count a peak at lower m/z when searching for evidence that a peak might not be monoisotopic.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

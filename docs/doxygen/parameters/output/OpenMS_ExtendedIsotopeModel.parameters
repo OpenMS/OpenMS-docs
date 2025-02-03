@@ -1,0 +1,80 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>cutoff</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Low intensity cutoff of the model.  Peaks below this intensity are not considered part of the model.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>interpolation_step</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Sampling rate for the interpolation of the model function </td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>intensity_scaling</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Scaling factor used to adjust the model distribution to the intensities of the data</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>charge</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Charge state of the model.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>averagines:C</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.044439889490604</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of C atoms per Dalton of mass.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>averagines:H</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.069815717637539</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of H atoms per Dalton of mass.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>averagines:N</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.012217730283737</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of N atoms per Dalton of mass.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>averagines:O</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.013293989934027</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of O atoms per Dalton of mass.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>averagines:S</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.752500051632524e-04</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of S atoms per Dalton of mass.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:trim_right_cutoff</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-03</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Cutoff in averagine distribution, trailing isotopes below this relative intensity are not considered.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:maximum</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">100</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum isotopic rank to be considered.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:distance</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.000495</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Distance between consecutive isotopic peaks.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:stdev</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Standard deviation of gaussian applied to the averagine isotopic pattern to simulate the inaccuracy of the mass spectrometer.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:monoisotopic_mz</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Monoisotopic m/z of the model.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

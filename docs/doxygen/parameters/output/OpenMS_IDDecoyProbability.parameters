@@ -1,0 +1,20 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><i>number_of_bins</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">40</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of bins used for the fitting, if sparse datasets are used, this number should be smaller</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>lower_score_better_default_value_if_zero</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">50.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">This value is used if e.g. a E-value score is 0 and cannot be transformed in a real number (log of E-value)</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

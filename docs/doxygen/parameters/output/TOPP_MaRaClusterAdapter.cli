@@ -1,0 +1,36 @@
+
+MaRaClusterAdapter -- Facilitate input to MaRaCluster and reintegrate.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MaRaClusterAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite MaRaClusterAdapter:
+ + The M and Käll L. MaRaCluster: A Fragment Rarity Metric for Clustering Fragment Spectra in Shotgun Proteo
+   mics. J Proteome Res 2016; 15: 3. doi:10.1021/acs.jproteome.5b00749.
+
+Usage:
+  MaRaClusterAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                           Input file(s) (valid formats: 'mzML', 'mgf')
+  -id_in <files>                         Optional idXML Input file(s) in the same order as mzML files - for 
+                                         Maracluster Cluster annotation (valid formats: 'idXML')
+  -out <file>                            Output file in idXML format (valid formats: 'idXML')
+  -consensus_out <file>                  Consensus spectra in mzML format (valid formats: 'mzML')
+  -output_directory <directory>          Output directory for MaRaCluster original consensus output
+  -pcut <value>                          Log(p-value) cutoff, has to be < 0.0. Default: -10.0. (default: '-10
+                                         .0') (max: '0.0')
+  -min_cluster_size <value>              Minimum number of spectra in a cluster for consensus spectra (defaul
+                                         t: '1') (min: '1')
+  -maracluster_executable <executable>*  The maracluster executable. Provide a full or relative path, or make
+                                          sure it can be found in your PATH environment.
+                                         
+Common TOPP options:
+  -ini <file>                            Use the given TOPP INI file
+  -threads <n>                           Sets the number of threads allowed to be used by the TOPP tool (defa
+                                         ult: '1')
+  -write_ini <file>                      Writes the default configuration file
+  --help                                 Shows options
+  --helphelp                             Shows all options (including advanced)
+

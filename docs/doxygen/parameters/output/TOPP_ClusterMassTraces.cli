@@ -1,0 +1,29 @@
+
+ClusterMassTraces -- Creates pseudo spectra.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ClusterMassTraces.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ClusterMassTraces <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                        Mass traces (valid formats: 'consensusXML')
+  -out <file>*                       Output file (valid formats: 'mzML')
+  -min_pearson_correlation <double>  Minimal pearson correlation score (default: '0.7')
+  -min_peak_nr <number>              Minimal peak nr to output pseudo spectra (default: '1')
+  -max_lag <number>                  Maximal lag (default: '1')
+  -max_rt_apex_difference <double>   Maximal difference of the apex in retention time (default: '5.0')
+  -max_intensity_cutoff <double>     Maximal intensity to be added to a spectrum (default: '0.0')
+  -add_precursor <double>            Add a precursor mass (default: '0.0')
+                                     
+Common TOPP options:
+  -ini <file>                        Use the given TOPP INI file
+  -threads <n>                       Sets the number of threads allowed to be used by the TOPP tool (default:
+                                      '1')
+  -write_ini <file>                  Writes the default configuration file
+  --help                             Shows options
+  --helphelp                         Shows all options (including advanced)
+

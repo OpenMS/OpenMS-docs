@@ -1,0 +1,40 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><i>out_plot</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">If given, the some output files will be saved in the following manner: <out_plot>_scores.txt for the scores and <out_plot> which contains the fitted values for each step of the EM-algorithm, e.g., out_plot = /usr/home/OMSSA123 leads to /usr/home/OMSSA123_scores.txt, /usr/home/OMSSA123 will be written. If no directory is specified, e.g. instead of '/usr/home/OMSSA123' just OMSSA123, the files will be written into the working directory.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>number_of_bins</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">100</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of bins used for visualization. Only needed if each iteration step of the EM-Algorithm will be visualized</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>incorrectly_assigned</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Gumbel</td>
+  <td style="vertical-align:top">Gumbel, Gauss</td><td style="vertical-align:top">for 'Gumbel', the Gumbel distribution is used to plot incorrectly assigned sequences. For 'Gauss', the Gauss distribution is used.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>max_nr_iterations</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1000</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Bounds the number of iterations for the EM algorithm when convergence is slow.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>neg_log_delta</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">6</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The negative logarithm of the convergence threshold for the likelihood increase.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>outlier_handling</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">ignore_iqr_outliers</td>
+  <td style="vertical-align:top">ignore_iqr_outliers, set_iqr_to_closest_valid, ignore_extreme_percentiles, none</td><td style="vertical-align:top">What to do with outliers:<BR>- ignore_iqr_outliers: ignore outliers outside of 3*IQR from Q1/Q3 for fitting<BR>- set_iqr_to_closest_valid: set IQR-based outliers to the last valid value for fitting<BR>- ignore_extreme_percentiles: ignore everything outside 99th and 1st percentile (also removes equal values like potential censored max values in XTandem)<BR>- none: do nothing</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

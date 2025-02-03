@@ -1,0 +1,154 @@
+// -*- Mode: C++; tab-width: 2; -*-
+// vi: set ts=2:
+//
+// ==========================================================================
+//
+// IMPORTANT:
+// This is config.h / config.h.in
+// Please do ONLY change config.h.in, as config.h is automagically
+// created by CMAKE from config.h.in
+//
+// Use appropriate options to configure instead of changing config.h.
+// Changes made in config.h will be lost as soon as you call CMAKE again.
+//
+// Copyright (c) 2002-2023, The OpenMS Team -- EKU Tuebingen, ETH Zurich, and FU Berlin
+// SPDX-License-Identifier: BSD-3-Clause
+// --------------------------------------------------------------------------
+// $Maintainer: Chris Bielow $
+// $Authors: $
+// --------------------------------------------------------------------------
+
+#ifndef OPENMS_CONFIG_H
+#define OPENMS_CONFIG_H
+
+// include OPENMS_DLLAPI macros
+#include <OpenMS/OpenMSConfig.h>
+
+#include <boost/current_function.hpp>
+
+// Here are some global configuration flags for OpenMS
+
+// Define compiler specifics (used in VERY few places only)
+// Microsoft Visual Studio .NET, 2005, 2008
+#cmakedefine OPENMS_COMPILER_MSVC
+// GNU g++
+#cmakedefine OPENMS_COMPILER_GXX
+
+// __PRETTY_FUNCTION__ is a GNU G++ extension so we use the alternative in boost
+#define OPENMS_PRETTY_FUNCTION BOOST_CURRENT_FUNCTION
+
+// __FILENAME__ prints the path that is used during compilation of the object. Per default in CMake it is the full absolute path.
+// This is confusing for debug logs from executables on user machines and unnecessary.
+// This shifts the pointer to the char array of the filepath to the filename only.
+// WARNING: Does not work for files outside of the src directory.
+// Needs the pragmas for CLangs superstrict compiler warnings. But the pragmas lead to failures in Win and Lnx.
+// Therefore it is not used for now.
+
+/*
+#define OPENMS_SHORT_FILE _Pragma("GCC diagnostic push") \
+_Pragma("GCC diagnostic push") \
+_Pragma("GCC diagnostic ignored \"-Wstring-plus-int\"") \
+( __FILE__ + @CF_SOURCE_PATH_SIZE@ ) \
+_Pragma("GCC diagnostic pop")
+*/
+
+using cstr = const char *;
+
+static constexpr cstr past_last_slash(cstr str, cstr last_slash)
+{
+  return
+    *str == '\0' ? last_slash :
+    *str == '/'  ? past_last_slash(str + 1, str + 1) :
+    *str == '\\'  ? past_last_slash(str + 1, str + 1) :
+    past_last_slash(str + 1, last_slash);
+}
+
+static constexpr cstr past_last_slash(cstr str)
+{
+  return past_last_slash(str, str);
+}
+
+// OPENMS_ASSERTIONS enables some debugging methods within some OpenMS classes
+#ifdef OPENMS_COMPILER_MSVC
+// we define this using NDEBUG on MSVC as there are multiple build types simultaneously in the Solution file,
+// thus setting one value will not fit them all
+#	ifndef NDEBUG // hopefully defined automatically by MS-compiler in Debug Mode
+#		define OPENMS_ASSERTIONS
+#	endif
+#else // linux & Co (only one build type at a time)
+#  if (@CF_OPENMS_ASSERTIONS@)
+#    define OPENMS_ASSERTIONS
+#  endif
+#endif
+
+
+// let Cmake decide if we are using Windows (i.e. if windows.h is available).
+//   GCC and MSVC have pre-defined macros for this as well but using -ansi in GCC will disable those, thus asking the compiler is fragile
+#ifndef WIN32  //avoid warning of redefinition
+#cmakedefine WIN32
+#endif
+
+#ifdef WIN32   //should be true on: MinGW (32bit + 64bit) & MSVS compiler
+#define OPENMS_WINDOWSPLATFORM 1
+#endif
+
+// are we building a shared lib?
+#cmakedefine BUILD_SHARED_LIBS
+
+#cmakedefine OPENMS_BIG_ENDIAN
+
+#define OPENMS_HASDOXYGENDOT @CF_OPENMS_HASDOXYGENDOT@
+
+// Define on 64 bit architectures
+#cmakedefine OPENMS_64BIT_ARCHITECTURE
+
+#define PointerSizeInt int64_t
+#define PointerSizeUInt uint64_t
+
+#cmakedefine OPENMS_HAS_UNISTD_H
+#cmakedefine OPENMS_HAS_PROCESS_H
+
+#cmakedefine OPENMS_HAS_TIME_H
+#cmakedefine OPENMS_HAS_SYS_TIMES_H
+#cmakedefine OPENMS_HAS_SYS_TIME_H
+#cmakedefine OPENMS_HAS_SYS_RESOURCE_H
+
+#cmakedefine OPENMS_HAS_KILL
+#cmakedefine OPENMS_HAS_SYSCONF
+
+#cmakedefine ENABLE_UPDATE_CHECK
+
+// library versions
+#define OPENMS_LIBSVM_VERSION @CF_OPENMS_LIBSVM_VERSION@
+#define OPENMS_LIBSVM_VERSION_MAJOR @CF_OPENMS_LIBSVM_VERSION_MAJOR@
+#define OPENMS_LIBSVM_VERSION_MINOR @CF_OPENMS_LIBSVM_VERSION_MINOR@
+
+#define OPENMS_BOOST_VERSION_MAJOR @CF_OPENMS_BOOST_VERSION_MAJOR@
+#define OPENMS_BOOST_VERSION_MINOR @CF_OPENMS_BOOST_VERSION_MINOR@
+#define OPENMS_BOOST_VERSION_SUBMINOR @CF_OPENMS_BOOST_VERSION_SUBMINOR@
+#define OPENMS_BOOST_VERSION @CF_OPENMS_BOOST_VERSION@
+
+#define COINOR_SOLVER @CF_USECOINOR@
+#define COIN_INCLUDE_SUBDIR_IS_COIN @CF_COIN_INCLUDE_SUBDIR_IS_COIN@
+
+#define OPENMS_GLPK_VERSION @CF_OPENMS_GLPK_VERSION@
+#define OPENMS_GLPK_VERSION_MAJOR @CF_OPENMS_GLPK_VERSION_MAJOR@
+#define OPENMS_GLPK_VERSION_MINOR @CF_OPENMS_GLPK_VERSION_MINOR@
+
+// class & TOPP tests
+
+#ifdef _OPENMP
+  #define IF_MASTERTHREAD if (omp_get_thread_num() ==0)
+#else
+  #define IF_MASTERTHREAD
+#endif
+
+#cmakedefine MT_ENABLE_NESTED_OPENMP 1
+
+#cmakedefine WITH_CRAWDAD 1
+
+// NOTE: This is a temporary hack. The aim is that OpenMS should not care
+//       but currently we need this information for the ToolHandler.
+#cmakedefine WITH_GUI 1
+
+#endif // OPENMS_CONFIG_H

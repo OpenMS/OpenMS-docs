@@ -1,0 +1,42 @@
+
+QCCalculator -- Calculates basic quality parameters from MS experiments and subsequent analysis data as ident
+ification or feature detection.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_QCCalculator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite QCCalculator:
+ + Walzer M, Pernas LE, Nasso S, Bittremieux W, Nahnsen S, Kelchtermans P,  Martens, L. qcML: An Exchange 
+   Format for Quality Control Metrics from Mass Spectrometry Experiments. Molecular & Cellular Proteomics 
+   2014; 13(8). doi:10.1074/mcp.M113.035907.
+
+Usage:
+  QCCalculator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                  Raw data input file (this is relevant if you want to look at MS1, MS2 and prec
+                               ursor peak information) (valid formats: 'mzML')
+  -out <file>*                 Your QC file. (valid formats: 'mzQC', 'qcML')
+  -out_type <type>             Output file type -- default: determined from file extension or content (valid:
+                                'mzQC', 'qcML')
+  -label <label>               Unique name for the run that can be used in a figure label (default: 'label')
+  -name <contact_name>         Name of the person creating this mzQC file
+  -address <contact_address>   Contact address (mail/e-mail or phone)
+  -description <description>   Description and comments about the mzQC file contents
+  -id <file>                   Input idXML file containing the identifications. Your identifications will be 
+                               exported in an easy-to-read format (valid formats: 'idXML')
+  -feature <file>              Feature input file (this is relevant for most QC issues) (valid formats: 'feat
+                               ureXML')
+  -consensus <file>            Consensus input file (this is only used for charge state deconvoluted output. 
+                               Use the consensusXML output form the DeCharger) (valid formats: 'consensusXML'
+                               )
+  -remove_duplicate_features   This flag should be set, if you work with a set of merged features.
+                               
+Common TOPP options:
+  -ini <file>                  Use the given TOPP INI file
+  -threads <n>                 Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>            Writes the default configuration file
+  --help                       Shows options
+  --helphelp                   Shows all options (including advanced)
+

@@ -1,0 +1,36 @@
+Error: Residue::getResidueTypeName - residue type has no name. The developer should add a residue name to Residue.cpp
+Error: Residue::getResidueTypeName - residue type has no name. The developer should add a residue name to Residue.cpp
+
+MassCalculator -- Calculates masses and mass-to-charge ratios of peptide sequences
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MassCalculator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MassCalculator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>                   Input file with peptide sequences and optionally charge numbers (mutually excl
+                               usive to 'in_seq') (valid formats: 'tsv')
+  -in_seq <peptide_sequences>  List of peptide sequences (mutually exclusive to 'in')
+  -out <file>                  Output file; if empty, output is written to the screen (valid formats: 'csv')
+  -charge <numbers>            List of charge states; required if 'in_seq' is given (default: '[0]')
+  -format <choice>             Output format ('list': human-readable list, 'table': CSV-like table, 'mass_onl
+                               y': mass values only, 'mz_only': m/z values only)
+                                (default: 'list') (valid: 'list', 'table', 'mass_only', 'mz_only')
+  -average_mass                Compute average (instead of monoisotopic) peptide masses
+  -fragment_type <choice>      For what type of sequence/fragment the mass should be computed
+                                (default: 'full') (valid: 'full', 'internal', 'N-terminal', 'C-terminal', 
+                               'a-ion', 'b-ion', 'c-ion', 'x-ion', 'y-ion', 'z-ion')
+  -separator <sep>             Field separator for 'table' output format; by default, the 'tab' character is 
+                               used
+                               
+Common TOPP options:
+  -ini <file>                  Use the given TOPP INI file
+  -threads <n>                 Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>            Writes the default configuration file
+  --help                       Shows options
+  --helphelp                   Shows all options (including advanced)
+

@@ -1,0 +1,77 @@
+
+ProteinInference -- Protein inference based on an aggregation of the scores of the identified peptides.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ProteinInference.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ProteinInference <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                                 Input file(s) (valid formats: 'idXML', 'consens
+                                                              usXML')
+  -out <file>*                                                Output file (valid formats: 'idXML', 'consensus
+                                                              XML')
+  -out_type <file>                                            Output file type (valid: 'idXML', 'consensusXML
+                                                              ')
+  -merge_runs <choice>                                        If your idXML contains multiple runs, merge 
+                                                              them beforehand? Otherwise performs inference 
+                                                              separately per run. (default: 'all') (valid: 
+                                                              'no', 'all')
+  -protein_fdr <option>                                       Additionally calculate the target-decoy FDR on 
+                                                              protein-level after inference (default: 'false'
+                                                              ) (valid: 'true', 'false')
+                                                              
+
+Merging:
+  -Merging:annotate_origin <choice>                           If true, adds a map_index MetaValue to the Pept
+                                                              ideIDs to annotate the IDRun they came from. 
+                                                              (default: 'true') (valid: 'true', 'false')
+  -Merging:allow_disagreeing_settings                         Force merging of disagreeing runs. Use at your 
+                                                              own risk.
+
+Algorithm:
+  -Algorithm:min_peptides_per_protein <number>                Minimal number of peptides needed for a protein
+                                                               identification. If set to zero, unmatched prot
+                                                              eins get a score of -Infinity. If bigger than 
+                                                              zero, proteins with less peptides are filtered 
+                                                              and evidences removed from the PSMs. PSMs that 
+                                                              do not reference any proteins anymore are remov
+                                                              ed but the spectrum info is kept. (default: 
+                                                              '1') (min: '0')
+  -Algorithm:score_aggregation_method <choice>                How to aggregate scores of peptides matching 
+                                                              to the same protein? (default: 'best') (valid: 
+                                                              'best', 'product', 'sum', 'maximum')
+  -Algorithm:treat_charge_variants_separately <choice>        If this is true, different charge variants of 
+                                                              the same peptide sequence count as individual 
+                                                              evidences. (default: 'true') (valid: 'true', 
+                                                              'false')
+  -Algorithm:treat_modification_variants_separately <choice>  If this is true, different modification variant
+                                                              s of the same peptide sequence count as individ
+                                                              ual evidences. (default: 'true') (valid: 'true'
+                                                              , 'false')
+  -Algorithm:use_shared_peptides <choice>                     If this is true, shared peptides are used as 
+                                                              evidences. Note: shared_peptides are not delete
+                                                              d and potentially resolved in postprocessing 
+                                                              as well. (default: 'true') (valid: 'true', 'fal
+                                                              se')
+  -Algorithm:skip_count_annotation                            If this is set, peptide counts won't be annotat
+                                                              ed at the proteins.
+  -Algorithm:annotate_indistinguishable_groups <choice>       If this is true, calculates and annotates indis
+                                                              tinguishable protein groups. (default: 'true') 
+                                                              (valid: 'true', 'false')
+  -Algorithm:greedy_group_resolution                          If this is true, shared peptides will be associ
+                                                              ated to best proteins only (i.e. become potenti
+                                                              ally quantifiable razor peptides).
+
+                                                              
+Common TOPP options:
+  -ini <file>                                                 Use the given TOPP INI file
+  -threads <n>                                                Sets the number of threads allowed to be used 
+                                                              by the TOPP tool (default: '1')
+  -write_ini <file>                                           Writes the default configuration file
+  --help                                                      Shows options
+  --helphelp                                                  Shows all options (including advanced)
+

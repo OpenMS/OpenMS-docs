@@ -1,0 +1,50 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>min_peptides_per_protein</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Minimal number of peptides needed for a protein identification. If set to zero, unmatched proteins get a score of -Infinity. If bigger than zero, proteins with less peptides are filtered and evidences removed from the PSMs. PSMs that do not reference any proteins anymore are removed but the spectrum info is kept.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>score_aggregation_method</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">best</td>
+  <td style="vertical-align:top">best, product, sum, maximum</td><td style="vertical-align:top">How to aggregate scores of peptides matching to the same protein?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>treat_charge_variants_separately</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If this is true, different charge variants of the same peptide sequence count as individual evidences.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>treat_modification_variants_separately</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If this is true, different modification variants of the same peptide sequence count as individual evidences.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_shared_peptides</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If this is true, shared peptides are used as evidences. Note: shared_peptides are not deleted and potentially resolved in postprocessing as well.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>skip_count_annotation</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If this is set, peptide counts won't be annotated at the proteins.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>annotate_indistinguishable_groups</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If this is true, calculates and annotates indistinguishable protein groups.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>greedy_group_resolution</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If this is true, shared peptides will be associated to best proteins only (i.e. become potentially quantifiable razor peptides).</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,34 @@
+
+MSstatsConverter -- Converter to input for MSstats
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MSstatsConverter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MSstatsConverter <options>
+
+Options (mandatory options marked with '*'):
+  -in <in>*                                     Input consensusXML with peptide intensities (valid formats: 
+                                                'consensusXML')
+  -in_design <in_design>*                       Experimental Design file (valid formats: 'tsv')
+  -method <method>                              Method used in the experiment(label free [LFQ], isobaric labe
+                                                ling [ISO])) (default: 'LFQ') (valid: 'LFQ', 'ISO')
+  -msstats_bioreplicate <msstats_bioreplicate>  Which column in the condition table should be used for MSstat
+                                                s 'BioReplicate' (default: 'MSstats_BioReplicate')
+  -msstats_condition <msstats_condition>        Which column in the condition table should be used for MSstat
+                                                s 'Condition' (default: 'MSstats_Condition')
+  -msstats_mixture msstats_mixture              Which column in the condition table should be used for MSstat
+                                                s 'Mixture' (default: 'MSstats_Mixture')
+  -labeled_reference_peptides                   If set, IsotopeLabelType is 'H', else 'L'
+  -out <out>*                                   Input CSV file for MSstats. (valid formats: 'csv')
+                                                
+Common TOPP options:
+  -ini <file>                                   Use the given TOPP INI file
+  -threads <n>                                  Sets the number of threads allowed to be used by the TOPP 
+                                                tool (default: '1')
+  -write_ini <file>                             Writes the default configuration file
+  --help                                        Shows options
+  --helphelp                                    Shows all options (including advanced)
+

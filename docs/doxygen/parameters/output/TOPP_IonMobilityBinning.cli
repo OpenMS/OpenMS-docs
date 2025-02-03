@@ -1,0 +1,36 @@
+
+IonMobilityBinning -- Splits an mzML file with IonMobility frames into multiple mzML files by binning(merging
+) spectra by their IM values
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IonMobilityBinning.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IonMobilityBinning <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                   Input file (containing RT, IM, m/z, i.e. IM-frames). (valid 
+                                                formats: 'mzML')
+  -out <directory>*                             Path to the output directory to write the binned mzML files 
+                                                to.
+  -bins <number>                                Number of ion mobility bins to split the input file into (def
+                                                ault: '5')
+  -bin_extension_abs <number>                   Absolute extension of the bin in IM dimension (causes bins 
+                                                to overlap by 2x this value) (default: '0.0')
+
+Options for merging spectra within the same IM bin (from the same IM-frame):
+  -SpectraMerging:mz_binning_width <number>     Width of the m/z bins (default: '0.01')
+  -SpectraMerging:mz_binning_width_unit <unit>  Unit of the m/z bin width (default: 'Da') (valid: 'Da', 'ppm'
+                                                )
+
+                                                
+Common TOPP options:
+  -ini <file>                                   Use the given TOPP INI file
+  -threads <n>                                  Sets the number of threads allowed to be used by the TOPP 
+                                                tool (default: '1')
+  -write_ini <file>                             Writes the default configuration file
+  --help                                        Shows options
+  --helphelp                                    Shows all options (including advanced)
+

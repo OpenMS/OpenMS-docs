@@ -1,0 +1,25 @@
+
+ExecutePipeline -- Executes workflows created by TOPPAS.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ExecutePipeline.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ExecutePipeline <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*            The workflow to be executed. (valid formats: 'toppas')
+  -out_dir <directory>   Directory for output files (default: user's home directory)
+  -resource_file <file>  A TOPPAS resource file (*.trf) specifying the files this workflow is to be applied 
+                         to
+  -num_jobs <integer>    Maximum number of jobs running in parallel (default: '1') (min: '1')
+                         
+Common TOPP options:
+  -ini <file>            Use the given TOPP INI file
+  -threads <n>           Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>      Writes the default configuration file
+  --help                 Shows options
+  --helphelp             Shows all options (including advanced)
+

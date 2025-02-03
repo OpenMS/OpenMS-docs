@@ -1,0 +1,43 @@
+
+PercolatorAdapter -- Facilitate input to Percolator and reintegrate.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_PercolatorAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  PercolatorAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>                           Input file(s) (valid formats: 'mzid', 'idXML')
+  -in_decoy <files>                     Input decoy file(s) in case of separate searches (valid formats: 'mzi
+                                        d', 'idXML')
+  -in_osw <file>                        Input file in OSW format (valid formats: 'OSW')
+  -out <file>*                          Output file (valid formats: 'idXML', 'mzid', 'osw')
+  -out_type <type>                      Output file type -- default: determined from file extension or conten
+                                        t. (valid: 'mzid', 'idXML', 'osw')
+  -enzyme <enzyme>                      Type of enzyme: no_enzyme,elastase,pepsin,proteinasek,thermolysin,chy
+                                        motrypsin,lys-n,lys-c,arg-c,asp-n,glu-c,trypsin,trypsinp (default: 
+                                        'trypsin') (valid: 'no_enzyme', 'elastase', 'pepsin', 'proteinasek', 
+                                        'thermolysin', 'chymotrypsin', 'lys-n', 'lys-c', 'arg-c', 'asp-n', 
+                                        'glu-c', 'trypsin', 'trypsinp')
+  -percolator_executable <executable>*  The Percolator executable. Provide a full or relative path, or make 
+                                        sure it can be found in your PATH environment.
+  -peptide_level_fdrs                   Calculate peptide-level FDRs instead of PSM-level FDRs.
+  -protein_level_fdrs                   Use the picked protein-level FDR to infer protein probabilities. Use 
+                                        the -fasta option and -decoy_pattern to set the Fasta file and decoy 
+                                        pattern.
+  -osw_level <osw_level>                OSW: the data level selected for scoring. (default: 'ms2') (valid: 
+                                        'ms1', 'ms2', 'transition')
+  -score_type <type>                    Type of the peptide main score (default: 'q-value') (valid: 'q-value'
+                                        , 'pep', 'svm')
+                                        
+Common TOPP options:
+  -ini <file>                           Use the given TOPP INI file
+  -threads <n>                          Sets the number of threads allowed to be used by the TOPP tool (defau
+                                        lt: '1')
+  -write_ini <file>                     Writes the default configuration file
+  --help                                Shows options
+  --helphelp                            Shows all options (including advanced)
+

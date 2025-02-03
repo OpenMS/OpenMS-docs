@@ -1,0 +1,27 @@
+
+RNPxlXICFilter -- Remove MS2 spectra from treatment based on the fold change between control and treatment.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_RNPxlXICFilter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  RNPxlXICFilter <options>
+
+Options (mandatory options marked with '*'):
+  -control <file>*    Input mzML file (valid formats: 'mzML')
+  -treatment <file>*  Input mzML file (valid formats: 'mzML')
+  -fold_change        Fold change between XICs (default: '2.0')
+  -rt_tol             RT tolerance in [s] for finding max peak (whole RT range around RT middle) (default: 
+                      '20.0')
+  -mz_tol             M/z tolerance in [ppm] for finding a peak (default: '10.0')
+  -out <file>*        Output of the treatment file after XIC filtering. (valid formats: 'mzML')
+                      
+Common TOPP options:
+  -ini <file>         Use the given TOPP INI file
+  -threads <n>        Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>   Writes the default configuration file
+  --help              Shows options
+  --helphelp          Shows all options (including advanced)
+

@@ -1,0 +1,148 @@
+
+FLASHDeconv -- Ultra-fast high-quality deconvolution enables online processing of top-down MS data
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FLASHDeconv.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite FLASHDeconv:
+ + Jeong K, Kim J, Gaikwad M et al.. FLASHDeconv: Ultrafast, High-Quality Feature Deconvolution for Top-Down 
+   Proteomics. Cell Syst 2020 Feb 26;10(2):213-218.e6. doi:10.1016/j.cels.2020.01.003.
+
+Usage:
+  FLASHDeconv <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                                      Input file (mzML) (valid formats: 'mzML')
+  -out <file>*                                                     Default output tsv file containing deconvo
+                                                                   lved features (valid formats: 'tsv')
+  -out_spec <file for MS1, file for MS2, ...>                      Output tsv files containing deconvolved 
+                                                                   spectra (per MS level) (valid formats: 
+                                                                   'tsv')
+  -out_mzml <file>                                                 Output mzml file containing deconvolved 
+                                                                   spectra (of all MS levels) (valid formats:
+                                                                    'mzML')
+  -out_annotated_mzml <file>                                       Output mzml file containing annotated spec
+                                                                   tra. For each annotated peak, monoisotopic
+                                                                    mass, charge, and isotope index are store
+                                                                   d as meta data. Unannotated peaks are also
+                                                                    copied as well without meta data. (valid 
+                                                                   formats: 'mzML')
+  -out_promex <file>                                               Output ms1ft (promex compatible) file cont
+                                                                   aining deconvolved spectra. Only for MS1 
+                                                                   level (valid formats: 'ms1ft')
+  -out_topFD <file for MS1, file for MS2, ...>                     Output msalign (topFD compatible) files 
+                                                                   containing deconvolved spectra (per MS 
+                                                                   level). The file name for MSn should end 
+                                                                   with msn.msalign to be able to be recogniz
+                                                                   ed by TopPIC GUI. For example, -out_topFD 
+                                                                   [name]_ms1.msalign [name]_ms2.msalign (val
+                                                                   id formats: 'msalign')
+  -out_topFD_feature <file for MS1, file for MS2, ...>             Output feature (topFD compatible) files 
+                                                                   containing deconvolved features (per MS 
+                                                                   level). The feature files are necessary 
+                                                                   for TopPIC feature intensity output (valid
+                                                                    formats: 'feature')
+  -min_precursor_snr <SNR value>                                   Minimum precursor SNR (SNR within the prec
+                                                                   ursor envelope range) for identification. 
+                                                                   Similar to precursor interference level, 
+                                                                   but far more stringent as it also consider
+                                                                   s the isotope distribution shape of signal
+                                                                   .When FLASHIda log file is used, this para
+                                                                   meter is ignored. Applied only for topFD 
+                                                                   msalign outputs. (default: '1.0')
+  -target_precursor_charge <Target precursor charge>               Charge state of the target precursor. All 
+                                                                   precursor charge is fixed to this value. 
+                                                                   This parameter is useful for targeted stud
+                                                                   ies where MS2 spectra are generated from 
+                                                                   a fixed precursor (e.g., Native-MS). This 
+                                                                   option also gives the maximum charge and 
+                                                                   masses (together with precursor m/z) of 
+                                                                   fragment ions, which overrides -Algorithm:
+                                                                   max_charge and -Algorithm:max_mass. (defau
+                                                                   lt: '0')
+  -target_precursor_mz <m/z value>                                 Target precursor m/z value. This option 
+                                                                   must be used with -target_precursor_charge
+                                                                    option. Otherwise it will be ignored. If 
+                                                                   -target_precursor_charge option is used 
+                                                                   but this option is not used, the precursor
+                                                                    m/z value written in MS2 spectra will be 
+                                                                   used by default. Together with -target_pre
+                                                                   cursor_charge, this option overrides -Algo
+                                                                   rithm:max_mass. (default: '0.0')
+  -mzml_mass_charge <0:uncharged 1: +1 charged -1: -1 charged>     Charge state of deconvolved masses in mzml
+                                                                    output (specified by out_mzml) (default: 
+                                                                   '0') (min: '-1' max: '1')
+  -preceding_MS1_count <number>                                    Specifies the number of preceding MS1 spec
+                                                                   tra for MS2 precursor determination. In 
+                                                                   TDP, the precursor peak of a MS2 spectrum 
+                                                                   may not belong to any deconvolved masses 
+                                                                   in the MS1 spectrum immediately preceding 
+                                                                   the MS2 spectrum. Increasing this paramete
+                                                                   r to N allows for the search for the decon
+                                                                   volved masses in the N preceding MS1 spect
+                                                                   ra from the MS2 spectrum, increasing the 
+                                                                   chance that its precursor is deconvolved. 
+                                                                   (default: '3') (min: '1')
+  -write_detail <1:true 0:false>                                   To write peak information per deconvolved 
+                                                                   mass in detail or not in tsv files for 
+                                                                   deconvolved spectra. If set to 1, all peak
+                                                                    information (m/z, intensity, charge and 
+                                                                   isotope index) per mass is reported. (defa
+                                                                   ult: '0') (min: '0' max: '1')
+  -merging_method <0: None 1: gaussian averaging 2: block method>  Method for spectra merging before deconvol
+                                                                   ution. 0: No merging 1: Average gaussian 
+                                                                   method to perform moving gaussian averagin
+                                                                   g of spectra per MS level. Effective to 
+                                                                   increase proteoform ID sensitivity (in 
+                                                                   particular for Q-TOF datasets). 2: Block 
+                                                                   method to perform merging of all spectra 
+                                                                   into a single one per MS level (e.g., for 
+                                                                   NativeMS datasets) (default: '0') (min: 
+                                                                   '0' max: '2')
+  -report_FDR <0: Do not report 1: report>                         Report qvalues (roughly, point-wise FDR) 
+                                                                   for deconvolved masses in the tsv files 
+                                                                   for deconvolved spectra. Dummy masses to 
+                                                                   calculate qvalues and FDR are also reporte
+                                                                   d. Beta version. (default: '0') (min: '0' 
+                                                                   max: '1')
+
+Algorithm:
+  -Algorithm:tol <values>                                          Ppm tolerance for MS1, MS2, ...  (default:
+                                                                    '[10.0 10.0 10.0]')
+  -Algorithm:min_mass <value>                                      Minimum mass (Da) (default: '50.0')
+  -Algorithm:max_mass <value>                                      Maximum mass (Da) (default: '1.0e05')
+  -Algorithm:min_charge <number>                                   Minimum charge state for MS1 spectra (can 
+                                                                   be negative for negative mode) (default: 
+                                                                   '1')
+  -Algorithm:max_charge <number>                                   Maximum charge state for MS1 spectra (can 
+                                                                   be negative for negative mode) (default: 
+                                                                   '100')
+  -Algorithm:min_isotope_cosine <values>                           Cosine similarity thresholds between avg. 
+                                                                   and observed isotope patterns for MS1, 2, 
+                                                                   ... (e.g., -min_isotope_cosine 0.8 0.6 to 
+                                                                   specify 0.8 and 0.6 for MS1 and MS2, respe
+                                                                   ctively) (default: '[0.85 0.85 0.85]')
+
+FeatureTracing:
+  -FeatureTracing:mass_error_ppm <value>                           Feature tracing mass ppm tolerance. When 
+                                                                   negative, MS1 tolerance for mass deconvolu
+                                                                   tion will be used (e.g., 16 ppm is used 
+                                                                   when -Algorithm:tol 16). (default: '-1.0')
+
+  -FeatureTracing:min_sample_rate <value>                          Minimum fraction of scans along the featur
+                                                                   e trace that must contain a peak. To raise
+                                                                    feature detection sensitivity, lower this
+                                                                    value close to 0. (default: '0.05')
+  -FeatureTracing:min_trace_length <value>                         Minimum expected length of a mass trace 
+                                                                   (in seconds). (default: '10.0')
+
+                                                                   
+Common TOPP options:
+  -ini <file>                                                      Use the given TOPP INI file
+  -threads <n>                                                     Sets the number of threads allowed to be 
+                                                                   used by the TOPP tool (default: '1')
+  -write_ini <file>                                                Writes the default configuration file
+  --help                                                           Shows options
+  --helphelp                                                       Shows all options (including advanced)
+

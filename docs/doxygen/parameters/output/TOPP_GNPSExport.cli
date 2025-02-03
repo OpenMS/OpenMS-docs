@@ -1,0 +1,48 @@
+
+GNPSExport -- Export representative consensus MS/MS scan per consensusElement into a .MGF file format.
+See the documentation on https://ccms-ucsd.github.io/GNPSDocumentation/featurebasedmolecularnetworking-with-o
+penms
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_GNPSExport.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite GNPSExport:
+ + Nothias L.F. et al.. Feature-based Molecular Networking in the GNPS Analysis Environment. bioRxiv 812404 
+   (2019). doi:10.1101/812404.
+
+Usage:
+  GNPSExport <options>
+
+Options (mandatory options marked with '*'):
+  -in_cm <file>*                          Input consensusXML file containing only consensusElements with "pep
+                                          tide" annotations. (valid formats: 'consensusXML')
+  -in_mzml <files>*                       Original mzml files containing the ms2 spectra (aka peptide annotat
+                                          ion). 
+                                          Must be in order that the consensusXML file maps the original mzML 
+                                          files. (valid formats: 'mzML')
+  -out <file>*                            Output MGF file. (valid formats: 'mgf')
+  -out_quantification <file>*             Output feature quantification table. (valid formats: 'txt')
+  -out_pairs <file>                       Output supplementary pairs table for IIMN. (valid formats: 'csv')
+  -out_meta_values <file>                 Output meta value file. (valid formats: 'tsv')
+                                          
+  -output_type <choice>                   Specificity of mgf output information (default: 'most_intense') 
+                                          (valid: 'merged_spectra', 'most_intense')
+  -peptide_cutoff <number>                Number of most intense peptides to consider per consensus element; 
+                                          '-1' to consider all identifications. (default: '5') (min: '-1')
+  -ms2_bin_size <value>                   Bin size (Da) for fragment ions when merging ms2 scans. (default: 
+                                          '0.019999999552965') (min: '0.0')
+
+Options for exporting mgf file with merged spectra per consensusElement:
+  -merged_spectra:cos_similarity <value>  Cosine similarity threshold for merged_spectra output. (default: 
+                                          '0.9') (min: '0.0')
+
+                                          
+Common TOPP options:
+  -ini <file>                             Use the given TOPP INI file
+  -threads <n>                            Sets the number of threads allowed to be used by the TOPP tool (def
+                                          ault: '1')
+  -write_ini <file>                       Writes the default configuration file
+  --help                                  Shows options
+  --helphelp                              Shows all options (including advanced)
+

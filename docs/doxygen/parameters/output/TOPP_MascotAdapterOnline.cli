@@ -1,0 +1,36 @@
+
+MascotAdapterOnline -- Annotates MS/MS spectra using Mascot.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MascotAdapterOnline.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MascotAdapterOnline <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <file>*        Input file in mzML format.
+                      (valid formats: 'mzML')
+  -out <file>*       Output file in idXML format.
+                      (valid formats: 'idXML')
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - Mascot_parameters   Mascot parameters used for searching
+ - Mascot_server       Mascot server details
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_MascotAdapterOnline.html
+

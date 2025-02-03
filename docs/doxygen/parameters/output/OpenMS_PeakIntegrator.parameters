@@ -1,0 +1,25 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>integration_type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">intensity_sum</td>
+  <td style="vertical-align:top">intensity_sum, simpson, trapezoid</td><td style="vertical-align:top">The integration technique to use in integratePeak() and estimateBackground() which uses either the summed intensity, integration by Simpson's rule or trapezoidal integration.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>baseline_type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">base_to_base</td>
+  <td style="vertical-align:top">base_to_base, vertical_division, vertical_division_min, vertical_division_max</td><td style="vertical-align:top">The baseline type to use in estimateBackground() based on the peak boundaries. A rectangular baseline shape is computed based either on the minimal intensity of the peak boundaries, the maximum intensity or the average intensity (base_to_base).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>fit_EMG</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">false, true</td><td style="vertical-align:top">Fit the chromatogram/spectrum to the EMG peak model.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

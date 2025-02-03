@@ -1,0 +1,35 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>fragment_mass_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.05</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Fragment mass tolerance for spectrum comparisons</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>fragment_mass_unit</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Da</td>
+  <td style="vertical-align:top">Da, ppm</td><td style="vertical-align:top">Unit of fragment mass tolerance</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>max_peptide_length</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">40</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Restrict scoring to peptides with a length no greater than this value ('0' for 'no restriction')</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>max_num_perm</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">16384</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Maximum number of permutations a sequence can have to be processed ('0' for 'no restriction')</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>unambiguous_score</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1000</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Score to use for unambiguous assignments, where all sites on a peptide are phosphorylated. (Note: If a peptide is not phosphorylated at all, its score is set to '-1'.)</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

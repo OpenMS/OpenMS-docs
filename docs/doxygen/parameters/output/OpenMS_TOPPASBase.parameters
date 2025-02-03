@@ -1,0 +1,25 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:default_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">.</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Default path for loading and storing files.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:default_path_current</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If the current path is preferred over the default path.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:version</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">none</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">OpenMS version, used to check if the TOPPAS.ini is up-to-date</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

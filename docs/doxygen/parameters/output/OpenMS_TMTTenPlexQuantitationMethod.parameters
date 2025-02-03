@@ -1,0 +1,70 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_126_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 126 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_127N_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 127N channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_127C_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 127C channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_128N_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 128N channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_128C_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 128C channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_129N_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 129N channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_129C_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 129C channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_130N_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 130N channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_130C_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 130C channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_131_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 131 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>reference_channel</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">126</td>
+  <td style="vertical-align:top">126, 127N, 127C, 128N, 128C, 129N, 129C, 130N, 130C, 131</td><td style="vertical-align:top">The reference channel (126, 127N, 127C, 128N, 128C, 129N, 129C, 130N, 130C, 131).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>correction_matrix</b></td>
+  <td style="vertical-align:top">string list</td><td style="vertical-align:top">[0.0/0.0/5.09/0.0, 0.0/0.25/5.27/0.0, 0.0/0.37/5.36/0.15, 0.0/0.65/4.17/0.1, 0.08/0.49/3.06/0.0, 0.01/0.71/3.07/0.0, 0.0/1.32/2.62/0.0, 0.02/1.28/2.75/2.53, 0.03/2.08/2.23/0.0, 0.08/1.99/1.65/0.0]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Correction matrix for isotope distributions (see documentation); use the following format: <-2Da>/<-1Da>/<+1Da>/<+2Da>; e.g. '0/0.3/4/0', '0.1/0.3/3/0.2'</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

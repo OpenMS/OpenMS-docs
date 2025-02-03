@@ -1,0 +1,53 @@
+
+OpenSwathAssayGenerator -- Generates assays according to different models for a specific TraML
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathAssayGenerator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathAssayGenerator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                           Input file (valid formats: 'tsv', 'mrm', 'pqp', 'TraML')
+  -in_type <type>                       Input file type -- default: determined from file extension or content
+                                        
+                                         (valid: 'tsv', 'mrm', 'pqp', 'TraML')
+  -out <file>*                          Output file (valid formats: 'tsv', 'pqp', 'TraML')
+  -out_type <type>                      Output file type -- default: determined from file extension or conten
+                                        t
+                                         (valid: 'tsv', 'pqp', 'TraML')
+  -min_transitions <int>                Minimal number of transitions (default: '6')
+  -max_transitions <int>                Maximal number of transitions (default: '6')
+  -allowed_fragment_types <type>        Allowed fragment types (default: 'b,y')
+  -allowed_fragment_charges <type>      Allowed fragment charge states (default: '1,2,3,4')
+  -enable_detection_specific_losses     Set this flag if specific neutral losses for detection fragment ions 
+                                        should be allowed
+  -enable_detection_unspecific_losses   Set this flag if unspecific neutral losses (H2O1, H3N1, C1H2N2, C1H2N
+                                        1O1) for detection fragment ions should be allowed
+  -precursor_mz_threshold <double>      MZ threshold in Thomson for precursor ion selection (default: '0.025'
+                                        )
+  -precursor_lower_mz_limit <double>    Lower MZ limit for precursor ions (default: '400.0')
+  -precursor_upper_mz_limit <double>    Upper MZ limit for precursor ions (default: '1200.0')
+  -product_mz_threshold <double>        MZ threshold in Thomson for fragment ion annotation (default: '0.025'
+                                        )
+  -product_lower_mz_limit <double>      Lower MZ limit for fragment ions (default: '350.0')
+  -product_upper_mz_limit <double>      Upper MZ limit for fragment ions (default: '2000.0')
+  -swath_windows_file <file>            Tab separated file containing the SWATH windows for exclusion of frag
+                                        ment ions falling into the precursor isolation window: lower_offset 
+                                        upper_offset \newline 400 425 \newline ... Note that the first line 
+                                        is a header and will be skipped. (valid formats: 'txt')
+  -unimod_file <file>                   (Modified) Unimod XML file (http://www.unimod.org/xml/unimod.xml) 
+                                        describing residue modifiability (valid formats: 'xml')
+  -enable_ipf                           IPF: set this flag if identification transitions should be generated 
+                                        for IPF. Note: Requires setting 'unimod_file'.
+                                        
+Common TOPP options:
+  -ini <file>                           Use the given TOPP INI file
+  -threads <n>                          Sets the number of threads allowed to be used by the TOPP tool (defau
+                                        lt: '1')
+  -write_ini <file>                     Writes the default configuration file
+  --help                                Shows options
+  --helphelp                            Shows all options (including advanced)
+

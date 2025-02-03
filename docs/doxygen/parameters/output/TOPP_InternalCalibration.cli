@@ -1,0 +1,83 @@
+
+InternalCalibration -- Applies an internal mass recalibration.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_InternalCalibration.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  InternalCalibration <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                Input peak file (valid formats: 'mzML')
+  -out <file>*                               Output file  (valid formats: 'mzML')
+  -rscript_executable <file>                 Path to the Rscript executable (default: 'Rscript').
+                                             
+  -ppm_match_tolerance <delta m/z in [ppm]>  Finding calibrants in raw data uses this tolerance (for lock 
+                                             masses and ID's). (default: '25.0')
+
+Chose one of two optional input files ('id_in' or 'lock_in') to define the calibration masses/function:
+  -cal:id_in <file>                          Identifications or features whose peptide ID's serve as calibrat
+                                             ion masses. (valid formats: 'idXML', 'featureXML')
+  -cal:lock_in <file>                        Input file containing reference m/z values (text file with each 
+                                             line as: m/z ms-level charge) which occur in all scans. (valid 
+                                             formats: 'csv')
+  -cal:lock_out <file>                       Optional output file containing peaks from 'in' which were match
+                                             ed to reference m/z values. Useful to see which peaks were used 
+                                             for calibration. (valid formats: 'mzML')
+  -cal:lock_fail_out <file>                  Optional output file containing lock masses which were NOT found
+                                              or accepted(!) in data from 'in'. Useful to see which peaks 
+                                             were used for calibration. (valid formats: 'mzML')
+  -cal:lock_require_mono                     Require all lock masses to be monoisotopic, i.e. not the iso1, 
+                                             iso2 etc ('charge' column is used to determine the spacing). 
+                                             Peaks which are not mono-isotopic are not used.
+  -cal:lock_require_iso                      Require all lock masses to have at least the +1 isotope. Peaks 
+                                             without isotope pattern are not used.
+  -cal:model_type <model>                    Type of function to be fitted to the calibration points. (defaul
+                                             t: 'linear_weighted') (valid: 'linear', 'linear_weighted', 'quad
+                                             ratic', 'quadratic_weighted')
+
+                                             
+  -ms_level i j ...                          Target MS levels to apply the transformation onto. Does not affe
+                                             ct calibrant collection. (default: '[1 2 3]')
+  -RT_chunking <RT window in [sec]>          RT window (one-sided, i.e. left->center, or center->right) aroun
+                                             d an MS scan in which calibrants are collected to build a model.
+                                              Set to -1 to use ALL calibrants for all scans, i.e. a global 
+                                             model. (default: '300.0')
+
+Robust outlier removal using RANSAC:
+  -RANSAC:enabled                            Apply RANSAC to calibration points to remove outliers before 
+                                             fitting a model.
+  -RANSAC:threshold <threshold>              Threshold for accepting inliers (instrument precision (not accur
+                                             acy!) as ppm^2 distance) (default: '10.0')
+  -RANSAC:pc_inliers <# inliers>             Minimum percentage (of available data) of inliers (<threshold 
+                                             away from model) to accept the model. (default: '30') (min: '1' 
+                                             max: '99')
+  -RANSAC:iter <# iterations>                Maximal # iterations. (default: '70')
+
+Thresholds for accepting calibration success:
+  -goodness:median <threshold>               The median ppm error of calibrated masses must be smaller than 
+                                             this threshold. (default: '4.0')
+  -goodness:MAD <threshold>                  The median absolute deviation of the ppm error of calibrated 
+                                             masses must be smaller than this threshold. (default: '2.0')
+
+Tables and plots to verify calibration performance:
+  -quality_control:models <table>            Table of model parameters for each spectrum. (valid formats: 
+                                             'csv')
+  -quality_control:models_plot <image>       Plot image of model parameters for each spectrum. (valid formats
+                                             : 'png')
+  -quality_control:residuals <table>         Table of pre- and post calibration errors. (valid formats: 'csv'
+                                             )
+  -quality_control:residuals_plot <image>    Plot image of pre- and post calibration errors. (valid formats: 
+                                             'png')
+
+                                             
+Common TOPP options:
+  -ini <file>                                Use the given TOPP INI file
+  -threads <n>                               Sets the number of threads allowed to be used by the TOPP tool 
+                                             (default: '1')
+  -write_ini <file>                          Writes the default configuration file
+  --help                                     Shows options
+  --helphelp                                 Shows all options (including advanced)
+

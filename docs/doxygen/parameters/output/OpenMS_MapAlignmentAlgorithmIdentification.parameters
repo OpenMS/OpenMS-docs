@@ -1,0 +1,50 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>score_type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Name of the score type to use for ranking and filtering (.oms input only). If left empty, a score type is picked automatically.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>score_cutoff</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use only IDs above a score cut-off (parameter 'min_score') for alignment?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_score</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.05</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">If 'score_cutoff' is 'true': Minimum score for an ID to be considered.<BR>Unless you have very few runs or identifications, increase this value to focus on more informative peptides.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_run_occur</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">min: 2</td><td style="vertical-align:top">Minimum number of runs (incl. reference, if any) in which a peptide must occur to be used for the alignment.<BR>Unless you have very few runs or identifications, increase this value to focus on more informative peptides.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_rt_shift</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Maximum realistic RT difference for a peptide (median per run vs. reference). Peptides with higher shifts (outliers) are not used to compute the alignment.<BR>If 0, no limit (disable filter); if > 1, the final value in seconds; if <= 1, taken as a fraction of the range of the reference RT scale.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_unassigned_peptides</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Should unassigned peptide identifications be used when computing an alignment of feature or consensus maps? If 'false', only peptide IDs assigned to features will be used.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_feature_rt</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">When aligning feature or consensus maps, don't use the retention time of a peptide identification directly; instead, use the retention time of the centroid of the feature (apex of the elution profile) that the peptide was matched to. If different identifications are matched to one feature, only the peptide closest to the centroid in RT is used.<BR>Precludes 'use_unassigned_peptides'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_adducts</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If IDs contain adducts, treat differently adducted variants of the same molecule as different.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

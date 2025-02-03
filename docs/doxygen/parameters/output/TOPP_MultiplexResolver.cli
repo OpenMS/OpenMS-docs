@@ -1,0 +1,39 @@
+
+MultiplexResolver -- Completes peptide multiplets and resolves conflicts within them.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MultiplexResolver.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MultiplexResolver <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <file>*            Peptide multiplets with assigned sequence information (valid formats: 'consensusXML'
+                         )
+  -in_blacklist <file>   Optional input containing spectral peaks blacklisted during feature detection. Neede
+                         d for generation of dummy features. (valid formats: 'mzML')
+  -out <file>*           Complete peptide multiplets. (valid formats: 'consensusXML')
+  -out_conflicts <file>  Optional output containing peptide multiplets without ID annotation or with conflict
+                         ing quant/ID information. (valid formats: 'consensusXML')
+                         
+Common TOPP options:
+  -ini <file>            Use the given TOPP INI file
+  -threads <n>           Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>      Writes the default configuration file
+  --help                 Shows options
+  --helphelp             Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - algorithm   Parameters for the algorithm.
+ - labels      Isotopic labels that can be specified in section 'algorithm:labels'.
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_MultiplexResolver.html
+

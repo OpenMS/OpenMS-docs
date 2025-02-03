@@ -1,0 +1,16 @@
+// Copyright (c) 2002-2023, The OpenMS Team -- EKU Tuebingen, ETH Zurich, and FU Berlin
+// SPDX-License-Identifier: BSD-3-Clause
+// 
+// --------------------------------------------------------------------------
+// $Maintainer:  $
+// $Authors: Hannes Roest $
+// --------------------------------------------------------------------------
+
+/**
+
+@page pyOpenMS pyOpenMS (Python bindings)
+
+Please see the official documentation at <a
+href="https://pyopenms.readthedocs.io/en/latest/index.html">https://pyopenms.readthedocs.io/en/latest/index.html</a>.
+
+*/

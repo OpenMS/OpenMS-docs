@@ -1,0 +1,27 @@
+
+PSMFeatureExtractor -- Computes extra features for each input PSM.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_PSMFeatureExtractor.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  PSMFeatureExtractor <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                 Input file(s) (valid formats: 'idXML', 'mzid')
+  -out <file>*                 Output file in mzid or idXML format (valid formats: 'idXML', 'mzid')
+  -out_type <type>             Output file type -- default: determined from file extension or content. (valid
+                               : 'idXML', 'mzid')
+  -extra <MetaData parameter>  List of the MetaData parameters to be included in a feature set for precolator
+                               .
+  -multiple_search_engines     Combine PSMs from different search engines by merging on scan level.
+                               
+Common TOPP options:
+  -ini <file>                  Use the given TOPP INI file
+  -threads <n>                 Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>            Writes the default configuration file
+  --help                       Shows options
+  --helphelp                   Shows all options (including advanced)
+

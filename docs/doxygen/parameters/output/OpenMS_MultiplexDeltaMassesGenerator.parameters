@@ -1,0 +1,80 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>Arg6</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">6.0201290268</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Label:13C(6)  |  C(-6) 13C(6)  |  unimod @#188</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Arg10</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.008268599999999</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Label:13C(6)15N(4)  |  C(-6) 13C(6) N(-4) 15N(4)  |  unimod @#267</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Lys4</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">4.0251069836</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Label:2H(4)  |  H(-4) 2H(4)  |  unimod @#481</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Lys6</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">6.0201290268</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Label:13C(6)  |  C(-6) 13C(6)  |  unimod @#188</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Lys8</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">8.0141988132</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Label:13C(6)15N(2)  |  C(-6) 13C(6) N(-2) 15N(2)  |  unimod @#259</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Leu3</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.01883</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Label:2H(3)  |  H(-3) 2H(3)  |  unimod @#262</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Dimethyl0</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">28.031300000000002</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Dimethyl  |  H(4) C(2)  |  unimod @#36</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Dimethyl4</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">32.056407</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Dimethyl:2H(4)  |  2H(4) C(2)  |  unimod @#199</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Dimethyl6</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">34.063116999999998</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Dimethyl:2H(4)13C(2)  |  2H(4) 13C(2)  |  unimod @#510</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>Dimethyl8</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">36.075670000000002</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Dimethyl:2H(6)13C(2)  |  H(-2) 2H(6) 13C(2)  |  unimod @#330</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>ICPL0</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">105.021463999999995</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">ICPL  |  H(3) C(6) N O  |  unimod @#365</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>ICPL4</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">109.046571</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">ICPL:2H(4)  |  H(-1) 2H(4) C(6) N O  |  unimod @#687</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>ICPL6</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">111.041593000000006</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">ICPL:13C(6)  |  H(3) 13C(6) N O  |  unimod @#364</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>ICPL10</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">115.066699999999997</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">ICPL:13C(6)2H(4)  |  H(-1) 2H(4) 13C(6) N O  |  unimod @#866</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

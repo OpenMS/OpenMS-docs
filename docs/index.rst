@@ -72,4 +72,9 @@ OpenMS is developed by a group of `core developers <https://openms.de/contributo
     tutorials/knime-user-tutorial.rst
     tutorials/toppview-user-tutorial.md
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Code
+    :hidden:
 
+    doxygen/demo/html/index

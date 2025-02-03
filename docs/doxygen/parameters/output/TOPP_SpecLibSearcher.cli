@@ -1,0 +1,82 @@
+
+SpecLibSearcher -- Identifies peptide MS/MS spectra by spectral matching with a searchable spectral library.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SpecLibSearcher.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  SpecLibSearcher <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                                      Input files (valid formats: 'mzML')
+  -lib <file>*                                      Searchable spectral library (MSP format) (valid formats: 
+                                                    'msp')
+  -out <files>*                                     Output files. Have to be as many as input files (valid 
+                                                    formats: 'idXML')
+
+Precursor (Parent Ion) Options:
+  -precursor:mass_tolerance <tolerance>             Width of precursor mass tolerance window (default: '10.0'
+                                                    )
+  -precursor:mass_tolerance_unit <unit>             Unit of precursor mass tolerance. (default: 'ppm') (valid
+                                                    : 'ppm', 'Da')
+  -precursor:isotopes <num>                         Corrects for mono-isotopic peak misassignments. (E.g.: 1 
+                                                    = prec. may be misassigned to first isotopic peak) (defau
+                                                    lt: '[0 1]')
+
+Fragments (Product Ion) Options:
+  -fragment:mass_tolerance <tolerance>              Fragment mass tolerance (default: '10.0')
+
+  -compare_function <string>                        Function for similarity comparison (default: 'ZhangSimila
+                                                    rityScore') (valid: 'ZhangSimilarityScore', 'SpectraSTSim
+                                                    ilarityScore')
+                                                    
+
+Filtering options. Most are especially useful when the query spectra are raw.:
+  -filter:remove_peaks_below_threshold <threshold>  All peaks of a query spectrum with intensities below <thr
+                                                    eshold> will be zeroed. (default: '2.01')
+  -filter:min_peaks <number>                        Required minimum number of peaks for a query spectrum 
+                                                    (default: '5')
+  -filter:max_peaks <number>                        Use only the top <number> of peaks. (default: '150')
+  -filter:cut_peaks_below <number>                  Remove all peaks which are lower than 1/<number> of the 
+                                                    highest peaks. Default equals all peaks which are lower 
+                                                    than 0.001 of the maximum intensity peak (default: '1000'
+                                                    )
+
+Modifications Options:
+  -modifications:fixed <mods>                       Fixed modifications, specified using UniMod (www.unimod.o
+                                                    rg) terms, e.g. 'Carbamidomethyl (C)' (valid: '15N-oxobut
+                                                    anoic (N-term C)', '15N-oxobutanoic (Protein N-term S)', 
+                                                    '15N-oxobutanoic (Protein N-term T)', '2-dimethylsuccinyl
+                                                     (C)', '2-monomethylsuccinyl (C)', '2-nitrobenzyl (Y)', 
+                                                    '2-succinyl (C)', '2HPG (R)', '3-deoxyglucosone (R)', 
+                                                    '3-hydroxybenzyl-phosphate (K)', '3-hydroxybenzyl-phospha
+                                                    te (S)', '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzy
+                                                    l-phosphate (Y)', '3-phosphoglyceryl (K)', '3sulfo (N-ter
+                                                    ...
+                                                    (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -modifications:variable <mods>                    Variable modifications, specified using UniMod (www.unimo
+                                                    d.org) terms, e.g. 'Oxidation (M)' (valid: '15N-oxobutano
+                                                    ic (N-term C)', '15N-oxobutanoic (Protein N-term S)', 
+                                                    '15N-oxobutanoic (Protein N-term T)', '2-dimethylsuccinyl
+                                                     (C)', '2-monomethylsuccinyl (C)', '2-nitrobenzyl (Y)', 
+                                                    '2-succinyl (C)', '2HPG (R)', '3-deoxyglucosone (R)', 
+                                                    '3-hydroxybenzyl-phosphate (K)', '3-hydroxybenzyl-phospha
+                                                    te (S)', '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzy
+                                                    l-phosphate (Y)', '3-phosphoglyceryl (K)', '3sulfo (N-ter
+                                                    ...
+                                                    (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -modifications:variable_max_per_peptide <num>     Maximum number of residues carrying a variable modificati
+                                                    on per candidate peptide (default: '2')
+
+                                                    
+                                                    
+Common TOPP options:
+  -ini <file>                                       Use the given TOPP INI file
+  -threads <n>                                      Sets the number of threads allowed to be used by the TOPP
+                                                     tool (default: '1')
+  -write_ini <file>                                 Writes the default configuration file
+  --help                                            Shows options
+  --helphelp                                        Shows all options (including advanced)
+

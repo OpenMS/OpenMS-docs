@@ -1,0 +1,60 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>mass_error_ppm</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">20.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Allowed mass deviation (in ppm).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>noise_threshold_int</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Intensity threshold below which peaks are removed as noise.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>chrom_peak_snr</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimum intensity above noise_threshold_int (signal-to-noise) a peak should have to be considered an apex.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>reestimate_mt_sd</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Enables dynamic re-estimation of m/z variance during mass trace collection stage.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>quant_method</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">area</td>
+  <td style="vertical-align:top">area, median, max_height</td><td style="vertical-align:top">Method of quantification for mass traces. For LC data 'area' is recommended, 'median' for direct injection data. 'max_height' simply uses the most intense peak in the trace.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>trace_termination_criterion</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">outlier</td>
+  <td style="vertical-align:top">outlier, sample_rate</td><td style="vertical-align:top">Termination criterion for the extension of mass traces. In 'outlier' mode, trace extension cancels if a predefined number of consecutive outliers are found (see trace_termination_outliers parameter). In 'sample_rate' mode, trace extension in both directions stops if ratio of found peaks versus visited spectra falls below the 'min_sample_rate' threshold.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>trace_termination_outliers</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">5</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Mass trace extension in one direction cancels if this number of consecutive spectra with no detectable peaks is reached.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>min_sample_rate</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimum fraction of scans along the mass trace that must contain a peak.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>min_trace_length</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">5.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimum expected length of a mass trace (in seconds).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>max_trace_length</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum expected length of a mass trace (in seconds). Set to a negative value to disable maximal length check during mass trace detection.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

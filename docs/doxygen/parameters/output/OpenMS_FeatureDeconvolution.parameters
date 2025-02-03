@@ -1,0 +1,85 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>charge_min</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimal possible charge</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>charge_max</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">10</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximal possible charge</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>charge_span_max</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Maximal range of charges for a single analyte, i.e. observing q1=[5,6,7] implies span=3. Setting this to 1 will only find adduct variants of the same charge</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>q_try</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">feature</td>
+  <td style="vertical-align:top">feature, heuristic, all</td><td style="vertical-align:top">Try different values of charge for each feature according to the above settings ('heuristic' [does not test all charges, just the likely ones] or 'all' ), or leave feature charge untouched ('feature').</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>retention_max_diff</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum allowed RT difference between any two features if their relation shall be determined</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>retention_max_diff_local</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum allowed RT difference between between two co-features, after adduct shifts have been accounted for (if you do not have any adduct shifts, this value should be equal to 'retention_max_diff', otherwise it should be smaller!)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>mass_max_diff</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum allowed mass difference [in Th] for a single feature.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>potential_adducts</b></td>
+  <td style="vertical-align:top">string list</td><td style="vertical-align:top">[K:+:0.1]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Adducts used to explain mass differences in format: 'Element:Charge(+/-):Probability[:RTShift[:Label]]', i.e. the number of '+' or '-' indicate the charge, e.g. 'Ca:++:0.5' indicates +2. Probabilites have to be in (0,1]. RTShift param is optional and indicates the expected RT shift caused by this adduct, e.g. '(2)H4H-4:0:1:-3' indicates a 4 deuterium label, which causes early elution by 3 seconds. As a fifth parameter you can add a label which is tagged on every feature which has this adduct. This also determines the map number in the consensus file.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_neutrals</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximal number of neutral adducts(q=0) allowed. Add them in the 'potential_adducts' section!</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_minority_bound</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Maximum count of the least probable adduct (according to 'potential_adducts' param) within a charge variant. E.g. setting this to 2 will not allow an adduct composition of '1(H+),3(Na+)' if Na+ is the least probable adduct</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_rt_overlap</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.66</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Minimum overlap of the convex hull' RT intersection measured against the union from two features (if CHs are given)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>intensity_filter</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Enable the intensity filter, which will only allow edges between two equally charged features if the intensity of the feature with less likely adducts is smaller than that of the other feature. It is not used for features of different charge.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>negative_mode</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Enable negative ionization mode.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>default_map_label</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">decharged features</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Label of map in output consensus file where all features are put by default</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>verbose_level</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: 0 max: 3</td><td style="vertical-align:top">Amount of debug information given during processing.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,80 @@
+
+PeptideIndexer -- Refreshes the protein references for all peptide hits.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_PeptideIndexer.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  PeptideIndexer <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                             Input idXML file containing the identifications. (valid formats: 
+                                          'idXML')
+  -fasta <file>                           Input sequence database in FASTA format. Leave empty for using the 
+                                          same DB as used for the input idXML (this might fail). Non-existing
+                                           relative filenames are looked up via 'OpenMS.ini:id_db_dir' (valid
+                                           formats: 'fasta')
+  -out <file>*                            Output idXML file. (valid formats: 'idXML')
+  -decoy_string <text>                    String that was appended (or prefixed - see 'decoy_string_position'
+                                           flag below) to the accessions in the protein database to indicate 
+                                          decoy proteins. If empty (default), it's determined automatically 
+                                          (checking for common terms, both as prefix and suffix).
+  -decoy_string_position <choice>         Is the 'decoy_string' prepended (prefix) or appended (suffix) to 
+                                          the protein accession? (ignored if decoy_string is empty) (default:
+                                           'prefix') (valid: 'prefix', 'suffix')
+  -missing_decoy_action <choice>          Action to take if NO peptide was assigned to a decoy protein (which
+                                           indicates wrong database or decoy string): 'error' (exit with erro
+                                          r, no output), 'warn' (exit with success, warning message), 'silent
+                                          ' (no action is taken, not even a warning) (default: 'error') (vali
+                                          d: 'error', 'warn', 'silent')
+  -write_protein_sequence                 If set, the protein sequences are stored as well.
+  -write_protein_description              If set, the protein description is stored as well.
+  -keep_unreferenced_proteins             If set, protein hits which are not referenced by any peptide are 
+                                          kept.
+  -unmatched_action <choice>              If peptide sequences cannot be matched to any protein: 1) raise an 
+                                          error; 2) warn (unmatched PepHits will miss target/decoy annotation
+                                           with downstream problems); 3) remove the hit. (default: 'error') 
+                                          (valid: 'error', 'warn', 'remove')
+  -aaa_max <number>                       Maximal number of ambiguous amino acids (AAAs) allowed when matchin
+                                          g to a protein database with AAAs. AAAs are 'B', 'J', 'Z' and 'X'. 
+                                          (default: '3') (min: '0' max: '10')
+  -mismatches_max <number>                Maximal number of mismatched (mm) amino acids allowed when matching
+                                           to a protein database. The required runtime is exponential in the 
+                                          number of mm's; apply with care. MM's are allowed in addition to 
+                                          AAA's. (default: '0') (min: '0' max: '10')
+  -IL_equivalent                          Treat the isobaric amino acids isoleucine ('I') and leucine ('L') 
+                                          as equivalent (indistinguishable). Also occurrences of 'J' will be 
+                                          treated as 'I' thus avoiding ambiguous matching.
+  -allow_nterm_protein_cleavage <choice>  Allow the protein N-terminus amino acid to clip. (default: 'true') 
+                                          (valid: 'true', 'false')
+
+enzyme:
+  -enzyme:name <choice>                   Enzyme which determines valid cleavage sites - e.g. trypsin cleaves
+                                           after lysine (K) or arginine (R), but not before proline (P). Defa
+                                          ult: deduce from input (default: 'auto') (valid: 'auto', 'Trypsin',
+                                           'Arg-C', 'Arg-C/P', 'Asp-N_ambic', 'Chymotrypsin/P', 'CNBr', 'Asp-
+                                          N', 'Asp-N/B', 'Chymotrypsin', 'Formic_acid', 'Lys-C/P', 'staphyloc
+                                          occal protease/D', 'proline-endopeptidase/HKR', 'proline endopeptid
+                                          ase', 'Lys-C', 'PepsinA', 'Trypsin/P', 'glutamyl endopeptidase', 
+                                          'leukocyte elastase', '2-iodobenzoate', 'iodosobenzoate', 'Glu-C+P'
+                                          , 'PepsinA + P', 'Lys-N', 'V8-DE', 'V8-E', 'Alpha-lytic protease', 
+                                          'TrypChymo', 'Clostripain/P', 'cyanogen-bromide', 'elastase-trypsin
+                                          -chymotrypsin', 'no cleavage', 'unspecific cleavage')
+  -enzyme:specificity <choice>            Specificity of the enzyme. Default: deduce from input.
+                                            'full': both internal cleavage sites must match.
+                                            'semi': one of two internal cleavage sites must match.
+                                            'none': allow all peptide hits no matter their context (enzyme 
+                                          is irrelevant). (default: 'auto') (valid: 'auto', 'full', 'semi', 
+                                          'none')
+
+                                          
+Common TOPP options:
+  -ini <file>                             Use the given TOPP INI file
+  -threads <n>                            Sets the number of threads allowed to be used by the TOPP tool (def
+                                          ault: '1')
+  -write_ini <file>                       Writes the default configuration file
+  --help                                  Shows options
+  --helphelp                              Shows all options (including advanced)
+

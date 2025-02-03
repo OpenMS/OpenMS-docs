@@ -1,0 +1,41 @@
+
+OpenSwathChromatogramExtractor -- Extract chromatograms (XIC) from a MS2 map file.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathChromatogramExtractor.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathChromatogramExtractor <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                   Input files separated by blank (valid formats: 'mzML')
+  -tr <file>*                    Transition file ('TraML' or 'csv') (valid formats: 'csv', 'traML')
+  -rt_norm <file>                RT normalization file (how to map the RTs of this run to the ones stored in 
+                                 the library) (valid formats: 'trafoXML')
+  -out <file>*                   Output file (valid formats: 'mzML')
+  -min_upper_edge_dist <double>  Minimal distance to the edge to still consider a precursor, in Thomson (defa
+                                 ult: '0.0')
+  -rt_window <double>            Extraction window in RT dimension (-1 means extract over the whole range). 
+                                 This is the full window size, e.g. a value of 1000 seconds would extract 
+                                 500 seconds on either side. (default: '-1.0')
+  -ion_mobility_window <double>  Extraction window in ion mobility dimension (in milliseconds). This is the 
+                                 full window size, e.g. a value of 10 milliseconds would extract 5 millisecon
+                                 ds on either side. (default: '-1.0')
+  -mz_window <double>            Extraction window in m/z dimension (in Thomson, to use ppm see -ppm flag). 
+                                 This is the full window size, e.g. 100 ppm would extract 50 ppm on either 
+                                 side. (default: '0.05') (min: '0.0')
+  -ppm                           M/z extraction_window is in ppm
+  -is_swath                      Set this flag if the data is SWATH data
+  -extract_MS1                   Extract the MS1 transitions based on the precursor values in the TraML file 
+                                 (useful for extracting MS1 XIC)
+                                 
+Common TOPP options:
+  -ini <file>                    Use the given TOPP INI file
+  -threads <n>                   Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                 '1')
+  -write_ini <file>              Writes the default configuration file
+  --help                         Shows options
+  --helphelp                     Shows all options (including advanced)
+

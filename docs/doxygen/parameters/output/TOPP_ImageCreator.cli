@@ -1,0 +1,48 @@
+
+ImageCreator -- Transforms an LC-MS map into an image.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ImageCreator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ImageCreator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                Input file  (valid formats: 'mzML')
+  -in_featureXML <file>      Input file  (valid formats: 'featureXML')
+  -out <file>*               Output file (valid formats: 'png', 'jpg', 'bmp', 'tiff', 'ppm')
+  -out_type <file type>      The image format. Set this if you want to force a format not reflected by the 
+                             'out' filename. (valid: 'png', 'jpg', 'bmp', 'tiff', 'ppm')
+  -rt [min]:[max]            Retention time range to extract (default: ':')
+  -mz [min]:[max]            Mass-to-charge range to extract (default: ':')
+  -width <number>            Number of pixels in m/z dimension.
+                             If 0, one pixel per Th. (default: '1024') (min: '0')
+  -height <number>           Number of pixels in RT dimension.
+                             If 0, one pixel per spectrum. (default: '1024') (min: '0')
+  -background_color <color>  Background color e.g.: "#FF0000" to choose red as background color (default: 
+                             '#FFFFFF')
+  -feature_color <color>     Feature color e.g.: "#00FF00" to choose green as feature color (default: '#00000
+                             0')
+  -gradient <gradient>       Intensity gradient that defines colors for the range between 0 and 100.
+                             Example: '0,#FFFFFF;50,#FF0000;100,#000000'
+  -max_intensity <int>       Maximum peak intensity used to determine range for colors.
+                             If 0, this is determined from the data. (default: '0.0')
+  -log_intensity             Apply logarithm to intensity values
+  -transpose                 Flag to transpose the resampled matrix (RT vs. m/z).
+                             Per default, dimensions run bottom-up in RT and left-right in m/z.
+  -precursors                Mark locations of MS2 precursors.
+                             
+  -precursor_color <color>   Color for precursor marks (color code or word, e.g. 'black') (requires 'precurso
+                             rs' flag to be active) (default: '#000000')
+  -precursor_size <number>   Size of the precursor marks (requires 'precursors' flag to be active) (default: 
+                             '2') (min: '1' max: '3')
+                             
+Common TOPP options:
+  -ini <file>                Use the given TOPP INI file
+  -threads <n>               Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>          Writes the default configuration file
+  --help                     Shows options
+  --helphelp                 Shows all options (including advanced)
+

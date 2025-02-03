@@ -1,0 +1,30 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>gaussian_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.2</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Use a gaussian filter width which has approximately the same width as your mass peaks (FWHM in m/z).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>ppm_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Gaussian width, depending on the m/z position.<BR>The higher the value, the wider the peak and therefore the wider the gaussian.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_ppm_tolerance</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If true, instead of the gaussian_width value, the ppm_tolerance is used. The gaussian is calculated in each step anew, so this is much slower.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>write_log_messages</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">true: Warn if no signal was found by the Gauss filter algorithm.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,25 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>windowsize</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">50.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The size of the sliding window along the m/z axis.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>peakcount</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The number of peaks that should be kept.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>movetype</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">slide</td>
+  <td style="vertical-align:top">slide, jump</td><td style="vertical-align:top">Whether sliding window (one peak steps) or jumping window (window size steps) should be used.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

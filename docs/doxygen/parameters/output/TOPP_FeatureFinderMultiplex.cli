@@ -1,0 +1,73 @@
+
+FeatureFinderMultiplex -- Determination of peak ratios in LC-MS data
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FeatureFinderMultiplex.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  FeatureFinderMultiplex <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                              LC-MS dataset in either centroid or profile mode (valid formats: 
+                                           'mzML')
+  -out <file>                              Output file containing the individual peptide features. (valid 
+                                           formats: 'featureXML')
+
+algorithmic parameters:
+  -algorithm:labels <text>                 Labels used for labelling the samples. If the sample is unlabelled
+                                            (i.e. you want to detect only single peptide features) please 
+                                           leave this parameter empty. [...] specifies the labels for a singl
+                                           e sample. For example
+                                           
+                                           [][Lys8,Arg10]        ... SILAC
+                                           [][Lys4,Arg6][Lys8,Arg10]        ... triple-SILAC
+                                           [Dimethyl0][Dimethyl6]        ... Dimethyl
+                                           [Dimethyl0][Dimethyl4][Dimethyl8]        ... triple Dimethyl
+                                           [ICPL0][ICPL4][ICPL6][ICPL10]        ... ICPL (default: '[][Lys8,A
+                                           rg10]')
+  -algorithm:charge <text>                 Range of charge states in the sample, i.e. min charge : max charge
+                                           . (default: '1:4')
+  -algorithm:rt_typical <value>            Typical retention time [s] over which a characteristic peptide 
+                                           elutes. (This is not an upper bound. Peptides that elute for longe
+                                           r will be reported.) (default: '40.0') (min: '0.0')
+  -algorithm:rt_band <value>               The algorithm searches for characteristic isotopic peak patterns, 
+                                           spectrum by spectrum. For some low-intensity peptides, an importan
+                                           t peak might be missing in one spectrum but be present in one of 
+                                           the neighbouring ones. The algorithm takes a bundle of neighbourin
+                                           g spectra with width rt_band into account. For example with rt_ban
+                                           d = 0, all characteristic isotopic peaks have to be present in 
+                                           one and the same spectrum. As rt_band increases, the sensitivity 
+                                           of the algorithm but also the likelihood of false detections incre
+                                           ases. (default: '0.0') (min: '0.0')
+  -algorithm:rt_min <value>                Lower bound for the retention time [s]. (Any peptides seen for a 
+                                           shorter time period are not reported.) (default: '2.0') (min: '0.0
+                                           ')
+  -algorithm:mz_tolerance <value>          M/z tolerance for search of peak patterns. (default: '6.0') (min: 
+                                           '0.0')
+  -algorithm:mz_unit <choice>              Unit of the 'mz_tolerance' parameter. (default: 'ppm') (valid: 
+                                           'Da', 'ppm')
+  -algorithm:intensity_cutoff <value>      Lower bound for the intensity of isotopic peaks. (default: '1000.0
+                                           ') (min: '0.0')
+  -algorithm:peptide_similarity <value>    Two peptides in a multiplet are expected to have the same isotopic
+                                            pattern. This parameter is a lower bound on their similarity. 
+                                           (default: '0.5') (min: '-1.0' max: '1.0')
+  -algorithm:averagine_similarity <value>  The isotopic pattern of a peptide should resemble the averagine 
+                                           model at this m/z position. This parameter is a lower bound on 
+                                           similarity between measured isotopic pattern and the averagine 
+                                           model. (default: '0.4') (min: '-1.0' max: '1.0')
+  -algorithm:missed_cleavages <number>     Maximum number of missed cleavages due to incomplete digestion. 
+                                           (Only relevant if enzymatic cutting site coincides with labelling 
+                                           site. For example, Arg/Lys in the case of trypsin digestion and 
+                                           SILAC labelling.) (default: '0') (min: '0')
+
+                                           
+Common TOPP options:
+  -ini <file>                              Use the given TOPP INI file
+  -threads <n>                             Sets the number of threads allowed to be used by the TOPP tool 
+                                           (default: '1')
+  -write_ini <file>                        Writes the default configuration file
+  --help                                   Shows options
+  --helphelp                               Shows all options (including advanced)
+

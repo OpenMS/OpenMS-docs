@@ -1,0 +1,91 @@
+
+FeatureFinderIdentification -- Detects features in MS1 data based on peptide identifications.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FeatureFinderIdentification.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite FeatureFinderIdentification:
+ + Weisser H, Choudhary JS. Targeted Feature Detection for Data-Dependent Shotgun Proteomics. J. Proteome 
+   Res. 2017; 16, 8:2964-2974. doi:10.1021/acs.jproteome.7b00248.
+
+Usage:
+  FeatureFinderIdentification <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                         Input file: LC-MS raw data (valid formats: 'mzML')
+  -id <file>*                         Input file: Peptide identifications derived directly from 'in' (valid 
+                                      formats: 'idXML')
+  -id_ext <file>                      Input file: 'External' peptide identifications (e.g. from aligned runs)
+                                       (valid formats: 'idXML')
+  -out <file>*                        Output file: Features (valid formats: 'featureXML')
+  -lib_out <file>                     Output file: Assay library (valid formats: 'traML')
+  -chrom_out <file>                   Output file: Chromatograms (valid formats: 'mzML')
+  -candidates_out <file>              Output file: Feature candidates (before filtering and model fitting) 
+                                      (valid formats: 'featureXML')
+  -quantify_decoys                    Whether decoy peptides should be quantified (true) or skipped (false).
+  -min_psm_cutoff <text>              Minimum score for the best PSM of a spectrum to be used as seed. Use 
+                                      'none' for no cutoff. (default: 'none')
+  -add_mass_offset_peptides <value>   If for every peptide (or seed) also an offset peptide is extracted (tru
+                                      e). Can be used to downstream to determine MBR false transfer rates. 
+                                      (0.0 = disabled) (default: '0.0') (min: '0.0')
+
+Parameters for ion chromatogram extraction:
+  -extract:batch_size <number>        Nr of peptides used in each batch of chromatogram extraction. Smaller 
+                                      values decrease memory usage but increase runtime. (default: '5000') 
+                                      (min: '1')
+  -extract:mz_window <value>          M/z window size for chromatogram extraction (unit: ppm if 1 or greater,
+                                       else Da/Th) (default: '10.0') (min: '0.0')
+  -extract:n_isotopes <number>        Number of isotopes to include in each peptide assay. (default: '2') 
+                                      (min: '2')
+
+Parameters for detecting features in extracted ion chromatograms:
+  -detect:peak_width <value>          Expected elution peak width in seconds, for smoothing (Gauss filter). 
+                                      Also determines the RT extration window, unless set explicitly via 'ext
+                                      ract:rt_window'. (default: '60.0') (min: '0.0')
+  -detect:mapping_tolerance <value>   RT tolerance (plus/minus) for mapping peptide IDs to features. Absolute
+                                       value in seconds if 1 or greater, else relative to the RT span of the 
+                                      feature. (default: '0.0') (min: '0.0')
+
+Parameters for scoring features using a support vector machine (SVM):
+  -svm:samples <number>               Number of observations to use for training ('0' for all) (default: '0')
+                                       (min: '0')
+  -svm:no_selection                   By default, roughly the same number of positive and negative observatio
+                                      ns, with the same intensity distribution, are selected for training. 
+                                      This aims to reduce biases, but also reduces the amount of training 
+                                      data. Set this flag to skip this procedure and consider all available 
+                                      observations (subject to 'svm:samples').
+  -svm:xval_out <choice>              Output file: SVM cross-validation (parameter optimization) results (val
+                                      id formats: 'csv')
+  -svm:kernel <choice>                SVM kernel (default: 'RBF') (valid: 'RBF', 'linear')
+  -svm:xval <number>                  Number of partitions for cross-validation (parameter optimization) (def
+                                      ault: '5') (min: '1')
+  -svm:log2_C <values>                Values to try for the SVM parameter 'C' during parameter optimization. 
+                                      A value 'x' is used as 'C = 2^x'. (default: '[-5.0 -3.0 -1.0 1.0 3.0 
+                                      5.0 7.0 9.0 11.0 13.0 15.0]')
+  -svm:log2_gamma <values>            Values to try for the SVM parameter 'gamma' during parameter optimizati
+                                      on (RBF kernel only). A value 'x' is used as 'gamma = 2^x'. (default: 
+                                      '[-15.0 -13.0 -11.0 -9.0 -7.0 -5.0 -3.0 -1.0 1.0 3.0]')
+  -svm:log2_p <values>                Values to try for the SVM parameter 'epsilon' during parameter optimiza
+                                      tion (epsilon-SVR only). A value 'x' is used as 'epsilon = 2^x'. (defau
+                                      lt: '[-15.0 -12.0 -9.0 -6.0 -3.32192809489 0.0 3.32192809489 6.0 9.0 
+                                      12.0 15.0]')
+
+Parameters for fitting elution models to features:
+  -model:type <choice>                Type of elution model to fit to features (default: 'symmetric') (valid:
+                                       'symmetric', 'asymmetric', 'none')
+
+Parameters for fitting exp. mod. Gaussians to mass traces.:
+  -EMGScoring:max_iteration <number>  Maximum number of iterations for EMG fitting. (default: '100') (min: 
+                                      '1')
+  -EMGScoring:init_mom                Alternative initial parameters for fitting through method of moments.
+
+                                      
+Common TOPP options:
+  -ini <file>                         Use the given TOPP INI file
+  -threads <n>                        Sets the number of threads allowed to be used by the TOPP tool (default
+                                      : '1')
+  -write_ini <file>                   Writes the default configuration file
+  --help                              Shows options
+  --helphelp                          Shows all options (including advanced)
+

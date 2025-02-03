@@ -1,0 +1,77 @@
+
+LuciphorAdapter -- Modification site localisation using LuciPHOr2.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_LuciphorAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  LuciphorAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                        Input spectrum file (valid formats: 'mzML')
+  -id <file>*                        Protein/peptide identifications file (valid formats: 'idXML')
+  -out <file>*                       Output file (valid formats: 'idXML')
+  -executable <file>*                LuciPHOr2 .jar file. Provide a full or relative path, or make sure it 
+                                     can be found in your PATH environment.
+  -fragment_method <choice>          Fragmentation method (default: 'CID') (valid: 'CID', 'HCD')
+  -fragment_mass_tolerance <value>   Tolerance of the peaks in the fragment spectrum (default: '0.5')
+  -fragment_error_units <choice>     Unit of fragment mass tolerance (default: 'Da') (valid: 'Da', 'ppm')
+  -min_mz <value>                    Do not consider peaks below this value for matching fragment ions (defau
+                                     lt: '150.0')
+  -target_modifications <mods>       List the amino acids to be searched for and their mass modifications, 
+                                     specified using UniMod (www.unimod.org) terms, e.g. 'Carbamidomethyl 
+                                     (C)' (default: '[Phospho (S) Phospho (T) Phospho (Y)]') (valid: '15N-oxo
+                                     butanoic (N-term C)', '15N-oxobutanoic (Protein N-term S)', '15N-oxobuta
+                                     noic (Protein N-term T)', '2-dimethylsuccinyl (C)', '2-monomethylsucciny
+                                     l (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', '2HPG (R)', '3-deoxygluco
+                                     sone (R)', '3-hydroxybenzyl-phosphate (K)', '3-hydroxybenzyl-phosphate 
+                                     (S)', '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-phosphate (Y)', 
+                                     '3-phosphoglyceryl (K)', '3sulfo (N-term)', '4-ONE (C)', '4-ONE (H)', 
+                                     '4-ONE (K)', '4-ONE+Delta:H(-2)O(-1) (C)', '4-ONE+Delta:H(-2)O(-1) (H)',
+                                     ...
+                                     ', 'Xlink:SMCC[321] (C)', 'ZGB (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -neutral_losses <value>            List the types of neutral losses that you want to consider. The residue 
+                                     field is case sensitive. For example: lower case 'sty' implies that the 
+                                     neutral loss can only occur if the specified modification is present. 
+                                     Syntax: NL = <RESDIUES> -<NEUTRAL_LOSS_MOLECULAR_FORMULA> <MASS_LOST> 
+                                     (default: '[sty -H3PO4 -97.97690]')
+  -decoy_mass <value>                How much to add to an amino acid to make it a decoy (default: '79.966330
+                                     999999997') (min: '1.0')
+  -decoy_neutral_losses <value>      For handling the neutral loss from a decoy sequence. The syntax for this
+                                      is identical to that of the normal neutral losses given above except 
+                                     that the residue is always 'X'. Syntax: DECOY_NL = X -<NEUTRAL_LOSS_MOLE
+                                     CULAR_FORMULA> <MASS_LOST> (default: '[X -H3PO4 -97.97690]')
+  -max_charge_state <num>            Do not consider PSMs with a charge state above this value (default: '5')
+                                      (min: '1')
+  -max_peptide_length <num>          Restrict scoring to peptides with a length shorter than this value (defa
+                                     ult: '40') (min: '1')
+  -max_num_perm <num>                Maximum number of permutations a sequence can have (default: '16384') 
+                                     (min: '1')
+  -modeling_score_threshold <value>  Minimum score a PSM needs to be considered for modeling (default: '0.95'
+                                     ) (min: '0.0')
+  -scoring_threshold <value>         PSMs below this value will be discarded (default: '0.0') (min: '0.0')
+  -min_num_psms_model <num>          The minimum number of PSMs you need for any charge state in order to 
+                                     build a model for it (default: '50') (min: '1')
+  -num_threads <num>                 For multi-threading, 0 = use all CPU found by JAVA (default: '6') (min: 
+                                     '0')
+  -run_mode <choice>                 Determines how Luciphor will run: 0 = calculate FLR then rerun scoring 
+                                     without decoys (two iterations), 1 = Report Decoys: calculate FLR but 
+                                     don't rescore PSMs, all decoy hits will be reported (default: '0') (vali
+                                     d: '0', '1')
+  -rt_tolerance <num>                Set the retention time tolerance (for the mapping of identifications to 
+                                     spectra in case multiple search engines were used) (default: '0.01') 
+                                     (min: '0.0')
+  -java_executable <file>            The Java executable. Usually Java is on the system PATH. If Java is not 
+                                     found, use this parameter to specify the full path to Java
+  -java_memory <num>                 Maximum Java heap size (in MB) (default: '3500')
+                                     
+Common TOPP options:
+  -ini <file>                        Use the given TOPP INI file
+  -threads <n>                       Sets the number of threads allowed to be used by the TOPP tool (default:
+                                      '1')
+  -write_ini <file>                  Writes the default configuration file
+  --help                             Shows options
+  --helphelp                         Shows all options (including advanced)
+

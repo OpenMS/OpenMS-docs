@@ -1,0 +1,60 @@
+
+HighResPrecursorMassCorrector -- Corrects the precursor mass and charge determined by the instrument software
+.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_HighResPrecursorMassCorrector.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  HighResPrecursorMassCorrector <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                         Input file (centroided data) (valid formats: 'mzML')
+  -out <file>*                                        Output file (valid formats: 'mzML')
+
+Use features for precursor mass correction.:
+  -feature:in <file>                                  Features used to correct precursor masses. (valid forma
+                                                      ts: 'featureXML')
+  -feature:mz_tolerance <num>                         The precursor mass tolerance. Used to determine matchin
+                                                      g to feature mass traces. (default: '5.0')
+  -feature:mz_tolerance_unit <choice>                 Unit of precursor mass tolerance (default: 'ppm') (vali
+                                                      d: 'Da', 'ppm')
+  -feature:rt_tolerance <num>                         Additional retention time tolerance added to feature 
+                                                      boundaries. (default: '0.0')
+  -feature:believe_charge                             Assume precursor charge to be correct.
+  -feature:keep_original                              Make a copy of the precursor and MS2 (true) or discard 
+                                                      the original (false).
+  -feature:assign_all_matching                        Correct a precursor using all matching features (true) 
+                                                      or only the nearest (false). Only evaluated if copies 
+                                                      are created (feature:keep_original).
+
+Use nearest centroided MS1 peak for precursor mass correction.:
+  -nearest_peak:mz_tolerance <num>                    The precursor mass tolerance to find the closest MS1 
+                                                      peak. (Disable method by setting value to 0.0) (default
+                                                      : '0.0')
+  -nearest_peak:mz_tolerance_unit <choice>            Unit of precursor mass tolerance (default: 'ppm') (vali
+                                                      d: 'Da', 'ppm')
+
+Use centroided MS1 peak with the highest intensity in a certrain mass range - for precursor mass correction:
+  -highest_intensity_peak:mz_tolerance <num>          The precursor mass tolerance to find the highest intens
+                                                      ity MS1 peak. Suggested value 1/max. expected charge. 
+                                                      (Disable method by setting value to 0.0) (default: '0.0
+                                                      ')
+  -highest_intensity_peak:mz_tolerance_unit <choice>  Unit of precursor mass tolerance (default: 'ppm') (vali
+                                                      d: 'Da', 'ppm')
+
+  -out_csv <file>                                     Optional CSV output file for results on 'nearest_peak' 
+                                                      or 'highest_intensity_peak' algorithm (see correspondin
+                                                      g subsection) containing columns: RT, uncorrectedMZ, 
+                                                      correctedMZ, deltaMZ. (valid formats: 'csv')
+                                                      
+Common TOPP options:
+  -ini <file>                                         Use the given TOPP INI file
+  -threads <n>                                        Sets the number of threads allowed to be used by the 
+                                                      TOPP tool (default: '1')
+  -write_ini <file>                                   Writes the default configuration file
+  --help                                              Shows options
+  --helphelp                                          Shows all options (including advanced)
+

@@ -1,0 +1,115 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>psm_probability_cutoff</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-03</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Remove PSMs with probabilities less than this cutoff</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>top_PSMs</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Consider only top X PSMs per spectrum. 0 considers all.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>keep_best_PSM_only</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Epifany uses the best PSM per peptide for inference. Discard the rest (true) or keepe.g. for quantification/reporting?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>update_PSM_probabilities</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">(Experimental:) Update PSM probabilities with their posteriors under consideration of the protein probabilities.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>user_defined_priors</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">(Experimental:) Uses the current protein scores as user-defined priors.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>annotate_group_probabilities</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Annotates group probabilities for indistinguishable protein groups (indistinguishable by experimentally observed PSMs).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_ids_outside_features</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">(Only consensusXML) Also use IDs without associated features for inference?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Model parameters for the Bayesian network">model_parameters</span>:prot_prior</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">min: -1.0 max: 1.0</td><td style="vertical-align:top">Protein prior probability ('gamma' parameter). Negative values enable grid search for this param.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Model parameters for the Bayesian network">model_parameters</span>:pep_emission</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">min: -1.0 max: 1.0</td><td style="vertical-align:top">Peptide emission probability ('alpha' parameter). Negative values enable grid search for this param.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Model parameters for the Bayesian network">model_parameters</span>:pep_spurious_emission</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">min: -1.0 max: 1.0</td><td style="vertical-align:top">Spurious peptide identification probability ('beta' parameter). Usually much smaller than emission from proteins. Negative values enable grid search for this param.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Model parameters for the Bayesian network">model_parameters</span>:pep_prior</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Peptide prior probability (experimental, should be covered by combinations of the other params).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Model parameters for the Bayesian network">model_parameters</span>:regularize</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Regularize the number of proteins that produce a peptide together (experimental, should be activated when using higher p-norms).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Model parameters for the Bayesian network">model_parameters</span>:extended_model</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Uses information from different peptidoforms also across runs (automatically activated if an experimental design is given!)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the loopy belief propagation algorithm.">loopy_belief_propagation</span>:scheduling_type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">priority</td>
+  <td style="vertical-align:top">priority, fifo, subtree</td><td style="vertical-align:top">(Not used yet) How to pick the next message: priority = based on difference to last message (higher = more important). fifo = first in first out. subtree = message passing follows a random spanning tree in each iteration</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the loopy belief propagation algorithm.">loopy_belief_propagation</span>:convergence_threshold</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-05</td>
+  <td style="vertical-align:top">min: 1.0e-09 max: 1.0</td><td style="vertical-align:top">Initial threshold under which MSE difference a message is considered to be converged.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the loopy belief propagation algorithm.">loopy_belief_propagation</span>:dampening_lambda</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-03</td>
+  <td style="vertical-align:top">min: 0.0 max: 0.49999</td><td style="vertical-align:top">Initial value for how strongly should messages be updated in each step. 0 = new message overwrites old completely (no dampening; only recommended for trees),0.5 = equal contribution of old and new message (stay below that),In-between it will be a convex combination of both. Prevents oscillations but hinders convergence.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the loopy belief propagation algorithm.">loopy_belief_propagation</span>:max_nr_iterations</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2147483647</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">(Usually auto-determined by estimated but you can set a hard limit here). If not all messages converge, how many iterations should be done at max per connected component?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the loopy belief propagation algorithm.">loopy_belief_propagation</span>:p_norm_inference</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">P-norm used for marginalization of multidimensional factors. 1 == sum-product inference (all configurations vote equally) (default),<= 0 == infinity = max-product inference (only best configurations propagate)The higher the value the more important high probability configurations get.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the parameter optimization.">param_optimize</span>:aucweight</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.3</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">How important is target decoy AUC vs calibration of the posteriors? 0 = maximize calibration only, 1 = maximize AUC only, between = convex combination.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the parameter optimization.">param_optimize</span>:conservative_fdr</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use (D+1)/(T) instead of (D+1)/(T+D) for parameter estimation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the parameter optimization.">param_optimize</span>:regularized_fdr</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use a regularized FDR for proteins without unique peptides.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,26 @@
+
+SeedListGenerator -- Generates seed lists for feature detection.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SeedListGenerator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  SeedListGenerator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*            Input file (see below for details) (valid formats: 'mzML', 'idXML', 'featureXML', 
+                         'consensusXML')
+  -out_prefix <prefix>*  Output file prefix (valid formats: 'featureXML')
+                         
+  -use_peptide_mass      [idXML input only] Use the monoisotopic mass of the best peptide hit for the m/z 
+                         position (default: use precursor m/z)
+                         
+Common TOPP options:
+  -ini <file>            Use the given TOPP INI file
+  -threads <n>           Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>      Writes the default configuration file
+  --help                 Shows options
+  --helphelp             Shows all options (including advanced)
+

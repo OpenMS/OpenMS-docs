@@ -1,0 +1,35 @@
+
+EICExtractor -- Extracts intensities from dedicates positions in a LC/MS map
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_EICExtractor.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  EICExtractor <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*        Input raw data file (valid formats: 'mzML')
+  -in_header <file>  [for Waters data only] Read additional information from _HEADER.TXT. Provide one for 
+                     each raw input file. (valid formats: 'txt')
+  -pos <file>*       Input config file stating where to find signal (valid formats: 'edta')
+  -rt_tol            RT tolerance in [s] for finding max peak (whole RT range around RT middle) (default: 
+                     '3.0')
+  -mz_tol            M/z tolerance in [ppm] for finding a peak (default: '10.0')
+  -rt_collect        # of scans up & down in RT from highest point for ppm estimation in result (default: 
+                     '1')
+
+Parameters for automatic detection of injection RT peaks (no need to specify them in 'pos' input file):
+  -auto_rt:enabled   Automatically detect injection peaks from TIC and quantify all m/z x RT combinations.
+
+  -out <file>*       Output quantitation file (multiple columns for each input compound) (valid formats: 'csv
+                     ')
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+
