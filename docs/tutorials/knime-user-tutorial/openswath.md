@@ -3,7 +3,7 @@ OpenSWATH
 
 ## Introduction
 
-OpenSWATH [^3] allows the analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet *et al*. [^4]. The DIA approach described there uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquires a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete “snapshots” of all fragments of a specific window every 3.2 seconds.
+[OpenSWATH](http://openswath.org/en/latest/index.html) [^3] allows the analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet *et al*. [^4]. The DIA approach described there uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquires a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete “snapshots” of all fragments of a specific window every 3.2 seconds.
 The analysis approach described by Gillet et al. extracts ion traces of specific fragment ions from all MS2 spectra that have the same precursor isolation window, thus generating data that is very similar to SRM traces.
 
 ## Installation of OpenSWATH
@@ -12,7 +12,7 @@ OpenSWATH has been fully integrated since OpenMS 1.10 [^2]<sup>,</sup> [^1]<sup>
 
 ## Installation of mProphet
 
-mProphet[^8] is available as standalone script in {path}`External_Tools,mProphet`. [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
+mProphet[^8] is available as standalone script in {path}`External_Tools,mProphet` or can be downloaded [here](https://github.com/OpenMS/OpenMS-Tutorials/releases/download/data-and-tools-OpenMSv2.0.0/External_Tools.zip). [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
 PyProphet, a much faster reimplementation of the mProphet algorithm is available from [PyPI](https://pypi.python.org/pypi/pyprophet/). The usage of pyprophet instead of mProphet is suggested for large-scale applications.
 
 mProphet will be used in this tutorial.
@@ -21,7 +21,7 @@ mProphet will be used in this tutorial.
 
 ### Generating TraML from transition lists
 
-OpenSWATH requires an assay library to be supplied in the TraML format[^9]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in {path}`ExampleData,OpenSWATH,assay`. Please note that the transition lists need to be named `.tsv`.
+OpenSWATH requires an assay library to be supplied in the TraML format[^9]. To enable manual editing of transition lists, the TOPP tool **TargetedFileConverter** is available, which uses tab separated files as input. Example datasets are provided in {path}`ExampleData,OpenSWATH,assay` or downloaded from [here](https://github.com/OpenMS/OpenMS-Tutorials/releases/download/data-and-tools-OpenMSv2.0.0/Example_Data.zip). Please note that the transition lists need to be named `.tsv`.
 
 The header of the transition list contains the following variables (with example values in brackets):
 
