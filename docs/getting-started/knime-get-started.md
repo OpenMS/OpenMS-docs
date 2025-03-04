@@ -1,9 +1,6 @@
 KNIME
 =====
 
-## Installation
-Click [here](knime/knime-installation.md) to install KNIME, the OpenMS plugin and its required packages.
-
 ## Ready-made KNIME workflows
 
 You can get ready-made KNIME workflows and workflow components with OpenMS nodes from our
@@ -13,10 +10,10 @@ For more, e.g., thirdparty OpenMS workflows use the search bar on the hub and se
 ["openms"](https://hub.knime.com/search?q=openms).
 
 
-## Creating workflows with KNIME
+## Installing KNIME and creating workflows
 
-Download Introduction to OpenMS in KNIME [user tutorial](/tutorials/knime-user-tutorial.md) containing hands-on training material covering also basic
-usage of KNIME. See the official [KNIME Getting Started Guide](https://www.knime.com/getting-started-guide) for a more in-depth view of
+Read through a introduction to OpenMS in KNIME [user tutorial](/tutorials/knime-user-tutorial.md) containing hands-on training material covering also basic
+usage of KNIME and how to install it. See the official [KNIME Getting Started Guide](https://www.knime.com/getting-started-guide) for a more in-depth view of
 the KNIME functionality besides OpenMS.
 
 If you face any issues, please [contact us](/about/communication.md) and specifically for the usage of OpenMS in KNIME, the KNIME community contribution [forum](https://forum.knime.com/tag/openms).
@@ -29,6 +26,5 @@ maxdepth: 1
 hidden: True
 ---
 
-Install <knime/knime-installation.md>
 knime/minimal-workflow.md
 ```
