@@ -224,7 +224,7 @@ It is also possible to use identified and in addition unknown (non-identified) f
 89, 90
 
 [^2]: J. Teleman, H. L. Röst, G. Rosenberger, U. Schmitt, L. Malmström, J. Malmström, and F. Levander, DIANA-algorithmic improvements for analysis of dataindependent acquisition MS data, Bioinformatics 31(4), 555–562 (2015), arXiv:
-9808008, <a href="https://academic.oup.com/bioinformatics/article/31/4/555/209120">doi:10.1093/bioinformatics/btu686</a>. 89, 90
+9808008, <a href="https://doi.org/10.1093/bioinformatics/btu686">doi:10.1093/bioinformatics/btu686</a>. 89, 90
 
 [^3]: K. Dührkop, M. Fleischauer, M. Ludwig, A. A. Aksenov, A. V. Melnik, M. Meusel,
 P. C. Dorrestein, J. Rousu, and S. Böcker, <a href="https://www.nature.com/articles/s41592-019-0344-8">SIRIUS 4: a rapid tool for turning tandem
