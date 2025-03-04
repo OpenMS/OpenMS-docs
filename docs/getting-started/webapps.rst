@@ -5,35 +5,41 @@ WebApps
     :gutter: 2
 
     .. grid-item-card:: FLASHTaggerViewer
-        :img-top: /_images/webapps/flashtaggerviewer.png
+        :img-top: /_images/webapps/FLASH_TnT.png
         :link: https://abi-services.cs.uni-tuebingen.de/flashtaggerviewer/
         :link-type: url
-        :columns: 12
+        :columns: 6
 
-        Visualizes outputs from FLASH* tools
+        FLASHTaggerviewer visualizes output from FLASH* tools.
 
+    .. grid-item-card:: NASEWEIS
+        :img-top: /_images/webapps/naseweis.png
+        :link: https://abi-services.cs.uni-tuebingen.de/naseweis/
+        :link-type: url
+        :columns: 6
+
+        NASEWEIS is webapp version of the NucleicAcidSearchEngine (NASE), a tool for library searching of Oligonucleotides
 
     .. grid-item-card:: NuXL
-        :img-top: /_images/webapps/nuxl.jpg
+        :img-top: /_images/webapps/NuXL_logo.png
         :link: https://abi-services.cs.uni-tuebingen.de/nuxl/
         :link-type: url
-        :columns: 12
+        :columns: 6
 
-        A specialized protein nucleic-acid crosslink search engine
-
-
-    .. grid-item-card:: UmetaFlow
-        :img-top: /_images/webapps/umetaflow.png
-        :link: https://abi-services.cs.uni-tuebingen.de/umetaflow/
-        :link-type: url
-        :columns: 12
-
-        A universal metabolomics tool
+        NuXL is a dedicated software package designed for the analysis of XL-MS (cross-linking mass spectrometry).
 
     .. grid-item-card:: SagePTMScanner
-        :img-top: /_images/webapps/ptmscanner.png
+        :img-top: /_images/webapps/SagePTMScannerlogo.png
         :link: https://abi-services.cs.uni-tuebingen.de/SagePTMScanner/
         :link-type: url
-        :columns: 12
+        :columns: 6
 
-        A proteomics search engine Sage in OpenMS framework
+        Sage search engine is a fast and reliable proteomics search engine for the anaylsis of MS data.
+
+    .. grid-item-card:: UmetaFlow
+        :img-top: /_images/webapps/umetaflow-logo.png
+        :link: https://abi-services.cs.uni-tuebingen.de/umetaflow/
+        :link-type: url
+        :columns: 6
+
+        The UmetaFlow webapp is a pipeline for untargeted metabolomics in an accessible user interface.

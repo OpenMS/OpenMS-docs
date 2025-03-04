@@ -29,7 +29,7 @@ different concentrations. [^1]
   started. In order to specify the database, [select](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Tutorials/Example_Data/Labelfree/databases/s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta) {path}`Example_Data,Labelfree,databases,/break,s_pyo_sf370_potato_human_target_decoy_with_contaminants.fasta`
 - Connect the **out** port of the `CometAdapter` to `ZipLoopEnd` and we have a very basic peptide identification workflow.
 
-  ```{note}
+ ```{note}
   You might also want to save your new identification workflow under a different name. Have a look at <a href="#duplicating-workflows">duplicating workflows</a>
   for information on how to create copies of workflows.
   ```
@@ -92,7 +92,7 @@ FDR of < 1 %.
   **Community Nodes** > **OpenMS** > **Identification Processing**). `FalseDiscoveryRate` is meant to be run on data with protein inferencences
   (more on that later), in order to just use it for peptides, open the configure window, select "show advanced parameter" and toggle "force" to true.
 - In order to set the FDR level to 1%, we need an `IDFilter` node from **Community Nodes** > **OpenMS** > **Identification Processing**.
-  Configuring its parameter `score→pep` to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
+  Configuring the parameter `FDR→PSM` of the `FalseDiscoveryRate` node to 0.01 will do the trick. The FDR calculations (embedded in the idXML) from
   the `FalseDiscoveryRate` node will go into the *in* port of the `IDFilter` node.
 - Execute your workflow and inspect the results using `IDTextReader` like you did before. How many peptides did you
   identify at this FDR threshold?

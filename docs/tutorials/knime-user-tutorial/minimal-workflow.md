@@ -51,7 +51,7 @@ same information on three different files and then write the output files to a f
 - We now add two more nodes: the `ZipLoopStart` and the `ZipLoopEnd` node from the category
   **Community Nodes** > **GenericKnimeNodes* > **Flow** and replace the `FileInfo` node with `FileFilter` from  **Community Nodes** > **OpenMS** > **File Handling**.
 - Afterwards we connect the `Input Files` node to the first port of the `ZipLoopStart` node, the first port of the `ZipLoopStart`
-  node to the **FileConverter** node, the first output port of the **FileConverter** node to the first input port of the
+  node to the **FileFilter** node, the first output port of the **FileFilter** node to the first input port of the
   `ZipLoopEnd` node, and the first output port of the `ZipLoopEnd` node to the `Output Folder` node.
 
 The complete workflow is shown in the top right of the figure below.
