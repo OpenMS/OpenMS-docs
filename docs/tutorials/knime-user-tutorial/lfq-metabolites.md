@@ -280,20 +280,20 @@ This completes the workflow for spectral library-based metabolite identification
 ## References
 
 [^1]: D. S. Wishart, D. Tzur, C. Knox, et al., HMDB: the Human Metabolome Database,
-Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), <a href="https://academic.oup.com/nar/article/35/suppl_1/D521/1109186">doi:10.1093/nar/gkl923</a>. 69
+Nucleic Acids Res 35(Database issue), D521–6 (Jan 2007), <a href="https://doi.org/10.1093/nar/gkl923">doi:10.1093/nar/gkl923</a>. 69
 
 [^2]: D. S. Wishart, C. Knox, A. C. Guo, et al., HMDB: a knowledgebase for the human
-metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), <a href="https://academic.oup.com/nar/article/37/suppl_1/D603/1011821">doi: 10.1093/nar/gkn810</a>. 69
+metabolome, Nucleic Acids Res 37(Database issue), D603–10 (Jan 2009), <a href="https://doi.org/10.1093/nar/gkn810">doi: 10.1093/nar/gkn810</a>. 69
 
 [^3]: D. S. Wishart, T. Jewison, A. C. Guo, M. Wilson, C. Knox, et al., HMDB 3.0–The
-Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), <a href="https://academic.oup.com/nar/article/41/D1/D801/1055560">doi:10.1093/nar/gks1065</a>. 69
+Human Metabolome Database in 2013, Nucleic Acids Res 41(Database issue),D801–7 (Jan 2013), <a href="https://doi.org/10.1093/nar/gks1065">doi:10.1093/nar/gks1065</a>. 69
 
 [^4]: J. Griss, A. R. Jones, T. Sachsenberg, M. Walzer, L. Gatto, J. Hartler, G. G.
 Thallinger, R. M. Salek, C. Steinbeck, N. Neuhauser, J. Cox, S. Neumann, J. Fan,
 F. Reisinger, Q.-W. Xu, N. Del Toro, Y. Perez-Riverol, F. Ghali, N. Bandeira, I. Xenarios, O. Kohlbacher, J. A. Vizcaino, and H. Hermjakob, The mzTab Data Exchange Format: communicating MS-based proteomics and metabolomics experimental results to a wider audience, Mol Cell Proteomics (Jun 2014), doi:10.1074/mcp.O113.036681. 69
 
 [^5]: S. Böcker, M. C. Letzel, Z. Lipták, and A. Pervukhin, SIRIUS: Decomposing isotope
-patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), <a href="https://academic.oup.com/bioinformatics/article/25/2/218/218950">doi:10.1093/bioinformatics/btn603</a>. 75
+patterns for metabolite identification, Bioinformatics 25(2), 218–224 (2009), <a href="https://doi.org/10.1093/bioinformatics/btn603">doi:10.1093/bioinformatics/btn603</a>. 75
 
 [^6]: S. Böcker and K. Dührkop, Fragmentation trees reloaded, J. Cheminform. 8(1),
 1–26 (2016), <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-016-0116-8">doi:10.1186/s13321-016-0116-8</a>. 75
