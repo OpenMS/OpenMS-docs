@@ -24,7 +24,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .lycheecache
-          key: cache-lychee-${{ github.sha }}
+          key: cache-lychee-${{ github.ref }}
           restore-keys: cache-lychee-
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
