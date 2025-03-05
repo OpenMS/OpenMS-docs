@@ -19,14 +19,14 @@ To install OpenMS on macOS, run the following steps:
 
 3. Bypassing Gatekeeper to Install OpenMS on macOS
 
-```{image} /_images/installations/macos/docs/_images/installations/macos/Bypassing-Gatekeeper-to-Install-OpenMS-on-macOS.png
+```{image} /_images/installations/macos/Bypassing-Gatekeeper-to-Install-OpenMS-on-macOS.png
 :alt: Bypassing Gatekeeper on macOS  
 :width: 500px  
 ```
 
 4. Install OpenMS 
 
-```{image} /_images/installations/macos/docs/_images/installations/macos/Installation-started.png
+```{image} /_images/installations/macos/Installation-successful-message.png
 :alt: OpenMS installation started on macOS  
 :width: 500px  
 ```
@@ -38,9 +38,9 @@ To install OpenMS on macOS, run the following steps:
 :width: 500px
 ```
 
-6. Installation Comfirmation
+6. Installation Confirmation
 
-```{image} /_images/installations/macos/Installation Successful Message.png
+```{image} /_images/installations/macos/Installation-successful-message.png
 :alt: OpenMS installation successful  
 :width: 500px  
 ```
