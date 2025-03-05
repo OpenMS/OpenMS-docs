@@ -10,19 +10,47 @@ macOS
 To install OpenMS on macOS, run the following steps:
 
 1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
-2. Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.dmg` disk image file.
+2.Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.pkg` installer file.
 
 ```{image} /_images/installations/macos/Warning-openMS-3.3.0-macOS-Silicon.pkg-Not-Opened.png
 :alt: macOS warning message when opening OpenMS-<version>-macOS.pkg  
 :width: 500px  
 ```
+**Why This Warning Appears:**
 
-3. Bypassing Gatekeeper to Install OpenMS on macOS
+The warning indicates that the OpenMS installer hasn't been notarized or recognized by Apple as being from an identified developer. This doesn't necessarily mean the software is unsafe; it simply means that macOS cannot verify its source.  [support.apple.com](https://support.apple.com/en-us/102445)
+
+**How to Proceed:**
+
+Bypassing Gatekeeper to Install OpenMS on macOS
+
+A. Bypassing Gatekeeper Using System Settings 
+
+1. Open **System Settings**.  
+2. Navigate to **Privacy & Security**.  
+3. Under the **Security** section, locate the message about the blocked application.  
+4. Click the **Open Anyway** button .  
 
 ```{image} /_images/installations/macos/Bypassing-Gatekeeper-to-Install-OpenMS-on-macOS.png
 :alt: Bypassing Gatekeeper on macOS  
 :width: 500px  
 ```
+B. Bypassing Gatekeeper Using Command-Line    
+
+For users comfortable with the command line, you can bypass the security warning using Terminal:  
+
+1. Open **Terminal**.  
+2. Navigate to the directory containing the installer using the `cd` command:  
+
+   ```bash
+   cd /path/to/installer
+   ```
+3. Run the following command to remove the quarantine attribute:   
+
+   ```bash
+   xattr -d com.apple.quarantine OpenMS-<version>-macOS.pkg
+   ```
+By following these steps, you’re instructing macOS to trust the OpenMS installer and allow its execution.Ensure that you’ve downloaded the installer from a **trusted source** before proceeding.     
 
 4. Install OpenMS 
 
