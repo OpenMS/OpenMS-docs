@@ -12,42 +12,37 @@ To install OpenMS on macOS, run the following steps:
 1. Download and install the macOS drag-and-drop installer from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/).
 2. Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.dmg` disk image file.
 
-```{image} /_images/installations/macos/opening-openms2-8-macos.png
-:alt: Opening OpenMS-<version>-macOS.dmg
-:width: 500px
+```{image} /_images/installations/macos/Warning-openMS-3.3.0-macOS-Silicon.pkg-Not-Opened.png
+:alt: macOS warning message when opening OpenMS-<version>-macOS.pkg  
+:width: 500px  
 ```
 
-3. Verify the download.
+3. Bypassing Gatekeeper to Install OpenMS on macOS
 
-```{image} /_images/installations/macos/verifying-openms2-8-macos.png
-:alt: Verifying OpenMS-<version>-macOS.dmg
-:width: 500px
+```{image} /_images/installations/macos/docs/_images/installations/macos/Bypassing-Gatekeeper-to-Install-OpenMS-on-macOS.png
+:alt: Bypassing Gatekeeper on macOS  
+:width: 500px  
 ```
 
-4. Agree to the license agreements.
+4. Install OpenMS 
+
+```{image} /_images/installations/macos/docs/_images/installations/macos/Installation-started.png
+:alt: OpenMS installation started on macOS  
+:width: 500px  
+```
+
+5. Agree to the license agreements.
 
 ```{image} /_images/installations/macos/license-agreements.png
 :alt: License agreement
 :width: 500px
 ```
 
-5. Drag OpenMS to the Applications folder.
+6. Installation Comfirmation
 
-```{image} /_images/installations/macos/move-openms-to-applications.png
-:alt: Move to Applications
-:width: 500px
-```
-
-6. It will start copying to applications.
-
-```{image} /_images/installations/macos/preparing-to-copy-to-applications.png
-:alt: Preparing to copy to Applications
-:width: 500px
-```
-
-```{image} /_images/installations/macos/copying-to-applications.png
-:alt: Copying to Applications
-:width: 500px
+```{image} /_images/installations/macos/Installation Successful Message.png
+:alt: OpenMS installation successful  
+:width: 500px  
 ```
 
 To use {term}`TOPP` as regular app in the shell, add the following lines to the `~/.profile` file.
