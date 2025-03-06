@@ -50,7 +50,7 @@ For users comfortable with the command line, you can bypass the security warning
    ```bash
    xattr -d com.apple.quarantine OpenMS-<version>-macOS.pkg
    ```
-By following these steps, you’re instructing macOS to trust the OpenMS installer and allow its execution.Ensure that you’ve downloaded the installer from a **trusted source** before proceeding.     
+By following these steps, you’re instructing macOS to trust the OpenMS installer and allow its execution. Ensure that you’ve downloaded the installer from a **trusted source** (i.e., build archive of the Unversity of Tübingen or OpenMS' GitHub artifacts) before proceeding.     
 
 4. Install OpenMS 
 
@@ -79,7 +79,7 @@ To use {term}`TOPP` as regular app in the shell, add the following lines to the 
 
 1. Nothing happens when you click OpenMS apps or the validity of the developer could not be confirmed.
    
-   This usually means the OpenMS software lands in quarantine after installation of the `.dmg`.
+   This usually means the OpenMS software lands in quarantine even after installation of the `.pkg`. This was more common with our older `.dmg` image but may still happen.
    Since macOS Catalina (maybe also Mojave) all apps and executables have to be officially notarized by Apple but we
    currently do not have the resources for a streamlined notarization workflow.
 
