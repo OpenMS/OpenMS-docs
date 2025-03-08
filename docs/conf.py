@@ -30,7 +30,7 @@ version = '3.3.0'
 # Short version for the latest supported KNIME
 knime_version = '5.3.0'
 # Short version for the Latest Supported R
-r_version = '4.2.3'
+r_version = '4.2.3' # <-- Added R version
 # The full version, including alpha/beta/rc tags.
 release = '3.3.0'
 
@@ -145,7 +145,7 @@ variables_to_export = [
     "project",
     "version",
     "knime_version",
-    "r_version"
+    "r_version" #<--
 ]
 myst_substitutions = {}
 for v in variables_to_export:
