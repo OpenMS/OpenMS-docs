@@ -29,7 +29,8 @@ author = 'OpenMS Team'
 version = '3.3.0'
 # Short version for the latest supported KNIME
 knime_version = '5.3.0'
-
+# Short version for the Latest Supported R
+r_version = '4.2.3'
 # The full version, including alpha/beta/rc tags.
 release = '3.3.0'
 
@@ -143,7 +144,8 @@ pathicon = 'fa fa-folder-open'
 variables_to_export = [
     "project",
     "version",
-    "knime_version"
+    "knime_version",
+    "r_version"
 ]
 myst_substitutions = {}
 for v in variables_to_export:
