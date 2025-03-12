@@ -103,7 +103,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
 html_theme = 'furo'
 
 html_favicon = '../assets/logo/favicon.png'
-html_static_path = ["_static"]
 html_theme_options = {
     "navigation_with_keys": True,
     "light_css_variables": {
