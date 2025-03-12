@@ -102,8 +102,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
 #
 html_theme = 'furo'
 
-html_favicon = '../assets/logo/OpenMS_transparent_whiteFont.png'
-html_logo = '../assets/logo/OpenMS_transparent_whiteFont.png'
+html_favicon = '../assets/logo/favicon.png'
+html_static_path = ["_static"]
 html_theme_options = {
     "navigation_with_keys": True,
     "light_css_variables": {
@@ -111,6 +111,8 @@ html_theme_options = {
         "font-size--small": "90%",
         "toc-font-size": "87.5%"
     },
+    "light_logo": "FinalLogo_Nov2024_Versions-01.svg",
+    "dark_logo": "FinalLogo_Nov2024_Versions-02.svg",
 }
 pygments_style = 'sas'
 
