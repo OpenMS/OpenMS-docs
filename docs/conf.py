@@ -115,9 +115,9 @@ html_theme_options = {
     "dark_logo": "FinalLogo_Nov2024_Versions-02.svg",
 }
 html_meta = {
-    "description": "This is a sample description for SEO.",
-    "keywords": "Python, Sphinx, Documentation, SEO",
-    "author": "Your Name"
+    "description": "Official documentation for OpenMS, an open-source software for mass spectrometry data analysis in proteomics and metabolomics.",
+    "keywords": "OpenMS, mass spectrometry, proteomics, bioinformatics, data analysis, KNIME",
+    "author": "OpenMS Development Team"
 }
 
 pygments_style = 'sas'
