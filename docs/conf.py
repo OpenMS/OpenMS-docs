@@ -114,6 +114,12 @@ html_theme_options = {
     "light_logo": "FinalLogo_Nov2024_Versions-01.svg",
     "dark_logo": "FinalLogo_Nov2024_Versions-02.svg",
 }
+html_meta = {
+    "description": "This is a sample description for SEO.",
+    "keywords": "Python, Sphinx, Documentation, SEO",
+    "author": "Your Name"
+}
+
 pygments_style = 'sas'
 
 pygments_dark_style = 'rrt'
