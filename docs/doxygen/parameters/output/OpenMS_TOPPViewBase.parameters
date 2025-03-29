@@ -1,0 +1,300 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:topp_cleanup</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If the temporary files for calling of TOPP tools should be removed after the call.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:version</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">none</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">OpenMS version, used to check if the TOPPView.ini is up-to-date</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:default_map_view</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">2d</td>
+  <td style="vertical-align:top">2d, 3d</td><td style="vertical-align:top">Default visualization mode for maps.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:default_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">.</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Default path for loading and storing files.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:default_path_current</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If the current path is preferred over the default path.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:plugins_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">C:/Users/admin/OpenMS_Plugins</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Default path for loading Plugins</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:intensity_cutoff</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">off</td>
+  <td style="vertical-align:top">on, off</td><td style="vertical-align:top">Low intensity cutoff for maps.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:on_file_change</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">ask</td>
+  <td style="vertical-align:top">none, ask, update automatically</td><td style="vertical-align:top">What action to take, when a data file changes. Do nothing, update automatically or ask the user.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:use_cached_ms2</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If possible, only load MS1 spectra into memory and keep MS2 spectra on disk (using indexed mzML).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:use_cached_ms1</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If possible, do not load MS1 spectra into memory spectra into memory and keep MS2 spectra on disk (using indexed mzML).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for single spectrum view.">1d</span>:default_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">.</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Default path for loading/storing data.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for single spectrum view.">1d</span>:highlighted_peak_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#ff0000</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Highlighted peak color.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for single spectrum view.">1d</span>:icon_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#000000</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Peak icon color.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for single spectrum view.">1d</span>:peak_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#0000ff</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Peak color.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for single spectrum view.">1d</span>:annotation_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#000055</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Annotation color.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for single spectrum view.">1d</span>:background_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#ffffff</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Background color.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 2D map view.">2d</span>:default_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">.</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Default path for loading/storing data.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 2D map view.">2d</span>:background_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#ffffff</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Background color.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 2D map view.">2d</span>:interpolation_steps</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1000</td>
+  <td style="vertical-align:top">min: 1 max: 1000</td><td style="vertical-align:top">Number of interpolation steps for peak gradient pre-calculation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 2D map view.">2d</span>:dot:gradient</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Linear|0,@#eeeeee;1,@#ffea00;6,@#ff0000;14,@#aa00ff;23,@#5500ff;100,@#000000</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Multi-color gradient for peaks.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 2D map view.">2d</span>:dot:feature_icon</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">circle</td>
+  <td style="vertical-align:top">diamond, square, circle, triangle</td><td style="vertical-align:top">Icon used for features and consensus features.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 2D map view.">2d</span>:dot:feature_icon_size</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">min: 1 max: 999</td><td style="vertical-align:top">Icon size used for features and consensus features.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 3D map view.">3d</span>:default_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">.</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Default path for loading/storing data.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 3D map view.">3d</span>:background_color</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">@#ffffff</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Background color</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 3D map view.">3d</span>:dot:shade_mode</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">min: 0 max: 1</td><td style="vertical-align:top">Shade mode: single-color ('flat') or gradient peaks ('smooth').</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 3D map view.">3d</span>:dot:gradient</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Linear|0,@#ffea00;6,@#ff0000;14,@#aa00ff;23,@#5500ff;100,@#000000</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Peak color gradient.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 3D map view.">3d</span>:dot:interpolation_steps</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1000</td>
+  <td style="vertical-align:top">min: 1 max: 1000</td><td style="vertical-align:top">Interpolation steps for peak color gradient precalculation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for 3D map view.">3d</span>:dot:line_width</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">min: 1 max: 99</td><td style="vertical-align:top">Line width for peaks.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:isotope_model</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">none</td>
+  <td style="vertical-align:top">none, coarse, fine</td><td style="vertical-align:top">Model to use for isotopic peaks ('none' means no isotopic peaks are added, 'coarse' adds isotopic peaks in unit mass distance, 'fine' uses the hyperfine isotopic generator to add accurate isotopic peaks. Note that adding isotopic peaks is very slow.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:max_isotope</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Defines the maximal isotopic peak which is added if 'isotope_model' is 'coarse'</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:max_isotope_probability</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.05</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Defines the maximal isotopic probability to cover if 'isotope_model' is 'fine'</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_metainfo</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds the type of peaks as metainfo to the peaks, like y8+, [M-H2O+2H]++</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_losses</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds common losses to those ion expect to have them, only water and ammonia loss is considered</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:sort_by_position</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Sort output by position</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_precursor_peaks</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds peaks of the unfragmented precursor ion to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_all_precursor_charges</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds precursor peaks with all charges in the given range</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_abundant_immonium_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add most abundant immonium ions (for Proline, Cystein, Iso/Leucine, Histidin, Phenylalanin, Tyrosine, Tryptophan)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_first_prefix_ion</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set to true e.g. b1 ions are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_y_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of y-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_b_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of b-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_a_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of a-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_c_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of c-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_x_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of  x-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_z_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of z-ions to the spectrum (sometimes observed in CID and for some AAs in ExD due to H abstraction)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_zp1_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of z+1-radical cations (also [z+H]*^{+} or simply z*) to the spectrum (often observed in ExD)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:add_zp2_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of z+2-radical cations (also [z+2H]*^{2+} or simply z') to the spectrum (often observed in ExD esp. with higher precursor charges >3 and smaller z-ions.)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:y_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the y-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:b_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the b-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:a_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the a-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:c_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the c-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:x_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the x-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:z_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the z-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:relative_loss_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Intensity of loss ions, in relation to the intact ion intensity</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:precursor_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the precursor peak</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:precursor_H2O_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the H2O loss peak of the precursor</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:tsg:precursor_NH3_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the NH3 loss peak of the precursor</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:align:tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.3</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Defines the absolute (in Da) or relative (in ppm) tolerance</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>preferences:user:<span title="Settings for identification view.">idview</span>:align:is_relative_tolerance</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If true, the 'tolerance' is interpreted as ppm-value</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,23 @@
+<div class="ini_global">
+<div class="legend">
+<b>Legend:</b><br>
+ <div class="item item_required">required parameter</div>
+ <div class="item item_advanced">advanced parameter</div>
+</div>
+  <div class="node"><span class="node_name">+MzMLSplitter</span><span class="node_description">Splits an mzML file into multiple parts</span></div>
+    <div class="item item_advanced"><span class="item_name" style="padding-left:16px;">version</span><span class="item_value">3.1.0-pre-develop-2024-04-26</span>
+<span class="item_description">Version of the tool that generated this parameters file.</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>    <div class="node"><span class="node_name">++1</span><span class="node_description">Instance '1' section for 'MzMLSplitter'</span></div>
+      <div class="item"><span class="item_name item_required" style="padding-left:24px;">in</span><span class="item_value"></span>
+<span class="item_description">Input file</span><span class="item_tags">input file</span><span class="item_restrictions">*.mzML</span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">out</span><span class="item_value"></span>
+<span class="item_description">Prefix for output files ('_part1of2.mzML' etc. will be appended; default: same as 'in' without the file extension)</span><span class="item_tags">output prefix</span><span class="item_restrictions"> </span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">parts</span><span class="item_value">1</span>
+<span class="item_description">Number of parts to split into (takes precedence over 'size' if set)</span><span class="item_tags"></span><span class="item_restrictions">1:&#8734;</span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">size</span><span class="item_value">0</span>
+<span class="item_description">Approximate upper limit for resulting file sizes (in 'unit')</span><span class="item_tags"></span><span class="item_restrictions">0:&#8734;</span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">unit</span><span class="item_value">MB</span>
+<span class="item_description">Unit for 'size' (base 1024)</span><span class="item_tags"></span><span class="item_restrictions">KB, MB, GB</span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">no_chrom</span><span class="item_value">false</span>
+<span class="item_description">Remove chromatograms, keep only spectra.</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">no_spec</span><span class="item_value">false</span>
+<span class="item_description">Remove spectra, keep only chromatograms.</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">log</span><span class="item_value"></span>
+<span class="item_description">Name of log file (created only when specified)</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">debug</span><span class="item_value">0</span>
+<span class="item_description">Sets the debug level</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">threads</span><span class="item_value">1</span>
+<span class="item_description">Sets the number of threads allowed to be used by the TOPP tool</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">no_progress</span><span class="item_value">false</span>
+<span class="item_description">Disables progress logging to command line</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">force</span><span class="item_value">false</span>
+<span class="item_description">Overrides tool-specific checks</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">test</span><span class="item_value">false</span>
+<span class="item_description">Enables the test mode (needed for internal use only)</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div></div>

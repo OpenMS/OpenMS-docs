@@ -1,0 +1,274 @@
+
+FileFilter -- Extracts or manipulates portions of data from peak, feature or consensus-feature files.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FileFilter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  FileFilter <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                                  Input file (valid formats: 'mzML', 'featureXML
+                                                               ', 'consensusXML')
+  -in_type <type>                                              Input file type -- default: determined from 
+                                                               file extension or content (valid: 'mzML', 'fea
+                                                               tureXML', 'consensusXML')
+  -out <file>*                                                 Output file (valid formats: 'mzML', 'featureXM
+                                                               L', 'consensusXML')
+  -out_type <type>                                             Output file type -- default: determined from 
+                                                               file extension or content (valid: 'mzML', 'fea
+                                                               tureXML', 'consensusXML')
+  -rt [min]:[max]                                              Retention time range to extract (default: ':')
+
+  -mz [min]:[max]                                              M/z range to extract (applies to ALL ms levels
+                                                               !) (default: ':')
+  -int [min]:[max]                                             Intensity range to extract (default: ':')
+  -sort                                                        Sorts the output according to RT and m/z.
+
+Peak data options:
+  -peak_options:sn <s/n ratio>                                 Write peaks with S/N > 'sn' values only (defau
+                                                               lt: '0.0')
+  -peak_options:rm_pc_charge i j ...                           Remove MS(2) spectra with these precursor char
+                                                               ges. All spectra without precursor are kept!
+  -peak_options:pc_mz_range [min]:[max]                        MSn (n>=2) precursor filtering according to 
+                                                               their m/z value. Do not use this flag in conju
+                                                               nction with 'mz', unless you want to actually 
+                                                               remove peaks in spectra (see 'mz'). RT filteri
+                                                               ng is covered by 'rt' and compatible with this
+                                                                flag. (default: ':')
+  -peak_options:pc_mz_list mz_1 mz_2 ...                       List of m/z values. If a precursor window cove
+                                                               rs ANY of these values, the corresponding MS/M
+                                                               S spectrum will be kept.
+  -peak_options:level i j ...                                  MS levels to extract (default: '[1 2 3]')
+  -peak_options:sort_peaks                                     Sorts the peaks according to m/z
+  -peak_options:no_chromatograms                               No conversion to space-saving real chromatogra
+                                                               ms, e.g. from SRM scans
+  -peak_options:remove_chromatograms                           Removes chromatograms stored in a file
+  -peak_options:remove_empty                                   Removes spectra and chromatograms without peak
+                                                               s.
+  -peak_options:mz_precision 32 or 64                          Store base64 encoded m/z data using 32 or 64 
+                                                               bit precision (default: '64') (valid: '32', 
+                                                               '64')
+  -peak_options:int_precision 32 or 64                         Store base64 encoded intensity data using 32 
+                                                               or 64 bit precision (default: '32') (valid: 
+                                                               '32', '64')
+  -peak_options:indexed_file true or false                     Whether to add an index to the file when writi
+                                                               ng (default: 'true') (valid: 'true', 'false')
+  -peak_options:zlib_compression true or false                 Whether to store data with zlib compression 
+                                                               (lossless compression) (default: 'false') (val
+                                                               id: 'true', 'false')
+
+Numpress compression for peak data:
+  -peak_options:numpress:masstime <compression_scheme>         Apply MS Numpress compression algorithms in 
+                                                               m/z or rt dimension (recommended: linear) (def
+                                                               ault: 'none') (valid: 'none', 'linear', 'pic',
+                                                                'slof')
+  -peak_options:numpress:intensity <compression_scheme>        Apply MS Numpress compression algorithms in 
+                                                               intensity dimension (recommended: slof or pic)
+                                                                (default: 'none') (valid: 'none', 'linear', 
+                                                               'pic', 'slof')
+  -peak_options:numpress:float_da <compression_scheme>         Apply MS Numpress compression algorithms for 
+                                                               the float data arrays (recommended: slof or 
+                                                               pic) (default: 'none') (valid: 'none', 'linear
+                                                               ', 'pic', 'slof')
+
+Remove spectra or select spectra (removing all others) with certain properties:
+  -spectra:remove_zoom                                         Remove zoom (enhanced resolution) scans
+  -spectra:remove_mode <mode>                                  Remove scans by scan mode (valid: 'Unknown', 
+                                                               'MassSpectrum', 'MS1Spectrum', 'MSnSpectrum', 
+                                                               'SelectedIonMonitoring', 'SelectedReactionMoni
+                                                               toring', 'ConsecutiveReactionMonitoring', 'Con
+                                                               stantNeutralGain', 'ConstantNeutralLoss', 'Pre
+                                                               cursor', 'EnhancedMultiplyCharged', 'TimeDelay
+                                                               edFragmentation', 'ElectromagneticRadiation', 
+                                                               'Emission', 'Absorption')
+
+                                                               
+
+Remove spectra or select spectra (removing all others) with certain properties:
+  -spectra:remove_activation <activation>                      Remove MSn scans where any of its precursors 
+                                                               features a certain activation method (valid: 
+                                                               'Collision-induced dissociation', 'Post-source
+                                                                decay', 'Plasma desorption', 'Surface-induced
+                                                                dissociation', 'Blackbody infrared radiative 
+                                                               dissociation', 'Electron capture dissociation'
+                                                               , 'Infrared multiphoton dissociation', 'Sustai
+                                                               ned off-resonance irradiation', 'High-energy 
+                                                               collision-induced dissociation', 'Low-energy 
+                                                               ...
+                                                               'Bruker proprietary method')
+  -spectra:remove_collision_energy [min]:[max]                 Remove MSn scans with a collision energy in 
+                                                               the given interval (default: ':')
+  -spectra:remove_isolation_window_width [min]:[max]           Remove MSn scans whose isolation window width 
+                                                               is in the given interval (default: ':')
+
+                                                               
+
+Remove spectra or select spectra (removing all others) with certain properties:
+  -spectra:select_zoom                                         Select zoom (enhanced resolution) scans
+  -spectra:select_mode <mode>                                  Selects scans by scan mode
+                                                                (valid: 'Unknown', 'MassSpectrum', 'MS1Spectr
+                                                               um', 'MSnSpectrum', 'SelectedIonMonitoring', 
+                                                               'SelectedReactionMonitoring', 'ConsecutiveReac
+                                                               tionMonitoring', 'ConstantNeutralGain', 'Const
+                                                               antNeutralLoss', 'Precursor', 'EnhancedMultipl
+                                                               yCharged', 'TimeDelayedFragmentation', 'Electr
+                                                               omagneticRadiation', 'Emission', 'Absorption')
+
+  -spectra:select_activation <activation>                      Retain MSn scans where any of its precursors 
+                                                               features a certain activation method (valid: 
+                                                               'Collision-induced dissociation', 'Post-source
+                                                                decay', 'Plasma desorption', 'Surface-induced
+                                                                dissociation', 'Blackbody infrared radiative 
+                                                               dissociation', 'Electron capture dissociation'
+                                                               , 'Infrared multiphoton dissociation', 'Sustai
+                                                               ned off-resonance irradiation', 'High-energy 
+                                                               collision-induced dissociation', 'Low-energy 
+                                                               ...
+                                                               'Bruker proprietary method')
+  -spectra:select_collision_energy [min]:[max]                 Select MSn scans with a collision energy in 
+                                                               the given interval (default: ':')
+  -spectra:select_isolation_window_width [min]:[max]           Select MSn scans whose isolation window width 
+                                                               is in the given interval (default: ':')
+
+                                                               
+
+Remove spectra or select spectra (removing all others) with certain properties:
+  -spectra:select_polarity <polarity>                          Retain MSn scans with a certain scan polarity 
+                                                               (valid: 'unknown', 'positive', 'negative')
+
+Black or white listing of of MS2 spectra by spectral similarity:
+  -spectra:blackorwhitelist:file <file>                        Input file containing MS2 spectra that should 
+                                                               be retained or removed from the mzML file!
+                                                               Matching tolerances are taken from 'spectra:bl
+                                                               ackorwhitelist:similarity_threshold|rt|mz' 
+                                                               options.
+                                                                (valid formats: 'mzML')
+  -spectra:blackorwhitelist:similarity_threshold <similarity>  Similarity threshold when matching MS2 spectra
+                                                               . (-1 = disabled). (default: '-1.0') (min: 
+                                                               '-1.0' max: '1.0')
+  -spectra:blackorwhitelist:rt tolerance                       Retention tolerance [s] when matching precurso
+                                                               r positions. (-1 = disabled) (default: '0.01')
+
+  -spectra:blackorwhitelist:mz tolerance                       M/z tolerance [Th] when matching precursor 
+                                                               positions. (-1 = disabled) (default: '0.01')
+  -spectra:blackorwhitelist:use_ppm_tolerance                  If ppm tolerance should be used. Otherwise Da 
+                                                               are used. (default: 'false')
+  -spectra:blackorwhitelist:blacklist                          True: remove matched MS2. False: retain matche
+                                                               d MS2 spectra. Other levels are kept (default:
+                                                                'true') (valid: 'false', 'true')
+
+Remove spectra or select spectra (removing all others) with certain properties:
+  -spectra:replace_pc_charge in_charge:out_charge              Replaces in_charge with out_charge in all prec
+                                                               ursors. (default: ':')
+
+                                                               
+
+Feature data options:
+  -feature:q [min]:[max]                                       Overall quality range to extract [0:1] (defaul
+                                                               t: ':')
+
+                                                               
+
+Consensus feature data options:
+  -consensus:map i j ...                                       Non-empty list of maps to be extracted from a 
+                                                               consensus (indices are 0-based).
+  -consensus:map_and                                           Consensus features are kept only if they conta
+                                                               in exactly one feature from each map (as given
+                                                                above in 'map')
+
+Black or white listing of of MS2 spectra by consensus features:
+  -consensus:blackorwhitelist:blacklist                        True: remove matched MS2. False: retain matche
+                                                               d MS2 spectra. Other levels are kept (default:
+                                                                'true') (valid: 'false', 'true')
+  -consensus:blackorwhitelist:file <file>                      Input file containing consensus features whose
+                                                                corresponding MS2 spectra should be removed 
+                                                               from the mzML file!
+                                                               Matching tolerances are taken from 'consensus:
+                                                               blackorwhitelist:rt' and 'consensus:blackorwhi
+                                                               telist:mz' options.
+                                                               If consensus:blackorwhitelist:maps is specifie
+                                                               d, only these will be used.
+                                                                (valid formats: 'consensusXML')
+  -consensus:blackorwhitelist:maps i j ...                     Maps used for black/white list filtering
+  -consensus:blackorwhitelist:rt tolerance                     Retention tolerance [s] for precursor to conse
+                                                               nsus feature position (default: '60.0') (min: 
+                                                               '0.0')
+  -consensus:blackorwhitelist:mz tolerance                     M/z tolerance [Th] for precursor to consensus 
+                                                               feature position (default: '0.01') (min: '0.0'
+                                                               )
+  -consensus:blackorwhitelist:use_ppm_tolerance                If ppm tolerance should be used. Otherwise Da 
+                                                               are used. (default: 'false') (valid: 'false', 
+                                                               'true')
+
+                                                               
+
+Feature & Consensus data options:
+  -f_and_c:charge [min]:[max]                                  Charge range to extract (default: ':')
+  -f_and_c:size [min]:[max]                                    Size range to extract (default: ':')
+  -f_and_c:remove_meta <name> 'lt|eq|gt' <value>               Expects a 3-tuple (=3 entries in the list), 
+                                                               i.e. <name> 'lt|eq|gt' <value>; the first is 
+                                                               the name of meta value, followed by the compar
+                                                               ison operator (equal, less or greater) and 
+                                                               the value to compare to. All comparisons are 
+                                                               done after converting the given value to the 
+                                                               corresponding data value type of the meta valu
+                                                               e (for lists, this simply compares length, 
+                                                               not content!)!
+  -f_and_c:remove_hull                                         Remove hull from features.
+
+                                                               
+
+ID options. The Priority of the id-flags is: remove_annotated_features / remove_unannotated_features -> remov
+e_clashes -> keep_best_score_id -> sequences_whitelist  / accessions_whitelist:
+  -id:keep_best_score_id                                       In case of multiple peptide identifications, 
+                                                               keep only the id with best score
+  -id:sequences_whitelist <sequence>                           Keep only features containing whitelisted subs
+                                                               trings, e.g. features containing LYSNLVER or 
+                                                               the modification (Oxidation). To control compa
+                                                               rison method used for whitelisting, see 'id:se
+                                                               quence_comparison_method'.
+  -id:accessions_whitelist <accessions>                        Keep only features with white listed accession
+                                                               s, e.g. sp|P02662|CASA1_BOVIN
+  -id:remove_annotated_features                                Remove features with annotations
+  -id:remove_unannotated_features                              Remove features without annotations
+  -id:remove_unassigned_ids                                    Remove unassigned peptide identifications
+  -id:blacklist <file>                                         Input file containing MS2 identifications whos
+                                                               e corresponding MS2 spectra should be removed 
+                                                               from the mzML file!
+                                                               Matching tolerances are taken from 'id:rt' 
+                                                               and 'id:mz' options.
+                                                               This tool will require all IDs to be matched 
+                                                               to an MS2 spectrum, and quit with error otherw
+                                                               ise. Use 'id:blacklist_imperfect' to allow 
+                                                               for mismatches. (valid formats: 'idXML')
+  -id:rt tolerance                                             Retention tolerance [s] for precursor to id 
+                                                               position (default: '0.1') (min: '0.0')
+  -id:mz tolerance                                             M/z tolerance [Th] for precursor to id positio
+                                                               n (default: '1.0e-03') (min: '0.0')
+  -id:blacklist_imperfect                                      Allow for mismatching precursor positions (see
+                                                                'id:blacklist')
+
+                                                               
+                                                               
+Common TOPP options:
+  -ini <file>                                                  Use the given TOPP INI file
+  -threads <n>                                                 Sets the number of threads allowed to be used 
+                                                               by the TOPP tool (default: '1')
+  -write_ini <file>                                            Writes the default configuration file
+  --help                                                       Shows options
+  --helphelp                                                   Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - algorithm   S/N algorithm section
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_FileFilter.html
+

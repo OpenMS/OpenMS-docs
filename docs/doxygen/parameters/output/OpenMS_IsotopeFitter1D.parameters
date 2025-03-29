@@ -1,0 +1,45 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><i>interpolation_step</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Sampling rate for the interpolation of the model function.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>tolerance_stdev_bounding_box</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Bounding box has range [minimim of data, maximum of data] enlarged by tolerance_stdev_bounding_box times the standard deviation of the data.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>charge</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Charge state of the model.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>statistics:mean</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Centroid position of the model.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>statistics:variance</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Variance of the model.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:stdev</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Standard deviation of gaussian applied to the averagine isotopic pattern to simulate the inaccuracy of the mass spectrometer.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>isotope:maximum</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">100</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum isotopic rank to be considered.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,4 +1,3 @@
-furo
 linkify-it-py
 myst-parser
 pygments
@@ -11,3 +10,5 @@ sphinx-design
 sphinx-notfound-page
 sphinx-inline-tabs
 sphinx-hoverxref
+doxysphinx == 3.3.12
+sphinx-book-theme

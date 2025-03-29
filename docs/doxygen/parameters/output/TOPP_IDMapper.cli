@@ -1,0 +1,65 @@
+
+IDMapper -- Assigns protein/peptide identifications to features or consensus features.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IDMapper.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IDMapper <options>
+
+Options (mandatory options marked with '*'):
+  -id <file>*                        Protein/peptide identifications file (valid formats: 'mzid', 'idXML')
+  -in <file>*                        Feature map/consensus map file (valid formats: 'featureXML', 'consensusX
+                                     ML')
+  -out <file>*                       Output file (the format depends on the input file format). (valid format
+                                     s: 'featureXML', 'consensusXML')
+                                     
+  -rt_tolerance <value>              RT tolerance (in seconds) for the matching of peptide identifications 
+                                     and (consensus) features.
+                                     Tolerance is understood as 'plus or minus x', so the matching range incr
+                                     eases by twice the given value. (default: '5.0') (min: '0.0')
+  -mz_tolerance <value>              M/z tolerance (in ppm or Da) for the matching of peptide identifications
+                                      and (consensus) features.
+                                     Tolerance is understood as 'plus or minus x', so the matching range incr
+                                     eases by twice the given value. (default: '20.0') (min: '0.0')
+  -mz_measure <choice>               Unit of 'mz_tolerance'. (default: 'ppm') (valid: 'ppm', 'Da')
+  -mz_reference <choice>             Source of m/z values for peptide identifications. If 'precursor', the 
+                                     precursor-m/z from the idXML is used. If 'peptide',
+                                     masses are computed from the sequences of peptide hits; in this case, 
+                                     an identification matches if any of its hits matches.
+                                     ('peptide' should be used together with 'feature:use_centroid_mz' to 
+                                     avoid false-positive matches.) (default: 'peptide') (valid: 'precursor',
+                                      'peptide')
+                                     
+
+Additional options for featureXML input:
+  -feature:use_centroid_rt <choice>  Use the RT coordinates of the feature centroids for matching, instead 
+                                     of the RT ranges of the features/mass traces. (default: 'false') (valid:
+                                      'true', 'false')
+  -feature:use_centroid_mz <choice>  Use the m/z coordinates of the feature centroids for matching, instead 
+                                     of the m/z ranges of the features/mass traces.
+                                     (If you choose 'peptide' as 'mz_reference', you should usually set this 
+                                     flag to avoid false-positive matches.) (default: 'true') (valid: 'true',
+                                      'false')
+
+                                     
+
+Additional options for consensusXML input:
+  -consensus:use_subelements         Match using RT and m/z of sub-features instead of consensus RT and m/z. 
+                                     A consensus feature matches if any of its sub-features matches.
+
+Additional options for mzML input:
+  -spectra:in <file>                 MS run used to annotated unidentified spectra to features or consensus 
+                                     features. (valid formats: 'mzML')
+
+                                     
+Common TOPP options:
+  -ini <file>                        Use the given TOPP INI file
+  -threads <n>                       Sets the number of threads allowed to be used by the TOPP tool (default:
+                                      '1')
+  -write_ini <file>                  Writes the default configuration file
+  --help                             Shows options
+  --helphelp                         Shows all options (including advanced)
+

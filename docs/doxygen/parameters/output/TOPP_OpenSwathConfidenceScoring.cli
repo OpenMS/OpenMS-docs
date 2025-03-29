@@ -1,0 +1,28 @@
+
+OpenSwathConfidenceScoring -- Compute confidence scores for OpenSwath results
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathConfidenceScoring.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathConfidenceScoring <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*            Input file (OpenSwath results) (valid formats: 'featureXML')
+  -lib <file>*           Assay library (valid formats: 'traML')
+  -out <file>*           Output file (results with confidence scores) (valid formats: 'featureXML')
+  -trafo <file>          Retention time transformation (valid formats: 'trafoXML')
+  -decoys <number>       Number of decoy assays to select from the library for every true assay (0 for "all")
+                          (default: '1000') (min: '0')
+  -transitions <number>  Number of transitions per feature to consider (highest intensities first; 0 for "all
+                         ") (default: '6') (min: '0')
+                         
+Common TOPP options:
+  -ini <file>            Use the given TOPP INI file
+  -threads <n>           Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>      Writes the default configuration file
+  --help                 Shows options
+  --helphelp             Shows all options (including advanced)
+

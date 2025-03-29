@@ -1,0 +1,26 @@
+
+SemanticValidator -- SemanticValidator for semantically validating certain XML files.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SemanticValidator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  SemanticValidator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*            Input file (any xml file) (valid formats: 'analysisXML', 'mzML', 'traML', 'mzid', 
+                         'mzData', 'xml')
+  -mapping_file <file>*  Mapping file which is used to semantically validate the given XML file against this 
+                         mapping file (see 'share/OpenMS/MAPPING' for templates). (valid formats: 'xml')
+  -cv <files>            Controlled Vocabulary files containg the CV terms (if left empty, a set of default 
+                         files are used) (valid formats: 'obo')
+                         
+Common TOPP options:
+  -ini <file>            Use the given TOPP INI file
+  -threads <n>           Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>      Writes the default configuration file
+  --help                 Shows options
+  --helphelp             Shows all options (including advanced)
+

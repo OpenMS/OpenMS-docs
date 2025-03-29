@@ -1,0 +1,38 @@
+
+FuzzyDiff -- Compares two files, tolerating numeric differences.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FuzzyDiff.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  FuzzyDiff <options>
+
+Options (mandatory options marked with '*'):
+                       
+  -in1 <file>*         First input file
+  -in2 <file>*         Second input file
+                       
+  -ratio <double>      Acceptable relative error. Only one of 'ratio' or 'absdiff' has to be satisfied.  Use 
+                       "absdiff" to deal with cases like "zero vs. epsilon". (default: '1.0') (min: '1.0')
+  -absdiff <double>    Acceptable absolute difference. Only one of 'ratio' or 'absdiff' has to be satisfied. 
+                        (default: '0.0') (min: '0.0')
+                       
+  -verbose <int>       Set verbose level:
+                       0 = very quiet mode (absolutely no output)
+                       1 = quiet mode (no output unless differences detected)
+                       2 = default (include summary at end)
+                       3 = continue after errors
+                        (default: '2') (min: '0' max: '3')
+  -tab_width <int>     Tabulator width, used for calculation of column numbers (default: '8') (min: '1')
+  -first_column <int>  Number of first column, used for calculation of column numbers (default: '1') (min: 
+                       '0')
+                       
+Common TOPP options:
+  -ini <file>          Use the given TOPP INI file
+  -threads <n>         Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>    Writes the default configuration file
+  --help               Shows options
+  --helphelp           Shows all options (including advanced)
+

@@ -1,0 +1,148 @@
+
+MSGFPlusAdapter -- MS/MS database search using MS-GF+.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MSGFPlusAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MSGFPlusAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                             Input file (MS-GF+ parameter '-s') (valid formats: 
+                                                          'mzML', 'mzXML', 'mgf', 'ms2')
+  -out <file>                                             Output file (valid formats: 'idXML')
+  -mzid_out <file>                                        Alternative output file (MS-GF+ parameter '-o')
+                                                          Either 'out' or 'mzid_out' are required. They can 
+                                                          be used together. (valid formats: 'mzid')
+  -executable <file>*                                     The MSGFPlus Java archive file. Provide a full or 
+                                                          relative path, or make sure it can be found in your
+                                                           PATH environment.
+  -database <file>*                                       Protein sequence database (FASTA file; MS-GF+ param
+                                                          eter '-d'). Non-existing relative filenames are 
+                                                          looked up via 'OpenMS.ini:id_db_dir'. (valid format
+                                                          s: 'FASTA')
+  -precursor_mass_tolerance <value>                       Precursor monoisotopic mass tolerance (MS-GF+ param
+                                                          eter '-t') (default: '10.0')
+  -precursor_error_units <choice>                         Unit of precursor mass tolerance (MS-GF+ parameter 
+                                                          '-t') (default: 'ppm') (valid: 'Da', 'ppm')
+  -isotope_error_range <range>                            Range of allowed isotope peak errors (MS-GF+ parame
+                                                          ter '-ti'). Takes into account the error introduced
+                                                           by choosing a non-monoisotopic peak for fragmentat
+                                                          ion. Combined with 'precursor_mass_tolerance'/'prec
+                                                          ursor_error_units', this determines the actual prec
+                                                          ursor mass tolerance. E.g. for experimental mass 
+                                                          'exp' and calculated mass 'calc', '-precursor_mass_
+                                                          tolerance 20 -precursor_error_units ppm -isotope_er
+                                                          ror_range -1,2' tests '|exp - calc - n * 1.00335 
+                                                          Da| < 20 ppm' for n = -1, 0, 1, 2. (default: '0,1')
+
+  -fragment_method <choice>                               Fragmentation method ('from_spectrum' relies on 
+                                                          spectrum meta data and uses CID as fallback option;
+                                                           MS-GF+ parameter '-m') (default: 'from_spectrum') 
+                                                          (valid: 'from_spectrum', 'CID', 'ETD', 'HCD')
+  -instrument <choice>                                    Instrument that generated the data ('low_res'/'high
+                                                          _res' refer to LCQ and LTQ instruments; MS-GF+ para
+                                                          meter '-inst') (default: 'low_res') (valid: 'low_re
+                                                          s', 'high_res', 'TOF', 'Q_Exactive')
+  -enzyme <choice>                                        Enzyme used for digestion, or type of cleavage. 
+                                                          Note: MS-GF+ does not support blocking rules. (MS-G
+                                                          F+ parameter '-e') (default: 'Trypsin/P') (valid: 
+                                                          'Alpha-lytic protease', 'Arg-C/P', 'Asp-N/B', 'Chym
+                                                          otrypsin/P', 'Lys-C/P', 'Lys-N', 'Trypsin/P', 'glut
+                                                          amyl endopeptidase', 'no cleavage', 'unspecific 
+                                                          cleavage')
+  -protocol <choice>                                      Labeling or enrichment protocol used, if any (MS-GF
+                                                          + parameter '-p') (default: 'automatic') (valid: 
+                                                          'automatic', 'phospho', 'iTRAQ', 'iTRAQ_phospho', 
+                                                          'TMT', 'none')
+  -tryptic <choice>                                       Level of cleavage specificity required (MS-GF+ para
+                                                          meter '-ntt') (default: 'fully') (valid: 'non', 
+                                                          'semi', 'fully')
+  -min_precursor_charge <num>                             Minimum precursor ion charge (only used for spectra
+                                                           without charge information; MS-GF+ parameter '-min
+                                                          Charge') (default: '2') (min: '1')
+  -max_precursor_charge <num>                             Maximum precursor ion charge (only used for spectra
+                                                           without charge information; MS-GF+ parameter '-max
+                                                          Charge') (default: '3') (min: '1')
+  -min_peptide_length <num>                               Minimum peptide length to consider (MS-GF+ paramete
+                                                          r '-minLength') (default: '6') (min: '1')
+  -max_peptide_length <num>                               Maximum peptide length to consider (MS-GF+ paramete
+                                                          r '-maxLength') (default: '40') (min: '1')
+  -matches_per_spec <num>                                 Number of matches per spectrum to be reported (MS-G
+                                                          F+ parameter '-n') (default: '1') (min: '1')
+  -min_peaks <num>                                        Minimum number of ions a spectrum must have to be 
+                                                          examined (default: '10') (min: '10')
+  -add_features <true/false>                              Output additional features (MS-GF+ parameter '-addF
+                                                          eatures'). This is required by Percolator and hence
+                                                           by default enabled. (default: 'true') (valid: 'tru
+                                                          e', 'false')
+  -max_mods <num>                                         Maximum number of modifications per peptide. If 
+                                                          this value is large, the search may take very long.
+                                                           (default: '2') (min: '0')
+  -max_missed_cleavages <num>                             Maximum number of missed cleavages allowed for a 
+                                                          peptide to be considered for scoring. (default: -1 
+                                                          meaning unlimited) (default: '-1') (min: '-1')
+  -tasks <num>                                            (Override the number of tasks to use on the threads
+                                                          ; Default: (internally calculated based on inputs))
+                                                          
+                                                             More tasks than threads will reduce the memory 
+                                                          requirements of the search, but will be slower (how
+                                                           much depends on the inputs).
+                                                             1 <= tasks <= numThreads: will create one task 
+                                                          per thread, which is the original behavior.
+                                                          ...
+                                                          times as long. (default: '0')
+  -fixed_modifications <mods>                             Fixed modifications, specified using Unimod (www.un
+                                                          imod.org) terms, e.g. 'Carbamidomethyl (C)' or 'Oxi
+                                                          dation (M)' (default: '[Carbamidomethyl (C)]') (val
+                                                          id: '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -variable_modifications <mods>                          Variable modifications, specified using Unimod (www
+                                                          .unimod.org) terms, e.g. 'Carbamidomethyl (C)' or 
+                                                          'Oxidation (M)' (default: '[Oxidation (M)]') (valid
+                                                          : '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -conf <file>                                            Optional MSGF+ configuration file (passed as -conf 
+                                                          <file> to MSGF+). See documentation for examples. 
+                                                          Parameters of the adapter take precedence. Use conf
+                                                           file only for settings not available here (for 
+                                                          example, any fixed/var modifications, in the conf 
+                                                          file will be ignored, since they are provided via 
+                                                          -mod flag)
+  -java_executable <file>                                 The Java executable. Usually Java is on the system 
+                                                          PATH. If Java is not found, use this parameter to 
+                                                          specify the full path to Java
+  -java_memory <num>                                      Maximum Java heap size (in MB) (default: '3500')
+  -reindex <choice>                                       Recalculate peptide to protein association using 
+                                                          OpenMS. Annotates target-decoy information. (defaul
+                                                          t: 'true') (valid: 'true', 'false')
+
+PeptideIndexing:
+  -PeptideIndexing:allow_nterm_protein_cleavage <choice>  Allow the protein N-terminus amino acid to clip. 
+                                                          (default: 'true') (valid: 'true', 'false')
+
+                                                          
+Common TOPP options:
+  -ini <file>                                             Use the given TOPP INI file
+  -threads <n>                                            Sets the number of threads allowed to be used by 
+                                                          the TOPP tool (default: '1')
+  -write_ini <file>                                       Writes the default configuration file
+  --help                                                  Shows options
+  --helphelp                                              Shows all options (including advanced)
+

@@ -1,0 +1,45 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>no_rerank</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use this flag if you want to disable re-ranking. Cases, where a de novo peptide scores just higher than the database peptide, are overlooked and counted as a de novo hit. This might underestimate the database quality.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>reranking_cutoff_percentile</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.01</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Swap a top-scoring deNovo hit with a lower scoring DB hit if their xcorr score difference is in the given percentile of all score differences between the first two decoy hits of a PSM. The lower the value the lower the decoy cut-off will be. Therefore it will be harder for a lower scoring DB hit to be re-ranked to the top.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>FDR</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.01</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Filter peptide hits based on this q-value. (e.g., 0.05 = 5 % FDR)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>number_of_subsampled_runs</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Controls how many runs should be done for calculating corrected suitability. (0 : number of runs will be estimated automaticly) ATTENTION: For each run a seperate ID-search is performed. This can result in some serious run time.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>keep_search_files</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Set this flag if you wish to keep the files used by and produced by the internal ID search.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>disable_correction</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Set this flag to disable the calculation of the corrected suitability.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>force</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Set this flag to enforce re-ranking when no cross correlation score is present. For re-ranking the default score found at each peptide hit is used. Use with care!</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

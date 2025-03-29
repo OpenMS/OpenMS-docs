@@ -1,0 +1,155 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>stop_after_feature</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">-1</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Stop finding after feature (ordered by intensity; -1 means do not stop).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>stop_after_intensity_ratio</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-04</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Stop after reaching intensity ratio</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>min_peak_width</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-03</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimal peak width (s), discard all peaks below this value (-1 means no action).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>peak_integration</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">original</td>
+  <td style="vertical-align:top">original, smoothed</td><td style="vertical-align:top">Calculate the peak area and height either the smoothed or the raw chromatogram data.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>background_subtraction</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">none</td>
+  <td style="vertical-align:top">none, original, exact</td><td style="vertical-align:top">Remove background from peak signal using estimated noise levels. The 'original' method is only provided for historical purposes, please use the 'exact' method and set parameters using the PeakIntegrator: settings. The same original or smoothed chromatogram specified by peak_integration will be used for background estimation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>recalculate_peaks</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Tries to get better peak picking by looking at peak consistency of all picked peaks. Tries to use the consensus (median) peak border if the variation within the picked peaks is too large.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>use_precursors</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use precursor chromatogram for peak picking (note that this may lead to precursor signal driving the peak picking)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>use_consensus</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use consensus peak boundaries when computing transition group picking (if false, compute independent peak boundaries for each transition)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>recalculate_peaks_max_z</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Determines the maximal Z-Score (difference measured in standard deviations) that is considered too large for peak boundaries. If the Z-Score is above this value, the median is used for peak boundaries (default value 1.0).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>minimal_quality</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0e04</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Only if compute_peak_quality is set, this parameter will not consider peaks below this quality threshold</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>resample_boundary</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">15.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">For computing peak quality, how many extra seconds should be sample left and right of the actual peak</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>compute_peak_quality</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Tries to compute a quality value for each peakgroup and detect outlier transitions. The resulting score is centered around zero and values above 0 are generally good and below -1 or -2 are usually bad.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>compute_peak_shape_metrics</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Calculates various peak shape metrics (e.g., tailing) that can be used for downstream QC/QA.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>compute_total_mi</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Compute mutual information metrics for individual transitions that can be used for OpenSWATH/IPF scoring.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>boundary_selection_method</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">largest</td>
+  <td style="vertical-align:top">largest, widest</td><td style="vertical-align:top">Method to use when selecting the best boundaries for peaks.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:sgolay_frame_length</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">15</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The number of subsequent data points used for smoothing.<BR>This number has to be uneven. If it is not, 1 will be added.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:sgolay_polynomial_order</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">3</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Order of the polynomial that is fitted.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:gauss_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">50.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Gaussian width in seconds, estimated peak size.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:use_gauss</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">false, true</td><td style="vertical-align:top">Use Gaussian filter for smoothing (alternative is Savitzky-Golay filter)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:peak_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Force a certain minimal peak_width on the data (e.g. extend the peak at least by this amount on both sides) in seconds. -1 turns this feature off.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:signal_to_noise</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Signal-to-noise threshold at which a peak will not be extended any more. Note that setting this too high (e.g. 1.0) can lead to peaks whose flanks are not fully captured.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:sn_win_len</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1000.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Signal to noise window length.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:sn_bin_count</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">30</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Signal to noise bin count.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:write_sn_log_messages</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Write out log messages of the signal-to-noise estimator in case of sparse windows or median in rightmost histogram bin</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:remove_overlapping_peaks</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">false, true</td><td style="vertical-align:top">Try to remove overlapping peaks during peak picking</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakPickerChromatogram:method</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">corrected</td>
+  <td style="vertical-align:top">legacy, corrected, crawdad</td><td style="vertical-align:top">Which method to choose for chromatographic peak-picking (OpenSWATH legacy on raw data, corrected picking on smoothed chromatogram or Crawdad on smoothed chromatogram).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakIntegrator:integration_type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">intensity_sum</td>
+  <td style="vertical-align:top">intensity_sum, simpson, trapezoid</td><td style="vertical-align:top">The integration technique to use in integratePeak() and estimateBackground() which uses either the summed intensity, integration by Simpson's rule or trapezoidal integration.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakIntegrator:baseline_type</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">base_to_base</td>
+  <td style="vertical-align:top">base_to_base, vertical_division, vertical_division_min, vertical_division_max</td><td style="vertical-align:top">The baseline type to use in estimateBackground() based on the peak boundaries. A rectangular baseline shape is computed based either on the minimal intensity of the peak boundaries, the maximum intensity or the average intensity (base_to_base).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>PeakIntegrator:fit_EMG</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">false, true</td><td style="vertical-align:top">Fit the chromatogram/spectrum to the EMG peak model.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

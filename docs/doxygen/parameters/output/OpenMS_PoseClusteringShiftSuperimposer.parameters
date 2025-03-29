@@ -1,0 +1,40 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>mz_pair_max_distance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Maximum of m/z deviation of corresponding elements in different maps.  This condition applies to the pairs considered in hashing.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>num_used_points</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2000</td>
+  <td style="vertical-align:top">min: -1</td><td style="vertical-align:top">Maximum number of elements considered in each map (selected by intensity).  Use this to reduce the running time and to disregard weak signals during alignment.  For using all points, set this to -1.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>shift_bucket_size</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">The shift of the retention time interval is being hashed into buckets of this size during pose clustering.  A good choice for this would be about the time between consecutive MS scans.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>max_shift</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1000.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Maximal shift which is considered during histogramming.  This applies for both directions.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>dump_buckets</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">[DEBUG] If non-empty, base filename where hash table buckets will be dumped to.  A serial number for each invocation will be appended automatically.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>dump_pairs</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">[DEBUG] If non-empty, base filename where the individual hashed pairs will be dumped to (large!).  A serial number for each invocation will be appended automatically.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

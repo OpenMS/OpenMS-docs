@@ -1,0 +1,36 @@
+
+IDConflictResolver -- Resolves ambiguous annotations of features with peptide identifications
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IDConflictResolver.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IDConflictResolver <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                           Input file (data annotated with identifications) (val
+                                                        id formats: 'featureXML', 'consensusXML')
+  -out <file>*                                          Output file (data with one peptide identification 
+                                                        per feature) (valid formats: 'featureXML', 'consensus
+                                                        XML')
+  -resolve_between_features <resolve_between_features>  A map may contain multiple features with both identic
+                                                        al (possibly modified i.e. not stripped) sequence 
+                                                        and charge state. The feature with the 'highest inten
+                                                        sity' is very likely the most reliable one. When swit
+                                                        ched on, the filter removes the sequence annotation 
+                                                        from the lower intensity features, thereby resolving 
+                                                        the multiplicity. Only the most reliable features 
+                                                        for each (possibly modified i.e. not stripped) sequen
+                                                        ce maintain annotated with this peptide sequence. 
+                                                        (default: 'off') (valid: 'off', 'highest_intensity')
+                                                        
+Common TOPP options:
+  -ini <file>                                           Use the given TOPP INI file
+  -threads <n>                                          Sets the number of threads allowed to be used by the 
+                                                        TOPP tool (default: '1')
+  -write_ini <file>                                     Writes the default configuration file
+  --help                                                Shows options
+  --helphelp                                            Shows all options (including advanced)
+

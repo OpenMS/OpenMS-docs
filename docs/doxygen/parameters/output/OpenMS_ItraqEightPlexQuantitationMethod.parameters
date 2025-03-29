@@ -1,0 +1,60 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_113_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 113 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_114_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 114 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_115_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 115 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_116_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 116 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_117_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 117 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_118_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 118 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_119_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 119 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_121_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 121 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>reference_channel</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">113</td>
+  <td style="vertical-align:top">min: 113 max: 121</td><td style="vertical-align:top">Number of the reference channel (113-121). Please note that 120 is not valid.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>correction_matrix</b></td>
+  <td style="vertical-align:top">string list</td><td style="vertical-align:top">[0.00/0.00/6.89/0.22, 0.00/0.94/5.90/0.16, 0.00/1.88/4.90/0.10, 0.00/2.82/3.90/0.07, 0.06/3.77/2.99/0.00, 0.09/4.71/1.88/0.00, 0.14/5.66/0.87/0.00, 0.27/7.44/0.18/0.00]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Correction matrix for isotope distributions (see documentation); use the following format: <-2Da>/<-1Da>/<+1Da>/<+2Da>; e.g. '0/0.3/4/0', '0.1/0.3/3/0.2'</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

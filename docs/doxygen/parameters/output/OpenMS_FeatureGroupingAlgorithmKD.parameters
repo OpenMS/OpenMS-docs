@@ -1,0 +1,130 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>mz_unit</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">ppm</td>
+  <td style="vertical-align:top">ppm, Da</td><td style="vertical-align:top">Unit of m/z tolerance</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>nr_partitions</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">100</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Number of partitions in m/z space</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>warp:enabled</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Whether or not to internally warp feature RTs using LOWESS transformation before linking (reported RTs in results will always be the original RTs)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>warp:rt_tol</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">100.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Width of RT tolerance window (sec)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>warp:mz_tol</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">5.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">m/z tolerance (in ppm or Da)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>warp:max_pairwise_log_fc</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum absolute log10 fold change between two compatible signals during compatibility graph construction. Two signals from different maps will not be connected by an edge in the compatibility graph if absolute log fold change exceeds this limit (they might still end up in the same connected component, however). Note: this does not limit fold changes in the linking stage, only during RT alignment, where we try to find high-quality alignment anchor points. Setting this to a value < 0 disables the FC check.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>warp:min_rel_cc_size</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Only connected components containing compatible features from at least max(2, (warp_min_occur * number_of_input_maps)) input maps are considered for computing the warping function</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>warp:max_nr_conflicts</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: -1</td><td style="vertical-align:top">Allow up to this many conflicts (features from the same map) per connected component to be used for alignment (-1 means allow any number of conflicts)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>link:rt_tol</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">30.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Width of RT tolerance window (sec)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>link:mz_tol</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">m/z tolerance (in ppm or Da)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>link:charge_merging</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">With_charge_zero</td>
+  <td style="vertical-align:top">Identical, With_charge_zero, Any</td><td style="vertical-align:top">whether to disallow charge mismatches (Identical), allow to link charge zero (i.e., unknown charge state) with every charge state, or disregard charges (Any).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>link:adduct_merging</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Any</td>
+  <td style="vertical-align:top">Identical, With_unknown_adducts, Any</td><td style="vertical-align:top">whether to only allow the same adduct for linking (Identical), also allow linking features with adduct-free ones, or disregard adducts (Any).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on RT differences">distance_RT</span>:exponent</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Normalized RT differences ([0-1], relative to 'max_difference') are raised to this power (using 1 or 2 will be fast, everything else is REALLY slow)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on RT differences">distance_RT</span>:weight</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Final RT distances are weighted by this factor</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on m/z differences">distance_MZ</span>:exponent</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">2.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Normalized ([0-1], relative to 'max_difference') m/z differences are raised to this power (using 1 or 2 will be fast, everything else is REALLY slow)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on m/z differences">distance_MZ</span>:weight</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Final m/z distances are weighted by this factor</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on differences in relative intensity (usually relative to highest peak in the whole data set)">distance_intensity</span>:exponent</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Differences in relative intensity ([0-1]) are raised to this power (using 1 or 2 will be fast, everything else is REALLY slow)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on differences in relative intensity (usually relative to highest peak in the whole data set)">distance_intensity</span>:weight</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Final intensity distances are weighted by this factor</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Distance component based on differences in relative intensity (usually relative to highest peak in the whole data set)">distance_intensity</span>:log_transform</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">enabled</td>
+  <td style="vertical-align:top">enabled, disabled</td><td style="vertical-align:top">Log-transform intensities? If disabled, d = |int_f2 - int_f1| / int_max. If enabled, d = |log(int_f2 + 1) - log(int_f1 + 1)| / log(int_max + 1))</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="LOWESS parameters for internal RT transformations (only relevant if 'warp:enabled' is set to 'true')">LOWESS</span>:span</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.666666666666667</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Fraction of datapoints (f) to use for each local regression (determines the amount of smoothing). Choosing this parameter in the range .2 to .8 usually results in a good fit.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="LOWESS parameters for internal RT transformations (only relevant if 'warp:enabled' is set to 'true')">LOWESS</span>:num_iterations</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">3</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Number of robustifying iterations for lowess fitting.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="LOWESS parameters for internal RT transformations (only relevant if 'warp:enabled' is set to 'true')">LOWESS</span>:delta</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Nonnegative parameter which may be used to save computations (recommended value is 0.01 of the range of the input, e.g. for data ranging from 1000 seconds to 2000 seconds, it could be set to 10). Setting a negative value will automatically do this.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="LOWESS parameters for internal RT transformations (only relevant if 'warp:enabled' is set to 'true')">LOWESS</span>:interpolation_type</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">cspline</td>
+  <td style="vertical-align:top">linear, cspline, akima</td><td style="vertical-align:top">Method to use for interpolation between datapoints computed by lowess. 'linear': Linear interpolation. 'cspline': Use the cubic spline for interpolation. 'akima': Use an akima spline for interpolation</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="LOWESS parameters for internal RT transformations (only relevant if 'warp:enabled' is set to 'true')">LOWESS</span>:extrapolation_type</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">four-point-linear</td>
+  <td style="vertical-align:top">two-point-linear, four-point-linear, global-linear</td><td style="vertical-align:top">Method to use for extrapolation outside the data range. 'two-point-linear': Uses a line through the first and last point to extrapolate. 'four-point-linear': Uses a line through the first and second point to extrapolate in front and and a line through the last and second-to-last point in the end. 'global-linear': Uses a linear regression to fit a line through all data points and use it for interpolation.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

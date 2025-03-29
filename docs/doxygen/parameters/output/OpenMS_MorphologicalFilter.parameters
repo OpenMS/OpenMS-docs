@@ -1,0 +1,25 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>struc_elem_length</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Length of the structuring element. This should be wider than the expected peak width.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>struc_elem_unit</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">Thomson</td>
+  <td style="vertical-align:top">Thomson, DataPoints</td><td style="vertical-align:top">The unit of the 'struct_elem_length'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>method</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">tophat</td>
+  <td style="vertical-align:top">identity, erosion, dilation, opening, closing, gradient, tophat, bothat, erosion_simple, dilation_simple</td><td style="vertical-align:top">Method to use, the default is 'tophat'.  Do not change this unless you know what you are doing.  The other methods may be useful for tuning the parameters, see the class documentation of MorpthologicalFilter.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

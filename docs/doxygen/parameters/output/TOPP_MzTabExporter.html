@@ -1,0 +1,21 @@
+<div class="ini_global">
+<div class="legend">
+<b>Legend:</b><br>
+ <div class="item item_required">required parameter</div>
+ <div class="item item_advanced">advanced parameter</div>
+</div>
+  <div class="node"><span class="node_name">+MzTabExporter</span><span class="node_description">Exports various XML formats to an mzTab file.</span></div>
+    <div class="item item_advanced"><span class="item_name" style="padding-left:16px;">version</span><span class="item_value">3.1.0-pre-develop-2024-04-26</span>
+<span class="item_description">Version of the tool that generated this parameters file.</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>    <div class="node"><span class="node_name">++1</span><span class="node_description">Instance '1' section for 'MzTabExporter'</span></div>
+      <div class="item"><span class="item_name" style="padding-left:24px;">in</span><span class="item_value"></span>
+<span class="item_description">Input files used to generate the mzTab file.</span><span class="item_tags">input file</span><span class="item_restrictions">*.featureXML, *.consensusXML, *.idXML, *.mzid</span></div>      <div class="item"><span class="item_name item_required" style="padding-left:24px;">out</span><span class="item_value"></span>
+<span class="item_description">Output file (mzTab)</span><span class="item_tags">output file</span><span class="item_restrictions">*.mzTab</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">first_run_inference_only</span><span class="item_value">false</span>
+<span class="item_description">Does the first IdentificationRun in the file only represent (protein) inference results? If so, read peptide information only from second to last runs.</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">export_all_psms</span><span class="item_value">false</span>
+<span class="item_description">Export all PSMs instead of only the best per spectrum</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">opt_columns</span><span class="item_value">[subfeatures]</span>
+<span class="item_description">Add optional columns which are not part of the mzTab standard.</span><span class="item_tags"></span><span class="item_restrictions">subfeatures</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">log</span><span class="item_value"></span>
+<span class="item_description">Name of log file (created only when specified)</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">debug</span><span class="item_value">0</span>
+<span class="item_description">Sets the debug level</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>      <div class="item"><span class="item_name" style="padding-left:24px;">threads</span><span class="item_value">1</span>
+<span class="item_description">Sets the number of threads allowed to be used by the TOPP tool</span><span class="item_tags"></span><span class="item_restrictions"> </span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">no_progress</span><span class="item_value">false</span>
+<span class="item_description">Disables progress logging to command line</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">force</span><span class="item_value">false</span>
+<span class="item_description">Overrides tool-specific checks</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div>      <div class="item item_advanced"><span class="item_name" style="padding-left:24px;">test</span><span class="item_value">false</span>
+<span class="item_description">Enables the test mode (needed for internal use only)</span><span class="item_tags"></span><span class="item_restrictions">true, false</span></div></div>

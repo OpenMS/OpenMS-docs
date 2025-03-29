@@ -1,0 +1,35 @@
+
+StaticModification -- Applies a set of modifications to all PeptideIDs in an idXML file.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_StaticModification.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  StaticModification <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*        Input: identification results (valid formats: 'idXML')
+  -out <file>*       Output: identification results with modifications applied (valid formats: 'idXML')
+  -mods <list>       List of manual modifications, specified using Unimod (www.unimod.org) terms, e.g. 'Carba
+                     midomethyl (C)' or 'Oxidation (M)'. (valid: '15N-oxobutanoic (N-term C)', '15N-oxobutano
+                     ic (Protein N-term S)', '15N-oxobutanoic (Protein N-term T)', '2-dimethylsuccinyl (C)', 
+                     '2-monomethylsuccinyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', '2HPG (R)', '3-deoxyg
+                     lucosone (R)', '3-hydroxybenzyl-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', '3-hydr
+                     oxybenzyl-phosphate (T)', '3-hydroxybenzyl-phosphate (Y)', '3-phosphoglyceryl (K)', '3su
+                     lfo (N-term)', '4-ONE (C)', '4-ONE (H)', '4-ONE (K)', '4-ONE+Delta:H(-2)O(-1) (C)', '4-O
+                     NE+Delta:H(-2)O(-1) (H)', '4-ONE+Delta:H(-2)O(-1) (K)', '4AcAllylGal (C)', 'a-type-ion 
+                     (C-term)', 'AccQTag (K)', 'AccQTag (N-term)', 'Acetyl (C)', 'Acetyl (H)', 'Acetyl (K)', 
+                     ...
+                     'ZGB (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -presets <name>    Add predefined sets, as shortcut to manually specifying a lot of modifications. (default
+                     : 'none') (valid: 'none', 'N15')
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+

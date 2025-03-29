@@ -1,0 +1,107 @@
+
+XTandemAdapter -- Annotates MS/MS spectra using X! Tandem.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_XTandemAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  XTandemAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                             Input file containing MS2 spectra (valid formats: 
+                                                          'mzML')
+  -out <file>                                             Output file containing search results (valid format
+                                                          s: 'idXML')
+  -xml_out <file>                                         Raw output file directly from X! Tandem. Either 
+                                                          'out' or 'xml_out' are required. They can be used 
+                                                          together. (valid formats: 'xml')
+  -database <file>*                                       FASTA file or pro file. Non-existing relative file-
+                                                          names are looked up via'OpenMS.ini:id_db_dir' (vali
+                                                          d formats: 'FASTA')
+  -xtandem_executable <executable>*                       X! Tandem executable. Provide a full or relative 
+                                                          path, or make sure it can be found in your PATH 
+                                                          environment.
+  -default_config_file <file>                             Default X! Tandem configuration file. All parameter
+                                                          s of this adapter take precedence over the file - 
+                                                          use it for parameters not available here. A templat
+                                                          e file can be found at 'OpenMS/share/CHEMISTRY/XTan
+                                                          dem_default_config.xml'. (valid formats: 'xml')
+  -ignore_adapter_param                                   Set this to use the configuration given in 'default
+                                                          _config_file' exclusively, ignoring other parameter
+                                                          s (apart from 'in', 'out', 'database', 'xtandem_exe
+                                                          cutable') set via this adapter.
+                                                          
+  -precursor_mass_tolerance <value>                       Precursor mass tolerance (default: '10.0')
+  -fragment_mass_tolerance <value>                        Fragment mass error (default: '0.3')
+  -precursor_error_units <unit>                           Parent monoisotopic mass error units (default: 'ppm
+                                                          ') (valid: 'ppm', 'Da')
+  -fragment_error_units <unit>                            Fragment monoisotopic mass error units (default: 
+                                                          'Da') (valid: 'ppm', 'Da')
+  -max_precursor_charge <number>                          Maximum precursor charge ('0' to use X! Tandem defa
+                                                          ult) (default: '4') (min: '0')
+  -no_isotope_error                                       By default, misassignment to the first and second 
+                                                          isotopic 13C peak are also considered. Set this 
+                                                          flag to disable.
+  -fixed_modifications <mods>                             Fixed modifications, specified using Unimod (www.un
+                                                          imod.org) terms, e.g. 'Carbamidomethyl (C)' or 'Oxi
+                                                          dation (M)' (default: '[Carbamidomethyl (C)]') (val
+                                                          id: '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -variable_modifications <mods>                          Variable modifications, specified using Unimod (www
+                                                          .unimod.org) terms, e.g. 'Carbamidomethyl (C)' or 
+                                                          'Oxidation (M)' (default: '[Oxidation (M)]') (valid
+                                                          : '15N-oxobutanoic (N-term C)', '15N-oxobutanoic 
+                                                          (Protein N-term S)', '15N-oxobutanoic (Protein N-te
+                                                          rm T)', '2-dimethylsuccinyl (C)', '2-monomethylsucc
+                                                          inyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                          '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzy
+                                                          l-phosphate (K)', '3-hydroxybenzyl-phosphate (S)', 
+                                                          '3-hydroxybenzyl-phosphate (T)', '3-hydroxybenzyl-p
+                                                          ...
+                                                          (K)')
+  -minimum_fragment_mz <number>                           Minimum fragment m/z (default: '150.0')
+  -enzyme <choice>                                        The enzyme used for peptide digestion. (default: 
+                                                          'Trypsin') (valid: 'PepsinA', 'Formic_acid', 'Tryps
+                                                          in/P', 'V8-DE', 'Asp-N', 'CNBr', 'leukocyte elastas
+                                                          e', 'TrypChymo', 'V8-E', 'Arg-C/P', 'Trypsin', 'Asp
+                                                          -N_ambic', 'Arg-C', 'Asp-N/B', 'Chymotrypsin/P', 
+                                                          'Lys-N', 'Chymotrypsin', 'Lys-C', 'Lys-C/P', 'gluta
+                                                          myl endopeptidase', 'unspecific cleavage', '2-iodob
+                                                          enzoate', 'no cleavage', 'Alpha-lytic protease')
+  -missed_cleavages <number>                              Number of possible cleavage sites missed by the 
+                                                          enzyme (default: '1')
+  -semi_cleavage                                          Require only peptide end to have a valid cleavage 
+                                                          site, not both.
+  -output_results <choice>                                Which hits should be reported. All, valid ones (pas
+                                                          sing the E-Value threshold), or stochastic (failing
+                                                           the threshold) (default: 'all') (valid: 'all', 
+                                                          'valid', 'stochastic')
+  -max_valid_expect <value>                               Maximal E-Value of a hit to be reported (only evalu
+                                                          ated if 'output_result' is 'valid' or 'stochastic')
+                                                           (default: '0.1')
+  -reindex <choice>                                       Recalculate peptide to protein association using 
+                                                          OpenMS. Annotates target-decoy information. (defaul
+                                                          t: 'true') (valid: 'true', 'false')
+
+PeptideIndexing:
+  -PeptideIndexing:allow_nterm_protein_cleavage <choice>  Allow the protein N-terminus amino acid to clip. 
+                                                          (default: 'true') (valid: 'true', 'false')
+
+                                                          
+Common TOPP options:
+  -ini <file>                                             Use the given TOPP INI file
+  -threads <n>                                            Sets the number of threads allowed to be used by 
+                                                          the TOPP tool (default: '1')
+  -write_ini <file>                                       Writes the default configuration file
+  --help                                                  Shows options
+  --helphelp                                              Shows all options (including advanced)
+

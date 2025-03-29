@@ -1,0 +1,45 @@
+
+DatabaseSuitability -- Computes a suitability score for a database which was used for a peptide identificatio
+n search. Also reports the quality of LC-MS spectra.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_DatabaseSuitability.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite DatabaseSuitability:
+ + Richard S. Johnson, Brian C. Searle, Brook L. Nunn, Jason M. Gilmore, Molly Phillips, Chris T. Amemiya, 
+   Michelle Heck, Michael J. MacCoss. Assessing protein sequence database suitability using de novo sequencin
+   g. Molecular & Cellular Proteomics. January 1, 2020; 19, 1: 198-208. doi:10.1074/mcp.TIR119.001752.
+
+Usage:
+  DatabaseSuitability <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in_id <file>*          Input idXML file from a peptide identification search with a combined database. 
+                          PeptideIndexer is needed, FDR is forbidden. (valid formats: 'idXML')
+  -in_spec <file>*        Input MzML file used for the peptide identification (valid formats: 'mzML')
+  -in_novo <file>*        Input idXML file containing de novo peptides (unfiltered) (valid formats: 'idXML')
+  -database <file>*       Input FASTA file of the database in question (valid formats: 'FASTA')
+  -novo_database <file>*  Input deNovo sequences derived from MzML given in 'in_spec' concatenated to one 
+                          FASTA entry (valid formats: 'FASTA')
+  -out <file>             Optional tsv output containing database suitability information as well as spectral
+                           quality. (valid formats: 'tsv')
+                          
+Common TOPP options:
+  -ini <file>             Use the given TOPP INI file
+  -threads <n>            Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>       Writes the default configuration file
+  --help                  Shows options
+  --helphelp              Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - algorithm   Parameter section for the suitability calculation algorithm
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_DatabaseSuitability.html
+

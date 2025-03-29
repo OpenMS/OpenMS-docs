@@ -1,0 +1,20 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>frame_length</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">11</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The number of subsequent data points used for smoothing.<BR>This number has to be uneven. If it is not, 1 will be added.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>polynomial_order</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Order or the polynomial that is fitted.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,150 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>isotope_model</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">none</td>
+  <td style="vertical-align:top">none, coarse, fine</td><td style="vertical-align:top">Model to use for isotopic peaks ('none' means no isotopic peaks are added, 'coarse' adds isotopic peaks in unit mass distance, 'fine' uses the hyperfine isotopic generator to add accurate isotopic peaks. Note that adding isotopic peaks is very slow.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_isotope</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">2</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Defines the maximal isotopic peak which is added if 'isotope_model' is 'coarse'</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_isotope_probability</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.05</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Defines the maximal isotopic probability to cover if 'isotope_model' is 'fine'</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_metainfo</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds the type of peaks as metainfo to the peaks, like y8+, [M-H2O+2H]++</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_losses</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds common losses to those ion expect to have them, only water and ammonia loss is considered</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>sort_by_position</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Sort output by position</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_precursor_peaks</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds peaks of the unfragmented precursor ion to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_all_precursor_charges</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Adds precursor peaks with all charges in the given range</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_abundant_immonium_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add most abundant immonium ions (for Proline, Cystein, Iso/Leucine, Histidin, Phenylalanin, Tyrosine, Tryptophan)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_first_prefix_ion</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set to true e.g. b1 ions are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_y_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of y-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_b_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of b-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_a_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of a-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_c_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of c-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_x_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of  x-ions to the spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_z_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of z-ions to the spectrum (sometimes observed in CID and for some AAs in ExD due to H abstraction)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_zp1_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of z+1-radical cations (also [z+H]*^{+} or simply z*) to the spectrum (often observed in ExD)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>add_zp2_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Add peaks of z+2-radical cations (also [z+2H]*^{2+} or simply z') to the spectrum (often observed in ExD esp. with higher precursor charges >3 and smaller z-ions.)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>y_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the y-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>b_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the b-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>a_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the a-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>c_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the c-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>x_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the x-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>z_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the z-ions</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>relative_loss_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Intensity of loss ions, in relation to the intact ion intensity</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>precursor_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the precursor peak</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>precursor_H2O_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the H2O loss peak of the precursor</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>precursor_NH3_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Intensity of the NH3 loss peak of the precursor</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,24 @@
+C:/Users/admin/Desktop/OpenMS-docs2/docs/doxygen/install/install-linux.doxygen:236: warning: \include{doc} file '../doxygen/install/common-cmake-parameters.doxygen' not found
+C:/Users/admin/Desktop/OpenMS-docs2/docs/doxygen/install/install-macs.doxygen:194: warning: \include{doc} file '../doxygen/install/common-cmake-parameters.doxygen' not found
+C:/Users/admin/Desktop/OpenMS-docs2/docs/doxygen/install/install-win.doxygen:262: warning: \include{doc} file '../doxygen/install/common-cmake-parameters.doxygen' not found
+warning: Included by graph for 'TOPPBase.h' not generated, too many nodes (141), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'Exception.h' not generated, too many nodes (81), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'LogStream.h' not generated, too many nodes (55), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'ProgressLogger.h' not generated, too many nodes (103), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'Types.h' not generated, too many nodes (131), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'DefaultParamHandler.h' not generated, too many nodes (109), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'String.h' not generated, too many nodes (174), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'FileHandler.h' not generated, too many nodes (130), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'ConsensusMap.h' not generated, too many nodes (55), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'FeatureMap.h' not generated, too many nodes (66), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'MSExperiment.h' not generated, too many nodes (112), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'MSSpectrum.h' not generated, too many nodes (52), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'StandardTypes.h' not generated, too many nodes (144), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'PeptideIdentification.h' not generated, too many nodes (65), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'ProteinIdentification.h' not generated, too many nodes (53), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'File.h' not generated, too many nodes (60), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Include graph for 'TOPPASBase.cpp' not generated, too many nodes (63), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Include graph for 'TOPPViewBase.cpp' not generated, too many nodes (55), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Inheritance graph for 'OpenMS::DefaultParamHandler' not generated, too many nodes (109), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Inheritance graph for 'OpenMS::ProgressLogger' not generated, too many nodes (76), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Inheritance graph for 'OpenMS::Exception::BaseException' not generated, too many nodes (50), threshold is 50. Consider increasing DOT_GRAPH_MAX_NODES.

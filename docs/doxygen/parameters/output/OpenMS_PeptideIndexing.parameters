@@ -1,0 +1,75 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>decoy_string</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">String that was appended (or prefixed - see 'decoy_string_position' flag below) to the accessions in the protein database to indicate decoy proteins. If empty (default), it's determined automatically (checking for common terms, both as prefix and suffix).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>decoy_string_position</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">prefix</td>
+  <td style="vertical-align:top">prefix, suffix</td><td style="vertical-align:top">Is the 'decoy_string' prepended (prefix) or appended (suffix) to the protein accession? (ignored if decoy_string is empty)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>missing_decoy_action</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">error</td>
+  <td style="vertical-align:top">error, warn, silent</td><td style="vertical-align:top">Action to take if NO peptide was assigned to a decoy protein (which indicates wrong database or decoy string): 'error' (exit with error, no output), 'warn' (exit with success, warning message), 'silent' (no action is taken, not even a warning)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>write_protein_sequence</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, the protein sequences are stored as well.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>write_protein_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, the protein description is stored as well.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>keep_unreferenced_proteins</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, protein hits which are not referenced by any peptide are kept.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>unmatched_action</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">error</td>
+  <td style="vertical-align:top">error, warn, remove</td><td style="vertical-align:top">If peptide sequences cannot be matched to any protein: 1) raise an error; 2) warn (unmatched PepHits will miss target/decoy annotation with downstream problems); 3) remove the hit.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>aaa_max</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">3</td>
+  <td style="vertical-align:top">min: 0 max: 10</td><td style="vertical-align:top">Maximal number of ambiguous amino acids (AAAs) allowed when matching to a protein database with AAAs. AAAs are 'B', 'J', 'Z' and 'X'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>mismatches_max</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: 0 max: 10</td><td style="vertical-align:top">Maximal number of mismatched (mm) amino acids allowed when matching to a protein database. The required runtime is exponential in the number of mm's; apply with care. MM's are allowed in addition to AAA's.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>IL_equivalent</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Treat the isobaric amino acids isoleucine ('I') and leucine ('L') as equivalent (indistinguishable). Also occurrences of 'J' will be treated as 'I' thus avoiding ambiguous matching.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>allow_nterm_protein_cleavage</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Allow the protein N-terminus amino acid to clip.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>enzyme:name</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">auto</td>
+  <td style="vertical-align:top">auto, Chymotrypsin, Trypsin, Arg-C, Arg-C/P, Asp-N/B, Asp-N_ambic, Asp-N, Trypsin/P, elastase-trypsin-chymotrypsin, TrypChymo, V8-DE, Lys-C/P, proline-endopeptidase/HKR, proline endopeptidase, V8-E, PepsinA, Alpha-lytic protease, CNBr, 2-iodobenzoate, PepsinA + P, cyanogen-bromide, glutamyl endopeptidase, leukocyte elastase, Formic_acid, staphylococcal protease/D, unspecific cleavage, Chymotrypsin/P, no cleavage, Lys-C, Lys-N, iodosobenzoate, Glu-C+P, Clostripain/P</td><td style="vertical-align:top">Enzyme which determines valid cleavage sites - e.g. trypsin cleaves after lysine (K) or arginine (R), but not before proline (P). Default: deduce from input</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>enzyme:specificity</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">auto</td>
+  <td style="vertical-align:top">auto, full, semi, none</td><td style="vertical-align:top">Specificity of the enzyme. Default: deduce from input.<BR>  'full': both internal cleavage sites must match.<BR>  'semi': one of two internal cleavage sites must match.<BR>  'none': allow all peptide hits no matter their context (enzyme is irrelevant).</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

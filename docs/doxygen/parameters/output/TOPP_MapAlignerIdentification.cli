@@ -1,0 +1,51 @@
+
+MapAlignerIdentification -- Corrects retention time distortions between maps based on common peptide identifi
+cations.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MapAlignerIdentification.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MapAlignerIdentification <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <files>*               Input files to align (all must have the same file type) (valid formats: 'feature
+                             XML', 'consensusXML', 'idXML', 'oms')
+  -out <files>               Output files (same file type as 'in'). This option or 'trafo_out' has to be prov
+                             ided; they can be used together. (valid formats: 'featureXML', 'consensusXML', 
+                             'idXML', 'oms')
+  -trafo_out <files>         Transformation output files. This option or 'out' has to be provided; they can 
+                             be used together. (valid formats: 'trafoXML')
+
+Options to define a reference file (use either 'file' or 'index', not both):
+  -reference:file <file>     File to use as reference (valid formats: 'featureXML', 'consensusXML', 'idXML', 
+                             'oms')
+  -reference:index <number>  Use one of the input files as reference ('1' for the first file, etc.).
+                             If '0', no explicit reference is set - the algorithm will select a reference. 
+                             (default: '0') (min: '0')
+
+  -design <file>             Input file containing the experimental design (valid formats: 'tsv')
+  -store_original_rt         Store the original retention times (before transformation) as meta data in the 
+                             output?
+                             
+Common TOPP options:
+  -ini <file>                Use the given TOPP INI file
+  -threads <n>               Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>          Writes the default configuration file
+  --help                     Shows options
+  --helphelp                 Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - algorithm   Algorithm parameters section
+ - model       Options to control the modeling of retention time transformations from data
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_MapAlignerIdentification.html
+

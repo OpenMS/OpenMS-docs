@@ -1,0 +1,57 @@
+
+XFDR -- Calculates false discovery rate estimates on crosslink identifications
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_XFDR.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  XFDR <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>                       Crosslink Identifications in either xquest.xml, idXML, or mzIdentML format
+                                    (as produced by OpenPepXL) (valid formats: 'xml', 'idXML', 'mzid', 'xques
+                                   t.xml')
+  -in_type <in_type>               Type of input file provided with -in. If omitted, the file type is guessed
+                                    from the file extension. (valid: 'xml', 'idXML', 'mzid', 'xquest.xml')
+  -out_idXML <idXML_file>          Output as idXML file (valid formats: 'idXML')
+  -out_mzIdentML <mzIdentML_file>  Output as mzIdentML file (valid formats: 'mzid')
+  -out_xquest <xQuestXML_file>     Output as xquest.xml file (valid formats: 'xquest.xml')
+  -decoy_string <text>             Prefix of decoy protein ids. The correspondig target protein id should be 
+                                   retrievable by deleting this prefix. (default: 'DECOY_')
+  -minborder <value>               Filter for minimum precursor mass error (ppm) before FDR estimation. Value
+                                   s outside of the tolerance window of the original search will effectively 
+                                   disable this filter. (default: '-50.0')
+  -maxborder <value>               Filter for maximum precursor mass error (ppm) before FDR estimation. Value
+                                   s outside of the tolerance window of the original search will effectively 
+                                   disable this filter. (default: '50.0')
+  -mindeltas <value>               Filter for delta score, 0 disables the filter. Minimum delta score require
+                                   d, hits are rejected if larger or equal. The delta score is a ratio of 
+                                   the score of a hit and the score of the next best hit to the same spectrum
+                                   , so the value range is between 0 and 1 with 1.0 meaning the scores are 
+                                   equal and 0.5 meaning the next best score is half as high as the current 
+                                   one. (default: '0.0') (min: '0.0' max: '1.0')
+  -minionsmatched <number>         Filter for minimum matched ions per peptide. (default: '0') (min: '0')
+  -uniquexl                        Calculate statistics based only on unique IDs. For a set of IDs from equal
+                                    candidates (same pair of peptides, modifications and cross-linked positio
+                                   ns), only the highest scoring hit will be considered. By default the score
+                                    distribution will be estimated using all 1st ranked candidates.
+  -no_qvalues                      Do not transform simple FDR to q-values
+  -minscore <value>                Minimum score to be considered for FDR calculation. A number lower than 
+                                   the lowest score will effectively disable this filter. (default: '-10.0')
+  -binsize <value>                 Bin size for the cumulative histograms for score distributions. Should be 
+                                   about the same size as the smallest expected difference between scores. 
+                                   Smaller numbers will make XFDR more robust, but much slower. Negative numb
+                                   ers are not allowed. Should only be changed if the range of the main score
+                                    changes or another score than the OpenPepXL score is used. (default: '1.0
+                                   e-04') (min: '1.0e-15')
+                                   
+Common TOPP options:
+  -ini <file>                      Use the given TOPP INI file
+  -threads <n>                     Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                   '1')
+  -write_ini <file>                Writes the default configuration file
+  --help                           Shows options
+  --helphelp                       Shows all options (including advanced)
+

@@ -1,0 +1,30 @@
+
+BaselineFilter -- Removes the baseline from profile spectra using a top-hat filter.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_BaselineFilter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  BaselineFilter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                Input raw data file  (valid formats: 'mzML')
+  -out <file>*               Output raw data file  (valid formats: 'mzML')
+  -struc_elem_length <size>  Length of the structuring element (should be wider than maximal peak width - 
+                             see documentation). (default: '3.0')
+  -struc_elem_unit <unit>    Unit of 'struc_elem_length' parameter. (default: 'Thomson') (valid: 'Thomson', 
+                             'DataPoints')
+  -method <string>           The name of the morphological filter to be applied. If you are unsure, use the 
+                             default. (default: 'tophat') (valid: 'identity', 'erosion', 'dilation', 'opening
+                             ', 'closing', 'gradient', 'tophat', 'bothat', 'erosion_simple', 'dilation_simple
+                             ')
+                             
+Common TOPP options:
+  -ini <file>                Use the given TOPP INI file
+  -threads <n>               Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>          Writes the default configuration file
+  --help                     Shows options
+  --helphelp                 Shows all options (including advanced)
+

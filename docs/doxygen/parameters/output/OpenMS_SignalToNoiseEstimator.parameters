@@ -1,0 +1,55 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><i>max_intensity</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">-1</td>
+  <td style="vertical-align:top">min: -1</td><td style="vertical-align:top">maximal intensity considered for histogram construction. By default, it will be calculated automatically (see auto_mode). Only provide this parameter if you know what you are doing (and change 'auto_mode' to '-1')! All intensities EQUAL/ABOVE 'max_intensity' will be added to the LAST histogram bin. If you choose 'max_intensity' too small, the noise estimate might be too small as well.  If chosen too big, the bins become quite large (which you could counter by increasing 'bin_count', which increases runtime). In general, the Median-S/N estimator is more robust to a manual max_intensity than the MeanIterative-S/N.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>auto_max_stdev_factor</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">min: 0.0 max: 999.0</td><td style="vertical-align:top">parameter for 'max_intensity' estimation (if 'auto_mode' == 0): mean + 'auto_max_stdev_factor' * stdev</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>auto_max_percentile</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">95</td>
+  <td style="vertical-align:top">min: 0 max: 100</td><td style="vertical-align:top">parameter for 'max_intensity' estimation (if 'auto_mode' == 1): auto_max_percentile th percentile</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>auto_mode</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: -1 max: 1</td><td style="vertical-align:top">method to use to determine maximal intensity: -1 --> use 'max_intensity'; 0 --> 'auto_max_stdev_factor' method (default); 1 --> 'auto_max_percentile' method</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>win_len</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">200.0</td>
+  <td style="vertical-align:top">min: 1.0</td><td style="vertical-align:top">window length in Thomson</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>bin_count</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">30</td>
+  <td style="vertical-align:top">min: 3</td><td style="vertical-align:top">number of bins for intensity values</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_required_elements</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">10</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">minimum number of elements required in a window (otherwise it is considered sparse)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>noise_for_empty_window</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e20</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">noise value used for sparse windows</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>write_log_messages</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Write out log messages in case of sparse windows or median in rightmost histogram bin</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

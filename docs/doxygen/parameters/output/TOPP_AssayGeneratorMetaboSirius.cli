@@ -1,0 +1,59 @@
+
+AssayGeneratorMetaboSirius -- Assay library generation from a SIRIUS project directory (Metabolomics)
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_AssayGeneratorMetaboSirius.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  AssayGeneratorMetaboSirius <options>
+
+Options (mandatory options marked with '*'):
+  -in <directory>*                            SIRIUS project directory
+  -in_compoundinfo <file>*                    Compound info table (.tsv file) (valid formats: 'tsv')
+  -out <file>*                                Assay library output file (valid formats: 'tsv', 'traML', 'pqp'
+                                              )
+  -ambiguity_resolution_mz_tolerance <num>    Mz tolerance for the resolution of identification ambiguity 
+                                              over multiple files (default: '10.0')
+  -ambiguity_resolution_rt_tolerance <num>    RT tolerance in seconds for the resolution of identification 
+                                              ambiguity over multiple files (default: '10.0')
+  -total_occurrence_filter <num>              Filter compound based on total occurrence in analysed samples 
+                                              (default: '0.1') (min: '0.0' max: '1.0')
+  -fragment_annotation_score_threshold <num>  Filters annotations based on the explained intensity of the 
+                                              peaks in a spectrum (default: '0.8') (min: '0.0' max: '1.0')
+  -method <choice>                            Spectrum with the highest precursor intensity or a consensus 
+                                              spectrum is used for assay library construction (if no fragment
+                                               annotation is used). (default: 'highest_intensity') (valid: 
+                                              'highest_intensity', 'consensus_spectrum')
+  -use_exact_mass                             Use exact mass for precursor and fragment annotations
+  -exclude_ms2_precursor                      Excludes precursor in ms2 from transition list
+  -use_known_unknowns                         Use features without identification information
+  -min_transitions <int>                      Minimal number of transitions (default: '3')
+  -max_transitions <int>                      Maximal number of transitions (default: '6')
+  -transition_threshold <num>                 Further transitions need at least x% of the maximum intensity 
+                                              (default 5%) (default: '5.0')
+  -decoy_generation                           Decoys will be generated using the fragmentation tree re-rootin
+                                              g approach. This option does only work in combination with the 
+                                              fragment annotation via Sirius.
+  -decoy_generation_method <choice>           Uses different methods for decoy generation. Basis for the meth
+                                              od is the fragmentation-tree re-rooting approach ('original'). 
+                                              This approach can be extended by using 'resolve_overlap', which
+                                               will resolve overlapping target/decoy fragments by adding -CH2
+                                               mass to the overlapping decoy fragments. 'generate_missing_dec
+                                              oys' will add a -CH2 mass shift to the target fragments and 
+                                              use them as decoys if fragmentation-tree re-rooting failed. 
+                                              'Both' combines the extended methods (resolve_overlap, generate
+                                              _missing_decoys). (default: 'original') (valid: 'original', 
+                                              'resolve_overlap', 'generate_missing_decoys', 'both')
+  -decoy_resolution_mz_tolerance <num>        Mz tolerance for the resolution of overlapping m/z values for 
+                                              targets and decoys of one compound. (default: '10.0')
+                                              
+Common TOPP options:
+  -ini <file>                                 Use the given TOPP INI file
+  -threads <n>                                Sets the number of threads allowed to be used by the TOPP tool 
+                                              (default: '1')
+  -write_ini <file>                           Writes the default configuration file
+  --help                                      Shows options
+  --helphelp                                  Shows all options (including advanced)
+

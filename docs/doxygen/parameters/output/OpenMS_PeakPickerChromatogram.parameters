@@ -1,0 +1,65 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>sgolay_frame_length</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">15</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The number of subsequent data points used for smoothing.<BR>This number has to be uneven. If it is not, 1 will be added.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>sgolay_polynomial_order</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">3</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Order of the polynomial that is fitted.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>gauss_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">50.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Gaussian width in seconds, estimated peak size.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_gauss</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">false, true</td><td style="vertical-align:top">Use Gaussian filter for smoothing (alternative is Savitzky-Golay filter)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>peak_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">-1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Force a certain minimal peak_width on the data (e.g. extend the peak at least by this amount on both sides) in seconds. -1 turns this feature off.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>signal_to_noise</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Signal-to-noise threshold at which a peak will not be extended any more. Note that setting this too high (e.g. 1.0) can lead to peaks whose flanks are not fully captured.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>sn_win_len</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1000.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Signal to noise window length.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>sn_bin_count</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">30</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Signal to noise bin count.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>write_sn_log_messages</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Write out log messages of the signal-to-noise estimator in case of sparse windows or median in rightmost histogram bin</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>remove_overlapping_peaks</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">false, true</td><td style="vertical-align:top">Try to remove overlapping peaks during peak picking</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>method</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">corrected</td>
+  <td style="vertical-align:top">legacy, corrected, crawdad</td><td style="vertical-align:top">Which method to choose for chromatographic peak-picking (OpenSWATH legacy on raw data, corrected picking on smoothed chromatogram or Crawdad on smoothed chromatogram).</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

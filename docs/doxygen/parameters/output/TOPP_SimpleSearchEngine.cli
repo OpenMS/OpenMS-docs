@@ -1,0 +1,105 @@
+
+SimpleSearchEngine -- Annotates MS/MS spectra using SimpleSearchEngine.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SimpleSearchEngine.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  SimpleSearchEngine <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                              Input file  (valid formats: 'mzML')
+  -database <file>*                                        Input file  (valid formats: 'fasta')
+  -out <file>*                                             Output file  (valid formats: 'idXML')
+
+Search:
+  -Search:enzyme <choice>                                  The enzyme used for peptide digestion. (default: 
+                                                           'Trypsin') (valid: 'Arg-C', 'Lys-C/P', 'Arg-C/P', 
+                                                           'leukocyte elastase', 'Trypsin', 'Chymotrypsin/P',
+                                                            'Formic_acid', 'Chymotrypsin', 'Lys-C', 'Asp-N/B'
+                                                           , 'Asp-N_ambic', 'PepsinA', 'TrypChymo', 'Asp-N', 
+                                                           'Trypsin/P', 'V8-DE', 'V8-E', 'Lys-N', 'proline 
+                                                           endopeptidase', 'CNBr', 'proline-endopeptidase/HKR
+                                                           ', 'Clostripain/P', 'staphylococcal protease/D', 
+                                                           'elastase-trypsin-chymotrypsin', '2-iodobenzoate',
+                                                           ...
+                                                           e')
+  -Search:decoys                                           Should decoys be generated?
+
+Precursor (Parent Ion) Options:
+  -Search:precursor:mass_tolerance <value>                 +/- tolerance for precursor mass. (default: '10.0'
+                                                           )
+  -Search:precursor:mass_tolerance_unit <choice>           Unit of precursor mass tolerance. (default: 'ppm')
+                                                            (valid: 'ppm', 'Da')
+  -Search:precursor:min_charge <number>                    Minimum precursor charge to be considered. (defaul
+                                                           t: '2')
+  -Search:precursor:max_charge <number>                    Maximum precursor charge to be considered. (defaul
+                                                           t: '5')
+  -Search:precursor:isotopes <numbers>                     Corrects for mono-isotopic peak misassignments. 
+                                                           (E.g.: 1 = prec. may be misassigned to first isoto
+                                                           pic peak) (default: '[0 1]')
+
+Fragments (Product Ion) Options:
+  -Search:fragment:mass_tolerance <value>                  Fragment mass tolerance (default: '10.0')
+  -Search:fragment:mass_tolerance_unit <choice>            Unit of fragment m (default: 'ppm') (valid: 'ppm',
+                                                            'Da')
+
+Modifications Options:
+  -Search:modifications:fixed <list>                       Fixed modifications, specified using UniMod (www.u
+                                                           nimod.org) terms, e.g. 'Carbamidomethyl (C)' (defa
+                                                           ult: '[Carbamidomethyl (C)]') (valid: '15N-oxobuta
+                                                           noic (N-term C)', '15N-oxobutanoic (Protein N-term
+                                                            S)', '15N-oxobutanoic (Protein N-term T)', '2-dim
+                                                           ethylsuccinyl (C)', '2-monomethylsuccinyl (C)', 
+                                                           '2-nitrobenzyl (Y)', '2-succinyl (C)', '2HPG (R)',
+                                                            '3-deoxyglucosone (R)', '3-hydroxybenzyl-phosphat
+                                                           e (K)', '3-hydroxybenzyl-phosphate (S)', '3-hydrox
+                                                           ybenzyl-phosphate (T)', '3-hydroxybenzyl-phosphate
+                                                           ...
+                                                           'ZGB (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -Search:modifications:variable <list>                    Variable modifications, specified using UniMod 
+                                                           (www.unimod.org) terms, e.g. 'Oxidation (M)' (defa
+                                                           ult: '[Oxidation (M)]') (valid: '15N-oxobutanoic 
+                                                           (N-term C)', '15N-oxobutanoic (Protein N-term S)',
+                                                            '15N-oxobutanoic (Protein N-term T)', '2-dimethyl
+                                                           succinyl (C)', '2-monomethylsuccinyl (C)', '2-nitr
+                                                           obenzyl (Y)', '2-succinyl (C)', '2HPG (R)', '3-deo
+                                                           xyglucosone (R)', '3-hydroxybenzyl-phosphate (K)',
+                                                            '3-hydroxybenzyl-phosphate (S)', '3-hydroxybenzyl
+                                                           -phosphate (T)', '3-hydroxybenzyl-phosphate (Y)', 
+                                                           ...
+                                                           'ZGB (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -Search:modifications:variable_max_per_peptide <number>  Maximum number of residues carrying a variable 
+                                                           modification per candidate peptide (default: '2')
+
+Annotation Options:
+  -Search:annotate:PSM <list>                              Annotations added to each PSM. (default: '[ALL]') 
+                                                           (valid: 'ALL', 'fragment_mz_error_median_ppm', 
+                                                           'precursor_mz_error_ppm', 'matched_prefix_ions_fra
+                                                           ction', 'matched_suffix_ions_fraction')
+
+Peptide Options:
+  -Search:peptide:min_size <number>                        Minimum size a peptide must have after digestion 
+                                                           to be considered in the search. (default: '7')
+  -Search:peptide:max_size <number>                        Maximum size a peptide must have after digestion 
+                                                           to be considered in the search (0 = disabled). 
+                                                           (default: '40')
+  -Search:peptide:missed_cleavages <number>                Number of missed cleavages. (default: '1')
+  -Search:peptide:motif <text>                             If set, only peptides that contain this motif (pro
+                                                           vided as RegEx) will be considered.
+
+Reporting Options:
+  -Search:report:top_hits <number>                         Maximum number of top scoring hits per spectrum 
+                                                           that are reported. (default: '1')
+
+                                                           
+Common TOPP options:
+  -ini <file>                                              Use the given TOPP INI file
+  -threads <n>                                             Sets the number of threads allowed to be used by 
+                                                           the TOPP tool (default: '1')
+  -write_ini <file>                                        Writes the default configuration file
+  --help                                                   Shows options
+  --helphelp                                               Shows all options (including advanced)
+

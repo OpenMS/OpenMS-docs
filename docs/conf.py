@@ -38,9 +38,30 @@ release = '3.3.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+import subprocess
 import sys, os
+from pathlib import Path
 
 sys.path.append(os.path.abspath('../_ext'))
+
+read_the_docs_build = os.environ.get("READTHEDOCS", None) == "True"
+
+# The following code will only executed on Read the Docs' servers
+if read_the_docs_build:
+    read_the_docs_build_folder = Path(os.environ.get("READTHEDOCS_OUTPUT", None))
+
+    # Running the subprocesses in the current file path, this should help when working with relative paths
+    cwd = os.path.dirname(os.path.realpath(__file__))
+
+    # run doxygen with the generated Doxyfile
+    subprocess.call(["doxygen", "Doxyfile"], shell=False, cwd=cwd)
+
+    # run doxysphinx
+    subprocess.call(
+        ["doxysphinx", "build", ".", read_the_docs_build_folder / "html", "Doxyfile"],
+        shell=False,
+        cwd=cwd,
+    )
 
 extensions = [
   'sphinx_copybutton',
@@ -54,6 +75,7 @@ extensions = [
   'hoverxref.extension',
   'sphinx_search.extension',
   'sphinx_design',
+  'sphinx.ext.graphviz',
 ]
 
 numfig = True
@@ -100,7 +122,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'furo'
+html_theme = 'sphinx_book_theme'
 
 html_static_path = ['../_static']
 html_favicon = '../assets/logo/favicon.png'

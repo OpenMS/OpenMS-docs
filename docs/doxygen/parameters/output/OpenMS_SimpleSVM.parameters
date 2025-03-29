@@ -1,0 +1,50 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>kernel</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">RBF</td>
+  <td style="vertical-align:top">RBF, linear</td><td style="vertical-align:top">SVM kernel</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>xval</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">5</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Number of partitions for cross-validation (parameter optimization)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>log2_C</b></td>
+  <td style="vertical-align:top">float list</td><td style="vertical-align:top">[-5.0, -3.0, -1.0, 1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Values to try for the SVM parameter 'C' during parameter optimization. A value 'x' is used as 'C = 2^x'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>log2_gamma</b></td>
+  <td style="vertical-align:top">float list</td><td style="vertical-align:top">[-15.0, -13.0, -11.0, -9.0, -7.0, -5.0, -3.0, -1.0, 1.0, 3.0]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Values to try for the SVM parameter 'gamma' during parameter optimization (RBF kernel only). A value 'x' is used as 'gamma = 2^x'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>log2_p</b></td>
+  <td style="vertical-align:top">float list</td><td style="vertical-align:top">[-15.0, -12.0, -9.0, -6.0, -3.32192809489, 0.0, 3.32192809489, 6.0, 9.0, 12.0, 15.0]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Values to try for the SVM parameter 'epsilon' during parameter optimization (epsilon-SVR only). A value 'x' is used as 'epsilon = 2^x'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>epsilon</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-03</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Stopping criterion</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>cache_size</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">100.0</td>
+  <td style="vertical-align:top">min: 1.0</td><td style="vertical-align:top">Size of the kernel cache (in MB)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>no_shrinking</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Disable the shrinking heuristics</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

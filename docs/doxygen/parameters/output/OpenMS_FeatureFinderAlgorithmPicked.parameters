@@ -1,0 +1,155 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>debug</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">When debug mode is activated, several files with intermediate results are written to the folder 'debug' (do not use in parallel mode).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak's intensity is significant in the local environment (between 0 and 1)">intensity</span>:bins</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">10</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Number of bins per dimension (RT and m/z). The higher this value, the more local the intensity significance score is.<BR>This parameter should be decreased, if the algorithm is used on small regions of a map.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a mass trace (between 0 and 1).">mass_trace</span>:mz_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.03</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Tolerated m/z deviation of peaks belonging to the same mass trace.<BR>It should be larger than the m/z resolution of the instrument.<BR>This value must be smaller than that 1/charge_high!</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a mass trace (between 0 and 1).">mass_trace</span>:min_spectra</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">10</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Number of spectra that have to show a similar peak mass in a mass trace.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a mass trace (between 0 and 1).">mass_trace</span>:max_missing</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Number of consecutive spectra where a high mass deviation or missing peak is acceptable.<BR>This parameter should be well below 'min_spectra'!</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a mass trace (between 0 and 1).">mass_trace</span>:slope_bound</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">The maximum slope of mass trace intensities when extending from the highest peak.<BR>This parameter is important to separate overlapping elution peaks.<BR>It should be increased if feature elution profiles fluctuate a lot.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:charge_low</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Lowest charge to search for.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:charge_high</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Highest charge to search for.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:mz_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.03</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Tolerated m/z deviation from the theoretical isotopic pattern.<BR>It should be larger than the m/z resolution of the instrument.<BR>This value must be smaller than that 1/charge_high!</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:intensity_percentage</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0 max: 100.0</td><td style="vertical-align:top">Isotopic peaks that contribute more than this percentage to the overall isotope pattern intensity must be present.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:intensity_percentage_optional</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.1</td>
+  <td style="vertical-align:top">min: 0.0 max: 100.0</td><td style="vertical-align:top">Isotopic peaks that contribute more than this percentage to the overall isotope pattern intensity can be missing.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:optional_fit_improvement</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">2.0</td>
+  <td style="vertical-align:top">min: 0.0 max: 100.0</td><td style="vertical-align:top">Minimal percental improvement of isotope fit to allow leaving out an optional peak.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:mass_window_width</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">25.0</td>
+  <td style="vertical-align:top">min: 1.0 max: 200.0</td><td style="vertical-align:top">Window width in Dalton for precalculation of estimated isotope distributions.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:abundance_12C</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">98.930000000000007</td>
+  <td style="vertical-align:top">min: 0.0 max: 100.0</td><td style="vertical-align:top">Rel. abundance of the light carbon. Modify if labeled.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the calculation of a score indicating if a peak is part of a isotopic pattern (between 0 and 1).">isotopic_pattern</span>:abundance_14N</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">99.632000000000005</td>
+  <td style="vertical-align:top">min: 0.0 max: 100.0</td><td style="vertical-align:top">Rel. abundance of the light nitrogen. Modify if labeled.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings that determine which peaks are considered a seed">seed</span>:min_score</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.8</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Minimum seed score a peak has to reach to be used as seed.<BR>The seed score is the geometric mean of intensity score, mass trace score and isotope pattern score.<BR>If your features show a large deviation from the averagene isotope distribution or from an gaussian elution profile, lower this score.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the model fitting">fit</span>:max_iterations</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">500</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Maximum number of iterations of the fit.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:min_score</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.7</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Feature score threshold for a feature to be reported.<BR>The feature score is the geometric mean of the average relative deviation and the correlation between the model and the observed peaks.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:min_isotope_fit</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.8</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Minimum isotope fit of the feature before model fitting.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:min_trace_score</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Trace score threshold.<BR>Traces below this threshold are removed after the model fitting.<BR>This parameter is important for features that overlap in m/z dimension.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:min_rt_span</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.333</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Minimum RT span in relation to extended area that has to remain after model fitting.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:max_rt_span</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">2.5</td>
+  <td style="vertical-align:top">min: 0.5</td><td style="vertical-align:top">Maximum RT span in relation to extended area that the model is allowed to have.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:rt_shape</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">symmetric</td>
+  <td style="vertical-align:top">symmetric, asymmetric</td><td style="vertical-align:top">Choose model used for RT profile fitting. If set to symmetric a gauss shape is used, in case of asymmetric an EGH shape is used.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:max_intersection</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.35</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Maximum allowed intersection of features.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for the features (intensity, quality assessment, ...)">feature</span>:reported_mz</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">monoisotopic</td>
+  <td style="vertical-align:top">maximum, average, monoisotopic</td><td style="vertical-align:top">The mass type that is reported for features.<BR>'maximum' returns the m/z value of the highest mass trace.<BR>'average' returns the intensity-weighted average m/z value of all contained peaks.<BR>'monoisotopic' returns the monoisotopic m/z value derived from the fitted isotope model.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for user-specified seeds.">user-seed</span>:rt_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">5.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Allowed RT deviation of seeds from the user-specified seed position.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for user-specified seeds.">user-seed</span>:mz_tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.1</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Allowed m/z deviation of seeds from the user-specified seed position.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Settings for user-specified seeds.">user-seed</span>:min_score</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.5</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Overwrites 'seed:min_score' for user-specified seeds. The cutoff is typically a bit lower in this case.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>advanced:pseudo_rt_shift</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">500.0</td>
+  <td style="vertical-align:top">min: 1.0</td><td style="vertical-align:top">Pseudo RT shift used when .</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

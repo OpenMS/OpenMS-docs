@@ -1,0 +1,55 @@
+
+MetaProSIP -- Performs proteinSIP on peptide features for elemental flux analysis.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MetaProSIP.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MetaProSIP <options>
+
+Options (mandatory options marked with '*'):
+  -in_mzML <file>*                  Centroided MS1 data (valid formats: 'mzML')
+  -in_fasta <file>*                 Protein sequence database (valid formats: 'fasta')
+  -out_csv <file>*                  Column separated file with feature fitting result. (valid formats: 'csv')
+
+  -out_peptide_centric_csv <file>*  Column separated file with peptide centric result. (valid formats: 'csv')
+
+  -in_featureXML <file>*            Feature data annotated with identifications (IDMapper) (valid formats: 
+                                    'featureXML')
+  -r_executable <file>              Path to the R executable (default: 'R')
+  -mz_tolerance_ppm <tol>           Tolerance in ppm (default: '10.0')
+  -rt_tolerance_s <tol>             Tolerance window around feature rt for XIC extraction (default: '30.0')
+  -intensity_threshold <tol>        Intensity threshold to collect peaks in the MS1 spectrum. (default: '10.0
+                                    ')
+  -correlation_threshold <tol>      Correlation threshold for reporting a RIA (default: '0.7')
+  -xic_threshold <tol>              Minimum correlation to mono-isotopic peak for retaining a higher isotopic
+                                     peak. If featureXML from reference file is used it should be disabled 
+                                    (set to -1) as no mono-isotopic peak is expected to be present. (default:
+                                     '0.7')
+  -decomposition_threshold <tol>    Minimum R-squared of decomposition that must be achieved for a peptide 
+                                    to be reported. (default: '0.7')
+  -weight_merge_window <tol>        Decomposition coefficients within +- this rate window will be combined 
+                                    (default: '5.0')
+  -plot_extension <extension>       Extension used for plots (png|svg|pdf). (default: 'png') (valid: 'png', 
+                                    'svg', 'pdf')
+  -qc_output_directory <directory>  Output directory for the quality report
+  -labeling_element <parameter>     Which element (single letter code) is labeled. (default: 'C') (valid: 
+                                    'C', 'N', 'H', 'O')
+  -use_unassigned_ids               Include identifications not assigned to a feature in pattern detection.
+  -use_averagine_ids                Use averagine peptides as model to perform pattern detection on unidentif
+                                    ied peptides.
+  -report_natural_peptides          Whether purely natural peptides are reported in the quality report.
+  -filter_monoisotopic              Try to filter out mono-isotopic patterns to improve detection of low RIA 
+                                    patterns
+  -cluster                          Perform grouping
+                                    
+Common TOPP options:
+  -ini <file>                       Use the given TOPP INI file
+  -threads <n>                      Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                    '1')
+  -write_ini <file>                 Writes the default configuration file
+  --help                            Shows options
+  --helphelp                        Shows all options (including advanced)
+

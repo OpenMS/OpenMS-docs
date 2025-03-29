@@ -1,0 +1,50 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>num_top_peaks</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">4</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Number of most intense peak to pick</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_pos_precursor_percentage</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">80.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimal ion position the ion should have, relative to the precursor position</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_mz</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">400.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimal m/z value that is allowed for selection.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_mz</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1200.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximal m/z value that is allowed for selection.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>consider_names</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Should names be considered when selecting ions?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>allow_loss_ions</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Should loss ions allowed to be selected?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>allowed_ion_types</b></td>
+  <td style="vertical-align:top">string list</td><td style="vertical-align:top">[y]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The one-character-typenames of the ion types allowed</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>allowed_charges</b></td>
+  <td style="vertical-align:top">string list</td><td style="vertical-align:top">[1]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">List of allowed charge states for selection.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

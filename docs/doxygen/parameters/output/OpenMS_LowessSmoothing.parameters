@@ -1,0 +1,15 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>window_size</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">10</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">The number of peaks to be included for local fitting in one window.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

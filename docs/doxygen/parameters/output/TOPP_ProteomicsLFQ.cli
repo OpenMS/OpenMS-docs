@@ -1,0 +1,302 @@
+
+ProteomicsLFQ -- A standard proteomics LFQ pipeline.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ProteomicsLFQ.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ProteomicsLFQ <options>
+
+Options (mandatory options marked with '*'):
+  -in <file list>*                                           Input files (valid formats: 'mzML')
+  -ids <file list>*                                          Identifications filtered at PSM level (e.g., 
+                                                             q-value < 0.01).And annotated with PEP as main 
+                                                             score.
+                                                             We suggest using:
+                                                             1. PSMFeatureExtractor to annotate percolator 
+                                                             features.
+                                                             2. PercolatorAdapter tool (score_type = 'q-value
+                                                             ', -post-processing-tdc)
+                                                             ...
+                                                             ra files. (valid formats: 'idXML', 'mzId')
+  -design <file>                                             Design file (valid formats: 'tsv')
+  -fasta <file>                                              Fasta file (valid formats: 'fasta')
+  -out <file>*                                               Output mzTab file (valid formats: 'mzTab')
+  -out_msstats <file>                                        Output MSstats input file (valid formats: 'csv')
+
+  -out_triqler <file>                                        Output Triqler input file (valid formats: 'tsv')
+
+  -out_cxml <file>                                           Output consensusXML file (valid formats: 'consen
+                                                             susXML')
+  -proteinFDR <threshold>                                    Protein FDR threshold (0.05=5%). (default: '0.05
+                                                             ') (min: '0.0' max: '1.0')
+  -picked_proteinFDR <choice>                                Use a picked protein FDR? (default: 'false') 
+                                                             (valid: 'true', 'false')
+  -psmFDR <threshold>                                        FDR threshold for sub-protein level (e.g. 0.05=5
+                                                             %). Use -FDR_type to choose the level. Cutoff 
+                                                             is applied at the highest level. If Bayesian 
+                                                             inference was chosen, it is equivalent with a 
+                                                             peptide FDR (default: '1.0') (min: '0.0' max: 
+                                                             '1.0')
+  -FDR_type <threshold>                                      Sub-protein FDR level. PSM, PSM+peptide (best 
+                                                             PSM q-value). (default: 'PSM') (valid: 'PSM', 
+                                                             'PSM+peptide')
+  -quantification_method <option>                            Feature_intensity: MS1 signal.
+                                                             spectral_counting: PSM counts. (default: 'featur
+                                                             e_intensity') (valid: 'feature_intensity', 'spec
+                                                             tral_counting')
+  -targeted_only <option>                                    True: Only ID based quantification.
+                                                             false: include unidentified features so they 
+                                                             can be linked to identified ones (=match between
+                                                              runs). (default: 'false') (valid: 'true', 'fals
+                                                             e')
+
+Centroiding:
+  -Centroiding:signal_to_noise <value>                       Minimal signal-to-noise ratio for a peak to be 
+                                                             picked (0.0 disables SNT estimation!) (default: 
+                                                             '0.0') (min: '0.0')
+  -Centroiding:ms_levels <numbers>                           List of MS levels for which the peak picking is 
+                                                             applied. If empty, auto mode is enabled, all 
+                                                             peaks which aren't picked yet will get picked. 
+                                                             Other scans are copied to the output without 
+                                                             changes. (min: '1')
+
+PeptideQuantification:
+  -PeptideQuantification:quantify_decoys                     Whether decoy peptides should be quantified (tru
+                                                             e) or skipped (false).
+  -PeptideQuantification:min_psm_cutoff <text>               Minimum score for the best PSM of a spectrum to 
+                                                             be used as seed. Use 'none' for no cutoff. (defa
+                                                             ult: 'none')
+  -PeptideQuantification:add_mass_offset_peptides <value>    If for every peptide (or seed) also an offset 
+                                                             peptide is extracted (true). Can be used to down
+                                                             stream to determine MBR false transfer rates. 
+                                                             (0.0 = disabled) (default: '0.0') (min: '0.0')
+
+Parameters for ion chromatogram extraction:
+  -PeptideQuantification:extract:batch_size <number>         Nr of peptides used in each batch of chromatogra
+                                                             m extraction. Smaller values decrease memory 
+                                                             usage but increase runtime. (default: '5000') 
+                                                             (min: '1')
+  -PeptideQuantification:extract:mz_window <value>           M/z window size for chromatogram extraction (uni
+                                                             t: ppm if 1 or greater, else Da/Th) (default: 
+                                                             '10.0') (min: '0.0')
+
+Parameters for detecting features in extracted ion chromatograms:
+  -PeptideQuantification:detect:mapping_tolerance <value>    RT tolerance (plus/minus) for mapping peptide 
+                                                             IDs to features. Absolute value in seconds if 1 
+                                                             or greater, else relative to the RT span of the 
+                                                             feature. (default: '0.0') (min: '0.0')
+
+Parameters for scoring features using a support vector machine (SVM):
+  -PeptideQuantification:svm:log2_p <values>                 Values to try for the SVM parameter 'epsilon' 
+                                                             during parameter optimization (epsilon-SVR only)
+                                                             . A value 'x' is used as 'epsilon = 2^x'. (defau
+                                                             lt: '[-15.0 -12.0 -9.0 -6.0 -3.32192809489 0.0 
+                                                             3.32192809489 6.0 9.0 12.0 15.0]')
+
+Parameters for fitting exp. mod. Gaussians to mass traces.:
+  -PeptideQuantification:EMGScoring:max_iteration <number>   Maximum number of iterations for EMG fitting. 
+                                                             (default: '100') (min: '1')
+  -PeptideQuantification:EMGScoring:init_mom                 Alternative initial parameters for fitting throu
+                                                             gh method of moments.
+
+Alignment:
+  -Alignment:model_type <choice>                             Options to control the modeling of retention 
+                                                             time transformations from data (default: 'b_spli
+                                                             ne') (valid: 'linear', 'b_spline', 'lowess', 
+                                                             'interpolated')
+
+Alignment:model:
+  -Alignment:model:type <choice>                             Type of model (default: 'b_spline') (valid: 'lin
+                                                             ear', 'b_spline', 'lowess', 'interpolated')
+
+Parameters for 'linear' model:
+  -Alignment:model:linear:symmetric_regression               Perform linear regression on 'y - x' vs. 'y + 
+                                                             x', instead of on 'y' vs. 'x'.
+  -Alignment:model:linear:x_weight <choice>                  Weight x values (default: 'x') (valid: '1/x', 
+                                                             '1/x2', 'ln(x)', 'x')
+  -Alignment:model:linear:y_weight <choice>                  Weight y values (default: 'y') (valid: '1/y', 
+                                                             '1/y2', 'ln(y)', 'y')
+  -Alignment:model:linear:x_datum_min <value>                Minimum x value (default: '1.0e-15')
+  -Alignment:model:linear:x_datum_max <value>                Maximum x value (default: '1.0e15')
+  -Alignment:model:linear:y_datum_min <value>                Minimum y value (default: '1.0e-15')
+  -Alignment:model:linear:y_datum_max <value>                Maximum y value (default: '1.0e15')
+
+Parameters for 'b_spline' model:
+  -Alignment:model:b_spline:wavelength <value>               Determines the amount of smoothing by setting 
+                                                             the number of nodes for the B-spline. The number
+                                                              is chosen so that the spline approximates a 
+                                                             low-pass filter with this cutoff wavelength. 
+                                                             The wavelength is given in the same units as 
+                                                             the data; a higher value means more smoothing. 
+                                                             '0' sets the number of nodes to twice the number
+                                                              of input points. (default: '0.0') (min: '0.0')
+  -Alignment:model:b_spline:num_nodes <number>               Number of nodes for B-spline fitting. Overrides 
+                                                             'wavelength' if set (to two or greater). A lower
+                                                              value means more smoothing. (default: '5') (min
+                                                             : '0')
+  -Alignment:model:b_spline:extrapolate <choice>             Method to use for extrapolation beyond the origi
+                                                             nal data range. 'linear': Linear extrapolation 
+                                                             using the slope of the B-spline at the correspon
+                                                             ding endpoint. 'b_spline': Use the B-spline (as 
+                                                             for interpolation). 'constant': Use the constant
+                                                              value of the B-spline at the corresponding endp
+                                                             oint. 'global_linear': Use a linear fit through 
+                                                             the data (which will most probably introduce 
+                                                             discontinuities at the ends of the data range). 
+                                                             (default: 'linear') (valid: 'linear', 'b_spline'
+                                                             , 'constant', 'global_linear')
+  -Alignment:model:b_spline:boundary_condition <number>      Boundary condition at B-spline endpoints: 0 (val
+                                                             ue zero), 1 (first derivative zero) or 2 (second
+                                                              derivative zero) (default: '2') (min: '0' max: 
+                                                             '2')
+
+Parameters for 'lowess' model:
+  -Alignment:model:lowess:span <value>                       Fraction of datapoints (f) to use for each local
+                                                              regression (determines the amount of smoothing)
+                                                             . Choosing this parameter in the range .2 to .8 
+                                                             usually results in a good fit. (default: '0.6666
+                                                             66666666667') (min: '0.0' max: '1.0')
+  -Alignment:model:lowess:num_iterations <number>            Number of robustifying iterations for lowess 
+                                                             fitting. (default: '3') (min: '0')
+  -Alignment:model:lowess:delta <value>                      Nonnegative parameter which may be used to save 
+                                                             computations (recommended value is 0.01 of the 
+                                                             range of the input, e.g. for data ranging from 
+                                                             1000 seconds to 2000 seconds, it could be set 
+                                                             to 10). Setting a negative value will automatica
+                                                             lly do this. (default: '-1.0')
+  -Alignment:model:lowess:interpolation_type <choice>        Method to use for interpolation between datapoin
+                                                             ts computed by lowess. 'linear': Linear interpol
+                                                             ation. 'cspline': Use the cubic spline for inter
+                                                             polation. 'akima': Use an akima spline for inter
+                                                             polation (default: 'cspline') (valid: 'linear', 
+                                                             'cspline', 'akima')
+  -Alignment:model:lowess:extrapolation_type <choice>        Method to use for extrapolation outside the data
+                                                              range. 'two-point-linear': Uses a line through 
+                                                             the first and last point to extrapolate. 'four-p
+                                                             oint-linear': Uses a line through the first and 
+                                                             second point to extrapolate in front and and a 
+                                                             line through the last and second-to-last point 
+                                                             in the end. 'global-linear': Uses a linear regre
+                                                             ssion to fit a line through all data points and 
+                                                             use it for interpolation. (default: 'four-point-
+                                                             linear') (valid: 'two-point-linear', 'four-point
+                                                             -linear', 'global-linear')
+
+Parameters for 'interpolated' model:
+  -Alignment:model:interpolated:interpolation_type <choice>  Type of interpolation to apply. (default: 'cspli
+                                                             ne') (valid: 'linear', 'cspline', 'akima')
+  -Alignment:model:interpolated:extrapolation_type <choice>  Type of extrapolation to apply: two-point-linear
+                                                             : use the first and last data point to build a 
+                                                             single linear model, four-point-linear: build 
+                                                             two linear models on both ends using the first 
+                                                             two / last two points, global-linear: use all 
+                                                             points to build a single linear model. Note that
+                                                              global-linear may not be continuous at the bord
+                                                             er. (default: 'two-point-linear') (valid: 'two-p
+                                                             oint-linear', 'four-point-linear', 'global-linea
+                                                             r')
+
+Alignment:align_algorithm:
+  -Alignment:align_algorithm:score_type <text>               Name of the score type to use for ranking and 
+                                                             filtering (.oms input only). If left empty, a 
+                                                             score type is picked automatically.
+  -Alignment:align_algorithm:min_run_occur <number>          Minimum number of runs (incl. reference, if any)
+                                                              in which a peptide must occur to be used for 
+                                                             the alignment.
+                                                             Unless you have very few runs or identifications
+                                                             , increase this value to focus on more informati
+                                                             ve peptides. (default: '2') (min: '2')
+  -Alignment:align_algorithm:max_rt_shift <value>            Maximum realistic RT difference for a peptide 
+                                                             (median per run vs. reference). Peptides with 
+                                                             higher shifts (outliers) are not used to compute
+                                                              the alignment.
+                                                             If 0, no limit (disable filter); if > 1, the 
+                                                             final value in seconds; if <= 1, taken as a frac
+                                                             tion of the range of the reference RT scale. 
+                                                             (default: '0.1') (min: '0.0')
+  -Alignment:align_algorithm:use_adducts <choice>            If IDs contain adducts, treat differently adduct
+                                                             ed variants of the same molecule as different. 
+                                                             (default: 'true') (valid: 'true', 'false')
+
+Linking:
+  -Linking:nr_partitions <number>                            How many partitions in m/z space should be used 
+                                                             for the algorithm (more partitions means faster 
+                                                             runtime and more memory efficient execution). 
+                                                             (default: '100') (min: '1')
+  -Linking:min_nr_diffs_per_bin <number>                     If IDs are used: How many differences from match
+                                                             ing IDs should be used to calculate a linking 
+                                                             tolerance for unIDed features in an RT region. 
+                                                             RT regions will be extended until that number 
+                                                             is reached. (default: '50') (min: '5')
+  -Linking:min_IDscore_forTolCalc <value>                    If IDs are used: What is the minimum score of 
+                                                             an ID to assume a reliable match for tolerance 
+                                                             calculation. Check your current score type! (def
+                                                             ault: '1.0')
+  -Linking:noID_penalty <value>                              If IDs are used: For the normalized distances, 
+                                                             how high should the penalty for missing IDs be? 
+                                                             0 = no bias, 1 = IDs inside the max tolerances 
+                                                             always preferred (even if much further away). 
+                                                             (default: '0.0') (min: '0.0' max: '1.0')
+
+Distance component based on m/z differences:
+  -Linking:distance_MZ:max_difference <value>                Never pair features with larger m/z distance 
+                                                             (unit defined by 'unit') (default: '10.0') (min:
+                                                              '0.0')
+  -Linking:distance_MZ:unit <choice>                         Unit of the 'max_difference' parameter (default:
+                                                              'ppm') (valid: 'Da', 'ppm')
+
+ProteinQuantification:
+  -ProteinQuantification:method <choice>                     - top - quantify based on three most abundant 
+                                                             peptides (number can be changed in 'top').
+                                                             - iBAQ (intensity based absolute quantification)
+                                                             , calculate the sum of all peptide peak intensit
+                                                             ies divided by the number of theoretically obser
+                                                             vable tryptic peptides (https://rdcu.be/cND1J). 
+                                                             Warning: only consensusXML or featureXML input 
+                                                             is allowed! (default: 'top') (valid: 'top', 'iBA
+                                                             Q')
+  -ProteinQuantification:best_charge_and_fraction            Distinguish between fraction and charge states 
+                                                             of a peptide. For peptides, abundances will be 
+                                                             reported separately for each fraction and charge
+                                                             ;
+                                                             for proteins, abundances will be computed based 
+                                                             only on the most prevalent charge observed of 
+                                                             each peptide (over all fractions).
+                                                             By default, abundances are summed over all charg
+                                                             e states.
+
+Additional options for custom quantification using top N peptides.:
+  -ProteinQuantification:top:N <number>                      Calculate protein abundance from this number of 
+                                                             proteotypic peptides (most abundant first; '0' 
+                                                             for all) (default: '3') (min: '0')
+  -ProteinQuantification:top:aggregate <choice>              Aggregation method used to compute protein abund
+                                                             ances from peptide abundances (default: 'median'
+                                                             ) (valid: 'median', 'mean', 'weighted_mean', 
+                                                             'sum')
+
+Additional options for consensus maps (and identification results comprising multiple runs):
+  -ProteinQuantification:consensus:normalize                 Scale peptide abundances so that medians of all 
+                                                             samples are equal
+  -ProteinQuantification:consensus:fix_peptides              Use the same peptides for protein quantification
+                                                              across all samples.
+                                                             With 'N 0',all peptides that occur in every samp
+                                                             le are considered.
+                                                             Otherwise ('N'), the N peptides that occur in 
+                                                             the most samples (independently of each other) 
+                                                             are selected,
+                                                             breaking ties by total abundance (there is no 
+                                                             guarantee that the best co-ocurring peptides 
+                                                             are chosen!).
+
+                                                             
+Common TOPP options:
+  -ini <file>                                                Use the given TOPP INI file
+  -threads <n>                                               Sets the number of threads allowed to be used 
+                                                             by the TOPP tool (default: '1')
+  -write_ini <file>                                          Writes the default configuration file
+  --help                                                     Shows options
+  --helphelp                                                 Shows all options (including advanced)
+

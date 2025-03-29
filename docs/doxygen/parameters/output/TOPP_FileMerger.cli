@@ -1,0 +1,60 @@
+
+FileMerger -- Merges several MS files into one file.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FileMerger.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  FileMerger <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                  Input files separated by blank (valid formats: 'mzData', 'mzXML', 'mzML', 
+                                'dta', 'dta2d', 'mgf', 'featureXML', 'consensusXML', 'fid', 'traML', 'fasta')
+
+  -in_type <type>               Input file type (default: determined from file extension or content) (valid: 
+                                'mzData', 'mzXML', 'mzML', 'dta', 'dta2d', 'mgf', 'featureXML', 'consensusXML
+                                ', 'fid', 'traML', 'fasta')
+  -out <file>*                  Output file (valid formats: 'mzML', 'featureXML', 'consensusXML', 'traML', 
+                                'fasta')
+  -annotate_file_origin         Store the original filename in each feature using meta value "file_origin" 
+                                (for featureXML and consensusXML only).
+  -append_method <choice>       (ConsensusXML-only) Append quantitative information about features row-wise 
+                                or column-wise.
+                                - 'append_rows' is usually used when the inputs come from the same MS run 
+                                (e.g. caused by manual splitting or multiple algorithms on the same file)
+                                - 'append_cols' when you want to combine consensusXMLs from e.g. different 
+                                fractions to be summarized in ProteinQuantifier or jointly exported with MzTa
+                                bExporter. (default: 'append_rows') (valid: 'append_rows', 'append_cols')
+
+Options for concatenating files in the retention time (RT) dimension. The RT ranges of inputs are adjusted 
+so they don't overlap in the merged file (traML input not supported):
+  -rt_concat:gap <sec>          The amount of gap (in seconds) to insert between the RT ranges of different 
+                                input files. RT concatenation is enabled if a value > 0 is set. (default: 
+                                '0.0')
+  -rt_concat:trafo_out <files>  Output of retention time transformations that were applied to the input files
+                                 to produce non-overlapping RT ranges. If used, one output file per input 
+                                file is required. (valid formats: 'trafoXML')
+
+Options for raw data input/output (primarily for DTA files):
+  -raw:rt_auto                  Assign retention times automatically (integers starting at 1)
+  -raw:rt_custom <rts>          List of custom retention times that are assigned to the files. The number of 
+                                given retention times must be equal to the number of input files.
+  -raw:rt_filename              Try to guess the retention time of a file based on the filename. This option 
+                                is useful for merging DTA files, where filenames should contain the string 
+                                'rt' directly followed by a floating point number, e.g. 'my_spectrum_rt2795.1
+                                5.dta'
+  -raw:ms_level <num>           If 1 or higher, this number is assigned to spectra as the MS level. This opti
+                                on is useful for DTA files which do not contain MS level information. (defaul
+                                t: '0')
+
+                                
+Common TOPP options:
+  -ini <file>                   Use the given TOPP INI file
+  -threads <n>                  Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+
+  -write_ini <file>             Writes the default configuration file
+  --help                        Shows options
+  --helphelp                    Shows all options (including advanced)
+

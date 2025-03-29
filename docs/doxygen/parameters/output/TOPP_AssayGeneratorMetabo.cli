@@ -1,0 +1,81 @@
+
+AssayGeneratorMetabo -- Assay library generation from DDA data (Metabolomics)
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_AssayGeneratorMetabo.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  AssayGeneratorMetabo <options>
+
+Options (mandatory options marked with '*'):
+  -in <file(s)>*                                    MzML input file(s) used for assay library generation (val
+                                                    id formats: 'mzML')
+  -in_featureinfo <file(s)>*                        FeatureXML input file(s) containing identification inform
+                                                    ation (e.g. AccurateMassSearch) (valid formats: 'featureX
+                                                    ML')
+  -out <file>*                                      Assay library output file (valid formats: 'tsv', 'traML',
+                                                     'pqp')
+  -ambiguity_resolution_mz_tolerance <num>          Mz tolerance for the resolution of identification ambigui
+                                                    ty over multiple files (default: '10.0')
+  -ambiguity_resolution_rt_tolerance <num>          RT tolerance in seconds for the resolution of identificat
+                                                    ion ambiguity over multiple files (default: '10.0')
+  -total_occurrence_filter <num>                    Filter compound based on total occurrence in analysed 
+                                                    samples (default: '0.1') (min: '0.0' max: '1.0')
+  -method <choice>                                  Spectrum with the highest precursor intensity or a consen
+                                                    sus spectrum is used for assay library construction (if 
+                                                    no fragment annotation is used). (default: 'highest_inten
+                                                    sity') (valid: 'highest_intensity', 'consensus_spectrum')
+
+  -exclude_ms2_precursor                            Excludes precursor in ms2 from transition list
+  -use_known_unknowns                               Use features without identification information
+  -min_transitions <int>                            Minimal number of transitions (default: '3')
+  -max_transitions <int>                            Maximal number of transitions (default: '6')
+  -cosine_similarity_threshold <num>                Threshold for cosine similarity of MS2 spectra from the 
+                                                    same precursor used in consensus spectrum creation (defau
+                                                    lt: '0.98')
+  -transition_threshold <num>                       Further transitions need at least x% of the maximum inten
+                                                    sity (default 5%) (default: '5.0')
+                                                    
+  -precursor_mz_distance <num>                      Max m/z distance of the precursor entries of two spectra 
+                                                    to be merged in [Da]. (default: '1.0e-04')
+  -precursor_consensus_spectrum_rt_tolerance <num>  Tolerance window (left and right) for precursor selection
+                                                     [seconds], for consensus spectrum generation (only avail
+                                                    able without fragment annotation) (default: '5.0')
+                                                    
+  -deisotoping_use_deisotoper                       Use Deisotoper (if no fragment annotation is used)
+  -deisotoping_fragment_tolerance <num>             Tolerance used to match isotopic peaks (default: '1.0')
+  -deisotoping_fragment_unit <choice>               Unit of the fragment tolerance (default: 'ppm') (valid: 
+                                                    'ppm', 'Da')
+  -deisotoping_min_charge <num>                     The minimum charge considered (default: '1') (min: '1')
+  -deisotoping_max_charge <num>                     The maximum charge considered (default: '1') (min: '1')
+  -deisotoping_min_isopeaks <num>                   The minimum number of isotopic peaks (at least 2) require
+                                                    d for an isotopic cluster (default: '2') (min: '2')
+  -deisotoping_max_isopeaks <num>                   The maximum number of isotopic peaks (at least 2) conside
+                                                    red for an isotopic cluster (default: '3') (min: '3')
+  -deisotoping_keep_only_deisotoped                 Only monoisotopic peaks of fragments with isotopic patter
+                                                    n are retained
+  -deisotoping_annotate_charge                      Annotate the charge to the peaks
+                                                    
+  -filter_by_num_masstraces <number>                Number of mass traces each feature has to have to be incl
+                                                    uded. To use this parameter, setting the feature_only 
+                                                    flag is necessary (default: '1') (min: '1')
+  -precursor_mz_tolerance <value>                   Tolerance window for precursor selection (Feature selecti
+                                                    on in regard to the precursor) (default: '10.0')
+  -precursor_mz_tolerance_unit <choice>             Unit of the preprocessing_precursor_mz_tolerance (default
+                                                    : 'ppm') (valid: 'ppm', 'Da')
+  -precursor_rt_tolerance <value>                   Tolerance window (left and right) for precursor selection
+                                                     [seconds] (default: '5.0')
+  -feature_only <choice>                            Uses the feature information from in_featureinfo to reduc
+                                                    e the search space to MS2 associated with a feature (defa
+                                                    ult: 'false') (valid: 'false', 'true')
+                                                    
+Common TOPP options:
+  -ini <file>                                       Use the given TOPP INI file
+  -threads <n>                                      Sets the number of threads allowed to be used by the TOPP
+                                                     tool (default: '1')
+  -write_ini <file>                                 Writes the default configuration file
+  --help                                            Shows options
+  --helphelp                                        Shows all options (including advanced)
+

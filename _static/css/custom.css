@@ -150,3 +150,13 @@ h6::before {
 h6 {
   counter-reset: h6;
 }
+
+/* Remove scrollbar from side menu */
+.bd-sidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bd-sidebar::-webkit-scrollbar {
+  display: none;
+}

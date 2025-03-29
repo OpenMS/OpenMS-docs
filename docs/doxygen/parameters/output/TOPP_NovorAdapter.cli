@@ -1,0 +1,57 @@
+
+NovorAdapter -- Performs de novo sequencing of peptides from MS/MS data with Novor.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_NovorAdapter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite NovorAdapter:
+ + Ma Bin. Novor: Real-Time Peptide de Novo Sequencing Software. Journal of The American Society for Mass 
+   Spectrometry; 30 June 2015. doi:10.1007/s13361-015-1204-0.
+
+Usage:
+  NovorAdapter <options>
+
+Options (mandatory options marked with '*'):
+  -executable <jar>                   Novor.jar
+  -in <file>*                         MzML Input file (valid formats: 'mzML')
+  -out <file>*                        Novor idXML output (valid formats: 'idXML')
+  -enzyme <choice>                    Digestion enzyme - currently only Trypsin is supported  (default: 'Tryp
+                                      sin') (valid: 'Trypsin')
+  -fragmentation <choice>             Fragmentation method (default: 'CID') (valid: 'CID', 'HCD')
+  -massAnalyzer <choice>              MassAnalyzer e.g. (Oritrap CID-Trap, CID-FT, HCD-FT; QTof CID-TOF) (def
+                                      ault: 'Trap') (valid: 'Trap', 'TOF', 'FT')
+  -fragment_mass_tolerance <double>   Fragmentation error tolerance  (Da) (default: '0.5')
+  -precursor_mass_tolerance <double>  Precursor error tolerance  (ppm or Da) (default: '15.0')
+  -precursor_error_units <choice>     Unit of precursor mass tolerance (default: 'ppm') (valid: 'ppm', 'Da')
+  -variable_modifications <mods>      Variable modifications (valid: 'Acetyl (K)', 'Acetyl (N-term)', 'Amidat
+                                      ed (C-term)', 'Ammonia-loss (N-term C)', 'Biotin (K)', 'Biotin (N-term)
+                                      ', 'Carbamidomethyl (C)', 'Carbamyl (K)', 'Carbamyl (N-term)', 'Carboxy
+                                      methyl (C)', 'Deamidated (NQ)', 'Dehydrated (N-term C)', 'Dioxidation 
+                                      (M)', 'Methyl (C-term)', 'Methyl (DE)', 'Oxidation (M)', 'Oxidation 
+                                      (HW)', 'Phospho (ST)', 'Phospho (Y)', 'Pyro-carbamidomethyl (N-term 
+                                      C)', 'Pyro-Glu (E)', 'Pyro-Glu (Q)', 'Sodium (C-term)', 'Sodium (DE)', 
+                                      'Sulfo (STY)', 'Trimethyl (RK)')
+  -fixed_modifications <mods>         Fixed modifications (valid: 'Acetyl (K)', 'Acetyl (N-term)', 'Amidated 
+                                      (C-term)', 'Ammonia-loss (N-term C)', 'Biotin (K)', 'Biotin (N-term)', 
+                                      'Carbamidomethyl (C)', 'Carbamyl (K)', 'Carbamyl (N-term)', 'Carboxymet
+                                      hyl (C)', 'Deamidated (NQ)', 'Dehydrated (N-term C)', 'Dioxidation (M)'
+                                      , 'Methyl (C-term)', 'Methyl (DE)', 'Oxidation (M)', 'Oxidation (HW)', 
+                                      'Phospho (ST)', 'Phospho (Y)', 'Pyro-carbamidomethyl (N-term C)', 'Pyro
+                                      -Glu (E)', 'Pyro-Glu (Q)', 'Sodium (C-term)', 'Sodium (DE)', 'Sulfo 
+                                      (STY)', 'Trimethyl (RK)')
+  -forbiddenResidues <mods>           Forbidden Resiudes (valid: 'I', 'U')
+  -novorFile <file>                   File to introduce customized algorithm parameters for advanced users 
+                                      (otional .novor file) (valid formats: 'novor')
+  -java_executable <file>             The Java executable. Usually Java is on the system PATH. If Java is 
+                                      not found, use this parameter to specify the full path to Java
+  -java_memory <num>                  Maximum Java heap size (in MB) (default: '3500')
+                                      
+Common TOPP options:
+  -ini <file>                         Use the given TOPP INI file
+  -threads <n>                        Sets the number of threads allowed to be used by the TOPP tool (default
+                                      : '1')
+  -write_ini <file>                   Writes the default configuration file
+  --help                              Shows options
+  --helphelp                          Shows all options (including advanced)
+

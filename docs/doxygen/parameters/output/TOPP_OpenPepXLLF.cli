@@ -1,0 +1,133 @@
+
+OpenPepXLLF -- Protein-protein cross linking with label-free linkers.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenPepXLLF.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenPepXLLF <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                       Input file containing the spectra. (valid formats: 'mzML'
+                                                    )
+  -database <file>*                                 Input file containing the protein database. (valid format
+                                                    s: 'fasta')
+  -decoy_string <text>                              String that was appended (or prefixed - see 'prefix' flag
+                                                     below) to the accessions in the protein database to indi
+                                                    cate decoy proteins. (default: 'DECOY_')
+  -decoy_prefix <choice>                            Set to true, if the decoy_string is a prefix of accession
+                                                    s in the protein database. Otherwise it is a suffix. (def
+                                                    ault: 'true') (valid: 'true', 'false')
+
+Precursor filtering settings:
+  -precursor:mass_tolerance <value>                 Width of precursor mass tolerance window (default: '10.0'
+                                                    )
+  -precursor:mass_tolerance_unit <choice>           Unit of precursor mass tolerance. (default: 'ppm') (valid
+                                                    : 'ppm', 'Da')
+  -precursor:min_charge <number>                    Minimum precursor charge to be considered. (default: '2')
+
+  -precursor:max_charge <number>                    Maximum precursor charge to be considered. (default: '8')
+
+  -precursor:corrections <numbers>                  Monoisotopic peak correction. Matches candidates for poss
+                                                    ible monoisotopic precursor peaks for experimental mass 
+                                                    m and given numbers n at masses (m - n * (C13-C12)). Thes
+                                                    e should be ordered from more extreme to less extreme 
+                                                    corrections. Numbers later in the list will be preferred 
+                                                    in case of ambiguities. (default: '[4 3 2 1 0]')
+
+Fragment peak matching settings:
+  -fragment:mass_tolerance <value>                  Fragment mass tolerance (default: '20.0')
+  -fragment:mass_tolerance_xlinks <value>           Fragment mass tolerance for cross-link ions (default: 
+                                                    '20.0')
+  -fragment:mass_tolerance_unit <choice>            Unit of fragment m (default: 'ppm') (valid: 'ppm', 'Da')
+
+Peptide modification settings:
+  -modifications:fixed <list>                       Fixed modifications, specified using UniMod (www.unimod.o
+                                                    rg) terms, e.g. 'Carbamidomethyl (C)' (default: '[Carbami
+                                                    domethyl (C)]') (valid: '15N-oxobutanoic (N-term C)', 
+                                                    '15N-oxobutanoic (Protein N-term S)', '15N-oxobutanoic 
+                                                    (Protein N-term T)', '2-dimethylsuccinyl (C)', '2-monomet
+                                                    hylsuccinyl (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', 
+                                                    '2HPG (R)', '3-deoxyglucosone (R)', '3-hydroxybenzyl-phos
+                                                    phate (K)', '3-hydroxybenzyl-phosphate (S)', '3-hydroxybe
+                                                    nzyl-phosphate (T)', '3-hydroxybenzyl-phosphate (Y)', 
+                                                    '3-phosphoglyceryl (K)', '3sulfo (N-term)', '4-ONE (C)', 
+                                                    ...
+                                                    (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -modifications:variable <list>                    Variable modifications, specified using UniMod (www.unimo
+                                                    d.org) terms, e.g. 'Oxidation (M)' (default: '[Oxidation 
+                                                    (M)]') (valid: '15N-oxobutanoic (N-term C)', '15N-oxobuta
+                                                    noic (Protein N-term S)', '15N-oxobutanoic (Protein N-ter
+                                                    m T)', '2-dimethylsuccinyl (C)', '2-monomethylsuccinyl 
+                                                    (C)', '2-nitrobenzyl (Y)', '2-succinyl (C)', '2HPG (R)', 
+                                                    '3-deoxyglucosone (R)', '3-hydroxybenzyl-phosphate (K)', 
+                                                    '3-hydroxybenzyl-phosphate (S)', '3-hydroxybenzyl-phospha
+                                                    te (T)', '3-hydroxybenzyl-phosphate (Y)', '3-phosphoglyce
+                                                    ryl (K)', '3sulfo (N-term)', '4-ONE (C)', '4-ONE (H)', 
+                                                    ...
+                                                    (K)', 'ZGB (N-term)', 'ZQG (K)')
+  -modifications:variable_max_per_peptide <number>  Maximum number of residues carrying a variable modificati
+                                                    on per candidate peptide (default: '3')
+
+Settings for digesting proteins into peptides:
+  -peptide:min_size <number>                        Minimum size a peptide must have after digestion to be 
+                                                    considered in the search. (default: '5')
+  -peptide:missed_cleavages <number>                Number of missed cleavages. (default: '3')
+  -peptide:enzyme <choice>                          The enzyme used for peptide digestion. (default: 'Trypsin
+                                                    ') (valid: 'Chymotrypsin', 'Lys-C/P', 'Asp-N/B', 'Arg-C/P
+                                                    ', 'Lys-C', 'Arg-C', 'Asp-N', 'TrypChymo', 'Trypsin/P', 
+                                                    'V8-DE', 'CNBr', 'V8-E', 'leukocyte elastase', 'PepsinA',
+                                                     'Asp-N_ambic', 'Chymotrypsin/P', 'Trypsin', 'Lys-N', 
+                                                    'Formic_acid', 'proline endopeptidase', 'staphylococcal 
+                                                    protease/D', 'proline-endopeptidase/HKR', 'PepsinA + P', 
+                                                    'cyanogen-bromide', 'no cleavage', 'Alpha-lytic protease'
+                                                    , 'Clostripain/P', 'elastase-trypsin-chymotrypsin', '2-io
+                                                    dobenzoate', 'Glu-C+P', 'iodosobenzoate', 'glutamyl endop
+                                                    eptidase', 'unspecific cleavage')
+
+Description of the cross-linker reagent:
+  -cross_linker:residue1 <list>                     Comma separated residues, that the first side of a bifunc
+                                                    tional cross-linker can attach to (default: '[K N-term]')
+
+  -cross_linker:residue2 <list>                     Comma separated residues, that the second side of a bifun
+                                                    ctional cross-linker can attach to (default: '[K N-term]'
+                                                    )
+  -cross_linker:mass <value>                        Mass of the light cross-linker, linking two residues on 
+                                                    one or two peptides (default: '138.068079600000004')
+  -cross_linker:mass_mono_link <values>             Possible masses of the linker, when attached to only one 
+                                                    peptide (default: '[156.078644309999987 155.0946287149999
+                                                    99]')
+  -cross_linker:name <text>                         Name of the searched cross-link, used to resolve ambiguit
+                                                    y of equal masses (e.g. DSS or BS3) (default: 'DSS')
+
+Additional algorithm settings:
+  -algorithm:number_top_hits <number>               Number of top hits reported for each spectrum pair (defau
+                                                    lt: '1')
+  -algorithm:use_sequence_tags                      Use sequence tags (de novo sequencing of short fragments)
+                                                     to filter out candidates before scoring. This will make 
+                                                    the search faster, but can impact the sensitivity positiv
+                                                    ely or negatively, depending on the dataset.
+
+  -out_idXML <idXML_file>                           Results in idXML format (at least one of these output 
+                                                    parameters should be set, otherwise you will not have 
+                                                    any results). (valid formats: 'idXML')
+  -out_mzIdentML <mzIdentML_file>                   Results in mzIdentML (.mzid) format (at least one of thes
+                                                    e output parameters should be set, otherwise you will 
+                                                    not have any results) (valid formats: 'mzid')
+  -out_xquestxml <xQuestXML_file>                   Results in the xquest.xml format (at least one of these 
+                                                    output parameters should be set, otherwise you will not 
+                                                    have any results). (valid formats: 'xquest.xml')
+  -out_xquest_specxml <xQuestSpecXML_file>          Matched spectra in the xQuest .spec.xml format for spectr
+                                                    a visualization in the xQuest results manager. (valid 
+                                                    formats: 'spec.xml')
+                                                    
+Common TOPP options:
+  -ini <file>                                       Use the given TOPP INI file
+  -threads <n>                                      Sets the number of threads allowed to be used by the TOPP
+                                                     tool (default: '1')
+  -write_ini <file>                                 Writes the default configuration file
+  --help                                            Shows options
+  --helphelp                                        Shows all options (including advanced)
+

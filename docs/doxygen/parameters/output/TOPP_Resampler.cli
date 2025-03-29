@@ -1,0 +1,31 @@
+
+Resampler -- Transforms an LC/MS map into a resampled map or a PNG image.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_Resampler.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  Resampler <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                      Input file  (valid formats: 'mzML')
+  -out <file>*                     Output file in mzML format (valid formats: 'mzML')
+  -sampling_rate <rate>            New sampling rate in m/z dimension (in Th unless ppm flag is set) (default
+                                   : '0.1') (min: '0.0')
+  -ppm                             Sampling_rate is given in ppm
+  -align_sampling                  Ensures that sampling is performed equally across the map (same raster is 
+                                   used for all spectra)
+  -min_int_cutoff <min intensity>  Intensity cutoff for peaks to be stored in output spectrum (only peaks 
+                                   above this cutoff will be stored, -1 means store all data) (default: '-1.0
+                                   ')
+                                   
+Common TOPP options:
+  -ini <file>                      Use the given TOPP INI file
+  -threads <n>                     Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                   '1')
+  -write_ini <file>                Writes the default configuration file
+  --help                           Shows options
+  --helphelp                       Shows all options (including advanced)
+

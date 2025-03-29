@@ -1,0 +1,25 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>non_shuffle_pattern</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">KRP</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Residues to not shuffle (keep at a constant position when shuffling). Default is 'KPR' to not shuffle lysine, arginine and proline.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>keepPeptideNTerm</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Whether to keep peptide N terminus constant when shuffling / reversing.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>keepPeptideCTerm</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Whether to keep peptide C terminus constant when shuffling / reversing.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

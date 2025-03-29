@@ -1,0 +1,39 @@
+
+IDMerger -- Merges several protein/peptide identification files into one file.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IDMerger.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IDMerger <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*                      Input files separated by blanks (all must have the same type) (valid form
+                                    ats: 'idXML', 'oms')
+  -out <file>*                      Output file (must have the same type as the input files) (valid formats: 
+                                    'idXML', 'oms')
+  -out_type <type>                  Output file type (default: determined from file extension) (valid: 'idXML
+                                    ', 'oms')
+  -add_to <file>                    Optional input file. IDs from 'in' are added to this file, but only if 
+                                    the (modified) peptide sequences are not present yet (considering only 
+                                    best hits per spectrum). (valid formats: 'idXML')
+  -annotate_file_origin <annotate>  Store the original filename in each protein/peptide identification (meta 
+                                    value: 'file_origin') - idXML input/output only (default: 'true') (valid:
+                                     'true', 'false')
+  -pepxml_protxml                   Merge idXML files derived from a pepXML and corresponding protXML file.
+                                    Exactly two input files are expected in this case. Not compatible with 
+                                    'add_to'.
+  -merge_proteins_add_PSMs          Merge all identified proteins by accession into one protein identificatio
+                                    n run but keep all the PSMs with updated links to potential new protein 
+                                    ID#s. Not compatible with 'add_to'.
+                                    
+Common TOPP options:
+  -ini <file>                       Use the given TOPP INI file
+  -threads <n>                      Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                    '1')
+  -write_ini <file>                 Writes the default configuration file
+  --help                            Shows options
+  --helphelp                        Shows all options (including advanced)
+

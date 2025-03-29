@@ -1,0 +1,29 @@
+
+MzMLSplitter -- Splits an mzML file into multiple parts
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_MzMLSplitter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  MzMLSplitter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*        Input file (valid formats: 'mzML')
+  -out <prefix>      Prefix for output files ('_part1of2.mzML' etc. will be appended; default: same as 'in' 
+                     without the file extension)
+  -parts <num>       Number of parts to split into (takes precedence over 'size' if set) (default: '1') (min:
+                      '1')
+  -size <num>        Approximate upper limit for resulting file sizes (in 'unit') (default: '0') (min: '0')
+  -unit <choice>     Unit for 'size' (base 1024) (default: 'MB') (valid: 'KB', 'MB', 'GB')
+  -no_chrom          Remove chromatograms, keep only spectra.
+  -no_spec           Remove spectra, keep only chromatograms.
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+

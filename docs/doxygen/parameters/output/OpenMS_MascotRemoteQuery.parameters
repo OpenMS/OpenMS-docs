@@ -1,0 +1,95 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>hostname</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Address of the host where Mascot listens, e.g. 'mascot-server' or '127.0.0.1'</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>host_port</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">80</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Port where the Mascot server listens, 80 should be a good guess</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>server_path</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">mascot</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Path on the server where Mascot server listens, 'mascot' should be a good guess</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>timeout</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">1500</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Timeout in seconds, after which the query is declared as failed.This is NOT the whole time the search takes, but the time in between two progress steps. Some Mascot servers freeze during this (unstable network etc) and idle forever, the connection is killed. Set this to 0 to disable timeout!</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>boundary</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">GZWgAaYKjHFeUaLOLEIOMq</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Boundary for the MIME section</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>use_proxy</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag which enables the proxy usage for the HTTP requests, please specify at least 'proxy_host' and 'proxy_port'</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>proxy_host</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Host where the proxy server runs on</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>proxy_port</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Port where the proxy server listens</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>proxy_username</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Login name for the proxy server, if needed</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>proxy_password</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Login password for the proxy server, if needed</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>login</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag which should be set 'true' if Mascot security is enabled; also set 'username' and 'password' then.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>username</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Name of the user if login is used (Mascot security must be enabled!)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>password</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Password of the user if login is used (Mascot security must be enabled!)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_ssl</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag indicating whether you want to send requests to an HTTPS server or not (HTTP). Requires OpenSSL to be installed (see openssl.org)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>export_params</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">_ignoreionsscorebelow=0&_sigthreshold=0.99&_showsubsets=1&show_same_sets=1&report=0&percolate=0&query_master=0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Adjustable export parameters (passed to Mascot's 'export_dat_2.pl' script). Generally only parameters that control which hits to export are safe to adjust/add. Many settings that govern what types of information to include are required by OpenMS and cannot be changed. Note that setting 'query_master' to 1 may lead to incorrect protein references for peptides.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>skip_export</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">For use with an external Mascot Percolator (via GenericWrapper): Run the Mascot search, but do not export the results. The output file produced by MascotAdapterOnline will contain only the Mascot search number.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>batch_size</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">50000</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Number of spectra processed in one batch by Mascot (default 50000)</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

@@ -1,0 +1,30 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>tolerance</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.3</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Defines the absolute (in Da) or relative (in ppm) tolerance</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>is_relative_tolerance</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">if true, the tolerance value is interpreted as ppm</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_linear_factor</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">if true, the intensities are weighted with the relative m/z difference</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>use_gaussian_factor</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">if true, the intensities are weighted with the relative m/z difference using a gaussian</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

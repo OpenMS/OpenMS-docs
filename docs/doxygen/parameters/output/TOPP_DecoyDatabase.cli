@@ -1,0 +1,60 @@
+
+DecoyDatabase -- Create decoy sequence database from forward sequence database.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_DecoyDatabase.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  DecoyDatabase <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <file(s)>*                   Input FASTA file(s), each containing a database. It is recommended to incl
+                                   ude a contaminant database as well. (valid formats: 'fasta')
+  -out <file>*                     Output FASTA file where the decoy database will be written to. (valid form
+                                   ats: 'fasta')
+  -decoy_string <string>           String that is combined with the accession of the protein identifier to 
+                                   indicate a decoy protein. (default: 'DECOY_')
+  -decoy_string_position <choice>  Should the 'decoy_string' be prepended (prefix) or appended (suffix) to 
+                                   the protein accession? (default: 'prefix') (valid: 'prefix', 'suffix')
+  -only_decoy                      Write only decoy proteins to the output database instead of a combined 
+                                   database.
+  -type <choice>                   Type of sequence. RNA sequences may contain modification codes, which will
+                                    be handled correctly if this is set to 'RNA'. (default: 'protein') (valid
+                                   : 'protein', 'RNA')
+  -method <choice>                 Method by which decoy sequences are generated from target sequences. Note 
+                                   that all sequences are shuffled using the same random seed, ensuring that 
+                                   identical sequences produce the same shuffled decoy sequences. Shuffled 
+                                   sequences that produce highly similar output sequences are shuffled again 
+                                   (see shuffle_sequence_identity_threshold). (default: 'reverse') (valid: 
+                                   'reverse', 'shuffle')
+  -enzyme <enzyme>                 Enzyme used for the digestion of the sample. Only applicable if parameter 
+                                   'type' is 'protein'. (default: 'Trypsin') (valid: 'Asp-N', 'Asp-N/B', 'Arg
+                                   -C/P', 'Chymotrypsin/P', 'CNBr', 'Trypsin', 'Chymotrypsin', 'Formic_acid',
+                                    'Lys-C', 'Lys-C/P', 'Arg-C', 'Lys-N', 'TrypChymo', 'PepsinA', 'Trypsin/P'
+                                   , 'V8-DE', 'V8-E', 'leukocyte elastase', 'Asp-N_ambic', 'elastase-trypsin-
+                                   chymotrypsin', 'Clostripain/P', 'proline endopeptidase', 'iodosobenzoate',
+                                    'proline-endopeptidase/HKR', 'PepsinA + P', 'staphylococcal protease/D', 
+                                   'unspecific cleavage', 'glutamyl endopeptidase', 'Glu-C+P', 'cyanogen-brom
+                                   ide', 'Alpha-lytic protease', '2-iodobenzoate', 'no cleavage')
+                                   
+Common TOPP options:
+  -ini <file>                      Use the given TOPP INI file
+  -threads <n>                     Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                   '1')
+  -write_ini <file>                Writes the default configuration file
+  --help                           Shows options
+  --helphelp                       Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - Decoy   Decoy parameters section
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_DecoyDatabase.html
+

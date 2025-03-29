@@ -1,0 +1,30 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>parse_headers</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag whether header information should be parsed an stored for each spectrum</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>parse_peakinfo</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag whether the peak annotation information should be parsed and stored for each peak</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>parse_firstpeakinfo_only</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag whether only the first (default for 1:1 correspondence in SpecLibSearcher) or all peak annotation information should be parsed and stored for each peak.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>instrument</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">, it, qtof, toftof</td><td style="vertical-align:top">If instrument given, only spectra of these type of instrument (Inst= in header) are parsed</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

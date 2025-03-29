@@ -1,0 +1,30 @@
+
+IDScoreSwitcher -- Switches between different scores of peptide or protein hits in identification data
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_IDScoreSwitcher.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  IDScoreSwitcher <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                      Input file (valid formats: 'idXML')
+  -out <file>*                     Output file (valid formats: 'idXML')
+  -new_score <text>                Name of the meta value to use as the new score
+  -new_score_orientation <choice>  Orientation of the new score (are higher or lower values better?) (valid: 
+                                   'lower_better', 'higher_better')
+  -new_score_type <text>           Name to use as the type of the new score (default: same as 'new_score')
+  -old_score <text>                Name to use for the meta value storing the old score (default: old score 
+                                   type)
+  -proteins                        Apply to protein scores instead of PSM scores
+                                   
+Common TOPP options:
+  -ini <file>                      Use the given TOPP INI file
+  -threads <n>                     Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                   '1')
+  -write_ini <file>                Writes the default configuration file
+  --help                           Shows options
+  --helphelp                       Shows all options (including advanced)
+

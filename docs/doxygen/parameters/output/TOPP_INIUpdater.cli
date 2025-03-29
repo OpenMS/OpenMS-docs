@@ -1,0 +1,24 @@
+
+INIUpdater -- Update INI and TOPPAS files to new OpenMS version.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_INIUpdater.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  INIUpdater <options>
+
+Options (mandatory options marked with '*'):
+  -in <files>*       INI/TOPPAS files that need updating. (valid formats: 'ini', 'toppas')
+  -i                 In-place: Override given INI/TOPPAS files with new content (not compatible with -out)
+  -out <files>       Optional list of output files (not compatible with -i). (valid formats: 'ini', 'toppas')
+
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+

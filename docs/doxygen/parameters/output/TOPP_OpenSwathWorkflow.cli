@@ -1,0 +1,78 @@
+
+OpenSwathWorkflow -- Complete workflow to run OpenSWATH
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathWorkflow.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathWorkflow <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <files>*                        Input files separated by blank (valid formats: 'mzML', 'mzXML', 'sqMass
+                                      ')
+  -tr <file>*                         Transition file ('TraML','tsv','pqp') (valid formats: 'traML', 'tsv', 
+                                      'pqp')
+  -tr_type <type>                     Input file type -- default: determined from file extension or content
+                                       (valid: 'traML', 'tsv', 'pqp')
+  -tr_irt <file>                      Transition file ('TraML') (valid formats: 'traML', 'tsv', 'pqp')
+  -tr_irt_nonlinear <file>            Additional nonlinear transition file ('TraML') (valid formats: 'traML',
+                                       'tsv', 'pqp')
+  -swath_windows_file <file>          Optional, tab-separated file containing the SWATH windows for extractio
+                                      n: lower_offset upper_offset. Note that the first line is a header and 
+                                      will be skipped.
+  -out_features <file>                Output file (valid formats: 'featureXML')
+  -out_tsv <file>                     TSV output file (mProphet-compatible TSV file) (valid formats: 'tsv')
+  -out_osw <file>                     OSW output file (PyProphet-compatible SQLite file) (valid formats: 'osw
+                                      ')
+  -sonar                              Data is scanning SWATH data
+  -pasef                              Data is PASEF data
+  -rt_extraction_window <double>      Only extract RT around this value (-1 means extract over the whole rang
+                                      e, a value of 600 means to extract around +/- 300 s of the expected 
+                                      elution). (default: '600.0')
+  -ion_mobility_window <double>       Extraction window in ion mobility dimension (in 1/k0 or milliseconds 
+                                      depending on library). This is the full window size, e.g. a value of 
+                                      10 milliseconds would extract 5 milliseconds on either side. -1 means 
+                                      extract over the whole range or ion mobility is not present. (Default 
+                                      for diaPASEF data: 0.06 1/k0) (default: '-1.0')
+  -mz_extraction_window <double>      Extraction window in Thomson or ppm (see mz_extraction_window_unit) 
+                                      (default: '50.0') (min: '0.0')
+  -mz_extraction_window_ms1 <double>  Extraction window used in MS1 in Thomson or ppm (see mz_extraction_wind
+                                      ow_ms1_unit) (default: '50.0') (min: '0.0')
+  -im_extraction_window_ms1 <double>  Extraction window in ion mobility dimension for MS1 (in 1/k0 or millise
+                                      conds depending on library). -1 means this is not ion mobility data. 
+                                      (default: '-1.0')
+
+Debugging:
+  -Debugging:irt_mzml <file>          Chromatogram mzML containing the iRT peptides (valid formats: 'mzML')
+  -Debugging:irt_trafo <file>         Transformation file for RT transform (valid formats: 'trafoXML')
+
+                                      
+Common TOPP options:
+  -ini <file>                         Use the given TOPP INI file
+  -threads <n>                        Sets the number of threads allowed to be used by the TOPP tool (default
+                                      : '1')
+  -write_ini <file>                   Writes the default configuration file
+  --help                              Shows options
+  --helphelp                          Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - Calibration       Parameters for the m/z and ion mobility calibration.
+ - Library           Library parameters section
+ - RTNormalization   Parameters for the RTNormalization for iRT petides. This specifies how the RT alignment 
+
+                     is performed and how outlier detection is applied. Outlier detection can be done iterati
+
+                     vely (by default) which removes one outlier per iteration or using the RANSAC algorithm.
+
+ - Scoring           Scoring parameters section
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathWorkflow.html
+

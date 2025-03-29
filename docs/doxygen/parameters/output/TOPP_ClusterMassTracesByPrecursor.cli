@@ -1,0 +1,38 @@
+
+ClusterMassTracesByPrecursor -- Correlate precursor masstraces with fragment ion masstraces in SWATH maps 
+based on their elution profile.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ClusterMassTracesByPrecursor.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ClusterMassTracesByPrecursor <options>
+
+Options (mandatory options marked with '*'):
+  -in_ms1 <file>*                    MS1 mass traces (valid formats: 'consensusXML')
+  -in_swath <file>*                  MS2 / SWATH mass traces (valid formats: 'consensusXML')
+  -out <file>*                       Output file (valid formats: 'mzML')
+  -assign_unassigned_to_all          Assign unassigned MS2 fragments to all precursors (only for ms1_centrif)
+
+  -min_pearson_correlation <double>  Minimal pearson correlation score to match elution profiles to each othe
+                                     r. (default: '0.7')
+  -max_lag <number>                  Maximal lag (e.g. by how many spectra the peak may be shifted at most). 
+                                     This parameter will depend on your chromatographic setup but a number 
+                                     between 1 and 3 is usually sensible. (default: '1')
+  -min_nr_ions <number>              Minimal number of ions to report a spectrum. (default: '3')
+  -max_rt_apex_difference <double>   Maximal difference of the apex in retention time (in seconds). This is 
+                                     a hard parameter, all profiles further away will not be considered at 
+                                     all. (default: '5.0')
+  -swath_lower <double>              Swath lower isolation window (default: '0.0')
+  -swath_upper <double>              Swath upper isolation window (default: '0.0')
+                                     
+Common TOPP options:
+  -ini <file>                        Use the given TOPP INI file
+  -threads <n>                       Sets the number of threads allowed to be used by the TOPP tool (default:
+                                      '1')
+  -write_ini <file>                  Writes the default configuration file
+  --help                             Shows options
+  --helphelp                         Shows all options (including advanced)
+

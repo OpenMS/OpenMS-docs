@@ -1,0 +1,32 @@
+
+QCExtractor -- Extracts a table attachment to a given qc parameter.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_QCExtractor.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+To cite QCExtractor:
+ + Walzer M, Pernas LE, Nasso S, Bittremieux W, Nahnsen S, Kelchtermans P,  Martens, L. qcML: An Exchange 
+   Format for Quality Control Metrics from Mass Spectrometry Experiments. Molecular & Cellular Proteomics 
+   2014; 13(8). doi:10.1074/mcp.M113.035907.
+
+Usage:
+  QCExtractor <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*        Input qcml file (valid formats: 'qcML')
+  -qp <string>*      Target attachment qp.
+  -run <file>        The file that defined the run under which the qp for the attachment is aggregated as 
+                     mzML file. The file is only used to extract the run name from the file name. (valid form
+                     ats: 'mzML')
+  -name <string>     If no file for the run was given (or if the target qp is contained in a set), at least 
+                     a name of the target run/set containing the the qp for the attachment has to be given.
+  -out_csv <file>*   Output csv formatted table. (valid formats: 'csv')
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+

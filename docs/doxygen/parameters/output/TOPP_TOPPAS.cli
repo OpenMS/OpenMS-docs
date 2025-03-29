@@ -1,0 +1,11 @@
+
+TOPPAS -- An assistant for GUI-driven TOPP workflow design.
+
+Usage:
+ TOPPAS [options] [files]
+
+Options are:
+  --help           Shows this help
+  --debug          Enables debug messages
+  -ini <File>      Sets the INI file (default: ~/.TOPPAS.ini)
+

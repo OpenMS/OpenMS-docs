@@ -1,0 +1,24 @@
+
+SequenceCoverageCalculator -- Prints information about idXML files.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_SequenceCoverageCalculator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  SequenceCoverageCalculator <options>
+
+Options (mandatory options marked with '*'):
+  -in_database <file>*  Input file containing the database in FASTA format (valid formats: 'fasta')
+  -in_peptides <file>*  Input file containing the identified peptides (valid formats: 'idXML')
+  -out <file>           Optional text output file. If left out, the output is written to the command line. 
+                        (valid formats: 'txt')
+                        
+Common TOPP options:
+  -ini <file>           Use the given TOPP INI file
+  -threads <n>          Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>     Writes the default configuration file
+  --help                Shows options
+  --helphelp            Shows all options (including advanced)
+

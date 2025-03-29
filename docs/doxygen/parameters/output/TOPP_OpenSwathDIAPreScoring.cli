@@ -1,0 +1,27 @@
+
+OpenSwathDIAPreScoring -- Scoring spectra using the DIA scores.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_OpenSwathDIAPreScoring.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  OpenSwathDIAPreScoring <options>
+
+Options (mandatory options marked with '*'):
+  -tr <file>*                    Transition file (valid formats: 'traML')
+  -swath_files <files>*          Swath files that were used to extract the transitions. If present, SWATH 
+                                 specific scoring will be applied. (valid formats: 'mzML')
+  -output_files <files>*         Output files. One per Swath input file. (valid formats: 'tsv')
+  -min_upper_edge_dist <double>  Minimal distance to the edge to still consider a precursor, in Thomson (only
+                                  in SWATH) (default: '0.0')
+                                 
+Common TOPP options:
+  -ini <file>                    Use the given TOPP INI file
+  -threads <n>                   Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                 '1')
+  -write_ini <file>              Writes the default configuration file
+  --help                         Shows options
+  --helphelp                     Shows all options (including advanced)
+

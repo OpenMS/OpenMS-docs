@@ -1,0 +1,37 @@
+
+FileInfo -- Shows basic information about the file, such as data ranges and file type.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FileInfo.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  FileInfo <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*        Input file (valid formats: 'mzData', 'mzXML', 'mzML', 'sqMass', 'dta', 'dta2d', 'mgf', 
+                     'featureXML', 'consensusXML', 'idXML', 'pepXML', 'fid', 'mzid', 'trafoXML', 'fasta', 
+                     'pqp')
+  -in_type <type>    Input file type -- default: determined from file extension or content (valid: 'mzData', 
+                     'mzXML', 'mzML', 'sqMass', 'dta', 'dta2d', 'mgf', 'featureXML', 'consensusXML', 'idXML',
+                      'pepXML', 'fid', 'mzid', 'trafoXML', 'fasta', 'pqp')
+  -out <file>        Optional output file. If left out, the output is written to the command line. (valid 
+                     formats: 'txt')
+  -m                 Show meta information about the whole experiment
+  -p                 Shows data processing information
+  -s                 Computes a five-number statistics of intensities, qualities, and widths
+  -d                 Show detailed listing of all spectra and chromatograms (peak files only)
+  -c                 Check for corrupt data in the file (peak files only)
+  -v                 Validate the file only (for mzML, mzData, mzXML, featureXML, idXML, consensusXML, pepXML
+                     )
+  -i                 Check whether a given mzML file contains valid indices (conforming to the indexedmzML 
+                     standard)
+                     
+Common TOPP options:
+  -ini <file>        Use the given TOPP INI file
+  -threads <n>       Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>  Writes the default configuration file
+  --help             Shows options
+  --helphelp         Shows all options (including advanced)
+

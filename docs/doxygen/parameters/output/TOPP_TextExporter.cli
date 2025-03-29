@@ -1,0 +1,86 @@
+
+TextExporter -- Exports various XML formats to a text file.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_TextExporter.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  TextExporter <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                                     Input file  (valid formats: 'featureXML', 'consensusXML', 
+                                                  'idXML', 'mzML')
+  -out <file>*                                    Output file. (valid formats: 'tsv', 'csv', 'txt')
+  -out_type <type>                                Output file type -- default: determined from file extension
+                                                  , ambiguous file extensions are interpreted as tsv (valid: 
+                                                  'tsv', 'csv', 'txt')
+  -replacement <string>                           Used to replace occurrences of the separator in strings 
+                                                  before writing, if 'quoting' is 'none' (default: '_')
+  -quoting <method>                               Method for quoting of strings: 'none' for no quoting, 'doub
+                                                  le' for quoting with doubling of embedded quotes,
+                                                  'escape' for quoting with backslash-escaping of embedded 
+                                                  quotes (default: 'none') (valid: 'none', 'double', 'escape'
+                                                  )
+  -no_ids                                         Suppresses output of identification data.
+                                                  
+
+Options for featureXML input files:
+  -feature:minimal                                Set this flag to write only three attributes: RT, m/z, and 
+                                                  intensity.
+  -feature:add_metavalues <min_frequency>         Add columns for meta values which occur with a certain freq
+                                                  uency (0-100%). Set to -1 to omit meta values (default). 
+                                                  (default: '-1') (min: '-1' max: '100')
+
+                                                  
+
+Options for idXML input files:
+  -id:proteins_only                               Set this flag if you want only protein information from an 
+                                                  idXML file
+  -id:peptides_only                               Set this flag if you want only peptide information from an 
+                                                  idXML file
+  -id:protein_groups                              Set this flag if you want to also write indist. group infor
+                                                  mation from an idXML file
+  -id:first_dim_rt                                If this flag is set the first_dim RT of the peptide hits 
+                                                  will also be printed (if present).
+  -id:add_metavalues <min_frequency>              Add columns for meta values of PeptideID (=spectrum) entrie
+                                                  s which occur with a certain frequency (0-100%). Set to -1 
+                                                  to omit meta values (default). (default: '-1') (min: '-1' 
+                                                  max: '100')
+  -id:add_hit_metavalues <min_frequency>          Add columns for meta values of PeptideHit (=PSM) entries 
+                                                  which occur with a certain frequency (0-100%). Set to -1 
+                                                  to omit meta values (default). (default: '-1') (min: '-1' 
+                                                  max: '100')
+  -id:add_protein_hit_metavalues <min_frequency>  Add columns for meta values on protein level which occur 
+                                                  with a certain frequency (0-100%). Set to -1 to omit meta 
+                                                  values (default). (default: '-1') (min: '-1' max: '100')
+
+                                                  
+
+Options for consensusXML input files:
+  -consensus:centroids <file>                     Output file for centroids of consensus features (valid form
+                                                  ats: 'csv')
+  -consensus:elements <file>                      Output file for elements of consensus features (valid forma
+                                                  ts: 'csv')
+  -consensus:features <file>                      Output file for consensus features and contained elements 
+                                                  from all maps (writes 'nan's if elements are missing) (vali
+                                                  d formats: 'csv')
+  -consensus:sorting_method <method>              Sorting options can be combined. The precedence is: sort_by
+                                                  _size, sort_by_maps, sorting_method (default: 'none') (vali
+                                                  d: 'none', 'RT', 'MZ', 'RT_then_MZ', 'intensity', 'quality_
+                                                  decreasing', 'quality_increasing')
+  -consensus:sort_by_maps                         Apply a stable sort by the covered maps, lexicographically
+  -consensus:sort_by_size                         Apply a stable sort by decreasing size (i.e., the number 
+                                                  of elements)
+  -consensus:add_metavalues                       Add columns for ConsensusFeature meta values.
+
+                                                  
+Common TOPP options:
+  -ini <file>                                     Use the given TOPP INI file
+  -threads <n>                                    Sets the number of threads allowed to be used by the TOPP 
+                                                  tool (default: '1')
+  -write_ini <file>                               Writes the default configuration file
+  --help                                          Shows options
+  --helphelp                                      Shows all options (including advanced)
+

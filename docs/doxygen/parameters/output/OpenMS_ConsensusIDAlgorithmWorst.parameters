@@ -1,0 +1,30 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>filter:considered_hits</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">The number of top hits in each ID run that are considered for consensus scoring ('0' for all hits).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>filter:min_support</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">For each peptide hit from an ID run, the fraction of other ID runs that must support that hit (otherwise it is removed).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>filter:count_empty</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Count empty ID runs (i.e. those containing no peptide hit for the current spectrum) when calculating 'min_support'?</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>filter:keep_old_scores</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">if set, keeps the original scores as user params</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

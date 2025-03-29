@@ -1,0 +1,52 @@
+RT window size calculated as 240 seconds.
+
+FeatureFinderMetaboIdent -- Detects features in MS1 data based on metabolite identifications.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_FeatureFinderMetaboIdent.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  FeatureFinderMetaboIdent <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                         Input file: LC-MS raw data (valid formats: 'mzML')
+  -id <file>*                         Input file: Metabolite identifications (valid formats: 'tsv')
+  -out <file>*                        Output file: Features (valid formats: 'featureXML')
+  -lib_out <file>                     Output file: Assay library (valid formats: 'traML')
+  -chrom_out <file>                   Output file: Chromatograms (valid formats: 'mzML')
+  -trafo_out <file>                   Output file: Retention times (expected vs. observed) (valid formats: 
+                                      'trafoXML')
+  -candidates_out <text>              Optional output file: Feature candidates (before filtering and model 
+                                      fitting).
+
+Parameters for ion chromatogram extraction:
+  -extract:mz_window <value>          M/z window size for chromatogram extraction (unit: ppm if 1 or greater,
+                                       else Da/Th) (default: '10.0') (min: '0.0')
+  -extract:n_isotopes <number>        Number of isotopes to include in each peptide assay. (default: '2') 
+                                      (min: '2')
+
+Parameters for detecting features in extracted ion chromatograms:
+  -detect:peak_width <value>          Expected elution peak width in seconds, for smoothing (Gauss filter). 
+                                      Also determines the RT extration window, unless set explicitly via 'ext
+                                      ract:rt_window'. (default: '60.0') (min: '0.0')
+
+Parameters for fitting elution models to features:
+  -model:type <choice>                Type of elution model to fit to features (default: 'symmetric') (valid:
+                                       'symmetric', 'asymmetric', 'none')
+
+Parameters for fitting exp. mod. Gaussians to mass traces.:
+  -EMGScoring:max_iteration <number>  Maximum number of iterations for EMG fitting. (default: '100') (min: 
+                                      '1')
+  -EMGScoring:init_mom                Alternative initial parameters for fitting through method of moments.
+
+                                      
+Common TOPP options:
+  -ini <file>                         Use the given TOPP INI file
+  -threads <n>                        Sets the number of threads allowed to be used by the TOPP tool (default
+                                      : '1')
+  -write_ini <file>                   Writes the default configuration file
+  --help                              Shows options
+  --helphelp                          Shows all options (including advanced)
+

@@ -1,0 +1,40 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_114_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 114 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_115_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 115 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_116_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 116 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>channel_117_description</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top"></td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Description for the content of the 117 channel.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>reference_channel</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">114</td>
+  <td style="vertical-align:top">min: 114 max: 117</td><td style="vertical-align:top">Number of the reference channel (114-117).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>correction_matrix</b></td>
+  <td style="vertical-align:top">string list</td><td style="vertical-align:top">[0.0/1.0/5.9/0.2, 0.0/2.0/5.6/0.1, 0.0/3.0/4.5/0.1, 0.1/4.0/3.5/0.1]</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Correction matrix for isotope distributions (see documentation); use the following format: <-2Da>/<-1Da>/<+1Da>/<+2Da>; e.g. '0/0.3/4/0', '0.1/0.3/3/0.2'</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

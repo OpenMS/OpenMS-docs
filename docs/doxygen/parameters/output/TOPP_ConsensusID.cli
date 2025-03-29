@@ -1,0 +1,64 @@
+
+ConsensusID -- Computes a consensus of peptide identifications of several identification engines.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_ConsensusID.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  ConsensusID <options>
+
+This tool has algorithm parameters that are not shown here! Please check the ini file for a detailed descript
+ion or use the --helphelp option
+
+Options (mandatory options marked with '*'):
+  -in <file(s)>*                    Input file (valid formats: 'idXML', 'featureXML', 'consensusXML')
+  -out <file>*                      Output file (valid formats: 'idXML', 'featureXML', 'consensusXML')
+                                    
+  -rt_delta <value>                 [idXML input only] Maximum allowed retention time deviation between ident
+                                    ifications belonging to the same spectrum. (default: '0.1') (min: '0.0')
+  -mz_delta <value>                 [idXML input only] Maximum allowed precursor m/z deviation between identi
+                                    fications belonging to the same spectrum. (default: '0.1') (min: '0.0')
+  -per_spectrum                     (only idXML) if set, mapping will be done based on exact matching of orig
+                                    inating mzml file and spectrum_ref
+
+Options for filtering peptide hits:
+  -filter:considered_hits <number>  The number of top hits in each ID run that are considered for consensus 
+                                    scoring ('0' for all hits). (default: '0') (min: '0')
+  -filter:min_support <value>       For each peptide hit from an ID run, the fraction of other ID runs that 
+                                    must support that hit (otherwise it is removed). (default: '0.0') (min: 
+                                    '0.0' max: '1.0')
+  -filter:count_empty               Count empty ID runs (i.e. those containing no peptide hit for the current
+                                     spectrum) when calculating 'min_support'?
+  -filter:keep_old_scores           If set, keeps the original scores as user params
+
+  -algorithm <choice>               Algorithm used for consensus scoring.
+                                    * PEPMatrix: Scoring based on posterior error probabilities (PEPs) and 
+                                    peptide sequence similarities (scored by a substitution matrix). Requires
+                                     PEPs as scores.
+                                    * PEPIons: Scoring based on posterior error probabilities (PEPs) and frag
+                                    ment ion similarities ('shared peak count'). Requires PEPs as scores.
+                                    * best: For each peptide ID, use the best score of any search engine as 
+                                    the consensus score. Requires the same score type in all ID runs.
+                                    ...
+                                    types. (default: 'PEPMatrix') (valid: 'PEPMatrix', 'PEPIons', 'best', 
+                                    'worst', 'average', 'ranks')
+                                    
+Common TOPP options:
+  -ini <file>                       Use the given TOPP INI file
+  -threads <n>                      Sets the number of threads allowed to be used by the TOPP tool (default: 
+                                    '1')
+  -write_ini <file>                 Writes the default configuration file
+  --help                            Shows options
+  --helphelp                        Shows all options (including advanced)
+
+The following configuration subsections are valid:
+ - PEPIons     PEPIons algorithm parameters
+ - PEPMatrix   PEPMatrix algorithm parameters
+
+You can write an example INI file using the '-write_ini' option.
+Documentation of subsection parameters can be found in the doxygen documentation or the INIFileEditor.
+For more information, please consult the online documentation for this tool:
+  - http://www.openms.de/doxygen/nightly/html/TOPP_ConsensusID.html
+

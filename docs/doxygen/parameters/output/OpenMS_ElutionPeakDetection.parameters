@@ -1,0 +1,40 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>chrom_fwhm</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">5.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Expected full-width-at-half-maximum of chromatographic peaks (in seconds).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>chrom_peak_snr</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">3.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimum signal-to-noise a mass trace should have.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>width_filtering</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">fixed</td>
+  <td style="vertical-align:top">off, fixed, auto</td><td style="vertical-align:top">Enable filtering of unlikely peak widths. The fixed setting filters out mass traces outside the [min_fwhm, max_fwhm] interval (set parameters accordingly!). The auto setting filters with the 5 and 95% quantiles of the peak width distribution.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>min_fwhm</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Minimum full-width-at-half-maximum of chromatographic peaks (in seconds). Ignored if parameter width_filtering is off or auto.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>max_fwhm</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">60.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum full-width-at-half-maximum of chromatographic peaks (in seconds). Ignored if parameter width_filtering is off or auto.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>masstrace_snr_filtering</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Apply post-filtering by signal-to-noise ratio after smoothing.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

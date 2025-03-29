@@ -1,0 +1,32 @@
+ Memory consumption before 11036
+
+TICCalculator -- Calculates the TIC from a mass spectrometric raw file (useful for benchmarking).
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_TICCalculator.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  TICCalculator <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*            Input file to convert. (valid formats: 'mzData', 'mzXML', 'mzML', 'cachedMzML', 'dta
+                         ', 'dta2d', 'mgf', 'featureXML', 'consensusXML', 'ms2', 'fid', 'tsv', 'peplist', 
+                         'kroenik', 'edta')
+  -in_type <type>        Input file type -- default: determined from file extension or content
+                          (valid: 'mzData', 'mzXML', 'mzML', 'cachedMzML', 'dta', 'dta2d', 'mgf', 'featureXML
+                         ', 'consensusXML', 'ms2', 'fid', 'tsv', 'peplist', 'kroenik', 'edta')
+  -read_method <method>  Method to read the file (default: 'regular') (valid: 'regular', 'indexed', 'indexed_
+                         parallel', 'streaming', 'cached', 'cached_parallel')
+  -loadData <method>     Whether to actually load and decode the binary data (or whether to skip decoding 
+                         the binary data) (default: 'true') (valid: 'true', 'false')
+                         
+Common TOPP options:
+  -ini <file>            Use the given TOPP INI file
+  -threads <n>           Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>      Writes the default configuration file
+  --help                 Shows options
+  --helphelp             Shows all options (including advanced)
+
+ Memory consumption final 11676

@@ -1,0 +1,55 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>select_activation</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">auto</td>
+  <td style="vertical-align:top">auto, Collision-induced dissociation, Post-source decay, Plasma desorption, Surface-induced dissociation, Blackbody infrared radiative dissociation, Electron capture dissociation, Infrared multiphoton dissociation, Sustained off-resonance irradiation, High-energy collision-induced dissociation, Low-energy collision-induced dissociation, Photodissociation, Electron transfer dissociation, Electron transfer and collision-induced dissociation, Electron transfer and higher-energy collision dissociation, Pulsed q dissociation, trap-type collision-induced dissociation, beam-type collision-induced dissociation, in-source collision-induced dissociation, any</td><td style="vertical-align:top">Operate only on MSn scans where any of its precursors features a certain activation method. Setting to "auto" uses HCD and HCID spectra. Set to empty string if you want to disable filtering.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>reporter_mass_shift</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">2.0e-03</td>
+  <td style="vertical-align:top">min: 1.0e-04 max: 0.5</td><td style="vertical-align:top">Allowed shift (left to right) in Th from the expected position.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_precursor_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Minimum intensity of the precursor to be extracted. MS/MS scans having a precursor with a lower intensity will not be considered for quantitation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>keep_unannotated_precursor</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Flag if precursor with missing intensity value or missing precursor spectrum should be included or not.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_reporter_intensity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Minimum intensity of the individual reporter ions to be extracted.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>discard_low_intensity_quantifications</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Remove all reporter intensities if a single reporter is below the threshold given in 'min_reporter_intensity'.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>min_precursor_purity</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">min: 0.0 max: 1.0</td><td style="vertical-align:top">Minimum fraction of the total intensity in the isolation window of the precursor spectrum attributable to the selected precursor.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>precursor_isotope_deviation</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">10.0</td>
+  <td style="vertical-align:top">min: 0.0</td><td style="vertical-align:top">Maximum allowed deviation (in ppm) between theoretical and observed isotopic peaks of the precursor peak in the isolation window to be counted as part of the precursor.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>purity_interpolation</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set to true the algorithm will try to compute the purity as a time weighted linear combination of the precursor scan and the following scan. If set to false, only the precursor scan will be used.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

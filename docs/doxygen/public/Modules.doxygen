@@ -1,0 +1,307 @@
+// Copyright (c) 2002-2023, The OpenMS Team -- EKU Tuebingen, ETH Zurich, and FU Berlin
+// SPDX-License-Identifier: BSD-3-Clause
+// 
+// --------------------------------------------------------------------------
+// $Maintainer:  $
+// $Authors: Marc Sturm $
+// --------------------------------------------------------------------------
+
+// ----------------------------- Concept -------------------------------
+
+/**
+	@defgroup Concept Concept
+
+	@brief %OpenMS concepts (types, macros, ...)
+*/
+
+// ----------------------------- System -------------------------------
+
+/**
+	@defgroup System System
+
+	@brief Very basic functionality like file system or stopwatch.
+*/
+
+// ----------------------------- Datastructures -------------------------------
+
+/**
+	@defgroup Datastructures Datastructures
+
+	@brief Auxiliary datastructures.
+*/
+
+
+
+// ----------------------------- Math -------------------------------
+
+/**
+  @defgroup Math Math
+
+  @brief Math functions and classes
+*/
+
+/**
+  @defgroup MathFunctionsStatistics Statistics functions
+
+  @brief Various statistical functions
+
+	These functions are defined in OpenMS/MATH/StatisticFunctions.h .
+
+	@ingroup Math
+*/
+
+/**
+  @defgroup MathFunctionsMisc Misc functions
+
+  @brief Math functions
+
+	These functions are defined in OpenMS/MATH/MathFunctions.h .
+
+	@ingroup Math
+*/
+
+
+
+// ----------------------------- Kernel -------------------------------
+
+/**
+	@defgroup Kernel Kernel
+
+	@brief Kernel datastructures
+*/
+
+// ----------------------------- Format -------------------------------
+
+/**
+	@defgroup Format Format
+
+	@brief IO classes.
+
+	This module contains all classes that are involved in file IO.
+
+	Very basic file system functions can be found in the File class of the @ref System module!
+*/
+
+/**
+	@defgroup FileIO File IO
+
+	@brief File IO classes.
+
+	This module contains all classes that are involved in file IO.
+	Take a look at the FileHandler class!
+
+	@todo Implement reading of pepXML and protXML (Andreas)
+	@todo Allow reading of zipped XML files (David, Hiwi)
+
+	@ingroup Format
+*/
+
+// ----------------------------- Metadata -------------------------------
+
+/**
+	@defgroup Metadata Metadata
+
+	@brief Classes that capture meta data about a MS or HPLC-MS experiment.
+
+	The top-level classes are OpenMS::ExperimentalSettings and OpenMS::SpectrumSettings .
+*/
+
+// ----------------------------- Chemistry -------------------------------
+
+/**
+	@defgroup Chemistry Chemistry
+
+*/
+
+// ----------------------------- SpectraComparison -------------------------------
+
+/**
+	@defgroup SpectraComparison Spectrum Comparison
+
+	@brief The classes within this group are used to compare single spectra, by reporting a similarity value.
+*/
+
+// ----------------------------- Filtering -------------------------------
+
+/**
+	@defgroup Filtering Spectrum filters
+
+	@brief This group contains filtering classes for spectra
+*/
+
+/**
+	@defgroup SpectraPreprocessers Spectra Preprocessors
+
+	@brief The spectra preprocessors filter the spectra with different criteria
+
+	The preprocessors are able to handle single spectra as well as whole MSExperiments (PeakMap). For
+	single spectra this can be achieved by calling the filterSpectrum or filterPeakSpectrum functions.
+	Additionally PeakMaps can be filtered using the filterPeakMap function. The details of the filters
+	and their options are described in the class documentation respectively.
+
+	@ingroup Filtering
+*/
+
+/**
+	@defgroup SpectraFilter Spectra Filters
+
+	@brief Spectra filters report single values of spectra e.g. the TIC
+
+	@ingroup Filtering
+*/
+
+// ----------------------------- Analysis -------------------------------
+
+/**
+	@defgroup Analysis Analysis
+
+	@brief High-level analysis like PeakPicking, Quantitation, Identification, MapAlignment
+*/
+
+
+/**
+	@defgroup Topdown Topdown
+
+	@brief Topdown-related classes 
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup Quantitation Quantitation
+
+	@brief Quantitation-related classes 
+
+	@ingroup Analysis
+*/
+
+
+/**
+	@defgroup SignalProcessing SignalProcessing
+
+	@brief Signal processing classes (noise estimation, noise filters, baseline filters)
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup PeakPicking PeakPicking
+
+	@brief Classes for the transformation of raw ms data into peak data.
+
+	This module contains all important classes that are involved in the peak picking as described by Lange et al. (2006) Proc. PSB-06.
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup FeatureFinder FeatureFinder
+
+	@brief The feature detection algorithms.
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup MapAlignment MapAlignment
+
+	@brief The map alignment algorithms.
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup FeatureGrouping FeatureGrouping
+
+	@brief The feature grouping.
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup Analysis_ID Identification
+
+	@brief Protein and peptide identification classes.
+
+	@ingroup Analysis
+*/
+
+/**
+	@defgroup Analysis_DeNovo DeNovo
+
+	@brief DeNovo identification classes.
+
+	@ingroup Analysis
+*/
+
+
+/**
+	@defgroup SpectraClustering Clustering
+
+	@brief This class contains SpectraClustering classes
+	These classes are components for clustering all kinds of data for which a distance relation, normalizable in
+	the range of [0,1], is available. Mainly this will be data for which there is a corresponding CompareFunctor
+	given (e.g. PeakSpectrum) that is yielding the similarity normalized in the range of [0,1] of such two
+	elements, so it can easily converted to the needed distances. @see PeakSpectrumCompareFunctor.
+
+	@ingroup Analysis
+*/
+
+// ----------------------------- Visual -------------------------------
+
+/**
+	@defgroup Visual Visual
+
+	@brief Visualization classes
+*/
+
+/**
+	@defgroup PlotWidgets Spectrum visualization widgets
+
+	@brief Spectrum visualization widgets
+
+	The spectrum widgets allow spectrum data to be visualized
+	in different manners. There are predefined widgets for
+	1D, 2D and 3D visualization. For each type of view, at least
+	two new classes must be defined:
+
+	- a "canvas" class derived from OpenMS::PlotCanvas,
+	  used for painting the data.
+	- a "widget" class derived from OpenMS::PlotWidget,
+	  which holds the instance of the canvas class, and some
+	  additional widgets, such as OpenMS::AxisWidget. This
+	  class is also responsible for holding the data and for
+	  providing it to the canvas class instance.
+
+	@ingroup Visual
+*/
+
+/**
+	@defgroup TOPPView_elements  TOPPView
+
+	@brief GUI elements for TOPPView
+
+	Some GUI classes were designed for TOPPView only and are probably not usable in any other application.
+	These classes are listed in this module.
+
+	@ingroup Visual
+*/
+
+/**
+	@defgroup TOPPAS_elements  TOPPAS
+	
+	@brief GUI elements for TOPPAS
+	
+	Some GUI classes were designed for TOPPAS only and are probably not usable in any other application.
+	These classes are listed in this module.
+	
+	@ingroup Visual
+*/
+
+/**
+	@defgroup Dialogs Dialogs
+
+	@brief Dialogs for user interaction.
+
+	@ingroup Visual
+*/

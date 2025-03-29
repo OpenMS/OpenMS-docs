@@ -1,0 +1,55 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>signal_to_noise_</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Signal to noise value, each peak is required to be above this value (turn off by setting it to 0.0)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>peak_width</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">0.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Expected peak width half width in Dalton - peaks will be extended until this half width is reached (even if the intensitity is increasing). In conjunction with check_width_internally it will also be used to remove peaks whose spacing is larger than this value.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>spacing_difference</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.5</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Difference between peaks in multiples of the minimal difference to continue. The higher this value is set, the further apart peaks are allowed to be to still extend a peak. E.g. if the value is set to 1.5 and in a current peak the minimal spacing between peaks is 10 mDa, then only peaks at most 15 mDa apart will be added to the peak.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>sn_bin_count_</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">30</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Bin count for the Signal to Noise estimation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>nr_iterations_</i></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">5</td>
+  <td style="vertical-align:top">min: 1</td><td style="vertical-align:top">Nr of iterations to perform (how many times the peaks are re-centered).</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>sn_win_len_</i></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">20.0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Window length for the Signal to Noise estimation.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><i>check_width_internally</i></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Delete peaks where the spacing is larger than the peak width (should be set to true to avoid artefacts)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>ms1_only</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Only do MS1</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>clear_meta_data</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Delete meta data about peak width</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

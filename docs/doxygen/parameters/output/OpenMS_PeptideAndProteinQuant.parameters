@@ -1,0 +1,45 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>method</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">top</td>
+  <td style="vertical-align:top">top, iBAQ</td><td style="vertical-align:top">- top - quantify based on three most abundant peptides (number can be changed in 'top').<BR>- iBAQ (intensity based absolute quantification), calculate the sum of all peptide peak intensities divided by the number of theoretically observable tryptic peptides (https://rdcu.be/cND1J). Warning: only consensusXML or featureXML input is allowed!</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>best_charge_and_fraction</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Distinguish between fraction and charge states of a peptide. For peptides, abundances will be reported separately for each fraction and charge;<BR>for proteins, abundances will be computed based only on the most prevalent charge observed of each peptide (over all fractions).<BR>By default, abundances are summed over all charge states.</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Additional options for custom quantification using top N peptides.">top</span>:N</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">3</td>
+  <td style="vertical-align:top">min: 0</td><td style="vertical-align:top">Calculate protein abundance from this number of proteotypic peptides (most abundant first; '0' for all)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Additional options for custom quantification using top N peptides.">top</span>:aggregate</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">median</td>
+  <td style="vertical-align:top">median, mean, weighted_mean, sum</td><td style="vertical-align:top">Aggregation method used to compute protein abundances from peptide abundances</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Additional options for custom quantification using top N peptides.">top</span>:include_all</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Include results for proteins with fewer proteotypic peptides than indicated by 'N' (no effect if 'N' is 0 or 1)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Additional options for consensus maps (and identification results comprising multiple runs)">consensus</span>:normalize</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Scale peptide abundances so that medians of all samples are equal</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b><span title="Additional options for consensus maps (and identification results comprising multiple runs)">consensus</span>:fix_peptides</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">false</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">Use the same peptides for protein quantification across all samples.<BR>With 'N 0',all peptides that occur in every sample are considered.<BR>Otherwise ('N'), the N peptides that occur in the most samples (independently of each other) are selected,<BR>breaking ties by total abundance (there is no guarantee that the best co-ocurring peptides are chosen!).</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

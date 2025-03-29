@@ -1,0 +1,30 @@
+
+RNADigestor -- Digests an RNA sequence database in-silico.
+Full documentation: http://www.openms.de/doxygen/nightly/html/TOPP_RNADigestor.html
+Version: 3.1.0-pre-develop-2024-04-26 Nov 21 2024, 15:06:14, Revision: 7aa664c
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spec
+   trometry data. Nat Methods (2024). doi:10.1038/s41592-024-02197-7.
+
+Usage:
+  RNADigestor <options>
+
+Options (mandatory options marked with '*'):
+  -in <file>*                 Input file containing RNA sequences (valid formats: 'fasta')
+  -out <file>*                Output file containing sequence fragments (valid formats: 'fasta')
+  -missed_cleavages <number>  The number of allowed missed cleavages (default: '1') (min: '0')
+  -min_length <number>        Minimum length of a fragment (default: '3')
+  -max_length <number>        Maximum length of a fragment (default: '30')
+  -enzyme <string>            Digestion enzyme (RNase) (default: 'RNase_T1') (valid: 'RNase_T1', 'RNase_MC1',
+                               'unspecific cleavage', 'RNase_T1_Phosphatase', 'cusativin', 'RNase_U2', 'no 
+                              cleavage', 'mazF', 'RNase_A', 'RNase_H', 'colicin_E5')
+  -unique                     Report each unique sequence fragment only once
+  -cdna                       Input file contains cDNA sequences - replace 'T' with 'U')
+                              
+Common TOPP options:
+  -ini <file>                 Use the given TOPP INI file
+  -threads <n>                Sets the number of threads allowed to be used by the TOPP tool (default: '1')
+  -write_ini <file>           Writes the default configuration file
+  --help                      Shows options
+  --helphelp                  Shows all options (including advanced)
+

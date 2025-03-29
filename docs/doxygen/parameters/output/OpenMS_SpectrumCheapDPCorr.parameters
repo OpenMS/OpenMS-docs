@@ -1,0 +1,25 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>variation</b></td>
+  <td style="vertical-align:top">float</td><td style="vertical-align:top">1.0e-03</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Maximum difference in position (in percent of the current m/z).<BR>Note that big values of variation ( 1 being the maximum ) result in consideration of all possible pairings which has a running time of O(n*n)</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>int_cnt</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">How the peak heights are used in the score.<BR>0 = product<BR>1 = sqrt(product)<BR>2 = sum<BR>3 = agreeing intensity<BR></td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>keeppeaks</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">0</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">Flag that states if peaks without alignment partner are kept in the consensus spectrum.</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>

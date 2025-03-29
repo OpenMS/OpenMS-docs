@@ -1,0 +1,50 @@
+<B>Parameters of this class are:</B><BR><BR>
+<table class="doxtable" border="1" width="100%" cellpadding="4">
+<tr><th>Name</th><th>Type</th><th>Default</th><th>Restrictions</th><th>Description</th></tr>
+<tr>
+  <td style="vertical-align:top"><b>basic_statistics</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, meta values for peak_number, sum_intensity, matched_ion_number, matched_intensity are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>list_of_ions_matched</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, meta values for matched_ions are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>max_series</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, meta values for max_series_type, max_series_size are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>S/N_statistics</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set to 1 isotope peaks of the product ion peaks are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>precursor_statistics</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, meta values for precursor_in_ms2 are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>topNmatch_fragmenterrors</b></td>
+  <td style="vertical-align:top">int</td><td style="vertical-align:top">7</td>
+  <td style="vertical-align:top">&nbsp;</td><td style="vertical-align:top">If set n > 0,  meta values for topN_meanfragmenterror, topN_MSEfragmenterror, topN_stddevfragmenterror are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>fragmenterror_statistics</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, meta values for median_fragment_error, IQR_fragment_error are added</td>
+</tr>
+<tr>
+  <td style="vertical-align:top"><b>terminal_series_match_ratio</b></td>
+  <td style="vertical-align:top">string</td><td style="vertical-align:top">true</td>
+  <td style="vertical-align:top">true, false</td><td style="vertical-align:top">If set, meta values for NTermIonCurrentRatio, CTermIonCurrentRatio are added</td>
+</tr>
+</table>
+<br>
+<b>Note:</b>
+<UL style="margin-top:0px;">
+  <LI> If a section name is documented, the documentation is displayed as tooltip.
+  <LI> Advanced parameter names are italic.
+</UL>
