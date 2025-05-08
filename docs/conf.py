@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'OpenMS'
-copyright = '2002 to present, OpenMS Inc'
+copyright = '2002-present, OpenMS Inc'
 author = 'OpenMS Team'
 
 
