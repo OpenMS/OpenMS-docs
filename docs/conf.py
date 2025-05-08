@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'OpenMS'
-copyright = '2023, OpenMS Inc'
+copyright = '2002-present, OpenMS Inc'
 author = 'OpenMS Team'
 
 
@@ -26,12 +26,12 @@ author = 'OpenMS Team'
 # built documents.
 #
 # The short major.minor.patch version.
-version = '3.3.0'
+version = '3.4.0'
 # Short version for the latest supported KNIME
 knime_version = '5.3.0'
 
 # The full version, including alpha/beta/rc tags.
-release = '3.3.0'
+release = '3.4.0'
 
 # -- General configuration ---------------------------------------------------
 
