@@ -11,4 +11,5 @@ sphinx-design
 sphinx-notfound-page
 sphinx-inline-tabs
 sphinx-hoverxref
+# Dependency of Sphinx, the 3.0 release breaks it (currently)
 snowballstemmer<3
