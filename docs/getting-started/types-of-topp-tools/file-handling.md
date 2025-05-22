@@ -39,14 +39,14 @@ TOPP tools now support writing compressed .mzML.gz files for efficient storage. 
 
 `PeakPickerHiRes -in input.mzML -out output.mzML.gz -threads 8`
 
-Compression uses pigz (parallel gzip) if installed for faster performance, falling back to Boost's gzip otherwise. When using pigz, OpenMS limits threads to the user-specified value (e.g., -threads 8) via omp_get_max_threads(), ensuring compatibility with cluster schedulers. Install pigz for optimal speed.
+Compression uses pigz (parallel gzip) if installed for faster performance, falling back to OpenMS's internal compression mechanism otherwise. When using pigz, OpenMS limits threads to the user-specified value (e.g., -threads 8) via omp_get_max_threads(), ensuring compatibility with cluster schedulers. Install pigz for optimal speed.
 
 Trade-offs:
 
 Efficiency: .mzML.gz files are 2-3x smaller; pigz is significantly faster but CPU-intensive.
 Compatibility: Ensure downstream tools support .mzML.gz.
 
-This feature, integrated into MzMLHandler::writeTo, supports indexed mzML and enhances data management.
+This feature supports indexed mzML and enhances data management.
 
 ## Converting between DTA and mzML
 
