@@ -35,18 +35,24 @@ formats of the input and output file can be given explicitly.
 
 ## Compression of mzML files
 
-TOPP tools now support writing compressed .mzML.gz files for efficient storage. For example, PeakPickerHiRes can output compressed files:
+
+OpenMS has supported **reading** of compressed mzML, mzXML, and mzData for a long time.
+
+Since OpenMS 3.5, TOPP tools that produce mzML output files also support **writing** compressed gzipped `.mzML.gz` files.
+To enable compression, simply use `mzML.gz` instead of `.mzML` as the output filename.
+
+ For example, PeakPickerHiRes can output compressed files like this:
 
 `PeakPickerHiRes -in input.mzML -out output.mzML.gz -threads 8`
 
-Compression uses pigz (parallel gzip) if installed for faster performance, falling back to OpenMS's internal compression mechanism otherwise. When using pigz, OpenMS limits threads to the user-specified value (e.g., -threads 8) via omp_get_max_threads(), ensuring compatibility with cluster schedulers. Install pigz for optimal speed.
+Compression uses the `pigz` (parallel gzip) tool, if installed, or falls back to OpenMS's internal compression mechanism otherwise. `pigz` offers faster compression speed, even if only using one thread. The number of threads used for compression is determined by the usual `-threads <n>` flag of the TOPP tool.
+Without pigz, the internal gzip compressor is used, which only supports a single thread, irrespective of the value given in `-threads <n>`.
 
-Trade-offs:
 
-Efficiency: .mzML.gz files are 2-3x smaller; pigz is significantly faster but CPU-intensive.
-Compatibility: Ensure downstream tools support .mzML.gz.
+compression efficiency: `.mzML.gz` files are typically 2-3x smaller
+compression speed: `pigz` is significantly faster than the internal compression. Install `pigz` if possible (it's available via the usual package managers), 
 
-This feature supports indexed mzML and enhances data management.
+
 
 ## Converting between DTA and mzML
 
