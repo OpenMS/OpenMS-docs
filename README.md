@@ -53,7 +53,6 @@ Now, open index.html file to view the changes or output of OpenMS ReadTheDocs do
 
 ## Contributing to OpenMS Docs
 
-Please read our [contributing guidelines](.github/CONTRIBUTING.md), before starting with contributing to OpenMS
-Documentation.
+Please read our [contributing guidelines](.github/CONTRIBUTING.md) and [style guide](STYLE_GUIDE.md), before starting with contributing to OpenMS Documentation.
 
 Let us know what you would like to read in OpenMS documentation using [GitHub issues](https://github.com/OpenMS/OpenMS-docs/issues/new/choose)!
