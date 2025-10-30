@@ -67,8 +67,7 @@ Nightly tests: [CDASH](https://cdash.seqan.de/index.php?project=OpenMS).
 Consider the following resources for further information:
 
 - **Guidelines for adding new dependency libraries**: View the guidelines for [adding new dependency libraries](/manual/develop/developer-guidelines-for-adding-new-dependent-libraries.md).
--  **Experimental installers**: We automatically build installers for different platforms. These usually contain
-   unstable or partially untested code.
+-  **Binary installers**: We provide pre-built binary installers for different platforms.
    The latest stable installers are available on the [GitHub releases page](https://github.com/OpenMS/OpenMS/releases/latest).
 - **Developer FAQ**: Visit the [Developer FAQ](/manual/develop/developer-faq.md) to get answers to frequently asked questions.
 

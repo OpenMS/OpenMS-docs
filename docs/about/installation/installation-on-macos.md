@@ -10,7 +10,7 @@ macOS
 To install OpenMS on macOS, run the following steps:
 
 1. Download and install the macOS drag-and-drop installer from the [GitHub releases page](https://github.com/OpenMS/OpenMS/releases/latest).
-2.Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.pkg` installer file.
+2. Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.pkg` installer file.
 
 ```{image} /_images/installations/macos/Warning-openMS-3.3.0-macOS-Silicon.pkg-Not-Opened.png
 :alt: macOS warning message when opening OpenMS-<version>-macOS.pkg  
