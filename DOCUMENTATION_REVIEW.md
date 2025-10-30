@@ -15,7 +15,10 @@ Repository: OpenMS/OpenMS-docs
 - **Found:** 23 HTTP links that could use HTTPS
 - **Impact:** Security warnings in browsers, potential MITM vulnerabilities
 - **Action:** Updated 22 links to HTTPS
-- **Exception:** 1 link kept as HTTP - `http://rforge.net/` in R package installation command (R package repository URL must match exactly as specified)
+- **Exception:** 1 link kept as HTTP - `http://rforge.net/` in R package installation command
+  - This appears in R code: `install.packages('Rserve',,"http://rforge.net/",type="source")`
+  - Must remain HTTP as it's an exact repository URL used by R's package installer
+  - Changing to HTTPS could break the installation command for users
 - **Domains updated:**
   - nvie.com → https://nvie.com
   - cmake.org → https://cmake.org
