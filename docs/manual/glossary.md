@@ -104,7 +104,6 @@ proteins
   Proteins are vital parts of living organisms, with many functions, for example composing the structural fibers of
   muscle to the enzymes that catalyze the digestion of food to synthesizing and replicating DNA.
 
-Mascot
   A so-called search engine: It identifies peptide sequences from MS/MS spectra.
 
 HPLC-MS
