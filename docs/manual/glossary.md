@@ -105,7 +105,7 @@ proteins
   muscle to the enzymes that catalyze the digestion of food to synthesizing and replicating DNA.
 
 Mascot
-  A so-called search engine: It identifies peptide sequences from MS/MS spectra. Please find more information in the {term}`TOPP` [Documentation](https://openms.de/current_doxygen/html/TOPP_MascotAdapter.html).
+  A so-called search engine: It identifies peptide sequences from MS/MS spectra.
 
 HPLC-MS
   Data produced by High performance liquid chromatography (HPLC) separates components of a mixture, whereas mass
