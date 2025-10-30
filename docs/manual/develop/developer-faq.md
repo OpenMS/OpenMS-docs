@@ -46,9 +46,8 @@ Insert round brackets around the method declaration.
 
 ### Where can I find the binary installers created?
 
-View the binary installers at the [build archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/).
-Please verify the creation date of the individual installers, as there may have been an error while creating 
-the installer.
+View the binary installers on the [GitHub releases page](https://github.com/OpenMS/OpenMS/releases/latest).
+Please check the release date to ensure you are getting the most recent stable version.
 
 ## Troubleshooting
 
