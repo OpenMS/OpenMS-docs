@@ -245,7 +245,7 @@ knime-user-tutorial/quality-control.md
 [^1]: OpenMS, <a href="http://www.openms.de/">OpenMS home page</a> [online].
 
 [^2]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
-O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="http://dx.doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
+O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="https://doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
 (2008), <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-163">doi:10.1186/1471-2105-9-163</a>. 7, 83
 
 [^3]: H. L. Röst, T. Sachsenberg, S. Aiche, C. Bielow, H. Weisser, F. Aicheler, S. Andreotti,
@@ -254,9 +254,9 @@ software platform for mass spectrometry data analysis, Nature Methods 13(9),
 741–748 (2016). 7
 
 [^4]: O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
-M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
+M. Sturm, <a href="https://pubmed.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
 2007). 7, 83
 
 [^5]: M. R. Berthold, N. Cebron, F. Dill, T. R. Gabriel, T. Kötter, T. Meinl, P. Ohl, C. Sieb, K. Thiel, and B. Wiswedel, KNIME: The Konstanz Information Miner, in Studies in Classification, Data Analysis, and Knowledge Organization (GfKL 2007), Springer, 2007.
 
-[^6]: M. Sturm and O. Kohlbacher, <a href="http://dx.doi.org/10.1021/pr900171m">TOPPView: An Open-Source Viewer for Mass Spectrometry Data</a>, Journal of proteome research 8(7), 3760–3763 (July 2009), <a href="https://pubs.acs.org/doi/10.1021/pr900171m?cookieSet=1">doi:10.1021/pr900171m</a>. 7
+[^6]: M. Sturm and O. Kohlbacher, <a href="https://doi.org/10.1021/pr900171m">TOPPView: An Open-Source Viewer for Mass Spectrometry Data</a>, Journal of proteome research 8(7), 3760–3763 (July 2009), <a href="https://pubs.acs.org/doi/10.1021/pr900171m?cookieSet=1">doi:10.1021/pr900171m</a>. 7

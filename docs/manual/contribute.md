@@ -3,7 +3,7 @@ Contribute
 
 ## Reporting Bugs and Issues
 
-A list of known issues in the current OpenMS release can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/known_dev_bugs.html). 
+A list of known issues in the current OpenMS release can be found [here](https://abibuilder.cs.uni-tuebingen.de/archive/openms/Documentation/nightly/html/known_dev_bugs.html).
 Please check if your OpenMS version matches the current version and if the bug has already been reported.
 
 In order to report a new bug, please create a [GitHub issue](manual/contribute.md#Write and Label GitHub Issues) or [contact us](/about/communication.md).

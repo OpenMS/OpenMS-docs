@@ -91,7 +91,7 @@ To filter your data:
 
 1. Select a layer from the **Layers window**.
 
-  ![display selected layer](/_images/tutorials/toppview/layers-window.png)  
+  ![display selected layer](/_images/tutorials/toppview/layers-window.png)
 
 2. Open the **Data filters window** by clicking the tab at the bottom of the screen.
 

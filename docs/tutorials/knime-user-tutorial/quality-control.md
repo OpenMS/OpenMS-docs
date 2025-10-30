@@ -41,12 +41,12 @@ Import the workflow from {path}`Workflows,Quality Control,QC Metanodes.zip` by n
 R Dependencies: This section requires that the R packages `ggplot2` and scales are both installed. This is the same procedure as in this <a href="#advanced-visualization">section</a>. In case that you use an R installation where one or both of them are not yet installed, open the **R Snippet** nodes inside the metanodes you just used (double-click). Edit the script in the *R Script* text editor from:
 
 ```r
-#install.packages("ggplot2")  
+#install.packages("ggplot2")
 #install.packages("scales")
 ```
 to
 ```r
-install.packages("ggplot2")  
+install.packages("ggplot2")
 install.packages("scales")
 ```
 Press **Eval script** to execute the script.
@@ -73,14 +73,14 @@ We can also add brand new QC metrics to our qcML files. Remember the **Histogram
 - Edit the **R View (table)** by adding the *R Script* according to this:
 
 ```r
- #install.packages("ggplot2")   
-library("ggplot2")  
+ #install.packages("ggplot2")
+library("ggplot2")
 ggplot(knime.in, aes(x=peptide_charge)) +
- 
- geom_histogram(binwidth=1, origin =-0.5) +  
+
+ geom_histogram(binwidth=1, origin =-0.5) +
  scale_x_discrete() +
- 
- ggtitle("Identified peptides charge histogram") + 
+
+ ggtitle("Identified peptides charge histogram") +
  ylab("Count")
 ```
 

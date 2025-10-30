@@ -13,7 +13,7 @@ Naming conventions for the following apply:
 
 * A **local repository** is the repository that lies on your hard drive after cloning.
 * A **remote repository** is a repository on a git server such as GitHub.
-* A **fork** is a copy of a repository. Forking a repository allows you to freely experiment with changes without 
+* A **fork** is a copy of a repository. Forking a repository allows you to freely experiment with changes without
   affecting the original project.
 * **Origin** refers to a remote repository that you have forked. Call this repository `https://github.com/_YOURUSERNAME_/OpenMS`.
 * **Upstream** refers to the original remote OpenMS repository. Call this repository `https://github.com/OpenMS/OpenMS`.
@@ -66,7 +66,7 @@ $ git remote -v
 
 ```
 
-Fetch changes and new branches from your fork (`origin`) as well as from the central, upstream OpenMS repository by 
+Fetch changes and new branches from your fork (`origin`) as well as from the central, upstream OpenMS repository by
 executing:
 
 ```bash
@@ -161,7 +161,7 @@ The above commands:
 2. Applies all commits that have been integrated into `develop`.
 3. Reapplies your commits on top of the commits integrated into `develop`.
 
-For more information, refer to a [visual explanation of rebasing](http://git-scm.com/book/en/v2/Git-Branching-Rebasing).
+For more information, refer to a [visual explanation of rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
 
 ```{tip}
 Do not rebase published branches (e.g. branches that are part of a pull request). If you created a pull request, you

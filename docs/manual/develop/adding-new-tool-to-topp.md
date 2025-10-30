@@ -70,7 +70,7 @@ otherwise.
 
 - Create a resource file: Create a text file named `.rc` (e.g. TOPPView.rc) Insert the following line: 101 ICON
   "TOPPView.ico" , replacing TOPPView with your binary name. Put both files in `OpenMS/source/APPLICATIONS/TOPP/`
-  (similar files for other TOPP tools already present). Re-run cmake and re-link your TOPP tool. 
+  (similar files for other TOPP tools already present). Re-run cmake and re-link your TOPP tool.
 
 Voila. You should have an iconized TOPP tool.
 

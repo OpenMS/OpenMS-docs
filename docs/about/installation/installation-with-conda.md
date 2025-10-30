@@ -81,7 +81,7 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
    :::{tab-item} openms
    :sync: openms
 
-   ```{code-block} bash 
+   ```{code-block} bash
    conda install openms
    ```
    :::
@@ -119,7 +119,7 @@ obtain release versions (`bioconda` channel) and nightly versions (`openms` chan
    :::{tab-item} openms
    :sync: openms
 
-   ```{code-block} bash 
+   ```{code-block} bash
    conda install -c openms openms
    ```
    :::

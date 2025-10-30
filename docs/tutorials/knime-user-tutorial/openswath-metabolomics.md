@@ -47,15 +47,15 @@ We suggest do use a virtual environment for the Python 3 installation on windows
 2. Activate `py39` environment.
     ```bash
     conda activate py39
-    ```    
+    ```
 3. Install pip (see above).
 4. On the command line:
     ```bash
-    python -m pip install -U pip   
-    python -m pip install -U numpy  
+    python -m pip install -U pip
+    python -m pip install -U numpy
     python -m pip install -U pandas
- 
-    python -m pip install -U pyprophet 
+
+    python -m pip install -U pyprophet
     python -m pip install -U pyopenms
     ```
 
@@ -73,11 +73,11 @@ We suggest do use a virtual environment for the Python 3 installation on Mac. He
     ```
 3. On the Terminal:
     ```bash
-    python -m pip install -U pip   
-    python -m pip install -U numpy  
+    python -m pip install -U pip
+    python -m pip install -U numpy
     python -m pip install -U pandas
- 
-    python -m pip install -U pyprophet 
+
+    python -m pip install -U pyprophet
     python -m pip install -U pyopenms
     ```
 
@@ -90,12 +90,12 @@ Use your package manager apt-get or yum, where possible.
 3. Install setuptools (Debian/RedHat: python-setuptools).
 4. On the Terminal:
     ```bash
-    python -m pip install -U pip   
-    python -m pip install -U numpy  
+    python -m pip install -U pip
+    python -m pip install -U numpy
     python -m pip install -U pandas
- 
-    python -m pip install -U pyprophet 
-    python -m pip install -U pyopenms 
+
+    python -m pip install -U pyprophet
+    python -m pip install -U pyopenms
     ```
 
 ## Benchmark data

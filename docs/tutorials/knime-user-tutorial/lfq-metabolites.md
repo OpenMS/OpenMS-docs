@@ -3,7 +3,7 @@ Label-free quantification of metabolites
 
 ## Introduction
 
-Quantification and identification of chemical compounds are basic tasks in metabolomic studies. In this tutorial session we construct a UPLC-MS based, label-free quantification and identification workflow. Following quantification and identification we then perform statistical downstream analysis to detect quantification values that differ significantly between two conditions. This approach can, for example, be used to detect biomarkers. 
+Quantification and identification of chemical compounds are basic tasks in metabolomic studies. In this tutorial session we construct a UPLC-MS based, label-free quantification and identification workflow. Following quantification and identification we then perform statistical downstream analysis to detect quantification values that differ significantly between two conditions. This approach can, for example, be used to detect biomarkers.
 
 Here, we analyze a dataset derived from bacterial cytosolic fractions to investigate the metabolic effects of fosfomycin, an antibiotic that inhibits a key step in peptidoglycan biosynthesis. The study is based on *Bacillus subtilis* cultures subjected to different treatment conditions.
 
@@ -155,8 +155,6 @@ The `FeatureLinkerUnlabeledKD` output can be visualized in TOPPView on top of th
 |Figure 35: Visualization of .consensusXML output over the .mzML and .featureXML ’layer’.|
 
 ## Basic metabolite identification
-<!-- TODO: Ensure this works with new dataset, at least changing metabolite db to B. subtilis is needed -->
-<!-- Might Remove Start -->
 At the current state we found several metabolites in the individual maps but so far don’t know what they are. To identify metabolites, OpenMS provides multiple tools, including search by mass: the AccurateMassSearch node searches observed masses against the Human Metabolome Database (HMDB)[^1]<sup>,</sup> [^2]<sup>,</sup> [^3]. We start with the workflow from the previous section (see <a href="#figure-34">Figure 34</a>).
 
 - Add a **FileConverter** node (**Community Nodes** > **OpenMS** > **File Handling**) and connect the output of the FeatureLinkerUnlabeledKD to the incoming port.
@@ -237,7 +235,6 @@ Have a look at the `Column Filter` node to reduce the table to the interesting c
 Try to compute and visualize the m/z and retention time error of the different feature elements (from the input maps) of each consensus feature. Hint: A nicely configured **Math Formula (Multi Column)** node should suffice.
 </div>
 
-<!-- Might Remove End -->
 
 ## Identifying Metabolites Using Spectral Libraries
 

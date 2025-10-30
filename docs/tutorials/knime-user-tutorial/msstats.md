@@ -61,7 +61,7 @@ regularly needed if column names contain spaces, tabs or other special character
 ## Using MSstats in a KNIME workflow
 
 The R package `MSstats` can be used for statistical relative quantification of proteins and peptides in mass spectrometry-based proteomics. Supported are label-free as well as labeled experiments in combination with data-dependent, targeted and data independent acquisition. Inputs can be identified and quantified entities (peptides or proteins) and the output is a list of differentially abundant entities, or summaries of their relative abundance. It depends on accurate feature detection, identification
-and quantification which can be performed e.g. by an OpenMS workflow. MSstats can be used for data processing & visualization, as well as statistical modeling & inference. Please see [^1] and the [MSstats](http://msstats.org) website for further
+and quantification which can be performed e.g. by an OpenMS workflow. MSstats can be used for data processing & visualization, as well as statistical modeling & inference. Please see [^1] and the [MSstats](https://msstats.org) website for further
 information.
 
 ### Identification and quantification of the iPRG2015 data with subsequent MSstats analysis
@@ -270,13 +270,13 @@ This matrix has the following properties:
 We can generate such a matrix in R using the following code snippet in (for example) a new **R to R** node that takes over the R workspace from the previous node with all its variables:
 
 ```r
-comparison1<-matrix(c(-1,1,0,0),nrow=1)   
+comparison1<-matrix(c(-1,1,0,0),nrow=1)
 comparison2<-matrix(c(-1,0,1,0),nrow=1)
 
-comparison3<-matrix(c(-1,0,0,1),nrow=1)  
+comparison3<-matrix(c(-1,0,0,1),nrow=1)
 comparison4<-matrix(c(0,-1,1,0),nrow=1)
 
-comparison5<-matrix(c(0,-1,0,1),nrow=1)  
+comparison5<-matrix(c(0,-1,0,1),nrow=1)
 comparison6<-matrix(c(0,0,-1,1),nrow=1)
 
 comparison <- rbind(comparison1, comparison2, comparison3, comparison4, comparison5, comparison6)
@@ -296,22 +296,22 @@ No more parameters need to be set for performing the comparison.
 In a next R to R node, the results are being processed. The following code snippet will rename the spiked-in proteins to A,B,C,D,E, and F and remove the names of other proteins, which will be beneficial for the subsequent visualization, as for example performed in <a href="#figure-20">Figure 20</a>:
 
 ```r
-  test.MSstats.cr <- test.MSstats$ComparisonResult   
+  test.MSstats.cr <- test.MSstats$ComparisonResult
 
 
-  # Rename spiked ins to A,B,C....  
+  # Rename spiked ins to A,B,C....
   pnames <- c("A", "B", "C", "D", "E", "F")
 
-  names(pnames) <- c(  
-  "sp|P44015|VAC2_YEAST",  
+  names(pnames) <- c(
+  "sp|P44015|VAC2_YEAST",
   "sp|P55752|ISCB_YEAST",
 
-  "sp|P44374|SFG2_YEAST",  
-  "sp|P44983|UTR6_YEAST",  
+  "sp|P44374|SFG2_YEAST",
+  "sp|P44983|UTR6_YEAST",
   "sp|P44683|PGA4_YEAST",
 
-  "sp|P55249|ZRT4_YEAST"  
-  )  
+  "sp|P55249|ZRT4_YEAST"
+  )
 
   test.MSstats.cr.spikedins <- bind_rows(
 
@@ -325,8 +325,8 @@ In a next R to R node, the results are being processed. The following code snipp
 
   test.MSstats.cr[grep("P44983", test.MSstats.cr$Protein),],
 
-  test.MSstats.cr[grep("P55249", test.MSstats.cr$Protein),]  
-  )  
+  test.MSstats.cr[grep("P55249", test.MSstats.cr$Protein),]
+  )
   # Rename Proteins
 
   test.MSstats.cr.spikedins$Protein <- sapply(test.MSstats.cr.spikedins$Protein, function(x) {pnames[as.character(x)]})
@@ -336,13 +336,13 @@ In a next R to R node, the results are being processed. The following code snipp
   test.MSstats.cr$Protein <- sapply(test.MSstats.cr$Protein, function(x) {
 
 
-    x <- as.character(x)  
+    x <- as.character(x)
 
     if (x %in% names(pnames)) {
 
 
-      return(pnames[as.character(x)])  
-      } else {  
+      return(pnames[as.character(x)])
+      } else {
       return("")
 
     }
@@ -355,7 +355,7 @@ In a next R to R node, the results are being processed. The following code snipp
 The last four nodes, each connected and making use of the same workspace from the last node, will export the results to a textual representation and volcano plots for further inspection. Firstly, quality control can be performed with the following snippet:
 
 ```r
-qcplot <- dataProcessPlots(processed.quant, type="QCplot",   
+qcplot <- dataProcessPlots(processed.quant, type="QCplot",
         ylimDown=0,
 
 which.Protein = 'allonly',
@@ -423,7 +423,7 @@ Please import the workflow from {path}`Workflows,Identificationquantificationiso
 
 The R package `MSstatsTMT` can be used for protein significance analysis in shotgun mass spectrometry-based proteomic experiments with tandem mass tag (TMT) labeling. `MSstatsTMT` provides functionality for two types of analysis & their visualization: Protein summarization based on peptide quantification and Model-based group comparison to detect significant changes in abundance. It depends on accurate feature detection, identification and quantification which can be performed e.g. by an OpenMS workflow.
 
-In general, `MSstatsTMT` can be used for data processing & visualization, as well as statistical modeling. Please see [^3] and the [MSstats](http://msstats.org/msstatstmt/) website for further information.
+In general, `MSstatsTMT` can be used for data processing & visualization, as well as statistical modeling. Please see [^3] and the [MSstats](https://msstats.org/msstatstmt/) website for further information.
 
 There is also an [online lecture](https://youtu.be/3CDnrQxGLbA) and tutorial for `MSstatsTMT` from the May Institute Workshop 2020.
 
@@ -557,43 +557,43 @@ processed.data <- OpenMStoMSstatsTMTFormat(data)
 Afterwards different normalization steps are performed (global, protein, runs) as well as data imputation by using the msstats method. In addition peptide level data is summarized to protein level data.
 
 ```r
-quant.data <- proteinSummarization(processed.data,   
+quant.data <- proteinSummarization(processed.data,
                                   method="msstats",
 
-                                  global_norm=TRUE,  
+                                  global_norm=TRUE,
                                   reference_norm=TRUE,
 
-                                  MBimpute = TRUE,  
+                                  MBimpute = TRUE,
                                   maxQuantileforCensored = NULL,
 
                                   remove_norm_channel = TRUE,
                                   remove_empty_channel =  TRUE)
 ```
 
-There a lot of different possibilities to configure this method please have a look at the MSstatsTMT package for [additional detailed information](http://bioconductor.org/packages/release/bioc/html/MSstatsTMT.html).
+There a lot of different possibilities to configure this method please have a look at the MSstatsTMT package for [additional detailed information](https://bioconductor.org/packages/release/bioc/html/MSstatsTMT.html).
 
 The next step is the comparions of the different conditions, here either a pairwise comparision can be performed or a confusion matrix can be created. The goal is to detect and compare the UPS peptides spiked in at different concentrations.
 
 ```r
-# prepare contrast matrix   
-unique(quant.data$Condition)  
+# prepare contrast matrix
+unique(quant.data$Condition)
 
 comparison<-matrix(c(-1,0,0,1,
 
-                     0,-1,0,1,  
+                     0,-1,0,1,
                      0,0,-1,1,
 
-                     0,1,-1,0,  
-                     1,-1,0,0), nrow=5, byrow = T)  
+                     0,1,-1,0,
+                     1,-1,0,0), nrow=5, byrow = T)
 
 
-# Set the names of each row  
+# Set the names of each row
 row.names(comparison)<- contrasts <- c("1-0125",
 
-                                       "1-05",  
+                                       "1-05",
                                        "1-0667",
 
-                                       "05-0667",  
+                                       "05-0667",
                                        "0125-05")
 
 # Set the column names
@@ -603,7 +603,7 @@ colnames(comparison)<- c("0.125", "0.5", "0.667", "1")
 The constructed confusion matrix is used in the `groupComparisonTMT` function to test for significant changes in protein abundance across conditions based on a family of linear mixed-effects models in TMT experiments.
 
 ```r
-data.res <- groupComparisonTMT(data = quant.data,   
+data.res <- groupComparisonTMT(data = quant.data,
                                contrast.matrix = comparison,
 
                                moderated = TRUE, # do moderated t test
@@ -615,7 +615,7 @@ data.res <- data.res %>% filter(!is.na(Protein))
 In the next step the comparison can be plotted using the `groupComparisonPlots` function by `MSstats`.
 
 ```r
-library(MSstats)  
+library(MSstats)
 groupComparisonPlots(data=data.res.mod, type="VolcanoPlot", address=F, which.Comparison = "0125-05", sig = 0.05)
 ```
 
@@ -634,7 +634,7 @@ The isobaric analysis does not always has to be performed on protein level, for 
 
 ## References
 
-[^1]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311, arXiv:http://dx.doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
+[^1]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311, arXiv:https://doi.org/10.1021/pr500665j, doi:10.1021/pr500665j. 30
 
 [^2]: M. Choi, Z. F. Eren-Dogu, C. Colangelo, J. Cottrell, M. R. Hoopmann, E. A. Kapp,
 S. Kim, H. Lam, T. A. Neubert, M. Palmblad, B. S. Phinney, S. T. Weintraub, B. MacLean, and O. Vitek, ABRF Proteome Informatics Research Group (iPRG)
