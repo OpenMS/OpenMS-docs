@@ -14,7 +14,8 @@ Repository: OpenMS/OpenMS-docs
 ### 2. Insecure HTTP Links (FIXED ✅)
 - **Found:** 23 HTTP links that could use HTTPS
 - **Impact:** Security warnings in browsers, potential MITM vulnerabilities
-- **Action:** Updated 22 links to HTTPS (1 R package repo kept as HTTP)
+- **Action:** Updated 22 links to HTTPS
+- **Exception:** 1 link kept as HTTP - `http://rforge.net/` in R package installation command (R package repository URL must match exactly as specified)
 - **Domains updated:**
   - nvie.com → https://nvie.com
   - cmake.org → https://cmake.org
