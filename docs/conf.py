@@ -133,6 +133,7 @@ html_css_files = [
 ]
 
 html_js_files = [
+    'js/matomo.js',  # Matomo tracking code for openms.matomo.cloud
     'js/piwik.js',  # For tracking user statistics on openms-web.piwik.pro
     'js/gmc.min.js',  # GitHub Manyfaced Cards for showcasing GitHub repos (e.g. nf-core workflows)
 ]
