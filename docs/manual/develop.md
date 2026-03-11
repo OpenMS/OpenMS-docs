@@ -8,6 +8,12 @@ To contribute to OpenMS:
 
 For any questions, please [contact us](/about/communication.md).
 
+**New to the project?** Start with our [Contributor Onboarding Guide](https://openms.de/onboarding) to understand project structure and communication channels.
+
+**Ready to contribute code?** See [CONTRIBUTING.md](https://github.com/OpenMS/OpenMS/blob/develop/CONTRIBUTING.md) for workflow and process guidelines.
+
+This guide covers technical details for active developers.
+
 ## Technical documentation
 
 ```{note}
@@ -22,20 +28,9 @@ See the documentation for the [latest release](https://abibuilder.cs.uni-tuebing
 
 ## Contribution guidelines
 
-Before contributing to OpenMS, read information on the development model and conventions followed to maintain a coherent
-code base.
+For detailed contribution workflows, pull request checklists, issue reporting guidelines, and OpenMS-specific development processes, see the canonical [CONTRIBUTING.md](https://github.com/OpenMS/OpenMS/blob/develop/CONTRIBUTING.md) in the main repository.
 
-### Development model
-
-OpenMS follows the [Gitflow development workflow](http://nvie.com/posts/a-successful-git-branching-model/).
-
-Every contributor is encouraged to create their own fork (even if they are eligible to push directly to OpenMS).
-To create a fork:
-
-1. Follow the documentation on [forking](https://help.github.com/articles/fork-a-repo).
-2. Keep your fork [up-to-date](https://help.github.com/articles/syncing-a-fork).
-3. Create a [pull request](https://help.github.com/articles/using-pull-requests). Before opening the pull request, please
-   view the [pull request guidelines](/manual/contribute/pull-request-checklist.md).
+This developer guide focuses on technical implementation details below.
 
 ### Coding conventions
 
