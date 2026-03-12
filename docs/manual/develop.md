@@ -8,7 +8,7 @@ To contribute to OpenMS:
 
 For any questions, please [contact us](/about/communication.md).
 
-**New to the project?** Start with our [Contributor Onboarding Guide](https://openms.de/onboarding) to understand project structure and communication channels.
+**New to the project?** Start with our [Contributor Onboarding Guide](https://openms.de/contribute) to understand project structure and communication channels.
 
 **Ready to contribute code?** See [CONTRIBUTING.md](https://github.com/OpenMS/OpenMS/blob/develop/CONTRIBUTING.md) for workflow and process guidelines.
 
