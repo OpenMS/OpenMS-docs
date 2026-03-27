@@ -25,8 +25,8 @@ The windows installer works with Windows 10 and 11 (older versions might still w
 
    > "The installation of the Microsoft .NET 3.5 SP1 package failed!"
 
-   You must download and install it manually in order for Proteowizard to work.
-   This should only happen if installation is done by selecting the "Third Party - Proteowizard" components. The reason is
+   You must download and install it manually in order for ProteoWizard to work.
+   This should only happen if installation is done by selecting the "Third Party - ProteoWizard" components. The reason is
    usually that **.NET 3.5 SP1** is already installed (see Windows Control Panel). If it's not installed, follow the
    instructions of the error message.
 
@@ -52,4 +52,4 @@ The windows installer works with Windows 10 and 11 (older versions might still w
 4. For Win8 or later, Windows will report an error while installing `.net4` as it's mostly included. But it might occur
    that `.net3.5` does not get properly installed during the process.
 
-Fix is to enable the .NET Framework 3.5 yourself through Control Panel. See this [Microsoft help page](https://learn.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows) for detailed information. Even if this step fails, this does not affect the functionality of OpenMS, except for the executability of included third-party tools (ProteoWizard).
+   Fix is to enable the .NET Framework 3.5 yourself through Control Panel. See this [Microsoft help page](https://learn.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows) for detailed information. Even if this step fails, this does not affect the functionality of OpenMS, except for the executability of included third-party tools (ProteoWizard).
