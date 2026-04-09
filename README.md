@@ -1,3 +1,6 @@
+
+NOTE: !!! This repo has been merged into the OpenMS/OpenMS repo as a subtree !!!
+
 OpenMS Documentation
 ====================
 
