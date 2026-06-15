@@ -13,8 +13,8 @@ To install OpenMS on macOS, run the following steps:
 2.Double click on the downloaded file. It will start to open the `OpenMS-<version>-macOS.pkg` installer file.
 
 ```{image} /_images/installations/macos/Warning-openMS-3.3.0-macOS-Silicon.pkg-Not-Opened.png
-:alt: macOS warning message when opening OpenMS-<version>-macOS.pkg  
-:width: 500px  
+:alt: macOS warning message when opening OpenMS-<version>-macOS.pkg
+:width: 500px
 ```
 **Why This Warning Appears:**
 
@@ -24,39 +24,39 @@ The warning indicates that the OpenMS installer hasn't been notarized or recogni
 
 Bypassing Gatekeeper to Install OpenMS on macOS
 
-A. Bypassing Gatekeeper Using System Settings 
+A. Bypassing Gatekeeper Using System Settings
 
-1. Open **System Settings**.  
-2. Navigate to **Privacy & Security**.  
-3. Under the **Security** section, locate the message about the blocked application.  
-4. Click the **Open Anyway** button .  
+1. Open **System Settings**.
+2. Navigate to **Privacy & Security**.
+3. Under the **Security** section, locate the message about the blocked application.
+4. Click the **Open Anyway** button .
 
 ```{image} /_images/installations/macos/Bypassing-Gatekeeper-to-Install-OpenMS-on-macOS.png
-:alt: Bypassing Gatekeeper on macOS  
-:width: 500px  
+:alt: Bypassing Gatekeeper on macOS
+:width: 500px
 ```
-B. Bypassing Gatekeeper Using Command-Line    
+B. Bypassing Gatekeeper Using Command-Line
 
-For users comfortable with the command line, you can bypass the security warning using Terminal:  
+For users comfortable with the command line, you can bypass the security warning using Terminal:
 
-1. Open **Terminal**.  
-2. Navigate to the directory containing the installer using the `cd` command:  
+1. Open **Terminal**.
+2. Navigate to the directory containing the installer using the `cd` command:
 
    ```bash
    cd /path/to/installer
    ```
-3. Run the following command to remove the quarantine attribute:   
+3. Run the following command to remove the quarantine attribute:
 
    ```bash
    xattr -d com.apple.quarantine OpenMS-<version>-macOS.pkg
    ```
-By following these steps, you’re instructing macOS to trust the OpenMS installer and allow its execution. Ensure that you’ve downloaded the installer from a **trusted source** (i.e., build archive of the Unversity of Tübingen or OpenMS' GitHub artifacts) before proceeding.     
+By following these steps, you’re instructing macOS to trust the OpenMS installer and allow its execution. Ensure that you’ve downloaded the installer from a **trusted source** (i.e., build archive of the Unversity of Tübingen or OpenMS' GitHub artifacts) before proceeding.
 
-4. Install OpenMS 
+4. Install OpenMS
 
 ```{image} /_images/installations/macos/Installation-successful-message.png
-:alt: OpenMS installation started on macOS  
-:width: 500px  
+:alt: OpenMS installation started on macOS
+:width: 500px
 ```
 
 5. Agree to the license agreements.
@@ -69,8 +69,8 @@ By following these steps, you’re instructing macOS to trust the OpenMS install
 6. Installation Confirmation
 
 ```{image} /_images/installations/macos/Installation-successful-message.png
-:alt: OpenMS installation successful  
-:width: 500px  
+:alt: OpenMS installation successful
+:width: 500px
 ```
 
 To use {term}`TOPP` as regular app in the shell, add the following lines to the `~/.profile` file.
@@ -78,7 +78,7 @@ To use {term}`TOPP` as regular app in the shell, add the following lines to the 
 :::{warning} Known Installer Issues
 
 1. Nothing happens when you click OpenMS apps or the validity of the developer could not be confirmed.
-   
+
    This usually means the OpenMS software lands in quarantine even after installation of the `.pkg`. This was more common with our older `.dmg` image but may still happen.
    Since macOS Catalina (maybe also Mojave) all apps and executables have to be officially notarized by Apple but we
    currently do not have the resources for a streamlined notarization workflow.
@@ -91,7 +91,7 @@ To use {term}`TOPP` as regular app in the shell, add the following lines to the 
    cd /Applications/OpenMS-<version>
    sudo xattr -r -d com.apple.quarantine *
    ```
-   
+
 2. Bug with running Java based thirdparty tools like {term}`MSGFPlusAdapter` and {term}`LuciphorAdapter` from within **TOPPAS.app**
 
    If you face issues while running Java based thirdparty tools from within {term}`TOPPAS.app <TOPPAS>`, run the {term}`TOPPAS.app <TOPPAS>`

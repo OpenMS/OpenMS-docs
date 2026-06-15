@@ -2,13 +2,13 @@ External Code using OpenMS
 ==========================
 
 If OpenMS' TOPP tools are not enough in a certain scenario, you can either request a change to OpenMS, if you
-feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are 
+feel this functionality is useful for others as well, or modify/extend OpenMS privately. For the latter, there are
 multiple ways to do this:
 
 - Modify the developer version of OpenMS by changing existing tools or adding new ones.
 - Use an **External Project** to write a new tool, while not touching OpenMS itself (see below on how to do that).
 
-Once you've finished your new tool, and it only needs to run on the development machine. To ship it to a new client 
+Once you've finished your new tool, and it only needs to run on the development machine. To ship it to a new client
 machine, see, read further in this document.
 
 ## Compiling external code
@@ -17,7 +17,7 @@ It is very easy to set up an environment to write your own programs using OpenMS
 the source package of OpenMS/TOPP properly.
 
 ```{note}
-You cannot use the `install` target when working with the development version of OpenMS, it must be built and used 
+You cannot use the `install` target when working with the development version of OpenMS, it must be built and used
 within the build tree.
 ```
 
@@ -74,9 +74,9 @@ endif(OpenMS_FOUND)
 ```
 
 The command `project` defines the name of the project, the name is only of interest of you're working in an IDE or want
-to export this project's targets. To compile the program, append it to the `my_executables` list. If you use object 
-files (classes which do not contain a main program), append them to the `my_sources` list. In the next step CMake 
-creates a statically linked library of the object files, listed in `my_sources`. This simple CMakeLists.txt example can 
+to export this project's targets. To compile the program, append it to the `my_executables` list. If you use object
+files (classes which do not contain a main program), append them to the `my_sources` list. In the next step CMake
+creates a statically linked library of the object files, listed in `my_sources`. This simple CMakeLists.txt example can
 be extended to also build shared libraries, include other external libraries and so on.
 
 An example external project can be found in `OpenMS/share/OpenMS/examples/external_code`. Copy these files to a separate
@@ -112,7 +112,7 @@ In short:
 - copy the `OpenMS/share/OpenMS` directory to the client machine (e.g `<client/my_dir>/share`) and set the environment
   variable `OPENMS_DATA_PATH` to this directory
 - copy the OpenMS library (`OpenMS.dll` for Windows or `OpenMS.so/.dylib` for Linux/macOS) to `<client/my_dir>/bin`.
-- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4 
+- copy all Qt4 libraries to the client `<client/my_dir>/bin` or on Linux/macOS make sure you have installed the Qt4
   package.
 - [Windows only] copy Xerces dll (see `contrib/lib`) to `<client/my_dir>/bin`
 - [Windows only] install the VS redistributable package (see Microsoft Homepage) on the client machine which corresponds

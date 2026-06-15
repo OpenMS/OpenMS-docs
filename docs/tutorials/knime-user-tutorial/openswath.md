@@ -3,7 +3,7 @@ OpenSWATH
 
 ## Introduction
 
-[OpenSWATH](http://openswath.org/en/latest/index.html) [^3] allows the analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet *et al*. [^4]. The DIA approach described there uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquires a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete “snapshots” of all fragments of a specific window every 3.2 seconds.
+[OpenSWATH](https://openswath.org/en/latest/index.html) [^3] allows the analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet *et al*. [^4]. The DIA approach described there uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquires a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete “snapshots” of all fragments of a specific window every 3.2 seconds.
 The analysis approach described by Gillet et al. extracts ion traces of specific fragment ions from all MS2 spectra that have the same precursor isolation window, thus generating data that is very similar to SRM traces.
 
 ## Installation of OpenSWATH
@@ -12,7 +12,7 @@ OpenSWATH has been fully integrated since OpenMS 1.10 [^2]<sup>,</sup> [^1]<sup>
 
 ## Installation of mProphet
 
-mProphet[^8] is available as standalone script in {path}`External_Tools,mProphet` or can be downloaded [here](https://github.com/OpenMS/OpenMS-Tutorials/releases/download/data-and-tools-OpenMSv2.0.0/External_Tools.zip). [R](http://www.r-project.org/) and the package [MASS](http://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
+mProphet[^8] is available as standalone script in {path}`External_Tools,mProphet` or can be downloaded [here](https://github.com/OpenMS/OpenMS-Tutorials/releases/download/data-and-tools-OpenMSv2.0.0/External_Tools.zip). [R](https://www.r-project.org/) and the package [MASS](https://cran.r-project.org/web/packages/MASS/) are further required to execute mProphet. Please obtain a version for either Windows, Mac or Linux directly from CRAN.
 PyProphet, a much faster reimplementation of the mProphet algorithm is available from [PyPI](https://pypi.python.org/pypi/pyprophet/). The usage of pyprophet instead of mProphet is suggested for large-scale applications.
 
 mProphet will be used in this tutorial.
@@ -94,7 +94,7 @@ Use transition for peptidoform inference using IPF. (0)
 
 Use transition to quantify peak group. (1)
 
-For further instructions about generic transition list and assay library generation please see the following [link](http://openswath.org/en/latest/docs/generic.html).
+For further instructions about generic transition list and assay library generation please see the following [link](https://openswath.org/en/latest/docs/generic.html).
 To convert transitions lists to TraML, use the TargetedFileConverter: Please use the absolute path to your OpenMS installation.
 
 **Linux or Mac**
@@ -166,21 +166,21 @@ Please note that due to the semi-supervised machine learning approach of mProphe
 |Figure 44: OpenSWATH KNIME Workflow.|
 
 Additionally, the chromatogram output (.mzML) can be visualized for inspection with TOPPView.
-For additional instructions on how to use pyProphet instead of mProphet please have a look at the [PyProphet Legacy Workflow](http://openswath.org/en/latest/docs/pyprophet_legacy.html). If you want to use the SQLite-based workflow in your lab in the future, please have a look [here](http://openswath.org/en/latest/docs/pyprophet.html). The SQLite-based workflow will not be part of the tutorial.
+For additional instructions on how to use pyProphet instead of mProphet please have a look at the [PyProphet Legacy Workflow](https://openswath.org/en/latest/docs/pyprophet_legacy.html). If you want to use the SQLite-based workflow in your lab in the future, please have a look [here](https://openswath.org/en/latest/docs/pyprophet.html). The SQLite-based workflow will not be part of the tutorial.
 
 ## From the example dataset to real-life applications
 
-The sample dataset used in this tutorial is part of the larger SWATH MS Gold Standard (SGS) dataset which is described in the publication of Roest *et al.*[^3]. It contains one of 90 SWATH-MS runs with significant data reduction (peak picking of the raw, profile data) to make file transfer and working with it easier. Usually SWATH-MS datasets are huge with several gigabyte per run. Especially when complex samples in combination with large assay libraries are analyzed, the TOPP tool based workflow requires a lot of computational resources. Additional information and instruction can be found at the following [link](http://openswath.org/en/latest/).
+The sample dataset used in this tutorial is part of the larger SWATH MS Gold Standard (SGS) dataset which is described in the publication of Roest *et al.*[^3]. It contains one of 90 SWATH-MS runs with significant data reduction (peak picking of the raw, profile data) to make file transfer and working with it easier. Usually SWATH-MS datasets are huge with several gigabyte per run. Especially when complex samples in combination with large assay libraries are analyzed, the TOPP tool based workflow requires a lot of computational resources. Additional information and instruction can be found at the following [link](https://openswath.org/en/latest/).
 
 
 ## References
 
 [^1]: M. Sturm, A. Bertsch, C. Gröpl, A. Hildebrandt, R. Hussong, E. Lange, N. Pfeifer,
-O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="http://dx.doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
+O. Schulz-Trieglaff, A. Zerck, K. Reinert, and O. Kohlbacher, <a href="https://doi.org/10.1186/1471-2105-9-163">OpenMS - an opensource software framework for mass spectrometry</a>., BMC bioinformatics 9(1)
 (2008), <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-163">doi:10.1186/1471-2105-9-163</a>. 7, 83
 
 [^2]: O. Kohlbacher, K. Reinert, C. Gröpl, E. Lange, N. Pfeifer, O. Schulz-Trieglaff, and
-M. Sturm, <a href="http://view.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
+M. Sturm, <a href="https://pubmed.ncbi.nlm.nih.gov/pubmed/17237091">TOPP–the OpenMS proteomics pipeline</a>., Bioinformatics 23(2) (Jan.
 2007). 7, 83
 
 [^3]: H. L. Röst, G. Rosenberger, P. Navarro, L. Gillet, S. M. Miladinovic, O. T. Schubert, W. Wolski, B. C. Collins, J. Malmstrom, L. Malmström, and R. Aebersold,

@@ -5,13 +5,13 @@ Windows
 
 To Install the binary package of OpenMS & {term}`TOPP`:
 
-1. Download the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/) 
+1. Download the installer `OpenMS-<version>-Win64.exe` from the [archive](https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/latest/)
 2. Execute the installer under the user account that later runs OpenMS and follow its instructions.
-   
+
    You may see a Windows Defender Warning, since our installer is not digitally signed.
-   
+
    Click on "More Info", and then "Run anyways".
-   
+
    ![](/_images/installations/win/smartscreen.gif)
 
    When asked for an admin authentication, please enter the credentials (it is not advised to directly invoke the installer using an admin account).
@@ -47,4 +47,4 @@ The windows installer works with Windows 10 and 11 (older versions might still w
 4. For Win8 or later, Windows will report an error while installing `.net4` as it's mostly included. But it might occur
    that `.net3.5` does not get properly installed during the process.
 
-   Fix is to enable the .NET Framework 3.5 yourself through Control Panel. See this [Microsoft help page](https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows).aspx#ControlPanel) for detailed information. Even if this step fails, this does not affect the functionality of OpenMS, except for the executability of included third party tools (ProteoWizard).
+   Fix is to enable the .NET Framework 3.5 yourself through Control Panel. See this [Microsoft help page](https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows#enable-the-net-framework-35-in-control-panel) for detailed information. Even if this step fails, this does not affect the functionality of OpenMS, except for the executability of included third party tools (ProteoWizard).

@@ -4,7 +4,7 @@ Pull Request Checklist
 Before opening a pull request, check the following:
 
 1. **Does the code build?**
-  Execute `make` (or your build system's equivalent, e.g., `cmake --build . --target ALL_BUILD --config Release` on 
+  Execute `make` (or your build system's equivalent, e.g., `cmake --build . --target ALL_BUILD --config Release` on
   Windows).
 2. **Do all tests pass?**
    To check if all tests have passed, execute `ctest`.
@@ -15,7 +15,7 @@ Before opening a pull request, check the following:
    It is also recommended to document non-public members and methods.
 4. **Does the code introduce changes to the API?**
    If the code introduces changes to the API, make sure that the documentation is up-to-date and that the Python bindings
-   (pyOpenMS) still work. For each change in the C++ API, make a change in the Python API wrapper via 
+   (pyOpenMS) still work. For each change in the C++ API, make a change in the Python API wrapper via
    the `pyOpenMS/pxds/` files.
 5. **Have you completed regression testing?**
    Make sure that you include a test in the test suite for:
@@ -43,5 +43,5 @@ Make sure to:
 
 * **Describe what you have changed in your pull request.**
   When opening the pull request, give a detailed overview of what has changed and why. Include a clear rationale for the
-  changes and add benchmark data if available. See [this request](https://github.com/bitly/dablooms/pull/19) for 
+  changes and add benchmark data if available. See [this request](https://github.com/bitly/dablooms/pull/19) for
   an example.

@@ -11,8 +11,8 @@ In short, requirements for adding a new library are:
 ## Indispensable functionality
 
 In general, adding a new dependency library (of which we currently have more than a handful, e.g. Xerces-C or ZLib)
-imposes a significant integration and maintenance effort. Thus, the new library should add 
-**indispensable functionality**. If the added value does not compensate for the overhead, alternative solutions 
+imposes a significant integration and maintenance effort. Thus, the new library should add
+**indispensable functionality**. If the added value does not compensate for the overhead, alternative solutions
 encompass:
 
 
@@ -43,12 +43,12 @@ these platforms.
 
 - on **macOS** it should be ensured that the library can be build on recent macOS versions (> 10.10) compiled using the
   mac specific _libc++_. Ideally the package should be available via **HomeBrew** or **MacPorts** so we can directly use
-  those libraries instead of shipping them via the contrib. Additionally, the MacPorts and HomeBrew formulas for 
-  building the libraries can serve as blueprints on how to compile the library in a generic setting inside the contrib 
+  those libraries instead of shipping them via the contrib. Additionally, the MacPorts and HomeBrew formulas for
+  building the libraries can serve as blueprints on how to compile the library in a generic setting inside the contrib
   which should also be present.
 
 - on **Linux** since we (among other distributions) feature an OpenMS Debian package which requires that all
-dependencies of OpenMS are available as Debian package as well, the new library must be available (or made available) as 
+dependencies of OpenMS are available as Debian package as well, the new library must be available (or made available) as
 Debian package or linked statically during the OpenMS packaging build.
 
 
@@ -56,9 +56,9 @@ Debian package or linked statically during the OpenMS packaging build.
 
 Add a CMake file to `OpenMS/contrib` into the `libraries.cmake` folder on how to build the library. Preferably of course
 the library supports building with CMake (see Xerces) which makes the script really easy. It should support static and
-dynamic builds on every platform. Add the compile flag for position independent code (e.g. `-fpic`) in the static 
-version. Add patches in the *patches* folder and call them with the macros in the `macros.cmake` file. Create patches 
-with `diff -Naur original_file my_file > patch.txt`. If there are problems during applying a patch, make sure to double 
+dynamic builds on every platform. Add the compile flag for position independent code (e.g. `-fpic`) in the static
+version. Add patches in the *patches* folder and call them with the macros in the `macros.cmake` file. Create patches
+with `diff -Naur original_file my_file > patch.txt`. If there are problems during applying a patch, make sure to double
 check filepaths in the head of the patch and the call of the patching macro in CMake.
 
 - All the libraries need to go into (e.g. copied/installed/moved) to `$buildfolder/lib`

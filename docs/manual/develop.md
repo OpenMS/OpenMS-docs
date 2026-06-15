@@ -27,7 +27,7 @@ code base.
 
 ### Development model
 
-OpenMS follows the [Gitflow development workflow](http://nvie.com/posts/a-successful-git-branching-model/).
+OpenMS follows the [Gitflow development workflow](https://nvie.com/posts/a-successful-git-branching-model/).
 
 Every contributor is encouraged to create their own fork (even if they are eligible to push directly to OpenMS).
 To create a fork:

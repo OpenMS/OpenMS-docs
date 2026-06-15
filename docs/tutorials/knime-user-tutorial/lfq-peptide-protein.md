@@ -291,5 +291,5 @@ that contain this protein ID. We plot the protein ID results versus two differen
 
 ## References
 
-[^1]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, <a href="http://dx.doi.org/10.1021/pr500665j">Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis</a>, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
-arXiv:http://dx.doi.org/10.1021/pr500665j, <a href="https://pubs.acs.org/doi/10.1021/pr500665j">doi:10.1021/pr500665j</a>. 30
+[^1]: A. Chawade, M. Sandin, J. Teleman, J. Malmström, and F. Levander, <a href="https://doi.org/10.1021/pr500665j">Data Processing Has Major Impact on the Outcome of Quantitative Label-Free LC-MS Analysis</a>, Journal of Proteome Research 14(2), 676–687 (2015), PMID: 25407311,
+arXiv:https://doi.org/10.1021/pr500665j, <a href="https://pubs.acs.org/doi/10.1021/pr500665j">doi:10.1021/pr500665j</a>. 30

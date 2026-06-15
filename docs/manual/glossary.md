@@ -127,7 +127,7 @@ spectra
   Plural of spectrum.
 
 mass spectrum
-  A mass spectrum is a plot of the ion signal as a function of the mass-to-charge ratio. A mass spectrum is produced by a single mass spectrometry run. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds. OpenMS represents a one dimensional mass spectrum using the class [MSSpectrum](https://openms.de/current_doxygen/html/classOpenMS_1_1MSSpectrum.html). 
+  A mass spectrum is a plot of the ion signal as a function of the mass-to-charge ratio. A mass spectrum is produced by a single mass spectrometry run. These spectra are used to determine the elemental or isotopic signature of a sample, the masses of particles and of molecules, and to elucidate the chemical identity or structure of molecules and other chemical compounds. OpenMS represents a one dimensional mass spectrum using the class [MSSpectrum](https://openms.de/current_doxygen/html/classOpenMS_1_1MSSpectrum.html).
 
 m/z
   mass to charge ratio.
@@ -175,7 +175,7 @@ SWATH
   Stands for 'Sequential acquisition of all theoretical fragment ion spectra'.
 
 OpenMS API
-  An interface that allows developers to use OpenMS core library classes and methods. 
+  An interface that allows developers to use OpenMS core library classes and methods.
 
 RT
   Retention time.
