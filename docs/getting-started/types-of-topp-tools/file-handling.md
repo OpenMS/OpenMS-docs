@@ -33,6 +33,27 @@ The TOPP tools work only on the HUPO-PSI `mzML` format. If you need to convert *
 For format names as file extension, the tool derives the format from the extension. For other extensions, the file
 formats of the input and output file can be given explicitly.
 
+## Compression of mzML files
+
+
+OpenMS has supported **reading** of compressed mzML, mzXML, and mzData for a long time.
+
+Since OpenMS 3.5, TOPP tools that produce mzML output files also support **writing** compressed gzipped `.mzML.gz` files.
+To enable compression, simply use `mzML.gz` instead of `.mzML` as the output filename.
+
+ For example, PeakPickerHiRes can output compressed files like this:
+
+`PeakPickerHiRes -in input.mzML -out output.mzML.gz -threads 8`
+
+Compression uses the `pigz` (parallel gzip) tool, if installed, or falls back to OpenMS's internal compression mechanism otherwise. `pigz` offers faster compression speed, even if only using one thread. The number of threads used for compression is determined by the usual `-threads <n>` flag of the TOPP tool.
+Without pigz, the internal gzip compressor is used, which only supports a single thread, irrespective of the value given in `-threads <n>`.
+
+
+compression efficiency: `.mzML.gz` files are typically 2-3x smaller
+compression speed: `pigz` is significantly faster than the internal compression. Install `pigz` if possible (it's available via the usual package managers), 
+
+
+
 ## Converting between DTA and mzML
 
 Sequest DTA files can be extracted from a mzML file using the `DTAExtractor`:
